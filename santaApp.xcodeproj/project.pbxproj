@@ -1,0 +1,933 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B31268A26B4002ABFA9 /* AppDelegate.swift */; };
+		28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B33268A26B4002ABFA9 /* SceneDelegate.swift */; };
+		28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28119B3A268A26B4002ABFA9 /* santaApp.xcdatamodeld */; };
+		28119B3E268A26B4002ABFA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28119B3D268A26B4002ABFA9 /* Assets.xcassets */; };
+		28119B41268A26B4002ABFA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28119B3F268A26B4002ABFA9 /* LaunchScreen.storyboard */; };
+		28119B4C268A26B4002ABFA9 /* santaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B4B268A26B4002ABFA9 /* santaAppTests.swift */; };
+		28119B57268A26B4002ABFA9 /* santaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B56268A26B4002ABFA9 /* santaAppUITests.swift */; };
+		28119B69268A27F5002ABFA9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B68268A27F5002ABFA9 /* Constant.swift */; };
+		2813D837268B72B900822337 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813D836268B72B900822337 /* LoginViewController.swift */; };
+		28645186268C98A5009F3608 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
+		28827C67268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
+		28827C68268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
+		28827C69268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
+		28827C6A268D8F5B00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */; };
+		28827C6B268D8F5C00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */; };
+		28827C6C268D8F5D00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */; };
+		28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45D268CEB4700D40F35 /* CALayer.swift */; };
+		28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45F268CEB5F00D40F35 /* UITabBar.swift */; };
+		28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C461268CF38800D40F35 /* UISearchBar.swift */; };
+		28B52EA9268C793000017DCF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B52EA8268C793000017DCF /* UIImage.swift */; };
+		28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C239268A29660056EECF /* BaseViewController.swift */; };
+		28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23C268A2A1D0056EECF /* SplashViewController.swift */; };
+		28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23E268A2BD90056EECF /* BaseTabBarController.swift */; };
+		28D4C246268A2CEB0056EECF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C245268A2CEB0056EECF /* HomeViewController.swift */; };
+		28D4C248268A2D290056EECF /* PickMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C247268A2D290056EECF /* PickMountainViewController.swift */; };
+		28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C249268A2D720056EECF /* GoViewController.swift */; };
+		28D4C24D268A2D9F0056EECF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */; };
+		28D4C24F268A2DDC0056EECF /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C24E268A2DDC0056EECF /* SetupViewController.swift */; };
+		28D4C251268A30800056EECF /* UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C250268A30800056EECF /* UiViewController.swift */; };
+		28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E81B44268CC0E000B537A5 /* UILabel.swift */; };
+		304761CC34CA9C3440DAC9F3 /* Pods_santaApp_santaAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */; };
+		8B9AC9B6DBEC5526DC7DB9A3 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
+		B43FF98A22C6384FD9889F4E /* Pods_santaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF72992B7F525FC3EBEDE0 /* Pods_santaAppTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28119B48268A26B4002ABFA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28119B26268A26B4002ABFA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28119B2D268A26B4002ABFA9;
+			remoteInfo = santaApp;
+		};
+		28119B53268A26B4002ABFA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28119B26268A26B4002ABFA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 28119B2D268A26B4002ABFA9;
+			remoteInfo = santaApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		132ECA024641672E7C0A9EFA /* Pods-santaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaAppTests.release.xcconfig"; path = "Target Support Files/Pods-santaAppTests/Pods-santaAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		28119B2E268A26B4002ABFA9 /* santaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = santaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28119B31268A26B4002ABFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28119B33268A26B4002ABFA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		28119B3B268A26B4002ABFA9 /* santaApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = santaApp.xcdatamodel; sourceTree = "<group>"; };
+		28119B3D268A26B4002ABFA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28119B40268A26B4002ABFA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		28119B42268A26B4002ABFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28119B47268A26B4002ABFA9 /* santaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = santaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28119B4B268A26B4002ABFA9 /* santaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = santaAppTests.swift; sourceTree = "<group>"; };
+		28119B4D268A26B4002ABFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28119B52268A26B4002ABFA9 /* santaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = santaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28119B56268A26B4002ABFA9 /* santaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = santaAppUITests.swift; sourceTree = "<group>"; };
+		28119B58268A26B4002ABFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28119B68268A27F5002ABFA9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		2813D836268B72B900822337 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2813D838268B7D9200822337 /* santaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = santaApp.entitlements; sourceTree = "<group>"; };
+		28645185268C98A5009F3608 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeo.ttc; path = "../../../../../../Downloads/산타앱_폰트/AppleSDGothicNeo.ttc"; sourceTree = "<group>"; };
+		28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cocogoose Pro-trial.ttf"; path = "../../../../../../Downloads/산타앱_폰트/Cocogoose Pro-trial.ttf"; sourceTree = "<group>"; };
+		28A0C45D268CEB4700D40F35 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		28A0C45F268CEB5F00D40F35 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
+		28A0C461268CF38800D40F35 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
+		28B52EA8268C793000017DCF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		28D4C239268A29660056EECF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		28D4C23C268A2A1D0056EECF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		28D4C23E268A2BD90056EECF /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		28D4C245268A2CEB0056EECF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		28D4C247268A2D290056EECF /* PickMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMountainViewController.swift; sourceTree = "<group>"; };
+		28D4C249268A2D720056EECF /* GoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewController.swift; sourceTree = "<group>"; };
+		28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		28D4C24E268A2DDC0056EECF /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		28D4C250268A30800056EECF /* UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewController.swift; sourceTree = "<group>"; };
+		28E81B44268CC0E000B537A5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		3FF4A2762B2EE01585E42D55 /* Pods-santaApp-santaAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp-santaAppUITests.release.xcconfig"; path = "Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp_santaAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E0B327D9881169E99DE27A7 /* Pods-santaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp.release.xcconfig"; path = "Target Support Files/Pods-santaApp/Pods-santaApp.release.xcconfig"; sourceTree = "<group>"; };
+		7E7D31A3F4F65FC5401A04AF /* Pods-santaApp-santaAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp-santaAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		95A033F794617D3A7E844015 /* Pods-santaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp.debug.xcconfig"; path = "Target Support Files/Pods-santaApp/Pods-santaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9E205269D1D340C89152B39A /* Pods_santaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3FF72992B7F525FC3EBEDE0 /* Pods_santaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D885E51C7B04E3EB2FA4AC74 /* Pods-santaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-santaAppTests/Pods-santaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28119B2B268A26B4002ABFA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B9AC9B6DBEC5526DC7DB9A3 /* Pods_santaApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28119B44268A26B4002ABFA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B43FF98A22C6384FD9889F4E /* Pods_santaAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28119B4F268A26B4002ABFA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				304761CC34CA9C3440DAC9F3 /* Pods_santaApp_santaAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28119B25268A26B4002ABFA9 = {
+			isa = PBXGroup;
+			children = (
+				28119B30268A26B4002ABFA9 /* santaApp */,
+				28119B4A268A26B4002ABFA9 /* santaAppTests */,
+				28119B55268A26B4002ABFA9 /* santaAppUITests */,
+				28119B2F268A26B4002ABFA9 /* Products */,
+				437E0B1031C5812CCADCA371 /* Pods */,
+				986166046C069C8D8B166777 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		28119B2F268A26B4002ABFA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28119B2E268A26B4002ABFA9 /* santaApp.app */,
+				28119B47268A26B4002ABFA9 /* santaAppTests.xctest */,
+				28119B52268A26B4002ABFA9 /* santaAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28119B30268A26B4002ABFA9 /* santaApp */ = {
+			isa = PBXGroup;
+			children = (
+				2813D838268B7D9200822337 /* santaApp.entitlements */,
+				2813D835268B72A100822337 /* LoginViewController */,
+				28119B64268A276F002ABFA9 /* Configuration */,
+				28D4C240268A2C440056EECF /* HomeViewController */,
+				28D4C241268A2C4F0056EECF /* PickMountainController */,
+				28D4C242268A2C950056EECF /* GoViewController */,
+				28D4C243268A2CAB0056EECF /* ProfileViewController */,
+				28D4C244268A2CB50056EECF /* SetupViewController */,
+				28D4C23B268A29F90056EECF /* Splash */,
+				28119B31268A26B4002ABFA9 /* AppDelegate.swift */,
+				28119B33268A26B4002ABFA9 /* SceneDelegate.swift */,
+				28119B3D268A26B4002ABFA9 /* Assets.xcassets */,
+				28119B3F268A26B4002ABFA9 /* LaunchScreen.storyboard */,
+				28119B42268A26B4002ABFA9 /* Info.plist */,
+				28119B3A268A26B4002ABFA9 /* santaApp.xcdatamodeld */,
+			);
+			path = santaApp;
+			sourceTree = "<group>";
+		};
+		28119B4A268A26B4002ABFA9 /* santaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				28119B4B268A26B4002ABFA9 /* santaAppTests.swift */,
+				28119B4D268A26B4002ABFA9 /* Info.plist */,
+			);
+			path = santaAppTests;
+			sourceTree = "<group>";
+		};
+		28119B55268A26B4002ABFA9 /* santaAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				28119B56268A26B4002ABFA9 /* santaAppUITests.swift */,
+				28119B58268A26B4002ABFA9 /* Info.plist */,
+			);
+			path = santaAppUITests;
+			sourceTree = "<group>";
+		};
+		28119B64268A276F002ABFA9 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				2813D839268C668700822337 /* Font */,
+				28119B67268A2788002ABFA9 /* Constant */,
+				28119B66268A2782002ABFA9 /* Base */,
+				28119B65268A277C002ABFA9 /* Extension */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		28119B65268A277C002ABFA9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				28D4C250268A30800056EECF /* UiViewController.swift */,
+				28B52EA8268C793000017DCF /* UIImage.swift */,
+				28645185268C98A5009F3608 /* Color.swift */,
+				28E81B44268CC0E000B537A5 /* UILabel.swift */,
+				28A0C45D268CEB4700D40F35 /* CALayer.swift */,
+				28A0C45F268CEB5F00D40F35 /* UITabBar.swift */,
+				28A0C461268CF38800D40F35 /* UISearchBar.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		28119B66268A2782002ABFA9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				28D4C239268A29660056EECF /* BaseViewController.swift */,
+				28D4C23E268A2BD90056EECF /* BaseTabBarController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		28119B67268A2788002ABFA9 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				28119B68268A27F5002ABFA9 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		2813D835268B72A100822337 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2813D836268B72B900822337 /* LoginViewController.swift */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		2813D839268C668700822337 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */,
+				28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		28D4C23B268A29F90056EECF /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				28D4C23C268A2A1D0056EECF /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		28D4C240268A2C440056EECF /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28D4C245268A2CEB0056EECF /* HomeViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		28D4C241268A2C4F0056EECF /* PickMountainController */ = {
+			isa = PBXGroup;
+			children = (
+				28D4C247268A2D290056EECF /* PickMountainViewController.swift */,
+			);
+			path = PickMountainController;
+			sourceTree = "<group>";
+		};
+		28D4C242268A2C950056EECF /* GoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28D4C249268A2D720056EECF /* GoViewController.swift */,
+			);
+			path = GoViewController;
+			sourceTree = "<group>";
+		};
+		28D4C243268A2CAB0056EECF /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */,
+			);
+			path = ProfileViewController;
+			sourceTree = "<group>";
+		};
+		28D4C244268A2CB50056EECF /* SetupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28D4C24E268A2DDC0056EECF /* SetupViewController.swift */,
+			);
+			path = SetupViewController;
+			sourceTree = "<group>";
+		};
+		437E0B1031C5812CCADCA371 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				95A033F794617D3A7E844015 /* Pods-santaApp.debug.xcconfig */,
+				7E0B327D9881169E99DE27A7 /* Pods-santaApp.release.xcconfig */,
+				7E7D31A3F4F65FC5401A04AF /* Pods-santaApp-santaAppUITests.debug.xcconfig */,
+				3FF4A2762B2EE01585E42D55 /* Pods-santaApp-santaAppUITests.release.xcconfig */,
+				D885E51C7B04E3EB2FA4AC74 /* Pods-santaAppTests.debug.xcconfig */,
+				132ECA024641672E7C0A9EFA /* Pods-santaAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		986166046C069C8D8B166777 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E205269D1D340C89152B39A /* Pods_santaApp.framework */,
+				607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */,
+				C3FF72992B7F525FC3EBEDE0 /* Pods_santaAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28119B2D268A26B4002ABFA9 /* santaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28119B5B268A26B5002ABFA9 /* Build configuration list for PBXNativeTarget "santaApp" */;
+			buildPhases = (
+				E678933F0B135F2F365C245D /* [CP] Check Pods Manifest.lock */,
+				28119B2A268A26B4002ABFA9 /* Sources */,
+				28119B2B268A26B4002ABFA9 /* Frameworks */,
+				28119B2C268A26B4002ABFA9 /* Resources */,
+				56ECD31CEF9048C9634584A9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = santaApp;
+			productName = santaApp;
+			productReference = 28119B2E268A26B4002ABFA9 /* santaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		28119B46268A26B4002ABFA9 /* santaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28119B5E268A26B5002ABFA9 /* Build configuration list for PBXNativeTarget "santaAppTests" */;
+			buildPhases = (
+				5D159BF449649488E6382401 /* [CP] Check Pods Manifest.lock */,
+				28119B43268A26B4002ABFA9 /* Sources */,
+				28119B44268A26B4002ABFA9 /* Frameworks */,
+				28119B45268A26B4002ABFA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28119B49268A26B4002ABFA9 /* PBXTargetDependency */,
+			);
+			name = santaAppTests;
+			productName = santaAppTests;
+			productReference = 28119B47268A26B4002ABFA9 /* santaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		28119B51268A26B4002ABFA9 /* santaAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28119B61268A26B5002ABFA9 /* Build configuration list for PBXNativeTarget "santaAppUITests" */;
+			buildPhases = (
+				AEB950BA4373E1D20587D681 /* [CP] Check Pods Manifest.lock */,
+				28119B4E268A26B4002ABFA9 /* Sources */,
+				28119B4F268A26B4002ABFA9 /* Frameworks */,
+				28119B50268A26B4002ABFA9 /* Resources */,
+				4BD48981541A24854DC63492 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28119B54268A26B4002ABFA9 /* PBXTargetDependency */,
+			);
+			name = santaAppUITests;
+			productName = santaAppUITests;
+			productReference = 28119B52268A26B4002ABFA9 /* santaAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28119B26268A26B4002ABFA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					28119B2D268A26B4002ABFA9 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					28119B46268A26B4002ABFA9 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 28119B2D268A26B4002ABFA9;
+					};
+					28119B51268A26B4002ABFA9 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 28119B2D268A26B4002ABFA9;
+					};
+				};
+			};
+			buildConfigurationList = 28119B29268A26B4002ABFA9 /* Build configuration list for PBXProject "santaApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28119B25268A26B4002ABFA9;
+			productRefGroup = 28119B2F268A26B4002ABFA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28119B2D268A26B4002ABFA9 /* santaApp */,
+				28119B46268A26B4002ABFA9 /* santaAppTests */,
+				28119B51268A26B4002ABFA9 /* santaAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28119B2C268A26B4002ABFA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28119B41268A26B4002ABFA9 /* LaunchScreen.storyboard in Resources */,
+				28827C67268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */,
+				28827C6A268D8F5B00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */,
+				28119B3E268A26B4002ABFA9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28119B45268A26B4002ABFA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28827C6B268D8F5C00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */,
+				28827C68268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28119B50268A26B4002ABFA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28827C6C268D8F5D00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */,
+				28827C69268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BD48981541A24854DC63492 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56ECD31CEF9048C9634584A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-santaApp/Pods-santaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-santaApp/Pods-santaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-santaApp/Pods-santaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D159BF449649488E6382401 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-santaAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEB950BA4373E1D20587D681 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-santaApp-santaAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E678933F0B135F2F365C245D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-santaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28119B2A268A26B4002ABFA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */,
+				2813D837268B72B900822337 /* LoginViewController.swift in Sources */,
+				28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */,
+				28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */,
+				28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */,
+				28D4C248268A2D290056EECF /* PickMountainViewController.swift in Sources */,
+				28645186268C98A5009F3608 /* Color.swift in Sources */,
+				28D4C24F268A2DDC0056EECF /* SetupViewController.swift in Sources */,
+				28B52EA9268C793000017DCF /* UIImage.swift in Sources */,
+				28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */,
+				28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */,
+				28D4C251268A30800056EECF /* UiViewController.swift in Sources */,
+				28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */,
+				28D4C246268A2CEB0056EECF /* HomeViewController.swift in Sources */,
+				28D4C24D268A2D9F0056EECF /* ProfileViewController.swift in Sources */,
+				28119B69268A27F5002ABFA9 /* Constant.swift in Sources */,
+				28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */,
+				28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */,
+				28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */,
+				28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28119B43268A26B4002ABFA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28119B4C268A26B4002ABFA9 /* santaAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28119B4E268A26B4002ABFA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28119B57268A26B4002ABFA9 /* santaAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28119B49268A26B4002ABFA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28119B2D268A26B4002ABFA9 /* santaApp */;
+			targetProxy = 28119B48268A26B4002ABFA9 /* PBXContainerItemProxy */;
+		};
+		28119B54268A26B4002ABFA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 28119B2D268A26B4002ABFA9 /* santaApp */;
+			targetProxy = 28119B53268A26B4002ABFA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		28119B3F268A26B4002ABFA9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28119B40268A26B4002ABFA9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28119B59268A26B5002ABFA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		28119B5A268A26B5002ABFA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28119B5C268A26B5002ABFA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95A033F794617D3A7E844015 /* Pods-santaApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = santaApp/santaApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GBZ6W5NNB;
+				INFOPLIST_FILE = santaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		28119B5D268A26B5002ABFA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E0B327D9881169E99DE27A7 /* Pods-santaApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = santaApp/santaApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6GBZ6W5NNB;
+				INFOPLIST_FILE = santaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		28119B5F268A26B5002ABFA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D885E51C7B04E3EB2FA4AC74 /* Pods-santaAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = santaAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = home.santaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/santaApp.app/santaApp";
+			};
+			name = Debug;
+		};
+		28119B60268A26B5002ABFA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 132ECA024641672E7C0A9EFA /* Pods-santaAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = santaAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = home.santaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/santaApp.app/santaApp";
+			};
+			name = Release;
+		};
+		28119B62268A26B5002ABFA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E7D31A3F4F65FC5401A04AF /* Pods-santaApp-santaAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = santaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = home.santaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = santaApp;
+			};
+			name = Debug;
+		};
+		28119B63268A26B5002ABFA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FF4A2762B2EE01585E42D55 /* Pods-santaApp-santaAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = santaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = home.santaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = santaApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28119B29268A26B4002ABFA9 /* Build configuration list for PBXProject "santaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28119B59268A26B5002ABFA9 /* Debug */,
+				28119B5A268A26B5002ABFA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28119B5B268A26B5002ABFA9 /* Build configuration list for PBXNativeTarget "santaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28119B5C268A26B5002ABFA9 /* Debug */,
+				28119B5D268A26B5002ABFA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28119B5E268A26B5002ABFA9 /* Build configuration list for PBXNativeTarget "santaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28119B5F268A26B5002ABFA9 /* Debug */,
+				28119B60268A26B5002ABFA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28119B61268A26B5002ABFA9 /* Build configuration list for PBXNativeTarget "santaAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28119B62268A26B5002ABFA9 /* Debug */,
+				28119B63268A26B5002ABFA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		28119B3A268A26B4002ABFA9 /* santaApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				28119B3B268A26B4002ABFA9 /* santaApp.xcdatamodel */,
+			);
+			currentVersion = 28119B3B268A26B4002ABFA9 /* santaApp.xcdatamodel */;
+			path = santaApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 28119B26268A26B4002ABFA9 /* Project object */;
+}

@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "jordanMcqueen6Sb4UtqAwsUUnsplash.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "jordanMcqueen6Sb4UtqAwsUUnsplash@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "jordanMcqueen6Sb4UtqAwsUUnsplash@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
