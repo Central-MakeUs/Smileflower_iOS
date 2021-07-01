@@ -16,6 +16,7 @@
 		28119B57268A26B4002ABFA9 /* santaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B56268A26B4002ABFA9 /* santaAppUITests.swift */; };
 		28119B69268A27F5002ABFA9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B68268A27F5002ABFA9 /* Constant.swift */; };
 		2813D837268B72B900822337 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813D836268B72B900822337 /* LoginViewController.swift */; };
+		283047EA268D942F00DEB2EC /* ConquerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047E9268D942F00DEB2EC /* ConquerCollectionViewCell.swift */; };
 		28645186268C98A5009F3608 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
 		28827C67268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
 		28827C68268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
@@ -77,6 +78,7 @@
 		28119B68268A27F5002ABFA9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		2813D836268B72B900822337 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2813D838268B7D9200822337 /* santaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = santaApp.entitlements; sourceTree = "<group>"; };
+		283047E9268D942F00DEB2EC /* ConquerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerCollectionViewCell.swift; sourceTree = "<group>"; };
 		28645185268C98A5009F3608 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeo.ttc; path = "../../../../../../Downloads/산타앱_폰트/AppleSDGothicNeo.ttc"; sourceTree = "<group>"; };
 		28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cocogoose Pro-trial.ttf"; path = "../../../../../../Downloads/산타앱_폰트/Cocogoose Pro-trial.ttf"; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				28D4C245268A2CEB0056EECF /* HomeViewController.swift */,
+				283047E9268D942F00DEB2EC /* ConquerCollectionViewCell.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */,
+				283047EA268D942F00DEB2EC /* ConquerCollectionViewCell.swift in Sources */,
 				2813D837268B72B900822337 /* LoginViewController.swift in Sources */,
 				28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */,
 				28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */,
