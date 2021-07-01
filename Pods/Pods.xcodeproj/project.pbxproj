@@ -23,6 +23,7 @@
 				9F52D236F43307E88129810CA7400178 /* PBXTargetDependency */,
 			);
 			name = KakaoSDK;
+			productName = KakaoSDK;
 		};
 /* End PBXAggregateTarget section */
 
@@ -542,7 +543,7 @@
 		0F85A6E99EAE875263F5C586E4ABB550 /* KakaoSDKAuth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KakaoSDKAuth.release.xcconfig; sourceTree = "<group>"; };
 		10F3E1919C65DB06E07984A942FF8FA7 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		11CBD9C72402D42E0FA7E5EE4D7DF1D4 /* KakaoSDKTalk.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KakaoSDKTalk.modulemap; sourceTree = "<group>"; };
-		1353D6A467F43A6A3EA21D310BD35A31 /* KakaoSDKUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KakaoSDKUser.framework; path = KakaoSDKUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1353D6A467F43A6A3EA21D310BD35A31 /* KakaoSDKUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		158A372511409402E4787CC5913E5129 /* Pods-santaApp-santaAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-santaApp-santaAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		15D08FAD7E062C57BE2E9A2D0845972E /* EncodingContainer+AnyCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "EncodingContainer+AnyCollection.swift"; path = "sources/KakaoSDKCommon/extension/EncodingContainer+AnyCollection.swift"; sourceTree = "<group>"; };
 		17A52BA8C364A7BF45F9C220AC6B618A /* Pods-santaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-santaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -557,7 +558,7 @@
 		21EC1055AC63DD3202A14E6DFC2D0B70 /* ErrorInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorInfo.swift; path = sources/KakaoSDKCommon/model/ErrorInfo.swift; sourceTree = "<group>"; };
 		231AB474BCDE7E79E953226116C0C897 /* TalkApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TalkApi.swift; path = sources/KakaoSDKTalk/TalkApi.swift; sourceTree = "<group>"; };
 		243CB1EC1AC9F8FDA322EAD2C2B34D94 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
-		25BDA6E824AD6CBD857358A023C694AD /* KakaoSDKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KakaoSDKCommon.framework; path = KakaoSDKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25BDA6E824AD6CBD857358A023C694AD /* KakaoSDKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5E34AA7A9DD148BB7E7B63EA3C28FC /* KakaoSDKStory-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KakaoSDKStory-umbrella.h"; sourceTree = "<group>"; };
 		2D0D8ADAD92A1CDD35F155EF57A34138 /* Pods-santaApp-santaAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-santaApp-santaAppUITests.modulemap"; sourceTree = "<group>"; };
 		2F2A32B851B72B0DF33EBE79C47A4B43 /* ImageUploadResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageUploadResult.swift; path = sources/KakaoSDKLink/model/ImageUploadResult.swift; sourceTree = "<group>"; };
@@ -589,7 +590,7 @@
 		4A6E0EE321F22F0DA89D01C4C3501C1E /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		4C238543DB58E38153E2F37551755706 /* KakaoSDKNavi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KakaoSDKNavi.debug.xcconfig; sourceTree = "<group>"; };
 		4CDA2E5C6C060DA1B71FAA010FF6CD2B /* KakaoSDKTalk-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KakaoSDKTalk-prefix.pch"; sourceTree = "<group>"; };
-		4DDD713DC1A38B58C30D7519F72A3844 /* Pods_santaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_santaApp.framework; path = "Pods-santaApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DDD713DC1A38B58C30D7519F72A3844 /* Pods_santaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		500BB577972A8B1108BE8FA01291254D /* User.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = User.swift; path = sources/KakaoSDKUser/model/User.swift; sourceTree = "<group>"; };
 		5072BCBD257232418FA0DA15090B9BC4 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		52E88C60A7B418BF3E95086EA13C255B /* KakaoSDKStory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KakaoSDKStory.debug.xcconfig; sourceTree = "<group>"; };
@@ -598,10 +599,10 @@
 		54984DC7EF2AF3A84B8EC4336E99DDE9 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		5627B165D4A3FAADC8A736F360C210DD /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		575965CD8D8F78562509D34E79B921E9 /* KakaoSDKCommon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KakaoSDKCommon.debug.xcconfig; sourceTree = "<group>"; };
-		577744C58D2473190267533B410590A1 /* KakaoSDKTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KakaoSDKTemplate.framework; path = KakaoSDKTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		577744C58D2473190267533B410590A1 /* KakaoSDKTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58464626A94CB585D475F8EDA65626E8 /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
 		5C2A646BC51FB583A1BEE5E3F5D79AE2 /* KakaoSDKNavi-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KakaoSDKNavi-dummy.m"; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		612E3FE4D98C1729D1C2D2A44F65A26C /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		615E3A57D4EBE19F997B6ECC98AF1850 /* Pods-santaApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-santaApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		61FF2BCE3F8C839DBEA62D0667809EDC /* URL+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+Utils.swift"; path = "sources/KakaoSDKCommon/extension/URL+Utils.swift"; sourceTree = "<group>"; };
@@ -660,7 +661,7 @@
 		96D1A18E0CDB83F49787AF9DF1DEF42B /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
 		9712531DB9B1E3D68CB3C992A66B2A7C /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		977D65F5D7E08BBC0862A5E830AF557D /* AuthRequestAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthRequestAdapter.swift; path = sources/KakaoSDKAuth/auth/AuthRequestAdapter.swift; sourceTree = "<group>"; };
-		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FB6B4BE67C778CFBE8433EE816DEA6 /* SdkCrypto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SdkCrypto.swift; path = sources/KakaoSDKCommon/common/SdkCrypto.swift; sourceTree = "<group>"; };
 		990D36E29DFC54BB3DDB6E6F9A86EA24 /* KakaoSDKCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD4C8694375CB04A7220CEB3A84B9D4 /* OAuthToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OAuthToken.swift; path = sources/KakaoSDKAuth/model/OAuthToken.swift; sourceTree = "<group>"; };
@@ -669,16 +670,16 @@
 		9BEA975FB9C29A54966B22B5CEC30675 /* KakaoSDKAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF1079CEBD065B664156D5D35052099 /* KakaoSDKNavi-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KakaoSDKNavi-umbrella.h"; sourceTree = "<group>"; };
 		9CA1FC4026648B5A7D1906DCE45D40DA /* AuthErrorInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthErrorInfo.swift; path = sources/KakaoSDKCommon/model/AuthErrorInfo.swift; sourceTree = "<group>"; };
-		9D0E56404A234C3736519ADFC2F9CF78 /* KakaoSDKNavi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KakaoSDKNavi.framework; path = KakaoSDKNavi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0E56404A234C3736519ADFC2F9CF78 /* KakaoSDKNavi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKNavi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3D108C2EE044DA4E6ACC667AFB0EC2 /* KakaoSDKLink.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KakaoSDKLink.release.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DAE023751C7A295CE0C9F3C6AECEC17 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
 		9E29DE212E9285869B81730E686B6199 /* Auth.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Auth.swift; path = sources/KakaoSDKAuth/auth/Auth.swift; sourceTree = "<group>"; };
 		9EF07250081CB610A9630F1E5A66DFBF /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
-		9F453801F27585052F413F613C847DB2 /* KakaoSDKAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KakaoSDKAuth.framework; path = KakaoSDKAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F453801F27585052F413F613C847DB2 /* KakaoSDKAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0353AE42E28851CB9E7E462684AE424 /* Pods-santaApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-santaApp.modulemap"; sourceTree = "<group>"; };
 		A0A943AAA5410924198CBC4363AADB97 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
-		A1130D1DAB31B2DFE7B4CA725878272F /* KakaoSDKStory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KakaoSDKStory.framework; path = KakaoSDKStory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1130D1DAB31B2DFE7B4CA725878272F /* KakaoSDKStory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKStory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A225046795E89EB372E98566732EE767 /* KakaoSDKCommon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KakaoSDKCommon.release.xcconfig; sourceTree = "<group>"; };
 		A23B88CB48FAAA34CA4A18212FD442C4 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		A377D65A862146A702F0DD020C99CA26 /* UserServiceTerms.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserServiceTerms.swift; path = sources/KakaoSDKUser/model/UserServiceTerms.swift; sourceTree = "<group>"; };
@@ -689,7 +690,7 @@
 		A6477552A6D7B73486D0F9282ACC4F1C /* KakaoSDKStory.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KakaoSDKStory.modulemap; sourceTree = "<group>"; };
 		A6B2B8FE7BD8C8605B58D5DD5719C655 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		A9D112065116A9D28D2E001DAB295152 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		AC302B35325DB24BC9CAD7752F5076BC /* KakaoSDKTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KakaoSDKTalk.framework; path = KakaoSDKTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC302B35325DB24BC9CAD7752F5076BC /* KakaoSDKTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6E6BF7EA9EDEC7957879523A3C915B /* Pods-santaApp-santaAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-santaApp-santaAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AD81C9BA9187FF8461EBFC4A95BCD7FA /* KakaoSDKTalk-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KakaoSDKTalk-Info.plist"; sourceTree = "<group>"; };
 		AE52086F4B637ED45CCF2425D2ABB044 /* KakaoSDKLink-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KakaoSDKLink-prefix.pch"; sourceTree = "<group>"; };
@@ -708,10 +709,10 @@
 		C12B989978DBF99FE3AD049835127A0D /* KakaoSDKStory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KakaoSDKStory.h; path = sources/KakaoSDKStory/KakaoSDKStory.h; sourceTree = "<group>"; };
 		C33E7795DEAE21C915B86123EEFBE849 /* Pods-santaAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-santaAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C3A7D6B9056069EB289316CE3078B385 /* KakaoSDKTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KakaoSDKTalk.release.xcconfig; sourceTree = "<group>"; };
-		C3F1BB7CEEE18CB1A26396DF5C0A9B5E /* Pods_santaApp_santaAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_santaApp_santaAppUITests.framework; path = "Pods-santaApp-santaAppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3F1BB7CEEE18CB1A26396DF5C0A9B5E /* Pods_santaApp_santaAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp_santaAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3F2697A69CCDD5A9ACEBD1A41B0963F /* Pods-santaAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-santaAppTests-dummy.m"; sourceTree = "<group>"; };
 		C45DF1483BEE82BBCBCFFA33396179E6 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		C61DAFBC2F2165AB3AA00130523B904E /* KakaoSDKLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KakaoSDKLink.framework; path = KakaoSDKLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C61DAFBC2F2165AB3AA00130523B904E /* KakaoSDKLink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKLink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7FD94CBB99E0065B5F699645D6026FE /* KakaoSDKLink-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KakaoSDKLink-dummy.m"; sourceTree = "<group>"; };
 		C9FD51CE29FE58CB6F63FB6C8F392A1D /* KakaoSDKTemplate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KakaoSDKTemplate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7900261A163DF6C39FCF310199FFCA /* KakaoSDKCommon-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KakaoSDKCommon-dummy.m"; sourceTree = "<group>"; };
@@ -748,7 +749,7 @@
 		EB4E1F90243C258A2F2E63B7FE53D7D6 /* StoryApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryApi.swift; path = sources/KakaoSDKStory/StoryApi.swift; sourceTree = "<group>"; };
 		EB65EDA717861D683D21028BE234A6C2 /* UserShippingAddresses.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserShippingAddresses.swift; path = sources/KakaoSDKUser/model/UserShippingAddresses.swift; sourceTree = "<group>"; };
 		EB77242D0BBBEDF462909916AA29C8CE /* Pods-santaAppTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-santaAppTests-Info.plist"; sourceTree = "<group>"; };
-		EC938440586D6DBF199F3F25CCC9797F /* Pods_santaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_santaAppTests.framework; path = "Pods-santaAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC938440586D6DBF199F3F25CCC9797F /* Pods_santaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA401E5201D29698DDADEE71E882650 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		EE4AE4CA06AD3799F9233FBFA9AEAE22 /* KakaoSDKTemplate.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KakaoSDKTemplate.modulemap; sourceTree = "<group>"; };
 		EE56C23695993EDF44284F679415359B /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
@@ -949,7 +950,6 @@
 				A9D112065116A9D28D2E001DAB295152 /* Validation.swift */,
 				FF686AA30FB932E758EC36A2220A1F0E /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -980,7 +980,6 @@
 				3646871B7C8A132BA08C9F242DFC6DE0 /* StoryProfile.swift */,
 				4B3BDF19654A92AA56BC093DEA1A0870 /* Support Files */,
 			);
-			name = KakaoSDKStory;
 			path = KakaoSDKStory;
 			sourceTree = "<group>";
 		};
@@ -1025,7 +1024,6 @@
 				B9403F44933BE2B5E7CF2BA02BF1D096 /* TalkProfile.swift */,
 				71B764F7F7CF943CB5D5A38CEF058D77 /* Support Files */,
 			);
-			name = KakaoSDKTalk;
 			path = KakaoSDKTalk;
 			sourceTree = "<group>";
 		};
@@ -1085,7 +1083,6 @@
 				E23C3D919B319C57A3EDDC1DC6E57A7D /* UILayoutSupport+Extensions.swift */,
 				5E5D944438CE2DAD0384AC867A10DC45 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1109,7 +1106,6 @@
 			children = (
 				E69BE7D64C1649B3D6CE48D003C3972C /* Support Files */,
 			);
-			name = KakaoSDK;
 			path = KakaoSDK;
 			sourceTree = "<group>";
 		};
@@ -1165,7 +1161,6 @@
 				79219044C79AC7F24C2D90ACA76BF464 /* Urls.swift */,
 				C25E6A4485304595621FE5F2F37D0DD5 /* Support Files */,
 			);
-			name = KakaoSDKCommon;
 			path = KakaoSDKCommon;
 			sourceTree = "<group>";
 		};
@@ -1177,7 +1172,6 @@
 				043575084148C951871DEACDED1CC3B8 /* NaviModels.swift */,
 				3293D4855976EA451083F9FAFBEAE6A7 /* Support Files */,
 			);
-			name = KakaoSDKNavi;
 			path = KakaoSDKNavi;
 			sourceTree = "<group>";
 		};
@@ -1260,7 +1254,6 @@
 				0E827D06D234039E3E7B54B4C07D15C0 /* TokenManager.swift */,
 				0A7B0138E5F3A3403ED2E558C5ACB241 /* Support Files */,
 			);
-			name = KakaoSDKAuth;
 			path = KakaoSDKAuth;
 			sourceTree = "<group>";
 		};
@@ -1299,7 +1292,6 @@
 				EB65EDA717861D683D21028BE234A6C2 /* UserShippingAddresses.swift */,
 				339F9CB5A1F5FA958783A1E939CBB71D /* Support Files */,
 			);
-			name = KakaoSDKUser;
 			path = KakaoSDKUser;
 			sourceTree = "<group>";
 		};
@@ -1324,7 +1316,6 @@
 				D6D5A23803C4F78FD8A1B76C8B6C8FDA /* ValidationResult.swift */,
 				8E907FC0F42B1EF578077BA22FB415D1 /* Support Files */,
 			);
-			name = KakaoSDKLink;
 			path = KakaoSDKLink;
 			sourceTree = "<group>";
 		};
@@ -1383,7 +1374,6 @@
 				E64B2AFABD0FB08309334F1D2EDEC748 /* TemplateModels.swift */,
 				92BE9DDFCA97462BFD6B5DCEF68FF1D3 /* Support Files */,
 			);
-			name = KakaoSDKTemplate;
 			path = KakaoSDKTemplate;
 			sourceTree = "<group>";
 		};
@@ -1807,7 +1797,33 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					205D6EF1B8DCC8419E2F53266F6ADCDC = {
+						LastSwiftMigration = 1250;
+					};
+					3F7BF367078951B6E8BC95B3DA89967A = {
+						LastSwiftMigration = 1250;
+					};
+					50476624BF09EB04ABAFA83A0C21C625 = {
+						LastSwiftMigration = 1250;
+					};
+					61118587C74B2D3D0EFFE67F0116FE65 = {
+						LastSwiftMigration = 1250;
+					};
+					83CA882AD877ED964BDF66235E416BC1 = {
+						LastSwiftMigration = 1250;
+					};
+					994F7F59C816D7363585E82EBA0764BC = {
+						LastSwiftMigration = 1250;
+					};
+					D10EA6E592FB0476FCF38A6C5EC1D148 = {
+						LastSwiftMigration = 1250;
+					};
+					F1A7357D2A67F44CF3FBB03F86D5EE1A = {
+						LastSwiftMigration = 1250;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -2446,7 +2462,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKUser/KakaoSDKUser-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKUser/KakaoSDKUser-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2458,7 +2474,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2481,7 +2497,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2628,7 +2644,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKTalk/KakaoSDKTalk-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKTalk/KakaoSDKTalk-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2640,7 +2656,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2664,7 +2680,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKTemplate/KakaoSDKTemplate-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKTemplate/KakaoSDKTemplate-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2676,7 +2692,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2700,7 +2716,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKNavi/KakaoSDKNavi-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKNavi/KakaoSDKNavi-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2712,7 +2728,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2735,7 +2751,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKStory/KakaoSDKStory-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKStory/KakaoSDKStory-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2747,7 +2763,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2770,7 +2786,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKTemplate/KakaoSDKTemplate-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKTemplate/KakaoSDKTemplate-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2782,7 +2798,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2805,7 +2821,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKUser/KakaoSDKUser-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKUser/KakaoSDKUser-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2817,7 +2833,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2841,7 +2857,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2867,7 +2883,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2894,7 +2910,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKAuth/KakaoSDKAuth-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKAuth/KakaoSDKAuth-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2906,7 +2922,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2930,7 +2946,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3003,7 +3019,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3039,7 +3055,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKLink/KakaoSDKLink-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKLink/KakaoSDKLink-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3051,7 +3067,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3074,7 +3090,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKCommon/KakaoSDKCommon-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKCommon/KakaoSDKCommon-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3086,7 +3102,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3109,7 +3125,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKStory/KakaoSDKStory-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKStory/KakaoSDKStory-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3121,7 +3137,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3211,7 +3227,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKAuth/KakaoSDKAuth-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKAuth/KakaoSDKAuth-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3223,7 +3239,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3308,7 +3324,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKNavi/KakaoSDKNavi-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKNavi/KakaoSDKNavi-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3320,7 +3336,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3335,7 +3351,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3361,7 +3377,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKLink/KakaoSDKLink-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKLink/KakaoSDKLink-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3373,7 +3389,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -3435,7 +3451,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKTalk/KakaoSDKTalk-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKTalk/KakaoSDKTalk-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3447,7 +3463,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3508,7 +3524,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/KakaoSDKCommon/KakaoSDKCommon-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/KakaoSDKCommon/KakaoSDKCommon-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3520,7 +3536,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
