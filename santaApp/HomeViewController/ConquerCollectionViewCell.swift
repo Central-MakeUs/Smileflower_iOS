@@ -35,7 +35,7 @@ class ConquerCollectionViewCell: UICollectionViewCell {
     
     // MARK: 이미지 만들기
     func imageViewSetMountain() {
-        imageViewMountain.backgroundColor = .blue
+        imageViewMountain.backgroundColor = .white
         imageViewMountain.layer.cornerRadius = 20
         imageViewMountain.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         contentView.addSubview(imageViewMountain)

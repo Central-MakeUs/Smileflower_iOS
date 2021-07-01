@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GoViewController : BaseViewController {
+class GoViewController : BaseViewController, UISearchBarDelegate {
     let imageViewMountain = UIImageView()
     let imageViewHuman = UIImageView()
     let searchBar = UISearchBar()
@@ -81,9 +81,11 @@ class GoViewController : BaseViewController {
     }
     // MARK : 서치바
     func searchBarSet() {
+        searchBar.delegate = self
         searchBar.placeholder = ""
         searchBar.layer.cornerRadius = 24
         searchBar.layer.masksToBounds = true
+        searchBar.setImage(UIImage(named: "isCancel@3x"), for: .clear, state: .normal)
         searchBar.setTextFieldColor(.white, searchBar)
         view.addSubview(searchBar)
         searchBar.snp.makeConstraints { make in
@@ -92,5 +94,12 @@ class GoViewController : BaseViewController {
             make.height.equalTo(48.5)
             make.width.equalTo(343)
         }
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let nextVC = StartViewController()
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        nextVC.labelMountainName.text = searchBar.text
+        self.present(nextVC, animated: true, completion: nil)
     }
 }
