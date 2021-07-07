@@ -210,18 +210,21 @@ class LoginViewController : BaseViewController {
     }
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
+        
         // Apple ID
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
-                
             // 계정 정보 가져오기
+            
             let userIdentifier = appleIDCredential.user
             let fullName = appleIDCredential.fullName
             let email = appleIDCredential.email
-                
+            let status = appleIDCredential.realUserStatus
             print("User ID : \(userIdentifier)")
             print("User Email : \(email ?? "")")
             print("User Name : \((fullName?.givenName ?? "") + (fullName?.familyName ?? ""))")
+            print("UserStatus : \(status)")
      
+            self.changeRootViewController(BaseTabbarController())
         default:
             break
         }

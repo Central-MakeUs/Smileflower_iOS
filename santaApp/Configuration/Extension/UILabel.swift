@@ -8,7 +8,7 @@
 import UIKit
 
 extension UILabel {
-    // MARK : 자간 간격
+    // MARK: 자간 간격
     func addCharacterSpacing(kernValue: Double = -1.65) {
     if let labelText = text, labelText.count > 0 {
       let attributedString = NSMutableAttributedString(string: labelText)
@@ -16,7 +16,7 @@ extension UILabel {
       attributedText = attributedString
     }
   }
-    //MARK : LineHeight
+    //MARK: LineHeight
     func setTextWithLineHeight(text: String?, lineHeight: CGFloat) {
             if let text = text {
                 let style = NSMutableParagraphStyle()

@@ -30,7 +30,7 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
         labelSetStartAndRun()
         buttonSetStart()
     }
-    // MARK : 네비게이션 바
+    // MARK: 네비게이션 바
     func navigationBarSet() {
         let height: CGFloat = 75
         let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
@@ -48,7 +48,7 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
     @objc func actionBackButton(_ sender : Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    // MARK : 산 이름
+    // MARK: 산 이름
     func labelSetMountainName() {
         labelMountainName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 64)
         labelMountainName.setTextWithLineHeight(text: labelMountainName.text, lineHeight: 77)
@@ -59,7 +59,7 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
             make.top.equalTo(view.snp.top).offset(153.6)
         }
     }
-    // MARK : 산 이름 옆에 이미지
+    // MARK: 산 이름 옆에 이미지
     func imageViewSetPosition() {
         imageViewPosition.image = UIImage(named: "position@3x")
         imageViewPosition.contentMode = .scaleAspectFill
@@ -71,7 +71,7 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
             make.height.equalTo(53.8)
         }
     }
-    // MARK : 출발 버튼과 함께 달려주세요!
+    // MARK: 출발 버튼과 함께 달려주세요!
     func labelSetStartAndRun() {
         labelStartandRun.text = " 출발 버튼과 함께 달려주세요!"
         labelStartandRun.textAlignment = .center
@@ -84,7 +84,7 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
             make.top.equalTo(view.snp.top).offset(234)
         }
     }
-    // MARK : 출발 버튼
+    // MARK: 출발 버튼
     func buttonSetStart() {
         buttonStart.setImage(UIImage(named: "startButton@3x"), for: .normal)
         buttonStart.addTarget(self, action: #selector(actionStartButton), for: .touchUpInside)

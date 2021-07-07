@@ -66,7 +66,7 @@ class HomeViewController : BaseViewController {
             make.bottom.equalTo(view.snp.bottom)
         }
     }
-    //MARK : 프로필 사진 설정
+    //MARK: 프로필 사진 설정
     func viewSetProfile() {
         viewProfile.backgroundColor = .none
         view.addSubview(viewProfile)
@@ -87,7 +87,7 @@ class HomeViewController : BaseViewController {
             make.edges.equalTo(viewProfile.snp.edges)
         }
     }
-    //MARK : For a Better Hike with SANTA
+    //MARK: For a Better Hike with SANTA
     func LabelSetHikeWithSANTA() {
         labelHikeWithSANTA.text = "For a Better\nHike with SANTA"
         labelHikeWithSANTA.numberOfLines = 2
@@ -102,7 +102,7 @@ class HomeViewController : BaseViewController {
             make.top.equalTo(view.snp.top).offset(233)
         }
     }
-    //MARK : SearchBar
+    //MARK: SearchBar
     func searchButtonSet() {
         searchButton.backgroundColor = .mainColor
         searchButton.layer.cornerRadius = 25
@@ -138,7 +138,7 @@ class HomeViewController : BaseViewController {
     @objc func actionGoSearchView() {
         print("click")
     }
-    //MARK : 내가 정복한 산
+    //MARK: 내가 정복한 산
     func labelSetConquer() {
         labelConquer.text = "내가 정복한 산"
         labelConquer.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 22)
@@ -150,7 +150,7 @@ class HomeViewController : BaseViewController {
             make.top.equalTo(searchButton.snp.bottom).offset(44)
         }
     }
-    //MARK : Carousel Collection View
+    //MARK: Carousel Collection View
     func collectionViewSetConquer() {
         carouselCollectionView.dataSource = self
         carouselCollectionView.delegate = self

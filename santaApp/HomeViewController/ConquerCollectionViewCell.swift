@@ -109,7 +109,7 @@ class ConquerCollectionViewCell: UICollectionViewCell {
             make.leading.equalTo(imageViewGrade.snp.trailing).offset(35.7)
         }
     }
-//    // MARk : 횟수
+//    // MARk: 횟수
     func labelSetConquerNumberOfTimes() {
         labelConquerNumberOfTimes.text = "7회"
         labelConquerNumberOfTimes.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 14)

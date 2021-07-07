@@ -17,12 +17,12 @@ class EndViewController : BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.setGradient(color1: UIColor(hex:0x24C7B9) , color2: UIColor(hex: 0x9AC7FF))
         picker.delegate = self
         buttonSetEnd()
     }
     
-    // MARK : 도착버튼
+    // MARK: 도착버튼
     func buttonSetEnd() {
     buttonEnd.backgroundColor = .black
         buttonEnd.addTarget(self, action: #selector(actionEndButton), for: .touchUpInside)
@@ -51,6 +51,13 @@ extension EndViewController : UIImagePickerControllerDelegate, UINavigationContr
             imageView?.image = image
         }
         
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.presentAlert(title: "해당 사진으로 진행할까요?", message: "해당 산과 무관한 사진을 올릴 시\n제재가 가해질 수 있습니다.", isCancelActionIncluded: true, preferredStyle: .alert) { action in
+                let nextVC = ConquerViewController()
+                nextVC.modalPresentationStyle = .overFullScreen
+                nextVC.modalTransitionStyle = .crossDissolve
+                self.present(nextVC, animated: true, completion: nil)
+            }
+        }
     }
 }

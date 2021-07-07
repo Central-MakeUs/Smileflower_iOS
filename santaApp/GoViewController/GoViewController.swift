@@ -34,7 +34,7 @@ class GoViewController : BaseViewController, UISearchBarDelegate {
         labelSetWhere()
         searchBarSet()
     }
-    // MARK : 네비게이션
+    // MARK: 네비게이션
     func navigationBarSet() {
         self.navigationItem.leftBarButtonItem = self.leftButton
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -44,7 +44,7 @@ class GoViewController : BaseViewController, UISearchBarDelegate {
     @objc func actionBackButton(_ sender : Any) {
         self.changeRootViewController(BaseTabbarController())
     }
-    // MARK : 배경화면
+    // MARK: 배경화면
     func imageViewSetBackground() {
         imageViewMountain.image = UIImage(named: "mountain@3x")
         imageViewMountain.contentMode = .scaleAspectFill
@@ -66,7 +66,7 @@ class GoViewController : BaseViewController, UISearchBarDelegate {
             make.height.equalTo(338)
         }
     }
-    // MARK : 어느산으로 갈까요?
+    // MARK: 어느산으로 갈까요?
     func labelSetWhere() {
         labelWhere.text = "어느 산으로\n갈까요?"
         labelWhere.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 45)
@@ -79,7 +79,7 @@ class GoViewController : BaseViewController, UISearchBarDelegate {
             make.bottom.equalTo(imageViewHuman.snp.top)
         }
     }
-    // MARK : 서치바
+    // MARK: 서치바
     func searchBarSet() {
         searchBar.delegate = self
         searchBar.placeholder = ""

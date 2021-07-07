@@ -9,6 +9,7 @@ target 'santaApp' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'Alamofire', '~> 5.1'
   pod 'KakaoSDK'
+  pod 'BetterSegmentedControl', '~> 1.3'
 
   target 'santaAppTests' do
     inherit! :search_paths
