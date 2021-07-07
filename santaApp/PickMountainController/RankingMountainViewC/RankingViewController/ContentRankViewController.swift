@@ -18,11 +18,11 @@ class ContentRankViewController: UIViewController {
         super.viewDidLoad()
         setregister()
         viewSetRanker()
+        setMyGrade()
         tableViewSetRank()
     }
     func setregister() {
         tableViewRank.register(RankTableViewCell.self, forCellReuseIdentifier: RankTableViewCell.identifier)
-        tableViewRank.register(MyRankTableViewCell.self, forCellReuseIdentifier: MyRankTableViewCell.identifier)
     }
     // MARK: 랭커들 만들기
     func viewSetRanker() {
@@ -179,6 +179,7 @@ class ContentRankViewController: UIViewController {
             make.height.equalTo(109.5)
         }
     }
+    //MARK: 테이블뷰
     func tableViewSetRank() {
         tableViewRank.delegate = self
         tableViewRank.dataSource = self
@@ -186,69 +187,121 @@ class ContentRankViewController: UIViewController {
         view.addSubview(tableViewRank)
         tableViewRank.snp.makeConstraints { make in
             make.leading.bottom.trailing.equalTo(view)
+            make.top.equalTo(viewMyGrade.snp.bottom)
+        }
+    }
+    //MARK: 내 등수
+    let viewMyGrade = UIView()
+    
+    func setMyGrade() {
+        viewMyGrade.backgroundColor = .mainColor
+        view.addSubview(viewMyGrade)
+        viewMyGrade.snp.makeConstraints { make in
             make.top.equalTo(viewMaster.snp.bottom).offset(37.8)
+            make.leading.trailing.equalTo(view)
+            make.height.equalTo(55)
+        }
+        
+        let labelRank = UILabel()
+        labelRank.text = "2"
+        labelRank.textAlignment = .center
+        labelRank.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 20)
+        labelRank.textColor = .white
+        viewMyGrade.addSubview(labelRank)
+        labelRank.snp.makeConstraints { make in
+            make.centerY.equalTo(viewMyGrade.snp.centerY)
+            make.leading.equalTo(viewMyGrade.snp.leading).offset(16)
+            make.width.equalTo(36)
+            make.height.equalTo(17)
+        }
+        let imageViewProfile = UIImageView()
+        imageViewProfile.image = UIImage(named: "1083@3x")
+        imageViewProfile.backgroundColor = .white
+        imageViewProfile.contentMode = .scaleAspectFit
+        imageViewProfile.layer.cornerRadius = 18.5
+        viewMyGrade.addSubview(imageViewProfile)
+        imageViewProfile.snp.makeConstraints { make in
+            make.centerY.equalTo(labelRank.snp.centerY)
+            make.leading.equalTo(labelRank.snp.trailing).offset(6)
+            make.width.height.equalTo(37)
+        }
+        let labelUserLV = UILabel()
+        labelUserLV.text = "LV.17"
+        labelUserLV.textColor = .white
+        labelUserLV.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
+        viewMyGrade.addSubview(labelUserLV)
+        labelUserLV.snp.makeConstraints { make in
+            make.leading.equalTo(imageViewProfile.snp.trailing).offset(18)
+            make.top.equalTo(viewMyGrade.snp.top).offset(14)
+        }
+        let labelUserName = UILabel()
+        labelUserName.text = "에스핀"
+        labelUserName.textColor = .white
+        labelUserName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 15)
+        viewMyGrade.addSubview(labelUserName)
+        labelUserName.snp.makeConstraints { make in
+            make.leading.equalTo(labelUserLV.snp.leading)
+            make.top.equalTo(labelUserLV.snp.bottom)
+        }
+        let labelUserTimes = UILabel()
+        labelUserTimes.text = "99회"
+        labelUserTimes.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 16)
+        labelUserTimes.textAlignment = .center
+        labelUserTimes.textColor = .white
+        viewMyGrade.addSubview(labelUserTimes)
+        labelUserTimes.snp.makeConstraints { make in
+            make.trailing.equalTo(viewMyGrade.snp.trailing).offset(-9.4)
+            make.centerY.equalTo(labelUserName.snp.centerY)
+            make.width.equalTo(43.5)
+            make.height.equalTo(16)
+        }
+        let labelUserlatest = UILabel()
+        labelUserlatest.text = "3일전"
+        labelUserlatest.textColor = .white
+        labelUserlatest.textAlignment = .center
+        labelUserlatest.layer.borderWidth = 0.5
+        labelUserlatest.layer.borderColor = UIColor.white.cgColor
+        labelUserlatest.layer.cornerRadius = 7
+        labelUserlatest.font = UIFont(name: Constant.fontAppleSDGothicNeoLight, size: 11)
+        viewMyGrade.addSubview(labelUserlatest)
+        labelUserlatest.snp.makeConstraints { make in
+            make.bottom.equalTo(labelUserTimes.snp.top).offset(-2.2)
+            make.trailing.equalTo(viewMyGrade.snp.trailing).offset(-12.7)
+            make.width.equalTo(37)
+            make.height.equalTo(13)
         }
     }
 }
-
+// MARK: 테이블뷰 구현
 extension ContentRankViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: MyRankTableViewCell.identifier, for: indexPath) as? MyRankTableViewCell
-            else {
-                fatalError("cant dequeue Cell")
-            }
-            
-            cell.backgroundColor = .mainColor
-            cell.selectionStyle = .none
-            cell.accessoryType = .disclosureIndicator
-            cell.tintColor = .white
-            
-            cell.labelRank.text = "2"
-            
-            cell.imageViewProfile.image = UIImage(named: "1083@3x")
-            cell.imageViewProfile.backgroundColor = .white
-            cell.imageViewProfile.contentMode = .scaleAspectFit
-            cell.imageViewProfile.layer.cornerRadius = 18.5
-            
-            cell.labelUserLV.text = "Lv.10"
-            
-            cell.labelUserName.text = "산타"
-            
-            cell.labelUserlatest.text = "3일전"
-            
-            cell.labelUserTimes.text = "8회"
-            
-            return cell
-        }
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RankTableViewCell.identifier, for: indexPath)as? RankTableViewCell
         else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: RankTableViewCell.identifier, for: indexPath) as? RankTableViewCell
-            else {
-                fatalError("cant dequeue Cell")
+            fatalError("cant dequeue Cell")
             }
-            cell.selectionStyle = .none
-            cell.accessoryType = .disclosureIndicator
-            cell.labelRank.text = String(indexPath.row + 3)
+        cell.selectionStyle = .none
+        cell.accessoryType = .disclosureIndicator
+        cell.labelRank.text = String(indexPath.row + 3)
             
-            cell.imageViewProfile.image = UIImage(named: "1083@3x")
-            cell.imageViewProfile.contentMode = .scaleAspectFit
-            cell.imageViewProfile.layer.cornerRadius = 18.5
-            cell.imageViewProfile.layer.borderWidth = 0.2
-            cell.imageViewProfile.layer.borderColor = UIColor.titleColorGray.cgColor
+        cell.imageViewProfile.image = UIImage(named: "1083@3x")
+        cell.imageViewProfile.contentMode = .scaleAspectFit
+        cell.imageViewProfile.layer.cornerRadius = 18.5
+        cell.imageViewProfile.layer.borderWidth = 0.2
+        cell.imageViewProfile.layer.borderColor = UIColor.titleColorGray.cgColor
             
-            cell.labelUserLV.text = "Lv.10"
+        cell.labelUserLV.text = "Lv.10"
             
-            cell.labelUserName.text = "산타"
+        cell.labelUserName.text = "산타"
             
-            cell.labelUserlatest.text = "3일전"
+        cell.labelUserlatest.text = "3일전"
             
-            cell.labelUserTimes.text = "8회"
-            return cell
-        }
+        cell.labelUserTimes.text = "8회"
+        return cell
         
     }
     

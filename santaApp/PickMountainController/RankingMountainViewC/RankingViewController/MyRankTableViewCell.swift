@@ -78,14 +78,14 @@ class MyRankTableViewCell: UITableViewCell {
     func labelSetLatest() {
         labelUserlatest.textColor = .white
         labelUserlatest.textAlignment = .center
-        labelUserlatest.layer.borderWidth = 0.2
+        labelUserlatest.layer.borderWidth = 0.5
         labelUserlatest.layer.borderColor = UIColor.white.cgColor
         labelUserlatest.layer.cornerRadius = 7
         labelUserlatest.font = UIFont(name: Constant.fontAppleSDGothicNeoLight, size: 11)
         contentView.addSubview(labelUserlatest)
         labelUserlatest.snp.makeConstraints { make in
             make.bottom.equalTo(labelUserTimes.snp.top).offset(-2.2)
-            make.trailing.equalTo(contentView.snp.trailing).offset(-46)
+            make.trailing.equalTo(contentView.snp.trailing).offset(-12.7)
             make.width.equalTo(37)
             make.height.equalTo(13)
         }
@@ -96,7 +96,7 @@ class MyRankTableViewCell: UITableViewCell {
         labelUserTimes.textColor = .white
         contentView.addSubview(labelUserTimes)
         labelUserTimes.snp.makeConstraints { make in
-            make.trailing.equalTo(contentView.snp.trailing).offset(-42.8)
+            make.trailing.equalTo(contentView.snp.trailing).offset(-9.4)
             make.centerY.equalTo(labelUserName.snp.centerY)
             make.width.equalTo(43.5)
             make.height.equalTo(16)

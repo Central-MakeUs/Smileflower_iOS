@@ -84,7 +84,7 @@ class RankTableViewCell: UITableViewCell {
         contentView.addSubview(labelUserlatest)
         labelUserlatest.snp.makeConstraints { make in
             make.bottom.equalTo(labelUserTimes.snp.top).offset(-2.2)
-            make.trailing.equalTo(contentView.snp.trailing).offset(-46)
+            make.trailing.equalTo(contentView.snp.trailing).offset(-12.7)
             make.width.equalTo(37)
             make.height.equalTo(13)
         }
@@ -94,7 +94,7 @@ class RankTableViewCell: UITableViewCell {
         labelUserTimes.textAlignment = .center
         contentView.addSubview(labelUserTimes)
         labelUserTimes.snp.makeConstraints { make in
-            make.trailing.equalTo(contentView.snp.trailing).offset(-42.8)
+            make.trailing.equalTo(contentView.snp.trailing).offset(-9.4)
             make.centerY.equalTo(labelUserName.snp.centerY)
             make.width.equalTo(43.5)
             make.height.equalTo(16)

@@ -24,6 +24,11 @@
 		283047F1268E3CAB00DEB2EC /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047F0268E3CAB00DEB2EC /* EndViewController.swift */; };
 		28645186268C98A5009F3608 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
 		286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286966F62692E35E0025A250 /* RankingMountainViewController.swift */; };
+		28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */; };
+		28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */; };
+		28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */; };
+		28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B00269629B0008F0FE3 /* MountainHeightTableViewCell.swift */; };
+		28810B0426963D88008F0FE3 /* WarningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0326963D88008F0FE3 /* WarningTableViewCell.swift */; };
 		28827C67268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
 		28827C68268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
 		28827C69268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
@@ -37,7 +42,6 @@
 		28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C461268CF38800D40F35 /* UISearchBar.swift */; };
 		28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208626937562001DBF5E /* ContentRankViewController.swift */; };
 		28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208826938026001DBF5E /* RankTableViewCell.swift */; };
-		28B3208B26938F89001DBF5E /* MyRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208A26938F89001DBF5E /* MyRankTableViewCell.swift */; };
 		28B52EA9268C793000017DCF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B52EA8268C793000017DCF /* UIImage.swift */; };
 		28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C239268A29660056EECF /* BaseViewController.swift */; };
 		28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23C268A2A1D0056EECF /* SplashViewController.swift */; };
@@ -97,6 +101,11 @@
 		283047F0268E3CAB00DEB2EC /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		28645185268C98A5009F3608 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		286966F62692E35E0025A250 /* RankingMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingMountainViewController.swift; sourceTree = "<group>"; };
+		28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainImageTableViewCell.swift; sourceTree = "<group>"; };
+		28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPositionTableViewCell.swift; sourceTree = "<group>"; };
+		28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCourseTableViewCell.swift; sourceTree = "<group>"; };
+		28810B00269629B0008F0FE3 /* MountainHeightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainHeightTableViewCell.swift; sourceTree = "<group>"; };
+		28810B0326963D88008F0FE3 /* WarningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningTableViewCell.swift; sourceTree = "<group>"; };
 		28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeo.ttc; path = "../../../../../../Downloads/산타앱_폰트/AppleSDGothicNeo.ttc"; sourceTree = "<group>"; };
 		28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cocogoose Pro-trial.ttf"; path = "../../../../../../Downloads/산타앱_폰트/Cocogoose Pro-trial.ttf"; sourceTree = "<group>"; };
 		2890263E268F286E00D15BBA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -106,7 +115,6 @@
 		28A0C461268CF38800D40F35 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		28B3208626937562001DBF5E /* ContentRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRankViewController.swift; sourceTree = "<group>"; };
 		28B3208826938026001DBF5E /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
-		28B3208A26938F89001DBF5E /* MyRankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRankTableViewCell.swift; sourceTree = "<group>"; };
 		28B52EA8268C793000017DCF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		28D4C239268A29660056EECF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		28D4C23C268A2A1D0056EECF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -281,7 +289,11 @@
 			isa = PBXGroup;
 			children = (
 				282FD6FB2694AD6B00B38602 /* ContentMountainViewController.swift */,
-				2817F866269586CE004F39EC /* CourseTableViewCell.swift */,
+				28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */,
+				28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */,
+				28810B00269629B0008F0FE3 /* MountainHeightTableViewCell.swift */,
+				28810B0226962B2C008F0FE3 /* CourseTableViewCell */,
+				28810B0326963D88008F0FE3 /* WarningTableViewCell.swift */,
 			);
 			path = MountainViewController;
 			sourceTree = "<group>";
@@ -291,7 +303,6 @@
 			children = (
 				28B3208626937562001DBF5E /* ContentRankViewController.swift */,
 				28B3208826938026001DBF5E /* RankTableViewCell.swift */,
-				28B3208A26938F89001DBF5E /* MyRankTableViewCell.swift */,
 			);
 			path = RankingViewController;
 			sourceTree = "<group>";
@@ -305,6 +316,15 @@
 				2817F8612694B77E004F39EC /* pathView.swift */,
 			);
 			path = RankingMountainViewC;
+			sourceTree = "<group>";
+		};
+		28810B0226962B2C008F0FE3 /* CourseTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */,
+				2817F866269586CE004F39EC /* CourseTableViewCell.swift */,
+			);
+			path = CourseTableViewCell;
 			sourceTree = "<group>";
 		};
 		28D4C23B268A29F90056EECF /* Splash */ = {
@@ -627,13 +647,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */,
-				28B3208B26938F89001DBF5E /* MyRankTableViewCell.swift in Sources */,
+				28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */,
 				283047EA268D942F00DEB2EC /* ConquerCollectionViewCell.swift in Sources */,
 				2813D837268B72B900822337 /* LoginViewController.swift in Sources */,
+				28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */,
 				283047F1268E3CAB00DEB2EC /* EndViewController.swift in Sources */,
 				28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */,
 				28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */,
 				283047EF268E2B7700DEB2EC /* StartViewController.swift in Sources */,
+				28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */,
 				28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */,
 				286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */,
 				289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */,
@@ -641,6 +663,7 @@
 				28645186268C98A5009F3608 /* Color.swift in Sources */,
 				28D4C24F268A2DDC0056EECF /* SetupViewController.swift in Sources */,
 				28B52EA9268C793000017DCF /* UIImage.swift in Sources */,
+				28810B0426963D88008F0FE3 /* WarningTableViewCell.swift in Sources */,
 				28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */,
 				28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */,
 				2817F8622694B77E004F39EC /* pathView.swift in Sources */,
@@ -648,6 +671,7 @@
 				28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */,
 				28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */,
 				282FD6FC2694AD6B00B38602 /* ContentMountainViewController.swift in Sources */,
+				28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */,
 				28D4C251268A30800056EECF /* UiViewController.swift in Sources */,
 				28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */,
 				2890263F268F286E00D15BBA /* UIView.swift in Sources */,

@@ -37,7 +37,7 @@ class CourseTableViewCell: UITableViewCell {
             make.width.equalTo(71)
         }
         let viewTime = UIView()
-        viewTime.backgroundColor = UIColor(hex: 0xc1cad0)
+        viewTime.backgroundColor = UIColor(hex: 0xc1cad0, alpha: 0.3)
         viewTime.layer.cornerRadius = 13
         contentView.addSubview(viewTime)
         viewTime.snp.makeConstraints { make in
@@ -65,8 +65,6 @@ class CourseTableViewCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

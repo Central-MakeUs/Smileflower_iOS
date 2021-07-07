@@ -49,7 +49,15 @@ class ConquerViewController: UIViewController {
         var i = 0
         var images = [UIImage]()
         while let image = UIImage(named: "\(name)/\(i)") {
-            images.append(image)
+            if i == 0 {
+                let newimage : UIImage? = image.image(alpha: 0)
+                images.append(newimage!)
+            }
+            else {
+                let newimage : UIImage? = image.image(alpha: 1)
+                images.append(newimage!)
+            }
+            
             i += 1
         }
         return images
@@ -58,7 +66,7 @@ class ConquerViewController: UIViewController {
     func imageViewSetAniamation() {
         
         imageViewAnimation.animationImages = animatedImages(for: "illustHikingFirecracker")
-        imageViewAnimation.animationDuration = 2
+        imageViewAnimation.animationDuration = 1
         imageViewAnimation.tintColor = UIColor.red
         imageViewAnimation.animationRepeatCount = 100
         imageViewAnimation.image = imageViewAnimation.animationImages?.first

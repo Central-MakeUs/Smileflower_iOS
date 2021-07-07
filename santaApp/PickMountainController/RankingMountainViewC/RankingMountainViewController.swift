@@ -55,6 +55,16 @@ class RankingMountainViewController: UIViewController {
         viewSetBottomSheet()
         seguecontrolSet()
         setupMiddleButton()
+        
+        ViewControllerRanking.view.snp.makeConstraints { make in
+            make.bottom.leading.trailing.equalTo(viewBottomSheet)
+            make.top.equalTo(control.snp.bottom).offset(14)
+        }
+        
+        ViewControllerMountain.view.snp.makeConstraints { make in
+            make.bottom.leading.trailing.equalTo(viewBottomSheet)
+            make.top.equalTo(control.snp.bottom).offset(14)
+        }
     }
     // navigationBar
     lazy var leftButton: UIBarButtonItem = {
@@ -65,7 +75,7 @@ class RankingMountainViewController: UIViewController {
         
     }()
     func navigationBarSet() {
-        let height: CGFloat = 75
+        let height: CGFloat = 30
         let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
         navbar.backgroundColor = UIColor.clear
         navbar.delegate = self
@@ -152,16 +162,6 @@ class RankingMountainViewController: UIViewController {
         viewPan.delaysTouchesBegan = false
         viewPan.delaysTouchesEnded = false
         view.addGestureRecognizer(viewPan)
-
-        ViewControllerRanking.view.snp.makeConstraints { make in
-            make.bottom.leading.trailing.equalTo(viewBottomSheet)
-            make.top.equalTo(viewBottomSheet.snp.top).offset(80)
-        }
-        
-        ViewControllerMountain.view.snp.makeConstraints { make in
-            make.bottom.leading.trailing.equalTo(viewBottomSheet)
-            make.top.equalTo(viewBottomSheet.snp.top).offset(80)
-        }
     }
     func nearest(to number: CGFloat, inValues values: [CGFloat]) -> CGFloat {
         guard let nearestVal = values.min(by: { abs(number - $0) < abs(number - $1) })
@@ -174,8 +174,16 @@ class RankingMountainViewController: UIViewController {
             let safeAreaHeight: CGFloat = view.safeAreaLayoutGuide.layoutFrame.height
             let bottomPadding: CGFloat = view.safeAreaInsets.bottom
             bottomSheetViewTopConstraint.constant = (safeAreaHeight + bottomPadding) - defaultHeight
+            UIView.animate(withDuration: 0.25) {
+                let newFrame = CGRect(x: UIScreen.main.bounds.maxX/2 - 88, y: 33, width: 176, height: 36)
+                self.control.frame = newFrame
+            }
         } else {
             bottomSheetViewTopConstraint.constant = bottomSheetPanMinTopConstant
+            UIView.animate(withDuration: 0.7) {
+                let newFrame = CGRect(x: UIScreen.main.bounds.maxX/2 - 88, y: 72, width: 176, height: 36)
+                self.control.frame = newFrame
+            }
         }
         
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
@@ -186,8 +194,11 @@ class RankingMountainViewController: UIViewController {
     private func hideBottomSheet() {
         let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
         bottomSheetViewTopConstraint.constant = safeAreaHeight - 10
+        
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
+            self.ViewControllerRanking.view.alpha = 0
+            self.ViewControllerMountain.view.alpha = 0
         }) { _ in
             if self.presentingViewController != nil {
                 self.dismiss(animated: false, completion: nil)
@@ -243,20 +254,20 @@ class RankingMountainViewController: UIViewController {
         default: return
         }
     }
+    let control = BetterSegmentedControl(
+        frame: CGRect(x: UIScreen.main.bounds.maxX/2 - 88 , y: 33, width: 176, height: 36),
+        segments: LabelSegment.segments(withTitles: ["랭킹","산 정보"],
+                                        normalFont: UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 16)!,
+                                        normalTextColor: .titleColorGray,
+                                        selectedFont: UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 16)!,
+                                        selectedTextColor: .white),
+        index: 0,
+        options: [.backgroundColor(UIColor(hex: 0x7C909B, alpha: 0.15)),
+                  .indicatorViewBackgroundColor(.mainColor),
+                  .indicatorViewInset(4),
+                  .animationDuration(0.5)
+                  ])
     func seguecontrolSet() {
-        let control = BetterSegmentedControl(
-            frame: CGRect(x: UIScreen.main.bounds.maxX/2 - 88 , y: 33, width: 176, height: 36),
-            segments: LabelSegment.segments(withTitles: ["랭킹","산 정보"],
-                                            normalFont: UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 16)!,
-                                            normalTextColor: .titleColorGray,
-                                            selectedFont: UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 16)!,
-                                            selectedTextColor: .white),
-            index: 0,
-            options: [.backgroundColor(UIColor(hex: 0x7C909B, alpha: 0.15)),
-                      .indicatorViewBackgroundColor(.mainColor),
-                      .indicatorViewInset(4),
-                      .animationDuration(0.5)
-                      ])
         control.indicatorView.layer.shadowColor = UIColor.mainColor.cgColor
         control.indicatorView.layer.shadowRadius = 18
         control.indicatorView.layer.shadowOpacity = 0.3
