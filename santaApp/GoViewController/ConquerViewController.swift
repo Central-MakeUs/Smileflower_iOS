@@ -28,6 +28,9 @@ class ConquerViewController: UIViewController {
         labelSetWOW()
         labelSetExplain()
         buttonSetGoConquer()
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
         imageViewSetAniamation()
     }
     

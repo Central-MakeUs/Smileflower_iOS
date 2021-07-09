@@ -20,8 +20,7 @@ class ContentMountainViewController: UIViewController {
         contentTableView.delegate = self
         contentTableView.dataSource = self
         contentTableView.separatorStyle = .none
-        contentTableView.estimatedRowHeight = 38
-        contentTableView.rowHeight = UITableView.automaticDimension
+
         contentTableView.register(MountainImageTableViewCell.self, forCellReuseIdentifier: MountainImageTableViewCell.identifier)
         contentTableView.register(MountainPositionTableViewCell.self, forCellReuseIdentifier: MountainPositionTableViewCell.identifier)
         contentTableView.register(MountainHeightTableViewCell.self, forCellReuseIdentifier: MountainHeightTableViewCell.identifier)
@@ -96,7 +95,7 @@ extension ContentMountainViewController: UITableViewDelegate, UITableViewDataSou
             return 26 * 5 + 6 * 7 + 22
         }
         else {
-            return 700
+            return 500
         }
     }
 }

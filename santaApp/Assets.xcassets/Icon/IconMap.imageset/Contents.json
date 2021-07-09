@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "icPorfileMap.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icPorfileMap@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "illustHikingFirecracker6@3x.png",
+      "filename" : "icPorfileMap@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

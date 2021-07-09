@@ -29,6 +29,9 @@
 		28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */; };
 		28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B00269629B0008F0FE3 /* MountainHeightTableViewCell.swift */; };
 		28810B0426963D88008F0FE3 /* WarningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0326963D88008F0FE3 /* WarningTableViewCell.swift */; };
+		28810B0626970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */; };
+		28810B082697111D008F0FE3 /* UserResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */; };
+		28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0B2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift */; };
 		28827C67268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
 		28827C68268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
 		28827C69268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
@@ -106,6 +109,9 @@
 		28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCourseTableViewCell.swift; sourceTree = "<group>"; };
 		28810B00269629B0008F0FE3 /* MountainHeightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainHeightTableViewCell.swift; sourceTree = "<group>"; };
 		28810B0326963D88008F0FE3 /* WarningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningTableViewCell.swift; sourceTree = "<group>"; };
+		28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerMountainCollectionViewCell.swift; sourceTree = "<group>"; };
+		28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		28810B0B2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeMountainCollectionViewCell.swift; sourceTree = "<group>"; };
 		28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeo.ttc; path = "../../../../../../Downloads/산타앱_폰트/AppleSDGothicNeo.ttc"; sourceTree = "<group>"; };
 		28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cocogoose Pro-trial.ttf"; path = "../../../../../../Downloads/산타앱_폰트/Cocogoose Pro-trial.ttf"; sourceTree = "<group>"; };
 		2890263E268F286E00D15BBA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -349,6 +355,7 @@
 			children = (
 				286966F82692E6410025A250 /* RankingMountainViewC */,
 				28D4C247268A2D290056EECF /* PickMountainViewController.swift */,
+				28810B0B2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift */,
 			);
 			path = PickMountainController;
 			sourceTree = "<group>";
@@ -369,6 +376,8 @@
 			isa = PBXGroup;
 			children = (
 				28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */,
+				28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */,
+				28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -652,6 +661,7 @@
 				2813D837268B72B900822337 /* LoginViewController.swift in Sources */,
 				28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */,
 				283047F1268E3CAB00DEB2EC /* EndViewController.swift in Sources */,
+				28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */,
 				28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */,
 				28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */,
 				283047EF268E2B7700DEB2EC /* StartViewController.swift in Sources */,
@@ -661,6 +671,7 @@
 				289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */,
 				28D4C248268A2D290056EECF /* PickMountainViewController.swift in Sources */,
 				28645186268C98A5009F3608 /* Color.swift in Sources */,
+				28810B0626970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift in Sources */,
 				28D4C24F268A2DDC0056EECF /* SetupViewController.swift in Sources */,
 				28B52EA9268C793000017DCF /* UIImage.swift in Sources */,
 				28810B0426963D88008F0FE3 /* WarningTableViewCell.swift in Sources */,
@@ -679,6 +690,7 @@
 				28D4C24D268A2D9F0056EECF /* ProfileViewController.swift in Sources */,
 				28119B69268A27F5002ABFA9 /* Constant.swift in Sources */,
 				28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */,
+				28810B082697111D008F0FE3 /* UserResultCollectionViewCell.swift in Sources */,
 				28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */,
 				28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */,
 				28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */,

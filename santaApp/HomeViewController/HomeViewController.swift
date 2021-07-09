@@ -31,8 +31,6 @@ class HomeViewController : BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         navigationBarSetLogo()
         imageViewSetBackground()
         viewSetProfile()
@@ -43,7 +41,7 @@ class HomeViewController : BaseViewController {
     }
     //MARK: 네비게이션 바 로고 설정
     func navigationBarSetLogo() {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         imageView.contentMode   = .scaleAspectFit
         let image = UIImage(named: "1083@3x")
         imageView.image = image
