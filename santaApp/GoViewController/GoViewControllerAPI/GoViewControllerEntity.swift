@@ -9,9 +9,9 @@ struct GoViewControllerEntity : Decodable {
     var isSuccess : Bool
     var code : Int
     var message : String
-    var result : [GoViewControllerResult]?
+    var result : GoViewControllerEntityResult?
 }
-struct GoViewControllerResult : Decodable {
-    var mluntainIdx : Int
+struct GoViewControllerEntityResult : Decodable {
+    var mountainIdx : Int
     var mountain : String
 }

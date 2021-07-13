@@ -18,6 +18,7 @@ class ConquerCollectionViewCell: UICollectionViewCell {
     var labelConquer = UILabel()
     var labelConquerNumberOfTimes = UILabel()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         imageViewSetMountain()
@@ -38,6 +39,8 @@ class ConquerCollectionViewCell: UICollectionViewCell {
         imageViewMountain.backgroundColor = .white
         imageViewMountain.layer.cornerRadius = 20
         imageViewMountain.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        imageViewMountain.contentMode = .scaleAspectFill
+        imageViewMountain.clipsToBounds = true
         contentView.addSubview(imageViewMountain)
         
         imageViewMountain.snp.makeConstraints { make in
@@ -48,7 +51,6 @@ class ConquerCollectionViewCell: UICollectionViewCell {
     // MARK: 북한산
     func labelSetMountainName() {
         labelMountainName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 22)
-        
         contentView.addSubview(labelMountainName)
         
         labelMountainName.snp.makeConstraints { make in
@@ -57,7 +59,8 @@ class ConquerCollectionViewCell: UICollectionViewCell {
         }
     }
     // MARK: 프로필
-    var imageProfile : UIImage? = UIImage(named: "그라데이션")
+    var imageProfile = UIImageView()
+    let imagemask = UIImageView()
     func viewSetProfile() {
         imageViewProfile.image = UIImage(named: "946@3x")
         imageViewProfile.contentMode = .scaleAspectFill
@@ -69,28 +72,17 @@ class ConquerCollectionViewCell: UICollectionViewCell {
             make.width.equalTo(59.2)
             make.height.equalTo(72)
         }
-        let viewProfileImage = UIView(frame: CGRect(x: 5.4, y: 5.1, width: 35.5, height: 47.7))
-        let imagelayer = CALayer()
-        imagelayer.contents = imageProfile?.cgImage
-        imagelayer.frame = viewProfileImage.frame
-        viewProfileImage.layer.addSublayer(imagelayer)
-        imageViewProfile.addSubview(viewProfileImage)
-        
-        let pathimage = UIBezierPath()
-        pathimage.lineJoinStyle = .round
-        pathimage.move(to: CGPoint(x: 35.5, y: 0))
-        pathimage.addLine(to: CGPoint(x: 35.5, y: 32))
-        pathimage.addLine(to: CGPoint(x: 17.75, y: 47.7))
-        pathimage.addLine(to: CGPoint(x: 0, y: 32))
-        pathimage.addLine(to: CGPoint(x: 0, y: 0))
-        pathimage.close()
-        
-        let maskLayerImage = CAShapeLayer()
-        maskLayerImage.path = pathimage.cgPath
-        maskLayerImage.fillColor = UIColor.red.cgColor
-
-        // Setting the mask
-        imagelayer.mask = maskLayerImage
+        imageProfile.image = UIImage(named: "그라데이션")
+        imageProfile.contentMode = .scaleAspectFill
+        imageViewProfile.addSubview(imageProfile)
+        imageProfile.snp.makeConstraints { make in
+            make.centerX.equalTo(imageViewProfile.snp.centerX).offset(-1)
+            make.centerY.equalTo(imageViewProfile.snp.centerY).offset(-2)
+            make.width.equalTo(35.5)
+            make.height.equalTo(47.1)
+        }
+        imagemask.image = UIImage(named: "mask@3x")
+        imageProfile.mask = imagemask
     }
     // MARK: 등급
     func imageViewSetGrade() {

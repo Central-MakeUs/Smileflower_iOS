@@ -68,7 +68,7 @@ class SplashViewController : BaseViewController {
             self.imageSantaLogoRight.frame = CGRect(x: UIScreen.main.bounds.width/2 + 33.95, y: UIScreen.main.bounds.height/2 - 27.75, width: 51.3, height: 66.6)
         } completion: { finished in
             sleep(1/10*7)
-            self.changeRootViewControllerWithAnimations(BaseTabbarController())
+            self.changeRootViewControllerWithAnimations(LoginViewController())
         }
 
     }

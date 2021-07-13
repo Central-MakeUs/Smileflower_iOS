@@ -96,10 +96,21 @@ class GoViewController : BaseViewController, UISearchBarDelegate {
         }
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let mountainName = searchBar.text {
+            GoViewControllerDataManager().appflagsmountain(self, mountainName)
+        }
+    }
+}
+
+extension GoViewController {
+    func successDataMountain() {
         let nextVC = StartViewController()
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         nextVC.labelMountainName.text = searchBar.text
         self.present(nextVC, animated: true, completion: nil)
+    }
+    func failureNoDataMountain(_ message : String) {
+        self.presentAlert(title: message)
     }
 }

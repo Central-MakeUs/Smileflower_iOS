@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import NVActivityIndicatorView
 
 class HomeViewController : BaseViewController {
     let labelHikeWithSANTA = UILabel()
@@ -23,7 +24,6 @@ class HomeViewController : BaseViewController {
     var mountain : [DataMyFlagMountain]?
     
     let carouselCollectionView: UICollectionView = {
-            
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumLineSpacing = 22
@@ -35,9 +35,27 @@ class HomeViewController : BaseViewController {
         return collectionView
     }()
     
+    //MARK: 인디케이털
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: UIScreen.main.bounds.width/2 - 35, y: UIScreen.main.bounds.height/2 - 35, width: 70, height: 70), type: .ballScale, color: .mainColor, padding: 10)
+    let indicatorView = UIView()
+    
+    func setindicator() {
+        indicatorView.backgroundColor = .black
+        indicatorView.alpha = 0.7
+        self.view.addSubview(indicatorView)
+        indicatorView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+        indicatorView.layer.zPosition = 99
+        self.view.addSubview(self.indicator)
+        indicator.layer.zPosition = 999
+        indicator.startAnimating()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        HomeViewDataManager().apphomes(viewcontroller: self)
+        setindicator()
+        print(indicator.isAnimating)
         navigationBarSetLogo()
         imageViewSetBackground()
         LabelSetHikeWithSANTA()
@@ -45,9 +63,21 @@ class HomeViewController : BaseViewController {
         searchButtonSet()
         labelSetConquer()
         collectionViewSetConquer()
+        HomeViewDataManager().apphomes(viewcontroller: self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.indicator.stopAnimating()
+            self.indicatorView.removeFromSuperview()
+        }
     }
+
     override func viewWillLayoutSubviews() {
         labelConquer.text = homeStatus
+        mask.frame = imageViewUserProfile.bounds
+        carouselCollectionView.reloadData()
+        if let encoded = userImage, let myURL = URL(string: encoded) {
+            let data = try! Data(contentsOf: myURL)
+            imageViewUserProfile.image = UIImage(data: data)
+        }
     }
     //MARK: 네비게이션 바 로고 설정
     func navigationBarSetLogo() {
@@ -75,7 +105,8 @@ class HomeViewController : BaseViewController {
         }
     }
     //MARK: 프로필 사진 설정
-    let imageProfile = UIImage(named: "그라데이션")
+    let imageViewUserProfile = UIImageView()
+    let mask = UIImageView()
     func viewSetProfile() {
         viewProfile.backgroundColor = .none
         view.addSubview(viewProfile)
@@ -94,30 +125,16 @@ class HomeViewController : BaseViewController {
         imageViewProfile.snp.makeConstraints { make in
             make.edges.equalTo(viewProfile.snp.edges)
         }
-        
-        
-        let viewProfileImage = UIView(frame: CGRect(x: 6.5, y: 6.5, width: 64, height: 85))
-        let imagelayer = CALayer()
-        imagelayer.contents = imageProfile?.cgImage
-        imagelayer.frame = viewProfileImage.frame
-        viewProfileImage.layer.addSublayer(imagelayer)
-        viewProfile.addSubview(viewProfileImage)
-        
-        let pathimage = UIBezierPath()
-        pathimage.lineJoinStyle = .round
-        pathimage.move(to: CGPoint(x: 64, y: 0))
-        pathimage.addLine(to: CGPoint(x: 64, y: 60))
-        pathimage.addLine(to: CGPoint(x: 32, y: 85))
-        pathimage.addLine(to: CGPoint(x: 0, y: 60))
-        pathimage.addLine(to: CGPoint(x: 0, y: 0))
-        pathimage.close()
-        
-        let maskLayerImage = CAShapeLayer()
-        maskLayerImage.path = pathimage.cgPath
-        maskLayerImage.fillColor = UIColor.red.cgColor
-
-        // Setting the mask
-        imagelayer.mask = maskLayerImage
+        imageViewUserProfile.image = UIImage(named: "그라데이션")
+        viewProfile.addSubview(imageViewUserProfile)
+        imageViewUserProfile.snp.makeConstraints { make in
+            make.centerX.equalTo(viewProfile.snp.centerX).offset(-1)
+            make.centerY.equalTo(viewProfile.snp.centerY).offset(-2)
+            make.width.equalTo(64)
+            make.height.equalTo(85)
+        }
+        mask.image = UIImage(named: "mask@3x")
+        imageViewUserProfile.mask = mask
     }
     //MARK: For a Better Hike with SANTA
     func LabelSetHikeWithSANTA() {
@@ -221,18 +238,24 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             cell.layer.shadowOffset = CGSize(width: 2, height: 6)
             cell.layer.shadowRadius = 15
             cell.layer.shadowOpacity = 0.2
-            
             if let mountainCell = mountain{
                 cell.labelMountainName.text = mountainCell[indexPath.row].mountainName
                 cell.labelName.text = mountainCell[indexPath.row].userName
                 cell.labelConquerNumberOfTimes.text = String(mountainCell[indexPath.row].flagCount) + "회"
+                if let encoded = mountainCell[indexPath.row].mountainImage, let myURL = URL(string: encoded) {
+                    let data = try! Data(contentsOf: myURL)
+                    cell.imageViewMountain.image = UIImage(data: data)
+                }
+                if let encoded = mountainCell[indexPath.row].userImage, let myURL = URL(string: encoded) {
+                    let data = try! Data(contentsOf: myURL)
+                    cell.imageProfile.image = UIImage(data: data)
+                }
             }
-            
+            cell.imagemask.frame = cell.imageProfile.bounds
             return cell
         }
         return UICollectionViewCell()
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 168, height: 212)
     }

@@ -98,6 +98,7 @@ class LoginViewController : BaseViewController {
         buttonCreatID.setTitleColor(.darkbluegray, for: .normal)
         buttonCreatID.backgroundColor = .white
         buttonCreatID.layer.cornerRadius =  26
+        buttonCreatID.addTarget(self, action: #selector(actionGoSignUp), for: .touchUpInside)
         view.addSubview(buttonCreatID)
         buttonCreatID.snp.makeConstraints { make in
             make.width.equalTo(UIScreen.main.bounds.width * 0.9)
@@ -105,6 +106,12 @@ class LoginViewController : BaseViewController {
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(label.snp.bottom).offset(10)
         }
+    }
+    @objc func actionGoSignUp() {
+        let nextVC = SignUpViewController()
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
     }
     // MARK: 로그인하기
     let buttonLoginID = UIButton()

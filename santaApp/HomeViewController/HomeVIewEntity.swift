@@ -26,9 +26,9 @@ struct DataMyFlag : Decodable {
 struct DataMyFlagMountain : Decodable {
     var mountainIdx : Int
     var mountainName : String?
-    var mountainImage : String
+    var mountainImage : String?
     var difficulty : Int
     var userName : String
-    var userImage : String
+    var userImage : String?
     var flagCount : Int
 }
