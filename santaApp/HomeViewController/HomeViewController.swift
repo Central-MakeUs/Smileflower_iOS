@@ -14,7 +14,13 @@ class HomeViewController : BaseViewController {
     
     let searchButton = UIButton()
 
-    let viewProfile = UIView()
+    let viewProfile = UIView(frame: CGRect(x: 35, y: 126, width: 74, height: 97))
+    
+    //MARK: 가져올 데이터 변수들
+    var userIdx : Int?
+    var userImage : String?
+    var homeStatus : String? = ""
+    var mountain : [DataMyFlagMountain]?
     
     let carouselCollectionView: UICollectionView = {
             
@@ -31,17 +37,21 @@ class HomeViewController : BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        HomeViewDataManager().apphomes(viewcontroller: self)
         navigationBarSetLogo()
         imageViewSetBackground()
-        viewSetProfile()
         LabelSetHikeWithSANTA()
+        viewSetProfile()
         searchButtonSet()
         labelSetConquer()
         collectionViewSetConquer()
     }
+    override func viewWillLayoutSubviews() {
+        labelConquer.text = homeStatus
+    }
     //MARK: 네비게이션 바 로고 설정
     func navigationBarSetLogo() {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 48.1, height: 48.1))
         imageView.contentMode   = .scaleAspectFit
         let image = UIImage(named: "1083@3x")
         imageView.image = image
@@ -65,25 +75,49 @@ class HomeViewController : BaseViewController {
         }
     }
     //MARK: 프로필 사진 설정
+    let imageProfile = UIImage(named: "그라데이션")
     func viewSetProfile() {
         viewProfile.backgroundColor = .none
         view.addSubview(viewProfile)
-        
         viewProfile.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(126)
+            make.width.equalTo(92)
+            make.height.equalTo(115)
+            make.bottom.equalTo(labelHikeWithSANTA.snp.top)
             make.leading.equalTo(view.snp.leading).offset(35)
-            make.width.equalTo(74)
-            make.height.equalTo(97)
         }
         
         let imageViewProfile = UIImageView()
         imageViewProfile.image = UIImage(named: "profileView@3x")
         imageViewProfile.contentMode = .scaleAspectFill
         viewProfile.addSubview(imageViewProfile)
-        
+
         imageViewProfile.snp.makeConstraints { make in
             make.edges.equalTo(viewProfile.snp.edges)
         }
+        
+        
+        let viewProfileImage = UIView(frame: CGRect(x: 6.5, y: 6.5, width: 64, height: 85))
+        let imagelayer = CALayer()
+        imagelayer.contents = imageProfile?.cgImage
+        imagelayer.frame = viewProfileImage.frame
+        viewProfileImage.layer.addSublayer(imagelayer)
+        viewProfile.addSubview(viewProfileImage)
+        
+        let pathimage = UIBezierPath()
+        pathimage.lineJoinStyle = .round
+        pathimage.move(to: CGPoint(x: 64, y: 0))
+        pathimage.addLine(to: CGPoint(x: 64, y: 60))
+        pathimage.addLine(to: CGPoint(x: 32, y: 85))
+        pathimage.addLine(to: CGPoint(x: 0, y: 60))
+        pathimage.addLine(to: CGPoint(x: 0, y: 0))
+        pathimage.close()
+        
+        let maskLayerImage = CAShapeLayer()
+        maskLayerImage.path = pathimage.cgPath
+        maskLayerImage.fillColor = UIColor.red.cgColor
+
+        // Setting the mask
+        imagelayer.mask = maskLayerImage
     }
     //MARK: For a Better Hike with SANTA
     func LabelSetHikeWithSANTA() {
@@ -100,7 +134,7 @@ class HomeViewController : BaseViewController {
             make.top.equalTo(view.snp.top).offset(233)
         }
     }
-    //MARK: SearchBar
+    //MARK: 어디로 갈까요?
     func searchButtonSet() {
         searchButton.backgroundColor = .mainColor
         searchButton.layer.cornerRadius = 25
@@ -134,11 +168,17 @@ class HomeViewController : BaseViewController {
         }
     }
     @objc func actionGoSearchView() {
-        print("click")
+        let nextVC = SearchViewController()
+        nextVC.modalPresentationStyle = .fullScreen
+        self.present(nextVC, animated: false, completion: nil)
     }
     //MARK: 내가 정복한 산
     func labelSetConquer() {
-        labelConquer.text = "내가 정복한 산"
+        if let mountainlabel = homeStatus
+        {
+            print(mountainlabel)
+            labelConquer.text = mountainlabel
+        }
         labelConquer.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 22)
         labelConquer.addCharacterSpacing(kernValue: -0.66)
         view.addSubview(labelConquer)
@@ -167,7 +207,10 @@ class HomeViewController : BaseViewController {
 
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if let mountainCell = mountain{
+            return mountainCell.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -178,6 +221,13 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             cell.layer.shadowOffset = CGSize(width: 2, height: 6)
             cell.layer.shadowRadius = 15
             cell.layer.shadowOpacity = 0.2
+            
+            if let mountainCell = mountain{
+                cell.labelMountainName.text = mountainCell[indexPath.row].mountainName
+                cell.labelName.text = mountainCell[indexPath.row].userName
+                cell.labelConquerNumberOfTimes.text = String(mountainCell[indexPath.row].flagCount) + "회"
+            }
+            
             return cell
         }
         return UICollectionViewCell()
@@ -186,6 +236,25 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 168, height: 212)
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
+    }
 }
 
+extension HomeViewController {
+    
+    func successDataReceive(_ result : DataResult) {
+        userIdx = result.userIdx
+        userImage = result.userImage
+        homeStatus = result.homeStatus
+        mountain = result.myflag?.mountain
+        self.carouselCollectionView.reloadData()
+    }
+    func failureDataReceive(_ message : String) {
+        print(message)
+    }
+}
 

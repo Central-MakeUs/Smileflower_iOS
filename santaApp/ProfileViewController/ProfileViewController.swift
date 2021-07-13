@@ -331,7 +331,14 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 40
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == collectionViewConquerMountain {
+            let nextVC = DetailPosteViewController()
+            nextVC.modalPresentationStyle = .fullScreen
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.present(nextVC, animated: true, completion: nil)
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == collectionViewConquerMountain {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConquerMountainCollectionViewCell.reuseIdentifier, for: indexPath) as? ConquerMountainCollectionViewCell {

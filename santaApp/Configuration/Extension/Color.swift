@@ -27,4 +27,5 @@ extension UIColor {
     class var titleColorGray: UIColor { UIColor(hex: 0x7C909B) }
     class var darkbluegray : UIColor { UIColor(hex: 0x1C3240)}
     class var bluegray : UIColor { UIColor(hex: 0x7c909b) }
+    class var lightbluegray : UIColor { UIColor(hex: 0xc1cad0)}
 }

@@ -121,7 +121,10 @@ class RankingMountainViewController: UIViewController {
            view.layoutIfNeeded()
        }
     @objc private func menuButtonAction(sender: UIButton) {
-        print("click")
+        let nextVC = StartViewController()
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
     }
     // MARK: 아래 시트 구현
     func viewSetBottomSheet() {
@@ -175,12 +178,26 @@ class RankingMountainViewController: UIViewController {
             let bottomPadding: CGFloat = view.safeAreaInsets.bottom
             bottomSheetViewTopConstraint.constant = (safeAreaHeight + bottomPadding) - defaultHeight
             UIView.animate(withDuration: 0.25) {
+                self.control.alpha = 1
+                if self.control.index == 0 {
+                    self.ViewControllerRanking.view.alpha = 1
+                }
+                else {
+                    self.ViewControllerMountain.view.alpha = 1
+                }
                 let newFrame = CGRect(x: UIScreen.main.bounds.maxX/2 - 88, y: 33, width: 176, height: 36)
                 self.control.frame = newFrame
             }
         } else {
             bottomSheetViewTopConstraint.constant = bottomSheetPanMinTopConstant
-            UIView.animate(withDuration: 0.7) {
+            UIView.animate(withDuration: 0.25) {
+                self.control.alpha = 1
+                if self.control.index == 0 {
+                    self.ViewControllerRanking.view.alpha = 1
+                }
+                else {
+                    self.ViewControllerMountain.view.alpha = 1
+                }
                 let newFrame = CGRect(x: UIScreen.main.bounds.maxX/2 - 88, y: 72, width: 176, height: 36)
                 self.control.frame = newFrame
             }
@@ -193,15 +210,20 @@ class RankingMountainViewController: UIViewController {
     // MARK: 시트 숨기기
     private func hideBottomSheet() {
         let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
-        bottomSheetViewTopConstraint.constant = safeAreaHeight - 10
+        bottomSheetViewTopConstraint.constant = safeAreaHeight - 30
         
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
-            self.ViewControllerRanking.view.alpha = 0
-            self.ViewControllerMountain.view.alpha = 0
+            self.control.alpha = 0
+            if self.control.index == 0 {
+                self.ViewControllerRanking.view.alpha = 0
+            }
+            else {
+                self.ViewControllerMountain.view.alpha = 0
+            }
         }) { _ in
             if self.presentingViewController != nil {
-                self.dismiss(animated: false, completion: nil)
+//                self.dismiss(animated: false, completion: nil)
             }
         }
     }

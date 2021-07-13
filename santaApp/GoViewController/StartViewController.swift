@@ -46,7 +46,9 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
         view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
-        self.dismiss(animated: true, completion: nil)
+        let vc = BaseTabbarController()
+        vc.index = 2
+        self.changeRootViewController(vc)
     }
     // MARK: 산 이름
     func labelSetMountainName() {

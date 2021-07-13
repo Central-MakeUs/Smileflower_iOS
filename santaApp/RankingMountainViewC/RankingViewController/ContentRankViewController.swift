@@ -250,7 +250,7 @@ class ContentRankViewController: UIViewController {
         labelUserTimes.textColor = .white
         viewMyGrade.addSubview(labelUserTimes)
         labelUserTimes.snp.makeConstraints { make in
-            make.trailing.equalTo(viewMyGrade.snp.trailing).offset(-9.4)
+            make.trailing.equalTo(viewMyGrade.snp.trailing).offset(-42.5)
             make.centerY.equalTo(labelUserName.snp.centerY)
             make.width.equalTo(43.5)
             make.height.equalTo(16)
@@ -266,10 +266,31 @@ class ContentRankViewController: UIViewController {
         viewMyGrade.addSubview(labelUserlatest)
         labelUserlatest.snp.makeConstraints { make in
             make.bottom.equalTo(labelUserTimes.snp.top).offset(-2.2)
-            make.trailing.equalTo(viewMyGrade.snp.trailing).offset(-12.7)
+            make.trailing.equalTo(viewMyGrade.snp.trailing).offset(-45.7)
             make.width.equalTo(37)
             make.height.equalTo(13)
         }
+        let buttonGoMyProfile = UIButton()
+        buttonGoMyProfile.addTarget(self, action: #selector(actionGoMyProfile), for: .touchUpInside)
+        viewMyGrade.addSubview(buttonGoMyProfile)
+        buttonGoMyProfile.snp.makeConstraints { make in
+            make.edges.equalTo(viewMyGrade)
+        }
+        let imageViewChevron = UIImageView()
+        imageViewChevron.image = UIImage(systemName: "chevron.right")
+        imageViewChevron.tintColor = .white
+        viewMyGrade.addSubview(imageViewChevron)
+        imageViewChevron.snp.makeConstraints { make in
+            make.centerY.equalTo(viewMyGrade)
+            make.trailing.equalTo(-16)
+            make.width.equalTo(10)
+            make.height.equalTo(15)
+        }
+    }
+    @objc func actionGoMyProfile() {
+        let nextVC = BaseTabbarController()
+        nextVC.index = 3
+        self.changeRootViewController(nextVC)
     }
 }
 // MARK: 테이블뷰 구현

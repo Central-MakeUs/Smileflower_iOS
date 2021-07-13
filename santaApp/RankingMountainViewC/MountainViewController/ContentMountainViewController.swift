@@ -15,6 +15,7 @@ class ContentMountainViewController: UIViewController {
         super.viewDidLoad()
         registerTableView()
     }
+
     //MARK: 테이블뷰 등록
     func registerTableView() {
         contentTableView.delegate = self

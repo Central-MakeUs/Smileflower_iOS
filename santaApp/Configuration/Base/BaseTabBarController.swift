@@ -19,7 +19,8 @@ class BaseTabbarController : UITabBarController, UITabBarControllerDelegate {
     let selectTabBarItem = UITabBarItem(title: .none, image: .none, tag: 2)
     let profileTabBarItem = UITabBarItem(title: "프로필", image: UIImage(named: "person@3x"), tag: 3)
     let settingTabBarItem = UITabBarItem(title: "설정", image: UIImage(named: "setting@3x"), tag: 4)
-    
+
+    var index : Int = 0
     // MARK: 가운데 버튼
     func setupMiddleButton() {
            let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 82, height: 82))
@@ -49,6 +50,9 @@ class BaseTabbarController : UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         SetUpTabbarView()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.selectedIndex = index
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

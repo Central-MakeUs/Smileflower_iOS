@@ -8,7 +8,7 @@
 import UIKit
 import MobileCoreServices
 
-class EndViewController : BaseViewController {
+class EndViewController : BaseViewController, UINavigationBarDelegate {
     let buttonEnd = UIButton()
     let picker = UIImagePickerController()
     var flagImageSave = false
@@ -19,9 +19,36 @@ class EndViewController : BaseViewController {
         super.viewDidLoad()
         view.setGradient(color1: UIColor(hex:0x24C7B9) , color2: UIColor(hex: 0x9AC7FF))
         picker.delegate = self
+        navigationBarSet()
         buttonSetEnd()
     }
-    
+    // MARK: 네비게이션 바
+    lazy var leftButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
+        button.tag = 1
+        button.tintColor = .white
+        return button
+        
+    }()
+    func navigationBarSet() {
+        let height: CGFloat = 75
+        let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
+        navbar.backgroundColor = UIColor.clear
+        navbar.delegate = self
+
+        let navItem = UINavigationItem()
+        navItem.leftBarButtonItem = self.leftButton
+        navbar.items = [navItem]
+        navbar.setBackgroundImage(UIImage(), for: .default)
+        navbar.shadowImage = UIImage()
+        navbar.layoutIfNeeded()
+        view.addSubview(navbar)
+    }
+    @objc func actionBackButton(_ sender : Any) {
+        let vc = BaseTabbarController()
+        vc.index = 2
+        self.changeRootViewController(vc)
+    }
     // MARK: 도착버튼
     func buttonSetEnd() {
     buttonEnd.backgroundColor = .black

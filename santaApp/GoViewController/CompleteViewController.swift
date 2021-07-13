@@ -121,7 +121,10 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
         buttonGoConquerMountainView.layer.cornerRadius = 25
     }
     @objc func actionGoConquerMountainView() {
-        print("click")
+        let nextVC = DetailPosteViewController()
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
     }
     
     // MARK: 최하단 랭킹 뷰
