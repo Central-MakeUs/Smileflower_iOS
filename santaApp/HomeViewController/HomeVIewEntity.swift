@@ -14,7 +14,7 @@ struct HomeViewEntity : Decodable {
 
 struct DataResult : Decodable {
     var userIdx : Int
-    var userImage : String
+    var userImage : String?
     var homeStatus : String
     var myflag : DataMyFlag?
 }

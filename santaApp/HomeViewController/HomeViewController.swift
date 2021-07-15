@@ -12,9 +12,7 @@ import NVActivityIndicatorView
 class HomeViewController : BaseViewController {
     let labelHikeWithSANTA = UILabel()
     let labelConquer = UILabel()
-    
     let searchButton = UIButton()
-
     let viewProfile = UIView(frame: CGRect(x: 35, y: 126, width: 74, height: 97))
     
     //MARK: 가져올 데이터 변수들
@@ -55,7 +53,6 @@ class HomeViewController : BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setindicator()
-        print(indicator.isAnimating)
         navigationBarSetLogo()
         imageViewSetBackground()
         LabelSetHikeWithSANTA()
@@ -125,7 +122,7 @@ class HomeViewController : BaseViewController {
         imageViewProfile.snp.makeConstraints { make in
             make.edges.equalTo(viewProfile.snp.edges)
         }
-        imageViewUserProfile.image = UIImage(named: "그라데이션")
+        imageViewUserProfile.image = UIImage(named: "1031@3x")
         viewProfile.addSubview(imageViewUserProfile)
         imageViewUserProfile.snp.makeConstraints { make in
             make.centerX.equalTo(viewProfile.snp.centerX).offset(-1)

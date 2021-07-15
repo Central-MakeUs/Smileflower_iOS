@@ -37,6 +37,16 @@
 		28810B082697111D008F0FE3 /* UserResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */; };
 		28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0B2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift */; };
 		28822865269E0DBF000B2EAA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28822864269E0DBF000B2EAA /* SignUpViewController.swift */; };
+		28822868269F4690000B2EAA /* CheckNicnameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28822867269F4690000B2EAA /* CheckNicnameEntity.swift */; };
+		2882286A269F46AB000B2EAA /* CheckNicnameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28822869269F46AB000B2EAA /* CheckNicnameDataManager.swift */; };
+		2882286C269F48BB000B2EAA /* CheckNicnameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882286B269F48BB000B2EAA /* CheckNicnameInput.swift */; };
+		2882287026A047E5000B2EAA /* CompleteSignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882286F26A047E5000B2EAA /* CompleteSignUpEntity.swift */; };
+		2882287226A047F4000B2EAA /* CompleteSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287126A047F4000B2EAA /* CompleteSignUpDataManager.swift */; };
+		2882287426A048D4000B2EAA /* CompleteSignUpInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287326A048D4000B2EAA /* CompleteSignUpInput.swift */; };
+		2882287626A05C36000B2EAA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287526A05C36000B2EAA /* SignInViewController.swift */; };
+		2882287926A06106000B2EAA /* SignInViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287826A06106000B2EAA /* SignInViewControllerInput.swift */; };
+		2882287B26A06115000B2EAA /* SignInViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287A26A06115000B2EAA /* SignInViewControllerEntity.swift */; };
+		2882287D26A06129000B2EAA /* SignInViewControllerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287C26A06129000B2EAA /* SignInViewControllerDataManager.swift */; };
 		28827C67268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
 		28827C68268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
 		28827C69268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
@@ -127,6 +137,16 @@
 		28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		28810B0B2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeMountainCollectionViewCell.swift; sourceTree = "<group>"; };
 		28822864269E0DBF000B2EAA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		28822867269F4690000B2EAA /* CheckNicnameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNicnameEntity.swift; sourceTree = "<group>"; };
+		28822869269F46AB000B2EAA /* CheckNicnameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNicnameDataManager.swift; sourceTree = "<group>"; };
+		2882286B269F48BB000B2EAA /* CheckNicnameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNicnameInput.swift; sourceTree = "<group>"; };
+		2882286F26A047E5000B2EAA /* CompleteSignUpEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpEntity.swift; sourceTree = "<group>"; };
+		2882287126A047F4000B2EAA /* CompleteSignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpDataManager.swift; sourceTree = "<group>"; };
+		2882287326A048D4000B2EAA /* CompleteSignUpInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSignUpInput.swift; sourceTree = "<group>"; };
+		2882287526A05C36000B2EAA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		2882287826A06106000B2EAA /* SignInViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerInput.swift; sourceTree = "<group>"; };
+		2882287A26A06115000B2EAA /* SignInViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerEntity.swift; sourceTree = "<group>"; };
+		2882287C26A06129000B2EAA /* SignInViewControllerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerDataManager.swift; sourceTree = "<group>"; };
 		28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeo.ttc; path = "../../../../../../Downloads/산타앱_폰트/AppleSDGothicNeo.ttc"; sourceTree = "<group>"; };
 		28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cocogoose Pro-trial.ttf"; path = "../../../../../../Downloads/산타앱_폰트/Cocogoose Pro-trial.ttf"; sourceTree = "<group>"; };
 		2890263E268F286E00D15BBA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -310,8 +330,11 @@
 		2813D835268B72A100822337 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2882287726A060E6000B2EAA /* SignInVIewControllerApi */,
+				28822866269F465D000B2EAA /* SignUpViewControllerAPI */,
 				2813D836268B72B900822337 /* LoginViewController.swift */,
 				28822864269E0DBF000B2EAA /* SignUpViewController.swift */,
+				2882287526A05C36000B2EAA /* SignInViewController.swift */,
 			);
 			path = LoginViewController;
 			sourceTree = "<group>";
@@ -381,6 +404,45 @@
 				2817F866269586CE004F39EC /* CourseTableViewCell.swift */,
 			);
 			path = CourseTableViewCell;
+			sourceTree = "<group>";
+		};
+		28822866269F465D000B2EAA /* SignUpViewControllerAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2882286E26A047C8000B2EAA /* CompleteSignUpAPI */,
+				2882286D26A047BA000B2EAA /* CheckNicnameAPI */,
+			);
+			path = SignUpViewControllerAPI;
+			sourceTree = "<group>";
+		};
+		2882286D26A047BA000B2EAA /* CheckNicnameAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28822867269F4690000B2EAA /* CheckNicnameEntity.swift */,
+				28822869269F46AB000B2EAA /* CheckNicnameDataManager.swift */,
+				2882286B269F48BB000B2EAA /* CheckNicnameInput.swift */,
+			);
+			path = CheckNicnameAPI;
+			sourceTree = "<group>";
+		};
+		2882286E26A047C8000B2EAA /* CompleteSignUpAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2882286F26A047E5000B2EAA /* CompleteSignUpEntity.swift */,
+				2882287126A047F4000B2EAA /* CompleteSignUpDataManager.swift */,
+				2882287326A048D4000B2EAA /* CompleteSignUpInput.swift */,
+			);
+			path = CompleteSignUpAPI;
+			sourceTree = "<group>";
+		};
+		2882287726A060E6000B2EAA /* SignInVIewControllerApi */ = {
+			isa = PBXGroup;
+			children = (
+				2882287826A06106000B2EAA /* SignInViewControllerInput.swift */,
+				2882287A26A06115000B2EAA /* SignInViewControllerEntity.swift */,
+				2882287C26A06129000B2EAA /* SignInViewControllerDataManager.swift */,
+			);
+			path = SignInVIewControllerApi;
 			sourceTree = "<group>";
 		};
 		28B873C5269CD4950097E46F /* GoViewControllerAPI */ = {
@@ -721,6 +783,7 @@
 				28F41B51269A44410007EEA6 /* LatestSearchCollectionViewCell.swift in Sources */,
 				28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */,
 				283047EA268D942F00DEB2EC /* ConquerCollectionViewCell.swift in Sources */,
+				2882287D26A06129000B2EAA /* SignInViewControllerDataManager.swift in Sources */,
 				28822865269E0DBF000B2EAA /* SignUpViewController.swift in Sources */,
 				2813D837268B72B900822337 /* LoginViewController.swift in Sources */,
 				28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */,
@@ -732,6 +795,7 @@
 				28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */,
 				28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */,
 				286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */,
+				2882287026A047E5000B2EAA /* CompleteSignUpEntity.swift in Sources */,
 				28B873C2269CAFA10097E46F /* HomeVIewEntity.swift in Sources */,
 				289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */,
 				28139FC92698A3F30091DFCD /* SearchViewController.swift in Sources */,
@@ -747,6 +811,8 @@
 				28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */,
 				2817F8622694B77E004F39EC /* pathView.swift in Sources */,
 				2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */,
+				2882287B26A06115000B2EAA /* SignInViewControllerEntity.swift in Sources */,
+				2882287926A06106000B2EAA /* SignInViewControllerInput.swift in Sources */,
 				2817F8642694D20A004F39EC /* ConquerViewController.swift in Sources */,
 				28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */,
 				28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */,
@@ -759,11 +825,17 @@
 				28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */,
 				28D4C24D268A2D9F0056EECF /* ProfileViewController.swift in Sources */,
 				2875D2F4269864FF00180300 /* DetailPosteViewController.swift in Sources */,
+				2882286A269F46AB000B2EAA /* CheckNicnameDataManager.swift in Sources */,
 				28119B69268A27F5002ABFA9 /* Constant.swift in Sources */,
+				28822868269F4690000B2EAA /* CheckNicnameEntity.swift in Sources */,
 				28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */,
+				2882287626A05C36000B2EAA /* SignInViewController.swift in Sources */,
 				28810B082697111D008F0FE3 /* UserResultCollectionViewCell.swift in Sources */,
 				28F41B53269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift in Sources */,
+				2882287226A047F4000B2EAA /* CompleteSignUpDataManager.swift in Sources */,
 				28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */,
+				2882287426A048D4000B2EAA /* CompleteSignUpInput.swift in Sources */,
+				2882286C269F48BB000B2EAA /* CheckNicnameInput.swift in Sources */,
 				28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */,
 				28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */,
 				2817F867269586CE004F39EC /* CourseTableViewCell.swift in Sources */,

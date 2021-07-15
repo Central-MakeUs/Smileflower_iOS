@@ -129,8 +129,14 @@ class LoginViewController : BaseViewController {
             make.width.equalTo(buttonCreatID)
             make.top.equalTo(buttonCreatID.snp.bottom).offset(11)
         }
+        buttonLoginID.addTarget(self, action: #selector(actionGoSignIn), for: .touchUpInside)
     }
-
+    @objc func actionGoSignIn() {
+        let nextVC = SignInViewController()
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
+    }
 //    // MARK:  - 카카오톡로그인버튼
 //    func buttonSetKakaoLogin() {
 //        let labelKakaoLogin = UILabel()
