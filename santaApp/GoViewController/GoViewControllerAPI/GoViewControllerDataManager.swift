@@ -13,13 +13,13 @@ class GoViewControllerDataManager {
         let parameters : Parameters = [ "mountain" : mountainName]
         AF.request(Constant.TestURL + "/app/flags", method: .get, parameters: parameters, headers: headers).validate().responseDecodable(of: GoViewControllerEntity.self) { response in
             switch response.result {
-            case .success(let result):
-                if result.isSuccess {
-                    viewcontroller.successDataMountain()
+            case .success(let response):
+                if response.isSuccess, let result = response.result{
+                    viewcontroller.successDataMountain(result)
                     print("성공")
                 }
                 else {
-                    viewcontroller.failureNoDataMountain(result.message)
+                    viewcontroller.failureNoDataMountain(response.message)
                 }
             case .failure(let errror) :
                 viewcontroller.failureNoDataMountain("네트워크가 연결되어 있지 않습니다.")

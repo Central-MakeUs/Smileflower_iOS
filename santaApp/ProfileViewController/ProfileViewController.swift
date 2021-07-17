@@ -117,7 +117,7 @@ class ProfileViewController : BaseViewController {
             make.centerX.equalTo(viewContent.snp.centerX)
             make.width.equalTo(156)
         }
-        imageViewUserProfile.image = UIImage(named: "1083@3x")
+        imageViewUserProfile.image = UIImage(named: "1246@3x")
         imageViewUserProfile.contentMode = .scaleAspectFill
         viewUser.addSubview(imageViewUserProfile)
         imageViewUserProfile.clipsToBounds = true
@@ -417,6 +417,8 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageViewUserProfile.image = image
         }
-        dismiss(animated: true, completion: nil)
+        let nextVC = BaseTabbarController()
+        nextVC.index = 3
+        self.changeRootViewController(nextVC)
     }
 }

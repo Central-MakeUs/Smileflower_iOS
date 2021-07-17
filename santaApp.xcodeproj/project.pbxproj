@@ -27,6 +27,12 @@
 		2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */; };
 		28645186268C98A5009F3608 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
 		286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286966F62692E35E0025A250 /* RankingMountainViewController.swift */; };
+		2871B45D26A317A600F32165 /* MountainLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B45C26A317A600F32165 /* MountainLikeEntity.swift */; };
+		2871B45F26A31AD200F32165 /* MountainLikeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B45E26A31AD200F32165 /* MountainLikeDataManager.swift */; };
+		2871B46126A31E3400F32165 /* MountainPicksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46026A31E3400F32165 /* MountainPicksEntity.swift */; };
+		2871B46326A31F2700F32165 /* MountainPicksDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46226A31F2700F32165 /* MountainPicksDataManager.swift */; };
+		2871B46626A3277900F32165 /* MapPositionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46526A3277900F32165 /* MapPositionEntity.swift */; };
+		2871B46826A3280900F32165 /* MapPositionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46726A3280900F32165 /* MapPositionDataManager.swift */; };
 		2875D2F4269864FF00180300 /* DetailPosteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2875D2F3269864FF00180300 /* DetailPosteViewController.swift */; };
 		28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */; };
 		28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */; };
@@ -47,6 +53,16 @@
 		2882287926A06106000B2EAA /* SignInViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287826A06106000B2EAA /* SignInViewControllerInput.swift */; };
 		2882287B26A06115000B2EAA /* SignInViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287A26A06115000B2EAA /* SignInViewControllerEntity.swift */; };
 		2882287D26A06129000B2EAA /* SignInViewControllerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287C26A06129000B2EAA /* SignInViewControllerDataManager.swift */; };
+		2882288026A0794A000B2EAA /* EndViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287F26A0794A000B2EAA /* EndViewControllerEntity.swift */; };
+		2882288226A07956000B2EAA /* EndViewControllerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288126A07956000B2EAA /* EndViewControllerDataManager.swift */; };
+		2882288426A07964000B2EAA /* EndViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288326A07964000B2EAA /* EndViewControllerInput.swift */; };
+		2882288826A09F87000B2EAA /* AutoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288726A09F87000B2EAA /* AutoLoginDataManager.swift */; };
+		2882288A26A0A0B3000B2EAA /* AutoLoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288926A0A0B3000B2EAA /* AutoLoginEntity.swift */; };
+		2882288C26A0B263000B2EAA /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288B26A0B263000B2EAA /* UserTableViewCell.swift */; };
+		2882288E26A0B6D4000B2EAA /* VersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288D26A0B6D4000B2EAA /* VersionTableViewCell.swift */; };
+		2882289026A0B6F7000B2EAA /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288F26A0B6F7000B2EAA /* LogoutTableViewCell.swift */; };
+		2882289326A0BF78000B2EAA /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289226A0BF78000B2EAA /* LogoutEntity.swift */; };
+		2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289426A0C04C000B2EAA /* LogoutDataManager.swift */; };
 		28827C67268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
 		28827C68268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
 		28827C69268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
@@ -73,8 +89,9 @@
 		28D4C24D268A2D9F0056EECF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */; };
 		28D4C24F268A2DDC0056EECF /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C24E268A2DDC0056EECF /* SetupViewController.swift */; };
 		28D4C251268A30800056EECF /* UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C250268A30800056EECF /* UiViewController.swift */; };
+		28DB5E0A26A1B9C50092CC40 /* MountainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB5E0926A1B9C50092CC40 /* MountainEntity.swift */; };
+		28DB5E0C26A1BA6B0092CC40 /* MountainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB5E0B26A1BA6B0092CC40 /* MountainDataManager.swift */; };
 		28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E81B44268CC0E000B537A5 /* UILabel.swift */; };
-		28F41B51269A44410007EEA6 /* LatestSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F41B50269A44410007EEA6 /* LatestSearchCollectionViewCell.swift */; };
 		28F41B53269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */; };
 		304761CC34CA9C3440DAC9F3 /* Pods_santaApp_santaAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */; };
 		8B9AC9B6DBEC5526DC7DB9A3 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
@@ -127,6 +144,12 @@
 		2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewControllerEntity.swift; sourceTree = "<group>"; };
 		28645185268C98A5009F3608 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		286966F62692E35E0025A250 /* RankingMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingMountainViewController.swift; sourceTree = "<group>"; };
+		2871B45C26A317A600F32165 /* MountainLikeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainLikeEntity.swift; sourceTree = "<group>"; };
+		2871B45E26A31AD200F32165 /* MountainLikeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainLikeDataManager.swift; sourceTree = "<group>"; };
+		2871B46026A31E3400F32165 /* MountainPicksEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPicksEntity.swift; sourceTree = "<group>"; };
+		2871B46226A31F2700F32165 /* MountainPicksDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPicksDataManager.swift; sourceTree = "<group>"; };
+		2871B46526A3277900F32165 /* MapPositionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPositionEntity.swift; sourceTree = "<group>"; };
+		2871B46726A3280900F32165 /* MapPositionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPositionDataManager.swift; sourceTree = "<group>"; };
 		2875D2F3269864FF00180300 /* DetailPosteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPosteViewController.swift; sourceTree = "<group>"; };
 		28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainImageTableViewCell.swift; sourceTree = "<group>"; };
 		28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPositionTableViewCell.swift; sourceTree = "<group>"; };
@@ -147,6 +170,16 @@
 		2882287826A06106000B2EAA /* SignInViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerInput.swift; sourceTree = "<group>"; };
 		2882287A26A06115000B2EAA /* SignInViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerEntity.swift; sourceTree = "<group>"; };
 		2882287C26A06129000B2EAA /* SignInViewControllerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerDataManager.swift; sourceTree = "<group>"; };
+		2882287F26A0794A000B2EAA /* EndViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewControllerEntity.swift; sourceTree = "<group>"; };
+		2882288126A07956000B2EAA /* EndViewControllerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewControllerDataManager.swift; sourceTree = "<group>"; };
+		2882288326A07964000B2EAA /* EndViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewControllerInput.swift; sourceTree = "<group>"; };
+		2882288726A09F87000B2EAA /* AutoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginDataManager.swift; sourceTree = "<group>"; };
+		2882288926A0A0B3000B2EAA /* AutoLoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginEntity.swift; sourceTree = "<group>"; };
+		2882288B26A0B263000B2EAA /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		2882288D26A0B6D4000B2EAA /* VersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionTableViewCell.swift; sourceTree = "<group>"; };
+		2882288F26A0B6F7000B2EAA /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
+		2882289226A0BF78000B2EAA /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
+		2882289426A0C04C000B2EAA /* LogoutDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutDataManager.swift; sourceTree = "<group>"; };
 		28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeo.ttc; path = "../../../../../../Downloads/산타앱_폰트/AppleSDGothicNeo.ttc"; sourceTree = "<group>"; };
 		28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cocogoose Pro-trial.ttf"; path = "../../../../../../Downloads/산타앱_폰트/Cocogoose Pro-trial.ttf"; sourceTree = "<group>"; };
 		2890263E268F286E00D15BBA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -169,8 +202,9 @@
 		28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		28D4C24E268A2DDC0056EECF /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		28D4C250268A30800056EECF /* UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewController.swift; sourceTree = "<group>"; };
+		28DB5E0926A1B9C50092CC40 /* MountainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainEntity.swift; sourceTree = "<group>"; };
+		28DB5E0B26A1BA6B0092CC40 /* MountainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainDataManager.swift; sourceTree = "<group>"; };
 		28E81B44268CC0E000B537A5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
-		28F41B50269A44410007EEA6 /* LatestSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendMountainCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FF4A2762B2EE01585E42D55 /* Pods-santaApp-santaAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp-santaAppUITests.release.xcconfig"; path = "Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp_santaAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -320,8 +354,9 @@
 		28139FC72698A3D70091DFCD /* SearchViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2871B45B26A3169500F32165 /* MountainLikeApi */,
+				28DB5E0826A1B9AD0092CC40 /* MountainApi */,
 				28139FC82698A3F30091DFCD /* SearchViewController.swift */,
-				28F41B50269A44410007EEA6 /* LatestSearchCollectionViewCell.swift */,
 				28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */,
 			);
 			path = SearchViewController;
@@ -380,12 +415,31 @@
 		286966F82692E6410025A250 /* RankingMountainViewC */ = {
 			isa = PBXGroup;
 			children = (
+				2871B46426A3275E00F32165 /* MapPositionAPI */,
 				2817F86526958629004F39EC /* MountainViewController */,
 				282FD6FD2694AF3E00B38602 /* RankingViewController */,
 				286966F62692E35E0025A250 /* RankingMountainViewController.swift */,
 				2817F8612694B77E004F39EC /* pathView.swift */,
 			);
 			path = RankingMountainViewC;
+			sourceTree = "<group>";
+		};
+		2871B45B26A3169500F32165 /* MountainLikeApi */ = {
+			isa = PBXGroup;
+			children = (
+				2871B45C26A317A600F32165 /* MountainLikeEntity.swift */,
+				2871B45E26A31AD200F32165 /* MountainLikeDataManager.swift */,
+			);
+			path = MountainLikeApi;
+			sourceTree = "<group>";
+		};
+		2871B46426A3275E00F32165 /* MapPositionAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2871B46526A3277900F32165 /* MapPositionEntity.swift */,
+				2871B46726A3280900F32165 /* MapPositionDataManager.swift */,
+			);
+			path = MapPositionAPI;
 			sourceTree = "<group>";
 		};
 		2875D2F2269864E600180300 /* DetailPostViewController */ = {
@@ -445,6 +499,25 @@
 			path = SignInVIewControllerApi;
 			sourceTree = "<group>";
 		};
+		2882287E26A0792C000B2EAA /* EndViewControllerAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2882288326A07964000B2EAA /* EndViewControllerInput.swift */,
+				2882287F26A0794A000B2EAA /* EndViewControllerEntity.swift */,
+				2882288126A07956000B2EAA /* EndViewControllerDataManager.swift */,
+			);
+			path = EndViewControllerAPI;
+			sourceTree = "<group>";
+		};
+		2882289126A0BF61000B2EAA /* LogoutApi */ = {
+			isa = PBXGroup;
+			children = (
+				2882289226A0BF78000B2EAA /* LogoutEntity.swift */,
+				2882289426A0C04C000B2EAA /* LogoutDataManager.swift */,
+			);
+			path = LogoutApi;
+			sourceTree = "<group>";
+		};
 		28B873C5269CD4950097E46F /* GoViewControllerAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +531,8 @@
 			isa = PBXGroup;
 			children = (
 				28D4C23C268A2A1D0056EECF /* SplashViewController.swift */,
+				2882288726A09F87000B2EAA /* AutoLoginDataManager.swift */,
+				2882288926A0A0B3000B2EAA /* AutoLoginEntity.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -478,6 +553,8 @@
 			children = (
 				28D4C247268A2D290056EECF /* PickMountainViewController.swift */,
 				28810B0B2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift */,
+				2871B46026A31E3400F32165 /* MountainPicksEntity.swift */,
+				2871B46226A31F2700F32165 /* MountainPicksDataManager.swift */,
 			);
 			path = PickMountainController;
 			sourceTree = "<group>";
@@ -489,6 +566,7 @@
 				28B873C5269CD4950097E46F /* GoViewControllerAPI */,
 				283047EE268E2B7700DEB2EC /* StartViewController.swift */,
 				283047F0268E3CAB00DEB2EC /* EndViewController.swift */,
+				2882287E26A0792C000B2EAA /* EndViewControllerAPI */,
 				2817F8632694D20A004F39EC /* ConquerViewController.swift */,
 				289656F6268F58EE00B23E8F /* CompleteViewController.swift */,
 			);
@@ -509,9 +587,22 @@
 		28D4C244268A2CB50056EECF /* SetupViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2882289126A0BF61000B2EAA /* LogoutApi */,
 				28D4C24E268A2DDC0056EECF /* SetupViewController.swift */,
+				2882288B26A0B263000B2EAA /* UserTableViewCell.swift */,
+				2882288D26A0B6D4000B2EAA /* VersionTableViewCell.swift */,
+				2882288F26A0B6F7000B2EAA /* LogoutTableViewCell.swift */,
 			);
 			path = SetupViewController;
+			sourceTree = "<group>";
+		};
+		28DB5E0826A1B9AD0092CC40 /* MountainApi */ = {
+			isa = PBXGroup;
+			children = (
+				28DB5E0926A1B9C50092CC40 /* MountainEntity.swift */,
+				28DB5E0B26A1BA6B0092CC40 /* MountainDataManager.swift */,
+			);
+			path = MountainApi;
 			sourceTree = "<group>";
 		};
 		437E0B1031C5812CCADCA371 /* Pods */ = {
@@ -780,10 +871,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */,
-				28F41B51269A44410007EEA6 /* LatestSearchCollectionViewCell.swift in Sources */,
+				2882289026A0B6F7000B2EAA /* LogoutTableViewCell.swift in Sources */,
 				28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */,
 				283047EA268D942F00DEB2EC /* ConquerCollectionViewCell.swift in Sources */,
+				2871B45F26A31AD200F32165 /* MountainLikeDataManager.swift in Sources */,
 				2882287D26A06129000B2EAA /* SignInViewControllerDataManager.swift in Sources */,
+				2871B46626A3277900F32165 /* MapPositionEntity.swift in Sources */,
 				28822865269E0DBF000B2EAA /* SignUpViewController.swift in Sources */,
 				2813D837268B72B900822337 /* LoginViewController.swift in Sources */,
 				28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */,
@@ -791,16 +884,20 @@
 				28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */,
 				28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */,
 				28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */,
+				2882288426A07964000B2EAA /* EndViewControllerInput.swift in Sources */,
 				283047EF268E2B7700DEB2EC /* StartViewController.swift in Sources */,
 				28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */,
 				28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */,
 				286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */,
+				28DB5E0C26A1BA6B0092CC40 /* MountainDataManager.swift in Sources */,
 				2882287026A047E5000B2EAA /* CompleteSignUpEntity.swift in Sources */,
 				28B873C2269CAFA10097E46F /* HomeVIewEntity.swift in Sources */,
 				289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */,
 				28139FC92698A3F30091DFCD /* SearchViewController.swift in Sources */,
 				28D4C248268A2D290056EECF /* PickMountainViewController.swift in Sources */,
+				2871B46826A3280900F32165 /* MapPositionDataManager.swift in Sources */,
 				28B873C0269CAF940097E46F /* HomeVIewDataManager.swift in Sources */,
+				2871B45D26A317A600F32165 /* MountainLikeEntity.swift in Sources */,
 				28645186268C98A5009F3608 /* Color.swift in Sources */,
 				28810B0626970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift in Sources */,
 				28B873C9269CD4C70097E46F /* GoViewControllerDataManager.swift in Sources */,
@@ -815,27 +912,38 @@
 				2882287926A06106000B2EAA /* SignInViewControllerInput.swift in Sources */,
 				2817F8642694D20A004F39EC /* ConquerViewController.swift in Sources */,
 				28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */,
+				2882288226A07956000B2EAA /* EndViewControllerDataManager.swift in Sources */,
 				28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */,
 				282FD6FC2694AD6B00B38602 /* ContentMountainViewController.swift in Sources */,
 				28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */,
 				28D4C251268A30800056EECF /* UiViewController.swift in Sources */,
 				28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */,
+				2882288026A0794A000B2EAA /* EndViewControllerEntity.swift in Sources */,
 				2890263F268F286E00D15BBA /* UIView.swift in Sources */,
 				28D4C246268A2CEB0056EECF /* HomeViewController.swift in Sources */,
+				2882288C26A0B263000B2EAA /* UserTableViewCell.swift in Sources */,
 				28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */,
+				2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */,
 				28D4C24D268A2D9F0056EECF /* ProfileViewController.swift in Sources */,
 				2875D2F4269864FF00180300 /* DetailPosteViewController.swift in Sources */,
 				2882286A269F46AB000B2EAA /* CheckNicnameDataManager.swift in Sources */,
 				28119B69268A27F5002ABFA9 /* Constant.swift in Sources */,
 				28822868269F4690000B2EAA /* CheckNicnameEntity.swift in Sources */,
+				2882288A26A0A0B3000B2EAA /* AutoLoginEntity.swift in Sources */,
 				28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */,
 				2882287626A05C36000B2EAA /* SignInViewController.swift in Sources */,
+				28DB5E0A26A1B9C50092CC40 /* MountainEntity.swift in Sources */,
 				28810B082697111D008F0FE3 /* UserResultCollectionViewCell.swift in Sources */,
 				28F41B53269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift in Sources */,
 				2882287226A047F4000B2EAA /* CompleteSignUpDataManager.swift in Sources */,
+				2871B46126A31E3400F32165 /* MountainPicksEntity.swift in Sources */,
+				2882288E26A0B6D4000B2EAA /* VersionTableViewCell.swift in Sources */,
+				2882289326A0BF78000B2EAA /* LogoutEntity.swift in Sources */,
 				28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */,
 				2882287426A048D4000B2EAA /* CompleteSignUpInput.swift in Sources */,
+				2871B46326A31F2700F32165 /* MountainPicksDataManager.swift in Sources */,
 				2882286C269F48BB000B2EAA /* CheckNicnameInput.swift in Sources */,
+				2882288826A09F87000B2EAA /* AutoLoginDataManager.swift in Sources */,
 				28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */,
 				28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */,
 				2817F867269586CE004F39EC /* CourseTableViewCell.swift in Sources */,

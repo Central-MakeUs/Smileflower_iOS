@@ -103,8 +103,9 @@ class GoViewController : BaseViewController, UISearchBarDelegate {
 }
 
 extension GoViewController {
-    func successDataMountain() {
+    func successDataMountain(_ result : GoViewControllerEntityResult) {
         let nextVC = StartViewController()
+        nextVC.mountainIdx = result.mountainIdx
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         nextVC.labelMountainName.text = searchBar.text

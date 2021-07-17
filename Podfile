@@ -11,6 +11,7 @@ target 'santaApp' do
   pod 'KakaoSDK'
   pod 'BetterSegmentedControl', '~> 1.3'
   pod 'NVActivityIndicatorView'
+  pod 'Kingfisher'
 
   target 'santaAppTests' do
     inherit! :search_paths

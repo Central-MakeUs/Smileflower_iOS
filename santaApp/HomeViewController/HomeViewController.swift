@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import NVActivityIndicatorView
+import Kingfisher
 
 class HomeViewController : BaseViewController {
     let labelHikeWithSANTA = UILabel()
@@ -34,25 +35,25 @@ class HomeViewController : BaseViewController {
     }()
     
     //MARK: 인디케이털
-    let indicator = NVActivityIndicatorView(frame: CGRect(x: UIScreen.main.bounds.width/2 - 35, y: UIScreen.main.bounds.height/2 - 35, width: 70, height: 70), type: .ballScale, color: .mainColor, padding: 10)
-    let indicatorView = UIView()
-    
-    func setindicator() {
-        indicatorView.backgroundColor = .black
-        indicatorView.alpha = 0.7
-        self.view.addSubview(indicatorView)
-        indicatorView.snp.makeConstraints { make in
-            make.edges.equalTo(view)
-        }
-        indicatorView.layer.zPosition = 99
-        self.view.addSubview(self.indicator)
-        indicator.layer.zPosition = 999
-        indicator.startAnimating()
-    }
+//    let indicator = NVActivityIndicatorView(frame: CGRect(x: UIScreen.main.bounds.width/2 - 35, y: UIScreen.main.bounds.height/2 - 35, width: 70, height: 70), type: .ballScale, color: .mainColor, padding: 10)
+//    let indicatorView = UIView()
+//
+//    func setindicator() {
+//        indicatorView.backgroundColor = .black
+//        indicatorView.alpha = 0.7
+//        self.view.addSubview(indicatorView)
+//        indicatorView.snp.makeConstraints { make in
+//            make.edges.equalTo(view)
+//        }
+//        indicatorView.layer.zPosition = 99
+//        self.view.addSubview(self.indicator)
+//        indicator.layer.zPosition = 999
+//        indicator.startAnimating()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setindicator()
+//        setindicator()
         navigationBarSetLogo()
         imageViewSetBackground()
         LabelSetHikeWithSANTA()
@@ -61,19 +62,20 @@ class HomeViewController : BaseViewController {
         labelSetConquer()
         collectionViewSetConquer()
         HomeViewDataManager().apphomes(viewcontroller: self)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.indicator.stopAnimating()
-            self.indicatorView.removeFromSuperview()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            self.indicator.stopAnimating()
+//            self.indicatorView.removeFromSuperview()
+//        }
     }
 
     override func viewWillLayoutSubviews() {
         labelConquer.text = homeStatus
         mask.frame = imageViewUserProfile.bounds
         carouselCollectionView.reloadData()
-        if let encoded = userImage, let myURL = URL(string: encoded) {
-            let data = try! Data(contentsOf: myURL)
-            imageViewUserProfile.image = UIImage(data: data)
+        if let stringURL = userImage {
+            let url = URL(string: stringURL)
+            let proccess = DownsamplingImageProcessor(size: imageViewUserProfile.bounds.size)
+            imageViewUserProfile.kf.setImage(with: url , options: [.processor(proccess)])
         }
     }
     //MARK: 네비게이션 바 로고 설정
@@ -122,7 +124,9 @@ class HomeViewController : BaseViewController {
         imageViewProfile.snp.makeConstraints { make in
             make.edges.equalTo(viewProfile.snp.edges)
         }
-        imageViewUserProfile.image = UIImage(named: "1031@3x")
+        imageViewUserProfile.image = UIImage(named: "personhome@3x")
+        imageViewUserProfile.tintColor = .titleColorGray
+        imageViewUserProfile.contentMode = .scaleAspectFit
         viewProfile.addSubview(imageViewUserProfile)
         imageViewUserProfile.snp.makeConstraints { make in
             make.centerX.equalTo(viewProfile.snp.centerX).offset(-1)
@@ -239,13 +243,15 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 cell.labelMountainName.text = mountainCell[indexPath.row].mountainName
                 cell.labelName.text = mountainCell[indexPath.row].userName
                 cell.labelConquerNumberOfTimes.text = String(mountainCell[indexPath.row].flagCount) + "회"
-                if let encoded = mountainCell[indexPath.row].mountainImage, let myURL = URL(string: encoded) {
-                    let data = try! Data(contentsOf: myURL)
-                    cell.imageViewMountain.image = UIImage(data: data)
+                if let stringUrl = mountainCell[indexPath.row].mountainImage {
+                    let url = URL(string: stringUrl)
+                    let proceesor = DownsamplingImageProcessor(size: cell.imageViewMountain.bounds.size)
+                    cell.imageViewMountain.kf.setImage(with: url, options: [.processor(proceesor)])
                 }
-                if let encoded = mountainCell[indexPath.row].userImage, let myURL = URL(string: encoded) {
-                    let data = try! Data(contentsOf: myURL)
-                    cell.imageProfile.image = UIImage(data: data)
+                if let stringUrl = mountainCell[indexPath.row].userImage {
+                    let url = URL(string: stringUrl)
+                    let proceesor = DownsamplingImageProcessor(size: cell.imageProfile.bounds.size)
+                    cell.imageProfile.kf.setImage(with: url, options: [.processor(proceesor)])
                 }
             }
             cell.imagemask.frame = cell.imageProfile.bounds

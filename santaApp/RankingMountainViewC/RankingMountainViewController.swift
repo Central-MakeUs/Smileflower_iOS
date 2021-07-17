@@ -13,6 +13,9 @@ class RankingMountainViewController: UIViewController {
 
     let mapView = MKMapView()
     let viewBottomSheet = UIView()
+    var mountainIndex : Int?
+    var latitude : Double?
+    var longitude : Double?
 
     // MARK: 내용View 만들기.
     private let ViewControllerRanking : UIViewController
@@ -50,6 +53,9 @@ class RankingMountainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let idx = mountainIndex {
+            MapPositionDataManager().appmountainsmountainIdxmap(self, idx)
+        }
         mapViewSet()
         navigationBarSet()
         viewSetBottomSheet()
@@ -93,10 +99,34 @@ class RankingMountainViewController: UIViewController {
     }
     // MARK: 지도 구현
     func mapViewSet() {
+        mapView.delegate = self
         view.addSubview(mapView)
         mapView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+
+        
+    }
+    func goLocation(latitudeValue: CLLocationDegrees,
+                        longtudeValue: CLLocationDegrees,
+                        delta span: Double) -> CLLocationCoordinate2D {
+            let pLocation = CLLocationCoordinate2DMake(latitudeValue, longtudeValue)
+            let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
+            let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
+            mapView.setRegion(pRegion, animated: true)
+            return pLocation
+    }
+    func setAnnotation(latitudeValue: CLLocationDegrees,
+                       longitudeValue: CLLocationDegrees,
+                       span : Double,
+                       titleString : String,
+                       subtitleString: String) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = goLocation(latitudeValue: latitudeValue, longtudeValue: longitudeValue, delta: span)
+        annotation.title = titleString
+        annotation.subtitle = subtitleString
+        mapView.addAnnotation(annotation)
     }
     // MARK: 버튼 구현
     func setupMiddleButton() {
@@ -143,7 +173,7 @@ class RankingMountainViewController: UIViewController {
         viewBottomSheet.layer.cornerRadius = 28
         viewBottomSheet.backgroundColor = .white
         viewBottomSheet.translatesAutoresizingMaskIntoConstraints = false
-        mapView.addSubview(viewBottomSheet)
+        view.addSubview(viewBottomSheet)
         let topConstant : CGFloat = 230
         bottomSheetViewTopConstraint = viewBottomSheet.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topConstant)
                 NSLayoutConstraint.activate([
@@ -299,6 +329,22 @@ class RankingMountainViewController: UIViewController {
         viewBottomSheet.addSubview(control)
     }
 }
-extension RankingMountainViewController : UINavigationBarDelegate {
+extension RankingMountainViewController : UINavigationBarDelegate, MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotaitonView = mapView.dequeueReusableAnnotationView(withIdentifier: "redPosition")
+        annotaitonView = MKAnnotationView(annotation: annotation, reuseIdentifier: "redPosition")
+        annotaitonView?.canShowCallout = true
+        annotaitonView?.image = UIImage(named: "redPosition@3x")
+        return annotaitonView
+    }
+}
+
+extension RankingMountainViewController {
+    func successDataMountainPosition(_ latitude : Double, _ longitude : Double) {
+        setAnnotation(latitudeValue: latitude, longitudeValue: longitude, span: 0.1, titleString: "관악산", subtitleString: "정복해볼까요?")
     
+    }
+    func failureDataMountainPosition() {
+        presentAlert(title: "네트워크 연결 장애")
+    }
 }

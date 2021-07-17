@@ -13,14 +13,17 @@ class SplashViewController : BaseViewController {
     let labelSanta = UILabel()
     let imageSantaLogoleft = UIImageView()
     let imageSantaLogoRight = UIImageView()
-    
+    var autoLogin : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setGradient(color1: UIColor(hex:0x24C7B9) , color2: UIColor(hex: 0x9AC7FF))
         viewSetLogo()
+        print("안녕?")
+        AutoLoginDataManager().appusersautologin(self)
     }
-    override func viewDidAppear(_ animated: Bool) {
+    
+    override func viewWillAppear(_ animated: Bool) {
         animateLogo()
     }
     // MARK: - 산타 로고
@@ -68,7 +71,9 @@ class SplashViewController : BaseViewController {
             self.imageSantaLogoRight.frame = CGRect(x: UIScreen.main.bounds.width/2 + 33.95, y: UIScreen.main.bounds.height/2 - 27.75, width: 51.3, height: 66.6)
         } completion: { finished in
             sleep(1/10*7)
-            self.changeRootViewControllerWithAnimations(LoginViewController())
+            let nextVC = LoginViewController()
+            nextVC.boolautoLogin = self.autoLogin
+            self.changeRootViewController(nextVC)
         }
 
     }

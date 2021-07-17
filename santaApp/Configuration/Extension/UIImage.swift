@@ -26,13 +26,12 @@ extension UIImage {
 
         return UIGraphicsGetImageFromCurrentImageContext()
     }
-    //MARK : 이미지 투명도
+    //MARK: 이미지 투명도
     func image(alpha: CGFloat) -> UIImage? {
            UIGraphicsBeginImageContextWithOptions(size, false, scale)
            draw(at: .zero, blendMode: .normal, alpha: alpha)
            let newImage = UIGraphicsGetImageFromCurrentImageContext()
            UIGraphicsEndImageContext()
            return newImage
-       }
-
+    }
 }

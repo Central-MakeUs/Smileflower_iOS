@@ -94,6 +94,7 @@ class ConquerViewController: UIViewController {
             make.top.equalTo(viewContent.snp.top).offset(27.9)
             make.centerX.equalTo(viewContent.snp.centerX)
         }
+        imageViewConquer.layer.zPosition = 999
     }
     //MARK: WOW! 구현
     let labelWOW = UILabel()

@@ -59,8 +59,9 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
         viewSetRankingView()
         buttonSetGoConquerMountainView()
         imageViewSetComplete()
-        
-        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.setFirstAnimation()
     }
     // MARK: 네비게이션 바
     func navigationBarSet() {
@@ -81,29 +82,49 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
         self.changeRootViewController(BaseTabbarController())
     }
     // MARK: 배경
+    let imageViewConqueredPerson = UIImageView()
     func imageViewSetBackground() {
-        imageViewBackground.image = UIImage(named: "ConquerBackground@3x")
-        imageViewBackground.contentMode = .center
+    
+        imageViewBackground.image = UIImage(named: "ConquerBack@3x")
+        let firstFrame = CGRect(x: UIScreen.main.bounds.width/2 - 1032 + 238, y: -224, width: 2064, height: 1220)
+        imageViewBackground.frame = firstFrame
+        imageViewBackground.contentMode = .scaleAspectFit
         view.addSubview(imageViewBackground)
-        imageViewBackground.snp.makeConstraints { make in
-            make.bottom.equalTo(view.snp.bottom).offset(-187.9)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(352.9)
+        
+        imageViewConqueredPerson.image = UIImage(named: "ConquerImage@3x")
+        imageViewConqueredPerson.frame = CGRect(x: UIScreen.main.bounds.width/2 - 54, y: 145.8, width: 0, height: 0)
+        imageViewConqueredPerson.contentMode = .scaleAspectFit
+        view.addSubview(imageViewConqueredPerson)
+    }
+    func setFirstAnimation() {
+        UIView.animate(withDuration: 2.0) {
+            let secondFrame = CGRect(x: UIScreen.main.bounds.width/2 - 1032 + 238, y: 233, width: 2064, height: 1220)
+            self.imageViewBackground.frame = secondFrame
+        } completion: { finished in
+            self.setSecondAnimation()
         }
+        
+    }
+    func setSecondAnimation() {
+        UIView.animate(withDuration: 0.5) {
+            let thirdFrame = CGRect(x: UIScreen.main.bounds.width/2 - 470 + 95 - 54 , y: 148, width: 920, height: 544)
+            self.imageViewBackground.frame = thirdFrame
+        } completion: { finished in
+            self.setThirdAnimation()
+        }
+    }
+    func setThirdAnimation() {
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: .curveEaseInOut, animations: {
+            self.imageViewConqueredPerson.frame = CGRect(x: UIScreen.main.bounds.width/2 - 54, y: 52, width: 191, height: 178)
+            self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 130.65, y: UIScreen.main.bounds.height/2 - 58.4, width: 261.3, height: 116.8)
+        }, completion: nil)
     }
     // MARK: 정복 이미지
     func imageViewSetComplete() {
         imageViewComplete.image = UIImage(named: "completeMountain")
         imageViewComplete.contentMode = .scaleAspectFill
         view.addSubview(imageViewComplete)
-        
-        // 중간에서 얼마나 떨어져 있을까요?
-        imageViewComplete.snp.makeConstraints { make in
-            make.centerX.equalTo(view.snp.centerX)
-            make.bottom.equalTo(buttonGoConquerMountainView.snp.top).offset(-15.4)
-            make.width.equalTo(261.3)
-            make.height.equalTo(116.9)
-        }
+        imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2, width: 0, height: 0)
     }
     // MARK: 내가 정복한 산 보러가기
     func buttonSetGoConquerMountainView() {
@@ -112,11 +133,13 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
         buttonGoConquerMountainView.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 16)
         buttonGoConquerMountainView.addTarget(self, action: #selector(actionGoConquerMountainView), for: .touchUpInside)
         view.addSubview(buttonGoConquerMountainView)
+        let gap = (UIScreen.main.bounds.height/2 - 244 - 58.4 - 50)/2
+        print(gap)
         buttonGoConquerMountainView.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
             make.width.equalTo(237)
             make.height.equalTo(50)
-            make.bottom.equalTo(viewRank.snp.top).offset(-21)
+            make.top.equalTo(view).offset(UIScreen.main.bounds.height/2 + gap + 58.4)
         }
         buttonGoConquerMountainView.layer.cornerRadius = 25
     }

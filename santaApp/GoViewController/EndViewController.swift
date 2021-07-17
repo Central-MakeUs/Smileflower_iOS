@@ -12,8 +12,7 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
     let buttonEnd = UIButton()
     let picker = UIImagePickerController()
     var flagImageSave = false
-
-    var imageView : UIImageView?
+    var mountainIdx : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +20,7 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
         picker.delegate = self
         navigationBarSet()
         buttonSetEnd()
+        print(mountainIdx)
     }
     // MARK: 네비게이션 바
     lazy var leftButton: UIBarButtonItem = {
@@ -69,17 +69,25 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
                 print("Camera not available")
             }
         }
+    func convertImageToBase64(image: UIImage) -> String {
+            let imageData = image.pngData()!
+            return imageData.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters)
+        }
 }
 
 
 extension EndViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var inputImage : Data?
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imageView?.image = image
+            inputImage = image.jpegData(compressionQuality: 0.7)
         }
-        
         dismiss(animated: true) {
             self.presentAlert(title: "해당 사진으로 진행할까요?", message: "해당 산과 무관한 사진을 올릴 시\n제재가 가해질 수 있습니다.", isCancelActionIncluded: true, preferredStyle: .alert) { action in
+                let input = EndViewControllerInput(images: "conquerMountian")
+                if let idx = self.mountainIdx {
+                    EndViewControllerDataManager().appflagsmountainIdx(self, input, idx, inputImage!)
+                }
                 let nextVC = ConquerViewController()
                 nextVC.modalPresentationStyle = .overFullScreen
                 nextVC.modalTransitionStyle = .crossDissolve

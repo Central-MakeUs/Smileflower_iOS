@@ -8,6 +8,9 @@
 import UIKit
 
 class PickMountainViewController : BaseViewController {
+    
+    var mountainPicks : [MountainPicksResult] = []
+    
     let carouselCollectionViewLikeMountain: UICollectionView = {
             
         let flowLayout = UICollectionViewFlowLayout()
@@ -24,7 +27,26 @@ class PickMountainViewController : BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBarSet()
+        setlabelHasPicks()
         setRegister()
+
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        MountainPicksDataManager().apppicks(self)
+    }
+
+    
+    let labelHasPicks = UILabel()
+    func setlabelHasPicks() {
+        labelHasPicks.text = "찜한 산이 없습니다."
+        labelHasPicks.textColor = .titleColorGray
+        labelHasPicks.alpha = 0
+        labelHasPicks.textAlignment = .center
+        labelHasPicks.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 27)
+        view.addSubview(labelHasPicks)
+        labelHasPicks.snp.makeConstraints { make in
+            make.center.equalTo(view)
+        }
     }
     // MARK: 네비게이션 바 설정
     func navigationBarSet() {
@@ -46,7 +68,7 @@ class PickMountainViewController : BaseViewController {
 
 extension PickMountainViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return mountainPicks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -57,6 +79,32 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
             cell.layer.shadowOffset = CGSize(width: 0, height: 3)
             cell.layer.shadowColor = UIColor(hex: 0x7c909b).cgColor
             cell.layer.shadowOpacity = 0.2
+            
+            
+            if let urlString = mountainPicks[indexPath.row].mountainImg {
+                let url = URL(string: urlString)
+                cell.imageViewMountain.kf.indicatorType = .activity
+                cell.imageViewMountain.kf.setImage(with: url)
+            }
+            
+            if mountainPicks[indexPath.row].difficulty == 1 {
+                cell.imageViewDifficulty.image = UIImage(named: "illustHome1@3x")
+            }
+            else if mountainPicks[indexPath.row].difficulty == 2 {
+                cell.imageViewDifficulty.image = UIImage(named: "illustHome2@3x")
+            }
+            else if mountainPicks[indexPath.row].difficulty == 3 {
+                cell.imageViewDifficulty.image = UIImage(named: "illustHome3@3x")
+            }
+            else if mountainPicks[indexPath.row].difficulty == 4 {
+                cell.imageViewDifficulty.image = UIImage(named: "illustHome4@3x")
+            }
+            else {
+                cell.imageViewDifficulty.image = UIImage(named: "illustHome5@3x")
+            }
+            
+            cell.labelMountain.text = mountainPicks[indexPath.row].mountainName
+            cell.labelMountainHeight.text = mountainPicks[indexPath.row].mountainName
             return cell
         }
         return UICollectionViewCell()
@@ -67,8 +115,26 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+        nextVC.mountainIndex = mountainPicks[indexPath.row].mountainIdx
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)
+    }
+}
+
+extension PickMountainViewController {
+    func successDataPick(_ result : [MountainPicksResult]) {
+        mountainPicks = result
+        if result.isEmpty {
+            labelHasPicks.alpha = 1
+        }
+        else {
+            labelHasPicks.alpha = 0
+        }
+        
+        carouselCollectionViewLikeMountain.reloadData()
+    }
+    func failureDataPick() {
+        self.presentAlert(title: "네트워크 연결 장애")
     }
 }

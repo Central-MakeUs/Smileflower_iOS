@@ -145,6 +145,7 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
 extension SignInViewController {
     func successLoginData(_ result : SignInViewControllerResult) {
         Constant.JWTToken = result.jwt
+        UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
         print(Constant.JWTToken)
         self.changeRootViewController(BaseTabbarController())
     }

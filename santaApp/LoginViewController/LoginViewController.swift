@@ -13,11 +13,14 @@ import AuthenticationServices
 class LoginViewController : BaseViewController {
     var kakaoLoginButton = UIButton()
     var loginProviderStackView = UIStackView()
-    
+    var boolautoLogin : Bool = false
     var imageViewBackground = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if boolautoLogin {
+            self.changeRootViewController(BaseTabbarController())
+        }
         view.backgroundColor = .black
         imageSetBackground()
         labelSetSanta()
