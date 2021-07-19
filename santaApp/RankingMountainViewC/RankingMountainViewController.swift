@@ -18,10 +18,11 @@ class RankingMountainViewController: UIViewController {
     var longitude : Double?
 
     // MARK: 내용View 만들기.
-    private let ViewControllerRanking : UIViewController
-    private let ViewControllerMountain : UIViewController
+    private let ViewControllerRanking : ContentRankViewController
+    private let ViewControllerMountain : ContentMountainViewController
     
-    init(contentRankingViewController: ContentRankViewController, contentMountainViewController : ContentMountainViewController) {
+    init(contentRankingViewController: ContentRankViewController,
+         contentMountainViewController : ContentMountainViewController) {
         self.ViewControllerRanking = contentRankingViewController
         self.ViewControllerMountain = contentMountainViewController
         super.init(nibName: nil, bundle: nil)
@@ -71,6 +72,8 @@ class RankingMountainViewController: UIViewController {
             make.bottom.leading.trailing.equalTo(viewBottomSheet)
             make.top.equalTo(control.snp.bottom).offset(14)
         }
+        
+        setViewMountainCourseClick()
     }
     // navigationBar
     lazy var leftButton: UIBarButtonItem = {
@@ -99,22 +102,24 @@ class RankingMountainViewController: UIViewController {
     }
     // MARK: 지도 구현
     func mapViewSet() {
+        mapView.mapType = .mutedStandard
         mapView.delegate = self
         view.addSubview(mapView)
         mapView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
-
-        
     }
     func goLocation(latitudeValue: CLLocationDegrees,
                         longtudeValue: CLLocationDegrees,
                         delta span: Double) -> CLLocationCoordinate2D {
-            let pLocation = CLLocationCoordinate2DMake(latitudeValue, longtudeValue)
+        let pLocation = CLLocationCoordinate2DMake(latitudeValue, longtudeValue)
             let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
             let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
+        let showLocation = CLLocationCoordinate2DMake(latitudeValue - 0.055, longtudeValue)
+        let showspanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
+        let showRegion = MKCoordinateRegion(center: showLocation, span: showspanValue)
             mapView.setRegion(pRegion, animated: true)
+        mapView.setRegion(showRegion, animated: true)
             return pLocation
     }
     func setAnnotation(latitudeValue: CLLocationDegrees,
@@ -148,6 +153,7 @@ class RankingMountainViewController: UIViewController {
         menuButton.imageEdgeInsets = UIEdgeInsets(top: 1.6, left: 2.15, bottom: -1.6, right: -2.15)
            menuButton.addTarget(self, action: #selector(menuButtonAction(sender:)), for: .touchUpInside)
 
+        menuButton.layer.zPosition = 999
            view.layoutIfNeeded()
        }
     @objc private func menuButtonAction(sender: UIButton) {
@@ -161,6 +167,11 @@ class RankingMountainViewController: UIViewController {
         addChild(ViewControllerRanking)
         addChild(ViewControllerMountain)
         viewBottomSheet.addSubview(ViewControllerRanking.view)
+        if let idx = mountainIndex {
+            MountainRankingDataManager().appmountainsmountainIdxrank(ViewControllerRanking.self, idx)
+            MountainInfoDataManager().appmountiansmountainIdxinfo(ViewControllerMountain.self, idx)
+            ViewControllerMountain.mountainIdx = idx
+        }
         viewBottomSheet.addSubview(ViewControllerMountain.view)
         ViewControllerMountain.view.alpha = 0
         ViewControllerRanking.didMove(toParent: self)
@@ -232,7 +243,7 @@ class RankingMountainViewController: UIViewController {
                 self.control.frame = newFrame
             }
         }
-        
+        mountainCourseClickView.alpha = 0
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
         }, completion: nil)
@@ -328,6 +339,25 @@ class RankingMountainViewController: UIViewController {
         control.addTarget(self, action: #selector(segconChanged(_:)), for: .valueChanged)
         viewBottomSheet.addSubview(control)
     }
+    // 산 핀포인트 클릭시 나오는 뷰
+    let mountainCourseClickView = UIView()
+    func setViewMountainCourseClick() {
+        mountainCourseClickView.alpha = 0
+        mountainCourseClickView.backgroundColor = .white
+        
+        mountainCourseClickView.layer.shadowOffset = CGSize(width: 0, height: 10)
+        mountainCourseClickView.layer.shadowColor = UIColor.black.cgColor
+        mountainCourseClickView.layer.shadowRadius = 20
+        
+        mountainCourseClickView.layer.cornerRadius = 18
+        mapView.addSubview(mountainCourseClickView)
+        mountainCourseClickView.snp.makeConstraints { make in
+            make.centerX.equalTo(mapView.snp.centerX)
+            make.bottom.equalTo(mapView).offset(-100)
+            make.width.equalTo(UIScreen.main.bounds.width * 0.9)
+            make.height.equalTo(UIScreen.main.bounds.width * 0.3)
+        }
+    }
 }
 extension RankingMountainViewController : UINavigationBarDelegate, MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -337,12 +367,15 @@ extension RankingMountainViewController : UINavigationBarDelegate, MKMapViewDele
         annotaitonView?.image = UIImage(named: "redPosition@3x")
         return annotaitonView
     }
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        self.hideBottomSheet()
+        mountainCourseClickView.alpha = 1
+    }
 }
 
 extension RankingMountainViewController {
     func successDataMountainPosition(_ latitude : Double, _ longitude : Double) {
         setAnnotation(latitudeValue: latitude, longitudeValue: longitude, span: 0.1, titleString: "관악산", subtitleString: "정복해볼까요?")
-    
     }
     func failureDataMountainPosition() {
         presentAlert(title: "네트워크 연결 장애")

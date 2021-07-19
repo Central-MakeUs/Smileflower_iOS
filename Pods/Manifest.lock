@@ -32,9 +32,6 @@ PODS:
     - KakaoSDKAuth (= 2.2.0)
     - KakaoSDKCommon (= 2.2.0)
   - Kingfisher (6.3.0)
-  - NVActivityIndicatorView (5.1.1):
-    - NVActivityIndicatorView/Base (= 5.1.1)
-  - NVActivityIndicatorView/Base (5.1.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
@@ -42,7 +39,6 @@ DEPENDENCIES:
   - BetterSegmentedControl (~> 1.3)
   - KakaoSDK
   - Kingfisher
-  - NVActivityIndicatorView
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
@@ -59,7 +55,6 @@ SPEC REPOS:
     - KakaoSDKTemplate
     - KakaoSDKUser
     - Kingfisher
-    - NVActivityIndicatorView
     - SnapKit
 
 SPEC CHECKSUMS:
@@ -75,9 +70,8 @@ SPEC CHECKSUMS:
   KakaoSDKTemplate: ddf20dd6bb4e0dd08ffc86e94b0df4b7f2ae2b20
   KakaoSDKUser: b5ddfcdaf4adce40f172cafc9d4864d1a8b4f938
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
-  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: a6a7949b3203e5c9ffe133257557cbbac0fc6d88
+PODFILE CHECKSUM: f9a1b2d096a9ce7c44c4c2635d369dc695330caa
 
 COCOAPODS: 1.10.1

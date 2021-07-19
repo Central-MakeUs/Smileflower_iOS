@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
     let imageViewComplete = UIImageView()
@@ -13,6 +14,10 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
     let viewRank = UIView()
     let viewMaster = UIView()
     let imageViewBackground = UIImageView()
+    var mountainIdx : Int?
+    
+    var myRankResult : CompleteConqueredMyRank?
+    var firstRankResult : CompleteConqueredFirstRank?
     
     // MARK: 최하단 랭킹 뷰 변수들
     let labelRankTitle = UILabel()
@@ -52,13 +57,17 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let idx = mountainIdx {
+            CompleteConqueredDataManager().appflagsmountainIdxrank(self, idx)
+        }
         view.setGradient(color1: UIColor(hex: 0x9ac7ff), color2: UIColor(hex: 0xffffff))
         navigationBarSet()
         imageViewSetBackground()
-        viewSetRank()
-        viewSetRankingView()
+        
         buttonSetGoConquerMountainView()
         imageViewSetComplete()
+        viewSetRank()
+        viewSetRankingView()
     }
     override func viewDidAppear(_ animated: Bool) {
         self.setFirstAnimation()
@@ -134,7 +143,6 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
         buttonGoConquerMountainView.addTarget(self, action: #selector(actionGoConquerMountainView), for: .touchUpInside)
         view.addSubview(buttonGoConquerMountainView)
         let gap = (UIScreen.main.bounds.height/2 - 244 - 58.4 - 50)/2
-        print(gap)
         buttonGoConquerMountainView.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
             make.width.equalTo(237)
@@ -162,7 +170,7 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
         
         viewRank.snp.makeConstraints { make in
             make.bottom.leading.trailing.equalToSuperview()
-            make.height.equalTo(244)
+            make.height.equalTo(256)
         }
     }
     // MARK: 랭킹 마스터 뷰
@@ -178,160 +186,119 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
             make.centerX.equalTo(viewRank.snp.centerX)
             make.top.equalTo(viewRank.snp.top).offset(17)
         }
+        setRankingTableView()
+    }
+    let tableViewRanking = UITableView()
+    func setRankingTableView() {
+        tableViewRanking.delegate = self
+        tableViewRanking.dataSource = self
+        tableViewRanking.register(RankingTableViewCell.self, forCellReuseIdentifier: RankingTableViewCell.resueidentifier)
+        tableViewRanking.register(MyRankingTableViewCell.self, forCellReuseIdentifier: MyRankingTableViewCell.resueidentifier)
+        tableViewRanking.isScrollEnabled = false
+        tableViewRanking.separatorColor = UIColor(hex: 0x7C909B, alpha: 0.5)
+        viewRank.addSubview(tableViewRanking)
+        tableViewRanking.snp.makeConstraints { make in
+            make.top.equalTo(labelRankTitle.snp.bottom)
+            make.leading.trailing.equalTo(viewRank)
+            make.bottom.equalTo(-20)
+        }
+    }
+}
+extension CompleteViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        self.stackViewRackView.axis = .vertical
-        self.stackViewRackView.alignment = .fill
-        self.stackViewRackView.distribution = .fillEqually
-        self.stackViewRackView.spacing = 0.2
-        self.stackViewRackView.backgroundColor = UIColor(hex: 0x707070, alpha: 0.51)
-        viewRank.addSubview(stackViewRackView)
-        
-        stackViewRackView.snp.makeConstraints { make in
-            make.top.equalTo(labelRankTitle.snp.bottom).offset(2)
-            make.width.equalTo(343)
-            make.height.equalTo(180)
-            make.centerX.equalTo(viewRank.snp.centerX)
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: RankingTableViewCell.resueidentifier, for: indexPath)as? RankingTableViewCell
+            else {
+                fatalError("cant dequeue Cell")
+                }
+            if let ranking = firstRankResult?.ranking,
+               let username = firstRankResult?.userName,
+               let userLv = firstRankResult?.level,
+               let flagCount = firstRankResult?.flagCount{
+                cell.labelRank.text = String(ranking)
+                cell.imageViewUserProfile.image = UIImage(named: "masterView@3x")
+                cell.imageViewUserGrade.image = UIImage(named: "master@3x")
+                cell.imageViewUserProfile.snp.makeConstraints { make in
+                    make.centerY.equalTo(cell.contentView)
+                    make.leading.equalTo(cell.labelRank.snp.trailing).offset(2.5)
+                    make.width.equalTo(82.9)
+                    make.height.equalTo(103)
+                }
+                if let urlString = firstRankResult?.userImage {
+                    let url = URL(string: urlString)
+                    let proceesor = DownsamplingImageProcessor(size: cell.imageViewUser.bounds.size)
+                    cell.imageViewUser.kf.setImage(with: url, options: [.processor(proceesor)])
+                }
+                else {
+                    cell.imageViewUser.image = UIImage(named: "personhome@3x")
+                }
+                cell.labelUserLv.text = userLv
+                cell.imageViewUser.backgroundColor = .white
+                cell.imagemask.frame = cell.imageViewUser.bounds
+                cell.labelUserName.text = username
+                cell.labelConquered.text = "\(String(flagCount))회"
+            }
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
+            cell.selectionStyle = .none
+            return cell
         }
         
-        viewSetMasterRankView()
-        viewMasterRankView.backgroundColor = .white
-        viewSetUserRankView()
-        viewUserRankView.backgroundColor = .white
+        else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: MyRankingTableViewCell.resueidentifier, for: indexPath)as? MyRankingTableViewCell
+            else {
+                fatalError("cant dequeue Cell")
+                }
+            if let ranking = self.myRankResult?.ranking,
+               let username = self.myRankResult?.userName,
+               let userLv = self.myRankResult?.level,
+               let flagCount = self.myRankResult?.flagCount{
+                cell.labelRank.text = String(ranking)
+                cell.imageViewUserProfile.image = UIImage(named: "946@3x")
+                cell.imageViewUserProfile.snp.makeConstraints { make in
+                    make.centerY.equalTo(cell.contentView)
+                    make.leading.equalTo(cell.labelRank.snp.trailing).offset(10.7)
+                    make.width.equalTo(70)
+                    make.height.equalTo(90)
+                }
+                if let urlString = myRankResult?.userImage {
+                    let url = URL(string: urlString)
+                    let proceesor = DownsamplingImageProcessor(size: cell.imageViewUser.bounds.size)
+                    cell.imageViewUser.kf.setImage(with: url, options: [.processor(proceesor)])
+                }
+                else {
+                    cell.imageViewUser.image = UIImage(named: "personhome@3x")
+                }
+                
+                cell.labelUserLv.text = userLv
+                cell.imageViewUser.backgroundColor = .white
+                
+                cell.imagemask.frame = cell.imageViewUser.bounds
+                cell.labelUserName.text = username
+                cell.labelConquered.text = "\(String(flagCount))회"
+            }
+            cell.selectionStyle = .none
+            cell.separatorInset = UIEdgeInsets(top: 0, left: cell.bounds.size.width, bottom: 0, right: 0)
+            return cell
+        }
+}
     
-        stackViewRackView.addArrangedSubview(viewMasterRankView)
-        stackViewRackView.addArrangedSubview(viewUserRankView)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableViewRanking.bounds.height/2 - 10
     }
-    func viewSetMasterRankView() {
-        labelMasterRank.text = "1"
-        labelMasterRank.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 19)
-        labelMasterRank.textAlignment = .center
-        viewMasterRankView.addSubview(labelMasterRank)
-        labelMasterRank.snp.makeConstraints { make in
-            make.centerY.equalTo(viewMasterRankView.snp.centerY)
-            make.leading.equalTo(viewMasterRankView.snp.leading).offset(5)
-            make.width.equalTo(34)
-        }
-        
-        let resizeImageMasterRank = UIImage(named: "masterView@3x")
-//        resizeImageMasterRank?.resize(size: CGSize(width: 66.4, height: 72.9))
-        imageViewMasterRank.image = resizeImageMasterRank
-        viewMasterRankView.addSubview(imageViewMasterRank)
-        imageViewMasterRank.snp.makeConstraints { make in
-            make.centerY.equalTo(viewMasterRankView.snp.centerY)
-            make.leading.equalTo(labelMasterRank.snp.trailing)
-            make.width.equalTo(82.5)
-            make.height.equalTo(103)
-        }
-        let imageViewMaster = UIImageView()
-        imageViewMaster.image = UIImage(named: "master@3x")
-        imageViewMaster.contentMode = .scaleAspectFit
-        imageViewMasterRank.addSubview(imageViewMaster)
-        imageViewMaster.snp.makeConstraints { make in
-            make.centerX.equalTo(imageViewMasterRank.snp.centerX)
-            make.top.equalTo(imageViewMasterRank.snp.top).offset(54.5)
-            make.width.equalTo(53.5)
-            make.height.equalTo(16.2)
-        }
-        
-        labelMasterLV.text = "LV.9"
-        labelMasterLV.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
-        labelMasterLV.setTextWithLineHeight(text: labelMasterLV.text, lineHeight: 15)
-        labelMasterLV.textColor = .titleColorGray
-        viewMasterRankView.addSubview(labelMasterLV)
-        labelMasterLV.snp.makeConstraints { make in
-            make.top.equalTo(viewMasterRankView.snp.top).offset(35)
-            make.leading.equalTo(imageViewMasterRank.snp.trailing).offset(1.6)
-        }
-        
-        labelMasterName.text = "코트"
-        labelMasterName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 18)
-        labelMasterName.setTextWithLineHeight(text: labelMasterName.text, lineHeight: 21)
-        labelMasterName.addCharacterSpacing(kernValue: -0.36)
-        labelMasterName.textColor = .darkbluegray
-        viewMasterRankView.addSubview(labelMasterName)
-        labelMasterName.snp.makeConstraints { make in
-            make.leading.equalTo(labelMasterLV.snp.leading)
-            make.top.equalTo(labelMasterLV.snp.bottom)
-        }
-        
-        imageViewFlag.image = UIImage(named: "FlagIconMainColor@3x")
-        imageViewFlag.contentMode = .scaleAspectFit
-        viewMasterRankView.addSubview(imageViewFlag)
-        imageViewFlag.snp.makeConstraints { make in
-            make.trailing.equalTo(viewMasterRankView.snp.trailing).offset(-16.7)
-            make.centerY.equalTo(labelMasterName.snp.centerY).offset(-2)
-            make.width.equalTo(15.3)
-            make.height.equalTo(17.3)
-        }
+}
 
-        labelMasterTimes.text = "99회"
-        labelMasterTimes.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 20)
-        labelMasterTimes.textColor = .mainColor
-        labelMasterTimes.textAlignment = .right
-        viewMasterRankView.addSubview(labelMasterTimes)
-        labelMasterTimes.snp.makeConstraints { make in
-            make.trailing.equalTo(imageViewFlag.snp.leading).offset(-6.2)
-            make.centerY.equalTo(labelMasterName.snp.centerY)
-        }
+extension CompleteViewController {
+    func successDataResult( _ result : CompleteConqueredResult) {
+        myRankResult = result.myRank!
+        firstRankResult = result.firstRank!
+        tableViewRanking.reloadData()
     }
-    func viewSetUserRankView() {
-        labelUserRank.text = "20"
-        labelUserRank.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 19)
-        labelUserRank.textAlignment = .center
-        viewUserRankView.addSubview(labelUserRank)
-        labelUserRank.snp.makeConstraints { make in
-            make.centerY.equalTo(viewUserRankView.snp.centerY)
-            make.leading.equalTo(viewUserRankView.snp.leading).offset(5)
-            make.width.equalTo(34)
-        }
-//
-        imageViewUserRank.image =  UIImage(named: "profileView@3x")
-        imageViewUserRank.contentMode = .scaleAspectFit
-        viewUserRankView.addSubview(imageViewUserRank)
-        imageViewUserRank.snp.makeConstraints { make in
-            make.centerY.equalTo(viewUserRankView.snp.centerY)
-            make.leading.equalTo(labelUserRank.snp.trailing).offset(11.7)
-            make.width.equalTo(63.8)
-            make.height.equalTo(83)
-        }
-
-        labelUserLV.text = "LV.5"
-        labelUserLV.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
-        labelUserLV.textColor = .titleColorGray
-        viewUserRankView.addSubview(labelUserLV)
-        labelUserLV.snp.makeConstraints { make in
-            make.centerY.equalTo(viewUserRankView.snp.centerY)
-            make.leading.equalTo(imageViewUserRank.snp.trailing).offset(9.1)
-        }
-
-        labelUserName.text = "에스핀"
-        labelUserName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 18)
-        labelUserName.addCharacterSpacing(kernValue: -0.36)
-        labelUserName.textColor = .darkbluegray
-        viewUserRankView.addSubview(labelUserName)
-        labelUserName.snp.makeConstraints { make in
-            make.leading.equalTo(labelUserLV.snp.leading)
-            make.top.equalTo(labelUserLV.snp.bottom)
-        }
-
-        imageViewFlag2.image = UIImage(named: "FlagIconMainColor@3x")
-        imageViewFlag2.contentMode = .scaleAspectFit
-        viewUserRankView.addSubview(imageViewFlag2)
-        imageViewFlag2.snp.makeConstraints { make in
-            make.trailing.equalTo(viewUserRankView.snp.trailing).offset(-16.7)
-            make.centerY.equalTo(labelUserName.snp.centerY).offset(-2)
-            make.width.equalTo(15.3)
-            make.height.equalTo(17.3)
-        }
-
-        labelUsertimes.text = "1회"
-        labelUsertimes.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 20)
-        labelUsertimes.textColor = .mainColor
-        labelUsertimes.textAlignment = .right
-        viewUserRankView.addSubview(labelUsertimes)
-        labelUsertimes.snp.makeConstraints { make in
-            make.trailing.equalTo(imageViewFlag2.snp.leading).offset(-6.2)
-            make.centerY.equalTo(labelUserName.snp.centerY)
-        }
+    func failureDataResutl() {
+        self.presentAlert(title: "네트워크 통신 장애")
     }
 }

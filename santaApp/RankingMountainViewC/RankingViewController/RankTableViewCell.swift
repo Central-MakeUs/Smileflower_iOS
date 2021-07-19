@@ -49,6 +49,8 @@ class RankTableViewCell: UITableViewCell {
         }
     }
     func imageViewSetProfile() {
+        imageViewProfile.contentMode = .scaleAspectFill
+        imageViewProfile.clipsToBounds = true
         contentView.addSubview(imageViewProfile)
         imageViewProfile.snp.makeConstraints { make in
             make.centerY.equalTo(labelRank.snp.centerY)

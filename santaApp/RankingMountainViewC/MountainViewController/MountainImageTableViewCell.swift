@@ -10,7 +10,7 @@ import UIKit
 class MountainImageTableViewCell: UITableViewCell {
 
     static let identifier = "MountainImageTableViewCell"
-    
+    var mountainIdx : Int?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -31,7 +31,8 @@ class MountainImageTableViewCell: UITableViewCell {
     //MARK: 사진
     let imageViewMountain = UIImageView()
     func setImage() {
-        imageViewMountain.backgroundColor = .mainColor
+        imageViewMountain.clipsToBounds = true
+        imageViewMountain.contentMode = .scaleAspectFill
         imageViewMountain.layer.cornerRadius = 18
         contentView.addSubview(imageViewMountain)
         imageViewMountain.snp.makeConstraints { make in
@@ -76,6 +77,9 @@ class MountainImageTableViewCell: UITableViewCell {
         }
         else {
             buttonLike.isSelected = true
+        }
+        if let idx = mountainIdx {
+            MountainLikeDataManager().apppicksmountainIdx(idx)
         }
     }
     //MARK: 산 이름

@@ -17,7 +17,7 @@ class MountainDataManager {
                     viewcontroller.successDataMountain(result)
                 }
             case .failure(let error):
-                viewcontroller.failDataMountain()
+                viewcontroller.failDataMountain("네트워크 통신 장애")
             }
         }
     }

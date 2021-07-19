@@ -33,12 +33,22 @@
 		2871B46326A31F2700F32165 /* MountainPicksDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46226A31F2700F32165 /* MountainPicksDataManager.swift */; };
 		2871B46626A3277900F32165 /* MapPositionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46526A3277900F32165 /* MapPositionEntity.swift */; };
 		2871B46826A3280900F32165 /* MapPositionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46726A3280900F32165 /* MapPositionDataManager.swift */; };
+		2871B46B26A4455800F32165 /* CompleteConqueredEntitiy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46A26A4455800F32165 /* CompleteConqueredEntitiy.swift */; };
+		2871B46D26A446ED00F32165 /* CompleteConqueredDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46C26A446ED00F32165 /* CompleteConqueredDataManager.swift */; };
+		2871B47026A4675600F32165 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46F26A4675600F32165 /* RankingTableViewCell.swift */; };
+		2871B47226A4A09B00F32165 /* MyRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47126A4A09B00F32165 /* MyRankingTableViewCell.swift */; };
+		2871B47726A4B53E00F32165 /* MountainSearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47626A4B53E00F32165 /* MountainSearchEntity.swift */; };
+		2871B47926A4B62800F32165 /* MonutainSearchInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47826A4B62800F32165 /* MonutainSearchInput.swift */; };
+		2871B47B26A4B65200F32165 /* MountainSearchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47A26A4B65200F32165 /* MountainSearchDataManager.swift */; };
+		2871B47E26A4BABA00F32165 /* MountainRankingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47D26A4BABA00F32165 /* MountainRankingEntity.swift */; };
+		2871B48026A4BB9900F32165 /* MountainRankingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47F26A4BB9900F32165 /* MountainRankingDataManager.swift */; };
+		2871B48526A5789200F32165 /* MountainInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B48426A5789200F32165 /* MountainInfoEntity.swift */; };
+		2871B48726A5798B00F32165 /* MountainInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B48626A5798B00F32165 /* MountainInfoDataManager.swift */; };
 		2875D2F4269864FF00180300 /* DetailPosteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2875D2F3269864FF00180300 /* DetailPosteViewController.swift */; };
 		28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */; };
 		28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */; };
 		28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */; };
 		28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B00269629B0008F0FE3 /* MountainHeightTableViewCell.swift */; };
-		28810B0426963D88008F0FE3 /* WarningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0326963D88008F0FE3 /* WarningTableViewCell.swift */; };
 		28810B0626970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */; };
 		28810B082697111D008F0FE3 /* UserResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */; };
 		28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0B2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift */; };
@@ -150,12 +160,22 @@
 		2871B46226A31F2700F32165 /* MountainPicksDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPicksDataManager.swift; sourceTree = "<group>"; };
 		2871B46526A3277900F32165 /* MapPositionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPositionEntity.swift; sourceTree = "<group>"; };
 		2871B46726A3280900F32165 /* MapPositionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPositionDataManager.swift; sourceTree = "<group>"; };
+		2871B46A26A4455800F32165 /* CompleteConqueredEntitiy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteConqueredEntitiy.swift; sourceTree = "<group>"; };
+		2871B46C26A446ED00F32165 /* CompleteConqueredDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteConqueredDataManager.swift; sourceTree = "<group>"; };
+		2871B46F26A4675600F32165 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
+		2871B47126A4A09B00F32165 /* MyRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRankingTableViewCell.swift; sourceTree = "<group>"; };
+		2871B47626A4B53E00F32165 /* MountainSearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainSearchEntity.swift; sourceTree = "<group>"; };
+		2871B47826A4B62800F32165 /* MonutainSearchInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonutainSearchInput.swift; sourceTree = "<group>"; };
+		2871B47A26A4B65200F32165 /* MountainSearchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainSearchDataManager.swift; sourceTree = "<group>"; };
+		2871B47D26A4BABA00F32165 /* MountainRankingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainRankingEntity.swift; sourceTree = "<group>"; };
+		2871B47F26A4BB9900F32165 /* MountainRankingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainRankingDataManager.swift; sourceTree = "<group>"; };
+		2871B48426A5789200F32165 /* MountainInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInfoEntity.swift; sourceTree = "<group>"; };
+		2871B48626A5798B00F32165 /* MountainInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInfoDataManager.swift; sourceTree = "<group>"; };
 		2875D2F3269864FF00180300 /* DetailPosteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPosteViewController.swift; sourceTree = "<group>"; };
 		28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainImageTableViewCell.swift; sourceTree = "<group>"; };
 		28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPositionTableViewCell.swift; sourceTree = "<group>"; };
 		28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCourseTableViewCell.swift; sourceTree = "<group>"; };
 		28810B00269629B0008F0FE3 /* MountainHeightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainHeightTableViewCell.swift; sourceTree = "<group>"; };
-		28810B0326963D88008F0FE3 /* WarningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningTableViewCell.swift; sourceTree = "<group>"; };
 		28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerMountainCollectionViewCell.swift; sourceTree = "<group>"; };
 		28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		28810B0B2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeMountainCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -279,6 +299,7 @@
 				28D4C244268A2CB50056EECF /* SetupViewController */,
 				286966F82692E6410025A250 /* RankingMountainViewC */,
 				28139FC72698A3D70091DFCD /* SearchViewController */,
+				2871B45B26A3169500F32165 /* MountainLikeApi */,
 				28D4C23B268A29F90056EECF /* Splash */,
 				28119B31268A26B4002ABFA9 /* AppDelegate.swift */,
 				28119B33268A26B4002ABFA9 /* SceneDelegate.swift */,
@@ -354,7 +375,7 @@
 		28139FC72698A3D70091DFCD /* SearchViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2871B45B26A3169500F32165 /* MountainLikeApi */,
+				2871B47526A4B51C00F32165 /* MountainSearhAPI */,
 				28DB5E0826A1B9AD0092CC40 /* MountainApi */,
 				28139FC82698A3F30091DFCD /* SearchViewController.swift */,
 				28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */,
@@ -391,7 +412,6 @@
 				28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */,
 				28810B00269629B0008F0FE3 /* MountainHeightTableViewCell.swift */,
 				28810B0226962B2C008F0FE3 /* CourseTableViewCell */,
-				28810B0326963D88008F0FE3 /* WarningTableViewCell.swift */,
 			);
 			path = MountainViewController;
 			sourceTree = "<group>";
@@ -415,6 +435,8 @@
 		286966F82692E6410025A250 /* RankingMountainViewC */ = {
 			isa = PBXGroup;
 			children = (
+				2871B48326A5788000F32165 /* MountainInfoAPI */,
+				2871B47C26A4BAA800F32165 /* MountainRankingAPI */,
 				2871B46426A3275E00F32165 /* MapPositionAPI */,
 				2817F86526958629004F39EC /* MountainViewController */,
 				282FD6FD2694AF3E00B38602 /* RankingViewController */,
@@ -440,6 +462,52 @@
 				2871B46726A3280900F32165 /* MapPositionDataManager.swift */,
 			);
 			path = MapPositionAPI;
+			sourceTree = "<group>";
+		};
+		2871B46926A4453B00F32165 /* CompleteConqueredAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2871B46A26A4455800F32165 /* CompleteConqueredEntitiy.swift */,
+				2871B46C26A446ED00F32165 /* CompleteConqueredDataManager.swift */,
+			);
+			path = CompleteConqueredAPI;
+			sourceTree = "<group>";
+		};
+		2871B46E26A4666300F32165 /* CompleteViewControllerCell */ = {
+			isa = PBXGroup;
+			children = (
+				2871B46F26A4675600F32165 /* RankingTableViewCell.swift */,
+				2871B47126A4A09B00F32165 /* MyRankingTableViewCell.swift */,
+			);
+			path = CompleteViewControllerCell;
+			sourceTree = "<group>";
+		};
+		2871B47526A4B51C00F32165 /* MountainSearhAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2871B47626A4B53E00F32165 /* MountainSearchEntity.swift */,
+				2871B47826A4B62800F32165 /* MonutainSearchInput.swift */,
+				2871B47A26A4B65200F32165 /* MountainSearchDataManager.swift */,
+			);
+			path = MountainSearhAPI;
+			sourceTree = "<group>";
+		};
+		2871B47C26A4BAA800F32165 /* MountainRankingAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2871B47D26A4BABA00F32165 /* MountainRankingEntity.swift */,
+				2871B47F26A4BB9900F32165 /* MountainRankingDataManager.swift */,
+			);
+			path = MountainRankingAPI;
+			sourceTree = "<group>";
+		};
+		2871B48326A5788000F32165 /* MountainInfoAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2871B48426A5789200F32165 /* MountainInfoEntity.swift */,
+				2871B48626A5798B00F32165 /* MountainInfoDataManager.swift */,
+			);
+			path = MountainInfoAPI;
 			sourceTree = "<group>";
 		};
 		2875D2F2269864E600180300 /* DetailPostViewController */ = {
@@ -569,6 +637,8 @@
 				2882287E26A0792C000B2EAA /* EndViewControllerAPI */,
 				2817F8632694D20A004F39EC /* ConquerViewController.swift */,
 				289656F6268F58EE00B23E8F /* CompleteViewController.swift */,
+				2871B46E26A4666300F32165 /* CompleteViewControllerCell */,
+				2871B46926A4453B00F32165 /* CompleteConqueredAPI */,
 			);
 			path = GoViewController;
 			sourceTree = "<group>";
@@ -886,15 +956,20 @@
 				28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */,
 				2882288426A07964000B2EAA /* EndViewControllerInput.swift in Sources */,
 				283047EF268E2B7700DEB2EC /* StartViewController.swift in Sources */,
+				2871B47E26A4BABA00F32165 /* MountainRankingEntity.swift in Sources */,
 				28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */,
 				28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */,
+				2871B48026A4BB9900F32165 /* MountainRankingDataManager.swift in Sources */,
 				286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */,
 				28DB5E0C26A1BA6B0092CC40 /* MountainDataManager.swift in Sources */,
 				2882287026A047E5000B2EAA /* CompleteSignUpEntity.swift in Sources */,
 				28B873C2269CAFA10097E46F /* HomeVIewEntity.swift in Sources */,
+				2871B46D26A446ED00F32165 /* CompleteConqueredDataManager.swift in Sources */,
 				289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */,
 				28139FC92698A3F30091DFCD /* SearchViewController.swift in Sources */,
+				2871B47B26A4B65200F32165 /* MountainSearchDataManager.swift in Sources */,
 				28D4C248268A2D290056EECF /* PickMountainViewController.swift in Sources */,
+				2871B48726A5798B00F32165 /* MountainInfoDataManager.swift in Sources */,
 				2871B46826A3280900F32165 /* MapPositionDataManager.swift in Sources */,
 				28B873C0269CAF940097E46F /* HomeVIewDataManager.swift in Sources */,
 				2871B45D26A317A600F32165 /* MountainLikeEntity.swift in Sources */,
@@ -903,23 +978,27 @@
 				28B873C9269CD4C70097E46F /* GoViewControllerDataManager.swift in Sources */,
 				28D4C24F268A2DDC0056EECF /* SetupViewController.swift in Sources */,
 				28B52EA9268C793000017DCF /* UIImage.swift in Sources */,
-				28810B0426963D88008F0FE3 /* WarningTableViewCell.swift in Sources */,
+				2871B48526A5789200F32165 /* MountainInfoEntity.swift in Sources */,
+				2871B47026A4675600F32165 /* RankingTableViewCell.swift in Sources */,
 				28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */,
 				28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */,
 				2817F8622694B77E004F39EC /* pathView.swift in Sources */,
 				2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */,
 				2882287B26A06115000B2EAA /* SignInViewControllerEntity.swift in Sources */,
 				2882287926A06106000B2EAA /* SignInViewControllerInput.swift in Sources */,
+				2871B46B26A4455800F32165 /* CompleteConqueredEntitiy.swift in Sources */,
 				2817F8642694D20A004F39EC /* ConquerViewController.swift in Sources */,
 				28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */,
 				2882288226A07956000B2EAA /* EndViewControllerDataManager.swift in Sources */,
 				28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */,
 				282FD6FC2694AD6B00B38602 /* ContentMountainViewController.swift in Sources */,
+				2871B47926A4B62800F32165 /* MonutainSearchInput.swift in Sources */,
 				28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */,
 				28D4C251268A30800056EECF /* UiViewController.swift in Sources */,
 				28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */,
 				2882288026A0794A000B2EAA /* EndViewControllerEntity.swift in Sources */,
 				2890263F268F286E00D15BBA /* UIView.swift in Sources */,
+				2871B47226A4A09B00F32165 /* MyRankingTableViewCell.swift in Sources */,
 				28D4C246268A2CEB0056EECF /* HomeViewController.swift in Sources */,
 				2882288C26A0B263000B2EAA /* UserTableViewCell.swift in Sources */,
 				28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */,
@@ -937,6 +1016,7 @@
 				28F41B53269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift in Sources */,
 				2882287226A047F4000B2EAA /* CompleteSignUpDataManager.swift in Sources */,
 				2871B46126A31E3400F32165 /* MountainPicksEntity.swift in Sources */,
+				2871B47726A4B53E00F32165 /* MountainSearchEntity.swift in Sources */,
 				2882288E26A0B6D4000B2EAA /* VersionTableViewCell.swift in Sources */,
 				2882289326A0BF78000B2EAA /* LogoutEntity.swift in Sources */,
 				28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */,

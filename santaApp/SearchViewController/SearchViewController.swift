@@ -224,10 +224,14 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             return CGSize(width: 333, height: 91)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let idx = mountainResult[indexPath.row].mountainIdx {
             let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
-            nextVC.modalPresentationStyle = .fullScreen
-            nextVC.modalTransitionStyle = .crossDissolve
-            self.present(nextVC, animated: true, completion: nil)
+            nextVC.mountainIndex = idx
+                nextVC.modalPresentationStyle = .fullScreen
+                nextVC.modalTransitionStyle = .crossDissolve
+                self.present(nextVC, animated: true, completion: nil)
+        }
+        
     }
 }
 extension SearchViewController : UISearchBarDelegate {
@@ -242,6 +246,14 @@ extension SearchViewController : UISearchBarDelegate {
             return name.contains(text)
         })
         self.carouselCollectionViewRecommendMountain.reloadData()
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+            let input = MountainSearchInput(mountain: searchBar.text)
+            MountainSearchDataManager().appmountainssearchmountain(self, input)
+            
     }
     
     
@@ -252,7 +264,17 @@ extension SearchViewController {
         mountainResult = result
         self.carouselCollectionViewRecommendMountain.reloadData()
     }
-    func failDataMountain() {
-        self.presentAlert(title: "네트워크 통신 장애")
+    func successDataMountainSearch(_ result : MountainSearchResult) {
+        if let idx = result.mountainIdx {
+            let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+            nextVC.mountainIndex = idx
+            nextVC.modalPresentationStyle = .fullScreen
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.present(nextVC, animated: true, completion: nil)
+        }
+        
+    }
+    func failDataMountain(_ title : String) {
+        self.presentAlert(title: title)
     }
 }

@@ -53,6 +53,7 @@ class HomeViewController : BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Constant.JWTToken)
 //        setindicator()
         navigationBarSetLogo()
         imageViewSetBackground()
@@ -263,10 +264,15 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         return CGSize(width: 168, height: 212)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
+       
+        if let mountainCell = mountain {
+            let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+            nextVC.mountainIndex = mountainCell[indexPath.row].mountainIdx
+            nextVC.modalPresentationStyle = .fullScreen
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.present(nextVC, animated: true, completion: nil)
+        }
+        
     }
 }
 
@@ -280,7 +286,7 @@ extension HomeViewController {
         self.carouselCollectionView.reloadData()
     }
     func failureDataReceive(_ message : String) {
-        print(message)
+        self.presentAlert(title: message)
     }
 }
 

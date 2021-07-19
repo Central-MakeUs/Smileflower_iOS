@@ -85,10 +85,12 @@ extension EndViewController : UIImagePickerControllerDelegate, UINavigationContr
         dismiss(animated: true) {
             self.presentAlert(title: "해당 사진으로 진행할까요?", message: "해당 산과 무관한 사진을 올릴 시\n제재가 가해질 수 있습니다.", isCancelActionIncluded: true, preferredStyle: .alert) { action in
                 let input = EndViewControllerInput(images: "conquerMountian")
+                let nextVC = ConquerViewController()
                 if let idx = self.mountainIdx {
                     EndViewControllerDataManager().appflagsmountainIdx(self, input, idx, inputImage!)
+                    nextVC.mountainIdx = idx
                 }
-                let nextVC = ConquerViewController()
+    
                 nextVC.modalPresentationStyle = .overFullScreen
                 nextVC.modalTransitionStyle = .crossDissolve
                 self.present(nextVC, animated: true, completion: nil)

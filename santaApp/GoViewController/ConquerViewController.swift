@@ -9,6 +9,8 @@ import UIKit
 
 class ConquerViewController: UIViewController {
 
+    var mountainIdx : Int?
+    
     let viewContent = UIView()
     private let dimmedView: UIView = {
             let view = UIView()
@@ -147,6 +149,9 @@ class ConquerViewController: UIViewController {
     }
     @objc func actionGoCompleteViewController() {
         let nextVC = CompleteViewController()
+        if let idx = mountainIdx {
+            nextVC.mountainIdx = idx
+        }
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)

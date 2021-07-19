@@ -10,9 +10,8 @@ target 'santaApp' do
   pod 'Alamofire', '~> 5.1'
   pod 'KakaoSDK'
   pod 'BetterSegmentedControl', '~> 1.3'
-  pod 'NVActivityIndicatorView'
   pod 'Kingfisher'
-
+  pod 'NMapsMap'
   target 'santaAppTests' do
     inherit! :search_paths
     # Pods for testing

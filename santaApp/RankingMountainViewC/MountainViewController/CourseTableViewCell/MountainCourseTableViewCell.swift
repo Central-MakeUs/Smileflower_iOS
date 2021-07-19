@@ -11,6 +11,7 @@ class MountainCourseTableViewCell: UITableViewCell {
     
     static let identifier = "MountainCourseTableViewCell"
 
+    var courseArray : [MountainInfoRoad] = []
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         imageViewSetPosition()
@@ -102,7 +103,7 @@ class MountainCourseTableViewCell: UITableViewCell {
     func registerCell() {
         tableViewCourse.delegate = self
         tableViewCourse.dataSource = self
-        
+        tableViewCourse.separatorStyle = .none
         tableViewCourse.register(CourseTableViewCell.self, forCellReuseIdentifier: CourseTableViewCell.identifier)
         contentView.addSubview(tableViewCourse)
         tableViewCourse.snp.makeConstraints { make in
@@ -120,7 +121,7 @@ class MountainCourseTableViewCell: UITableViewCell {
 }
 extension MountainCourseTableViewCell : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return courseArray.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -142,10 +143,12 @@ extension MountainCourseTableViewCell : UITableViewDelegate, UITableViewDataSour
         else {
             fatalError("cant dequeue Cell")
             }
-        cell.selectionStyle = .none
-        cell.buttonCourse.setTitle("\(indexPath.row)코스", for: .normal)
-        cell.labelTimes.text = "2h 30m"
-        cell.labelDistanse.text = "3.2"
+//        cell.selectionStyle = .none
+        let num = Int(indexPath.section)
+            cell.buttonCourse.setTitle(courseArray[num].courseNum, for: .normal)
+            cell.labelTimes.text = courseArray[num].time
+            cell.labelDistanse.text = courseArray[num].length
+        
         
         return cell
     }
