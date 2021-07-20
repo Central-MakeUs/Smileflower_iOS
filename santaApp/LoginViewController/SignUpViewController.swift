@@ -349,6 +349,7 @@ extension SignUpViewController {
     func successDataAndCompleteApi(_ result : CompleteSignUpResult) {
         Constant.JWTToken = result.jwt
         UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
+        Constant.userIdx = result.userIdx
         self.changeRootViewController(BaseTabbarController())
     }
     func failureDataApi() {

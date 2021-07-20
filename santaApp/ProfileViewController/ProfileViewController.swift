@@ -19,6 +19,8 @@ class ProfileViewController : BaseViewController {
         viewSetContent()
         viewSet()
         viewSetImageCollection()
+        
+        ShowProfileDataManager().apiprofileuserIdx(self, 17)
     }
     //MARK: 네비게이션
     func navigationBarSet() {

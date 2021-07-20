@@ -34,6 +34,27 @@ import KakaoSDKCommon
 //        }
     }
 
+/// 친구 목록 정렬 타입
+public enum FriendOrder : String, Codable {
+    
+    /// 닉네임 기준으로 정렬
+    case Nickname = "nickname"
+    
+    /// 19세 이상인 사용자 기준으로 정렬
+    case Age = "age"
+    
+    /// 즐겨찾기 기준으로 정렬
+    case Favorite = "favorite"
+    
+//    public var parameterValue: String {
+//        switch self {
+//        case .Nickname:
+//            return "nickname"
+//        case .Age:
+//            return "age"
+//        }
+//    }
+}
 
 /// 친구 목록 조회 API 응답 클래스 입니다.
 /// - seealso: `TalkApi.friends(offset:limit:order:)`
@@ -68,13 +89,16 @@ public struct FriendsContext {
     public let offset : Int?
     public let limit : Int?
     public let order : Order?
+    public let friendOrder : FriendOrder?
     
     public init(offset: Int? = nil,
                 limit: Int? = nil,
-                order: Order? = nil) {
+                order: Order? = nil,
+                friendOrder: FriendOrder? = nil) {
         self.offset = offset
         self.limit = limit
         self.order = order
+        self.friendOrder = friendOrder
     }
     
     public init?(_ url:URL?) {
@@ -82,6 +106,7 @@ public struct FriendsContext {
             if let offset = params["offset"] as? String { self.offset = Int(offset) ?? 0 } else { self.offset = nil }
             if let limit = params["limit"] as? String { self.limit = Int(limit) ?? 0 } else { self.limit = nil }
             if let order = params["order"] as? String { self.order = Order(rawValue: order) ?? .Asc } else { self.order = nil }
+            if let friendOrder = params["friend_order"] as? String { self.friendOrder = FriendOrder(rawValue: friendOrder) ?? .Favorite } else { self.friendOrder = nil }
         }
         else {
             return nil
@@ -96,7 +121,7 @@ public struct Friend : Codable {
     // MARK: Fields
     
     /// 사용자 아이디
-    public let id: Int64
+    public let id: Int64?
     
     /// 메시지를 전송하기 위한 고유 아이디
     ///
@@ -110,7 +135,7 @@ public struct Friend : Codable {
     public let profileThumbnailImage: URL?
     
     /// 즐겨찾기 추가 여부
-    public let favorite: Bool
+    public let favorite: Bool?
     
     
     // MARK: Internal
@@ -122,10 +147,10 @@ public struct Friend : Codable {
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
-        id = try values.decode(Int64.self, forKey: .id)
+        id = try? values.decode(Int64.self, forKey: .id)
         uuid = try values.decode(String.self, forKey: .uuid)
         profileNickname = try? values.decode(String.self, forKey: .profileNickname)
         profileThumbnailImage = URL(string:(try? values.decode(String.self, forKey: .profileThumbnailImage)) ?? "")
-        favorite = try values.decode(Bool.self, forKey: .favorite)
+        favorite = try? values.decode(Bool.self, forKey: .favorite)
     }
 }

@@ -14,4 +14,5 @@ struct AutoLoginEntity : Decodable {
 
 struct AutoLoginResult : Decodable {
     var status : String?
+    var userIdx : Int?
 }

@@ -20,6 +20,7 @@ class GoViewControllerDataManager {
                 }
                 else {
                     viewcontroller.failureNoDataMountain(response.message)
+                    print("왜그래?")
                 }
             case .failure(let errror) :
                 viewcontroller.failureNoDataMountain("네트워크가 연결되어 있지 않습니다.")

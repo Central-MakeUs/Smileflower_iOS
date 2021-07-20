@@ -30,7 +30,6 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
         imageViewSetPosition()
         labelSetStartAndRun()
         buttonSetStart()
-        print(mountainIdx)
     }
     // MARK: 네비게이션 바
     func navigationBarSet() {
@@ -107,6 +106,7 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
         if let idx = mountainIdx {
             nextVC.mountainIdx = idx
         }
+        nextVC.labelMountain.text = labelMountainName.text
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)

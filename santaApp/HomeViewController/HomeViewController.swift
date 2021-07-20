@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import NVActivityIndicatorView
 import Kingfisher
 
 class HomeViewController : BaseViewController {
@@ -34,27 +33,10 @@ class HomeViewController : BaseViewController {
         return collectionView
     }()
     
-    //MARK: 인디케이털
-//    let indicator = NVActivityIndicatorView(frame: CGRect(x: UIScreen.main.bounds.width/2 - 35, y: UIScreen.main.bounds.height/2 - 35, width: 70, height: 70), type: .ballScale, color: .mainColor, padding: 10)
-//    let indicatorView = UIView()
-//
-//    func setindicator() {
-//        indicatorView.backgroundColor = .black
-//        indicatorView.alpha = 0.7
-//        self.view.addSubview(indicatorView)
-//        indicatorView.snp.makeConstraints { make in
-//            make.edges.equalTo(view)
-//        }
-//        indicatorView.layer.zPosition = 99
-//        self.view.addSubview(self.indicator)
-//        indicator.layer.zPosition = 999
-//        indicator.startAnimating()
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Constant.JWTToken)
-//        setindicator()
         navigationBarSetLogo()
         imageViewSetBackground()
         LabelSetHikeWithSANTA()
@@ -63,10 +45,7 @@ class HomeViewController : BaseViewController {
         labelSetConquer()
         collectionViewSetConquer()
         HomeViewDataManager().apphomes(viewcontroller: self)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            self.indicator.stopAnimating()
-//            self.indicatorView.removeFromSuperview()
-//        }
+
     }
 
     override func viewWillLayoutSubviews() {
@@ -254,6 +233,9 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                     let proceesor = DownsamplingImageProcessor(size: cell.imageProfile.bounds.size)
                     cell.imageProfile.kf.setImage(with: url, options: [.processor(proceesor)])
                 }
+                else {
+                    cell.imageProfile.image = UIImage(named: "personhome@3x")
+                }
             }
             cell.imagemask.frame = cell.imageProfile.bounds
             return cell
@@ -268,6 +250,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         if let mountainCell = mountain {
             let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
             nextVC.mountainIndex = mountainCell[indexPath.row].mountainIdx
+            nextVC.mountainName = mountainCell[indexPath.row].mountainName!
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve
             self.present(nextVC, animated: true, completion: nil)

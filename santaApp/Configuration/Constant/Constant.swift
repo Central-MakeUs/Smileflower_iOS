@@ -12,6 +12,7 @@ struct Constant {
     static let TestURL = "http://13.125.121.202"
     static let fontCocogoose = "Cocogoose"
     static var JWTToken = ""
+    static var userIdx : Int?
     static let fontAppleSDGothicNeoRegular = "AppleSDGothicNeo-Regular"
     static let fontAppleSDGothicNeoThin = "AppleSDGothicNeo-Thin"
     static let fontAppleSDGothicNeoUltraLight = "AppleSDGothicNeo-UltraLight"

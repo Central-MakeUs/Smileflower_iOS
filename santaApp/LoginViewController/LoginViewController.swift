@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import KakaoSDKAuth
 import AuthenticationServices
 
 class LoginViewController : BaseViewController {

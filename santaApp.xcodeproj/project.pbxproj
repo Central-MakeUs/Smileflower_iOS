@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28013ABF26A6F34F007E082D /* PositionCourseAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ABE26A6F34F007E082D /* PositionCourseAnnotationView.swift */; };
 		28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B31268A26B4002ABFA9 /* AppDelegate.swift */; };
 		28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B33268A26B4002ABFA9 /* SceneDelegate.swift */; };
 		28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28119B3A268A26B4002ABFA9 /* santaApp.xcdatamodeld */; };
@@ -14,6 +15,10 @@
 		28119B4C268A26B4002ABFA9 /* santaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B4B268A26B4002ABFA9 /* santaAppTests.swift */; };
 		28119B57268A26B4002ABFA9 /* santaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B56268A26B4002ABFA9 /* santaAppUITests.swift */; };
 		28119B69268A27F5002ABFA9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B68268A27F5002ABFA9 /* Constant.swift */; };
+		2812067526A5DF1300BDA266 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812067426A5DF1300BDA266 /* PaddingLabel.swift */; };
+		2812067726A5E29F00BDA266 /* PositionMountainAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812067626A5E29F00BDA266 /* PositionMountainAnnotationView.swift */; };
+		2812067926A5FDCD00BDA266 /* ShowProlfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812067826A5FDCD00BDA266 /* ShowProlfileEntity.swift */; };
+		2812067C26A6008200BDA266 /* ShowProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812067B26A6008200BDA266 /* ShowProfileDataManager.swift */; };
 		28139FC92698A3F30091DFCD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28139FC82698A3F30091DFCD /* SearchViewController.swift */; };
 		28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28139FCA2698AEF20091DFCD /* DetailPostCollectionViewCell.swift */; };
 		2813D837268B72B900822337 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813D836268B72B900822337 /* LoginViewController.swift */; };
@@ -27,6 +32,7 @@
 		2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */; };
 		28645186268C98A5009F3608 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
 		286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286966F62692E35E0025A250 /* RankingMountainViewController.swift */; };
+		2869B0CF26A5B4960042890E /* lottieAnimaition.json in Resources */ = {isa = PBXBuildFile; fileRef = 2869B0CE26A5B4960042890E /* lottieAnimaition.json */; };
 		2871B45D26A317A600F32165 /* MountainLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B45C26A317A600F32165 /* MountainLikeEntity.swift */; };
 		2871B45F26A31AD200F32165 /* MountainLikeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B45E26A31AD200F32165 /* MountainLikeDataManager.swift */; };
 		2871B46126A31E3400F32165 /* MountainPicksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46026A31E3400F32165 /* MountainPicksEntity.swift */; };
@@ -65,7 +71,6 @@
 		2882287D26A06129000B2EAA /* SignInViewControllerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287C26A06129000B2EAA /* SignInViewControllerDataManager.swift */; };
 		2882288026A0794A000B2EAA /* EndViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287F26A0794A000B2EAA /* EndViewControllerEntity.swift */; };
 		2882288226A07956000B2EAA /* EndViewControllerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288126A07956000B2EAA /* EndViewControllerDataManager.swift */; };
-		2882288426A07964000B2EAA /* EndViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288326A07964000B2EAA /* EndViewControllerInput.swift */; };
 		2882288826A09F87000B2EAA /* AutoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288726A09F87000B2EAA /* AutoLoginDataManager.swift */; };
 		2882288A26A0A0B3000B2EAA /* AutoLoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288926A0A0B3000B2EAA /* AutoLoginEntity.swift */; };
 		2882288C26A0B263000B2EAA /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288B26A0B263000B2EAA /* UserTableViewCell.swift */; };
@@ -127,6 +132,7 @@
 
 /* Begin PBXFileReference section */
 		132ECA024641672E7C0A9EFA /* Pods-santaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaAppTests.release.xcconfig"; path = "Target Support Files/Pods-santaAppTests/Pods-santaAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		28013ABE26A6F34F007E082D /* PositionCourseAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCourseAnnotationView.swift; sourceTree = "<group>"; };
 		28119B2E268A26B4002ABFA9 /* santaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = santaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28119B31268A26B4002ABFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28119B33268A26B4002ABFA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +146,10 @@
 		28119B56268A26B4002ABFA9 /* santaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = santaAppUITests.swift; sourceTree = "<group>"; };
 		28119B58268A26B4002ABFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28119B68268A27F5002ABFA9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		2812067426A5DF1300BDA266 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		2812067626A5E29F00BDA266 /* PositionMountainAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionMountainAnnotationView.swift; sourceTree = "<group>"; };
+		2812067826A5FDCD00BDA266 /* ShowProlfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProlfileEntity.swift; sourceTree = "<group>"; };
+		2812067B26A6008200BDA266 /* ShowProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProfileDataManager.swift; sourceTree = "<group>"; };
 		28139FC82698A3F30091DFCD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		28139FCA2698AEF20091DFCD /* DetailPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostCollectionViewCell.swift; sourceTree = "<group>"; };
 		2813D836268B72B900822337 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +164,7 @@
 		2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewControllerEntity.swift; sourceTree = "<group>"; };
 		28645185268C98A5009F3608 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		286966F62692E35E0025A250 /* RankingMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingMountainViewController.swift; sourceTree = "<group>"; };
+		2869B0CE26A5B4960042890E /* lottieAnimaition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottieAnimaition.json; sourceTree = SOURCE_ROOT; };
 		2871B45C26A317A600F32165 /* MountainLikeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainLikeEntity.swift; sourceTree = "<group>"; };
 		2871B45E26A31AD200F32165 /* MountainLikeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainLikeDataManager.swift; sourceTree = "<group>"; };
 		2871B46026A31E3400F32165 /* MountainPicksEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPicksEntity.swift; sourceTree = "<group>"; };
@@ -192,7 +203,6 @@
 		2882287C26A06129000B2EAA /* SignInViewControllerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewControllerDataManager.swift; sourceTree = "<group>"; };
 		2882287F26A0794A000B2EAA /* EndViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewControllerEntity.swift; sourceTree = "<group>"; };
 		2882288126A07956000B2EAA /* EndViewControllerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewControllerDataManager.swift; sourceTree = "<group>"; };
-		2882288326A07964000B2EAA /* EndViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewControllerInput.swift; sourceTree = "<group>"; };
 		2882288726A09F87000B2EAA /* AutoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginDataManager.swift; sourceTree = "<group>"; };
 		2882288926A0A0B3000B2EAA /* AutoLoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLoginEntity.swift; sourceTree = "<group>"; };
 		2882288B26A0B263000B2EAA /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -264,6 +274,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28013AC026A70BEB007E082D /* MapAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				2812067626A5E29F00BDA266 /* PositionMountainAnnotationView.swift */,
+				28013ABE26A6F34F007E082D /* PositionCourseAnnotationView.swift */,
+			);
+			path = MapAnnotation;
+			sourceTree = "<group>";
+		};
 		28119B25268A26B4002ABFA9 = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +308,7 @@
 		28119B30268A26B4002ABFA9 /* santaApp */ = {
 			isa = PBXGroup;
 			children = (
+				2869B0CE26A5B4960042890E /* lottieAnimaition.json */,
 				2813D838268B7D9200822337 /* santaApp.entitlements */,
 				2813D835268B72A100822337 /* LoginViewController */,
 				28119B64268A276F002ABFA9 /* Configuration */,
@@ -351,6 +371,7 @@
 				28A0C45D268CEB4700D40F35 /* CALayer.swift */,
 				28A0C45F268CEB5F00D40F35 /* UITabBar.swift */,
 				28A0C461268CF38800D40F35 /* UISearchBar.swift */,
+				2812067426A5DF1300BDA266 /* PaddingLabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -370,6 +391,15 @@
 				28119B68268A27F5002ABFA9 /* Constant.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		2812067A26A6005200BDA266 /* ShowProfileAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2812067826A5FDCD00BDA266 /* ShowProlfileEntity.swift */,
+				2812067B26A6008200BDA266 /* ShowProfileDataManager.swift */,
+			);
+			path = ShowProfileAPI;
 			sourceTree = "<group>";
 		};
 		28139FC72698A3D70091DFCD /* SearchViewController */ = {
@@ -442,6 +472,7 @@
 				282FD6FD2694AF3E00B38602 /* RankingViewController */,
 				286966F62692E35E0025A250 /* RankingMountainViewController.swift */,
 				2817F8612694B77E004F39EC /* pathView.swift */,
+				28013AC026A70BEB007E082D /* MapAnnotation */,
 			);
 			path = RankingMountainViewC;
 			sourceTree = "<group>";
@@ -570,7 +601,6 @@
 		2882287E26A0792C000B2EAA /* EndViewControllerAPI */ = {
 			isa = PBXGroup;
 			children = (
-				2882288326A07964000B2EAA /* EndViewControllerInput.swift */,
 				2882287F26A0794A000B2EAA /* EndViewControllerEntity.swift */,
 				2882288126A07956000B2EAA /* EndViewControllerDataManager.swift */,
 			);
@@ -646,6 +676,7 @@
 		28D4C243268A2CAB0056EECF /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2812067A26A6005200BDA266 /* ShowProfileAPI */,
 				2875D2F2269864E600180300 /* DetailPostViewController */,
 				28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */,
 				28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */,
@@ -709,7 +740,7 @@
 				28119B2A268A26B4002ABFA9 /* Sources */,
 				28119B2B268A26B4002ABFA9 /* Frameworks */,
 				28119B2C268A26B4002ABFA9 /* Resources */,
-				56ECD31CEF9048C9634584A9 /* [CP] Embed Pods Frameworks */,
+				109E1CA827FF084B7A35A3D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -747,7 +778,7 @@
 				28119B4E268A26B4002ABFA9 /* Sources */,
 				28119B4F268A26B4002ABFA9 /* Frameworks */,
 				28119B50268A26B4002ABFA9 /* Resources */,
-				4BD48981541A24854DC63492 /* [CP] Embed Pods Frameworks */,
+				222EC0BD45F2777EBC2B300D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -809,6 +840,7 @@
 				28827C67268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */,
 				28827C6A268D8F5B00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */,
 				28119B3E268A26B4002ABFA9 /* Assets.xcassets in Resources */,
+				2869B0CF26A5B4960042890E /* lottieAnimaition.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,24 +865,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4BD48981541A24854DC63492 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		56ECD31CEF9048C9634584A9 /* [CP] Embed Pods Frameworks */ = {
+		109E1CA827FF084B7A35A3D7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -865,6 +880,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-santaApp/Pods-santaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		222EC0BD45F2777EBC2B300D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5D159BF449649488E6382401 /* [CP] Check Pods Manifest.lock */ = {
@@ -944,6 +976,7 @@
 				2882289026A0B6F7000B2EAA /* LogoutTableViewCell.swift in Sources */,
 				28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */,
 				283047EA268D942F00DEB2EC /* ConquerCollectionViewCell.swift in Sources */,
+				2812067926A5FDCD00BDA266 /* ShowProlfileEntity.swift in Sources */,
 				2871B45F26A31AD200F32165 /* MountainLikeDataManager.swift in Sources */,
 				2882287D26A06129000B2EAA /* SignInViewControllerDataManager.swift in Sources */,
 				2871B46626A3277900F32165 /* MapPositionEntity.swift in Sources */,
@@ -954,7 +987,6 @@
 				28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */,
 				28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */,
 				28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */,
-				2882288426A07964000B2EAA /* EndViewControllerInput.swift in Sources */,
 				283047EF268E2B7700DEB2EC /* StartViewController.swift in Sources */,
 				2871B47E26A4BABA00F32165 /* MountainRankingEntity.swift in Sources */,
 				28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */,
@@ -1003,8 +1035,11 @@
 				2882288C26A0B263000B2EAA /* UserTableViewCell.swift in Sources */,
 				28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */,
 				2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */,
+				28013ABF26A6F34F007E082D /* PositionCourseAnnotationView.swift in Sources */,
 				28D4C24D268A2D9F0056EECF /* ProfileViewController.swift in Sources */,
 				2875D2F4269864FF00180300 /* DetailPosteViewController.swift in Sources */,
+				2812067726A5E29F00BDA266 /* PositionMountainAnnotationView.swift in Sources */,
+				2812067C26A6008200BDA266 /* ShowProfileDataManager.swift in Sources */,
 				2882286A269F46AB000B2EAA /* CheckNicnameDataManager.swift in Sources */,
 				28119B69268A27F5002ABFA9 /* Constant.swift in Sources */,
 				28822868269F4690000B2EAA /* CheckNicnameEntity.swift in Sources */,
@@ -1016,6 +1051,7 @@
 				28F41B53269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift in Sources */,
 				2882287226A047F4000B2EAA /* CompleteSignUpDataManager.swift in Sources */,
 				2871B46126A31E3400F32165 /* MountainPicksEntity.swift in Sources */,
+				2812067526A5DF1300BDA266 /* PaddingLabel.swift in Sources */,
 				2871B47726A4B53E00F32165 /* MountainSearchEntity.swift in Sources */,
 				2882288E26A0B6D4000B2EAA /* VersionTableViewCell.swift in Sources */,
 				2882289326A0BF78000B2EAA /* LogoutEntity.swift in Sources */,

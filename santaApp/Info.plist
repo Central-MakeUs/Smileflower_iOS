@@ -78,15 +78,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>kakaoad691c247ba4bb259b79c214fb58074d</string>
-		<string>kakaokompassauth</string>
-		<string>storykompassauth</string>
-		<string>kakaolink</string>
-		<string>kakaotalk-4.5.0</string>
-		<string>kakaostory-2.9.0</string>
-		<string>storylink</string>
-	</array>
 </dict>
 </plist>

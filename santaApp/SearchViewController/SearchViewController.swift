@@ -224,9 +224,10 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             return CGSize(width: 333, height: 91)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let idx = mountainResult[indexPath.row].mountainIdx {
+        if let idx = mountainResult[indexPath.row].mountainIdx, let mountainName = mountainResult[indexPath.row].mountainName {
             let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
             nextVC.mountainIndex = idx
+            nextVC.mountainName = mountainName
                 nextVC.modalPresentationStyle = .fullScreen
                 nextVC.modalTransitionStyle = .crossDissolve
                 self.present(nextVC, animated: true, completion: nil)
@@ -268,6 +269,7 @@ extension SearchViewController {
         if let idx = result.mountainIdx {
             let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
             nextVC.mountainIndex = idx
+            nextVC.mountainName = searchBar.text!
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve
             self.present(nextVC, animated: true, completion: nil)

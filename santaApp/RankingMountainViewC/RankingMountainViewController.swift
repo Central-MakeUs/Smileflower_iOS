@@ -16,6 +16,7 @@ class RankingMountainViewController: UIViewController {
     var mountainIndex : Int?
     var latitude : Double?
     var longitude : Double?
+    var mountainName : String = ""
 
     // MARK: 내용View 만들기.
     private let ViewControllerRanking : ContentRankViewController
@@ -108,6 +109,8 @@ class RankingMountainViewController: UIViewController {
         mapView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        mapView.register(PositionMountainAnnotationView.self, forAnnotationViewWithReuseIdentifier: PositionMountainAnnotationView.identifier)
+        mapView.register(PositionCourseAnnotationView.self, forAnnotationViewWithReuseIdentifier: PositionCourseAnnotationView.identifier)
     }
     func goLocation(latitudeValue: CLLocationDegrees,
                         longtudeValue: CLLocationDegrees,
@@ -124,14 +127,12 @@ class RankingMountainViewController: UIViewController {
     }
     func setAnnotation(latitudeValue: CLLocationDegrees,
                        longitudeValue: CLLocationDegrees,
-                       span : Double,
-                       titleString : String,
-                       subtitleString: String) {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = goLocation(latitudeValue: latitudeValue, longtudeValue: longitudeValue, delta: span)
-        annotation.title = titleString
-        annotation.subtitle = subtitleString
-        mapView.addAnnotation(annotation)
+                   span : Double,
+                   title : String) {
+        let annotaion = MKPointAnnotation()
+        annotaion.title = title
+        annotaion.coordinate = goLocation(latitudeValue: latitudeValue, longtudeValue: longitudeValue, delta: span)
+        mapView.addAnnotation(annotaion)
     }
     // MARK: 버튼 구현
     func setupMiddleButton() {
@@ -361,12 +362,24 @@ class RankingMountainViewController: UIViewController {
 }
 extension RankingMountainViewController : UINavigationBarDelegate, MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        var annotaitonView = mapView.dequeueReusableAnnotationView(withIdentifier: "redPosition")
-        annotaitonView = MKAnnotationView(annotation: annotation, reuseIdentifier: "redPosition")
-        annotaitonView?.canShowCallout = true
-        annotaitonView?.image = UIImage(named: "redPosition@3x")
-        return annotaitonView
+        if annotation.title == mountainName {
+            guard let annotation1 = mapView.dequeueReusableAnnotationView(withIdentifier: PositionMountainAnnotationView.identifier) as? PositionMountainAnnotationView
+            else {
+                fatalError("cant dequeue annotaition")
+                }
+            
+            annotation1.labelMountainName.text = mountainName
+            return annotation1
+        }
+        else {
+            guard let annotation1 = mapView.dequeueReusableAnnotationView(withIdentifier: PositionCourseAnnotationView.identifier) as? PositionCourseAnnotationView
+            else {
+                fatalError("cant dequeue annotaition")
+                }
+            return annotation1
+        }
     }
+    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         self.hideBottomSheet()
         mountainCourseClickView.alpha = 1
@@ -375,7 +388,8 @@ extension RankingMountainViewController : UINavigationBarDelegate, MKMapViewDele
 
 extension RankingMountainViewController {
     func successDataMountainPosition(_ latitude : Double, _ longitude : Double) {
-        setAnnotation(latitudeValue: latitude, longitudeValue: longitude, span: 0.1, titleString: "관악산", subtitleString: "정복해볼까요?")
+        setAnnotation(latitudeValue: latitude, longitudeValue: longitude, span: 0.1, title: mountainName)
+        setAnnotation(latitudeValue: latitude + 0.02, longitudeValue: longitude, span: 0.1, title: "코스1")
     }
     func failureDataMountainPosition() {
         presentAlert(title: "네트워크 연결 장애")

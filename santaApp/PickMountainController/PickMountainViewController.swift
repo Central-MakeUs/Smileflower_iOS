@@ -114,9 +114,10 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
-        if let idx = mountainPicks[indexPath.row].mountainIdx {
+        if let idx = mountainPicks[indexPath.row].mountainIdx, let mountainName = mountainPicks[indexPath.row].mountainName {
             let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
             nextVC.mountainIndex = idx
+            nextVC.mountainName = mountainName
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve
             self.present(nextVC, animated: true, completion: nil)
