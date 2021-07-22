@@ -17,7 +17,6 @@ class AutoLoginDataManager {
                     if response.isSuccess, let result = response.result {
                         viewcontroller.autoLogin = true
                         Constant.JWTToken = UserDefaults.standard.string(forKey: "JWTToken")!
-                        print("자동로그인 성공")
                         Constant.userIdx = result.userIdx
                     }
                     else {

@@ -8,30 +8,69 @@
 import UIKit
 import BetterSegmentedControl
 import Photos
+import Kingfisher
 
 class ProfileViewController : BaseViewController {
+    
+    var showProfileResult : ShowProfileResponse?
+    var showProfilePost : [ShowProfilePosts] = []
+    var showUserResultResult : ShowUserResultResponse?
+    var imagesName : [String] = [ "isFirstConquerd@3x", "isThirdConquerd@3x",
+                                  "isSeventhConquered@3x", "isTenthConquered@3x",
+                                  "isFiveKmHeight@3x", "isTenKmHeight@3x",
+                                  "isTwentiethKmHeight@3x", "isMasterMountain@3x",
+                                  "haveThreeMountain@3x", "HaveSevenMountain@3x",
+                                  "haveTenMountain@3x"]
+    var nonimagesName : [String] = [ "isnotFirstConquerd@3x", "isnotThirdConquered@3x",
+                                  "isnotSeventhConquered@3x", "isnotTenthConquered@3x",
+                                  "isnotFiveKmHeight@3x", "isnotTenKmHeight@3x",
+                                  "isnotTwentiethKmHeight@3x", "isnotMasterMountain@3x",
+                                  "haveNotThreeMountain@3x", "haveNotSevenMountain@3x",
+                                  "haveNotTenMountain@3x"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBarSet()
+        
+        if let idx = Constant.userIdx {
+            ShowProfileDataManager().apiprofileuserIdx(self, idx)
+            ShowUserResultDataManager().apiprofileuserIdxresult(self, idx)
+        }
+        else {
+            self.presentAlert(title: "네트워크 통신 장애")
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
         scrollViewSet()
         buttonSetSeeMap()
         viewSetContent()
         viewSet()
         viewSetImageCollection()
-        
-        ShowProfileDataManager().apiprofileuserIdx(self, 17)
     }
     //MARK: 네비게이션
+    let pickerForMountainImage = UIImagePickerController()
+    lazy var rightButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "사진 추가", style: .plain, target: self, action: #selector(actionAddImage))
+        button.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 15 )], for: .normal)
+        button.tag = 1
+        button.tintColor = .mainColor
+        return button
+        
+    }()
     func navigationBarSet() {
         navigationItem.title = "프로필"
+        navigationItem.rightBarButtonItem = rightButton
+    }
+    @objc func actionAddImage() {
+        pickerForMountainImage.sourceType = .photoLibrary
+        pickerForMountainImage.modalPresentationStyle = .fullScreen
+        self.present(pickerForMountainImage, animated: true, completion: nil)
     }
     //MARK: 스크롤뷰 구현
     let scrollViewContent = UIScrollView()
     
     func scrollViewSet() {
         scrollViewContent.backgroundColor = .white
-        scrollViewContent.isScrollEnabled = false
         scrollViewContent.showsHorizontalScrollIndicator = false
         scrollViewContent.showsVerticalScrollIndicator = false
         scrollViewContent.delegate = self
@@ -79,7 +118,7 @@ class ProfileViewController : BaseViewController {
     let viewProfile = UIView()
     
     func viewSet() {
-        viewProfile.backgroundColor = .white
+        viewProfile.backgroundColor = .clear
         viewContent.addSubview(viewProfile)
         viewProfile.snp.makeConstraints { make in
             make.leading.trailing.top.equalTo(viewContent)
@@ -91,11 +130,12 @@ class ProfileViewController : BaseViewController {
     //MARK: 사용자 프로필
     let viewUser = UIButton()
     let labelUserName = UILabel()
-    let picker = UIImagePickerController()
+    let pickerforProfile = UIImagePickerController()
     let imageViewUserProfile = UIImageView()
     
     func viewSetUser() {
-        picker.delegate = self
+        pickerforProfile.delegate = self
+        pickerForMountainImage.delegate = self
         viewUser.backgroundColor = .white
         viewUser.layer.cornerRadius = 44
         viewUser.layer.shadowColor = UIColor(hex: 0xc1cad0).cgColor
@@ -109,7 +149,7 @@ class ProfileViewController : BaseViewController {
             make.centerX.equalTo(viewContent.snp.centerX)
             make.top.equalTo(viewContent.snp.top).offset(25)
         }
-        labelUserName.text = "에스핀"
+        labelUserName.text = (showProfileResult?.name ?? "")
         labelUserName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 22)
         labelUserName.textColor = .darkbluegray
         labelUserName.textAlignment = .center
@@ -119,7 +159,15 @@ class ProfileViewController : BaseViewController {
             make.centerX.equalTo(viewContent.snp.centerX)
             make.width.equalTo(156)
         }
-        imageViewUserProfile.image = UIImage(named: "1246@3x")
+        if let stringURL = showProfileResult?.fileUrl {
+            let url = URL(string: stringURL)
+            let proccess = DownsamplingImageProcessor(size: imageViewUserProfile.bounds.size)
+            imageViewUserProfile.kf.setImage(with: url , options: [.processor(proccess)])
+        }
+        else {
+            imageViewUserProfile.image = UIImage(named: "homeperson@3x")
+        }
+        imageViewUserProfile.clipsToBounds = true
         imageViewUserProfile.contentMode = .scaleAspectFill
         viewUser.addSubview(imageViewUserProfile)
         imageViewUserProfile.clipsToBounds = true
@@ -130,9 +178,9 @@ class ProfileViewController : BaseViewController {
         }
     }
     @objc func actionGoPhotoLibrary() {
-        picker.sourceType = .photoLibrary
-        picker.modalPresentationStyle = .fullScreen
-        self.present(picker, animated: true, completion: nil)
+        pickerforProfile.sourceType = .photoLibrary
+        pickerforProfile.modalPresentationStyle = .fullScreen
+        self.present(pickerforProfile, animated: true, completion: nil)
     }
     //MAKR: 레벨, 꽂은 깃발, 게시물 구성
     let stackView = UIStackView()
@@ -141,6 +189,7 @@ class ProfileViewController : BaseViewController {
     let viewPost = UIView()
     
     func stackViewSet() {
+        
         self.stackView.backgroundColor = UIColor(hex: 0xc1cad0, alpha: 0.3)
         self.stackView.axis = .horizontal
         self.stackView.alignment = .fill
@@ -156,67 +205,72 @@ class ProfileViewController : BaseViewController {
             make.width.equalTo(332)
             make.height.equalTo(60)
         }
-        //MARK: 레벨 라벨
-        let labelLv = UILabel()
-        let labelLvConstant = UILabel()
-        labelLv.text = "레벨"
-        labelLv.textColor = .titleColorGray
-        labelLv.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
-        labelLvConstant.text  = "14"
-        labelLvConstant.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 24)
-        labelLvConstant.textAlignment = .center
-        viewUserLv.addSubview(labelLv)
-        viewUserLv.addSubview(labelLvConstant)
-        labelLv.snp.makeConstraints { make in
-            make.centerX.equalTo(viewUserLv.snp.centerX)
-            make.top.equalTo(viewUserLv.snp.top).offset(6)
+        if let result = showProfileResult {
+            //MARK: 레벨 라벨
+            
+            let labelLv = UILabel()
+            let labelLvConstant = UILabel()
+            labelLv.text = "레벨"
+            labelLv.textColor = .titleColorGray
+            labelLv.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
+            labelLvConstant.text  = String(result.level ?? 0)
+            labelLvConstant.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 24)
+            labelLvConstant.textAlignment = .center
+            viewUserLv.addSubview(labelLv)
+            viewUserLv.addSubview(labelLvConstant)
+            labelLv.snp.makeConstraints { make in
+                make.centerX.equalTo(viewUserLv.snp.centerX)
+                make.top.equalTo(viewUserLv.snp.top).offset(6)
+            }
+            labelLvConstant.snp.makeConstraints { make in
+                make.centerX.equalTo(viewUserLv.snp.centerX)
+                make.top.equalTo(labelLv.snp.bottom).offset(3)
+                make.width.equalTo(45)
+            }
+            //MARK: 뽑은 깃발
+            let labelFlag = UILabel()
+            let labelFlagConstant = UILabel()
+            labelFlag.text = "꽂은 깃발"
+            labelFlag.textColor = .titleColorGray
+            labelFlag.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
+            labelFlagConstant.text  = String(result.flagCount ?? 0)
+            labelFlagConstant.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 24)
+            labelFlagConstant.textAlignment = .center
+            viewFlag.addSubview(labelFlag)
+            viewFlag.addSubview(labelFlagConstant)
+            labelFlag.snp.makeConstraints { make in
+                make.centerX.equalTo(viewFlag.snp.centerX)
+                make.top.equalTo(viewFlag.snp.top).offset(6)
+            }
+            labelFlagConstant.snp.makeConstraints { make in
+                make.centerX.equalTo(viewFlag.snp.centerX)
+                make.top.equalTo(labelFlag.snp.bottom).offset(3)
+                make.width.equalTo(45)
+            }
+            //MARK: 게시물
+            let labelPost = UILabel()
+            let labelPostConstant = UILabel()
+            labelPost.text = "게시물"
+            labelPost.textColor = .titleColorGray
+            labelPost.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
+            labelPostConstant.text  = String(result.postCount ?? 0)
+            labelPostConstant.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 24)
+            labelPostConstant.textAlignment = .center
+            viewPost.addSubview(labelPost)
+            viewPost.addSubview(labelPostConstant)
+            labelPost.snp.makeConstraints { make in
+                make.centerX.equalTo(viewPost.snp.centerX)
+                make.top.equalTo(viewPost.snp.top).offset(6)
+            }
+            labelPostConstant.snp.makeConstraints { make in
+                make.centerX.equalTo(viewPost.snp.centerX)
+                make.top.equalTo(labelPost.snp.bottom).offset(3)
+                make.width.equalTo(45)
+            }
+            
+           
+            
         }
-        labelLvConstant.snp.makeConstraints { make in
-            make.centerX.equalTo(viewUserLv.snp.centerX)
-            make.top.equalTo(labelLv.snp.bottom).offset(3)
-            make.width.equalTo(45)
-        }
-        //MARK: 뽑은 깃발
-        let labelFlag = UILabel()
-        let labelFlagConstant = UILabel()
-        labelFlag.text = "꽂은 깃발"
-        labelFlag.textColor = .titleColorGray
-        labelFlag.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
-        labelFlagConstant.text  = "9"
-        labelFlagConstant.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 24)
-        labelFlagConstant.textAlignment = .center
-        viewFlag.addSubview(labelFlag)
-        viewFlag.addSubview(labelFlagConstant)
-        labelFlag.snp.makeConstraints { make in
-            make.centerX.equalTo(viewFlag.snp.centerX)
-            make.top.equalTo(viewFlag.snp.top).offset(6)
-        }
-        labelFlagConstant.snp.makeConstraints { make in
-            make.centerX.equalTo(viewFlag.snp.centerX)
-            make.top.equalTo(labelFlag.snp.bottom).offset(3)
-            make.width.equalTo(45)
-        }
-        //MARK: 게시물
-        let labelPost = UILabel()
-        let labelPostConstant = UILabel()
-        labelPost.text = "게시물"
-        labelPost.textColor = .titleColorGray
-        labelPost.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
-        labelPostConstant.text  = "20"
-        labelPostConstant.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 24)
-        labelPostConstant.textAlignment = .center
-        viewPost.addSubview(labelPost)
-        viewPost.addSubview(labelPostConstant)
-        labelPost.snp.makeConstraints { make in
-            make.centerX.equalTo(viewPost.snp.centerX)
-            make.top.equalTo(viewPost.snp.top).offset(6)
-        }
-        labelPostConstant.snp.makeConstraints { make in
-            make.centerX.equalTo(viewPost.snp.centerX)
-            make.top.equalTo(labelPost.snp.bottom).offset(3)
-            make.width.equalTo(45)
-        }
-        
         stackView.addArrangedSubview(viewUserLv)
         stackView.addArrangedSubview(viewFlag)
         stackView.addArrangedSubview(viewPost)
@@ -243,6 +297,12 @@ class ProfileViewController : BaseViewController {
                 self.collectionViewUserResult.alpha = 0
             }
             self.collectionViewConquerMountain.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            if self.showProfilePost.count < 13 {
+                self.scrollViewContent.isScrollEnabled = true
+            }
+            else {
+                self.scrollViewContent.isScrollEnabled = false
+            }
 
         case 1:
             UIView.animate(withDuration: 0.5) {
@@ -250,6 +310,7 @@ class ProfileViewController : BaseViewController {
                 self.collectionViewUserResult.alpha = 1
             }
             self.collectionViewUserResult.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            self.scrollViewContent.isScrollEnabled = true
         default: return
         }
     }
@@ -326,34 +387,155 @@ class ProfileViewController : BaseViewController {
             make.top.equalTo(control.snp.bottom).offset(14)
         }
     }
-    
 }
 
 extension ProfileViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 40
+        if collectionView == collectionViewConquerMountain {
+            return showProfilePost.count
+        }
+        else {
+            return 11
+        }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionViewConquerMountain {
             let nextVC = DetailPosteViewController()
+            nextVC.userIdx = showProfileResult?.userIdx
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve
             self.present(nextVC, animated: true, completion: nil)
         }
+        else {
+            if indexPath.row == 4 {
+                self.presentAlert(title: "\(showUserResultResult?.highCount ?? 0)km/5km")
+            }
+            else if indexPath.row == 5{
+                self.presentAlert(title: "\(showUserResultResult?.highCount ?? 0)Km/10km")
+            }
+            else if indexPath.row == 6 {
+                self.presentAlert(title: "\(showUserResultResult?.highCount ?? 0)km/20km")
+            }
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // MARK: 정복한 산 셀
         if collectionView == collectionViewConquerMountain {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConquerMountainCollectionViewCell.reuseIdentifier, for: indexPath) as? ConquerMountainCollectionViewCell {
                 cell.backgroundColor = .bluegray
+                cell.clipsToBounds = true
                 cell.layer.cornerRadius = 10
+                if let urlString = showProfilePost[indexPath.row].pictureUrl {
+                    let url = URL(string: urlString)
+                    cell.imageViewMountainConquer.kf.setImage(with: url)
+                }
+                else {
+                    cell.imageViewMountainConquer.backgroundColor = .mainColor
+                }
+                if showProfilePost[indexPath.row].isFlag! {
+                    cell.imageViewFlag.image = UIImage(named: "FlagIconSmall@3x")
+                }
+                else {
+                    cell.imageViewFlag.image = UIImage()
+                }
                 return cell
             }
             return UICollectionViewCell()
         }
         else {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UserResultCollectionViewCell.reuseIdentifier, for: indexPath) as? UserResultCollectionViewCell {
-                cell.backgroundColor = .darkbluegray
-                cell.layer.cornerRadius = 10
+                
+                cell.backgroundColor = .white
+                cell.layer.cornerRadius = 20
+                cell.layer.shadowRadius = 10
+                cell.layer.shadowOffset = CGSize(width: 0, height: 3)
+                cell.layer.shadowColor = UIColor(hex: 0x7c909b).cgColor
+                cell.layer.shadowOpacity = 0.2
+                
+                if let userResult = showUserResultResult {
+                    switch indexPath.row {
+                    case 0:
+                        if userResult.firstFlag {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    case 1:
+                        if userResult.thirdFlag {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    case 2:
+                        if userResult.seventhFlag {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    case 3:
+                        if userResult.tenthFlag {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    case 4:
+                        if userResult.fiveHigh {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    case 5:
+                        if userResult.tenHigh {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    case 6:
+                        if userResult.twentyHigh {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    case 7:
+                        if userResult.master {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    case 8:
+                        if userResult.thirdMountain {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    case 9:
+                        if userResult.seventhMountain {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    case 10:
+                        if userResult.tenthMountain {
+                            cell.imageViewResult.image = UIImage(named: imagesName[indexPath.row])
+                        }
+                        else {
+                            cell.imageViewResult.image = UIImage(named: nonimagesName[indexPath.row])
+                        }
+                    default:
+                        cell.imageViewResult.image = UIImage()
+                    }
+                }
+                
                 return cell
             }
             return UICollectionViewCell()
@@ -364,6 +546,7 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         return CGSize(width: (collectionView.bounds.width - 46) / 3, height: (collectionView.bounds.width - 46) / 3)
     }
 
+    
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         if scrollView == collectionViewConquerMountain {
             if scrollView.contentOffset.y > 0 {
@@ -416,11 +599,49 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
 //MAKR: 이미지픽 사용
 extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            imageViewUserProfile.image = image
+        var inputImageMountain : Data?
+        var inputImageProfile : Data?
+        if picker == pickerforProfile {
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                imageViewUserProfile.image = image
+                inputImageProfile = image.jpegData(compressionQuality: 0.5)
+                ChangeProfileDataManager().apiprofileupload(inputImageProfile!, self)
+            }
+            let nextVC = BaseTabbarController()
+            nextVC.index = 3
+            self.changeRootViewController(nextVC)
         }
-        let nextVC = BaseTabbarController()
-        nextVC.index = 3
-        self.changeRootViewController(nextVC)
+        else {
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                inputImageMountain = image.jpegData(compressionQuality: 0.5)
+                RegisterImageDataManager().apiprofilepicture(inputImageMountain!, self)
+            }
+            let nextVC = BaseTabbarController()
+            nextVC.index = 3
+            self.changeRootViewController(nextVC)
+        }
+    }
+}
+
+//MARK: 프로파일뷰 API연동
+extension ProfileViewController {
+    func successDataApiShowProfile( _ result : ShowProfileResponse) {
+        showProfileResult = result
+        showProfilePost = result.posts ?? []
+        collectionViewConquerMountain.reloadData()
+        if showProfilePost.count < 13 {
+            scrollViewContent.isScrollEnabled = true
+        }
+        self.viewWillAppear(false)
+    }
+    func successDataApiRegisterImage() {
+        collectionViewConquerMountain.reloadData()
+    }
+    func successDataApiUserResult(_ result : ShowUserResultResponse) {
+        showUserResultResult = result
+        collectionViewUserResult.reloadData()
+    }
+    func faillureDataApi(_ message : String) {
+        self.presentAlert(title: message)
     }
 }

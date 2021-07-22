@@ -136,15 +136,10 @@ extension EndViewController : UIImagePickerControllerDelegate, UINavigationContr
         }
         dismiss(animated: true) {
             self.presentAlert(title: "해당 사진으로 진행할까요?", message: "해당 산과 무관한 사진을 올릴 시\n제재가 가해질 수 있습니다.", isCancelActionIncluded: true, preferredStyle: .alert) { action in
-                let nextVC = ConquerViewController()
                 if let idx = self.mountainIdx {
                     EndViewControllerDataManager().appflagsmountainIdx(self, idx, inputImage!)
-                    nextVC.mountainIdx = idx
                 }
-    
-                nextVC.modalPresentationStyle = .overFullScreen
-                nextVC.modalTransitionStyle = .crossDissolve
-                self.present(nextVC, animated: true, completion: nil)
+                
             }
         }
     }
@@ -160,4 +155,18 @@ extension EndViewController : MTSlideToOpenDelegate {
         }
     }
     
+}
+extension EndViewController {
+    func successDataImageRegister() {
+        let nextVC = ConquerViewController()
+        if let idx = self.mountainIdx {
+            nextVC.mountainIdx = idx
+        }
+        nextVC.modalPresentationStyle = .overFullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    func failureDataImageRegister(_ message: String) {
+        self.presentAlert(title: message)
+    }
 }

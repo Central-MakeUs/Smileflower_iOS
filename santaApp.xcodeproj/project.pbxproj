@@ -8,6 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		28013ABF26A6F34F007E082D /* PositionCourseAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ABE26A6F34F007E082D /* PositionCourseAnnotationView.swift */; };
+		28013AC326A7252D007E082D /* RegisterImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AC226A7252D007E082D /* RegisterImageEntity.swift */; };
+		28013AC526A725D0007E082D /* RegisterImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AC426A725D0007E082D /* RegisterImageDataManager.swift */; };
+		28013AC826A74497007E082D /* ChangeProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AC726A74497007E082D /* ChangeProfileEntity.swift */; };
+		28013ACA26A74534007E082D /* ChangeProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AC926A74534007E082D /* ChangeProfileDataManager.swift */; };
+		28013ACD26A7BA62007E082D /* DetailPostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ACC26A7BA62007E082D /* DetailPostEntity.swift */; };
+		28013ACF26A7BB8F007E082D /* DetailPostsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ACE26A7BB8F007E082D /* DetailPostsDataManager.swift */; };
+		28013AD126A7C290007E082D /* PostDeleteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AD026A7C290007E082D /* PostDeleteEntity.swift */; };
+		28013AD526A85F6C007E082D /* DetailAnotherUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AD426A85F6C007E082D /* DetailAnotherUserViewController.swift */; };
+		28013AD826A85FDE007E082D /* DetailAnotherUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AD726A85FDE007E082D /* DetailAnotherUserCollectionViewCell.swift */; };
+		28013ADB26A862B9007E082D /* DetailAnotherUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ADA26A862B9007E082D /* DetailAnotherUserEntity.swift */; };
+		28013ADD26A862F4007E082D /* DetailAnotherUserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ADC26A862F4007E082D /* DetailAnotherUserDataManager.swift */; };
+		28013AE026A907DD007E082D /* PostsDeleteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ADF26A907DD007E082D /* PostsDeleteDataManager.swift */; };
+		28013AE226A90D24007E082D /* FlagsDeleteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AE126A90D24007E082D /* FlagsDeleteEntity.swift */; };
+		28013AE526A9106E007E082D /* FlagsDeleteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AE426A9106E007E082D /* FlagsDeleteDataManager.swift */; };
+		28013AE826A91156007E082D /* ReportUserFlagsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AE726A91156007E082D /* ReportUserFlagsEntity.swift */; };
+		28013AEA26A911CF007E082D /* ReportUserFlagsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AE926A911CF007E082D /* ReportUserFlagsDataManager.swift */; };
+		28013AED26A99A16007E082D /* ShowUserResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AEC26A99A16007E082D /* ShowUserResultEntity.swift */; };
+		28013AEF26A99B3C007E082D /* ShowUserResultDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AEE26A99B3C007E082D /* ShowUserResultDataManager.swift */; };
 		28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B31268A26B4002ABFA9 /* AppDelegate.swift */; };
 		28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B33268A26B4002ABFA9 /* SceneDelegate.swift */; };
 		28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28119B3A268A26B4002ABFA9 /* santaApp.xcdatamodeld */; };
@@ -133,6 +151,24 @@
 /* Begin PBXFileReference section */
 		132ECA024641672E7C0A9EFA /* Pods-santaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaAppTests.release.xcconfig"; path = "Target Support Files/Pods-santaAppTests/Pods-santaAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		28013ABE26A6F34F007E082D /* PositionCourseAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCourseAnnotationView.swift; sourceTree = "<group>"; };
+		28013AC226A7252D007E082D /* RegisterImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageEntity.swift; sourceTree = "<group>"; };
+		28013AC426A725D0007E082D /* RegisterImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDataManager.swift; sourceTree = "<group>"; };
+		28013AC726A74497007E082D /* ChangeProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileEntity.swift; sourceTree = "<group>"; };
+		28013AC926A74534007E082D /* ChangeProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileDataManager.swift; sourceTree = "<group>"; };
+		28013ACC26A7BA62007E082D /* DetailPostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostEntity.swift; sourceTree = "<group>"; };
+		28013ACE26A7BB8F007E082D /* DetailPostsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostsDataManager.swift; sourceTree = "<group>"; };
+		28013AD026A7C290007E082D /* PostDeleteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDeleteEntity.swift; sourceTree = "<group>"; };
+		28013AD426A85F6C007E082D /* DetailAnotherUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnotherUserViewController.swift; sourceTree = "<group>"; };
+		28013AD726A85FDE007E082D /* DetailAnotherUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnotherUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		28013ADA26A862B9007E082D /* DetailAnotherUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnotherUserEntity.swift; sourceTree = "<group>"; };
+		28013ADC26A862F4007E082D /* DetailAnotherUserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnotherUserDataManager.swift; sourceTree = "<group>"; };
+		28013ADF26A907DD007E082D /* PostsDeleteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsDeleteDataManager.swift; sourceTree = "<group>"; };
+		28013AE126A90D24007E082D /* FlagsDeleteEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsDeleteEntity.swift; sourceTree = "<group>"; };
+		28013AE426A9106E007E082D /* FlagsDeleteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsDeleteDataManager.swift; sourceTree = "<group>"; };
+		28013AE726A91156007E082D /* ReportUserFlagsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserFlagsEntity.swift; sourceTree = "<group>"; };
+		28013AE926A911CF007E082D /* ReportUserFlagsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserFlagsDataManager.swift; sourceTree = "<group>"; };
+		28013AEC26A99A16007E082D /* ShowUserResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserResultEntity.swift; sourceTree = "<group>"; };
+		28013AEE26A99B3C007E082D /* ShowUserResultDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserResultDataManager.swift; sourceTree = "<group>"; };
 		28119B2E268A26B4002ABFA9 /* santaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = santaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28119B31268A26B4002ABFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28119B33268A26B4002ABFA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -283,6 +319,89 @@
 			path = MapAnnotation;
 			sourceTree = "<group>";
 		};
+		28013AC126A724E9007E082D /* registerImageAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28013AC226A7252D007E082D /* RegisterImageEntity.swift */,
+				28013AC426A725D0007E082D /* RegisterImageDataManager.swift */,
+			);
+			path = registerImageAPI;
+			sourceTree = "<group>";
+		};
+		28013AC626A743DD007E082D /* ChangeProfileAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28013AC726A74497007E082D /* ChangeProfileEntity.swift */,
+				28013AC926A74534007E082D /* ChangeProfileDataManager.swift */,
+			);
+			path = ChangeProfileAPI;
+			sourceTree = "<group>";
+		};
+		28013ACB26A7BA43007E082D /* DetailPostsAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28013ACC26A7BA62007E082D /* DetailPostEntity.swift */,
+				28013ACE26A7BB8F007E082D /* DetailPostsDataManager.swift */,
+			);
+			path = DetailPostsAPI;
+			sourceTree = "<group>";
+		};
+		28013AD226A7C295007E082D /* PostDeleteAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28013AD026A7C290007E082D /* PostDeleteEntity.swift */,
+				28013ADF26A907DD007E082D /* PostsDeleteDataManager.swift */,
+			);
+			path = PostDeleteAPI;
+			sourceTree = "<group>";
+		};
+		28013AD326A85F41007E082D /* DetailAnotherUserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28013AE626A91110007E082D /* ReportUserAPI */,
+				28013AD926A862A4007E082D /* DetailAnotherUserAPI */,
+				28013AD426A85F6C007E082D /* DetailAnotherUserViewController.swift */,
+				28013AD726A85FDE007E082D /* DetailAnotherUserCollectionViewCell.swift */,
+			);
+			path = DetailAnotherUserViewController;
+			sourceTree = "<group>";
+		};
+		28013AD926A862A4007E082D /* DetailAnotherUserAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28013ADA26A862B9007E082D /* DetailAnotherUserEntity.swift */,
+				28013ADC26A862F4007E082D /* DetailAnotherUserDataManager.swift */,
+			);
+			path = DetailAnotherUserAPI;
+			sourceTree = "<group>";
+		};
+		28013AE326A90D28007E082D /* FlagsDeleteAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28013AE126A90D24007E082D /* FlagsDeleteEntity.swift */,
+				28013AE426A9106E007E082D /* FlagsDeleteDataManager.swift */,
+			);
+			path = FlagsDeleteAPI;
+			sourceTree = "<group>";
+		};
+		28013AE626A91110007E082D /* ReportUserAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28013AE726A91156007E082D /* ReportUserFlagsEntity.swift */,
+				28013AE926A911CF007E082D /* ReportUserFlagsDataManager.swift */,
+			);
+			path = ReportUserAPI;
+			sourceTree = "<group>";
+		};
+		28013AEB26A999F8007E082D /* ShowUserResultAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28013AEC26A99A16007E082D /* ShowUserResultEntity.swift */,
+				28013AEE26A99B3C007E082D /* ShowUserResultDataManager.swift */,
+			);
+			path = ShowUserResultAPI;
+			sourceTree = "<group>";
+		};
 		28119B25268A26B4002ABFA9 = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +438,7 @@
 				28D4C244268A2CB50056EECF /* SetupViewController */,
 				286966F82692E6410025A250 /* RankingMountainViewC */,
 				28139FC72698A3D70091DFCD /* SearchViewController */,
+				28013AD326A85F41007E082D /* DetailAnotherUserViewController */,
 				2871B45B26A3169500F32165 /* MountainLikeApi */,
 				28D4C23B268A29F90056EECF /* Splash */,
 				28119B31268A26B4002ABFA9 /* AppDelegate.swift */,
@@ -544,8 +664,11 @@
 		2875D2F2269864E600180300 /* DetailPostViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2875D2F3269864FF00180300 /* DetailPosteViewController.swift */,
+				28013AE326A90D28007E082D /* FlagsDeleteAPI */,
+				28013AD226A7C295007E082D /* PostDeleteAPI */,
+				28013ACB26A7BA43007E082D /* DetailPostsAPI */,
 				28139FCA2698AEF20091DFCD /* DetailPostCollectionViewCell.swift */,
+				2875D2F3269864FF00180300 /* DetailPosteViewController.swift */,
 			);
 			path = DetailPostViewController;
 			sourceTree = "<group>";
@@ -676,6 +799,9 @@
 		28D4C243268A2CAB0056EECF /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				28013AEB26A999F8007E082D /* ShowUserResultAPI */,
+				28013AC626A743DD007E082D /* ChangeProfileAPI */,
+				28013AC126A724E9007E082D /* registerImageAPI */,
 				2812067A26A6005200BDA266 /* ShowProfileAPI */,
 				2875D2F2269864E600180300 /* DetailPostViewController */,
 				28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */,
@@ -975,22 +1101,31 @@
 				28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */,
 				2882289026A0B6F7000B2EAA /* LogoutTableViewCell.swift in Sources */,
 				28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */,
+				28013AEF26A99B3C007E082D /* ShowUserResultDataManager.swift in Sources */,
 				283047EA268D942F00DEB2EC /* ConquerCollectionViewCell.swift in Sources */,
+				28013ACA26A74534007E082D /* ChangeProfileDataManager.swift in Sources */,
 				2812067926A5FDCD00BDA266 /* ShowProlfileEntity.swift in Sources */,
 				2871B45F26A31AD200F32165 /* MountainLikeDataManager.swift in Sources */,
+				28013AC526A725D0007E082D /* RegisterImageDataManager.swift in Sources */,
 				2882287D26A06129000B2EAA /* SignInViewControllerDataManager.swift in Sources */,
 				2871B46626A3277900F32165 /* MapPositionEntity.swift in Sources */,
 				28822865269E0DBF000B2EAA /* SignUpViewController.swift in Sources */,
+				28013AC826A74497007E082D /* ChangeProfileEntity.swift in Sources */,
 				2813D837268B72B900822337 /* LoginViewController.swift in Sources */,
 				28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */,
 				283047F1268E3CAB00DEB2EC /* EndViewController.swift in Sources */,
+				28013ADB26A862B9007E082D /* DetailAnotherUserEntity.swift in Sources */,
 				28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */,
+				28013AC326A7252D007E082D /* RegisterImageEntity.swift in Sources */,
 				28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */,
 				28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */,
+				28013AE026A907DD007E082D /* PostsDeleteDataManager.swift in Sources */,
 				283047EF268E2B7700DEB2EC /* StartViewController.swift in Sources */,
 				2871B47E26A4BABA00F32165 /* MountainRankingEntity.swift in Sources */,
 				28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */,
 				28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */,
+				28013ACF26A7BB8F007E082D /* DetailPostsDataManager.swift in Sources */,
+				28013ADD26A862F4007E082D /* DetailAnotherUserDataManager.swift in Sources */,
 				2871B48026A4BB9900F32165 /* MountainRankingDataManager.swift in Sources */,
 				286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */,
 				28DB5E0C26A1BA6B0092CC40 /* MountainDataManager.swift in Sources */,
@@ -998,8 +1133,10 @@
 				28B873C2269CAFA10097E46F /* HomeVIewEntity.swift in Sources */,
 				2871B46D26A446ED00F32165 /* CompleteConqueredDataManager.swift in Sources */,
 				289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */,
+				28013AD526A85F6C007E082D /* DetailAnotherUserViewController.swift in Sources */,
 				28139FC92698A3F30091DFCD /* SearchViewController.swift in Sources */,
 				2871B47B26A4B65200F32165 /* MountainSearchDataManager.swift in Sources */,
+				28013AED26A99A16007E082D /* ShowUserResultEntity.swift in Sources */,
 				28D4C248268A2D290056EECF /* PickMountainViewController.swift in Sources */,
 				2871B48726A5798B00F32165 /* MountainInfoDataManager.swift in Sources */,
 				2871B46826A3280900F32165 /* MapPositionDataManager.swift in Sources */,
@@ -1010,6 +1147,7 @@
 				28B873C9269CD4C70097E46F /* GoViewControllerDataManager.swift in Sources */,
 				28D4C24F268A2DDC0056EECF /* SetupViewController.swift in Sources */,
 				28B52EA9268C793000017DCF /* UIImage.swift in Sources */,
+				28013AE226A90D24007E082D /* FlagsDeleteEntity.swift in Sources */,
 				2871B48526A5789200F32165 /* MountainInfoEntity.swift in Sources */,
 				2871B47026A4675600F32165 /* RankingTableViewCell.swift in Sources */,
 				28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */,
@@ -1026,12 +1164,14 @@
 				282FD6FC2694AD6B00B38602 /* ContentMountainViewController.swift in Sources */,
 				2871B47926A4B62800F32165 /* MonutainSearchInput.swift in Sources */,
 				28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */,
+				28013AEA26A911CF007E082D /* ReportUserFlagsDataManager.swift in Sources */,
 				28D4C251268A30800056EECF /* UiViewController.swift in Sources */,
 				28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */,
 				2882288026A0794A000B2EAA /* EndViewControllerEntity.swift in Sources */,
 				2890263F268F286E00D15BBA /* UIView.swift in Sources */,
 				2871B47226A4A09B00F32165 /* MyRankingTableViewCell.swift in Sources */,
 				28D4C246268A2CEB0056EECF /* HomeViewController.swift in Sources */,
+				28013AE526A9106E007E082D /* FlagsDeleteDataManager.swift in Sources */,
 				2882288C26A0B263000B2EAA /* UserTableViewCell.swift in Sources */,
 				28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */,
 				2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */,
@@ -1039,8 +1179,10 @@
 				28D4C24D268A2D9F0056EECF /* ProfileViewController.swift in Sources */,
 				2875D2F4269864FF00180300 /* DetailPosteViewController.swift in Sources */,
 				2812067726A5E29F00BDA266 /* PositionMountainAnnotationView.swift in Sources */,
+				28013ACD26A7BA62007E082D /* DetailPostEntity.swift in Sources */,
 				2812067C26A6008200BDA266 /* ShowProfileDataManager.swift in Sources */,
 				2882286A269F46AB000B2EAA /* CheckNicnameDataManager.swift in Sources */,
+				28013AD126A7C290007E082D /* PostDeleteEntity.swift in Sources */,
 				28119B69268A27F5002ABFA9 /* Constant.swift in Sources */,
 				28822868269F4690000B2EAA /* CheckNicnameEntity.swift in Sources */,
 				2882288A26A0A0B3000B2EAA /* AutoLoginEntity.swift in Sources */,
@@ -1054,6 +1196,8 @@
 				2812067526A5DF1300BDA266 /* PaddingLabel.swift in Sources */,
 				2871B47726A4B53E00F32165 /* MountainSearchEntity.swift in Sources */,
 				2882288E26A0B6D4000B2EAA /* VersionTableViewCell.swift in Sources */,
+				28013AE826A91156007E082D /* ReportUserFlagsEntity.swift in Sources */,
+				28013AD826A85FDE007E082D /* DetailAnotherUserCollectionViewCell.swift in Sources */,
 				2882289326A0BF78000B2EAA /* LogoutEntity.swift in Sources */,
 				28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */,
 				2882287426A048D4000B2EAA /* CompleteSignUpInput.swift in Sources */,

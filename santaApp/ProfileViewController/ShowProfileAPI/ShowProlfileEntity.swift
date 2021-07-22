@@ -18,25 +18,20 @@ struct ShowProfileResponse : Decodable {
     var level : Int?
     var flagCount : Int?
     var postCount : Int?
-    var flags : ShowProfileFlags?
-    var pictures : ShowProfilePictures?
+    var fileUrl : String?
+    var posts : [ShowProfilePosts]?
 }
 
-struct ShowProfileFlags : Decodable {
+struct ShowProfilePosts : Decodable {
+    var isFlag : Bool?
     var flagIdx : Int?
-    var userIdx : Int?
-    var mountainIdx : Int?
-    var createdAt : String?
-    var pictureUrl : String?
-    var flagCount : Int?
-    var name : String?
-}
-
-struct ShowProfilePictures : Decodable {
     var pictureIdx : Int?
     var userIdx : Int?
-    var imageUrl : String?
+    var flagCount : Int?
+    var mountainIdx : Int?
+    var name : String?
     var createdAt : String?
+    var pictureUrl : String?
 }
 
 struct ShowProfileError : Decodable {

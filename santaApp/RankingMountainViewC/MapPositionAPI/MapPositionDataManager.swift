@@ -14,7 +14,7 @@ class MapPositionDataManager {
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result{
-                    viewcontroller.successDataMountainPosition(result.latitude!, result.longitude!)
+                    viewcontroller.successDataMountainPosition(result)
                 }
             case .failure(let error):
                 viewcontroller.failureDataMountainPosition()

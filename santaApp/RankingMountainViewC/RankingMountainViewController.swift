@@ -17,7 +17,8 @@ class RankingMountainViewController: UIViewController {
     var latitude : Double?
     var longitude : Double?
     var mountainName : String = ""
-
+    var mountainPosition : MapPositionMountain?
+    var mountainCoursePosition : [MapPositionRoad] = []
     // MARK: 내용View 만들기.
     private let ViewControllerRanking : ContentRankViewController
     private let ViewControllerMountain : ContentMountainViewController
@@ -62,7 +63,9 @@ class RankingMountainViewController: UIViewController {
         navigationBarSet()
         viewSetBottomSheet()
         seguecontrolSet()
-        setupMiddleButton()
+        setupMiddleButton(CGRect(x: view.bounds.width - 109.1,
+                                 y: view.bounds.height - 129.1,
+                                 width: 79.1, height: 79.1))
         
         ViewControllerRanking.view.snp.makeConstraints { make in
             make.bottom.leading.trailing.equalTo(viewBottomSheet)
@@ -73,9 +76,7 @@ class RankingMountainViewController: UIViewController {
             make.bottom.leading.trailing.equalTo(viewBottomSheet)
             make.top.equalTo(control.snp.bottom).offset(14)
         }
-        
-        setViewMountainCourseClick()
-    }
+}
     // navigationBar
     lazy var leftButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
@@ -118,7 +119,7 @@ class RankingMountainViewController: UIViewController {
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longtudeValue)
             let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
             let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
-        let showLocation = CLLocationCoordinate2DMake(latitudeValue - 0.055, longtudeValue)
+        let showLocation = CLLocationCoordinate2DMake(latitudeValue - 0.016, longtudeValue)
         let showspanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
         let showRegion = MKCoordinateRegion(center: showLocation, span: showspanValue)
             mapView.setRegion(pRegion, animated: true)
@@ -135,15 +136,11 @@ class RankingMountainViewController: UIViewController {
         mapView.addAnnotation(annotaion)
     }
     // MARK: 버튼 구현
-    func setupMiddleButton() {
-        let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 79.1, height: 79.1))
-           var menuButtonFrame = menuButton.frame
-           menuButtonFrame.origin.y = view.bounds.height - menuButtonFrame.height - 50
-           menuButtonFrame.origin.x = view.bounds.width - menuButtonFrame.size.width - 30
-           menuButton.frame = menuButtonFrame
-
+    let menuButton = UIButton()
+    func setupMiddleButton(_ originFrame : CGRect) {
+        menuButton.frame = originFrame
            menuButton.backgroundColor = UIColor.mainColor
-           menuButton.layer.cornerRadius = menuButtonFrame.height/2
+        menuButton.layer.cornerRadius = 39.55
         menuButton.layer.shadowColor = UIColor.mainColor.cgColor
         menuButton.layer.shadowOpacity = 0.3
         menuButton.layer.shadowOffset = CGSize(width: 0, height: 8)
@@ -159,6 +156,7 @@ class RankingMountainViewController: UIViewController {
        }
     @objc private func menuButtonAction(sender: UIButton) {
         let nextVC = StartViewController()
+        nextVC.labelMountainName.text = mountainName
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)
@@ -244,9 +242,12 @@ class RankingMountainViewController: UIViewController {
                 self.control.frame = newFrame
             }
         }
-        mountainCourseClickView.alpha = 0
+        self.viewMountainCourseClick.removeFromSuperview()
         UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
+            self.menuButton.frame = CGRect(x: self.view.bounds.width - 109.1, y: self.view.bounds.height - 129.1, width: 79.1, height: 79.1)
+
+    
         }, completion: nil)
     }
     // MARK: 시트 숨기기
@@ -340,23 +341,121 @@ class RankingMountainViewController: UIViewController {
         control.addTarget(self, action: #selector(segconChanged(_:)), for: .valueChanged)
         viewBottomSheet.addSubview(control)
     }
-    // 산 핀포인트 클릭시 나오는 뷰
-    let mountainCourseClickView = UIView()
-    func setViewMountainCourseClick() {
-        mountainCourseClickView.alpha = 0
-        mountainCourseClickView.backgroundColor = .white
-        
-        mountainCourseClickView.layer.shadowOffset = CGSize(width: 0, height: 10)
-        mountainCourseClickView.layer.shadowColor = UIColor.black.cgColor
-        mountainCourseClickView.layer.shadowRadius = 20
-        
-        mountainCourseClickView.layer.cornerRadius = 18
-        mapView.addSubview(mountainCourseClickView)
-        mountainCourseClickView.snp.makeConstraints { make in
-            make.centerX.equalTo(mapView.snp.centerX)
-            make.bottom.equalTo(mapView).offset(-100)
-            make.width.equalTo(UIScreen.main.bounds.width * 0.9)
-            make.height.equalTo(UIScreen.main.bounds.width * 0.3)
+    // MARK: 산 핀포인트 클릭시 나오는 뷰
+    let viewMountainCourseClick : UIView = {
+        let viewContent = UIView(frame: CGRect(x: UIScreen.main.bounds.width/2 - 171.5, y: UIScreen.main.bounds.height - 241, width: 343, height: 165))
+        viewContent.backgroundColor = .clear
+        return viewContent
+    }()
+    // MARK: 코스 디테일 뷰 꾸며주기
+    func setViewMountainCourse(_ contentView : UIView,
+                               _ courseTime : String,
+                               _ courseDistance : String,
+                               _ courseNum : String,
+                               _ courseDifficulty : Int,
+                               _ courseDetail : String) {
+        // MARK: 코스 선택시 위에 나타나는 시간과 거리 뷰 구현
+        let viewTimeAndDistance = UIView()
+        viewTimeAndDistance.backgroundColor = .white
+        viewTimeAndDistance.layer.cornerRadius = 17
+        viewTimeAndDistance.layer.shadowRadius = 10
+        viewTimeAndDistance.layer.shadowColor = UIColor.bluegray.cgColor
+        contentView.addSubview(viewTimeAndDistance)
+        viewTimeAndDistance.snp.makeConstraints { make in
+            make.leading.top.equalTo(contentView)
+            make.width.equalTo(175)
+            make.height.equalTo(34)
+        }
+        let imageViewRun = UIImageView()
+        imageViewRun.contentMode = .scaleAspectFit
+        imageViewRun.image = UIImage(named: "icInfoDistanceSmall@3x")
+        viewTimeAndDistance.addSubview(imageViewRun)
+        imageViewRun.snp.makeConstraints { make in
+            make.leading.equalTo(viewTimeAndDistance.snp.leading).offset(18)
+            make.centerY.equalTo(viewTimeAndDistance.snp.centerY)
+            make.width.equalTo(13.4)
+            make.height.equalTo(11.3)
+        }
+        let labelDistanse = UILabel()
+        labelDistanse.text = courseDistance
+        labelDistanse.textColor = .mainColor
+        labelDistanse.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 15)
+        viewTimeAndDistance.addSubview(labelDistanse)
+        labelDistanse.snp.makeConstraints { make in
+            make.centerY.equalTo(viewTimeAndDistance)
+            make.leading.equalTo(imageViewRun.snp.trailing).offset(4.7)
+        }
+        let imageViewTime = UIImageView()
+        imageViewTime.contentMode = .scaleAspectFit
+        imageViewTime.image = UIImage(named: "icInfoTimeSmall@3x")
+        viewTimeAndDistance.addSubview(imageViewTime)
+        imageViewTime.snp.makeConstraints { make in
+            make.leading.equalTo(labelDistanse.snp.trailing).offset(7.8)
+            make.centerY.equalTo(viewTimeAndDistance)
+            make.width.height.equalTo(12.4)
+        }
+        let labelTime = UILabel()
+        labelTime.text = courseTime
+        labelTime.textColor = .mainColor
+        labelTime.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 15)
+        viewTimeAndDistance.addSubview(labelTime)
+        labelTime.snp.makeConstraints { make in
+            make.centerY.equalTo(viewTimeAndDistance)
+            make.leading.equalTo(imageViewTime.snp.trailing).offset(4.7)
+        }
+        //MARK: 코스 디테일 뷰 구현
+        let viewDetail = UIView()
+        viewDetail.backgroundColor = .white
+        viewDetail.layer.cornerRadius = 24
+        viewDetail.layer.shadowRadius = 10
+        viewDetail.layer.shadowColor = UIColor.bluegray.cgColor
+        contentView.addSubview(viewDetail)
+        viewDetail.snp.makeConstraints { make in
+            make.bottom.leading.trailing.equalTo(contentView)
+            make.top.equalTo(viewTimeAndDistance.snp.bottom).offset(9)
+        }
+        let labelCourseNum = UILabel()
+        labelCourseNum.text = courseNum
+        labelCourseNum.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 36)
+        viewDetail.addSubview(labelCourseNum)
+        labelCourseNum.snp.makeConstraints { make in
+            make.top.equalTo(viewDetail).offset(13.5)
+            make.leading.equalTo(viewDetail).offset(24)
+        }
+        let imageViewDifficulty = UIImageView()
+        imageViewDifficulty.contentMode = .scaleAspectFit
+        if courseDifficulty == 1 {
+            imageViewDifficulty.image = UIImage(named: "illustInfo1@3x")
+        }
+        else if courseDifficulty == 2 {
+            imageViewDifficulty.image = UIImage(named: "illustInfo2@3x")
+        }
+        else if courseDifficulty == 3 {
+            imageViewDifficulty.image = UIImage(named: "illustInfo3@3x")
+        }
+        else if courseDifficulty == 4 {
+            imageViewDifficulty.image = UIImage(named: "illustInfo4@3x")
+        }
+        else {
+            imageViewDifficulty.image = UIImage(named: "illustInfo5@3x")
+        }
+        viewDetail.addSubview(imageViewDifficulty)
+        imageViewDifficulty.snp.makeConstraints { make in
+            make.centerY.equalTo(labelCourseNum.snp.centerY)
+            make.leading.equalTo(labelCourseNum.snp.trailing).offset(9.9)
+            make.width.equalTo(106.7)
+            make.height.equalTo(18.8)
+        }
+        let labelCourseDetail = UILabel()
+        labelCourseDetail.text = courseDetail
+        labelCourseDetail.numberOfLines = 2
+        labelCourseDetail.font = UIFont(name: Constant.fontAppleSDGothicNeoLight, size: 15)
+        labelCourseDetail.textColor = .darkbluegray
+        viewDetail.addSubview(labelCourseDetail)
+        labelCourseDetail.snp.makeConstraints { make in
+            make.centerX.equalTo(contentView.snp.centerX)
+            make.top.equalTo(labelCourseNum.snp.bottom).offset(11.5)
+            make.width.equalTo(293)
         }
     }
 }
@@ -371,25 +470,53 @@ extension RankingMountainViewController : UINavigationBarDelegate, MKMapViewDele
             annotation1.labelMountainName.text = mountainName
             return annotation1
         }
-        else {
-            guard let annotation1 = mapView.dequeueReusableAnnotationView(withIdentifier: PositionCourseAnnotationView.identifier) as? PositionCourseAnnotationView
-            else {
-                fatalError("cant dequeue annotaition")
-                }
-            return annotation1
+        for i in mountainCoursePosition {
+            if annotation.title == i.courseNum {
+                guard let annotation1 = mapView.dequeueReusableAnnotationView(withIdentifier: PositionCourseAnnotationView.identifier) as? PositionCourseAnnotationView
+                else {
+                    fatalError("cant dequeue annotaition")
+                    }
+                annotation1.labelCourseName.text = i.courseNum
+                
+                return annotation1
+            }
         }
+        return MKAnnotationView()
     }
-    
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        viewMountainCourseClick.removeFromSuperview()
+        if view == PositionMountainAnnotationView() {
+            
+        }
+        else {
+            for i in mountainCoursePosition {
+                if view.annotation?.title == i.courseNum {
+                    mapView.addSubview(viewMountainCourseClick)
+                    setViewMountainCourse(viewMountainCourseClick, i.time!, i.length!, i.courseNum!, i.difficulty!, i.course!)
+                }
+            }
+        }
         self.hideBottomSheet()
-        mountainCourseClickView.alpha = 1
+        UIView.animate(withDuration: 0.2) {
+            self.menuButton.frame = CGRect(x: self.view.bounds.width - 109.1, y: self.view.bounds.height - 301.1, width: 79.1, height: 79.1)
+        }
     }
 }
 
 extension RankingMountainViewController {
-    func successDataMountainPosition(_ latitude : Double, _ longitude : Double) {
-        setAnnotation(latitudeValue: latitude, longitudeValue: longitude, span: 0.1, title: mountainName)
-        setAnnotation(latitudeValue: latitude + 0.02, longitudeValue: longitude, span: 0.1, title: "코스1")
+    func successDataMountainPosition(_ result : MapPositionResult) {
+        mountainPosition = result.mountain!
+        mountainCoursePosition = result.road!
+        
+        for i in mountainCoursePosition {
+            if let lat = i.latitude, let long = i.longitude, let course = i.courseNum {
+                setAnnotation(latitudeValue: lat, longitudeValue: long, span: 0.03, title: course)
+            }
+        }
+        
+        if let lat = mountainPosition?.latitude , let long = mountainPosition?.longitude {
+            setAnnotation(latitudeValue: lat, longitudeValue: long, span: 0.03, title: mountainName)
+        }
     }
     func failureDataMountainPosition() {
         presentAlert(title: "네트워크 연결 장애")

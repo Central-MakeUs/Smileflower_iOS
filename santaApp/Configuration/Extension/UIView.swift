@@ -40,4 +40,5 @@ extension UIView{
             layer.cornerRadius = cornerRadius
             layer.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
         }
+    
 }

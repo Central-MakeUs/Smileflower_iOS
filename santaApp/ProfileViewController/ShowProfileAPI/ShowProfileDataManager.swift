@@ -14,7 +14,7 @@ class ShowProfileDataManager {
             switch response.result {
             case .success(let response):
                 if response.success, let result = response.response {
-                    print("프로필 뷰 성공")
+                    viewcontroller.successDataApiShowProfile(result)
                 }
             case .failure(let error):
                 print(error.localizedDescription)

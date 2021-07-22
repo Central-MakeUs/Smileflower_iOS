@@ -16,13 +16,13 @@ class EndViewControllerDataManager {
             switch response.result {
             case .success(let response):
                 if response.success {
-                    print("성공")
+                    viewcontroller.successDataImageRegister()
                 }
                 else {
-                    print(response.error!.message)
+                    viewcontroller.failureDataImageRegister(response.error!.message!)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                viewcontroller.failureDataImageRegister("네트워크 통신 장애")
             }
         }
             

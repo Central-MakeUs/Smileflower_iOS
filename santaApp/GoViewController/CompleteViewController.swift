@@ -153,6 +153,7 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
     }
     @objc func actionGoConquerMountainView() {
         let nextVC = DetailPosteViewController()
+        nextVC.userIdx = myRankResult?.userIdx
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)

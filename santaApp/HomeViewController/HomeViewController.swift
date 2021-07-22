@@ -37,26 +37,21 @@ class HomeViewController : BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Constant.JWTToken)
+        print(Constant.userIdx)
         navigationBarSetLogo()
         imageViewSetBackground()
         LabelSetHikeWithSANTA()
-        viewSetProfile()
         searchButtonSet()
         labelSetConquer()
         collectionViewSetConquer()
         HomeViewDataManager().apphomes(viewcontroller: self)
+        viewSetProfile()
 
     }
-
     override func viewWillLayoutSubviews() {
         labelConquer.text = homeStatus
         mask.frame = imageViewUserProfile.bounds
         carouselCollectionView.reloadData()
-        if let stringURL = userImage {
-            let url = URL(string: stringURL)
-            let proccess = DownsamplingImageProcessor(size: imageViewUserProfile.bounds.size)
-            imageViewUserProfile.kf.setImage(with: url , options: [.processor(proccess)])
-        }
     }
     //MARK: 네비게이션 바 로고 설정
     func navigationBarSetLogo() {
@@ -104,7 +99,14 @@ class HomeViewController : BaseViewController {
         imageViewProfile.snp.makeConstraints { make in
             make.edges.equalTo(viewProfile.snp.edges)
         }
-        imageViewUserProfile.image = UIImage(named: "personhome@3x")
+        if let stringURL = userImage {
+            let url = URL(string: stringURL)
+            let proccess = DownsamplingImageProcessor(size: imageViewUserProfile.bounds.size)
+            imageViewUserProfile.kf.setImage(with: url , options: [.processor(proccess)])
+        }
+        else {
+            imageViewUserProfile.image = UIImage(named: "personhome@3x")
+        }
         imageViewUserProfile.tintColor = .titleColorGray
         imageViewUserProfile.contentMode = .scaleAspectFit
         viewProfile.addSubview(imageViewUserProfile)

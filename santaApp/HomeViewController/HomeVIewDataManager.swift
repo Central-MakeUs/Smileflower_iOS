@@ -17,7 +17,6 @@ class HomeViewDataManager {
                     viewcontroller.successDataReceive(result)
                 }
             case .failure(let error) :
-                print(error.localizedDescription)
                 viewcontroller.failureDataReceive("네트워크 통신 장애")
             }
         }

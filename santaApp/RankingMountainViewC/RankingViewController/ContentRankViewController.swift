@@ -460,6 +460,16 @@ extension ContentRankViewController : UITableViewDelegate, UITableViewDataSource
             return 62
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVC = DetailAnotherUserViewController()
+        if let allRank = mountainAllRank {
+           let useridx = allRank[indexPath.row + 3].userIdx
+            nextVC.userIdx = useridx
+        }
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
+    }
     
 }
 extension ContentRankViewController {
