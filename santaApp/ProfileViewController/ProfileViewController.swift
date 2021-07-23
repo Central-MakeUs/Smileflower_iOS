@@ -104,6 +104,7 @@ class ProfileViewController : BaseViewController {
         buttonSeeMap.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
         buttonSeeMap.setImage(UIImage(named: "IconMap@3x"), for: .normal)
         buttonSeeMap.semanticContentAttribute = .forceLeftToRight
+        buttonSeeMap.addTarget(self, action: #selector(actionGoMapView), for: .touchUpInside)
         view.addSubview(buttonSeeMap)
         buttonSeeMap.layer.zPosition = 999
         buttonSeeMap.layer.cornerRadius = 18
@@ -113,6 +114,13 @@ class ProfileViewController : BaseViewController {
             make.width.equalTo(88)
             make.height.equalTo(36)
         }
+    }
+    @objc func actionGoMapView() {
+        let nextVC = FlagMapViewController()
+        nextVC.useridx = showProfileResult?.userIdx
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
     }
     //MARK: 프로필뷰
     let viewProfile = UIView()

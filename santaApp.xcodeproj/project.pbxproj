@@ -26,6 +26,11 @@
 		28013AEA26A911CF007E082D /* ReportUserFlagsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AE926A911CF007E082D /* ReportUserFlagsDataManager.swift */; };
 		28013AED26A99A16007E082D /* ShowUserResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AEC26A99A16007E082D /* ShowUserResultEntity.swift */; };
 		28013AEF26A99B3C007E082D /* ShowUserResultDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AEE26A99B3C007E082D /* ShowUserResultDataManager.swift */; };
+		28013AF226AA3D27007E082D /* FlagMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AF126AA3D27007E082D /* FlagMapViewController.swift */; };
+		28013AF426AA4307007E082D /* FlagMKAnnotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AF326AA4307007E082D /* FlagMKAnnotionView.swift */; };
+		28013AF726AA442B007E082D /* FlagMountainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AF626AA442B007E082D /* FlagMountainEntity.swift */; };
+		28013AF926AA4503007E082D /* FlagMountainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AF826AA4503007E082D /* FlagMountainDataManager.swift */; };
+		28013AFC26AA523B007E082D /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AFB26AA523B007E082D /* ForgetPasswordViewController.swift */; };
 		28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B31268A26B4002ABFA9 /* AppDelegate.swift */; };
 		28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B33268A26B4002ABFA9 /* SceneDelegate.swift */; };
 		28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28119B3A268A26B4002ABFA9 /* santaApp.xcdatamodeld */; };
@@ -40,7 +45,6 @@
 		28139FC92698A3F30091DFCD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28139FC82698A3F30091DFCD /* SearchViewController.swift */; };
 		28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28139FCA2698AEF20091DFCD /* DetailPostCollectionViewCell.swift */; };
 		2813D837268B72B900822337 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813D836268B72B900822337 /* LoginViewController.swift */; };
-		2817F8622694B77E004F39EC /* pathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817F8612694B77E004F39EC /* pathView.swift */; };
 		2817F8642694D20A004F39EC /* ConquerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817F8632694D20A004F39EC /* ConquerViewController.swift */; };
 		2817F867269586CE004F39EC /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817F866269586CE004F39EC /* CourseTableViewCell.swift */; };
 		282FD6FC2694AD6B00B38602 /* ContentMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FD6FB2694AD6B00B38602 /* ContentMountainViewController.swift */; };
@@ -169,6 +173,11 @@
 		28013AE926A911CF007E082D /* ReportUserFlagsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserFlagsDataManager.swift; sourceTree = "<group>"; };
 		28013AEC26A99A16007E082D /* ShowUserResultEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserResultEntity.swift; sourceTree = "<group>"; };
 		28013AEE26A99B3C007E082D /* ShowUserResultDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowUserResultDataManager.swift; sourceTree = "<group>"; };
+		28013AF126AA3D27007E082D /* FlagMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMapViewController.swift; sourceTree = "<group>"; };
+		28013AF326AA4307007E082D /* FlagMKAnnotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMKAnnotionView.swift; sourceTree = "<group>"; };
+		28013AF626AA442B007E082D /* FlagMountainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMountainEntity.swift; sourceTree = "<group>"; };
+		28013AF826AA4503007E082D /* FlagMountainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMountainDataManager.swift; sourceTree = "<group>"; };
+		28013AFB26AA523B007E082D /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		28119B2E268A26B4002ABFA9 /* santaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = santaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28119B31268A26B4002ABFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28119B33268A26B4002ABFA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,7 +199,6 @@
 		28139FCA2698AEF20091DFCD /* DetailPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostCollectionViewCell.swift; sourceTree = "<group>"; };
 		2813D836268B72B900822337 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2813D838268B7D9200822337 /* santaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = santaApp.entitlements; sourceTree = "<group>"; };
-		2817F8612694B77E004F39EC /* pathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pathView.swift; sourceTree = "<group>"; };
 		2817F8632694D20A004F39EC /* ConquerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerViewController.swift; sourceTree = "<group>"; };
 		2817F866269586CE004F39EC /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		282FD6FB2694AD6B00B38602 /* ContentMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMountainViewController.swift; sourceTree = "<group>"; };
@@ -402,6 +410,33 @@
 			path = ShowUserResultAPI;
 			sourceTree = "<group>";
 		};
+		28013AF026AA3D02007E082D /* FlagMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28013AF526AA440A007E082D /* FlagMountainAPI */,
+				28013AF126AA3D27007E082D /* FlagMapViewController.swift */,
+				28013AF326AA4307007E082D /* FlagMKAnnotionView.swift */,
+			);
+			path = FlagMapViewController;
+			sourceTree = "<group>";
+		};
+		28013AF526AA440A007E082D /* FlagMountainAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28013AF626AA442B007E082D /* FlagMountainEntity.swift */,
+				28013AF826AA4503007E082D /* FlagMountainDataManager.swift */,
+			);
+			path = FlagMountainAPI;
+			sourceTree = "<group>";
+		};
+		28013AFA26AA5217007E082D /* ForgetPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28013AFB26AA523B007E082D /* ForgetPasswordViewController.swift */,
+			);
+			path = ForgetPasswordViewController;
+			sourceTree = "<group>";
+		};
 		28119B25268A26B4002ABFA9 = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +571,7 @@
 		2813D835268B72A100822337 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
+				28013AFA26AA5217007E082D /* ForgetPasswordViewController */,
 				2882287726A060E6000B2EAA /* SignInVIewControllerApi */,
 				28822866269F465D000B2EAA /* SignUpViewControllerAPI */,
 				2813D836268B72B900822337 /* LoginViewController.swift */,
@@ -591,7 +627,6 @@
 				2817F86526958629004F39EC /* MountainViewController */,
 				282FD6FD2694AF3E00B38602 /* RankingViewController */,
 				286966F62692E35E0025A250 /* RankingMountainViewController.swift */,
-				2817F8612694B77E004F39EC /* pathView.swift */,
 				28013AC026A70BEB007E082D /* MapAnnotation */,
 			);
 			path = RankingMountainViewC;
@@ -804,6 +839,7 @@
 				28013AC126A724E9007E082D /* registerImageAPI */,
 				2812067A26A6005200BDA266 /* ShowProfileAPI */,
 				2875D2F2269864E600180300 /* DetailPostViewController */,
+				28013AF026AA3D02007E082D /* FlagMapViewController */,
 				28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */,
 				28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */,
 				28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */,
@@ -1114,6 +1150,7 @@
 				2813D837268B72B900822337 /* LoginViewController.swift in Sources */,
 				28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */,
 				283047F1268E3CAB00DEB2EC /* EndViewController.swift in Sources */,
+				28013AF726AA442B007E082D /* FlagMountainEntity.swift in Sources */,
 				28013ADB26A862B9007E082D /* DetailAnotherUserEntity.swift in Sources */,
 				28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */,
 				28013AC326A7252D007E082D /* RegisterImageEntity.swift in Sources */,
@@ -1138,6 +1175,7 @@
 				2871B47B26A4B65200F32165 /* MountainSearchDataManager.swift in Sources */,
 				28013AED26A99A16007E082D /* ShowUserResultEntity.swift in Sources */,
 				28D4C248268A2D290056EECF /* PickMountainViewController.swift in Sources */,
+				28013AF426AA4307007E082D /* FlagMKAnnotionView.swift in Sources */,
 				2871B48726A5798B00F32165 /* MountainInfoDataManager.swift in Sources */,
 				2871B46826A3280900F32165 /* MapPositionDataManager.swift in Sources */,
 				28B873C0269CAF940097E46F /* HomeVIewDataManager.swift in Sources */,
@@ -1146,13 +1184,13 @@
 				28810B0626970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift in Sources */,
 				28B873C9269CD4C70097E46F /* GoViewControllerDataManager.swift in Sources */,
 				28D4C24F268A2DDC0056EECF /* SetupViewController.swift in Sources */,
+				28013AF926AA4503007E082D /* FlagMountainDataManager.swift in Sources */,
 				28B52EA9268C793000017DCF /* UIImage.swift in Sources */,
 				28013AE226A90D24007E082D /* FlagsDeleteEntity.swift in Sources */,
 				2871B48526A5789200F32165 /* MountainInfoEntity.swift in Sources */,
 				2871B47026A4675600F32165 /* RankingTableViewCell.swift in Sources */,
 				28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */,
 				28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */,
-				2817F8622694B77E004F39EC /* pathView.swift in Sources */,
 				2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */,
 				2882287B26A06115000B2EAA /* SignInViewControllerEntity.swift in Sources */,
 				2882287926A06106000B2EAA /* SignInViewControllerInput.swift in Sources */,
@@ -1171,6 +1209,7 @@
 				2890263F268F286E00D15BBA /* UIView.swift in Sources */,
 				2871B47226A4A09B00F32165 /* MyRankingTableViewCell.swift in Sources */,
 				28D4C246268A2CEB0056EECF /* HomeViewController.swift in Sources */,
+				28013AFC26AA523B007E082D /* ForgetPasswordViewController.swift in Sources */,
 				28013AE526A9106E007E082D /* FlagsDeleteDataManager.swift in Sources */,
 				2882288C26A0B263000B2EAA /* UserTableViewCell.swift in Sources */,
 				28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */,
@@ -1185,6 +1224,7 @@
 				28013AD126A7C290007E082D /* PostDeleteEntity.swift in Sources */,
 				28119B69268A27F5002ABFA9 /* Constant.swift in Sources */,
 				28822868269F4690000B2EAA /* CheckNicnameEntity.swift in Sources */,
+				28013AF226AA3D27007E082D /* FlagMapViewController.swift in Sources */,
 				2882288A26A0A0B3000B2EAA /* AutoLoginEntity.swift in Sources */,
 				28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */,
 				2882287626A05C36000B2EAA /* SignInViewController.swift in Sources */,
