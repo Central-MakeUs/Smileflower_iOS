@@ -65,6 +65,26 @@ extension ContentMountainViewController: UITableViewDelegate, UITableViewDataSou
                 if mountaininfo.pick == "T" {
                     cell.buttonLike.isSelected = true
                 }
+                if mountaininfo.hot == "인기" {
+                    cell.imageViewHotMountain.image = UIImage(named: "icInfoHot@3x")
+                }
+                else {
+                    cell.imageViewHotMountain.image = UIImage()
+                }
+                switch mountaininfo.difficulty {
+                case 1:
+                    cell.imageViewMountainDifficulty.image = UIImage(named: "illustInfo1@3x")
+                case 2:
+                    cell.imageViewMountainDifficulty.image = UIImage(named: "illustInfo2@3x")
+                case 3:
+                    cell.imageViewMountainDifficulty.image = UIImage(named: "illustInfo3@3x")
+                case 4:
+                    cell.imageViewMountainDifficulty.image = UIImage(named: "illustInfo4@3x")
+                case 5:
+                    cell.imageViewMountainDifficulty.image = UIImage(named: "illustInfo5@3x")
+                default:
+                    print("오류")
+                }
             }
             return cell
         }

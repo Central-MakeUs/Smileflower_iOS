@@ -450,6 +450,7 @@ extension SignUpViewController {
         Constant.JWTToken = result.jwt
         UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
         Constant.userIdx = result.userIdx
+        Constant.userEmail = textFieldID.text!
         self.changeRootViewController(BaseTabbarController())
     }
     func failureDataApi(_ message : String) {

@@ -21,6 +21,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dismissKeyboard()
         view.setverticleGradient(color1: UIColor(hex:0x24C7B9) , color2: UIColor(hex: 0x9AC7FF))
         setBottomSheet()
         setSearchBar()
@@ -28,6 +29,9 @@ class SearchViewController: UIViewController {
         setLabelRecommend()
         registerCollectionView()
         MountainDataManager().appmountains(self)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        self.searchBar.becomeFirstResponder()
     }
     //MARK: 바텀 시트 구현
     let viewBottomSheet : UIView = {
@@ -75,13 +79,20 @@ class SearchViewController: UIViewController {
         buttonBack.snp.makeConstraints { make in
             make.centerY.equalTo(viewSearch.snp.centerY)
             make.leading.equalTo(viewSearch.snp.leading).offset(2)
-            make.width.height.equalTo(42)
+            make.width.height.equalTo(30)
+        }
+        searchBar.backgroundImage = UIImage()
+        searchBar.searchTextField.leftView = nil
+        searchBar.placeholder = "어떤 산을 찾으세요?"
+        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+            textfield.backgroundColor = .clear
+            textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightbluegray])
         }
         viewSearch.addSubview(searchBar)
         searchBar.snp.makeConstraints { make in
             make.centerY.equalTo(buttonBack.snp.centerY)
-            make.leading.equalTo(buttonBack.snp.trailing).offset(7)
-            make.trailing.equalTo(viewSearch.snp.trailing).offset(-51)
+            make.leading.equalTo(buttonBack.snp.trailing)
+            make.trailing.equalTo(viewSearch.snp.trailing).offset(-20)
             make.height.equalTo(40)
         }
     }
@@ -97,6 +108,8 @@ class SearchViewController: UIViewController {
     }
     //MARk: 오늘의 추천산
     let labelRecommend = UILabel()
+    let labelRecommendExplain = UILabel()
+    
     let carouselCollectionViewRecommendMountain : UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
@@ -109,13 +122,21 @@ class SearchViewController: UIViewController {
         return collectionView
     }()
     func setLabelRecommend() {
-        labelRecommend.text = "오늘의 추천 산"
+        labelRecommend.text = "100대 명산"
         labelRecommend.textColor = .darkbluegray
-        labelRecommend.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 16)
+        labelRecommend.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 18)
         viewBottomSheet.addSubview(labelRecommend)
         labelRecommend.snp.makeConstraints { make in
             make.leading.equalTo(28)
-            make.top.equalTo(viewSearch.snp.bottom).offset(26)
+            make.top.equalTo(viewSearch.snp.bottom).offset(10)
+        }
+        labelRecommendExplain.text = "산타에 등록되어있는 100대 명산을 탐색해보세요:)"
+        labelRecommendExplain.textColor = .lightbluegray
+        labelRecommendExplain.font = UIFont(name: Constant.fontAppleSDGothicNeoLight, size: 11)
+        viewBottomSheet.addSubview(labelRecommendExplain)
+        labelRecommendExplain.snp.makeConstraints { make in
+            make.leading.equalTo(labelRecommend.snp.trailing).offset(9)
+        make.bottom.equalTo(labelRecommend.snp.bottom).offset(-2)
         }
         viewBottomSheet.addSubview(carouselCollectionViewRecommendMountain)
         carouselCollectionViewRecommendMountain.snp.makeConstraints { make in

@@ -119,7 +119,7 @@ class RankingMountainViewController: UIViewController {
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longtudeValue)
             let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
             let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
-        let showLocation = CLLocationCoordinate2DMake(latitudeValue - 0.069, longtudeValue)
+        let showLocation = CLLocationCoordinate2DMake(latitudeValue - 0.059, longtudeValue)
         let showspanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
         let showRegion = MKCoordinateRegion(center: showLocation, span: showspanValue)
             mapView.setRegion(pRegion, animated: true)

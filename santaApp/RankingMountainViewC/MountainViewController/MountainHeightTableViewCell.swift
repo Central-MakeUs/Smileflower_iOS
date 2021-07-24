@@ -54,6 +54,7 @@ class MountainHeightTableViewCell: UITableViewCell {
     func labelSetHeightConstant() {
         labelHeightConstant.text = "339.8m"
         labelHeightConstant.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 16)
+        labelHeightConstant.textColor = .darkbluegray
         contentView.addSubview(labelHeightConstant)
         labelHeightConstant.snp.makeConstraints { make in
             make.top.equalTo(labelHeight.snp.top)

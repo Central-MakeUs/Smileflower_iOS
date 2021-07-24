@@ -13,6 +13,7 @@ struct Constant {
     static let fontCocogoose = "Cocogoose"
     static var JWTToken = ""
     static var userIdx : Int?
+    static var userEmail = ""
     static let fontAppleSDGothicNeoRegular = "AppleSDGothicNeo-Regular"
     static let fontAppleSDGothicNeoThin = "AppleSDGothicNeo-Thin"
     static let fontAppleSDGothicNeoUltraLight = "AppleSDGothicNeo-UltraLight"

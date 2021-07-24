@@ -51,6 +51,10 @@
 		283047EA268D942F00DEB2EC /* ConquerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047E9268D942F00DEB2EC /* ConquerCollectionViewCell.swift */; };
 		283047EF268E2B7700DEB2EC /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047EE268E2B7700DEB2EC /* StartViewController.swift */; };
 		283047F1268E3CAB00DEB2EC /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047F0268E3CAB00DEB2EC /* EndViewController.swift */; };
+		2830CAF726AC958400DC3805 /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAF626AC958400DC3805 /* TermsOfServiceViewController.swift */; };
+		2830CAF926AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAF826AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift */; };
+		2830CAFC26AC991800DC3805 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAFB26AC991800DC3805 /* AccountViewController.swift */; };
+		2830CAFE26AC9AE200DC3805 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAFD26AC9AE200DC3805 /* AccountTableViewCell.swift */; };
 		2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */; };
 		28645186268C98A5009F3608 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
 		286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286966F62692E35E0025A250 /* RankingMountainViewController.swift */; };
@@ -216,6 +220,10 @@
 		283047E9268D942F00DEB2EC /* ConquerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerCollectionViewCell.swift; sourceTree = "<group>"; };
 		283047EE268E2B7700DEB2EC /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		283047F0268E3CAB00DEB2EC /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
+		2830CAF626AC958400DC3805 /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
+		2830CAF826AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceTableViewCell.swift; sourceTree = "<group>"; };
+		2830CAFB26AC991800DC3805 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		2830CAFD26AC9AE200DC3805 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewControllerEntity.swift; sourceTree = "<group>"; };
 		28645185268C98A5009F3608 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		286966F62692E35E0025A250 /* RankingMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingMountainViewController.swift; sourceTree = "<group>"; };
@@ -635,6 +643,24 @@
 			path = RankingViewController;
 			sourceTree = "<group>";
 		};
+		2830CAF526AC953200DC3805 /* TermsOfServiceViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2830CAF626AC958400DC3805 /* TermsOfServiceViewController.swift */,
+				2830CAF826AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift */,
+			);
+			path = TermsOfServiceViewController;
+			sourceTree = "<group>";
+		};
+		2830CAFA26AC98EA00DC3805 /* AccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2830CAFB26AC991800DC3805 /* AccountViewController.swift */,
+				2830CAFD26AC9AE200DC3805 /* AccountTableViewCell.swift */,
+			);
+			path = AccountViewController;
+			sourceTree = "<group>";
+		};
 		2860AB29269DF64300AA37C1 /* CommonClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -907,6 +933,8 @@
 		28D4C244268A2CB50056EECF /* SetupViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2830CAFA26AC98EA00DC3805 /* AccountViewController */,
+				2830CAF526AC953200DC3805 /* TermsOfServiceViewController */,
 				2882289126A0BF61000B2EAA /* LogoutApi */,
 				28D4C24E268A2DDC0056EECF /* SetupViewController.swift */,
 				2882288B26A0B263000B2EAA /* UserTableViewCell.swift */,
@@ -1205,12 +1233,14 @@
 				2871B46626A3277900F32165 /* MapPositionEntity.swift in Sources */,
 				28822865269E0DBF000B2EAA /* SignUpViewController.swift in Sources */,
 				28013AC826A74497007E082D /* ChangeProfileEntity.swift in Sources */,
+				2830CAFE26AC9AE200DC3805 /* AccountTableViewCell.swift in Sources */,
 				2813D837268B72B900822337 /* LoginViewController.swift in Sources */,
 				28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */,
 				283047F1268E3CAB00DEB2EC /* EndViewController.swift in Sources */,
 				28013AF726AA442B007E082D /* FlagMountainEntity.swift in Sources */,
 				28013ADB26A862B9007E082D /* DetailAnotherUserEntity.swift in Sources */,
 				28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */,
+				2830CAF926AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift in Sources */,
 				28013AC326A7252D007E082D /* RegisterImageEntity.swift in Sources */,
 				28C0478D26AB332F008E6831 /* CheckEmailInput.swift in Sources */,
 				28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */,
@@ -1265,10 +1295,12 @@
 				282FD6FC2694AD6B00B38602 /* ContentMountainViewController.swift in Sources */,
 				2871B47926A4B62800F32165 /* MonutainSearchInput.swift in Sources */,
 				28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */,
+				2830CAF726AC958400DC3805 /* TermsOfServiceViewController.swift in Sources */,
 				28013AEA26A911CF007E082D /* ReportUserFlagsDataManager.swift in Sources */,
 				28D4C251268A30800056EECF /* UiViewController.swift in Sources */,
 				28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */,
 				28C0478426AB2AD7008E6831 /* ForgetPasswordDataManager.swift in Sources */,
+				2830CAFC26AC991800DC3805 /* AccountViewController.swift in Sources */,
 				2882288026A0794A000B2EAA /* EndViewControllerEntity.swift in Sources */,
 				2890263F268F286E00D15BBA /* UIView.swift in Sources */,
 				28C0479826AB4415008E6831 /* IndicatorView.swift in Sources */,

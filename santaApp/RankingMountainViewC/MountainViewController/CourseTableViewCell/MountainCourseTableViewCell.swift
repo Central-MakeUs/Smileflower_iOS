@@ -44,7 +44,7 @@ class MountainCourseTableViewCell: UITableViewCell {
         labelCourse.textColor = .titleColorGray
         contentView.addSubview(labelCourse)
         labelCourse.snp.makeConstraints { make in
-            make.top.equalTo(imageViewCourse.snp.top)
+            make.top.equalTo(imageViewCourse.snp.top).offset(2)
             make.leading.equalTo(imageViewCourse.snp.trailing).offset(3)
         }
     }
@@ -109,7 +109,7 @@ class MountainCourseTableViewCell: UITableViewCell {
         tableViewCourse.snp.makeConstraints { make in
             make.top.equalTo(viewTitle.snp.bottom)
             make.leading.equalTo(labelCourse.snp.trailing).offset(15)
-            make.trailing.equalTo(contentView.snp.trailing).offset(-50)
+            make.width.equalTo(226)
             make.height.equalTo(26 * 5 + 6 * 7)
         }
     }
@@ -146,9 +146,9 @@ extension MountainCourseTableViewCell : UITableViewDelegate, UITableViewDataSour
 //        cell.selectionStyle = .none
         let num = Int(indexPath.section)
             cell.buttonCourse.setTitle(courseArray[num].courseNum, for: .normal)
-            cell.labelTimes.text = courseArray[num].time
-            cell.labelDistanse.text = courseArray[num].length
-        
+            cell.labelTimes.text = courseArray[num].time ?? "-"
+            cell.labelDistanse.text = courseArray[num].length ?? "-"
+        cell.selectionStyle = .none
         
         return cell
     }

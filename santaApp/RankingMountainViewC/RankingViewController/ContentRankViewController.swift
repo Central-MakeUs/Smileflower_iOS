@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+
 class ContentRankViewController: UIViewController {
 
     let viewMaster = UIView()
@@ -20,6 +21,10 @@ class ContentRankViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setregister()
+       
+    }
+    override func viewWillAppear(_ animated: Bool) {
+       
     }
     override func viewDidAppear(_ animated: Bool) {
         maskSilver.frame = imageViewSliverProfile.bounds
@@ -69,8 +74,8 @@ class ContentRankViewController: UIViewController {
     func viewSetMaster() {
         
         
-        if let allRank = mountainAllRank{
-            labelMasterTimes.text = "\(String(allRank[0].flagCount!))회"
+        if let allRank = mountainAllRank {
+            labelMasterTimes.text = "\(String(allRank[0].flagCount ?? 0))회"
             labelMasterTimes.textAlignment = .right
             labelMasterTimes.textColor = .titleColorGray
             labelMasterTimes.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 12)
@@ -85,7 +90,7 @@ class ContentRankViewController: UIViewController {
                 make.leading.equalTo(labelMasterTimes.snp.trailing).offset(3.4)
                 make.centerY.equalTo(labelMasterTimes.snp.centerY)
             }
-            labelMasterName.text = allRank[0].userName
+            labelMasterName.text = allRank[0].userName ?? "산타"
             labelMasterName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 18)
             labelMasterName.textAlignment = .center
             viewMaster.addSubview(labelMasterName)
@@ -479,6 +484,7 @@ extension ContentRankViewController {
         viewSetRanker()
         setMyGrade()
         tableViewSetRank()
+        self.viewWillAppear(true)
         tableViewRank.reloadData()
     }
     func failureDataMountainRanking( _ message : String ) {
