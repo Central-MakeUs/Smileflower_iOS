@@ -119,7 +119,7 @@ class RankingMountainViewController: UIViewController {
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longtudeValue)
             let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
             let pRegion = MKCoordinateRegion(center: pLocation, span: spanValue)
-        let showLocation = CLLocationCoordinate2DMake(latitudeValue - 0.016, longtudeValue)
+        let showLocation = CLLocationCoordinate2DMake(latitudeValue - 0.069, longtudeValue)
         let showspanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
         let showRegion = MKCoordinateRegion(center: showLocation, span: showspanValue)
             mapView.setRegion(pRegion, animated: true)
@@ -510,12 +510,12 @@ extension RankingMountainViewController {
         
         for i in mountainCoursePosition {
             if let lat = i.latitude, let long = i.longitude, let course = i.courseNum {
-                setAnnotation(latitudeValue: lat, longitudeValue: long, span: 0.03, title: course)
+                setAnnotation(latitudeValue: lat, longitudeValue: long, span: 0.1, title: course)
             }
         }
         
         if let lat = mountainPosition?.latitude , let long = mountainPosition?.longitude {
-            setAnnotation(latitudeValue: lat, longitudeValue: long, span: 0.03, title: mountainName)
+            setAnnotation(latitudeValue: lat, longitudeValue: long, span: 0.1, title: mountainName)
         }
     }
     func failureDataMountainPosition() {

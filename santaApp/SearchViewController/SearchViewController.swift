@@ -143,8 +143,8 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendMountainCollectionViewCell.identifier, for: indexPath) as? RecommendMountainCollectionViewCell {
             cell.backgroundColor = .white
             cell.layer.shadowColor = UIColor(hex: 0xdfe5ed).cgColor
-            cell.layer.shadowOpacity = 0.9
-            cell.layer.shadowRadius = 6
+            cell.layer.shadowOpacity = 1
+            cell.layer.shadowRadius = 4
             cell.layer.shadowOffset = CGSize(width: 0, height: 3)
             cell.layer.cornerRadius = 20
             

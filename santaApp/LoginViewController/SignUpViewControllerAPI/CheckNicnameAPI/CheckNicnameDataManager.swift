@@ -16,7 +16,7 @@ class CheckNicnameDataManager {
                     viewcontroller.successDataCheckApi(result)
                 }
             case .failure(let error):
-                viewcontroller.failureDataApi()
+                viewcontroller.failureDataApi("네트워크 통신 장애")
             }
         }
     }

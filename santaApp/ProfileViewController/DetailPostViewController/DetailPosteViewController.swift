@@ -91,7 +91,7 @@ extension DetailPosteViewController : UICollectionViewDelegate, UICollectionView
                 dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                 let converData = dateFormatter.date(from: dateStr)
                 let myDateFormatter = DateFormatter()
-                myDateFormatter.dateFormat = "yyyy년 MM월 dd일\n a hh시 mm분"
+                myDateFormatter.dateFormat = "yyyy년 MM월 dd일\na hh시 mm분"
                 myDateFormatter.locale = Locale(identifier: "ko_KR")
                 let convertStr = myDateFormatter.string(from: converData!)
                 cell.labelDateAndTime.text = convertStr

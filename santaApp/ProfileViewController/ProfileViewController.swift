@@ -46,6 +46,7 @@ class ProfileViewController : BaseViewController {
         viewSetContent()
         viewSet()
         viewSetImageCollection()
+        control.setIndex(0)
     }
     //MARK: 네비게이션
     let pickerForMountainImage = UIImagePickerController()
@@ -198,7 +199,7 @@ class ProfileViewController : BaseViewController {
     
     func stackViewSet() {
         
-        self.stackView.backgroundColor = UIColor(hex: 0xc1cad0, alpha: 0.3)
+        self.stackView.backgroundColor = UIColor(hex: 0xc1cad0, alpha: 1)
         self.stackView.axis = .horizontal
         self.stackView.alignment = .fill
         self.stackView.distribution = .fillEqually
@@ -288,6 +289,7 @@ class ProfileViewController : BaseViewController {
     let viewImageCollection = UIView()
     func viewSetImageCollection() {
         viewImageCollection.backgroundColor = .white
+        viewImageCollection.layer.addBorder([.top], color: UIColor(hex: 0x7c909b, alpha: 0.3), width: 1)
         viewContent.addSubview(viewImageCollection)
         viewImageCollection.snp.makeConstraints { make in
             make.top.equalTo(viewProfile.snp.bottom).offset(0.1)
@@ -416,13 +418,13 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         }
         else {
             if indexPath.row == 4 {
-                self.presentAlert(title: "\(showUserResultResult?.highCount ?? 0)km/5km")
+                self.presentAlert(title: "\(showUserResultResult?.high ?? 0)km/5km")
             }
             else if indexPath.row == 5{
-                self.presentAlert(title: "\(showUserResultResult?.highCount ?? 0)Km/10km")
+                self.presentAlert(title: "\(showUserResultResult?.high ?? 0)Km/10km")
             }
             else if indexPath.row == 6 {
-                self.presentAlert(title: "\(showUserResultResult?.highCount ?? 0)km/20km")
+                self.presentAlert(title: "\(showUserResultResult?.high ?? 0)km/20km")
             }
         }
     }
@@ -430,11 +432,11 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         // MARK: 정복한 산 셀
         if collectionView == collectionViewConquerMountain {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConquerMountainCollectionViewCell.reuseIdentifier, for: indexPath) as? ConquerMountainCollectionViewCell {
-                cell.backgroundColor = .bluegray
                 cell.clipsToBounds = true
                 cell.layer.cornerRadius = 10
                 if let urlString = showProfilePost[indexPath.row].pictureUrl {
                     let url = URL(string: urlString)
+                    cell.imageViewMountainConquer.kf.indicatorType = .activity
                     cell.imageViewMountainConquer.kf.setImage(with: url)
                 }
                 else {
@@ -455,12 +457,13 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
                 
                 cell.backgroundColor = .white
                 cell.layer.cornerRadius = 20
-                cell.layer.shadowRadius = 10
-                cell.layer.shadowOffset = CGSize(width: 0, height: 3)
-                cell.layer.shadowColor = UIColor(hex: 0x7c909b).cgColor
-                cell.layer.shadowOpacity = 0.2
+                cell.layer.shadowRadius = 4
+                cell.layer.shadowOffset = CGSize(width: 2, height: 3)
+                cell.layer.shadowColor = UIColor(hex: 0xdfe5ed).cgColor
+                cell.layer.shadowOpacity = 1
                 
                 if let userResult = showUserResultResult {
+                    
                     switch indexPath.row {
                     case 0:
                         if userResult.firstFlag {

@@ -118,7 +118,7 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
         slide.textLabel.text = ""
         slide.thumnailImageView.image = UIImage(named: "icHikingCamera@3x")
         slide.thumnailImageView.backgroundColor = .white
-        slide.slidingColor = UIColor(hex: 0xffffff , alpha: 0.3)
+        slide.slidingColor = UIColor(hex: 0xffffff , alpha: 0.4)
         view.addSubview(slide)
     }
 func convertImageToBase64(image: UIImage) -> String {

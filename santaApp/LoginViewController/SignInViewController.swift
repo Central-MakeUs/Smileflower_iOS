@@ -131,7 +131,7 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
     //MARK: 로그인 버튼
     let buttonSignIn = UIButton()
     func setButtonSignIn() {
-        buttonSignIn.setTitle("로그인", for: .normal)
+        buttonSignIn.setTitle("시작하기", for: .normal)
         buttonSignIn.setTitleColor(.white, for: .normal)
         buttonSignIn.layer.cornerRadius = 24
         buttonSignIn.backgroundColor = .mainColor
@@ -153,7 +153,7 @@ extension SignInViewController {
     func successLoginData(_ result : SignInViewControllerResult) {
         Constant.JWTToken = result.jwt
         UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
-        print(Constant.JWTToken)
+        Constant.userIdx = result.userIdx
         self.changeRootViewController(BaseTabbarController())
     }
     func successDataButError(_ result : SignInViewControllerEntity) {

@@ -18,6 +18,7 @@ class ShowUserResultDataManager {
                 }
             case .failure(let error):
                 viewcontroller.faillureDataApi("네트워크 통신 장애")
+                print("성과뷰\(error.localizedDescription)")
             }
         }
     }

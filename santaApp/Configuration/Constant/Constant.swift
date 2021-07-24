@@ -22,4 +22,5 @@ struct Constant {
     static let fontAppleSDGothicNeoBold = "AppleSDGothicNeo-Bold"
     static let fontAppleSDGothicNeoExtraBold = "AppleSDGothicNeo-ExtraBold"
     static let fontAppleSDGothicNeoHeavy = "AppleSDGothicNeo-Heavy"
+    static let fontWowFont = "ygotjalnanfontOTF"
 }

@@ -106,7 +106,7 @@ extension FlagMapViewController : MKMapViewDelegate, UINavigationBarDelegate {
                         annotation1.image = UIImage(named: "illustMapFlag2Small@3x")
                     }
                     else {
-                        annotation1.image = UIImage(named: "illsutMapFlag3Small@3x")
+                        annotation1.image = UIImage(named: "illustMapFlag3Small@3x")
                     }
                 }
                 return annotation1

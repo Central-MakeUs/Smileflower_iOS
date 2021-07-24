@@ -23,6 +23,7 @@ class ConquerCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         imageViewSetMountain()
         labelSetMountainName()
+        setImageViewDifficulty()
         viewSetProfile()
         imageViewSetGrade()
         labelSetName()
@@ -44,18 +45,31 @@ class ConquerCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(imageViewMountain)
         
         imageViewMountain.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
+            make.top.leading.trailing.equalTo(contentView)
             make.height.equalTo(100)
         }
     }
     // MARK: 북한산
     func labelSetMountainName() {
-        labelMountainName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 22)
+        labelMountainName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 19)
+        labelMountainName.addCharacterSpacing(kernValue: -0.38)
         contentView.addSubview(labelMountainName)
         
         labelMountainName.snp.makeConstraints { make in
             make.leading.equalTo(contentView.snp.leading).offset(12)
             make.top.equalTo(imageViewMountain.snp.bottom).offset(12)
+        }
+    }
+    // MARK: 난이도
+    let imageViewDifficulty = UIImageView()
+    func setImageViewDifficulty() {
+        imageViewDifficulty.contentMode = .scaleAspectFit
+        contentView.addSubview(imageViewDifficulty)
+        imageViewDifficulty.snp.makeConstraints { make in
+            make.centerY.equalTo(labelMountainName.snp.centerY)
+            make.trailing.equalTo(contentView.snp.trailing).offset(-8.9)
+            make.width.equalTo(68.4)
+            make.height.equalTo(12.1)
         }
     }
     // MARK: 프로필

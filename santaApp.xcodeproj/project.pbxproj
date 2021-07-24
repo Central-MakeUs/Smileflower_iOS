@@ -111,12 +111,23 @@
 		28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45D268CEB4700D40F35 /* CALayer.swift */; };
 		28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45F268CEB5F00D40F35 /* UITabBar.swift */; };
 		28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C461268CF38800D40F35 /* UISearchBar.swift */; };
+		28B2591426AC739400E95730 /* WowFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28B2591326AC739400E95730 /* WowFont.otf */; };
 		28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208626937562001DBF5E /* ContentRankViewController.swift */; };
 		28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208826938026001DBF5E /* RankTableViewCell.swift */; };
 		28B52EA9268C793000017DCF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B52EA8268C793000017DCF /* UIImage.swift */; };
 		28B873C0269CAF940097E46F /* HomeVIewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873BF269CAF940097E46F /* HomeVIewDataManager.swift */; };
 		28B873C2269CAFA10097E46F /* HomeVIewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873C1269CAFA10097E46F /* HomeVIewEntity.swift */; };
 		28B873C9269CD4C70097E46F /* GoViewControllerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873C8269CD4C70097E46F /* GoViewControllerDataManager.swift */; };
+		28C0478226AB2A5C008E6831 /* ForgetPasswordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478126AB2A5C008E6831 /* ForgetPasswordEntity.swift */; };
+		28C0478426AB2AD7008E6831 /* ForgetPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478326AB2AD7008E6831 /* ForgetPasswordDataManager.swift */; };
+		28C0478626AB2B7B008E6831 /* ForgetPasswordInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478526AB2B7B008E6831 /* ForgetPasswordInput.swift */; };
+		28C0478B26AB327A008E6831 /* CheckEmailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478A26AB327A008E6831 /* CheckEmailEntity.swift */; };
+		28C0478D26AB332F008E6831 /* CheckEmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478C26AB332F008E6831 /* CheckEmailInput.swift */; };
+		28C0478F26AB336D008E6831 /* CheckEmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478E26AB336D008E6831 /* CheckEmailDataManager.swift */; };
+		28C0479126AB3EB4008E6831 /* CertificationNumberEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479026AB3EB4008E6831 /* CertificationNumberEntity.swift */; };
+		28C0479426AB3F05008E6831 /* CertificationNumInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479326AB3F05008E6831 /* CertificationNumInput.swift */; };
+		28C0479626AB3F49008E6831 /* CertificationNumberDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479526AB3F49008E6831 /* CertificationNumberDataManager.swift */; };
+		28C0479826AB4415008E6831 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479726AB4415008E6831 /* IndicatorView.swift */; };
 		28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C239268A29660056EECF /* BaseViewController.swift */; };
 		28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23C268A2A1D0056EECF /* SplashViewController.swift */; };
 		28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23E268A2BD90056EECF /* BaseTabBarController.swift */; };
@@ -261,12 +272,23 @@
 		28A0C45D268CEB4700D40F35 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		28A0C45F268CEB5F00D40F35 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
 		28A0C461268CF38800D40F35 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
+		28B2591326AC739400E95730 /* WowFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = WowFont.otf; path = ../../../../../../Downloads/WowFont.otf; sourceTree = "<group>"; };
 		28B3208626937562001DBF5E /* ContentRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRankViewController.swift; sourceTree = "<group>"; };
 		28B3208826938026001DBF5E /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		28B52EA8268C793000017DCF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		28B873BF269CAF940097E46F /* HomeVIewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewDataManager.swift; sourceTree = "<group>"; };
 		28B873C1269CAFA10097E46F /* HomeVIewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewEntity.swift; sourceTree = "<group>"; };
 		28B873C8269CD4C70097E46F /* GoViewControllerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewControllerDataManager.swift; sourceTree = "<group>"; };
+		28C0478126AB2A5C008E6831 /* ForgetPasswordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordEntity.swift; sourceTree = "<group>"; };
+		28C0478326AB2AD7008E6831 /* ForgetPasswordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordDataManager.swift; sourceTree = "<group>"; };
+		28C0478526AB2B7B008E6831 /* ForgetPasswordInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordInput.swift; sourceTree = "<group>"; };
+		28C0478A26AB327A008E6831 /* CheckEmailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailEntity.swift; sourceTree = "<group>"; };
+		28C0478C26AB332F008E6831 /* CheckEmailInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailInput.swift; sourceTree = "<group>"; };
+		28C0478E26AB336D008E6831 /* CheckEmailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailDataManager.swift; sourceTree = "<group>"; };
+		28C0479026AB3EB4008E6831 /* CertificationNumberEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationNumberEntity.swift; sourceTree = "<group>"; };
+		28C0479326AB3F05008E6831 /* CertificationNumInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationNumInput.swift; sourceTree = "<group>"; };
+		28C0479526AB3F49008E6831 /* CertificationNumberDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationNumberDataManager.swift; sourceTree = "<group>"; };
+		28C0479726AB4415008E6831 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		28D4C239268A29660056EECF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		28D4C23C268A2A1D0056EECF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		28D4C23E268A2BD90056EECF /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -432,6 +454,7 @@
 		28013AFA26AA5217007E082D /* ForgetPasswordViewController */ = {
 			isa = PBXGroup;
 			children = (
+				28C0478026AB2A3E008E6831 /* ForgetPasswordAPI */,
 				28013AFB26AA523B007E082D /* ForgetPasswordViewController.swift */,
 			);
 			path = ForgetPasswordViewController;
@@ -584,6 +607,7 @@
 		2813D839268C668700822337 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				28B2591326AC739400E95730 /* WowFont.otf */,
 				28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */,
 				28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */,
 			);
@@ -614,6 +638,7 @@
 		2860AB29269DF64300AA37C1 /* CommonClass */ = {
 			isa = PBXGroup;
 			children = (
+				28C0479726AB4415008E6831 /* IndicatorView.swift */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -720,6 +745,8 @@
 		28822866269F465D000B2EAA /* SignUpViewControllerAPI */ = {
 			isa = PBXGroup;
 			children = (
+				28C0479226AB3EED008E6831 /* CertificationNumberAPI */,
+				28C0478726AB324A008E6831 /* CheckEmailAPI */,
 				2882286E26A047C8000B2EAA /* CompleteSignUpAPI */,
 				2882286D26A047BA000B2EAA /* CheckNicnameAPI */,
 			);
@@ -781,6 +808,36 @@
 				2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */,
 			);
 			path = GoViewControllerAPI;
+			sourceTree = "<group>";
+		};
+		28C0478026AB2A3E008E6831 /* ForgetPasswordAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28C0478126AB2A5C008E6831 /* ForgetPasswordEntity.swift */,
+				28C0478326AB2AD7008E6831 /* ForgetPasswordDataManager.swift */,
+				28C0478526AB2B7B008E6831 /* ForgetPasswordInput.swift */,
+			);
+			path = ForgetPasswordAPI;
+			sourceTree = "<group>";
+		};
+		28C0478726AB324A008E6831 /* CheckEmailAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28C0478A26AB327A008E6831 /* CheckEmailEntity.swift */,
+				28C0478C26AB332F008E6831 /* CheckEmailInput.swift */,
+				28C0478E26AB336D008E6831 /* CheckEmailDataManager.swift */,
+			);
+			path = CheckEmailAPI;
+			sourceTree = "<group>";
+		};
+		28C0479226AB3EED008E6831 /* CertificationNumberAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28C0479026AB3EB4008E6831 /* CertificationNumberEntity.swift */,
+				28C0479326AB3F05008E6831 /* CertificationNumInput.swift */,
+				28C0479526AB3F49008E6831 /* CertificationNumberDataManager.swift */,
+			);
+			path = CertificationNumberAPI;
 			sourceTree = "<group>";
 		};
 		28D4C23B268A29F90056EECF /* Splash */ = {
@@ -1003,6 +1060,7 @@
 				28827C6A268D8F5B00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */,
 				28119B3E268A26B4002ABFA9 /* Assets.xcassets in Resources */,
 				2869B0CF26A5B4960042890E /* lottieAnimaition.json in Resources */,
+				28B2591426AC739400E95730 /* WowFont.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,6 +1212,7 @@
 				28013ADB26A862B9007E082D /* DetailAnotherUserEntity.swift in Sources */,
 				28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */,
 				28013AC326A7252D007E082D /* RegisterImageEntity.swift in Sources */,
+				28C0478D26AB332F008E6831 /* CheckEmailInput.swift in Sources */,
 				28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */,
 				28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */,
 				28013AE026A907DD007E082D /* PostsDeleteDataManager.swift in Sources */,
@@ -1166,6 +1225,7 @@
 				2871B48026A4BB9900F32165 /* MountainRankingDataManager.swift in Sources */,
 				286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */,
 				28DB5E0C26A1BA6B0092CC40 /* MountainDataManager.swift in Sources */,
+				28C0479426AB3F05008E6831 /* CertificationNumInput.swift in Sources */,
 				2882287026A047E5000B2EAA /* CompleteSignUpEntity.swift in Sources */,
 				28B873C2269CAFA10097E46F /* HomeVIewEntity.swift in Sources */,
 				2871B46D26A446ED00F32165 /* CompleteConqueredDataManager.swift in Sources */,
@@ -1177,6 +1237,7 @@
 				28D4C248268A2D290056EECF /* PickMountainViewController.swift in Sources */,
 				28013AF426AA4307007E082D /* FlagMKAnnotionView.swift in Sources */,
 				2871B48726A5798B00F32165 /* MountainInfoDataManager.swift in Sources */,
+				28C0479126AB3EB4008E6831 /* CertificationNumberEntity.swift in Sources */,
 				2871B46826A3280900F32165 /* MapPositionDataManager.swift in Sources */,
 				28B873C0269CAF940097E46F /* HomeVIewDataManager.swift in Sources */,
 				2871B45D26A317A600F32165 /* MountainLikeEntity.swift in Sources */,
@@ -1188,6 +1249,7 @@
 				28B52EA9268C793000017DCF /* UIImage.swift in Sources */,
 				28013AE226A90D24007E082D /* FlagsDeleteEntity.swift in Sources */,
 				2871B48526A5789200F32165 /* MountainInfoEntity.swift in Sources */,
+				28C0478226AB2A5C008E6831 /* ForgetPasswordEntity.swift in Sources */,
 				2871B47026A4675600F32165 /* RankingTableViewCell.swift in Sources */,
 				28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */,
 				28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */,
@@ -1198,6 +1260,7 @@
 				2817F8642694D20A004F39EC /* ConquerViewController.swift in Sources */,
 				28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */,
 				2882288226A07956000B2EAA /* EndViewControllerDataManager.swift in Sources */,
+				28C0478B26AB327A008E6831 /* CheckEmailEntity.swift in Sources */,
 				28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */,
 				282FD6FC2694AD6B00B38602 /* ContentMountainViewController.swift in Sources */,
 				2871B47926A4B62800F32165 /* MonutainSearchInput.swift in Sources */,
@@ -1205,8 +1268,10 @@
 				28013AEA26A911CF007E082D /* ReportUserFlagsDataManager.swift in Sources */,
 				28D4C251268A30800056EECF /* UiViewController.swift in Sources */,
 				28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */,
+				28C0478426AB2AD7008E6831 /* ForgetPasswordDataManager.swift in Sources */,
 				2882288026A0794A000B2EAA /* EndViewControllerEntity.swift in Sources */,
 				2890263F268F286E00D15BBA /* UIView.swift in Sources */,
+				28C0479826AB4415008E6831 /* IndicatorView.swift in Sources */,
 				2871B47226A4A09B00F32165 /* MyRankingTableViewCell.swift in Sources */,
 				28D4C246268A2CEB0056EECF /* HomeViewController.swift in Sources */,
 				28013AFC26AA523B007E082D /* ForgetPasswordViewController.swift in Sources */,
@@ -1223,6 +1288,7 @@
 				2882286A269F46AB000B2EAA /* CheckNicnameDataManager.swift in Sources */,
 				28013AD126A7C290007E082D /* PostDeleteEntity.swift in Sources */,
 				28119B69268A27F5002ABFA9 /* Constant.swift in Sources */,
+				28C0479626AB3F49008E6831 /* CertificationNumberDataManager.swift in Sources */,
 				28822868269F4690000B2EAA /* CheckNicnameEntity.swift in Sources */,
 				28013AF226AA3D27007E082D /* FlagMapViewController.swift in Sources */,
 				2882288A26A0A0B3000B2EAA /* AutoLoginEntity.swift in Sources */,
@@ -1234,6 +1300,7 @@
 				2882287226A047F4000B2EAA /* CompleteSignUpDataManager.swift in Sources */,
 				2871B46126A31E3400F32165 /* MountainPicksEntity.swift in Sources */,
 				2812067526A5DF1300BDA266 /* PaddingLabel.swift in Sources */,
+				28C0478F26AB336D008E6831 /* CheckEmailDataManager.swift in Sources */,
 				2871B47726A4B53E00F32165 /* MountainSearchEntity.swift in Sources */,
 				2882288E26A0B6D4000B2EAA /* VersionTableViewCell.swift in Sources */,
 				28013AE826A91156007E082D /* ReportUserFlagsEntity.swift in Sources */,
@@ -1242,6 +1309,7 @@
 				28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */,
 				2882287426A048D4000B2EAA /* CompleteSignUpInput.swift in Sources */,
 				2871B46326A31F2700F32165 /* MountainPicksDataManager.swift in Sources */,
+				28C0478626AB2B7B008E6831 /* ForgetPasswordInput.swift in Sources */,
 				2882286C269F48BB000B2EAA /* CheckNicnameInput.swift in Sources */,
 				2882288826A09F87000B2EAA /* AutoLoginDataManager.swift in Sources */,
 				28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */,

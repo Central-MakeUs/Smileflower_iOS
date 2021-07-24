@@ -15,6 +15,8 @@ class ForgetPasswordViewController : BaseViewController {
         setLabelForgetPassword()
         setLabelResettingPassword()
         setTextFieldEmail()
+        setButtonResettingPassword()
+        self.dismissKeyboardWhenTappedAround()
     }
     override func viewWillAppear(_ animated: Bool) {
         self.textFieldEmail.becomeFirstResponder()
@@ -62,10 +64,10 @@ class ForgetPasswordViewController : BaseViewController {
             make.leading.equalTo(view.snp.leading).offset(32)
         }
     }
-    //MARK: 로그인하기
+    //MARK: 비밀번호 찾기
     let labelForgetPassword = UILabel()
     func setLabelForgetPassword() {
-        labelForgetPassword.text = "비밀번호 재설정"
+        labelForgetPassword.text = "비밀번호 찾기"
         labelForgetPassword.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 36)
         labelForgetPassword.textColor = .darkbluegray
         view.addSubview(labelForgetPassword)
@@ -74,7 +76,7 @@ class ForgetPasswordViewController : BaseViewController {
             make.top.equalTo(labelSantaLogo.snp.bottom).offset(6)
         }
     }
-    //MARK: 비밀번호 재설정 설명
+    //MARK: 비밀번호 찾기 설명
     let labelResettingPassword = UILabel()
     func setLabelResettingPassword() {
         labelResettingPassword.text = "산타에 가입했던 이메일을 입력하면\n비밀번호 재설정 메일을 보내드립니다."
@@ -91,6 +93,7 @@ class ForgetPasswordViewController : BaseViewController {
     let textFieldEmail = UITextField()
     func setTextFieldEmail() {
         textFieldEmail.placeholder = "이메일을 입력해주세요."
+        textFieldEmail.addTarget(self, action: #selector(actionDidChangeTextField), for: .editingChanged)
         view.addSubview(textFieldEmail)
         textFieldEmail.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
@@ -99,14 +102,27 @@ class ForgetPasswordViewController : BaseViewController {
             make.width.equalTo(UIScreen.main.bounds.width * 0.8)
         }
     }
+    @objc func actionDidChangeTextField() {
+        if let text = textFieldEmail.text {
+            if text.isEmpty {
+                buttonResettingPassword.isUserInteractionEnabled = false
+                buttonResettingPassword.backgroundColor = .titleColorGray
+            }
+            else {
+                buttonResettingPassword.isUserInteractionEnabled = true
+                buttonResettingPassword.backgroundColor = .mainColor
+            }
+        }
+    }
     //MARK: 비밀번호 재설정
     let buttonResettingPassword = UIButton()
-    func setButtonSignUp() {
-        buttonResettingPassword.setTitle("가입하기", for: .normal)
+    func setButtonResettingPassword() {
+        buttonResettingPassword.setTitle("비밀번호 재설정", for: .normal)
         buttonResettingPassword.setTitleColor(.white, for: .normal)
         buttonResettingPassword.layer.cornerRadius = 24
         buttonResettingPassword.backgroundColor = .titleColorGray
         buttonResettingPassword.isUserInteractionEnabled = false
+        buttonResettingPassword.addTarget(self, action: #selector(actionForgetPassword), for: .touchUpInside)
         view.addSubview(buttonResettingPassword)
         buttonResettingPassword.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
@@ -115,8 +131,24 @@ class ForgetPasswordViewController : BaseViewController {
             make.height.equalTo(48)
         }
     }
+    @objc func actionForgetPassword() {
+        let input = ForgetPasswordInput(email: textFieldEmail.text!)
+        ForgetPasswordDataManager().appemailspassword(self, input)
+        self.showIndicator()
+    }
 }
 
 extension ForgetPasswordViewController : UINavigationBarDelegate {
     
+}
+
+extension ForgetPasswordViewController {
+    func successDataApiForgetPassword(_ message : String) {
+        self.presentAlert(title: message)
+        self.dismissIndicator()
+    }
+    func failureDataApi(_ message : String) {
+        self.presentAlert(title: message)
+        self.dismissIndicator()
+    }
 }

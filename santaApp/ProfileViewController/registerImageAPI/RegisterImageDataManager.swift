@@ -22,6 +22,7 @@ class RegisterImageDataManager {
                     viewcontroller.faillureDataApi(response.error!.message!)
                 }
             case .failure(let error):
+                print("등록된사진\(error.localizedDescription)")
                 viewcontroller.faillureDataApi("네트워크 통신 장애")
             }
         }

@@ -18,6 +18,7 @@ class ShowProfileDataManager {
                 }
             case .failure(let error):
                 print(error.localizedDescription)
+                viewcontroller.faillureDataApi("네트워크 통신 장애")
             }
         }
     }

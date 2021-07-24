@@ -50,7 +50,7 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
     lazy var leftButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
         button.tag = 1
-        button.tintColor = .titleColorGray
+        button.tintColor = .white
         return button
         
     }()

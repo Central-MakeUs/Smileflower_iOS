@@ -60,10 +60,10 @@ class RecommendMountainCollectionViewCell: UICollectionViewCell {
     //MARK: 산 이름
     let labelMountainName = UILabel()
     func setlabelMountainName() {
-        labelMountainName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 22)
+        labelMountainName.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 22)
         contentView.addSubview(labelMountainName)
         labelMountainName.snp.makeConstraints { make in
-            make.top.equalTo(imageViewDifficulty.snp.bottom).offset(6.1)
+            make.top.equalTo(imageViewDifficulty.snp.bottom).offset(3.7)
             make.leading.equalTo(imageViewDifficulty.snp.leading)
         }
     }

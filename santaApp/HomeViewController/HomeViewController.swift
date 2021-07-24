@@ -45,8 +45,11 @@ class HomeViewController : BaseViewController {
         labelSetConquer()
         collectionViewSetConquer()
         HomeViewDataManager().apphomes(viewcontroller: self)
-        viewSetProfile()
+        
 
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        viewSetProfile()
     }
     override func viewWillLayoutSubviews() {
         labelConquer.text = homeStatus
@@ -55,7 +58,7 @@ class HomeViewController : BaseViewController {
     }
     //MARK: 네비게이션 바 로고 설정
     func navigationBarSetLogo() {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 48.1, height: 48.1))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 53.3, width: 48.1, height: 48.1))
         imageView.contentMode   = .scaleAspectFit
         let image = UIImage(named: "1083@3x")
         imageView.image = image
@@ -101,14 +104,14 @@ class HomeViewController : BaseViewController {
         }
         if let stringURL = userImage {
             let url = URL(string: stringURL)
-            let proccess = DownsamplingImageProcessor(size: imageViewUserProfile.bounds.size)
-            imageViewUserProfile.kf.setImage(with: url , options: [.processor(proccess)])
+            imageViewUserProfile.kf.indicatorType = .activity
+            imageViewUserProfile.kf.setImage(with: url)
         }
         else {
             imageViewUserProfile.image = UIImage(named: "personhome@3x")
         }
         imageViewUserProfile.tintColor = .titleColorGray
-        imageViewUserProfile.contentMode = .scaleAspectFit
+        imageViewUserProfile.contentMode = .scaleAspectFill
         viewProfile.addSubview(imageViewUserProfile)
         imageViewUserProfile.snp.makeConstraints { make in
             make.centerX.equalTo(viewProfile.snp.centerX).offset(-1)
@@ -138,6 +141,10 @@ class HomeViewController : BaseViewController {
     func searchButtonSet() {
         searchButton.backgroundColor = .mainColor
         searchButton.layer.cornerRadius = 25
+        searchButton.layer.shadowColor = UIColor(hex: 0x1f8d83).cgColor
+        searchButton.layer.shadowRadius = 9
+        searchButton.layer.shadowOffset = CGSize(width: 2, height: 4)
+        searchButton.layer.shadowOpacity = 0.3
         searchButton.addTarget(self, action: #selector(actionGoSearchView), for: .touchUpInside)
         
         view.addSubview(searchButton)
@@ -200,7 +207,7 @@ class HomeViewController : BaseViewController {
             make.leading.equalTo(view.snp.leading)
             make.trailing.equalTo(view.snp.trailing)
             make.top.equalTo(labelConquer.snp.bottom).offset(15)
-            make.height.equalTo(242)
+            make.height.equalTo(251)
         }
     }
 }
@@ -238,6 +245,22 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 else {
                     cell.imageProfile.image = UIImage(named: "personhome@3x")
                 }
+                
+               
+                switch mountainCell[indexPath.row].difficulty {
+                    case 1:
+                        cell.imageViewDifficulty.image = UIImage(named: "illustHome1@3x")
+                    case 2:
+                        cell.imageViewDifficulty.image = UIImage(named: "illustHome2@3x")
+                case 3:
+                    cell.imageViewDifficulty.image = UIImage(named: "illustHome3@3x")
+                    case 4:
+                        cell.imageViewDifficulty.image = UIImage(named: "illustHome4@3x")
+                    case 5:
+                        cell.imageViewDifficulty.image = UIImage(named: "illustHome5@3x")
+                    default :
+                        print("오류")
+                }
             }
             cell.imagemask.frame = cell.imageProfile.bounds
             return cell
@@ -245,7 +268,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         return UICollectionViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 168, height: 212)
+        return CGSize(width: 177, height: 221)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
@@ -268,6 +291,7 @@ extension HomeViewController {
         userImage = result.userImage
         homeStatus = result.homeStatus
         mountain = result.myflag?.mountain
+        self.viewWillAppear(true)
         self.carouselCollectionView.reloadData()
     }
     func failureDataReceive(_ message : String) {

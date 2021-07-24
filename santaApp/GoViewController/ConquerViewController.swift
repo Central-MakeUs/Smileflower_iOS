@@ -47,6 +47,20 @@ class ConquerViewController: UIViewController {
             make.height.equalTo(491)
         }
     }
+    //MARK: 깃발 이미지
+    let imageViewConquer = UIImageView()
+    
+    func imageViewSetConquer() {
+        imageViewConquer.image = UIImage(named: "conquered@3x")
+        viewContent.addSubview(imageViewConquer)
+        imageViewConquer.snp.makeConstraints { make in
+            make.width.equalTo(241)
+            make.height.equalTo(295.5)
+            make.top.equalTo(viewContent.snp.top).offset(27.9)
+            make.centerX.equalTo(viewContent.snp.centerX)
+        }
+        imageViewConquer.layer.zPosition = 999
+    }
     //MARK: 애니메이션 구현
     let imageViewAnimation = UIImageView()
     
@@ -73,10 +87,11 @@ class ConquerViewController: UIViewController {
         imageViewAnimation.animationImages = animatedImages(for: "illustHikingFirecracker")
         imageViewAnimation.animationDuration = 1
         imageViewAnimation.tintColor = UIColor.red
-        imageViewAnimation.animationRepeatCount = 100
+        imageViewAnimation.animationRepeatCount = 10000
         imageViewAnimation.image = imageViewAnimation.animationImages?.first
         imageViewAnimation.startAnimating()
-        view.addSubview(imageViewAnimation)
+        imageViewAnimation.layer.zPosition = 333
+        viewContent.addSubview(imageViewAnimation)
         imageViewAnimation.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(141)
             make.centerX.equalTo(view.snp.centerX)
@@ -84,26 +99,13 @@ class ConquerViewController: UIViewController {
             make.height.equalTo(480)
         }
     }
-    //MARK: 깃발 이미지
-    let imageViewConquer = UIImageView()
-    
-    func imageViewSetConquer() {
-        imageViewConquer.image = UIImage(named: "conquered@3x")
-        viewContent.addSubview(imageViewConquer)
-        imageViewConquer.snp.makeConstraints { make in
-            make.width.equalTo(241)
-            make.height.equalTo(295.5)
-            make.top.equalTo(viewContent.snp.top).offset(27.9)
-            make.centerX.equalTo(viewContent.snp.centerX)
-        }
-        imageViewConquer.layer.zPosition = 999
-    }
+   
     //MARK: WOW! 구현
     let labelWOW = UILabel()
     
     func labelSetWOW() {
         labelWOW.text = "WOW!"
-        labelWOW.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 37)
+        labelWOW.font = UIFont(name: Constant.fontWowFont, size: 37)
         labelWOW.textColor = UIColor(hex: 0xFF766A)
         labelWOW.textAlignment = .center
         viewContent.addSubview(labelWOW)
