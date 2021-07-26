@@ -443,7 +443,7 @@ extension ContentRankViewController : UITableViewDelegate, UITableViewDataSource
             cell.imageViewProfile.layer.borderWidth = 0.2
             cell.imageViewProfile.layer.borderColor = UIColor.titleColorGray.cgColor
                 
-            cell.labelUserLV.text = "Lv.10"
+            cell.labelUserLV.text = allRank[indexPath.row + 3].userName
                 
             cell.labelUserName.text = allRank[indexPath.row + 3].userName
                 

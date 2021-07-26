@@ -8,7 +8,7 @@
 import UIKit
 
 class AccountViewController : BaseViewController {
-    let arrayTitle : [String] = ["이메일", "탈퇴 하기"]
+    let arrayTitle : [String] = ["이메일"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ class AccountViewController : BaseViewController {
 
 extension AccountViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -76,33 +76,15 @@ extension AccountViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier, for: indexPath)as?AccountTableViewCell
-            else {
-                fatalError("cant dequeue Cell")
-                }
-            cell.labelEmail.text = Constant.userEmail ?? ""
-            cell.selectionStyle = .none
-            cell.labelTitle.text = arrayTitle[indexPath.section]
-            cell.labelTitle.textColor = .darkbluegray
-            return cell
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier, for:indexPath)as?AccountTableViewCell
         else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier, for: indexPath) as? AccountTableViewCell
-            else {
-                fatalError("cant dequeue Cell")
-                }
-            cell.selectionStyle = .none
-            cell.labelTitle.text = arrayTitle[indexPath.section]
-            cell.labelTitle.textColor = .titleColorGray
-            return cell
-        }
-        
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
-            self.showAlert(title: "정말 탈퇴하시겠습니다.", message: "탈퇴시 모든 산타의 계정 데이터가\n삭제되어 복구하기 어렵습니다.", isCancelActionIncluded: true)
-        }
+            fatalError("cant dequeue Cell")
+            }
+        cell.labelEmail.text = Constant.userEmail ?? ""
+        cell.selectionStyle = .none
+        cell.labelTitle.text = arrayTitle[indexPath.section]
+        cell.labelTitle.textColor = .darkbluegray
+        return cell
     }
     
 }

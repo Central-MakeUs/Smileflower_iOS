@@ -2,16 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>앨범 사용</string>
-	<key>NSCameraUsageDescription</key>
-	<string>카메라 사용</string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>AppleSDGothicNeo.ttc</string>
-		<string>WowFont.otf</string>
-		<string>Cocogoose Pro-trial.ttf</string>
-	</array>
+	<key>App uses Non-Exempt Encryption</key>
+	<false/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>ko_KR</string>
 	<key>CFBundleExecutable</key>
@@ -38,9 +30,19 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>사용자가 정상에 도착해 정상인증을 위한 촬영을 하는데 필요합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>프로필에서 사용자가 등산사진을 업로드를 하는데 필요합니다.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AppleSDGothicNeo.ttc</string>
+		<string>WowFont.otf</string>
+		<string>Cocogoose Pro-trial.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

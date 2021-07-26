@@ -174,7 +174,7 @@ class ProfileViewController : BaseViewController {
             imageViewUserProfile.kf.setImage(with: url , options: [.processor(proccess)])
         }
         else {
-            imageViewUserProfile.image = UIImage(named: "homeperson@3x")
+            imageViewUserProfile.image = UIImage(named: "personhome@3x")
         }
         imageViewUserProfile.clipsToBounds = true
         imageViewUserProfile.contentMode = .scaleAspectFill
@@ -432,8 +432,15 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         // MARK: 정복한 산 셀
         if collectionView == collectionViewConquerMountain {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConquerMountainCollectionViewCell.reuseIdentifier, for: indexPath) as? ConquerMountainCollectionViewCell {
-                cell.clipsToBounds = true
                 cell.layer.cornerRadius = 10
+                cell.layer.cornerRadius = 20
+                cell.layer.shadowRadius = 4
+                cell.layer.shadowOffset = CGSize(width: 2, height: 3)
+                cell.layer.shadowColor = UIColor(hex: 0xdfe5ed).cgColor
+                cell.clipsToBounds = true
+                
+                
+                cell.layer.shadowOpacity = 1
                 if let urlString = showProfilePost[indexPath.row].pictureUrl {
                     let url = URL(string: urlString)
                     cell.imageViewMountainConquer.kf.indicatorType = .activity
