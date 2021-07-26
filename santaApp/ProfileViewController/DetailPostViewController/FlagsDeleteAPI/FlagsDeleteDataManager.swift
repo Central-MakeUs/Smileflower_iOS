@@ -10,7 +10,7 @@ import Alamofire
 class FlagsDeleteDataManager {
     func apiprofileuseridxflagsflagIdx(_ userIdx : Int, _ flagIdx :Int, _ cell : DetailPostCollectionViewCell) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.TestURL + "/api/profile/\(userIdx)/flags/\(flagIdx)", method: .delete, headers: headers).validate().responseDecodable(of: FlagsDeleteEntity.self) { response in
+        AF.request(Constant.baseURL + "/api/profile/\(userIdx)/flags/\(flagIdx)", method: .delete, headers: headers).validate().responseDecodable(of: FlagsDeleteEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.success {

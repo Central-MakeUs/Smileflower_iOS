@@ -9,7 +9,7 @@ import Alamofire
 
 class ForgetPasswordDataManager {
     func appemailspassword(_ viewcontroller : ForgetPasswordViewController, _ parameters : ForgetPasswordInput) {
-        AF.request(Constant.TestURL + "/app/email/password", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).validate().responseDecodable(of: ForgetPasswordEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/email/password", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).validate().responseDecodable(of: ForgetPasswordEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess {

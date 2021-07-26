@@ -211,6 +211,9 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
                 if mountainResult[indexPath.row].hot == "인기" {
                     cell.imageViewIsHot.image = UIImage(named: "icSearchBest@3x")
                 }
+                else {
+                    cell.imageViewIsHot.image = UIImage()
+                }
                 
                 //MARK: 찜하기버튼
                 cell.mountainIdx = mountainResult[indexPath.row].mountainIdx

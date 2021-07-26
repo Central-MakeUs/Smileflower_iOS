@@ -9,7 +9,7 @@ import Alamofire
 
 class CertificationNumberDataManager {
     func appemilverify(_ viewcontroller : SignUpViewController, _ parameters : CertificationNumberInput) {
-        AF.request(Constant.TestURL + "/app/email/verify", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).validate().responseDecodable(of: CertificationNumberEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/email/verify", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).validate().responseDecodable(of: CertificationNumberEntity.self) { response in
             switch response.result {
             case .success(let response ):
                 if response.isSuccess {

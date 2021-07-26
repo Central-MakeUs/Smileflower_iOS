@@ -55,6 +55,8 @@
 		2830CAF926AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAF826AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift */; };
 		2830CAFC26AC991800DC3805 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAFB26AC991800DC3805 /* AccountViewController.swift */; };
 		2830CAFE26AC9AE200DC3805 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAFD26AC9AE200DC3805 /* AccountTableViewCell.swift */; };
+		2830CB0126ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CB0026ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift */; };
+		2830CB0326ADA94200DC3805 /* PrivacyUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CB0226ADA94200DC3805 /* PrivacyUserDetailViewController.swift */; };
 		2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */; };
 		28645186268C98A5009F3608 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
 		286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286966F62692E35E0025A250 /* RankingMountainViewController.swift */; };
@@ -76,6 +78,7 @@
 		2871B48026A4BB9900F32165 /* MountainRankingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47F26A4BB9900F32165 /* MountainRankingDataManager.swift */; };
 		2871B48526A5789200F32165 /* MountainInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B48426A5789200F32165 /* MountainInfoEntity.swift */; };
 		2871B48726A5798B00F32165 /* MountainInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B48626A5798B00F32165 /* MountainInfoDataManager.swift */; };
+		28738E2B26AE981D002AE718 /* FlagExplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28738E2A26AE981D002AE718 /* FlagExplainViewController.swift */; };
 		2875D2F4269864FF00180300 /* DetailPosteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2875D2F3269864FF00180300 /* DetailPosteViewController.swift */; };
 		28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */; };
 		28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */; };
@@ -224,6 +227,8 @@
 		2830CAF826AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceTableViewCell.swift; sourceTree = "<group>"; };
 		2830CAFB26AC991800DC3805 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		2830CAFD26AC9AE200DC3805 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		2830CB0026ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceDetailViewController.swift; sourceTree = "<group>"; };
+		2830CB0226ADA94200DC3805 /* PrivacyUserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyUserDetailViewController.swift; sourceTree = "<group>"; };
 		2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewControllerEntity.swift; sourceTree = "<group>"; };
 		28645185268C98A5009F3608 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		286966F62692E35E0025A250 /* RankingMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingMountainViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +250,7 @@
 		2871B47F26A4BB9900F32165 /* MountainRankingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainRankingDataManager.swift; sourceTree = "<group>"; };
 		2871B48426A5789200F32165 /* MountainInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInfoEntity.swift; sourceTree = "<group>"; };
 		2871B48626A5798B00F32165 /* MountainInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInfoDataManager.swift; sourceTree = "<group>"; };
+		28738E2A26AE981D002AE718 /* FlagExplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagExplainViewController.swift; sourceTree = "<group>"; };
 		2875D2F3269864FF00180300 /* DetailPosteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPosteViewController.swift; sourceTree = "<group>"; };
 		28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainImageTableViewCell.swift; sourceTree = "<group>"; };
 		28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPositionTableViewCell.swift; sourceTree = "<group>"; };
@@ -443,6 +449,7 @@
 		28013AF026AA3D02007E082D /* FlagMapViewController */ = {
 			isa = PBXGroup;
 			children = (
+				28738E2926AE9807002AE718 /* FlagExplainViewController */,
 				28013AF526AA440A007E082D /* FlagMountainAPI */,
 				28013AF126AA3D27007E082D /* FlagMapViewController.swift */,
 				28013AF326AA4307007E082D /* FlagMKAnnotionView.swift */,
@@ -646,6 +653,7 @@
 		2830CAF526AC953200DC3805 /* TermsOfServiceViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2830CAFF26ADA66500DC3805 /* TermsOfSerivceDetailViewController */,
 				2830CAF626AC958400DC3805 /* TermsOfServiceViewController.swift */,
 				2830CAF826AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift */,
 			);
@@ -659,6 +667,15 @@
 				2830CAFD26AC9AE200DC3805 /* AccountTableViewCell.swift */,
 			);
 			path = AccountViewController;
+			sourceTree = "<group>";
+		};
+		2830CAFF26ADA66500DC3805 /* TermsOfSerivceDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2830CB0026ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift */,
+				2830CB0226ADA94200DC3805 /* PrivacyUserDetailViewController.swift */,
+			);
+			path = TermsOfSerivceDetailViewController;
 			sourceTree = "<group>";
 		};
 		2860AB29269DF64300AA37C1 /* CommonClass */ = {
@@ -745,6 +762,14 @@
 				2871B48626A5798B00F32165 /* MountainInfoDataManager.swift */,
 			);
 			path = MountainInfoAPI;
+			sourceTree = "<group>";
+		};
+		28738E2926AE9807002AE718 /* FlagExplainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				28738E2A26AE981D002AE718 /* FlagExplainViewController.swift */,
+			);
+			path = FlagExplainViewController;
 			sourceTree = "<group>";
 		};
 		2875D2F2269864E600180300 /* DetailPostViewController */ = {
@@ -1239,6 +1264,7 @@
 				283047F1268E3CAB00DEB2EC /* EndViewController.swift in Sources */,
 				28013AF726AA442B007E082D /* FlagMountainEntity.swift in Sources */,
 				28013ADB26A862B9007E082D /* DetailAnotherUserEntity.swift in Sources */,
+				2830CB0326ADA94200DC3805 /* PrivacyUserDetailViewController.swift in Sources */,
 				28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */,
 				2830CAF926AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift in Sources */,
 				28013AC326A7252D007E082D /* RegisterImageEntity.swift in Sources */,
@@ -1258,6 +1284,7 @@
 				28C0479426AB3F05008E6831 /* CertificationNumInput.swift in Sources */,
 				2882287026A047E5000B2EAA /* CompleteSignUpEntity.swift in Sources */,
 				28B873C2269CAFA10097E46F /* HomeVIewEntity.swift in Sources */,
+				2830CB0126ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift in Sources */,
 				2871B46D26A446ED00F32165 /* CompleteConqueredDataManager.swift in Sources */,
 				289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */,
 				28013AD526A85F6C007E082D /* DetailAnotherUserViewController.swift in Sources */,
@@ -1280,6 +1307,7 @@
 				28013AE226A90D24007E082D /* FlagsDeleteEntity.swift in Sources */,
 				2871B48526A5789200F32165 /* MountainInfoEntity.swift in Sources */,
 				28C0478226AB2A5C008E6831 /* ForgetPasswordEntity.swift in Sources */,
+				28738E2B26AE981D002AE718 /* FlagExplainViewController.swift in Sources */,
 				2871B47026A4675600F32165 /* RankingTableViewCell.swift in Sources */,
 				28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */,
 				28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */,
@@ -1508,7 +1536,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				INFOPLIST_FILE = santaApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1530,7 +1558,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6GBZ6W5NNB;
 				INFOPLIST_FILE = santaApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

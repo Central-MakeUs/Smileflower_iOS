@@ -10,7 +10,7 @@ import Alamofire
 class PostsDeleteDataManager {
     func apiprofileuseridxpicturespictures(_ userIdx : Int, _ pictureIdx :Int, _ cell : DetailPostCollectionViewCell) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.TestURL + "/api/profile/\(userIdx)/pictures/\(pictureIdx)", method: .delete, headers: headers).validate().responseDecodable(of: PostsDeleteEntity.self) { response in
+        AF.request(Constant.baseURL + "/api/profile/\(userIdx)/pictures/\(pictureIdx)", method: .delete, headers: headers).validate().responseDecodable(of: PostsDeleteEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.success {

@@ -21,10 +21,9 @@ class ContentRankViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setregister()
-       
     }
     override func viewWillAppear(_ animated: Bool) {
-       
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         maskSilver.frame = imageViewSliverProfile.bounds
@@ -470,6 +469,7 @@ extension ContentRankViewController : UITableViewDelegate, UITableViewDataSource
         if let allRank = mountainAllRank {
            let useridx = allRank[indexPath.row + 3].userIdx
             nextVC.userIdx = useridx
+            nextVC.userName = allRank[indexPath.row + 3].userName
         }
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve

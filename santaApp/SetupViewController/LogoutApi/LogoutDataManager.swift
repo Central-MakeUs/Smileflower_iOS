@@ -10,7 +10,7 @@ import Alamofire
 class LogoutDataManager {
     func appuserslogout(_ viewcontroller : SetupViewController) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.TestURL + "/app/users/logout", method: .patch, headers: headers).validate().responseDecodable(of: LogoutEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/users/logout", method: .patch, headers: headers).validate().responseDecodable(of: LogoutEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result {

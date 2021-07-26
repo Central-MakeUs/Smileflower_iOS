@@ -36,6 +36,7 @@ class HomeViewController : BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        HomeViewDataManager().apphomes(viewcontroller: self)
         print(Constant.JWTToken)
         print(Constant.userIdx)
         navigationBarSetLogo()
@@ -44,11 +45,12 @@ class HomeViewController : BaseViewController {
         searchButtonSet()
         labelSetConquer()
         collectionViewSetConquer()
-        HomeViewDataManager().apphomes(viewcontroller: self)
-        
-
+        setImageViewHuman()
     }
     override func viewWillAppear(_ animated: Bool) {
+        HomeViewDataManager().apphomes(viewcontroller: self)
+    }
+    override func viewDidAppear(_ animated: Bool) {
         viewSetProfile()
     }
     override func viewWillLayoutSubviews() {
@@ -59,7 +61,7 @@ class HomeViewController : BaseViewController {
     //MARK: 네비게이션 바 로고 설정
     func navigationBarSetLogo() {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 53.3, width: 48.1, height: 48.1))
-        imageView.contentMode   = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "1083@3x")
         imageView.image = image
         navigationItem.titleView = imageView
@@ -81,6 +83,7 @@ class HomeViewController : BaseViewController {
             make.bottom.equalTo(view.snp.bottom)
         }
     }
+   
     //MARK: 프로필 사진 설정
     let imageViewUserProfile = UIImageView()
     let mask = UIImageView()
@@ -136,6 +139,7 @@ class HomeViewController : BaseViewController {
             make.leading.equalTo(view.snp.leading).offset(34)
             make.top.equalTo(view.snp.top).offset(233)
         }
+        labelHikeWithSANTA.layer.zPosition = 499
     }
     //MARK: 어디로 갈까요?
     func searchButtonSet() {
@@ -178,6 +182,19 @@ class HomeViewController : BaseViewController {
         let nextVC = SearchViewController()
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: false, completion: nil)
+    }
+    //MARK: 배경 사람 마크
+    let imageViewHuman = UIImageView()
+    func setImageViewHuman() {
+        imageViewHuman.contentMode = .scaleAspectFit
+        imageViewHuman.image = UIImage(named: "illustHomeMan@3x")
+        view.addSubview(imageViewHuman)
+        imageViewHuman.snp.makeConstraints { make in
+            make.bottom.equalTo(searchButton.snp.top).offset(2)
+            make.trailing.equalTo(searchButton.snp.trailing).offset(-14.7)
+            make.width.equalTo(122.5)
+            make.height.equalTo(143.4)
+        }
     }
     //MARK: 내가 정복한 산
     func labelSetConquer() {
@@ -224,7 +241,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConquerCollectionViewCell.identifier, for: indexPath) as? ConquerCollectionViewCell {
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 20
-            cell.layer.shadowColor = UIColor.titleColorGray.cgColor
+            cell.layer.shadowColor = UIColor(hex: 0x35507c).cgColor
             cell.layer.shadowOffset = CGSize(width: 2, height: 6)
             cell.layer.shadowRadius = 15
             cell.layer.shadowOpacity = 0.2
@@ -235,11 +252,13 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
                 if let stringUrl = mountainCell[indexPath.row].mountainImage {
                     let url = URL(string: stringUrl)
                     let proceesor = DownsamplingImageProcessor(size: cell.imageViewMountain.bounds.size)
+                    cell.imageViewMountain.kf.indicatorType = .activity
                     cell.imageViewMountain.kf.setImage(with: url, options: [.processor(proceesor)])
                 }
                 if let stringUrl = mountainCell[indexPath.row].userImage {
                     let url = URL(string: stringUrl)
                     let proceesor = DownsamplingImageProcessor(size: cell.imageProfile.bounds.size)
+                    cell.imageProfile.kf.indicatorType = .activity
                     cell.imageProfile.kf.setImage(with: url, options: [.processor(proceesor)])
                 }
                 else {
@@ -291,7 +310,7 @@ extension HomeViewController {
         userImage = result.userImage
         homeStatus = result.homeStatus
         mountain = result.myflag?.mountain
-        self.viewWillAppear(true)
+        self.viewDidAppear(true)
         self.carouselCollectionView.reloadData()
     }
     func failureDataReceive(_ message : String) {

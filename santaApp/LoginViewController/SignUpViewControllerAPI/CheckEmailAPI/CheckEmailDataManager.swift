@@ -9,7 +9,7 @@ import Alamofire
 
 class CheckEmailDataManager {
     func appemailcode(_ viewcontroller : SignUpViewController, _ parameters : CheckEmailInput) {
-        AF.request(Constant.TestURL + "/app/email/code", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).validate().responseDecodable(of: CheckEmailEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/email/code", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).validate().responseDecodable(of: CheckEmailEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess {

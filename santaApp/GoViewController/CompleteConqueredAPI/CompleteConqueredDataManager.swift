@@ -10,7 +10,7 @@ import Alamofire
 class CompleteConqueredDataManager {
     func appflagsmountainIdxrank(_ viewcontroller : CompleteViewController, _ mountainIdx : Int) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.TestURL + "/app/flags/\(mountainIdx)/rank", method: .get, headers: headers).validate().responseDecodable(of: CompleteConqueredEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/flags/\(mountainIdx)/rank", method: .get, headers: headers).validate().responseDecodable(of: CompleteConqueredEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result {

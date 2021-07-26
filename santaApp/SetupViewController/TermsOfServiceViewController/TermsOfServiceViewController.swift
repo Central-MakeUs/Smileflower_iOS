@@ -47,7 +47,6 @@ extension TermsOfServiceViewController : UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 58
     }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 22
     }
@@ -69,5 +68,18 @@ extension TermsOfServiceViewController : UITableViewDelegate, UITableViewDataSou
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let nextVC = TermsOfServiceDetailViewController()
+            nextVC.modalPresentationStyle = .fullScreen
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+        else {
+            let nextVC = PrivacyUserDetailViewController()
+            nextVC.modalPresentationStyle = .fullScreen
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+    }
 }

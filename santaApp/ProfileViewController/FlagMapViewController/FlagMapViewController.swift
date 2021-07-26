@@ -18,11 +18,27 @@ class FlagMapViewController : UIViewController {
         view.backgroundColor = .white
         setMapView()
         setNavigationBar()
+        let button = UIButton()
+        button.setTitle("이거", for: .normal)
+        button.addTarget(self, action: #selector(actionGoExplain), for: .touchUpInside)
+        view.addSubview(button)
+        button.snp.makeConstraints { make in
+            make.center.equalTo(view)
+            make.width.equalTo(100)
+            make.height.equalTo(100)
+        }
     }
     // MARK: navigationBar
     lazy var leftButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
         button.tag = 1
+        button.tintColor = .titleColorGray
+        return button
+        
+    }()
+    lazy var rightButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(actionGoExplain))
+        button.tag = 2
         button.tintColor = .titleColorGray
         return button
         
@@ -37,6 +53,7 @@ class FlagMapViewController : UIViewController {
 
         let navItem = UINavigationItem()
         navItem.leftBarButtonItem = self.leftButton
+        navItem.rightBarButtonItem = self.rightButton
         navbar.items = [navItem]
         navbar.setBackgroundImage(UIImage(), for: .default)
         navbar.shadowImage = UIImage()
@@ -53,6 +70,11 @@ class FlagMapViewController : UIViewController {
         let nextVC = BaseTabbarController()
         nextVC.index = 3
         self.changeRootViewController(nextVC)
+    }
+    @objc func actionGoExplain() {
+        let ShowVC = FlagExplainViewController()
+        ShowVC.modalPresentationStyle = .overFullScreen
+        self.present(ShowVC, animated: false, completion: nil)
     }
     //MARK: Map 뷰 만들기
     let mapView = MKMapView()

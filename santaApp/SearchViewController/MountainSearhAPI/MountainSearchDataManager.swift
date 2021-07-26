@@ -10,7 +10,7 @@ import Alamofire
 class MountainSearchDataManager {
     func appmountainssearchmountain(_ viewcontroller : SearchViewController, _ parameters : MountainSearchInput) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.TestURL + "/app/mountains/search", method: .get, parameters: parameters, headers: headers).validate().responseDecodable(of: MountainSearchEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/mountains/search", method: .get, parameters: parameters, headers: headers).validate().responseDecodable(of: MountainSearchEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result {

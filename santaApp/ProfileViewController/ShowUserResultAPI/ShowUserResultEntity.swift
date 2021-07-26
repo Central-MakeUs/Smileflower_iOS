@@ -23,7 +23,7 @@ struct ShowUserResultResponse : Decodable {
     var thirdMountain : Bool
     var seventhMountain : Bool
     var tenthMountain : Bool
-    var high : Int?
+    var high : Double?
 }
 
 struct ShowUserResultError : Decodable {

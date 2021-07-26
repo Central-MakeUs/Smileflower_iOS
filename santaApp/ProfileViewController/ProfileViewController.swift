@@ -21,7 +21,7 @@ class ProfileViewController : BaseViewController {
                                   "isTwentiethKmHeight@3x", "isMasterMountain@3x",
                                   "haveThreeMountain@3x", "HaveSevenMountain@3x",
                                   "haveTenMountain@3x"]
-    var nonimagesName : [String] = [ "isnotFirstConquerd@3x", "isnotThirdConquered@3x",
+    var nonimagesName : [String] = [ "isnotFirstConquerd@3x", "isnotThirdConquerd@3x",
                                   "isnotSeventhConquered@3x", "isnotTenthConquered@3x",
                                   "isnotFiveKmHeight@3x", "isnotTenKmHeight@3x",
                                   "isnotTwentiethKmHeight@3x", "isnotMasterMountain@3x",
@@ -554,7 +554,7 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.width - 46) / 3, height: (collectionView.bounds.width - 46) / 3)
+        return CGSize(width: (collectionView.bounds.width - 50) / 3, height: (collectionView.bounds.width - 46) / 3)
     }
 
     

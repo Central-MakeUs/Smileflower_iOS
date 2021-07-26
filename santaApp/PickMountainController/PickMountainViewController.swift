@@ -131,7 +131,7 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
             }
             
             cell.labelMountain.text = mountainPicks[indexPath.row].mountainName
-            cell.labelMountainHeight.text = mountainPicks[indexPath.row].mountainName
+            cell.labelMountainHeight.text = mountainPicks[indexPath.row].high
             return cell
         }
         return UICollectionViewCell()

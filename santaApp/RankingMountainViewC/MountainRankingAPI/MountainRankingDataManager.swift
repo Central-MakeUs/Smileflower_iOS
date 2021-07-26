@@ -10,7 +10,7 @@ import Alamofire
 class MountainRankingDataManager {
     func appmountainsmountainIdxrank(_ viewcontroller : ContentRankViewController, _ mountainIdx : Int) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.TestURL + "/app/mountains/\(mountainIdx)/rank", method: .get, headers: headers).validate().responseDecodable(of: MountainRankingEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/mountains/\(mountainIdx)/rank", method: .get, headers: headers).validate().responseDecodable(of: MountainRankingEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess , let result = response.result {

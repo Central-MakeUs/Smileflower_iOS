@@ -10,7 +10,7 @@ import Alamofire
 class ShowProfileDataManager {
     func apiprofileuserIdx(_ viewcontroller : ProfileViewController, _ userIdx : Int) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.TestURL + "/api/profile/\(userIdx)", method: .get, headers: headers).validate().responseDecodable(of: ShowProfileEntity.self) { response in
+        AF.request(Constant.baseURL + "/api/profile/\(userIdx)", method: .get, headers: headers).validate().responseDecodable(of: ShowProfileEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.success, let result = response.response {

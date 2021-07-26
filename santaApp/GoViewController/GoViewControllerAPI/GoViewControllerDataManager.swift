@@ -11,7 +11,7 @@ class GoViewControllerDataManager {
     func appflagsmountain(_ viewcontroller : GoViewController, _ mountainName : String) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
         let parameters : Parameters = [ "mountain" : mountainName]
-        AF.request(Constant.TestURL + "/app/flags", method: .get, parameters: parameters, headers: headers).validate().responseDecodable(of: GoViewControllerEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/flags", method: .get, parameters: parameters, headers: headers).validate().responseDecodable(of: GoViewControllerEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result{

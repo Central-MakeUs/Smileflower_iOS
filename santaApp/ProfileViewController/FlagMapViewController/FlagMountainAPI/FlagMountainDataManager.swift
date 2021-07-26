@@ -10,7 +10,7 @@ import Alamofire
 class FlagMountainDataManager {
     func apiprofileuserIdxflagsmap(_ viewcontroller : FlagMapViewController, _ userIdx : Int) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.TestURL + "/api/profile/\(userIdx)/flags/map", method: .get, headers: headers).validate().responseDecodable(of: FlagMountainEntity.self) { response in
+        AF.request(Constant.baseURL + "/api/profile/\(userIdx)/flags/map", method: .get, headers: headers).validate().responseDecodable(of: FlagMountainEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.success, let result = response.response {

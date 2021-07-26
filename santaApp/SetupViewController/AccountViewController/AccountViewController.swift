@@ -81,7 +81,7 @@ extension AccountViewController : UITableViewDelegate, UITableViewDataSource {
             else {
                 fatalError("cant dequeue Cell")
                 }
-            cell.labelEmail.text = Constant.userEmail
+            cell.labelEmail.text = Constant.userEmail ?? ""
             cell.selectionStyle = .none
             cell.labelTitle.text = arrayTitle[indexPath.section]
             cell.labelTitle.textColor = .darkbluegray

@@ -12,6 +12,7 @@ class DetailAnotherUserViewController: UIViewController, UINavigationBarDelegate
     
     var postsResult : [DetailAnotherUserPosts] = []
     var userIdx : Int?
+    var userName : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class DetailAnotherUserViewController: UIViewController, UINavigationBarDelegate
         navbar.setBackgroundImage(UIImage(), for: .default)
         navbar.shadowImage = UIImage()
         navbar.layoutIfNeeded()
-        navbar.topItem?.title = "내 게시물"
+        navbar.topItem?.title = (userName ?? "") + "의 게시물"
         view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
@@ -123,6 +124,7 @@ extension DetailAnotherUserViewController : UICollectionViewDelegate, UICollecti
 extension DetailAnotherUserViewController {
     func successDataApi(_ result : DetailAnotherUserResponse) {
         postsResult = result.posts!
+        userName = result.name
         carouselCollectionView.reloadData()
     }
     func failDataApi(_ message : String) {

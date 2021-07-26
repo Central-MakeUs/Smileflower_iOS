@@ -384,6 +384,7 @@ class RankingMountainViewController: UIViewController {
         labelDistanse.snp.makeConstraints { make in
             make.centerY.equalTo(viewTimeAndDistance)
             make.leading.equalTo(imageViewRun.snp.trailing).offset(4.7)
+            make.width.equalTo(46)
         }
         let imageViewTime = UIImageView()
         imageViewTime.contentMode = .scaleAspectFit
@@ -492,7 +493,7 @@ extension RankingMountainViewController : UINavigationBarDelegate, MKMapViewDele
             for i in mountainCoursePosition {
                 if view.annotation?.title == i.courseNum {
                     mapView.addSubview(viewMountainCourseClick)
-                    setViewMountainCourse(viewMountainCourseClick, i.time!, i.length!, i.courseNum!, i.difficulty!, i.course!)
+                    setViewMountainCourse(viewMountainCourseClick, i.time!, i.length ?? "-", i.courseNum!, i.difficulty!, i.course!)
                 }
             }
         }

@@ -12,7 +12,7 @@ class EndViewControllerDataManager {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
         AF.upload(multipartFormData: { MultipartFormData in
             MultipartFormData.append(dataimg, withName: "file", fileName: "a.jpg", mimeType: "image/jpg")
-        }, to: Constant.TestURL + "/api/flag/upload/\(mountainIdx)", method: .post ,headers: headers).responseDecodable(of: EndViewControllerEntity.self) { response in
+        }, to: Constant.baseURL + "/api/flag/upload/\(mountainIdx)", method: .post ,headers: headers).responseDecodable(of: EndViewControllerEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.success {

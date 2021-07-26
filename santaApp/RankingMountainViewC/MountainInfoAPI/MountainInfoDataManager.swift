@@ -10,7 +10,7 @@ import Alamofire
 class MountainInfoDataManager {
     func appmountiansmountainIdxinfo(_ viewcontroller : ContentMountainViewController, _ mountainIdx : Int) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.TestURL + "/app/mountains/\(mountainIdx)/info", method: .get, headers: headers).validate().responseDecodable(of: MountainInfoEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/mountains/\(mountainIdx)/info", method: .get, headers: headers).validate().responseDecodable(of: MountainInfoEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result {
