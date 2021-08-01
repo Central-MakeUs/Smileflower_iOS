@@ -18,6 +18,7 @@ class MountainInfoDataManager {
                 }
             case .failure(let error):
                 viewcontroller.faillureDataMountainInfo("네트워크 통신 장애")
+                print("정보"+error.localizedDescription)
             }
         }
     }

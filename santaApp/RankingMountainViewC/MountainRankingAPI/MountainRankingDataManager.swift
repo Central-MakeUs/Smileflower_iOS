@@ -18,6 +18,7 @@ class MountainRankingDataManager {
                 }
             case .failure(let error):
                 viewcontroller.failureDataMountainRanking("네트워크 통신 장애")
+                print("랭킹"+error.localizedDescription)
             }
         }
     }

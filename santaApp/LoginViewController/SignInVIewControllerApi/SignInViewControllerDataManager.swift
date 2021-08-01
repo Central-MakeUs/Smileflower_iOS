@@ -20,6 +20,7 @@ class SignInViewControllerDataManager {
                 }
             case .failure(let error):
                 viewcontroller.failureDataApi()
+                print(error.localizedDescription)
             }
         }
     }

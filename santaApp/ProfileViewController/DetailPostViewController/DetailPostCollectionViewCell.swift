@@ -130,6 +130,7 @@ class DetailPostCollectionViewCell: UICollectionViewCell {
 
 extension DetailPostCollectionViewCell {
     func successDataApiDeletePosts() {
+        self.detailPostViewController?.viewWillAppear(false)
         self.detailPostViewController?.carouselCollectionView.reloadData()
     }
     func failureDataApiDelete(_ message : String) {

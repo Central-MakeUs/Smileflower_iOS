@@ -97,6 +97,7 @@ class GoViewController : BaseViewController, UISearchBarDelegate {
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let mountainName = searchBar.text {
+            print(mountainName)
             GoViewControllerDataManager().appflagsmountain(self, mountainName)
         }
     }

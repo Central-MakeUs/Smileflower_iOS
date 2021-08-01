@@ -12,6 +12,7 @@ class DetailPosteViewController: UIViewController, UINavigationBarDelegate {
     
     var postsResult : [DetailPostsPosts] = []
     var userIdx : Int?
+    var indexPath : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +20,16 @@ class DetailPosteViewController: UIViewController, UINavigationBarDelegate {
         navigationBarSet()
         SetCollectionViewContent()
         
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         if let idx = userIdx {
             DetailPostsDataManager().apiprofileuserIdxposts(self, idx)
+        }
+    }
+    override func viewWillLayoutSubviews() {
+        if let numindex = indexPath {
+            carouselCollectionView.scrollToItem(at: IndexPath(item: numindex, section: 0), at: .bottom, animated: false)
         }
     }
     // MARK: 네비게이션 바

@@ -100,7 +100,7 @@ class RankingMountainViewController: UIViewController {
         view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
-        self.changeRootViewController(BaseTabbarController())
+        self.dismiss(animated: true, completion: nil)
     }
     // MARK: 지도 구현
     func mapViewSet() {
@@ -157,6 +157,7 @@ class RankingMountainViewController: UIViewController {
     @objc private func menuButtonAction(sender: UIButton) {
         let nextVC = StartViewController()
         nextVC.labelMountainName.text = mountainName
+        nextVC.mountainIdx = mountainIndex
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)

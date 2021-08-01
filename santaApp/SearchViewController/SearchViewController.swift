@@ -251,14 +251,27 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             return CGSize(width: 333, height: 91)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let idx = mountainResult[indexPath.row].mountainIdx, let mountainName = mountainResult[indexPath.row].mountainName {
-            let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
-            nextVC.mountainIndex = idx
-            nextVC.mountainName = mountainName
-                nextVC.modalPresentationStyle = .fullScreen
-                nextVC.modalTransitionStyle = .crossDissolve
-                self.present(nextVC, animated: true, completion: nil)
+        if isFiltering {
+            if let idx = filterArr[indexPath.row].mountainIdx, let mountainName = filterArr[indexPath.row].mountainName {
+                let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+                nextVC.mountainIndex = idx
+                nextVC.mountainName = mountainName
+                    nextVC.modalPresentationStyle = .fullScreen
+                    nextVC.modalTransitionStyle = .crossDissolve
+                    self.present(nextVC, animated: true, completion: nil)
+            }
         }
+        else {
+            if let idx = mountainResult[indexPath.row].mountainIdx, let mountainName = mountainResult[indexPath.row].mountainName {
+                let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+                nextVC.mountainIndex = idx
+                nextVC.mountainName = mountainName
+                    nextVC.modalPresentationStyle = .fullScreen
+                    nextVC.modalTransitionStyle = .crossDissolve
+                    self.present(nextVC, animated: true, completion: nil)
+            }
+        }
+       
         
     }
 }

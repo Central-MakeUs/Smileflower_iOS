@@ -25,7 +25,7 @@ class BaseTabbarController : UITabBarController, UITabBarControllerDelegate {
     func setupMiddleButton() {
            let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 82, height: 82))
            var menuButtonFrame = menuButton.frame
-           menuButtonFrame.origin.y = view.bounds.height - menuButtonFrame.height - 50
+        menuButtonFrame.origin.y = view.bounds.height - menuButtonFrame.height - view.bounds.height/16.3
            menuButtonFrame.origin.x = view.bounds.width/2 - menuButtonFrame.size.width/2
            menuButton.frame = menuButtonFrame
 
@@ -56,8 +56,8 @@ class BaseTabbarController : UITabBarController, UITabBarControllerDelegate {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.tabBar.frame.size.height = 106
-        tabBar.frame.origin.y = view.frame.height - 106
+        self.tabBar.frame.size.height = UIScreen.main.bounds.height/7.6
+        tabBar.frame.origin.y = view.frame.height - UIScreen.main.bounds.height/7.6
     }
     func SetUpTabbarView() {
         let homeNavigationController = UINavigationController(rootViewController: homeViewController)

@@ -63,7 +63,6 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
         view.setGradient(color1: UIColor(hex: 0x9ac7ff), color2: UIColor(hex: 0xffffff))
         navigationBarSet()
         imageViewSetBackground()
-        
         buttonSetGoConquerMountainView()
         imageViewSetComplete()
         viewSetRank()
@@ -152,8 +151,8 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
         buttonGoConquerMountainView.layer.cornerRadius = 25
     }
     @objc func actionGoConquerMountainView() {
-        let nextVC = DetailPosteViewController()
-        nextVC.userIdx = myRankResult?.userIdx
+        let nextVC = FlagMapViewController()
+        nextVC.useridx = myRankResult?.userIdx
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)

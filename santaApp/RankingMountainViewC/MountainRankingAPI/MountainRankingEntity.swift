@@ -20,6 +20,7 @@ struct MountainRankingResult : Decodable {
 struct MountainRankingMyRank : Decodable {
     var ranking : Int?
     var userIdx : Int?
+    var level : String?
     var userName : String?
     var userImage : String?
     var flagCount : Int?
@@ -27,6 +28,7 @@ struct MountainRankingMyRank : Decodable {
 }
 
 struct MountainRankingAllRank : Decodable {
+    var level  : String?
     var ranking : Int?
     var userIdx : Int?
     var userName : String?

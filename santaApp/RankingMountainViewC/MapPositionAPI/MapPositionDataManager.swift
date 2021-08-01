@@ -18,6 +18,7 @@ class MapPositionDataManager {
                 }
             case .failure(let error):
                 viewcontroller.failureDataMountainPosition()
+                print("위치"+error.localizedDescription)
             }
         }
     }

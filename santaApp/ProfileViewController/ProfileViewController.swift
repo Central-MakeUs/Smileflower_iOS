@@ -32,6 +32,9 @@ class ProfileViewController : BaseViewController {
         super.viewDidLoad()
         navigationBarSet()
         
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         if let idx = Constant.userIdx {
             ShowProfileDataManager().apiprofileuserIdx(self, idx)
             ShowUserResultDataManager().apiprofileuserIdxresult(self, idx)
@@ -39,8 +42,6 @@ class ProfileViewController : BaseViewController {
         else {
             self.presentAlert(title: "네트워크 통신 장애")
         }
-    }
-    override func viewWillAppear(_ animated: Bool) {
         scrollViewSet()
         buttonSetSeeMap()
         viewSetContent()
@@ -412,6 +413,7 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         if collectionView == collectionViewConquerMountain {
             let nextVC = DetailPosteViewController()
             nextVC.userIdx = showProfileResult?.userIdx
+            nextVC.indexPath = indexPath.row
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve
             self.present(nextVC, animated: true, completion: nil)

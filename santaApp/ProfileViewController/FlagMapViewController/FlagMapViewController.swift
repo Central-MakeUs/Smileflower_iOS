@@ -18,15 +18,6 @@ class FlagMapViewController : UIViewController {
         view.backgroundColor = .white
         setMapView()
         setNavigationBar()
-        let button = UIButton()
-        button.setTitle("이거", for: .normal)
-        button.addTarget(self, action: #selector(actionGoExplain), for: .touchUpInside)
-        view.addSubview(button)
-        button.snp.makeConstraints { make in
-            make.center.equalTo(view)
-            make.width.equalTo(100)
-            make.height.equalTo(100)
-        }
     }
     // MARK: navigationBar
     lazy var leftButton: UIBarButtonItem = {
@@ -124,7 +115,7 @@ extension FlagMapViewController : MKMapViewDelegate, UINavigationBarDelegate {
                     if counts < 4 {
                         annotation1.image = UIImage(named: "illustMapFlag1Small@3x")
                     }
-                    else if counts < 8 {
+                    else if counts < 7 {
                         annotation1.image = UIImage(named: "illustMapFlag2Small@3x")
                     }
                     else {

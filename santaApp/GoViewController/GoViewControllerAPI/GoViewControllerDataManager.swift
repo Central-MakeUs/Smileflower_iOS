@@ -16,11 +16,9 @@ class GoViewControllerDataManager {
             case .success(let response):
                 if response.isSuccess, let result = response.result{
                     viewcontroller.successDataMountain(result)
-                    print("성공")
                 }
                 else {
                     viewcontroller.failureNoDataMountain(response.message)
-                    print("왜그래?")
                 }
             case .failure(let errror) :
                 viewcontroller.failureNoDataMountain("네트워크가 연결되어 있지 않습니다.")

@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class HomeViewController : BaseViewController {
+class HomeViewController : BaseViewController, UINavigationBarDelegate {
     let labelHikeWithSANTA = UILabel()
     let labelConquer = UILabel()
     let searchButton = UIButton()
@@ -32,14 +32,53 @@ class HomeViewController : BaseViewController {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
-    
+    // MAKR: 네비게이션 바 커스텀
+//    lazy var rightButton: UIBarButtonItem = {
+//        let button = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(actionGoExplain))
+//        button.tag = 2
+//        button.tintColor = .titleColorGray
+//        return button
+//
+//    }()
+    let imageViewSantaLogo = UIImageView()
+    //MARK: 네비게이션 바 로고 설정
+    func navigationBarSetLogo() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.layoutIfNeeded()
+    }
+    func setNavigationBar() {
+        let height: CGFloat = 30
+        let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
+        navbar.backgroundColor = UIColor.clear
+        navbar.delegate = self
+
+        imageViewSantaLogo.image = UIImage(named: "1083@3x")
+        imageViewSantaLogo.frame = CGRect(x: 0, y: 0, width: 48.1, height: 22.5)
+        let navItem = UINavigationItem()
+//        navItem.rightBarButtonItem = self.rightButton
+        navbar.items = [navItem]
+        navbar.topItem?.titleView = imageViewSantaLogo
+        navbar.setBackgroundImage(UIImage(), for: .default)
+        navbar.shadowImage = UIImage()
+        navbar.layoutIfNeeded()
+        view.addSubview(navbar)
+    }
+//    @objc func actionGoExplain() {
+//        let ShowVC = FlagExplainViewController()
+//        ShowVC.modalPresentationStyle = .overFullScreen
+//        self.present(ShowVC, animated: false, completion: nil)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         HomeViewDataManager().apphomes(viewcontroller: self)
         print(Constant.JWTToken)
         print(Constant.userIdx)
+        setScrollView()
         navigationBarSetLogo()
+        setNavigationBar()
+        
         imageViewSetBackground()
         LabelSetHikeWithSANTA()
         searchButtonSet()
@@ -58,29 +97,34 @@ class HomeViewController : BaseViewController {
         mask.frame = imageViewUserProfile.bounds
         carouselCollectionView.reloadData()
     }
-    //MARK: 네비게이션 바 로고 설정
-    func navigationBarSetLogo() {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 53.3, width: 48.1, height: 48.1))
-        imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "1083@3x")
-        imageView.image = image
-        navigationItem.titleView = imageView
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.layoutIfNeeded()
+    let scrollView = UIScrollView()
+    let viewContent = UIView()
+    func setScrollView() {
+        scrollView.indicatorStyle = .default
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalTo(0)
+        }
+        scrollView.addSubview(viewContent)
+        viewContent.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+            make.width.equalTo(UIScreen.main.bounds.width)
+            make.height.equalTo(812)
+        }
     }
+    
     //MARK: 배경 설정
     func imageViewSetBackground() {
         let imageView = UIImageView()
         
         imageView.image = UIImage(named: "Homebackground@3x")
         imageView.contentMode = .top
-        self.view.addSubview(imageView)
+        self.viewContent.addSubview(imageView)
         
         imageView.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(70)
+            make.top.equalTo(viewContent.snp.top).offset(70)
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(view.snp.bottom)
+            make.bottom.equalTo(viewContent.snp.bottom)
         }
     }
    
@@ -89,12 +133,12 @@ class HomeViewController : BaseViewController {
     let mask = UIImageView()
     func viewSetProfile() {
         viewProfile.backgroundColor = .none
-        view.addSubview(viewProfile)
+        viewContent.addSubview(viewProfile)
         viewProfile.snp.makeConstraints { make in
             make.width.equalTo(92)
             make.height.equalTo(115)
             make.bottom.equalTo(labelHikeWithSANTA.snp.top)
-            make.leading.equalTo(view.snp.leading).offset(35)
+            make.leading.equalTo(viewContent.snp.leading).offset(35)
         }
         
         let imageViewProfile = UIImageView()
@@ -133,11 +177,11 @@ class HomeViewController : BaseViewController {
         labelHikeWithSANTA.textColor = UIColor(hex: 0x1c3240)
         labelHikeWithSANTA.alpha = 0.91
         labelHikeWithSANTA.setTextWithLineHeight(text: labelHikeWithSANTA.text, lineHeight: 32)
-        view.addSubview(labelHikeWithSANTA)
+        viewContent.addSubview(labelHikeWithSANTA)
         
         labelHikeWithSANTA.snp.makeConstraints { make in
-            make.leading.equalTo(view.snp.leading).offset(34)
-            make.top.equalTo(view.snp.top).offset(233)
+            make.leading.equalTo(viewContent.snp.leading).offset(34)
+            make.top.equalTo(viewContent.snp.top).offset(233)
         }
         labelHikeWithSANTA.layer.zPosition = 499
     }
@@ -151,7 +195,7 @@ class HomeViewController : BaseViewController {
         searchButton.layer.shadowOpacity = 0.3
         searchButton.addTarget(self, action: #selector(actionGoSearchView), for: .touchUpInside)
         
-        view.addSubview(searchButton)
+        viewContent.addSubview(searchButton)
         
         searchButton.snp.makeConstraints { make in
             make.top.equalTo(labelHikeWithSANTA.snp.bottom).offset(12)
@@ -188,7 +232,7 @@ class HomeViewController : BaseViewController {
     func setImageViewHuman() {
         imageViewHuman.contentMode = .scaleAspectFit
         imageViewHuman.image = UIImage(named: "illustHomeMan@3x")
-        view.addSubview(imageViewHuman)
+        viewContent.addSubview(imageViewHuman)
         imageViewHuman.snp.makeConstraints { make in
             make.bottom.equalTo(searchButton.snp.top).offset(2)
             make.trailing.equalTo(searchButton.snp.trailing).offset(-14.7)
@@ -205,10 +249,10 @@ class HomeViewController : BaseViewController {
         }
         labelConquer.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 22)
         labelConquer.addCharacterSpacing(kernValue: -0.66)
-        view.addSubview(labelConquer)
+        viewContent.addSubview(labelConquer)
         
         labelConquer.snp.makeConstraints { make in
-            make.leading.equalTo(view.snp.leading).offset(34)
+            make.leading.equalTo(viewContent.snp.leading).offset(34)
             make.top.equalTo(searchButton.snp.bottom).offset(44)
         }
     }
@@ -218,11 +262,11 @@ class HomeViewController : BaseViewController {
         carouselCollectionView.delegate = self
         carouselCollectionView.register(ConquerCollectionViewCell.self, forCellWithReuseIdentifier: ConquerCollectionViewCell.identifier)
         
-        view.addSubview(carouselCollectionView)
+        viewContent.addSubview(carouselCollectionView)
         
         carouselCollectionView.snp.makeConstraints { make in
-            make.leading.equalTo(view.snp.leading)
-            make.trailing.equalTo(view.snp.trailing)
+            make.leading.equalTo(viewContent.snp.leading)
+            make.trailing.equalTo(viewContent.snp.trailing)
             make.top.equalTo(labelConquer.snp.bottom).offset(15)
             make.height.equalTo(251)
         }
@@ -310,7 +354,7 @@ extension HomeViewController {
         userImage = result.userImage
         homeStatus = result.homeStatus
         mountain = result.myflag?.mountain
-        self.viewDidAppear(true)
+        self.viewDidAppear(false)
         self.carouselCollectionView.reloadData()
     }
     func failureDataReceive(_ message : String) {

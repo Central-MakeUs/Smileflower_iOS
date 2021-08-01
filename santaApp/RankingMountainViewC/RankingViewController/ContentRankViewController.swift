@@ -69,11 +69,16 @@ class ContentRankViewController: UIViewController {
     let imageViewMaster = UIImageView()
     let imageViewMasterProfile = UIImageView()
     let maskMaster = UIImageView()
+    let buttonGoMaster = UIButton()
     
     func viewSetMaster() {
-        
-        
         if let allRank = mountainAllRank {
+            buttonGoMaster.addTarget(self, action: #selector(actionGoMaster), for: .touchUpInside)
+            viewMaster.addSubview(buttonGoMaster)
+            buttonGoMaster.snp.makeConstraints { make in
+                make.edges.equalTo(viewMaster)
+            }
+            buttonGoMaster.layer.zPosition = 333
             labelMasterTimes.text = "\(String(allRank[0].flagCount ?? 0))회"
             labelMasterTimes.textAlignment = .right
             labelMasterTimes.textColor = .titleColorGray
@@ -139,6 +144,17 @@ class ContentRankViewController: UIViewController {
         }
         
     }
+    @objc func actionGoMaster() {
+        let nextVC = DetailAnotherUserViewController()
+        if let allRank = mountainAllRank {
+           let useridx = allRank[0].userIdx
+            nextVC.userIdx = useridx
+            nextVC.userName = allRank[0].userName
+        }
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
+    }
     //MARK: 2등
     let maskSilver = UIImageView()
     let labelSliverTimes = UILabel()
@@ -147,9 +163,17 @@ class ContentRankViewController: UIViewController {
     let imageViewSliverProfileBack = UIImageView()
     let imageViewSliver = UIImageView()
     let imageViewSliverProfile = UIImageView()
+    let buttonGoSliver = UIButton()
     func viewSetSliver() {
         
         if let allRank = mountainAllRank {
+            buttonGoSliver.addTarget(self, action: #selector(actionGoSilver), for: .touchUpInside)
+            viewSliver.addSubview(buttonGoSliver)
+            buttonGoSliver.snp.makeConstraints { make in
+                make.edges.equalTo(viewSliver)
+            }
+            buttonGoSliver.layer.zPosition = 333
+            
             labelSliverTimes.text = "\(String(allRank[1].flagCount!))회"
             labelSliverTimes.textAlignment = .right
             labelSliverTimes.textColor = .titleColorGray
@@ -212,6 +236,17 @@ class ContentRankViewController: UIViewController {
             }
         }
     }
+    @objc func actionGoSilver() {
+        let nextVC = DetailAnotherUserViewController()
+        if let allRank = mountainAllRank {
+           let useridx = allRank[1].userIdx
+            nextVC.userIdx = useridx
+            nextVC.userName = allRank[1].userName
+        }
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
+    }
     //MARK: 3등
     let labelBronzeTimes = UILabel()
     let imageViewBronzeFlag = UIImageView()
@@ -220,9 +255,16 @@ class ContentRankViewController: UIViewController {
     let imageViewBronze = UIImageView()
     let imageViewBronzeProfile = UIImageView()
     let maskBronze = UIImageView()
-    
+    let buttonGoBronze = UIButton()
     func viewSetBronze() {
         if let allRank = mountainAllRank {
+            buttonGoBronze.addTarget(self, action: #selector(actionGoBronze), for: .touchUpInside)
+            viewBronze.addSubview(buttonGoBronze)
+            buttonGoBronze.snp.makeConstraints { make in
+                make.edges.equalTo(viewBronze)
+            }
+            (buttonGoBronze).layer.zPosition = 333
+
             labelBronzeTimes.text = "\(String(allRank[2].flagCount!))회"
             labelBronzeTimes.textAlignment = .right
             labelBronzeTimes.textColor = .titleColorGray
@@ -286,6 +328,17 @@ class ContentRankViewController: UIViewController {
         }
         
     }
+    @objc func actionGoBronze() {
+        let nextVC = DetailAnotherUserViewController()
+        if let allRank = mountainAllRank {
+           let useridx = allRank[2].userIdx
+            nextVC.userIdx = useridx
+            nextVC.userName = allRank[2].userName
+        }
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
+    }
     //MARK: 테이블뷰
     func tableViewSetRank() {
         tableViewRank.delegate = self
@@ -310,7 +363,7 @@ class ContentRankViewController: UIViewController {
         }
         if let myRank = mountainMyRank {
             let labelRank = UILabel()
-            labelRank.text = String(myRank.ranking!)
+            labelRank.text = String(myRank.ranking!) 
             labelRank.textAlignment = .center
             labelRank.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 20)
             labelRank.textColor = .white
@@ -341,7 +394,7 @@ class ContentRankViewController: UIViewController {
                 make.width.height.equalTo(37)
             }
             let labelUserLV = UILabel()
-            labelUserLV.text = "LV.17"
+            labelUserLV.text = myRank.level ?? ""
             labelUserLV.textColor = .white
             labelUserLV.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
             viewMyGrade.addSubview(labelUserLV)
@@ -443,7 +496,7 @@ extension ContentRankViewController : UITableViewDelegate, UITableViewDataSource
             cell.imageViewProfile.layer.borderWidth = 0.2
             cell.imageViewProfile.layer.borderColor = UIColor.titleColorGray.cgColor
                 
-            cell.labelUserLV.text = allRank[indexPath.row + 3].userName
+            cell.labelUserLV.text = allRank[indexPath.row + 3].level
                 
             cell.labelUserName.text = allRank[indexPath.row + 3].userName
                 
