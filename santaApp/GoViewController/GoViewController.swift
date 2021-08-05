@@ -85,7 +85,7 @@ class GoViewController : BaseViewController, UISearchBarDelegate {
         searchBar.placeholder = ""
         searchBar.layer.cornerRadius = 24
         searchBar.layer.masksToBounds = true
-        searchBar.setImage(UIImage(named: "isCancel@3x"), for: .clear, state: .normal)
+        searchBar.setImage(UIImage(named: "icSearchCancel@3x"), for: .clear, state: .normal)
         searchBar.setTextFieldColor(.white, searchBar)
         view.addSubview(searchBar)
         searchBar.snp.makeConstraints { make in

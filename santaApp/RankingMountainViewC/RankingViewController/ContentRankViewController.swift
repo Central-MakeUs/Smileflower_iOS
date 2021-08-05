@@ -349,6 +349,48 @@ class ContentRankViewController: UIViewController {
             make.leading.bottom.trailing.equalTo(view)
             make.top.equalTo(viewMyGrade.snp.bottom)
         }
+        
+        viewSetNonRank()
+    }
+    // MARK: 등수가 아무도 없을 때.
+    let viewNonRank = UIView()
+    let imageViewSmileFace = UIImageView()
+    let labelExplain = UILabel()
+    let labelExplainDetail = UILabel()
+    
+    func viewSetNonRank() {
+        tableViewRank.addSubview(viewNonRank)
+        viewNonRank.snp.makeConstraints { make in
+            make.edges.equalTo(tableViewRank)
+        }
+        imageViewSmileFace.image = UIImage(named: "RankingFace@3x")
+        imageViewSmileFace.contentMode = .scaleAspectFit
+        viewNonRank.addSubview(imageViewSmileFace)
+        imageViewSmileFace.snp.makeConstraints { make in
+            make.top.equalTo(27.3)
+            make.centerX.equalTo(tableViewRank)
+            make.width.equalTo(39)
+            make.height.equalTo(47.8)
+        }
+        labelExplain.textAlignment = .center
+        labelExplain.text = "산을 정복해 경쟁에 참여하세요!"
+        labelExplain.textColor = .bluegray
+        labelExplain.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 24)
+        viewNonRank.addSubview(labelExplain)
+        labelExplain.snp.makeConstraints { make in
+            make.top.equalTo(imageViewSmileFace.snp.bottom).offset(11)
+            make.centerX.equalTo(imageViewSmileFace.snp.centerX)
+        }
+        
+        labelExplainDetail.textAlignment = .center
+        labelExplainDetail.text = "해당 산의 마스터가 될 수 있는 절호의 기회입니다!"
+        labelExplainDetail.textColor = .bluegray
+        labelExplainDetail.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 14)
+        viewNonRank.addSubview(labelExplainDetail)
+        labelExplainDetail.snp.makeConstraints { make in
+            make.top.equalTo(labelExplain.snp.bottom).offset(3)
+            make.centerX.equalTo(labelExplain.snp.centerX)
+        }
     }
     //MARK: 내 등수
     let viewMyGrade = UIView()
@@ -467,7 +509,15 @@ class ContentRankViewController: UIViewController {
 extension ContentRankViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let allRank = mountainAllRank {
-            return allRank.count - 3
+            if allRank.count == 3 {
+                viewNonRank.alpha = 1
+                return 0
+            }
+            else {
+                viewNonRank.alpha = 0
+                return allRank.count - 3
+            }
+            
         }
         return 0
     }

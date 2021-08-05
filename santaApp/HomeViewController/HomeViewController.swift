@@ -78,20 +78,19 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
         setScrollView()
         navigationBarSetLogo()
         setNavigationBar()
-        
+
         imageViewSetBackground()
         LabelSetHikeWithSANTA()
         searchButtonSet()
         labelSetConquer()
         collectionViewSetConquer()
         setImageViewHuman()
+        viewSetProfile()
     }
     override func viewWillAppear(_ animated: Bool) {
         HomeViewDataManager().apphomes(viewcontroller: self)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        viewSetProfile()
-    }
+
     override func viewWillLayoutSubviews() {
         labelConquer.text = homeStatus
         mask.frame = imageViewUserProfile.bounds
@@ -103,13 +102,13 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
         scrollView.indicatorStyle = .default
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.edges.equalTo(0)
+            make.edges.equalTo(view)
         }
         scrollView.addSubview(viewContent)
         viewContent.snp.makeConstraints { make in
             make.edges.equalTo(view)
             make.width.equalTo(UIScreen.main.bounds.width)
-            make.height.equalTo(812)
+//            make.height.equalTo(812)
         }
     }
     
@@ -354,8 +353,15 @@ extension HomeViewController {
         userImage = result.userImage
         homeStatus = result.homeStatus
         mountain = result.myflag?.mountain
-        self.viewDidAppear(false)
         self.carouselCollectionView.reloadData()
+        if let stringURL = userImage {
+            let url = URL(string: stringURL)
+            imageViewUserProfile.kf.indicatorType = .activity
+            imageViewUserProfile.kf.setImage(with: url)
+        }
+        else {
+            imageViewUserProfile.image = UIImage(named: "personhome@3x")
+        }
     }
     func failureDataReceive(_ message : String) {
         self.presentAlert(title: message)

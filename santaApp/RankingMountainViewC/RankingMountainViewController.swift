@@ -201,6 +201,7 @@ class RankingMountainViewController: UIViewController {
             make.centerX.equalTo(view.snp.centerX)
             make.bottom.equalTo(viewBottomSheet.snp.top).offset(12)
         }
+        dragIndicatorView.layer.zPosition = 100
         
         let viewPan = UIPanGestureRecognizer(target: self, action: #selector(viewPanned(_:)))
         viewPan.delaysTouchesBegan = false

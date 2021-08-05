@@ -17,9 +17,8 @@ class SplashViewController : BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setGradient(color1: UIColor(hex:0x24C7B9) , color2: UIColor(hex: 0x9AC7FF))
+        view.setGradient(color1:  UIColor(hex: 0x9AC7FF), color2: UIColor(hex:0x24C7B9))
         viewSetLogo()
-        print("안녕?")
         AutoLoginDataManager().appusersautologin(self)
     }
     

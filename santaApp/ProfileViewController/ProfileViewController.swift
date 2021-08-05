@@ -15,6 +15,7 @@ class ProfileViewController : BaseViewController {
     var showProfileResult : ShowProfileResponse?
     var showProfilePost : [ShowProfilePosts] = []
     var showUserResultResult : ShowUserResultResponse?
+    
     var imagesName : [String] = [ "isFirstConquerd@3x", "isThirdConquerd@3x",
                                   "isSeventhConquered@3x", "isTenthConquered@3x",
                                   "isFiveKmHeight@3x", "isTenKmHeight@3x",
@@ -31,8 +32,13 @@ class ProfileViewController : BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBarSet()
-        
-        
+        scrollViewSet()
+        buttonSetSeeMap()
+        viewSetContent()
+        viewSet()
+        viewSetUser()
+        stackViewSet()
+        viewSetImageCollection()
     }
     override func viewWillAppear(_ animated: Bool) {
         if let idx = Constant.userIdx {
@@ -42,12 +48,11 @@ class ProfileViewController : BaseViewController {
         else {
             self.presentAlert(title: "네트워크 통신 장애")
         }
-        scrollViewSet()
-        buttonSetSeeMap()
-        viewSetContent()
-        viewSet()
-        viewSetImageCollection()
-        control.setIndex(0)
+        collectionViewConquerMountain.reloadData()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        
+//        control.setIndex(0)
     }
     //MARK: 네비게이션
     let pickerForMountainImage = UIImagePickerController()
@@ -134,8 +139,7 @@ class ProfileViewController : BaseViewController {
             make.leading.trailing.top.equalTo(viewContent)
             make.height.equalTo(240)
         }
-        viewSetUser()
-        stackViewSet()
+        
     }
     //MARK: 사용자 프로필
     let viewUser = UIButton()
@@ -169,14 +173,7 @@ class ProfileViewController : BaseViewController {
             make.centerX.equalTo(viewContent.snp.centerX)
             make.width.equalTo(156)
         }
-        if let stringURL = showProfileResult?.fileUrl {
-            let url = URL(string: stringURL)
-            let proccess = DownsamplingImageProcessor(size: imageViewUserProfile.bounds.size)
-            imageViewUserProfile.kf.setImage(with: url , options: [.processor(proccess)])
-        }
-        else {
-            imageViewUserProfile.image = UIImage(named: "personhome@3x")
-        }
+        
         imageViewUserProfile.clipsToBounds = true
         imageViewUserProfile.contentMode = .scaleAspectFill
         viewUser.addSubview(imageViewUserProfile)
@@ -197,7 +194,10 @@ class ProfileViewController : BaseViewController {
     let viewUserLv = UIView()
     let viewFlag = UIView()
     let viewPost = UIView()
-    
+    let labelFlagConstant = UILabel()
+    let labelLvConstant = UILabel()
+    let labelPostConstant = UILabel()
+
     func stackViewSet() {
         
         self.stackView.backgroundColor = UIColor(hex: 0xc1cad0, alpha: 1)
@@ -215,15 +215,12 @@ class ProfileViewController : BaseViewController {
             make.width.equalTo(332)
             make.height.equalTo(60)
         }
-        if let result = showProfileResult {
             //MARK: 레벨 라벨
             
             let labelLv = UILabel()
-            let labelLvConstant = UILabel()
             labelLv.text = "레벨"
             labelLv.textColor = .titleColorGray
             labelLv.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
-            labelLvConstant.text  = String(result.level ?? 0)
             labelLvConstant.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 24)
             labelLvConstant.textAlignment = .center
             viewUserLv.addSubview(labelLv)
@@ -239,11 +236,9 @@ class ProfileViewController : BaseViewController {
             }
             //MARK: 뽑은 깃발
             let labelFlag = UILabel()
-            let labelFlagConstant = UILabel()
             labelFlag.text = "꽂은 깃발"
             labelFlag.textColor = .titleColorGray
             labelFlag.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
-            labelFlagConstant.text  = String(result.flagCount ?? 0)
             labelFlagConstant.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 24)
             labelFlagConstant.textAlignment = .center
             viewFlag.addSubview(labelFlag)
@@ -259,11 +254,9 @@ class ProfileViewController : BaseViewController {
             }
             //MARK: 게시물
             let labelPost = UILabel()
-            let labelPostConstant = UILabel()
             labelPost.text = "게시물"
             labelPost.textColor = .titleColorGray
             labelPost.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 12)
-            labelPostConstant.text  = String(result.postCount ?? 0)
             labelPostConstant.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 24)
             labelPostConstant.textAlignment = .center
             viewPost.addSubview(labelPost)
@@ -277,10 +270,6 @@ class ProfileViewController : BaseViewController {
                 make.top.equalTo(labelPost.snp.bottom).offset(3)
                 make.width.equalTo(45)
             }
-            
-           
-            
-        }
         stackView.addArrangedSubview(viewUserLv)
         stackView.addArrangedSubview(viewFlag)
         stackView.addArrangedSubview(viewPost)
@@ -290,7 +279,7 @@ class ProfileViewController : BaseViewController {
     let viewImageCollection = UIView()
     func viewSetImageCollection() {
         viewImageCollection.backgroundColor = .white
-        viewImageCollection.layer.addBorder([.top], color: UIColor(hex: 0x7c909b, alpha: 0.3), width: 1)
+//        viewImageCollection.layer.addBorder([.top], color: UIColor(hex: 0x7c909b, alpha: 0.3), width: 1)
         viewContent.addSubview(viewImageCollection)
         viewImageCollection.snp.makeConstraints { make in
             make.top.equalTo(viewProfile.snp.bottom).offset(0.1)
@@ -652,10 +641,28 @@ extension ProfileViewController {
         if showProfilePost.count < 13 {
             scrollViewContent.isScrollEnabled = true
         }
-        self.viewWillAppear(false)
+        labelUserName.text = result.name
+        labelLvConstant.text = String(result.level ?? 0)
+        labelFlagConstant.text = String(result.flagCount ?? 0)
+        labelPostConstant.text = String(result.postCount ?? 0)
+        stackView.reloadInputViews()
+        if let stringURL = result.fileUrl {
+            let url = URL(string: stringURL)
+            let proccess = DownsamplingImageProcessor(size: imageViewUserProfile.bounds.size)
+            imageViewUserProfile.kf.indicatorType = .activity
+            imageViewUserProfile.kf.setImage(with: url , options: [.processor(proccess)])
+        }
+        else {
+            imageViewUserProfile.image = UIImage(named: "personhome@3x")
+        }
     }
     func successDataApiRegisterImage() {
         collectionViewConquerMountain.reloadData()
+    }
+    func successDataApiChangeProfileImage() {
+        if let idx = Constant.userIdx {
+            ShowProfileDataManager().apiprofileuserIdx(self, idx)
+        }
     }
     func successDataApiUserResult(_ result : ShowUserResultResponse) {
         showUserResultResult = result

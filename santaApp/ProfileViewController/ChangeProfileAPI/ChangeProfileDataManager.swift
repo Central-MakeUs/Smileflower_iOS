@@ -8,7 +8,7 @@
 import Alamofire
 
 class ChangeProfileDataManager {
-    func apiprofileupload(_ imageUser : Data, _ viewcontroller : UIViewController) {
+    func apiprofileupload(_ imageUser : Data, _ viewcontroller : ProfileViewController) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
         AF.upload(multipartFormData: { MultipartFormData in
             MultipartFormData.append(imageUser, withName: "file", fileName: "a.jpg", mimeType: "image/jpg")
@@ -16,7 +16,7 @@ class ChangeProfileDataManager {
             switch response.result {
             case .success(let response):
                 if response.success {
-                    viewcontroller.presentAlert(title: "유저 프로필 변경 성공")
+                    viewcontroller.successDataApiChangeProfileImage()
                 }
                 else {
                     viewcontroller.presentAlert(title: response.error!.message!)

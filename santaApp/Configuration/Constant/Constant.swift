@@ -8,8 +8,10 @@
 import Alamofire
 
 struct Constant {
-    static let TestURL = "https://smilesanta.site"
-    static let baseURL = "http://13.125.121.202"
+    static let baseURL = "https://smilesanta.site"
+    
+    static let TestURL = "http://13.125.121.202"
+    static let MainURL = "https://smilesanta.site"
     static let fontCocogoose = "Cocogoose"
     static var JWTToken = ""
     static var userIdx : Int?

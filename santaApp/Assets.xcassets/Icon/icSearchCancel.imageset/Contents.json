@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icSearchCancel.png",
+      "filename" : "1579.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icSearchCancel@2x.png",
+      "filename" : "1579@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icSearchCancel@3x.png",
+      "filename" : "1579@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

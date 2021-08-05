@@ -502,8 +502,8 @@
 			children = (
 				2869B0CE26A5B4960042890E /* lottieAnimaition.json */,
 				2813D838268B7D9200822337 /* santaApp.entitlements */,
-				2813D835268B72A100822337 /* LoginViewController */,
 				28119B64268A276F002ABFA9 /* Configuration */,
+				2813D835268B72A100822337 /* LoginViewController */,
 				28D4C240268A2C440056EECF /* HomeViewController */,
 				28D4C241268A2C4F0056EECF /* PickMountainController */,
 				28D4C242268A2C950056EECF /* GoViewController */,
@@ -1543,6 +1543,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1568,6 +1569,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

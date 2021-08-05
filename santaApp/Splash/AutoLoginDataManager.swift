@@ -24,7 +24,7 @@ class AutoLoginDataManager {
                         print("자동 로그인 실패")
                     }
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    print("자동로그인"+error.localizedDescription)
                 }
             }
         }

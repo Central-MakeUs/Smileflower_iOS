@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "RankingFace.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "RankingFace@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "1579@3x.png",
+      "filename" : "RankingFace@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

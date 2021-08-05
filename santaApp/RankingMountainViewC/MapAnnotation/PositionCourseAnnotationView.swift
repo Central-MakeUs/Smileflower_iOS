@@ -32,4 +32,14 @@ class PositionCourseAnnotationView: MKAnnotationView {
             make.center.equalTo(snp.center)
         }
     }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        if selected {
+            backgroundColor = .mainColor
+            labelCourseName.textColor = .white
+        }
+        else {
+            backgroundColor = .white
+            labelCourseName.textColor = .mainColor
+        }
+    }
 }
