@@ -7,7 +7,7 @@
 
 import UIKit
 import MapKit
-class FlagMapViewController : UIViewController {
+class FlagMapViewController : BaseViewController {
     var useridx : Int?
     var mountainFlagResult : [FlagMountainResponse] = []
     override func viewDidLoad() {

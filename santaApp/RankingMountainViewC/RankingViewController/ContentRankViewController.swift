@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ContentRankViewController: UIViewController {
+class ContentRankViewController: BaseViewController {
 
     let viewMaster = UIView()
     let viewSliver = UIView()
@@ -116,6 +116,7 @@ class ContentRankViewController: UIViewController {
             imageViewMasterProfile.contentMode = .scaleAspectFill
             imageViewMasterProfile.backgroundColor = .white
             if let urlString = allRank[0].userImage {
+                print(urlString)
                 let url = URL(string: urlString)
                 imageViewMasterProfile.kf.indicatorType = .activity
                 imageViewMasterProfile.kf.setImage(with: url)
@@ -210,6 +211,7 @@ class ContentRankViewController: UIViewController {
             imageViewSliverProfile.backgroundColor = .white
             if let urlString = allRank[1].userImage {
                 let url = URL(string: urlString)
+                print(urlString)
                 imageViewSliverProfile.kf.indicatorType = .activity
                 imageViewSliverProfile.kf.setImage(with: url)
             }
@@ -421,8 +423,7 @@ class ContentRankViewController: UIViewController {
             imageViewProfile.clipsToBounds = true
             if let urlString = myRank.userImage {
                 let url = URL(string: urlString)
-                let proceesor = DownsamplingImageProcessor(size: imageViewProfile.bounds.size)
-                imageViewProfile.kf.setImage(with: url, options: [.processor(proceesor)])
+                imageViewProfile.kf.setImage(with: url)
             }
             else {
                 imageViewProfile.image = UIImage(named: "personhome@3x")
@@ -532,11 +533,10 @@ extension ContentRankViewController : UITableViewDelegate, UITableViewDataSource
             cell.selectionStyle = .none
             cell.accessoryType = .disclosureIndicator
             cell.labelRank.text = String(indexPath.row + 4)
-            
+
             if let urlString = allRank[indexPath.row + 3].userImage {
                 let url = URL(string: urlString)
-                let proceesor = DownsamplingImageProcessor(size: cell.imageViewProfile.bounds.size)
-                cell.imageViewProfile.kf.setImage(with: url, options: [.processor(proceesor)])
+                cell.imageViewProfile.kf.setImage(with: url)
             }
             else {
                 cell.imageViewProfile.image = UIImage(named: "personhome@3x")
@@ -545,16 +545,16 @@ extension ContentRankViewController : UITableViewDelegate, UITableViewDataSource
             cell.imageViewProfile.layer.cornerRadius = 18.5
             cell.imageViewProfile.layer.borderWidth = 0.2
             cell.imageViewProfile.layer.borderColor = UIColor.titleColorGray.cgColor
-                
+
             cell.labelUserLV.text = allRank[indexPath.row + 3].level
-                
+
             cell.labelUserName.text = allRank[indexPath.row + 3].userName
-                
+
             cell.labelUserlatest.text = allRank[indexPath.row + 3].agoTime
-                
-            cell.labelUserTimes.text = "\(String(allRank[indexPath.row + 3].flagCount!))회"
-            
+
+            cell.labelUserTimes.text = "\(String(allRank[indexPath.row + 3].flagCount ?? 0))회"
         }
+    
         return cell
         
     }
@@ -587,7 +587,6 @@ extension ContentRankViewController {
         viewSetRanker()
         setMyGrade()
         tableViewSetRank()
-        self.viewWillAppear(true)
         tableViewRank.reloadData()
     }
     func failureDataMountainRanking( _ message : String ) {

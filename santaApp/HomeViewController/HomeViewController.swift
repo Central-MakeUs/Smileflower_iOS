@@ -47,14 +47,17 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.layoutIfNeeded()
     }
+    let navbar = UINavigationBar()
+    let height: CGFloat = 30
+
     func setNavigationBar() {
-        let height: CGFloat = 30
-        let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
+        navbar.frame = CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height)
         navbar.backgroundColor = UIColor.clear
         navbar.delegate = self
 
         imageViewSantaLogo.image = UIImage(named: "1083@3x")
-        imageViewSantaLogo.frame = CGRect(x: 0, y: 0, width: 48.1, height: 22.5)
+        imageViewSantaLogo.contentMode = .scaleAspectFit
+        imageViewSantaLogo.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         let navItem = UINavigationItem()
 //        navItem.rightBarButtonItem = self.rightButton
         navbar.items = [navItem]
@@ -86,8 +89,10 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
         collectionViewSetConquer()
         setImageViewHuman()
         viewSetProfile()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         HomeViewDataManager().apphomes(viewcontroller: self)
     }
 
@@ -99,16 +104,19 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
     let scrollView = UIScrollView()
     let viewContent = UIView()
     func setScrollView() {
-        scrollView.indicatorStyle = .default
+        scrollView.delegate = self
+        scrollView.showsVerticalScrollIndicator = false
+        
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.edges.equalTo(view)
+            make.top.equalTo(view.snp.top).offset(50)
+            make.bottom.trailing.leading.equalTo(view)
         }
         scrollView.addSubview(viewContent)
         viewContent.snp.makeConstraints { make in
-            make.edges.equalTo(view)
+            make.edges.equalTo(scrollView)
             make.width.equalTo(UIScreen.main.bounds.width)
-//            make.height.equalTo(812)
+            make.height.equalTo(812)
         }
     }
     
@@ -343,6 +351,20 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
             self.present(nextVC, animated: true, completion: nil)
         }
         
+    }
+}
+extension HomeViewController : UIScrollViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y <= 20 {
+            UIView.animate(withDuration: 0.5) {
+                self.navbar.frame = CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: self.height)
+            }
+        }
+        else {
+            UIView.animate(withDuration: 0.5) {
+                self.navbar.frame = CGRect(x: 0, y: -44, width: UIScreen.main.bounds.width, height: self.height)
+            }
+        }
     }
 }
 

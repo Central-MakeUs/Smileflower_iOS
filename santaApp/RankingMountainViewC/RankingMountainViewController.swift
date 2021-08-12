@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import BetterSegmentedControl
 
-class RankingMountainViewController: UIViewController {
+class RankingMountainViewController: BaseViewController {
 
     let mapView = MKMapView()
     let viewBottomSheet = UIView()

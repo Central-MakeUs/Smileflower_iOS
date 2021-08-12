@@ -9,6 +9,8 @@ import UIKit
 
 class RecommendMountainCollectionViewCell: UICollectionViewCell {
     static let identifier = "RecommendMountainCollectionViewCell"
+    var previouseViewController : SearchViewController?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setimageViewMountain()

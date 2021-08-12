@@ -26,10 +26,13 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         setButtonSignUp()
         setLabelContract()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
-        self.textFieldID.becomeFirstResponder()
+        setNotification()
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        removeKeyboardNotifications()
+    }
+    
     let borderID = CALayer()
     let borderPassword = CALayer()
     let borderPasswordComfirm = CALayer()
@@ -131,6 +134,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
     let textFieldID = UITextField()
     let textFieldIDExplain = UILabel()
     func setTextFieldID() {
+        textFieldID.delegate = self
         textFieldID.placeholder = "이메일"
         textFieldID.borderStyle = .none
         view.addSubview(textFieldID)
@@ -201,6 +205,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
     func setTextFieldPassword() {
         textFieldPassword.placeholder = "비밀번호"
         textFieldPassword.isSecureTextEntry = true
+        textFieldPassword.delegate = self
         textFieldPassword.addTarget(self, action: #selector(actiondidChangeShowLabel), for: .editingChanged)
         view.addSubview(textFieldPassword)
         textFieldPassword.snp.makeConstraints { make in
@@ -252,6 +257,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
     func setTextFieldPasswordConfirm() {
         textFieldPasswordConfirm.placeholder = "비밀번호 확인"
         textFieldPasswordConfirm.isSecureTextEntry = true
+        textFieldPasswordConfirm.delegate = self
         textFieldPasswordConfirm.addTarget(self, action: #selector(actiondidConfirmShowLabel), for: .editingChanged)
         view.addSubview(textFieldPasswordConfirm)
         textFieldPasswordConfirm.snp.makeConstraints { make in
@@ -300,6 +306,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
     let textFieldNicname = UITextField()
     func setTextFieldNicname() {
         textFieldNicname.placeholder = "닉네임(중복 불가)"
+        textFieldNicname.delegate = self
         textFieldNicname.addTarget(self, action: #selector(actiondidChangeNicname), for: .editingChanged)
         view.addSubview(textFieldNicname)
         textFieldNicname.snp.makeConstraints { make in
@@ -400,9 +407,39 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
             make.bottom.equalTo(buttonSignUp.snp.top).offset(-15)
         }
     }
+    func setNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    // 노티피케이션을 제거하는 메서드
+    func removeKeyboardNotifications(){
+        // 키보드가 나타날 때 앱에게 알리는 메서드 제거
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification , object: nil)
+        // 키보드가 사라질 때 앱에게 알리는 메서드 제거
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil) }
+    var fCurTextfieldBottom: CGFloat = 0.0
+    @objc func keyboardWillShow(notification: NSNotification) {
+           if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+               if fCurTextfieldBottom <= self.view.frame.height - keyboardSize.height {
+                   return
+               }
+               if self.view.frame.origin.y == 0 {
+                   self.view.frame.origin.y -= keyboardSize.height
+               }
+           }
+       }
+    @objc func keyboardWillHide(notification: NSNotification) {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y = 0
+            }
+        }
 }
 
-extension SignUpViewController {
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+            fCurTextfieldBottom = textField.frame.origin.y + textField.frame.height
+        }
+
     // MARK: 닉네임 체크 API
     func successDataCheckApi(_ result : CheckNicnameResult) {
         self.presentAlert(title: result.status)

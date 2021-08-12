@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ContentMountainViewController: UIViewController {
+class ContentMountainViewController: BaseViewController {
     
     let contentTableView = UITableView()
     var mountainIdx : Int?

@@ -30,9 +30,7 @@ class SearchViewController: UIViewController {
         registerCollectionView()
         MountainDataManager().appmountains(self)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        self.searchBar.becomeFirstResponder()
-    }
+   
     //MARK: 바텀 시트 구현
     let viewBottomSheet : UIView = {
         let view = UIView()
@@ -168,7 +166,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             cell.layer.shadowRadius = 4
             cell.layer.shadowOffset = CGSize(width: 0, height: 3)
             cell.layer.cornerRadius = 20
-            
+            cell.previouseViewController = self
             if self.isFiltering {
                 cell.labelMountainName.text = filterArr[indexPath.row].mountainName
                 cell.labelMountainHeight.text = filterArr[indexPath.row].high
@@ -177,10 +175,19 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
                     let processor = DownsamplingImageProcessor(size: cell.imageViewMountain.bounds.size)
                     cell.imageViewMountain.kf.setImage(with: url, options: [.processor(processor)])
                 }
-                if filterArr[indexPath.row].hot == "T" {
+                if filterArr[indexPath.row].hot == "인기" {
                     cell.imageViewIsHot.image = UIImage(named: "icSearchBest@3x")
                 }
-                
+                else {
+                    cell.imageViewIsHot.image = UIImage()
+                }
+                if filterArr[indexPath.row].pick == "T" {
+                    cell.buttonMountainLike.isSelected = true
+                }
+                else {
+                    cell.buttonMountainLike.isSelected = false
+                }
+                cell.mountainIdx = filterArr[indexPath.row].mountainIdx
                 if filterArr[indexPath.row].difficulty == 1{
                     cell.imageViewDifficulty.image = UIImage(named: "illustHome1@3x")
                 }
@@ -286,8 +293,7 @@ extension SearchViewController : UISearchBarDelegate {
             }
             return name.contains(text)
         })
-        self.carouselCollectionViewRecommendMountain.reloadData()
-        
+        MountainDataManager().appmountains(self)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
