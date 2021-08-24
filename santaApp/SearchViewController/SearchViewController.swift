@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class SearchViewController: UIViewController {
+class SearchViewController: BaseViewController {
 
     var mountainResult : [MountainResult] = []
     

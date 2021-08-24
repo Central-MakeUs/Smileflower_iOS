@@ -51,6 +51,7 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
     let height: CGFloat = 30
 
     func setNavigationBar() {
+
         navbar.frame = CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height)
         navbar.backgroundColor = UIColor.clear
         navbar.delegate = self
@@ -76,6 +77,13 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         HomeViewDataManager().apphomes(viewcontroller: self)
+        let height = UIScreen.main.bounds.height
+        let width = UIScreen.main.bounds.width
+        
+        Constant.userPhoneHeight = height
+        Constant.userPhoneWidth = width
+        
+        print(Constant.userPhoneHeight)
         print(Constant.JWTToken)
         print(Constant.userIdx)
         setScrollView()

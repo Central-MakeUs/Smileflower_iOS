@@ -418,6 +418,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         // 키보드가 사라질 때 앱에게 알리는 메서드 제거
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil) }
     var fCurTextfieldBottom: CGFloat = 0.0
+    
     @objc func keyboardWillShow(notification: NSNotification) {
            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                if fCurTextfieldBottom <= self.view.frame.height - keyboardSize.height {

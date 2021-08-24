@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FlagExplainViewController : BaseViewController {
+class FlagExplainViewController : UIViewController {
     private let dimmedView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.darkGray

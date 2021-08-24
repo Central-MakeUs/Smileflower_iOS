@@ -9,6 +9,7 @@ import UIKit
 import MobileCoreServices
 import Lottie
 import MTSlideToOpen
+import CoreLocation
 
 class EndViewController : BaseViewController, UINavigationBarDelegate {
     let picker = UIImagePickerController()
@@ -17,12 +18,30 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserPosition()
         view.setDirectionGradient(color1: UIColor(hex: 0x9AC7FF), color2: UIColor(hex:0x24C7B9))
         picker.delegate = self
         navigationBarSet()
         setAnimation()
         setLabelHiking()
         buttonSetEnd()
+    }
+    // MARK: 위치정보 받아오기
+    var locationManager = CLLocationManager()
+    func getUserPosition() {
+        locationManager.delegate = self
+        // 거리 정확도 설정
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        
+        // 아이폰 설정에서의 위치 서비스가 켜진 상태라면
+        if CLLocationManager.locationServicesEnabled() {
+            print("위치 서비스 On 상태")
+            locationManager.startUpdatingLocation()
+            print(locationManager.location?.coordinate)
+        } else {
+            print("위치 서비스 off 상태")
+        }
     }
     // MARK: 네비게이션 바
     lazy var leftButton: UIBarButtonItem = {
@@ -168,5 +187,19 @@ extension EndViewController {
     }
     func failureDataImageRegister(_ message: String) {
         self.presentAlert(title: message)
+    }
+}
+
+extension EndViewController : CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("didUpdateLocations")
+        if let location = locations.first {
+            print("위도 : \(location.coordinate.latitude)")
+            print("경도 : \(location.coordinate.longitude)")
+            print("고도 : \(location.altitude)")
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
     }
 }

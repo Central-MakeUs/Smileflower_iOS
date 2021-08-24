@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConquerViewController: BaseViewController {
+class ConquerViewController: UIViewController {
 
     var mountainIdx : Int?
     

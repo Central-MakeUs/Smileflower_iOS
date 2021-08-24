@@ -78,6 +78,10 @@ class PickMountainViewController : BaseViewController {
     // MARK: 네비게이션 바 설정
     func navigationBarSet() {
         navigationItem.title = "찜한 산"
+        let navigationAppearance = UINavigationBarAppearance()
+        navigationAppearance.backgroundColor = .white
+        
+        self.navigationController?.navigationBar.standardAppearance = navigationAppearance
     }
     // MARK: 컬렉션 뷰 등록
     func setRegister() {
