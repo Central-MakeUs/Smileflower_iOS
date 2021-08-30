@@ -8,7 +8,7 @@
 import Alamofire
 
 struct Constant {
-    static let baseURL = "https://smilesanta.site"
+    static let baseURL = "http://13.125.121.202"
     
     static let TestURL = "http://13.125.121.202"
     static let MainURL = "https://smilesanta.site"

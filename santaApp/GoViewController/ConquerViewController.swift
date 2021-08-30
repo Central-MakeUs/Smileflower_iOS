@@ -35,16 +35,67 @@ class ConquerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         imageViewSetAniamation()
     }
-    
+    // MARK: 중앙 뷰
     func viewSetContent() {
         viewContent.layer.cornerRadius = 25
         viewContent.backgroundColor = .white
         view.addSubview(viewContent)
-        viewContent.snp.makeConstraints { make in
-            make.centerX.equalTo(view.snp.centerX)
-            make.centerY.equalTo(view.snp.centerY).offset(17.5)
-            make.width.equalTo(319)
-            make.height.equalTo(491)
+        
+        switch Constant.userPhoneHeight {
+        // 아이폰 6
+            case 667:
+                viewContent.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.centerY.equalTo(view.snp.centerY).offset(17.5)
+                    make.width.equalTo(291)
+                    make.height.equalTo(471)
+                }
+        // 아이폰 8 플러스
+            case 736:
+                viewContent.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.centerY.equalTo(view.snp.centerY).offset(17.5)
+                    make.width.equalTo(319)
+                    make.height.equalTo(491)
+                }
+            case 812:
+                viewContent.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.centerY.equalTo(view.snp.centerY).offset(17.5)
+                    make.width.equalTo(319)
+                    make.height.equalTo(491)
+                }
+        // 아이폰 12
+            case 844:
+                viewContent.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.centerY.equalTo(view.snp.centerY).offset(17.5)
+                    make.width.equalTo(319)
+                    make.height.equalTo(491)
+                }
+        // 아이폰 11
+            case 896:
+                viewContent.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.centerY.equalTo(view.snp.centerY).offset(17.5)
+                    make.width.equalTo(319)
+                    make.height.equalTo(491)
+                }
+        // 아이폰 12 프로 플러스
+            case 926:
+                viewContent.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.centerY.equalTo(view.snp.centerY).offset(17.5)
+                    make.width.equalTo(319)
+                    make.height.equalTo(491)
+                }
+            default:
+                viewContent.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.centerY.equalTo(view.snp.centerY).offset(17.5)
+                    make.width.equalTo(291)
+                    make.height.equalTo(471)
+                }
         }
     }
     //MARK: 깃발 이미지
@@ -92,12 +143,63 @@ class ConquerViewController: UIViewController {
         imageViewAnimation.startAnimating()
         imageViewAnimation.layer.zPosition = 333
         viewContent.addSubview(imageViewAnimation)
-        imageViewAnimation.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(141)
-            make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(272)
-            make.height.equalTo(480)
+        switch Constant.userPhoneHeight {
+        // 아이폰 6
+            case 667:
+                imageViewAnimation.snp.makeConstraints { make in
+                    make.top.equalTo(view.snp.top).offset(83)
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(272)
+                    make.height.equalTo(480)
+                }
+        // 아이폰 8 플러스
+            case 736:
+                imageViewAnimation.snp.makeConstraints { make in
+                    make.top.equalTo(view.snp.top).offset(95)
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(272)
+                    make.height.equalTo(480)
+                }
+            case 812:
+                imageViewAnimation.snp.makeConstraints { make in
+                    make.top.equalTo(view.snp.top).offset(141)
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(272)
+                    make.height.equalTo(480)
+                }
+        // 아이폰 12
+            case 844:
+                imageViewAnimation.snp.makeConstraints { make in
+                    make.top.equalTo(view.snp.top).offset(141)
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(272)
+                    make.height.equalTo(480)
+                }
+        // 아이폰 11
+            case 896:
+                imageViewAnimation.snp.makeConstraints { make in
+                    make.top.equalTo(view.snp.top).offset(141)
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(272)
+                    make.height.equalTo(480)
+                }
+        // 아이폰 12 프로 플러스
+            case 926:
+                imageViewAnimation.snp.makeConstraints { make in
+                    make.top.equalTo(view.snp.top).offset(180)
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(272)
+                    make.height.equalTo(480)
+                }
+            default:
+                imageViewAnimation.snp.makeConstraints { make in
+                    make.top.equalTo(view.snp.top).offset(141)
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(272)
+                    make.height.equalTo(480)
+                }
         }
+        
     }
    
     //MARK: WOW! 구현
@@ -118,7 +220,7 @@ class ConquerViewController: UIViewController {
     let labelExplain = UILabel()
     
     func labelSetExplain() {
-        labelExplain.text = "정산까지 올라오느라 수고하셨습니다!\n그럼 이제 정복을 하러 가볼까요?"
+        labelExplain.text = "정상까지 올라오느라 수고하셨습니다!\n그럼 이제 정복을 하러 가볼까요?"
         labelExplain.numberOfLines = 2
         labelExplain.textAlignment = .center
         labelExplain.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 15)

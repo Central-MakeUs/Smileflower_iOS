@@ -284,6 +284,7 @@ extension GoViewController {
     func successDataMountain(_ result : GoViewControllerEntityResult) {
         let nextVC = StartViewController()
         nextVC.mountainIdx = result.mountainIdx
+        nextVC.mountainTopAltitude = result.high
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         nextVC.labelMountainName.text = searchBar.text

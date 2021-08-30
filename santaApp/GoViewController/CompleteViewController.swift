@@ -115,16 +115,72 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
     }
     func setSecondAnimation() {
         UIView.animate(withDuration: 0.5) {
-            let thirdFrame = CGRect(x: UIScreen.main.bounds.width/2 - 470 + 95 - 54 , y: 148, width: 920, height: 544)
-            self.imageViewBackground.frame = thirdFrame
+            switch Constant.userPhoneHeight {
+            // 아이폰 6
+                case 667:
+                    let thirdFrame = CGRect(x: UIScreen.main.bounds.width/2 - 470 + 95 - 79 , y: 141.4, width: 920, height: 373.6)
+                    self.imageViewBackground.frame = thirdFrame
+            // 아이폰 8 플러스
+                case 736:
+                    let thirdFrame = CGRect(x: UIScreen.main.bounds.width/2 - 470 + 95 - 74 , y: 171.4, width: 920, height: 403.6)
+                    self.imageViewBackground.frame = thirdFrame
+                case 812:
+                    let thirdFrame = CGRect(x: UIScreen.main.bounds.width/2 - 470 + 95 - 63 , y: 177.7, width: 920, height: 484.7)
+                    self.imageViewBackground.frame = thirdFrame
+            // 아이폰 12
+                case 844:
+                    let thirdFrame = CGRect(x: UIScreen.main.bounds.width/2 - 470 + 95 - 58 , y: 191.7, width: 920, height: 504.7)
+                    self.imageViewBackground.frame = thirdFrame
+            // 아이폰 11
+                case 896:
+                    let thirdFrame = CGRect(x: UIScreen.main.bounds.width/2 - 470 + 95 - 58 , y: 232.3, width: 920, height: 524.7)
+                    self.imageViewBackground.frame = thirdFrame
+            // 아이폰 12 프로 플러스
+                case 926:
+                    let thirdFrame = CGRect(x: UIScreen.main.bounds.width/2 - 470 + 95 - 50 , y: 222.6, width: 920, height: 584.7)
+                    self.imageViewBackground.frame = thirdFrame
+                default:
+                    let thirdFrame = CGRect(x: UIScreen.main.bounds.width/2 - 470 + 95 - 50 , y: 222.6, width: 920, height: 584.7)
+                    self.imageViewBackground.frame = thirdFrame
+            }
+
+            
         } completion: { finished in
             self.setThirdAnimation()
         }
     }
     func setThirdAnimation() {
         UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: .curveEaseInOut, animations: {
-            self.imageViewConqueredPerson.frame = CGRect(x: UIScreen.main.bounds.width/2 - 54, y: 52, width: 191, height: 178)
-            self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 130.65, y: UIScreen.main.bounds.height/2 - 58.4, width: 261.3, height: 116.8)
+            switch Constant.userPhoneHeight {
+            // 아이폰 6
+                case 667:
+                    self.imageViewConqueredPerson.frame = CGRect(x: UIScreen.main.bounds.width/2 - 54, y: 61, width: 153.7, height: 143.7)
+                    self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 104.15, y: UIScreen.main.bounds.height/2 - 46.95, width: 208.3, height: 93.9)
+            // 아이폰 8 플러스
+                case 736:
+                    self.imageViewConqueredPerson.frame = CGRect(x: UIScreen.main.bounds.width/2 - 54, y: 91, width: 153.7, height: 143.7)
+                    self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 130.65, y: 280.7, width: 261.3, height: 116.8)
+                case 812:
+                    self.imageViewConqueredPerson.frame = CGRect(x: UIScreen.main.bounds.width/2 - 54, y: 77.7, width: 191.2, height: 178.7)
+                    self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 130.65, y: 356.5, width: 261.3, height: 116.9)
+            // 아이폰 12
+                case 844:
+                    self.imageViewConqueredPerson.frame = CGRect(x: 146.6, y: 52, width: 191, height: 178)
+                    self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 130.65, y: UIScreen.main.bounds.height/2 - 58.4, width: 261.3, height: 116.8)
+            // 아이폰 11
+                case 896:
+                    self.imageViewConqueredPerson.frame = CGRect(x: UIScreen.main.bounds.width/2 - 54, y: 132.3, width: 191.2, height: 178.7)
+                    self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 130.65, y: 440.5, width: 261.3, height: 116.9)
+            // 아이폰 12 프로 플러스
+                case 926:
+                    self.imageViewConqueredPerson.frame = CGRect(x: UIScreen.main.bounds.width/2 - 54, y: 114, width: 207.6, height: 194)
+                    self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 141.4, y: 457.5, width: 282.8, height: 126.5)
+                default:
+                    self.imageViewConqueredPerson.frame = CGRect(x: UIScreen.main.bounds.width/2 - 54, y: 114, width: 207.6, height: 194)
+                    self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 141.4, y: 457.5, width: 282.8, height: 126.5)
+            }
+
+            
         }, completion: nil)
     }
     // MARK: 정복 이미지
@@ -141,13 +197,65 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
         buttonGoConquerMountainView.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 16)
         buttonGoConquerMountainView.addTarget(self, action: #selector(actionGoConquerMountainView), for: .touchUpInside)
         view.addSubview(buttonGoConquerMountainView)
-        let gap = (UIScreen.main.bounds.height/2 - 244 - 58.4 - 50)/2
-        buttonGoConquerMountainView.snp.makeConstraints { make in
-            make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(237)
-            make.height.equalTo(50)
-            make.top.equalTo(view).offset(UIScreen.main.bounds.height/2 + gap + 58.4)
+
+        switch Constant.userPhoneHeight {
+        // 아이폰 6
+            case 667:
+                buttonGoConquerMountainView.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(237)
+                    make.height.equalTo(50)
+                    make.top.equalTo(view).offset(350)
+                }
+        // 아이폰 8 플러스
+            case 736:
+                buttonGoConquerMountainView.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(237)
+                    make.height.equalTo(50)
+                    make.top.equalTo(view).offset(413)
+                }
+        // 아이폰 11 pro
+            case 812:
+                buttonGoConquerMountainView.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(237)
+                    make.height.equalTo(50)
+                    make.top.equalTo(view).offset(488.8)
+                }
+        // 아이폰 12
+            case 844:
+                buttonGoConquerMountainView.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(237)
+                    make.height.equalTo(50)
+                    make.top.equalTo(view).offset(520.8)
+                }
+        // 아이폰 11
+            case 896:
+                buttonGoConquerMountainView.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(237)
+                    make.height.equalTo(50)
+                    make.top.equalTo(view).offset(572.8)
+                }
+        // 아이폰 12 프로 플러스
+            case 926:
+                buttonGoConquerMountainView.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(237)
+                    make.height.equalTo(50)
+                    make.top.equalTo(view).offset(600)
+                }
+            default:
+                buttonGoConquerMountainView.snp.makeConstraints { make in
+                    make.centerX.equalTo(view.snp.centerX)
+                    make.width.equalTo(237)
+                    make.height.equalTo(50)
+                    make.top.equalTo(view).offset(600)
+                }
         }
+       
         buttonGoConquerMountainView.layer.cornerRadius = 25
     }
     @objc func actionGoConquerMountainView() {
@@ -170,7 +278,7 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
         
         viewRank.snp.makeConstraints { make in
             make.bottom.leading.trailing.equalToSuperview()
-            make.height.equalTo(256)
+            make.height.equalTo(244)
         }
     }
     // MARK: 랭킹 마스터 뷰

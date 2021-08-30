@@ -18,6 +18,7 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
     }()
     
     var mountainIdx : Int?
+    var mountainTopAltitude : Int?
     let labelMountainName = UILabel()
     let imageViewPosition = UIImageView()
     let labelStartandRun = UILabel()
@@ -103,8 +104,9 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
     }
     @objc func actionStartButton() {
         let nextVC = EndViewController()
-        if let idx = mountainIdx {
+        if let idx = mountainIdx, let topAltitude = mountainTopAltitude {
             nextVC.mountainIdx = idx
+            nextVC.mountainTopAltitude = topAltitude
         }
         nextVC.labelMountain.text = labelMountainName.text
         nextVC.modalPresentationStyle = .fullScreen
