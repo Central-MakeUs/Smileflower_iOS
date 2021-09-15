@@ -143,8 +143,6 @@ class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
                     let thirdFrame = CGRect(x: UIScreen.main.bounds.width/2 - 470 + 95 - 50 , y: 222.6, width: 920, height: 584.7)
                     self.imageViewBackground.frame = thirdFrame
             }
-
-            
         } completion: { finished in
             self.setThirdAnimation()
         }

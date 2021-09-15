@@ -16,6 +16,8 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
     var mountainIdx : Int?
     var mountainTopAltitude : Int = 0
     var mountainNowAltitude : Int = 0
+    var nowLatitude : Double = 0
+    var nowLogitude : Double = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
         setLabelHiking()
         setStackViewAltitude()
         setViewAltitudeCheck()
+        setButton()
+        setViewExplainCamera()
     }
 
     override func viewWillLayoutSubviews() {
@@ -59,7 +63,22 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
                             default:
                                 self.viewAltitudeCheck.frame = CGRect(x: 24, y: 542.9, width: Double(327 * self.mountainNowAltitude / self.mountainTopAltitude), height: 42)
                         }
-                        
+                        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 4 / 5) {
+                            self.buttonCamera.tintColor = .mainColor
+                            self.buttonCamera.layer.borderColor = UIColor.mainColor.cgColor
+                            
+                            self.buttonDismiss.tintColor = UIColor(hex: 0xc9d4e2)
+                            self.buttonDismiss.layer.borderColor = UIColor(hex: 0xc9d4e2).cgColor
+                            self.buttonDismiss.isEnabled = false
+                        }
+                        else {
+                            self.buttonCamera.tintColor = UIColor(hex: 0xc9d4e2)
+                            self.buttonCamera.layer.borderColor = UIColor(hex: 0xc9d4e2).cgColor
+                            
+                            self.buttonDismiss.tintColor = .mainColor
+                            self.buttonDismiss.layer.borderColor = UIColor.mainColor.cgColor
+                            self.buttonDismiss.isEnabled = true
+                        }
                     }
                     
                 }
@@ -354,7 +373,9 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
     //MARK: 고도 확인 뷰
     let viewBackgroundAltitude = UIView()
     let viewAltitudeCheck = UIView()
-
+    let imageViewFlag = UIImageView()
+    let imageViewLine = UIImageView()
+    
     func setViewAltitudeCheck() {
         viewBackgroundAltitude.backgroundColor =  .lightbluegray
         viewBackgroundAltitude.layer.cornerRadius = 21
@@ -426,7 +447,131 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
                     }
                     self.viewAltitudeCheck.frame = CGRect(x: 24, y: 542.9, width: Double(27 * self.mountainNowAltitude / self.mountainTopAltitude), height: 42)
                 }
+        imageViewFlag.image = UIImage(named: "FlagIcon@3x")
+        viewBackgroundAltitude.addSubview(imageViewFlag)
+        imageViewFlag.snp.makeConstraints { make in
+            make.width.height.equalTo(20)
+            make.leading.equalTo(viewBackgroundAltitude.snp.leading).offset(251.6)
+            make.centerY.equalTo(viewBackgroundAltitude.snp.centerY)
+        }
+        imageViewLine.image = UIImage(named: "icHikingLine@3x")
+        viewBackgroundAltitude.addSubview(imageViewLine)
+        imageViewLine.snp.makeConstraints { make in
+            make.centerX.equalTo(viewBackgroundAltitude.snp.centerX)
+            make.width.equalTo(viewBackgroundAltitude.snp.width).multipliedBy(0.6)
+            make.top.equalTo(viewBackgroundAltitude.snp.top)
+            make.height.equalTo(10)
+        }
+        imageViewLine.layer.zPosition = 999
+    }
+    //MARK: 사진 찍기 버튼 과 그만하기 버튼
+    let buttonDismiss = UIButton()
+    let buttonCamera = UIButton()
+    
+    func setButton() {
+        let configCamera = UIImage.SymbolConfiguration(
+            pointSize: 30, weight: .medium, scale: .default)
+        let imageCamera = UIImage(systemName: "camera.fill", withConfiguration: configCamera)
+        buttonCamera.setImage(imageCamera, for: .normal)
+        buttonCamera.layer.borderColor = UIColor(hex: 0xc9d4e2).cgColor
+        buttonCamera.layer.borderWidth = 1.5
+        buttonCamera.layer.cornerRadius = 44
+        buttonCamera.tintColor = UIColor(hex: 0xc9d4e2)
+        buttonCamera.addTarget(self, action: #selector(actionButtonCamera), for: .touchUpInside)
+
+        view.addSubview(buttonCamera)
         
+        let configDismiss = UIImage.SymbolConfiguration(
+            pointSize: 25, weight: .medium, scale: .default)
+        let imageDismiss = UIImage(systemName: "pause.fill", withConfiguration: configDismiss)
+        buttonDismiss.setImage(imageDismiss, for: .normal)
+        buttonDismiss.layer.borderColor = UIColor.mainColor.cgColor
+        buttonDismiss.layer.borderWidth = 1
+        buttonDismiss.layer.cornerRadius = 29
+        buttonDismiss.tintColor = .mainColor
+        buttonDismiss.addTarget(self, action: #selector(actionButtonDismiss), for: .touchUpInside)
+
+        view.addSubview(buttonDismiss)
+        buttonCamera.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.bottom.equalTo(view.snp.bottom).multipliedBy(0.9)
+            make.height.width.equalTo(88)
+        }
+        
+        buttonDismiss.snp.makeConstraints { make in
+            make.width.height.equalTo(58)
+            make.leading.equalTo(view.snp.trailing).multipliedBy(0.15)
+            make.centerY.equalTo(buttonCamera.snp.centerY)
+        }
+    }
+    @objc func actionButtonDismiss() {
+        self.presentAlert(title: "주의", message: "조금만 더 오르시면 산타와 함께 정복할 수 있습니다!\n정말로 그만하시겠습니까?", isCancelActionIncluded: true, preferredStyle: .alert) { action in
+            let nextVC = BaseTabbarController()
+            nextVC.index = 0
+            self.changeRootViewController(nextVC)
+        }
+        
+    }
+    @objc func actionButtonCamera() {
+        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 4 / 5) {
+            self.picker.sourceType = .camera
+            self.present(self.picker, animated: true, completion: nil)
+        }
+        else {
+            self.viewExplainCamera.alpha = 1
+        }
+        
+    }
+    // MARK: 판업창
+    let viewExplainCamera = UIView()
+    let labelExplainCamera = UILabel()
+    let imageViewExplainFlag = UIImageView()
+    let buttonCloser = UIButton()
+    
+    func setViewExplainCamera() {
+        viewExplainCamera.backgroundColor = .mainColor
+        viewExplainCamera.layer.cornerRadius = 14
+        viewExplainCamera.alpha = 0
+        view.addSubview(viewExplainCamera)
+        viewExplainCamera.snp.makeConstraints { make in
+            make.bottom.equalTo(labelHiking.snp.top)
+            make.centerX.equalTo(view.snp.centerX)
+            make.height.equalTo(66)
+            make.width.equalTo(view.snp.width).multipliedBy(0.9)
+        }
+        labelExplainCamera.text = "깃발이 표시된 고도에 도착 시에만\n정상 인증이 가능합니다."
+        labelExplainCamera.numberOfLines = 2
+        labelExplainCamera.textColor = .white
+        labelExplainCamera.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 14)
+        labelExplainCamera.addCharacterSpacing(kernValue: -0.28)
+        viewExplainCamera.addSubview(labelExplainCamera)
+        labelExplainCamera.snp.makeConstraints { make in
+            make.centerX.equalTo(viewExplainCamera)
+            make.width.equalTo(180)
+            make.centerY.equalTo(viewExplainCamera)
+        }
+        imageViewExplainFlag.image = UIImage(named: "FlagIcon@3x")
+        viewExplainCamera.addSubview(imageViewExplainFlag)
+        imageViewExplainFlag.snp.makeConstraints { make in
+            make.height.equalTo(26.6)
+            make.width.equalTo(25.1)
+            make.trailing.equalTo(labelExplainCamera.snp.leading).offset(-19.1)
+            make.centerY.equalTo(viewExplainCamera.snp.centerY)
+        }
+        
+        buttonCloser.setImage(UIImage(systemName: "xmark"), for: .normal)
+        buttonCloser.addTarget(self, action: #selector(actionButtonCloseExplain), for: .touchUpInside)
+        buttonCloser.tintColor = .white
+        viewExplainCamera.addSubview(buttonCloser)
+        
+        buttonCloser.snp.makeConstraints { make in
+            make.width.height.equalTo(27)
+            make.trailing.equalTo(viewExplainCamera).offset(-5)
+            make.top.equalTo(viewExplainCamera).offset(5)
+        }
+    }
+    @objc func actionButtonCloseExplain() {
+        viewExplainCamera.alpha = 0
     }
 }
 
@@ -440,7 +585,7 @@ extension EndViewController : UIImagePickerControllerDelegate, UINavigationContr
         dismiss(animated: true) {
             self.presentAlert(title: "해당 사진으로 진행할까요?", message: "해당 산과 무관한 사진을 올릴 시\n제재가 가해질 수 있습니다.", isCancelActionIncluded: true, preferredStyle: .alert) { action in
                 if let idx = self.mountainIdx {
-                    EndViewControllerDataManager().appflagsmountainIdx(self, idx, inputImage!)
+                    EndViewControllerDataManager().appflagsmountainIdx(self, idx, inputImage!, self.nowLatitude, self.nowLogitude, Double(self.mountainNowAltitude) )
                 }
                 
             }
@@ -468,6 +613,8 @@ extension EndViewController : CLLocationManagerDelegate {
         if let location = locations.first {
             labelNowAltitude.text = String(format: "%.0f", location.altitude)
             mountainNowAltitude = Int(location.altitude)
+            nowLatitude = location.coordinate.latitude
+            nowLogitude = location.coordinate.longitude
         }
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

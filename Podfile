@@ -9,10 +9,11 @@ target 'santaApp' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'Alamofire', '~> 5.1'
   pod 'BetterSegmentedControl', '~> 1.3'
-  pod 'Kingfisher'
+  pod 'Firebase/Analytics'
   pod 'lottie-ios'
-  pod 'MTSlideToOpen'
- 
+  pod 'Kingfisher'
+  pod 'Siren'
+
   target 'santaAppTests' do
     inherit! :search_paths
     # Pods for testing
