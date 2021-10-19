@@ -63,7 +63,7 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
                             default:
                                 self.viewAltitudeCheck.frame = CGRect(x: 24, y: 542.9, width: Double(327 * self.mountainNowAltitude / self.mountainTopAltitude), height: 42)
                         }
-                        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 4 / 5) {
+                        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 2 / 5) {
                             self.buttonCamera.tintColor = .mainColor
                             self.buttonCamera.layer.borderColor = UIColor.mainColor.cgColor
                             
@@ -445,13 +445,13 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
                         make.centerX.equalTo(view.snp.centerX)
                         make.top.equalTo(view.snp.top).offset(542.9)
                     }
-                    self.viewAltitudeCheck.frame = CGRect(x: 24, y: 542.9, width: Double(27 * self.mountainNowAltitude / self.mountainTopAltitude), height: 42)
+                    self.viewAltitudeCheck.frame = CGRect(x: 24, y: 542.9, width: Double(327 * self.mountainNowAltitude / self.mountainTopAltitude), height: 42)
                 }
         imageViewFlag.image = UIImage(named: "FlagIcon@3x")
         viewBackgroundAltitude.addSubview(imageViewFlag)
         imageViewFlag.snp.makeConstraints { make in
             make.width.height.equalTo(20)
-            make.leading.equalTo(viewBackgroundAltitude.snp.leading).offset(251.6)
+            make.leading.equalTo(viewBackgroundAltitude.snp.leading).offset(125.6)
             make.centerY.equalTo(viewBackgroundAltitude.snp.centerY)
         }
         imageViewLine.image = UIImage(named: "icHikingLine@3x")
@@ -513,7 +513,7 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
         
     }
     @objc func actionButtonCamera() {
-        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 4 / 5) {
+        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 2 / 5) {
             self.picker.sourceType = .camera
             self.present(self.picker, animated: true, completion: nil)
         }
