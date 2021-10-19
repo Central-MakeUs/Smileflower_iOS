@@ -14,4 +14,5 @@ struct GoViewControllerEntity : Decodable {
 struct GoViewControllerEntityResult : Decodable {
     var mountainIdx : Int
     var mountain : String
+    var high : Int?
 }

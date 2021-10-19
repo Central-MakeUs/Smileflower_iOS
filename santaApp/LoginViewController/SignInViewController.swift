@@ -114,6 +114,7 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
     func setButtonForgetPassword() {
         buttonForgetPassword.setTitle("비밀번호를 잊으셨나요?", for: .normal)
         buttonForgetPassword.setTitleColor(.mainColor, for: .normal)
+        buttonForgetPassword.addTarget(self, action: #selector(actionGoForgetPasswordView), for: .touchUpInside)
         buttonForgetPassword.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoLight, size: 12)
         view.addSubview(buttonForgetPassword)
         buttonForgetPassword.snp.makeConstraints { make in
@@ -121,10 +122,16 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
             make.trailing.equalTo(textFieldPassword.snp.trailing)
         }
     }
+    @objc func actionGoForgetPasswordView() {
+        let nextVC = ForgetPasswordViewController()
+        nextVC.modalPresentationStyle = .fullScreen
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true, completion: nil)
+    }
     //MARK: 로그인 버튼
     let buttonSignIn = UIButton()
     func setButtonSignIn() {
-        buttonSignIn.setTitle("로그인", for: .normal)
+        buttonSignIn.setTitle("시작하기", for: .normal)
         buttonSignIn.setTitleColor(.white, for: .normal)
         buttonSignIn.layer.cornerRadius = 24
         buttonSignIn.backgroundColor = .mainColor
@@ -146,7 +153,8 @@ extension SignInViewController {
     func successLoginData(_ result : SignInViewControllerResult) {
         Constant.JWTToken = result.jwt
         UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
-        print(Constant.JWTToken)
+        Constant.userIdx = result.userIdx
+        Constant.userEmail = textFieldID.text!
         self.changeRootViewController(BaseTabbarController())
     }
     func successDataButError(_ result : SignInViewControllerEntity) {

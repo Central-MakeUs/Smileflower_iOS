@@ -8,10 +8,18 @@
 import Alamofire
 
 struct Constant {
-    static let baseURL = ""
+    static let baseURL = "http://13.125.121.202"
+    
     static let TestURL = "http://13.125.121.202"
+    static let MainURL = "https://smilesanta.site"
     static let fontCocogoose = "Cocogoose"
     static var JWTToken = ""
+    static var userIdx : Int?
+    static var userEmail : String?
+    
+    static var userPhoneHeight: CGFloat?
+    static var userPhoneWidth : CGFloat?
+    
     static let fontAppleSDGothicNeoRegular = "AppleSDGothicNeo-Regular"
     static let fontAppleSDGothicNeoThin = "AppleSDGothicNeo-Thin"
     static let fontAppleSDGothicNeoUltraLight = "AppleSDGothicNeo-UltraLight"
@@ -21,4 +29,5 @@ struct Constant {
     static let fontAppleSDGothicNeoBold = "AppleSDGothicNeo-Bold"
     static let fontAppleSDGothicNeoExtraBold = "AppleSDGothicNeo-ExtraBold"
     static let fontAppleSDGothicNeoHeavy = "AppleSDGothicNeo-Heavy"
+    static let fontWowFont = "ygotjalnanfontOTF"
 }

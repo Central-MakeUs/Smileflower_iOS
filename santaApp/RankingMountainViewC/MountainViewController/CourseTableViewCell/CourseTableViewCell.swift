@@ -31,6 +31,7 @@ class CourseTableViewCell: UITableViewCell {
         buttonCourse.layer.borderColor = UIColor.mainColor.cgColor
         buttonCourse.setTitleColor(.mainColor, for: .normal)
         buttonCourse.titleLabel?.textColor = .mainColor
+        buttonCourse.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 16)
         contentView.addSubview(buttonCourse)
         buttonCourse.snp.makeConstraints { make in
             make.leading.top.bottom.equalTo(contentView)
@@ -60,7 +61,7 @@ class CourseTableViewCell: UITableViewCell {
         labelTimes.snp.makeConstraints { make in
             make.leading.equalTo(labelDistanse.snp.trailing).offset(15)
             make.centerY.equalTo(viewTime.snp.centerY)
-            make.width.equalTo(54)
+            make.width.equalTo(57)
         }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -10,14 +10,15 @@ import Alamofire
 class MapPositionDataManager {
     func appmountainsmountainIdxmap(_ viewcontroller : RankingMountainViewController, _ mountainIdx : Int) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.TestURL + "/app/mountains/\(mountainIdx)/map", method: .get,headers: headers).validate().responseDecodable(of: MapPositionEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/mountains/\(mountainIdx)/map", method: .get,headers: headers).validate().responseDecodable(of: MapPositionEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result{
-                    viewcontroller.successDataMountainPosition(result.latitude!, result.longitude!)
+                    viewcontroller.successDataMountainPosition(result)
                 }
             case .failure(let error):
                 viewcontroller.failureDataMountainPosition()
+                print("위치"+error.localizedDescription)
             }
         }
     }

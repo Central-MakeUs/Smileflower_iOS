@@ -35,22 +35,53 @@ class PickMountainViewController : BaseViewController {
         MountainPicksDataManager().apppicks(self)
     }
 
-    
+    let viewHasPicks = UIView()
     let labelHasPicks = UILabel()
+    let imageViewFace = UIImageView()
+    let labelHasPicksExplain = UILabel()
+    
     func setlabelHasPicks() {
-        labelHasPicks.text = "찜한 산이 없습니다."
-        labelHasPicks.textColor = .titleColorGray
-        labelHasPicks.alpha = 0
+        view.addSubview(viewHasPicks)
+        viewHasPicks.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+        viewHasPicks.alpha = 0
+        labelHasPicks.text = "산타에 찜한 산이 없어요."
+        labelHasPicks.textColor = .bluegray
+        labelHasPicks.alpha = 1
         labelHasPicks.textAlignment = .center
         labelHasPicks.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 27)
-        view.addSubview(labelHasPicks)
+        viewHasPicks.addSubview(labelHasPicks)
         labelHasPicks.snp.makeConstraints { make in
-            make.center.equalTo(view)
+            make.center.equalTo(viewHasPicks)
         }
+        imageViewFace.contentMode = .scaleAspectFit
+        imageViewFace.image = UIImage(named: "illustLlikeWow@3x")
+        viewHasPicks.addSubview(imageViewFace)
+        imageViewFace.snp.makeConstraints { make in
+            make.centerX.equalTo(labelHasPicks.snp.centerX)
+            make.width.height.equalTo(39)
+            make.bottom.equalTo(labelHasPicks.snp.top).offset(-11)
+        }
+        labelHasPicksExplain.text = "산타와 함께 등산하고 싶은 산을 찜해보세요! 검색 중에\n보이는 하트아이콘을 누르면 찜하기가 됩니다:)"
+        labelHasPicksExplain.textAlignment = .center
+        labelHasPicksExplain.numberOfLines = 2
+        labelHasPicksExplain.textColor = .bluegray
+        labelHasPicksExplain.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 14)
+        viewHasPicks.addSubview(labelHasPicksExplain)
+        labelHasPicksExplain.snp.makeConstraints { make in
+            make.centerX.equalTo(labelHasPicks.snp.centerX)
+            make.top.equalTo(labelHasPicks.snp.bottom).offset(9)
+        }
+        
     }
     // MARK: 네비게이션 바 설정
     func navigationBarSet() {
         navigationItem.title = "찜한 산"
+        let navigationAppearance = UINavigationBarAppearance()
+        navigationAppearance.backgroundColor = .white
+        
+        self.navigationController?.navigationBar.standardAppearance = navigationAppearance
     }
     // MARK: 컬렉션 뷰 등록
     func setRegister() {
@@ -75,7 +106,7 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LikeMountainCollectionViewCell.resueidentifier, for: indexPath) as? LikeMountainCollectionViewCell {
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 20
-            cell.layer.shadowRadius = 10
+            cell.layer.shadowRadius = 5
             cell.layer.shadowOffset = CGSize(width: 0, height: 3)
             cell.layer.shadowColor = UIColor(hex: 0x7c909b).cgColor
             cell.layer.shadowOpacity = 0.2
@@ -104,7 +135,7 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
             }
             
             cell.labelMountain.text = mountainPicks[indexPath.row].mountainName
-            cell.labelMountainHeight.text = mountainPicks[indexPath.row].mountainName
+            cell.labelMountainHeight.text = mountainPicks[indexPath.row].high
             return cell
         }
         return UICollectionViewCell()
@@ -114,11 +145,15 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
-        let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
-        nextVC.mountainIndex = mountainPicks[indexPath.row].mountainIdx
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
+        if let idx = mountainPicks[indexPath.row].mountainIdx, let mountainName = mountainPicks[indexPath.row].mountainName {
+            let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+            nextVC.mountainIndex = idx
+            nextVC.mountainName = mountainName
+            nextVC.modalPresentationStyle = .fullScreen
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.present(nextVC, animated: true, completion: nil)
+        }
+        
     }
 }
 
@@ -126,10 +161,10 @@ extension PickMountainViewController {
     func successDataPick(_ result : [MountainPicksResult]) {
         mountainPicks = result
         if result.isEmpty {
-            labelHasPicks.alpha = 1
+            viewHasPicks.alpha = 1
         }
         else {
-            labelHasPicks.alpha = 0
+            viewHasPicks.alpha = 0
         }
         
         carouselCollectionViewLikeMountain.reloadData()

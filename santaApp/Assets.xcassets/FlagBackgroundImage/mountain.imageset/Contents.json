@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "invalidName.png",
+      "filename" : "illustHikingBg.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "invalidName@2x.png",
+      "filename" : "illustHikingBg@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "invalidName@3x.png",
+      "filename" : "illustHikingBg@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

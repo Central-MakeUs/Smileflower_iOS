@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class SearchViewController: UIViewController {
+class SearchViewController: BaseViewController {
 
     var mountainResult : [MountainResult] = []
     
@@ -21,6 +21,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dismissKeyboard()
         view.setverticleGradient(color1: UIColor(hex:0x24C7B9) , color2: UIColor(hex: 0x9AC7FF))
         setBottomSheet()
         setSearchBar()
@@ -29,6 +30,7 @@ class SearchViewController: UIViewController {
         registerCollectionView()
         MountainDataManager().appmountains(self)
     }
+   
     //MARK: 바텀 시트 구현
     let viewBottomSheet : UIView = {
         let view = UIView()
@@ -75,18 +77,28 @@ class SearchViewController: UIViewController {
         buttonBack.snp.makeConstraints { make in
             make.centerY.equalTo(viewSearch.snp.centerY)
             make.leading.equalTo(viewSearch.snp.leading).offset(2)
-            make.width.height.equalTo(42)
+            make.width.height.equalTo(30)
+        }
+        searchBar.backgroundImage = UIImage()
+        searchBar.searchTextField.leftView = nil
+        searchBar.placeholder = "어떤 산을 찾으세요?"
+        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+            textfield.backgroundColor = .clear
+            textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "", attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightbluegray])
         }
         viewSearch.addSubview(searchBar)
         searchBar.snp.makeConstraints { make in
             make.centerY.equalTo(buttonBack.snp.centerY)
-            make.leading.equalTo(buttonBack.snp.trailing).offset(7)
-            make.trailing.equalTo(viewSearch.snp.trailing).offset(-51)
+            make.leading.equalTo(buttonBack.snp.trailing)
+            make.trailing.equalTo(viewSearch.snp.trailing).offset(-20)
             make.height.equalTo(40)
         }
     }
     @objc func actionBackView() {
-        self.dismiss(animated: true, completion: nil)
+        let nextVC = BaseTabbarController()
+        nextVC.index = 0
+        self.changeRootViewController(nextVC)
+        
     }
     // MARK: SearchBar
     func setSearchBar() {
@@ -94,6 +106,8 @@ class SearchViewController: UIViewController {
     }
     //MARk: 오늘의 추천산
     let labelRecommend = UILabel()
+    let labelRecommendExplain = UILabel()
+    
     let carouselCollectionViewRecommendMountain : UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
@@ -106,13 +120,21 @@ class SearchViewController: UIViewController {
         return collectionView
     }()
     func setLabelRecommend() {
-        labelRecommend.text = "오늘의 추천 산"
+        labelRecommend.text = "100대 명산"
         labelRecommend.textColor = .darkbluegray
-        labelRecommend.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 16)
+        labelRecommend.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 18)
         viewBottomSheet.addSubview(labelRecommend)
         labelRecommend.snp.makeConstraints { make in
             make.leading.equalTo(28)
-            make.top.equalTo(viewSearch.snp.bottom).offset(26)
+            make.top.equalTo(viewSearch.snp.bottom).offset(10)
+        }
+        labelRecommendExplain.text = "산타에 등록되어있는 100대 명산을 탐색해보세요:)"
+        labelRecommendExplain.textColor = .lightbluegray
+        labelRecommendExplain.font = UIFont(name: Constant.fontAppleSDGothicNeoLight, size: 11)
+        viewBottomSheet.addSubview(labelRecommendExplain)
+        labelRecommendExplain.snp.makeConstraints { make in
+            make.leading.equalTo(labelRecommend.snp.trailing).offset(9)
+        make.bottom.equalTo(labelRecommend.snp.bottom).offset(-2)
         }
         viewBottomSheet.addSubview(carouselCollectionViewRecommendMountain)
         carouselCollectionViewRecommendMountain.snp.makeConstraints { make in
@@ -140,11 +162,11 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendMountainCollectionViewCell.identifier, for: indexPath) as? RecommendMountainCollectionViewCell {
             cell.backgroundColor = .white
             cell.layer.shadowColor = UIColor(hex: 0xdfe5ed).cgColor
-            cell.layer.shadowOpacity = 0.9
-            cell.layer.shadowRadius = 6
+            cell.layer.shadowOpacity = 1
+            cell.layer.shadowRadius = 4
             cell.layer.shadowOffset = CGSize(width: 0, height: 3)
             cell.layer.cornerRadius = 20
-            
+            cell.previouseViewController = self
             if self.isFiltering {
                 cell.labelMountainName.text = filterArr[indexPath.row].mountainName
                 cell.labelMountainHeight.text = filterArr[indexPath.row].high
@@ -153,10 +175,19 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
                     let processor = DownsamplingImageProcessor(size: cell.imageViewMountain.bounds.size)
                     cell.imageViewMountain.kf.setImage(with: url, options: [.processor(processor)])
                 }
-                if filterArr[indexPath.row].hot == "T" {
+                if filterArr[indexPath.row].hot == "인기" {
                     cell.imageViewIsHot.image = UIImage(named: "icSearchBest@3x")
                 }
-                
+                else {
+                    cell.imageViewIsHot.image = UIImage()
+                }
+                if filterArr[indexPath.row].pick == "T" {
+                    cell.buttonMountainLike.isSelected = true
+                }
+                else {
+                    cell.buttonMountainLike.isSelected = false
+                }
+                cell.mountainIdx = filterArr[indexPath.row].mountainIdx
                 if filterArr[indexPath.row].difficulty == 1{
                     cell.imageViewDifficulty.image = UIImage(named: "illustHome1@3x")
                 }
@@ -186,6 +217,9 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
                 //MARK: 인기 이미지
                 if mountainResult[indexPath.row].hot == "인기" {
                     cell.imageViewIsHot.image = UIImage(named: "icSearchBest@3x")
+                }
+                else {
+                    cell.imageViewIsHot.image = UIImage()
                 }
                 
                 //MARK: 찜하기버튼
@@ -224,10 +258,28 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             return CGSize(width: 333, height: 91)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
-            nextVC.modalPresentationStyle = .fullScreen
-            nextVC.modalTransitionStyle = .crossDissolve
-            self.present(nextVC, animated: true, completion: nil)
+        if isFiltering {
+            if let idx = filterArr[indexPath.row].mountainIdx, let mountainName = filterArr[indexPath.row].mountainName {
+                let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+                nextVC.mountainIndex = idx
+                nextVC.mountainName = mountainName
+                    nextVC.modalPresentationStyle = .fullScreen
+                    nextVC.modalTransitionStyle = .crossDissolve
+                    self.present(nextVC, animated: true, completion: nil)
+            }
+        }
+        else {
+            if let idx = mountainResult[indexPath.row].mountainIdx, let mountainName = mountainResult[indexPath.row].mountainName {
+                let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+                nextVC.mountainIndex = idx
+                nextVC.mountainName = mountainName
+                    nextVC.modalPresentationStyle = .fullScreen
+                    nextVC.modalTransitionStyle = .crossDissolve
+                    self.present(nextVC, animated: true, completion: nil)
+            }
+        }
+       
+        
     }
 }
 extension SearchViewController : UISearchBarDelegate {
@@ -241,7 +293,14 @@ extension SearchViewController : UISearchBarDelegate {
             }
             return name.contains(text)
         })
-        self.carouselCollectionViewRecommendMountain.reloadData()
+        MountainDataManager().appmountains(self)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+            let input = MountainSearchInput(mountain: searchBar.text)
+            MountainSearchDataManager().appmountainssearchmountain(self, input)
+            
     }
     
     
@@ -252,7 +311,18 @@ extension SearchViewController {
         mountainResult = result
         self.carouselCollectionViewRecommendMountain.reloadData()
     }
-    func failDataMountain() {
-        self.presentAlert(title: "네트워크 통신 장애")
+    func successDataMountainSearch(_ result : MountainSearchResult) {
+        if let idx = result.mountainIdx {
+            let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+            nextVC.mountainIndex = idx
+            nextVC.mountainName = searchBar.text!
+            nextVC.modalPresentationStyle = .fullScreen
+            nextVC.modalTransitionStyle = .crossDissolve
+            self.present(nextVC, animated: true, completion: nil)
+        }
+        
+    }
+    func failDataMountain(_ title : String) {
+        self.presentAlert(title: title)
     }
 }

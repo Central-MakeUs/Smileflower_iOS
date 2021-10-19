@@ -12,6 +12,22 @@ struct MapPositionEntity : Decodable {
     var result : MapPositionResult?
 }
 struct MapPositionResult : Decodable {
+    var mountain : MapPositionMountain?
+    var road : [MapPositionRoad]?
+}
+
+struct MapPositionMountain : Decodable {
+    var latitude : Double?
+    var longitude : Double?
+}
+
+struct MapPositionRoad : Decodable {
+    var roadIdx : Int?
+    var courseNum : String?
+    var difficulty : Int?
+    var length : String?
+    var time : String?
+    var course : String?
     var latitude : Double?
     var longitude : Double?
 }

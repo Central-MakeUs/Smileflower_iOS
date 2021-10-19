@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import KakaoSDKAuth
 import AuthenticationServices
 
 class LoginViewController : BaseViewController {
@@ -100,7 +99,7 @@ class LoginViewController : BaseViewController {
         buttonCreatID.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 17)
         buttonCreatID.setTitleColor(.darkbluegray, for: .normal)
         buttonCreatID.backgroundColor = .white
-        buttonCreatID.layer.cornerRadius =  26
+        buttonCreatID.layer.cornerRadius =  23
         buttonCreatID.addTarget(self, action: #selector(actionGoSignUp), for: .touchUpInside)
         view.addSubview(buttonCreatID)
         buttonCreatID.snp.makeConstraints { make in
@@ -124,7 +123,7 @@ class LoginViewController : BaseViewController {
         buttonLoginID.setTitleColor(.white, for: .normal)
         buttonLoginID.layer.borderWidth = 1
         buttonLoginID.layer.borderColor = UIColor.white.cgColor
-        buttonLoginID.layer.cornerRadius = 26
+        buttonLoginID.layer.cornerRadius = 23
         view.addSubview(buttonLoginID)
         buttonLoginID.snp.makeConstraints { make in
             make.height.equalTo(48)

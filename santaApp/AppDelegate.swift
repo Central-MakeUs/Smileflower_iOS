@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Firebase
 import CoreData
-import KakaoSDKCommon
+import Siren
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,11 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        var window : UIWindow?
         // Override point for customization after application launch.
-        KakaoSDKCommon.initSDK(appKey: "ad691c247ba4bb259b79c214fb58074d")
+        FirebaseApp.configure()
+//        window?.makeKeyAndVisible()
+//        let siren = Siren.shared
+//        siren.apiManager = APIManager(country: .korea)
+//        //기준 위치 대한민국 앱스토어로 변경
+//        siren.rulesManager = RulesManager(majorUpdateRules: .critical,
+//                                          minorUpdateRules: .critical,
+//                                          patchUpdateRules: .critical,
+//                                          revisionUpdateRules: .relaxed)
+//        siren.presentationManager = PresentationManager(forceLanguageLocalization: .korean) //알림 메시지 한국어로
+//        siren.wail()
+        //        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+//        let bundleVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         return true
     }
-
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

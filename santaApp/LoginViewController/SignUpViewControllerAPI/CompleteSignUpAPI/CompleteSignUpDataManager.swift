@@ -9,7 +9,7 @@ import Alamofire
 
 class CompleteSignUpDataManager {
     func appusers(_ viewcontroller : SignUpViewController, _ parameters : CompleteSignUpInput){
-        AF.request(Constant.TestURL + "/app/users", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).validate().responseDecodable(of: CompleteSignUpEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/users", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).validate().responseDecodable(of: CompleteSignUpEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result {
@@ -19,7 +19,7 @@ class CompleteSignUpDataManager {
                     viewcontroller.successDataButDontCompleteApi(response)
                 }
             case .failure(let error) :
-                viewcontroller.failureDataApi()
+                viewcontroller.failureDataApi("네트워크 통신 장애")
             }
         }
     }

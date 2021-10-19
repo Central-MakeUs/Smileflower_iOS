@@ -51,6 +51,7 @@ class MountainPositionTableViewCell: UITableViewCell {
         labelMountainAddress.text = "서울 특별시 종로구 서대문구"
         labelMountainAddress.numberOfLines = 2
         labelMountainAddress.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 16)
+        labelMountainAddress.textColor = .darkbluegray
         contentView.addSubview(labelMountainAddress)
         labelMountainAddress.snp.makeConstraints { make in
             make.top.equalTo(labelPosition.snp.top)

@@ -120,5 +120,15 @@ extension SetupViewController : UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 2 {
             self.showAlert(style: .actionSheet)
         }
+        else if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                let nextVC = AccountViewController()
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
+            else {
+                let nextVC = TermsOfServiceViewController()
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            }
+        }
     }
 }
