@@ -10,6 +10,8 @@ import UIKit
 class SignInViewController : BaseViewController, UINavigationBarDelegate{
     
     override func viewDidLoad() {
+        TrackingTool.Screen(screenName: "view_email_login")
+        
         super.viewDidLoad()
         self.dismissKeyboardWhenTappedAround()
         navigationBarSet()
@@ -56,6 +58,7 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
         view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
+        TrackingTool.Action(actionName: "action_back_email_login", param: ["":""])
         dismiss(animated: true, completion: nil)
     }
     //MARk: 산타 로고
@@ -123,6 +126,7 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
         }
     }
     @objc func actionGoForgetPasswordView() {
+        TrackingTool.Action(actionName: "action_go_forget_password", param: ["":""])
         let nextVC = ForgetPasswordViewController()
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
@@ -145,6 +149,7 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
         }
     }
     @objc func actionSignIn() {
+        TrackingTool.Action(actionName: "action_do_email_login", param: <#T##[String : String]#>)
         let input = SignInViewControllerInput(emailId: textFieldID.text ?? "", password: textFieldPassword.text ?? "")
         SignInViewControllerDataManager().appuserslogin(self, input)
     }

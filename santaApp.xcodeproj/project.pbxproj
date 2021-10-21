@@ -58,13 +58,16 @@
 		2830CAFE26AC9AE200DC3805 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAFD26AC9AE200DC3805 /* AccountTableViewCell.swift */; };
 		2830CB0126ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CB0026ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift */; };
 		2830CB0326ADA94200DC3805 /* PrivacyUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CB0226ADA94200DC3805 /* PrivacyUserDetailViewController.swift */; };
+		28429A37271EB14A0007D7E6 /* lottieAnimaition.json in Resources */ = {isa = PBXBuildFile; fileRef = 28429A36271EB14A0007D7E6 /* lottieAnimaition.json */; };
+		28429A3A271EB4110007D7E6 /* Cocogoose Pro-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28429A39271EB4110007D7E6 /* Cocogoose Pro-trial.ttf */; };
+		28429A3C271EB41A0007D7E6 /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28429A3B271EB41A0007D7E6 /* AppleSDGothicNeo.ttc */; };
+		28429A43271EB7A50007D7E6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28429A41271EB7A50007D7E6 /* TableViewCell.swift */; };
+		28429A44271EB7A50007D7E6 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28429A42271EB7A50007D7E6 /* TableViewCell.xib */; };
+		28429A46271EB7EF0007D7E6 /* WowFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28429A45271EB7EF0007D7E6 /* WowFont.otf */; };
 		2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */; };
 		28645186268C98A5009F3608 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
 		286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286966F62692E35E0025A250 /* RankingMountainViewController.swift */; };
 		286CCBFE26EF12F9008C7B3F /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CCBFD26EF12F9008C7B3F /* Struct.swift */; };
-		286CCC0026EF15A0008C7B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 286CCBFF26EF15A0008C7B3F /* GoogleService-Info.plist */; };
-		286CCC0126EF15AC008C7B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 286CCBFF26EF15A0008C7B3F /* GoogleService-Info.plist */; };
-		286CCC0226EF15AC008C7B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 286CCBFF26EF15A0008C7B3F /* GoogleService-Info.plist */; };
 		2871B45D26A317A600F32165 /* MountainLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B45C26A317A600F32165 /* MountainLikeEntity.swift */; };
 		2871B45F26A31AD200F32165 /* MountainLikeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B45E26A31AD200F32165 /* MountainLikeDataManager.swift */; };
 		2871B46126A31E3400F32165 /* MountainPicksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46026A31E3400F32165 /* MountainPicksEntity.swift */; };
@@ -111,18 +114,11 @@
 		2882289026A0B6F7000B2EAA /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288F26A0B6F7000B2EAA /* LogoutTableViewCell.swift */; };
 		2882289326A0BF78000B2EAA /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289226A0BF78000B2EAA /* LogoutEntity.swift */; };
 		2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289426A0C04C000B2EAA /* LogoutDataManager.swift */; };
-		28827C67268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
-		28827C68268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
-		28827C69268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */; };
-		28827C6A268D8F5B00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */; };
-		28827C6B268D8F5C00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */; };
-		28827C6C268D8F5D00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */; };
 		2890263F268F286E00D15BBA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890263E268F286E00D15BBA /* UIView.swift */; };
 		289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289656F6268F58EE00B23E8F /* CompleteViewController.swift */; };
 		28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45D268CEB4700D40F35 /* CALayer.swift */; };
 		28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45F268CEB5F00D40F35 /* UITabBar.swift */; };
 		28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C461268CF38800D40F35 /* UISearchBar.swift */; };
-		28B2591426AC739400E95730 /* WowFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28B2591326AC739400E95730 /* WowFont.otf */; };
 		28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208626937562001DBF5E /* ContentRankViewController.swift */; };
 		28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208826938026001DBF5E /* RankTableViewCell.swift */; };
 		28B52EA9268C793000017DCF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B52EA8268C793000017DCF /* UIImage.swift */; };
@@ -139,7 +135,6 @@
 		28C0479426AB3F05008E6831 /* CertificationNumInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479326AB3F05008E6831 /* CertificationNumInput.swift */; };
 		28C0479626AB3F49008E6831 /* CertificationNumberDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479526AB3F49008E6831 /* CertificationNumberDataManager.swift */; };
 		28C0479826AB4415008E6831 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479726AB4415008E6831 /* IndicatorView.swift */; };
-		28CBB69F26DBBB02001F572A /* lottieAnimaition.json in Resources */ = {isa = PBXBuildFile; fileRef = 28CBB69E26DBBB02001F572A /* lottieAnimaition.json */; };
 		28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C239268A29660056EECF /* BaseViewController.swift */; };
 		28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23C268A2A1D0056EECF /* SplashViewController.swift */; };
 		28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23E268A2BD90056EECF /* BaseTabBarController.swift */; };
@@ -152,7 +147,151 @@
 		28DB5E0A26A1B9C50092CC40 /* MountainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB5E0926A1B9C50092CC40 /* MountainEntity.swift */; };
 		28DB5E0C26A1BA6B0092CC40 /* MountainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB5E0B26A1BA6B0092CC40 /* MountainDataManager.swift */; };
 		28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E81B44268CC0E000B537A5 /* UILabel.swift */; };
+		28E947642721421F00DF97E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E947632721421F00DF97E4 /* GoogleService-Info.plist */; };
+		28E947662721428C00DF97E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E947652721428C00DF97E4 /* GoogleService-Info.plist */; };
+		28E947682721435F00DF97E4 /* TrackingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E947672721435F00DF97E4 /* TrackingTool.swift */; };
+		28E947692721435F00DF97E4 /* TrackingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E947672721435F00DF97E4 /* TrackingTool.swift */; };
 		28F41B53269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */; };
+		28FD913D271FB031004D3E80 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E81B44268CC0E000B537A5 /* UILabel.swift */; };
+		28FD913E271FB031004D3E80 /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288F26A0B6F7000B2EAA /* LogoutTableViewCell.swift */; };
+		28FD913F271FB031004D3E80 /* MountainCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */; };
+		28FD9140271FB031004D3E80 /* ShowUserResultDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AEE26A99B3C007E082D /* ShowUserResultDataManager.swift */; };
+		28FD9141271FB031004D3E80 /* ConquerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047E9268D942F00DEB2EC /* ConquerCollectionViewCell.swift */; };
+		28FD9142271FB031004D3E80 /* ChangeProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AC926A74534007E082D /* ChangeProfileDataManager.swift */; };
+		28FD9143271FB031004D3E80 /* ShowProlfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812067826A5FDCD00BDA266 /* ShowProlfileEntity.swift */; };
+		28FD9144271FB031004D3E80 /* MountainLikeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B45E26A31AD200F32165 /* MountainLikeDataManager.swift */; };
+		28FD9145271FB031004D3E80 /* RegisterImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AC426A725D0007E082D /* RegisterImageDataManager.swift */; };
+		28FD9146271FB031004D3E80 /* SignInViewControllerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287C26A06129000B2EAA /* SignInViewControllerDataManager.swift */; };
+		28FD9147271FB031004D3E80 /* MapPositionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46526A3277900F32165 /* MapPositionEntity.swift */; };
+		28FD9148271FB031004D3E80 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28822864269E0DBF000B2EAA /* SignUpViewController.swift */; };
+		28FD9149271FB031004D3E80 /* ChangeProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AC726A74497007E082D /* ChangeProfileEntity.swift */; };
+		28FD914A271FB031004D3E80 /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAFD26AC9AE200DC3805 /* AccountTableViewCell.swift */; };
+		28FD914B271FB031004D3E80 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2813D836268B72B900822337 /* LoginViewController.swift */; };
+		28FD914C271FB031004D3E80 /* MountainPositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */; };
+		28FD914D271FB031004D3E80 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047F0268E3CAB00DEB2EC /* EndViewController.swift */; };
+		28FD914E271FB031004D3E80 /* FlagMountainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AF626AA442B007E082D /* FlagMountainEntity.swift */; };
+		28FD914F271FB031004D3E80 /* DetailAnotherUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ADA26A862B9007E082D /* DetailAnotherUserEntity.swift */; };
+		28FD9150271FB031004D3E80 /* PrivacyUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CB0226ADA94200DC3805 /* PrivacyUserDetailViewController.swift */; };
+		28FD9151271FB031004D3E80 /* LikeMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0B2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift */; };
+		28FD9152271FB031004D3E80 /* TermsOfServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAF826AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift */; };
+		28FD9153271FB031004D3E80 /* RegisterImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AC226A7252D007E082D /* RegisterImageEntity.swift */; };
+		28FD9154271FB031004D3E80 /* CheckEmailInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478C26AB332F008E6831 /* CheckEmailInput.swift */; };
+		28FD9155271FB031004D3E80 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23E268A2BD90056EECF /* BaseTabBarController.swift */; };
+		28FD9156271FB031004D3E80 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C239268A29660056EECF /* BaseViewController.swift */; };
+		28FD9157271FB031004D3E80 /* PostsDeleteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ADF26A907DD007E082D /* PostsDeleteDataManager.swift */; };
+		28FD9158271FB031004D3E80 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047EE268E2B7700DEB2EC /* StartViewController.swift */; };
+		28FD9159271FB031004D3E80 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286CCBFD26EF12F9008C7B3F /* Struct.swift */; };
+		28FD915A271FB031004D3E80 /* MountainRankingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47D26A4BABA00F32165 /* MountainRankingEntity.swift */; };
+		28FD915B271FB031004D3E80 /* MountainHeightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B00269629B0008F0FE3 /* MountainHeightTableViewCell.swift */; };
+		28FD915C271FB031004D3E80 /* santaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28119B3A268A26B4002ABFA9 /* santaApp.xcdatamodeld */; };
+		28FD915D271FB031004D3E80 /* DetailPostsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ACE26A7BB8F007E082D /* DetailPostsDataManager.swift */; };
+		28FD915E271FB031004D3E80 /* DetailAnotherUserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ADC26A862F4007E082D /* DetailAnotherUserDataManager.swift */; };
+		28FD915F271FB031004D3E80 /* MountainRankingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47F26A4BB9900F32165 /* MountainRankingDataManager.swift */; };
+		28FD9160271FB031004D3E80 /* RankingMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286966F62692E35E0025A250 /* RankingMountainViewController.swift */; };
+		28FD9161271FB031004D3E80 /* MountainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB5E0B26A1BA6B0092CC40 /* MountainDataManager.swift */; };
+		28FD9162271FB031004D3E80 /* CertificationNumInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479326AB3F05008E6831 /* CertificationNumInput.swift */; };
+		28FD9163271FB031004D3E80 /* CompleteSignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882286F26A047E5000B2EAA /* CompleteSignUpEntity.swift */; };
+		28FD9164271FB031004D3E80 /* HomeVIewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873C1269CAFA10097E46F /* HomeVIewEntity.swift */; };
+		28FD9165271FB031004D3E80 /* TermsOfServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CB0026ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift */; };
+		28FD9166271FB031004D3E80 /* CompleteConqueredDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46C26A446ED00F32165 /* CompleteConqueredDataManager.swift */; };
+		28FD9167271FB031004D3E80 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289656F6268F58EE00B23E8F /* CompleteViewController.swift */; };
+		28FD9168271FB031004D3E80 /* DetailAnotherUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AD426A85F6C007E082D /* DetailAnotherUserViewController.swift */; };
+		28FD9169271FB031004D3E80 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28139FC82698A3F30091DFCD /* SearchViewController.swift */; };
+		28FD916A271FB031004D3E80 /* MountainSearchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47A26A4B65200F32165 /* MountainSearchDataManager.swift */; };
+		28FD916B271FB031004D3E80 /* ShowUserResultEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AEC26A99A16007E082D /* ShowUserResultEntity.swift */; };
+		28FD916C271FB031004D3E80 /* PickMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C247268A2D290056EECF /* PickMountainViewController.swift */; };
+		28FD916D271FB031004D3E80 /* FlagMKAnnotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AF326AA4307007E082D /* FlagMKAnnotionView.swift */; };
+		28FD916E271FB031004D3E80 /* MountainInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B48626A5798B00F32165 /* MountainInfoDataManager.swift */; };
+		28FD916F271FB031004D3E80 /* CertificationNumberEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479026AB3EB4008E6831 /* CertificationNumberEntity.swift */; };
+		28FD9170271FB031004D3E80 /* MapPositionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46726A3280900F32165 /* MapPositionDataManager.swift */; };
+		28FD9171271FB031004D3E80 /* HomeVIewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873BF269CAF940097E46F /* HomeVIewDataManager.swift */; };
+		28FD9172271FB031004D3E80 /* MountainLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B45C26A317A600F32165 /* MountainLikeEntity.swift */; };
+		28FD9173271FB031004D3E80 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
+		28FD9174271FB031004D3E80 /* ConquerMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */; };
+		28FD9175271FB031004D3E80 /* GoViewControllerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873C8269CD4C70097E46F /* GoViewControllerDataManager.swift */; };
+		28FD9176271FB031004D3E80 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C24E268A2DDC0056EECF /* SetupViewController.swift */; };
+		28FD9177271FB031004D3E80 /* FlagMountainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AF826AA4503007E082D /* FlagMountainDataManager.swift */; };
+		28FD9178271FB031004D3E80 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B52EA8268C793000017DCF /* UIImage.swift */; };
+		28FD9179271FB031004D3E80 /* FlagsDeleteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AE126A90D24007E082D /* FlagsDeleteEntity.swift */; };
+		28FD917A271FB031004D3E80 /* MountainInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B48426A5789200F32165 /* MountainInfoEntity.swift */; };
+		28FD917B271FB031004D3E80 /* ForgetPasswordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478126AB2A5C008E6831 /* ForgetPasswordEntity.swift */; };
+		28FD917C271FB031004D3E80 /* FlagExplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28738E2A26AE981D002AE718 /* FlagExplainViewController.swift */; };
+		28FD917D271FB031004D3E80 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46F26A4675600F32165 /* RankingTableViewCell.swift */; };
+		28FD917E271FB031004D3E80 /* ContentRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208626937562001DBF5E /* ContentRankViewController.swift */; };
+		28FD917F271FB031004D3E80 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C461268CF38800D40F35 /* UISearchBar.swift */; };
+		28FD9180271FB031004D3E80 /* GoViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */; };
+		28FD9181271FB031004D3E80 /* SignInViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287A26A06115000B2EAA /* SignInViewControllerEntity.swift */; };
+		28FD9182271FB031004D3E80 /* SignInViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287826A06106000B2EAA /* SignInViewControllerInput.swift */; };
+		28FD9183271FB031004D3E80 /* CompleteConqueredEntitiy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46A26A4455800F32165 /* CompleteConqueredEntitiy.swift */; };
+		28FD9184271FB031004D3E80 /* ConquerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817F8632694D20A004F39EC /* ConquerViewController.swift */; };
+		28FD9185271FB031004D3E80 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45F268CEB5F00D40F35 /* UITabBar.swift */; };
+		28FD9186271FB031004D3E80 /* EndViewControllerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288126A07956000B2EAA /* EndViewControllerDataManager.swift */; };
+		28FD9187271FB031004D3E80 /* CheckEmailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478A26AB327A008E6831 /* CheckEmailEntity.swift */; };
+		28FD9188271FB031004D3E80 /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208826938026001DBF5E /* RankTableViewCell.swift */; };
+		28FD9189271FB031004D3E80 /* ContentMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FD6FB2694AD6B00B38602 /* ContentMountainViewController.swift */; };
+		28FD918A271FB031004D3E80 /* MonutainSearchInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47826A4B62800F32165 /* MonutainSearchInput.swift */; };
+		28FD918B271FB031004D3E80 /* MountainImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */; };
+		28FD918C271FB031004D3E80 /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAF626AC958400DC3805 /* TermsOfServiceViewController.swift */; };
+		28FD918D271FB031004D3E80 /* ReportUserFlagsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AE926A911CF007E082D /* ReportUserFlagsDataManager.swift */; };
+		28FD918E271FB031004D3E80 /* UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C250268A30800056EECF /* UiViewController.swift */; };
+		28FD918F271FB031004D3E80 /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C249268A2D720056EECF /* GoViewController.swift */; };
+		28FD9190271FB031004D3E80 /* ForgetPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478326AB2AD7008E6831 /* ForgetPasswordDataManager.swift */; };
+		28FD9191271FB031004D3E80 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAFB26AC991800DC3805 /* AccountViewController.swift */; };
+		28FD9192271FB031004D3E80 /* EndViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287F26A0794A000B2EAA /* EndViewControllerEntity.swift */; };
+		28FD9193271FB031004D3E80 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890263E268F286E00D15BBA /* UIView.swift */; };
+		28FD9194271FB031004D3E80 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479726AB4415008E6831 /* IndicatorView.swift */; };
+		28FD9195271FB031004D3E80 /* MyRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47126A4A09B00F32165 /* MyRankingTableViewCell.swift */; };
+		28FD9196271FB031004D3E80 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C245268A2CEB0056EECF /* HomeViewController.swift */; };
+		28FD9197271FB031004D3E80 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AFB26AA523B007E082D /* ForgetPasswordViewController.swift */; };
+		28FD9198271FB031004D3E80 /* FlagsDeleteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AE426A9106E007E082D /* FlagsDeleteDataManager.swift */; };
+		28FD9199271FB031004D3E80 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288B26A0B263000B2EAA /* UserTableViewCell.swift */; };
+		28FD919A271FB031004D3E80 /* DetailPostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28139FCA2698AEF20091DFCD /* DetailPostCollectionViewCell.swift */; };
+		28FD919B271FB031004D3E80 /* LogoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289426A0C04C000B2EAA /* LogoutDataManager.swift */; };
+		28FD919C271FB031004D3E80 /* PositionCourseAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ABE26A6F34F007E082D /* PositionCourseAnnotationView.swift */; };
+		28FD919D271FB031004D3E80 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */; };
+		28FD919E271FB031004D3E80 /* DetailPosteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2875D2F3269864FF00180300 /* DetailPosteViewController.swift */; };
+		28FD919F271FB031004D3E80 /* PositionMountainAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812067626A5E29F00BDA266 /* PositionMountainAnnotationView.swift */; };
+		28FD91A0271FB031004D3E80 /* DetailPostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013ACC26A7BA62007E082D /* DetailPostEntity.swift */; };
+		28FD91A1271FB031004D3E80 /* ShowProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812067B26A6008200BDA266 /* ShowProfileDataManager.swift */; };
+		28FD91A2271FB031004D3E80 /* CheckNicnameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28822869269F46AB000B2EAA /* CheckNicnameDataManager.swift */; };
+		28FD91A3271FB031004D3E80 /* PostDeleteEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AD026A7C290007E082D /* PostDeleteEntity.swift */; };
+		28FD91A4271FB031004D3E80 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B68268A27F5002ABFA9 /* Constant.swift */; };
+		28FD91A5271FB031004D3E80 /* CertificationNumberDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479526AB3F49008E6831 /* CertificationNumberDataManager.swift */; };
+		28FD91A6271FB031004D3E80 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28429A41271EB7A50007D7E6 /* TableViewCell.swift */; };
+		28FD91A7271FB031004D3E80 /* CheckNicnameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28822867269F4690000B2EAA /* CheckNicnameEntity.swift */; };
+		28FD91A8271FB031004D3E80 /* FlagMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AF126AA3D27007E082D /* FlagMapViewController.swift */; };
+		28FD91A9271FB031004D3E80 /* AutoLoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288926A0A0B3000B2EAA /* AutoLoginEntity.swift */; };
+		28FD91AA271FB031004D3E80 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23C268A2A1D0056EECF /* SplashViewController.swift */; };
+		28FD91AB271FB031004D3E80 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287526A05C36000B2EAA /* SignInViewController.swift */; };
+		28FD91AC271FB031004D3E80 /* MountainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB5E0926A1B9C50092CC40 /* MountainEntity.swift */; };
+		28FD91AD271FB031004D3E80 /* UserResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */; };
+		28FD91AE271FB031004D3E80 /* RecommendMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */; };
+		28FD91AF271FB031004D3E80 /* CompleteSignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287126A047F4000B2EAA /* CompleteSignUpDataManager.swift */; };
+		28FD91B0271FB031004D3E80 /* MountainPicksEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46026A31E3400F32165 /* MountainPicksEntity.swift */; };
+		28FD91B1271FB031004D3E80 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812067426A5DF1300BDA266 /* PaddingLabel.swift */; };
+		28FD91B2271FB031004D3E80 /* CheckEmailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478E26AB336D008E6831 /* CheckEmailDataManager.swift */; };
+		28FD91B3271FB031004D3E80 /* MountainSearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47626A4B53E00F32165 /* MountainSearchEntity.swift */; };
+		28FD91B4271FB031004D3E80 /* VersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288D26A0B6D4000B2EAA /* VersionTableViewCell.swift */; };
+		28FD91B5271FB031004D3E80 /* ReportUserFlagsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AE726A91156007E082D /* ReportUserFlagsEntity.swift */; };
+		28FD91B6271FB031004D3E80 /* DetailAnotherUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AD726A85FDE007E082D /* DetailAnotherUserCollectionViewCell.swift */; };
+		28FD91B7271FB031004D3E80 /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289226A0BF78000B2EAA /* LogoutEntity.swift */; };
+		28FD91B8271FB031004D3E80 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45D268CEB4700D40F35 /* CALayer.swift */; };
+		28FD91B9271FB031004D3E80 /* CompleteSignUpInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882287326A048D4000B2EAA /* CompleteSignUpInput.swift */; };
+		28FD91BA271FB031004D3E80 /* MountainPicksDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46226A31F2700F32165 /* MountainPicksDataManager.swift */; };
+		28FD91BB271FB031004D3E80 /* ForgetPasswordInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478526AB2B7B008E6831 /* ForgetPasswordInput.swift */; };
+		28FD91BC271FB031004D3E80 /* CheckNicnameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882286B269F48BB000B2EAA /* CheckNicnameInput.swift */; };
+		28FD91BD271FB031004D3E80 /* AutoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288726A09F87000B2EAA /* AutoLoginDataManager.swift */; };
+		28FD91BE271FB031004D3E80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B31268A26B4002ABFA9 /* AppDelegate.swift */; };
+		28FD91BF271FB031004D3E80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B33268A26B4002ABFA9 /* SceneDelegate.swift */; };
+		28FD91C0271FB031004D3E80 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817F866269586CE004F39EC /* CourseTableViewCell.swift */; };
+		28FD91C2271FB031004D3E80 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
+		28FD91C4271FB031004D3E80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 281E2D2726EF06C800AE8339 /* InfoPlist.strings */; };
+		28FD91C5271FB031004D3E80 /* lottieAnimaition.json in Resources */ = {isa = PBXBuildFile; fileRef = 28429A36271EB14A0007D7E6 /* lottieAnimaition.json */; };
+		28FD91C7271FB031004D3E80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28119B3D268A26B4002ABFA9 /* Assets.xcassets */; };
+		28FD91C8271FB031004D3E80 /* AppleSDGothicNeo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 28429A3B271EB41A0007D7E6 /* AppleSDGothicNeo.ttc */; };
+		28FD91C9271FB031004D3E80 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28429A42271EB7A50007D7E6 /* TableViewCell.xib */; };
+		28FD91CA271FB031004D3E80 /* WowFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28429A45271EB7EF0007D7E6 /* WowFont.otf */; };
+		28FD91CB271FB031004D3E80 /* Cocogoose Pro-trial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28429A39271EB4110007D7E6 /* Cocogoose Pro-trial.ttf */; };
 		304761CC34CA9C3440DAC9F3 /* Pods_santaApp_santaAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */; };
 		8B9AC9B6DBEC5526DC7DB9A3 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
 		B43FF98A22C6384FD9889F4E /* Pods_santaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF72992B7F525FC3EBEDE0 /* Pods_santaAppTests.framework */; };
@@ -221,7 +360,6 @@
 		28139FC82698A3F30091DFCD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		28139FCA2698AEF20091DFCD /* DetailPostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostCollectionViewCell.swift; sourceTree = "<group>"; };
 		2813D836268B72B900822337 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		2813D838268B7D9200822337 /* santaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = santaApp.entitlements; sourceTree = "<group>"; };
 		2817F8632694D20A004F39EC /* ConquerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerViewController.swift; sourceTree = "<group>"; };
 		2817F866269586CE004F39EC /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		281E2D2626EF06C800AE8339 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -236,11 +374,16 @@
 		2830CAFD26AC9AE200DC3805 /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		2830CB0026ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceDetailViewController.swift; sourceTree = "<group>"; };
 		2830CB0226ADA94200DC3805 /* PrivacyUserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyUserDetailViewController.swift; sourceTree = "<group>"; };
+		28429A36271EB14A0007D7E6 /* lottieAnimaition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottieAnimaition.json; sourceTree = SOURCE_ROOT; };
+		28429A39271EB4110007D7E6 /* Cocogoose Pro-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cocogoose Pro-trial.ttf"; sourceTree = "<group>"; };
+		28429A3B271EB41A0007D7E6 /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeo.ttc; sourceTree = "<group>"; };
+		28429A41271EB7A50007D7E6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		28429A42271EB7A50007D7E6 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		28429A45271EB7EF0007D7E6 /* WowFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WowFont.otf; sourceTree = "<group>"; };
 		2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewControllerEntity.swift; sourceTree = "<group>"; };
 		28645185268C98A5009F3608 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		286966F62692E35E0025A250 /* RankingMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingMountainViewController.swift; sourceTree = "<group>"; };
 		286CCBFD26EF12F9008C7B3F /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
-		286CCBFF26EF15A0008C7B3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2871B45C26A317A600F32165 /* MountainLikeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainLikeEntity.swift; sourceTree = "<group>"; };
 		2871B45E26A31AD200F32165 /* MountainLikeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainLikeDataManager.swift; sourceTree = "<group>"; };
 		2871B46026A31E3400F32165 /* MountainPicksEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPicksEntity.swift; sourceTree = "<group>"; };
@@ -287,14 +430,11 @@
 		2882288F26A0B6F7000B2EAA /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
 		2882289226A0BF78000B2EAA /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		2882289426A0C04C000B2EAA /* LogoutDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutDataManager.swift; sourceTree = "<group>"; };
-		28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = AppleSDGothicNeo.ttc; path = "../../../../../../Downloads/산타앱_폰트/AppleSDGothicNeo.ttc"; sourceTree = "<group>"; };
-		28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Cocogoose Pro-trial.ttf"; path = "../../../../../../Downloads/산타앱_폰트/Cocogoose Pro-trial.ttf"; sourceTree = "<group>"; };
 		2890263E268F286E00D15BBA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		289656F6268F58EE00B23E8F /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		28A0C45D268CEB4700D40F35 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		28A0C45F268CEB5F00D40F35 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
 		28A0C461268CF38800D40F35 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
-		28B2591326AC739400E95730 /* WowFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = WowFont.otf; path = ../../../../../../Downloads/WowFont.otf; sourceTree = "<group>"; };
 		28B3208626937562001DBF5E /* ContentRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRankViewController.swift; sourceTree = "<group>"; };
 		28B3208826938026001DBF5E /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		28B52EA8268C793000017DCF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -311,7 +451,6 @@
 		28C0479326AB3F05008E6831 /* CertificationNumInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationNumInput.swift; sourceTree = "<group>"; };
 		28C0479526AB3F49008E6831 /* CertificationNumberDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificationNumberDataManager.swift; sourceTree = "<group>"; };
 		28C0479726AB4415008E6831 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
-		28CBB69E26DBBB02001F572A /* lottieAnimaition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = lottieAnimaition.json; path = ../../../../Downloads/lottieAnimaition.json; sourceTree = "<group>"; };
 		28D4C239268A29660056EECF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		28D4C23C268A2A1D0056EECF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		28D4C23E268A2BD90056EECF /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -324,7 +463,12 @@
 		28DB5E0926A1B9C50092CC40 /* MountainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainEntity.swift; sourceTree = "<group>"; };
 		28DB5E0B26A1BA6B0092CC40 /* MountainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainDataManager.swift; sourceTree = "<group>"; };
 		28E81B44268CC0E000B537A5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		28E947632721421F00DF97E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28E947652721428C00DF97E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28E947672721435F00DF97E4 /* TrackingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingTool.swift; sourceTree = "<group>"; };
 		28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendMountainCollectionViewCell.swift; sourceTree = "<group>"; };
+		28FD91D0271FB031004D3E80 /* santaApp copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "santaApp copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28FD91D1271FB031004D3E80 /* santaApp copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "santaApp copy-Info.plist"; path = "/Users/noyj/Desktop/Smileflower_iOS/santaApp copy-Info.plist"; sourceTree = "<absolute>"; };
 		3FF4A2762B2EE01585E42D55 /* Pods-santaApp-santaAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp-santaAppUITests.release.xcconfig"; path = "Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp_santaAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E0B327D9881169E99DE27A7 /* Pods-santaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp.release.xcconfig"; path = "Target Support Files/Pods-santaApp/Pods-santaApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -357,6 +501,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				304761CC34CA9C3440DAC9F3 /* Pods_santaApp_santaAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28FD91C1271FB031004D3E80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28FD91C2271FB031004D3E80 /* Pods_santaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +645,7 @@
 				28119B2F268A26B4002ABFA9 /* Products */,
 				437E0B1031C5812CCADCA371 /* Pods */,
 				986166046C069C8D8B166777 /* Frameworks */,
+				28FD91D1271FB031004D3E80 /* santaApp copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -502,6 +655,7 @@
 				28119B2E268A26B4002ABFA9 /* santaApp.app */,
 				28119B47268A26B4002ABFA9 /* santaAppTests.xctest */,
 				28119B52268A26B4002ABFA9 /* santaAppUITests.xctest */,
+				28FD91D0271FB031004D3E80 /* santaApp copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -509,8 +663,8 @@
 		28119B30268A26B4002ABFA9 /* santaApp */ = {
 			isa = PBXGroup;
 			children = (
-				28CBB69E26DBBB02001F572A /* lottieAnimaition.json */,
-				2813D838268B7D9200822337 /* santaApp.entitlements */,
+				28E947632721421F00DF97E4 /* GoogleService-Info.plist */,
+				28429A36271EB14A0007D7E6 /* lottieAnimaition.json */,
 				28119B64268A276F002ABFA9 /* Configuration */,
 				2813D835268B72A100822337 /* LoginViewController */,
 				28D4C240268A2C440056EECF /* HomeViewController */,
@@ -528,7 +682,6 @@
 				28119B3D268A26B4002ABFA9 /* Assets.xcassets */,
 				28119B42268A26B4002ABFA9 /* Info.plist */,
 				28119B3A268A26B4002ABFA9 /* santaApp.xcdatamodeld */,
-				286CCBFF26EF15A0008C7B3F /* GoogleService-Info.plist */,
 				281E2D2726EF06C800AE8339 /* InfoPlist.strings */,
 				286CCBFD26EF12F9008C7B3F /* Struct.swift */,
 			);
@@ -556,8 +709,10 @@
 		28119B64268A276F002ABFA9 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				28E947622721417F00DF97E4 /* DevGoogleService */,
+				28E9476127213F9100DF97E4 /* TrackingTool */,
+				28429A38271EB4080007D7E6 /* Font */,
 				2860AB29269DF64300AA37C1 /* CommonClass */,
-				2813D839268C668700822337 /* Font */,
 				28119B67268A2788002ABFA9 /* Constant */,
 				28119B66268A2782002ABFA9 /* Base */,
 				28119B65268A277C002ABFA9 /* Extension */,
@@ -631,16 +786,6 @@
 			path = LoginViewController;
 			sourceTree = "<group>";
 		};
-		2813D839268C668700822337 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				28B2591326AC739400E95730 /* WowFont.otf */,
-				28827C65268D8EB900ECB1FB /* AppleSDGothicNeo.ttc */,
-				28827C66268D8EB900ECB1FB /* Cocogoose Pro-trial.ttf */,
-			);
-			path = Font;
-			sourceTree = "<group>";
-		};
 		2817F86526958629004F39EC /* MountainViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -690,10 +835,22 @@
 			path = TermsOfSerivceDetailViewController;
 			sourceTree = "<group>";
 		};
+		28429A38271EB4080007D7E6 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				28429A45271EB7EF0007D7E6 /* WowFont.otf */,
+				28429A3B271EB41A0007D7E6 /* AppleSDGothicNeo.ttc */,
+				28429A39271EB4110007D7E6 /* Cocogoose Pro-trial.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		2860AB29269DF64300AA37C1 /* CommonClass */ = {
 			isa = PBXGroup;
 			children = (
 				28C0479726AB4415008E6831 /* IndicatorView.swift */,
+				28429A41271EB7A50007D7E6 /* TableViewCell.swift */,
+				28429A42271EB7A50007D7E6 /* TableViewCell.xib */,
 			);
 			path = CommonClass;
 			sourceTree = "<group>";
@@ -990,6 +1147,22 @@
 			path = MountainApi;
 			sourceTree = "<group>";
 		};
+		28E9476127213F9100DF97E4 /* TrackingTool */ = {
+			isa = PBXGroup;
+			children = (
+				28E947672721435F00DF97E4 /* TrackingTool.swift */,
+			);
+			path = TrackingTool;
+			sourceTree = "<group>";
+		};
+		28E947622721417F00DF97E4 /* DevGoogleService */ = {
+			isa = PBXGroup;
+			children = (
+				28E947652721428C00DF97E4 /* GoogleService-Info.plist */,
+			);
+			path = DevGoogleService;
+			sourceTree = "<group>";
+		};
 		437E0B1031C5812CCADCA371 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1074,6 +1247,25 @@
 			productReference = 28119B52268A26B4002ABFA9 /* santaAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		28FD913A271FB031004D3E80 /* santaApp copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28FD91CD271FB031004D3E80 /* Build configuration list for PBXNativeTarget "santaApp copy" */;
+			buildPhases = (
+				28FD913B271FB031004D3E80 /* [CP] Check Pods Manifest.lock */,
+				28FD913C271FB031004D3E80 /* Sources */,
+				28FD91C1271FB031004D3E80 /* Frameworks */,
+				28FD91C3271FB031004D3E80 /* Resources */,
+				28FD91CC271FB031004D3E80 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "santaApp copy";
+			productName = santaApp;
+			productReference = 28FD91D0271FB031004D3E80 /* santaApp copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1113,6 +1305,7 @@
 				28119B2D268A26B4002ABFA9 /* santaApp */,
 				28119B46268A26B4002ABFA9 /* santaAppTests */,
 				28119B51268A26B4002ABFA9 /* santaAppUITests */,
+				28FD913A271FB031004D3E80 /* santaApp copy */,
 			);
 		};
 /* End PBXProject section */
@@ -1122,13 +1315,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28827C67268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */,
 				281E2D2526EF06C800AE8339 /* InfoPlist.strings in Resources */,
-				28CBB69F26DBBB02001F572A /* lottieAnimaition.json in Resources */,
-				28827C6A268D8F5B00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */,
+				28429A37271EB14A0007D7E6 /* lottieAnimaition.json in Resources */,
+				28E947642721421F00DF97E4 /* GoogleService-Info.plist in Resources */,
 				28119B3E268A26B4002ABFA9 /* Assets.xcassets in Resources */,
-				28B2591426AC739400E95730 /* WowFont.otf in Resources */,
-				286CCC0026EF15A0008C7B3F /* GoogleService-Info.plist in Resources */,
+				28429A3C271EB41A0007D7E6 /* AppleSDGothicNeo.ttc in Resources */,
+				28429A44271EB7A50007D7E6 /* TableViewCell.xib in Resources */,
+				28429A46271EB7EF0007D7E6 /* WowFont.otf in Resources */,
+				28429A3A271EB4110007D7E6 /* Cocogoose Pro-trial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1136,9 +1330,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28827C6B268D8F5C00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */,
-				28827C68268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */,
-				286CCC0126EF15AC008C7B3F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1146,9 +1337,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28827C6C268D8F5D00ECB1FB /* Cocogoose Pro-trial.ttf in Resources */,
-				28827C69268D8F5600ECB1FB /* AppleSDGothicNeo.ttc in Resources */,
-				286CCC0226EF15AC008C7B3F /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28FD91C3271FB031004D3E80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28FD91C4271FB031004D3E80 /* InfoPlist.strings in Resources */,
+				28FD91C5271FB031004D3E80 /* lottieAnimaition.json in Resources */,
+				28FD91C7271FB031004D3E80 /* Assets.xcassets in Resources */,
+				28E947662721428C00DF97E4 /* GoogleService-Info.plist in Resources */,
+				28FD91C8271FB031004D3E80 /* AppleSDGothicNeo.ttc in Resources */,
+				28FD91C9271FB031004D3E80 /* TableViewCell.xib in Resources */,
+				28FD91CA271FB031004D3E80 /* WowFont.otf in Resources */,
+				28FD91CB271FB031004D3E80 /* Cocogoose Pro-trial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1187,6 +1390,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28FD913B271FB031004D3E80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-santaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28FD91CC271FB031004D3E80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-santaApp/Pods-santaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-santaApp/Pods-santaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-santaApp/Pods-santaApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5D159BF449649488E6382401 /* [CP] Check Pods Manifest.lock */ = {
@@ -1367,6 +1609,7 @@
 				28013AD126A7C290007E082D /* PostDeleteEntity.swift in Sources */,
 				28119B69268A27F5002ABFA9 /* Constant.swift in Sources */,
 				28C0479626AB3F49008E6831 /* CertificationNumberDataManager.swift in Sources */,
+				28429A43271EB7A50007D7E6 /* TableViewCell.swift in Sources */,
 				28822868269F4690000B2EAA /* CheckNicnameEntity.swift in Sources */,
 				28013AF226AA3D27007E082D /* FlagMapViewController.swift in Sources */,
 				2882288A26A0A0B3000B2EAA /* AutoLoginEntity.swift in Sources */,
@@ -1392,6 +1635,7 @@
 				2882288826A09F87000B2EAA /* AutoLoginDataManager.swift in Sources */,
 				28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */,
 				28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */,
+				28E947682721435F00DF97E4 /* TrackingTool.swift in Sources */,
 				2817F867269586CE004F39EC /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1409,6 +1653,146 @@
 			buildActionMask = 2147483647;
 			files = (
 				28119B57268A26B4002ABFA9 /* santaAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28FD913C271FB031004D3E80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28FD913D271FB031004D3E80 /* UILabel.swift in Sources */,
+				28FD913E271FB031004D3E80 /* LogoutTableViewCell.swift in Sources */,
+				28FD913F271FB031004D3E80 /* MountainCourseTableViewCell.swift in Sources */,
+				28FD9140271FB031004D3E80 /* ShowUserResultDataManager.swift in Sources */,
+				28FD9141271FB031004D3E80 /* ConquerCollectionViewCell.swift in Sources */,
+				28FD9142271FB031004D3E80 /* ChangeProfileDataManager.swift in Sources */,
+				28FD9143271FB031004D3E80 /* ShowProlfileEntity.swift in Sources */,
+				28FD9144271FB031004D3E80 /* MountainLikeDataManager.swift in Sources */,
+				28FD9145271FB031004D3E80 /* RegisterImageDataManager.swift in Sources */,
+				28FD9146271FB031004D3E80 /* SignInViewControllerDataManager.swift in Sources */,
+				28FD9147271FB031004D3E80 /* MapPositionEntity.swift in Sources */,
+				28FD9148271FB031004D3E80 /* SignUpViewController.swift in Sources */,
+				28FD9149271FB031004D3E80 /* ChangeProfileEntity.swift in Sources */,
+				28FD914A271FB031004D3E80 /* AccountTableViewCell.swift in Sources */,
+				28FD914B271FB031004D3E80 /* LoginViewController.swift in Sources */,
+				28FD914C271FB031004D3E80 /* MountainPositionTableViewCell.swift in Sources */,
+				28FD914D271FB031004D3E80 /* EndViewController.swift in Sources */,
+				28FD914E271FB031004D3E80 /* FlagMountainEntity.swift in Sources */,
+				28FD914F271FB031004D3E80 /* DetailAnotherUserEntity.swift in Sources */,
+				28FD9150271FB031004D3E80 /* PrivacyUserDetailViewController.swift in Sources */,
+				28FD9151271FB031004D3E80 /* LikeMountainCollectionViewCell.swift in Sources */,
+				28FD9152271FB031004D3E80 /* TermsOfServiceTableViewCell.swift in Sources */,
+				28FD9153271FB031004D3E80 /* RegisterImageEntity.swift in Sources */,
+				28FD9154271FB031004D3E80 /* CheckEmailInput.swift in Sources */,
+				28FD9155271FB031004D3E80 /* BaseTabBarController.swift in Sources */,
+				28FD9156271FB031004D3E80 /* BaseViewController.swift in Sources */,
+				28FD9157271FB031004D3E80 /* PostsDeleteDataManager.swift in Sources */,
+				28FD9158271FB031004D3E80 /* StartViewController.swift in Sources */,
+				28FD9159271FB031004D3E80 /* Struct.swift in Sources */,
+				28FD915A271FB031004D3E80 /* MountainRankingEntity.swift in Sources */,
+				28FD915B271FB031004D3E80 /* MountainHeightTableViewCell.swift in Sources */,
+				28FD915C271FB031004D3E80 /* santaApp.xcdatamodeld in Sources */,
+				28FD915D271FB031004D3E80 /* DetailPostsDataManager.swift in Sources */,
+				28FD915E271FB031004D3E80 /* DetailAnotherUserDataManager.swift in Sources */,
+				28FD915F271FB031004D3E80 /* MountainRankingDataManager.swift in Sources */,
+				28FD9160271FB031004D3E80 /* RankingMountainViewController.swift in Sources */,
+				28FD9161271FB031004D3E80 /* MountainDataManager.swift in Sources */,
+				28FD9162271FB031004D3E80 /* CertificationNumInput.swift in Sources */,
+				28FD9163271FB031004D3E80 /* CompleteSignUpEntity.swift in Sources */,
+				28FD9164271FB031004D3E80 /* HomeVIewEntity.swift in Sources */,
+				28FD9165271FB031004D3E80 /* TermsOfServiceDetailViewController.swift in Sources */,
+				28FD9166271FB031004D3E80 /* CompleteConqueredDataManager.swift in Sources */,
+				28FD9167271FB031004D3E80 /* CompleteViewController.swift in Sources */,
+				28FD9168271FB031004D3E80 /* DetailAnotherUserViewController.swift in Sources */,
+				28FD9169271FB031004D3E80 /* SearchViewController.swift in Sources */,
+				28FD916A271FB031004D3E80 /* MountainSearchDataManager.swift in Sources */,
+				28FD916B271FB031004D3E80 /* ShowUserResultEntity.swift in Sources */,
+				28FD916C271FB031004D3E80 /* PickMountainViewController.swift in Sources */,
+				28FD916D271FB031004D3E80 /* FlagMKAnnotionView.swift in Sources */,
+				28FD916E271FB031004D3E80 /* MountainInfoDataManager.swift in Sources */,
+				28FD916F271FB031004D3E80 /* CertificationNumberEntity.swift in Sources */,
+				28FD9170271FB031004D3E80 /* MapPositionDataManager.swift in Sources */,
+				28FD9171271FB031004D3E80 /* HomeVIewDataManager.swift in Sources */,
+				28FD9172271FB031004D3E80 /* MountainLikeEntity.swift in Sources */,
+				28FD9173271FB031004D3E80 /* Color.swift in Sources */,
+				28FD9174271FB031004D3E80 /* ConquerMountainCollectionViewCell.swift in Sources */,
+				28FD9175271FB031004D3E80 /* GoViewControllerDataManager.swift in Sources */,
+				28FD9176271FB031004D3E80 /* SetupViewController.swift in Sources */,
+				28FD9177271FB031004D3E80 /* FlagMountainDataManager.swift in Sources */,
+				28FD9178271FB031004D3E80 /* UIImage.swift in Sources */,
+				28FD9179271FB031004D3E80 /* FlagsDeleteEntity.swift in Sources */,
+				28FD917A271FB031004D3E80 /* MountainInfoEntity.swift in Sources */,
+				28FD917B271FB031004D3E80 /* ForgetPasswordEntity.swift in Sources */,
+				28FD917C271FB031004D3E80 /* FlagExplainViewController.swift in Sources */,
+				28FD917D271FB031004D3E80 /* RankingTableViewCell.swift in Sources */,
+				28FD917E271FB031004D3E80 /* ContentRankViewController.swift in Sources */,
+				28FD917F271FB031004D3E80 /* UISearchBar.swift in Sources */,
+				28FD9180271FB031004D3E80 /* GoViewControllerEntity.swift in Sources */,
+				28FD9181271FB031004D3E80 /* SignInViewControllerEntity.swift in Sources */,
+				28FD9182271FB031004D3E80 /* SignInViewControllerInput.swift in Sources */,
+				28FD9183271FB031004D3E80 /* CompleteConqueredEntitiy.swift in Sources */,
+				28FD9184271FB031004D3E80 /* ConquerViewController.swift in Sources */,
+				28FD9185271FB031004D3E80 /* UITabBar.swift in Sources */,
+				28FD9186271FB031004D3E80 /* EndViewControllerDataManager.swift in Sources */,
+				28FD9187271FB031004D3E80 /* CheckEmailEntity.swift in Sources */,
+				28FD9188271FB031004D3E80 /* RankTableViewCell.swift in Sources */,
+				28FD9189271FB031004D3E80 /* ContentMountainViewController.swift in Sources */,
+				28FD918A271FB031004D3E80 /* MonutainSearchInput.swift in Sources */,
+				28FD918B271FB031004D3E80 /* MountainImageTableViewCell.swift in Sources */,
+				28FD918C271FB031004D3E80 /* TermsOfServiceViewController.swift in Sources */,
+				28FD918D271FB031004D3E80 /* ReportUserFlagsDataManager.swift in Sources */,
+				28FD918E271FB031004D3E80 /* UiViewController.swift in Sources */,
+				28FD918F271FB031004D3E80 /* GoViewController.swift in Sources */,
+				28FD9190271FB031004D3E80 /* ForgetPasswordDataManager.swift in Sources */,
+				28FD9191271FB031004D3E80 /* AccountViewController.swift in Sources */,
+				28FD9192271FB031004D3E80 /* EndViewControllerEntity.swift in Sources */,
+				28FD9193271FB031004D3E80 /* UIView.swift in Sources */,
+				28FD9194271FB031004D3E80 /* IndicatorView.swift in Sources */,
+				28FD9195271FB031004D3E80 /* MyRankingTableViewCell.swift in Sources */,
+				28FD9196271FB031004D3E80 /* HomeViewController.swift in Sources */,
+				28FD9197271FB031004D3E80 /* ForgetPasswordViewController.swift in Sources */,
+				28FD9198271FB031004D3E80 /* FlagsDeleteDataManager.swift in Sources */,
+				28FD9199271FB031004D3E80 /* UserTableViewCell.swift in Sources */,
+				28FD919A271FB031004D3E80 /* DetailPostCollectionViewCell.swift in Sources */,
+				28FD919B271FB031004D3E80 /* LogoutDataManager.swift in Sources */,
+				28FD919C271FB031004D3E80 /* PositionCourseAnnotationView.swift in Sources */,
+				28FD919D271FB031004D3E80 /* ProfileViewController.swift in Sources */,
+				28FD919E271FB031004D3E80 /* DetailPosteViewController.swift in Sources */,
+				28FD919F271FB031004D3E80 /* PositionMountainAnnotationView.swift in Sources */,
+				28FD91A0271FB031004D3E80 /* DetailPostEntity.swift in Sources */,
+				28FD91A1271FB031004D3E80 /* ShowProfileDataManager.swift in Sources */,
+				28FD91A2271FB031004D3E80 /* CheckNicnameDataManager.swift in Sources */,
+				28FD91A3271FB031004D3E80 /* PostDeleteEntity.swift in Sources */,
+				28FD91A4271FB031004D3E80 /* Constant.swift in Sources */,
+				28FD91A5271FB031004D3E80 /* CertificationNumberDataManager.swift in Sources */,
+				28FD91A6271FB031004D3E80 /* TableViewCell.swift in Sources */,
+				28FD91A7271FB031004D3E80 /* CheckNicnameEntity.swift in Sources */,
+				28FD91A8271FB031004D3E80 /* FlagMapViewController.swift in Sources */,
+				28FD91A9271FB031004D3E80 /* AutoLoginEntity.swift in Sources */,
+				28FD91AA271FB031004D3E80 /* SplashViewController.swift in Sources */,
+				28FD91AB271FB031004D3E80 /* SignInViewController.swift in Sources */,
+				28FD91AC271FB031004D3E80 /* MountainEntity.swift in Sources */,
+				28FD91AD271FB031004D3E80 /* UserResultCollectionViewCell.swift in Sources */,
+				28FD91AE271FB031004D3E80 /* RecommendMountainCollectionViewCell.swift in Sources */,
+				28FD91AF271FB031004D3E80 /* CompleteSignUpDataManager.swift in Sources */,
+				28FD91B0271FB031004D3E80 /* MountainPicksEntity.swift in Sources */,
+				28FD91B1271FB031004D3E80 /* PaddingLabel.swift in Sources */,
+				28FD91B2271FB031004D3E80 /* CheckEmailDataManager.swift in Sources */,
+				28FD91B3271FB031004D3E80 /* MountainSearchEntity.swift in Sources */,
+				28FD91B4271FB031004D3E80 /* VersionTableViewCell.swift in Sources */,
+				28FD91B5271FB031004D3E80 /* ReportUserFlagsEntity.swift in Sources */,
+				28FD91B6271FB031004D3E80 /* DetailAnotherUserCollectionViewCell.swift in Sources */,
+				28FD91B7271FB031004D3E80 /* LogoutEntity.swift in Sources */,
+				28FD91B8271FB031004D3E80 /* CALayer.swift in Sources */,
+				28FD91B9271FB031004D3E80 /* CompleteSignUpInput.swift in Sources */,
+				28FD91BA271FB031004D3E80 /* MountainPicksDataManager.swift in Sources */,
+				28FD91BB271FB031004D3E80 /* ForgetPasswordInput.swift in Sources */,
+				28FD91BC271FB031004D3E80 /* CheckNicnameInput.swift in Sources */,
+				28FD91BD271FB031004D3E80 /* AutoLoginDataManager.swift in Sources */,
+				28FD91BE271FB031004D3E80 /* AppDelegate.swift in Sources */,
+				28FD91BF271FB031004D3E80 /* SceneDelegate.swift in Sources */,
+				28E947692721435F00DF97E4 /* TrackingTool.swift in Sources */,
+				28FD91C0271FB031004D3E80 /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1694,6 +2078,60 @@
 			};
 			name = Release;
 		};
+		28FD91CE271FB031004D3E80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95A033F794617D3A7E844015 /* Pods-santaApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = santaApp/santaApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 69F5355JYF;
+				INFOPLIST_FILE = "santaApp copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		28FD91CF271FB031004D3E80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E0B327D9881169E99DE27A7 /* Pods-santaApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = santaApp/santaApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 69F5355JYF;
+				INFOPLIST_FILE = "santaApp copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.3;
+				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1729,6 +2167,15 @@
 			buildConfigurations = (
 				28119B62268A26B5002ABFA9 /* Debug */,
 				28119B63268A26B5002ABFA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28FD91CD271FB031004D3E80 /* Build configuration list for PBXNativeTarget "santaApp copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28FD91CE271FB031004D3E80 /* Debug */,
+				28FD91CF271FB031004D3E80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

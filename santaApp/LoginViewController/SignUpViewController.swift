@@ -13,6 +13,8 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TrackingTool.Screen(screenName: "view_sign_up")
+        
         self.dismissKeyboardWhenTappedAround()
         navigationBarSet()
         setLabelSantaLogo()
@@ -103,6 +105,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
+        TrackingTool.Action(actionName: "action_back_sign_up", param: ["":""])
         dismiss(animated: true, completion: nil)
     }
     //MARk: 산타 로고
@@ -138,7 +141,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         textFieldID.placeholder = "이메일"
         textFieldID.borderStyle = .none
         view.addSubview(textFieldID)
-        textFieldID.addTarget(self, action: #selector(actiondidChangeID), for: .editingChanged)
+        textFieldID.addTarget(self, action: #selector(actionDidChangeID), for: .editingChanged)
         textFieldID.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(labelSignUp.snp.bottom).offset(34)
@@ -153,7 +156,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
             make.top.equalTo(textFieldID.snp.bottom).offset(7)
         }
     }
-    @objc func actiondidChangeID() {
+    @objc func actionDidChangeID() {
         if textFieldID.text?.isEmpty == false,
            textFieldPassword.text?.isEmpty == false,
            textFieldPasswordConfirm.text?.isEmpty == false,
@@ -192,6 +195,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         }
     }
     @objc func actionEmailCheck() {
+        TrackingTool.Action(actionName: "action_send_certification", param: ["":""])
         if let text = textFieldID.text {
             let input = CheckEmailInput(email: text )
             CheckEmailDataManager().appemailcode(self, input)
@@ -340,6 +344,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         buttonNicnameOverlap.addTarget(self, action: #selector(actionCheckNicname), for: .touchUpInside)
     }
     @objc func actionCheckNicname() {
+        TrackingTool.Action(actionName: "action_nickname_duplicate", param: ["":""])
         if let text = textFieldNicname.text {
             if text.isEmpty == false {
                 let input = CheckNicnameInput(name: text)
@@ -385,6 +390,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         }
     }
     @objc func actionSignUp() {
+        TrackingTool.Action(actionName: "action_do_sign_up", param: ["":""])
         if let textId = textFieldID.text,
            let textpassword = textFieldPassword.text,
            let textpasswordConfirm = textFieldPasswordConfirm.text,

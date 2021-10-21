@@ -8,8 +8,11 @@
 import Alamofire
 
 struct Constant {
+    #if DEV
     static let baseURL = "http://13.125.121.202"
-    
+    #else
+    static let baseURL = "https://smilesanta.site"
+    #endif
     static let TestURL = "http://13.125.121.202"
     static let MainURL = "https://smilesanta.site"
     static let fontCocogoose = "Cocogoose"

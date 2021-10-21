@@ -10,6 +10,9 @@ import UIKit
 class ForgetPasswordViewController : BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        TrackingTool.Screen(screenName: "view_password_forget")
+        
         navigationBarSet()
         setLabelSantaLogo()
         setLabelForgetPassword()
@@ -49,6 +52,7 @@ class ForgetPasswordViewController : BaseViewController {
         view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
+        TrackingTool.Action(actionName: "action_back_forget_password", param: ["":""])
         dismiss(animated: true, completion: nil)
     }
     //MARk: 산타 로고
@@ -132,6 +136,7 @@ class ForgetPasswordViewController : BaseViewController {
         }
     }
     @objc func actionForgetPassword() {
+        TrackingTool.Action(actionName: "action_reset_password", param: ["":""])
         let input = ForgetPasswordInput(email: textFieldEmail.text!)
         ForgetPasswordDataManager().appemailspassword(self, input)
         self.showIndicator()

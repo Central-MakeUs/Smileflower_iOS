@@ -32,14 +32,7 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
-    // MAKR: 네비게이션 바 커스텀
-//    lazy var rightButton: UIBarButtonItem = {
-//        let button = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .plain, target: self, action: #selector(actionGoExplain))
-//        button.tag = 2
-//        button.tintColor = .titleColorGray
-//        return button
-//
-//    }()
+
     let imageViewSantaLogo = UIImageView()
     //MARK: 네비게이션 바 로고 설정
     func navigationBarSetLogo() {
@@ -76,6 +69,9 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        TrackingTool.Screen(screenName: "view_home")
+        
         HomeViewDataManager().apphomes(viewcontroller: self)
         let height = UIScreen.main.bounds.height
         let width = UIScreen.main.bounds.width
@@ -238,6 +234,7 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
         }
     }
     @objc func actionGoSearchView() {
+        TrackingTool.Action(actionName: "action_go_search", param: ["":""])
         let nextVC = SearchViewController()
         nextVC.modalPresentationStyle = .fullScreen
         self.present(nextVC, animated: false, completion: nil)
@@ -349,8 +346,8 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         return CGSize(width: 177, height: 221)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
         if let mountainCell = mountain {
+            TrackingTool.Action(actionName: "action_go_detail_mountain", param: ["mountain_name": mountainCell[indexPath.row].mountainName! ])
             let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
             nextVC.mountainIndex = mountainCell[indexPath.row].mountainIdx
             nextVC.mountainName = mountainCell[indexPath.row].mountainName!

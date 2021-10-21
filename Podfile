@@ -6,13 +6,15 @@ target 'santaApp' do
   use_frameworks!
 
   # Pods for santaApp
+  # add pods for desired Firebase products
+  # https://firebase.google.com/docs/ios/setup#available-pods
+
   pod 'SnapKit', '~> 5.0.0'
   pod 'Alamofire', '~> 5.1'
   pod 'BetterSegmentedControl', '~> 1.3'
   pod 'Firebase/Analytics'
   pod 'lottie-ios'
   pod 'Kingfisher'
-  pod 'Siren'
 
   target 'santaAppTests' do
     inherit! :search_paths
