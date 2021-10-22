@@ -45,6 +45,7 @@ class BaseTabbarController : UITabBarController, UITabBarControllerDelegate {
        }
     
     @objc private func menuButtonAction(sender: UIButton) {
+        TrackingTool.Action(actionName: "action_go_conquer_mountain", param: ["": ""])
             selectedIndex = 2
         }
     
