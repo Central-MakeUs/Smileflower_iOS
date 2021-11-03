@@ -27,9 +27,13 @@ class EndViewControllerDataManager {
         }, to: Constant.baseURL + "/api/flag/\(mountainIdx)", method: .post ,headers: headers).responseDecodable(of: EndViewControllerEntity.self) { response in
             switch response.result {
             case .success(let response):
-                if response.success {
+                if response.success, let result = response.response{
+                    if result.isDoubleVisited {
+                        viewcontroller.failureDataImageRegister("하루에 두 번 인증은 불가능합니다!")
 
-                    viewcontroller.successDataImageRegister()
+                    } else {
+                        viewcontroller.successDataImageRegister()
+                    }
                 }
                 else {
                     viewcontroller.failureDataImageRegister(response.error!.message!)

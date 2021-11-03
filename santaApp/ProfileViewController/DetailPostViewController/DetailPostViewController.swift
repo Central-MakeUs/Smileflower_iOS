@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class DetailPosteViewController: BaseViewController, UINavigationBarDelegate {
+class DetailPostViewController: BaseViewController, UINavigationBarDelegate {
     
     var postsResult : [DetailPostsPosts] = []
     var userIdx : Int?
@@ -19,19 +19,13 @@ class DetailPosteViewController: BaseViewController, UINavigationBarDelegate {
         view.backgroundColor = .white
         navigationBarSet()
         SetCollectionViewContent()
-        
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         if let idx = userIdx {
             DetailPostsDataManager().apiprofileuserIdxposts(self, idx)
         }
     }
-    override func viewWillLayoutSubviews() {
-        if let numindex = indexPath {
-            carouselCollectionView.scrollToItem(at: IndexPath(item: numindex, section: 0), at: .bottom, animated: false)
-        }
-    }
+
     // MARK: 네비게이션 바
     lazy var leftButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
@@ -84,7 +78,7 @@ class DetailPosteViewController: BaseViewController, UINavigationBarDelegate {
         }
     }
 }
-extension DetailPosteViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension DetailPostViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return postsResult.count
     }
@@ -130,10 +124,13 @@ extension DetailPosteViewController : UICollectionViewDelegate, UICollectionView
     
 }
 
-extension DetailPosteViewController {
+extension DetailPostViewController {
     func successDataApiPosts(_ result : DetailPostsResponse) {
         postsResult = result.posts!
         carouselCollectionView.reloadData()
+        if let num = indexPath {
+            carouselCollectionView.scrollToItem(at: IndexPath(item: num, section: 0), at: .bottom, animated: true)
+        }
     }
     func failureDataApiPosts(_ message : String) {
         self.presentAlert(title: message)

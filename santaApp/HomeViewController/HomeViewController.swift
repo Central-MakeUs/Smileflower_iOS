@@ -44,7 +44,6 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
     let height: CGFloat = 30
 
     func setNavigationBar() {
-
         navbar.frame = CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height)
         navbar.backgroundColor = UIColor.clear
         navbar.delegate = self
@@ -79,9 +78,6 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
         Constant.userPhoneHeight = height
         Constant.userPhoneWidth = width
         
-        print(Constant.userPhoneHeight)
-        print(Constant.JWTToken)
-        print(Constant.userIdx)
         setScrollView()
         navigationBarSetLogo()
         setNavigationBar()
@@ -97,7 +93,9 @@ class HomeViewController : BaseViewController, UINavigationBarDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
-        HomeViewDataManager().apphomes(viewcontroller: self)
+        DispatchQueue.global(qos: .userInteractive).async {
+            HomeViewDataManager().apphomes(viewcontroller: self)
+        }
     }
 
     override func viewWillLayoutSubviews() {
@@ -374,20 +372,19 @@ extension HomeViewController : UIScrollViewDelegate {
 }
 
 extension HomeViewController {
-    
     func successDataReceive(_ result : DataResult) {
-        userIdx = result.userIdx
-        userImage = result.userImage
-        homeStatus = result.homeStatus
-        mountain = result.myflag?.mountain
+        self.userIdx = result.userIdx
+        self.userImage = result.userImage
+        self.homeStatus = result.homeStatus
+        self.mountain = result.myflag?.mountain
         self.carouselCollectionView.reloadData()
-        if let stringURL = userImage {
+        if let stringURL = self.userImage {
             let url = URL(string: stringURL)
-            imageViewUserProfile.kf.indicatorType = .activity
-            imageViewUserProfile.kf.setImage(with: url)
+            self.imageViewUserProfile.kf.indicatorType = .activity
+            self.imageViewUserProfile.kf.setImage(with: url)
         }
         else {
-            imageViewUserProfile.image = UIImage(named: "personhome@3x")
+            self.imageViewUserProfile.image = UIImage(named: "personhome@3x")
         }
     }
     func failureDataReceive(_ message : String) {

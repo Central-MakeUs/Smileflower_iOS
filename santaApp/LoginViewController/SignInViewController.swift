@@ -149,7 +149,7 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
         }
     }
     @objc func actionSignIn() {
-        TrackingTool.Action(actionName: "action_do_email_login", param: <#T##[String : String]#>)
+        TrackingTool.Action(actionName: "action_do_email_login", param: ["":""])
         let input = SignInViewControllerInput(emailId: textFieldID.text ?? "", password: textFieldPassword.text ?? "")
         SignInViewControllerDataManager().appuserslogin(self, input)
     }

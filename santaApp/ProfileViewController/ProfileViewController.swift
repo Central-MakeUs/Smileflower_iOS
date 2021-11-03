@@ -39,10 +39,15 @@ class ProfileViewController : BaseViewController {
         viewSetUser()
         stackViewSet()
         viewSetImageCollection()
+        if let idx = Constant.userIdx {
+            ShowProfileDataManager().apiprofileuserIdx(self, idx)
+        }
+        else {
+            self.presentAlert(title: "네트워크 통신 장애")
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         if let idx = Constant.userIdx {
-            ShowProfileDataManager().apiprofileuserIdx(self, idx)
             ShowUserResultDataManager().apiprofileuserIdxresult(self, idx)
         }
         else {
@@ -400,7 +405,8 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionViewConquerMountain {
-            let nextVC = DetailPosteViewController()
+            let nextVC = DetailPostViewController()
+            print(indexPath.row)
             nextVC.userIdx = showProfileResult?.userIdx
             nextVC.indexPath = indexPath.row
             nextVC.modalPresentationStyle = .fullScreen
@@ -616,9 +622,7 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
                 inputImageProfile = image.jpegData(compressionQuality: 0.5)
                 ChangeProfileDataManager().apiprofileupload(inputImageProfile!, self)
             }
-            let nextVC = BaseTabbarController()
-            nextVC.index = 3
-            self.changeRootViewController(nextVC)
+            dismiss(animated: true, completion: nil)
         }
         else {
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -660,9 +664,7 @@ extension ProfileViewController {
         collectionViewConquerMountain.reloadData()
     }
     func successDataApiChangeProfileImage() {
-        if let idx = Constant.userIdx {
-            ShowProfileDataManager().apiprofileuserIdx(self, idx)
-        }
+        self.presentAlert(title: "사진 변경이 완료되었습니다.")
     }
     func successDataApiUserResult(_ result : ShowUserResultResponse) {
         showUserResultResult = result

@@ -26,6 +26,8 @@ class PickMountainViewController : BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        TrackingTool.Screen(screenName: "view_like_mountain")
         navigationBarSet()
         setlabelHasPicks()
         setRegister()
@@ -148,6 +150,7 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
         if let idx = mountainPicks[indexPath.row].mountainIdx, let mountainName = mountainPicks[indexPath.row].mountainName {
             let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
             nextVC.mountainIndex = idx
+            TrackingTool.Action(actionName: "action_go_detail_mountain_like", param: ["mountain_name":mountainName])
             nextVC.mountainName = mountainName
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve

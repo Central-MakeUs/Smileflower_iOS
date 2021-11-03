@@ -8,7 +8,7 @@
 import UIKit
 
 class AccountViewController : BaseViewController {
-    let arrayTitle : [String] = ["이메일"]
+    let arrayTitle : [String] = ["이메일", "탈퇴하기"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,7 @@ class AccountViewController : BaseViewController {
         tableViewContent.delegate = self
         tableViewContent.dataSource = self
         tableViewContent.register(AccountTableViewCell.self, forCellReuseIdentifier: AccountTableViewCell.identifier)
+        tableViewContent.register(ResignTableViewCell.self, forCellReuseIdentifier: ResignTableViewCell.identifier)
     }
     func setTableView() {
         tableViewContent.backgroundColor = UIColor(hex: 0xf4f4f5)
@@ -38,7 +39,7 @@ class AccountViewController : BaseViewController {
 
 extension AccountViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return arrayTitle.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -62,15 +63,32 @@ extension AccountViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier, for:indexPath)as?AccountTableViewCell
-        else {
-            fatalError("cant dequeue Cell")
-            }
-        cell.labelEmail.text = Constant.userEmail ?? ""
-        cell.selectionStyle = .none
-        cell.labelTitle.text = arrayTitle[indexPath.section]
-        cell.labelTitle.textColor = .darkbluegray
-        return cell
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.identifier, for:indexPath)as?AccountTableViewCell
+            else {
+                fatalError("cant dequeue Cell")
+                }
+            cell.labelEmail.text = Constant.userEmail ?? ""
+            cell.selectionStyle = .none
+            cell.labelTitle.text = arrayTitle[indexPath.section]
+            cell.labelTitle.textColor = .darkbluegray
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ResignTableViewCell.identifier, for:indexPath) as? ResignTableViewCell
+            else {
+                fatalError("cant dequeue Cell")
+                }
+            cell.selectionStyle = .none
+            cell.labelTitle.text = arrayTitle[indexPath.section]
+            cell.labelTitle.textColor = .darkbluegray
+            return cell
+        }
+       
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            print("click")
+        }
+    }
 }

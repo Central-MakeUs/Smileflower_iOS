@@ -11,5 +11,6 @@ class BaseViewController : UIViewController{
         super.viewDidLoad()
         view.backgroundColor = .white
         overrideUserInterfaceStyle = .light
+        self.navigationController?.navigationBar.isHidden = true
     }
 }

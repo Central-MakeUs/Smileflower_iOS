@@ -9,7 +9,7 @@ import UIKit
 
 class DetailPostCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = String(describing: DetailPostCollectionViewCell.self)
-    var detailPostViewController : DetailPosteViewController?
+    var detailPostViewController : DetailPostViewController?
     var userIdx : Int?
     var postsIdx : Int?
     var flagsIdx : Int?
