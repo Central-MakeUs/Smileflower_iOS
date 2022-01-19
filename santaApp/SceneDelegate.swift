@@ -16,12 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = scene as? UIWindowScene else { return }
         
+
+        
         // Window 설정
         window?.overrideUserInterfaceStyle = .light
         self.window = UIWindow(windowScene: scene)
         window?.rootViewController = SplashViewController()
         window?.makeKeyAndVisible()
-        
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

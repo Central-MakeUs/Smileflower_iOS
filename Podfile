@@ -26,3 +26,12 @@ target 'santaApp' do
   end
 
 end
+
+target 'santaApp copy' do
+pod 'SnapKit', '~> 5.0.0'
+  pod 'Alamofire', '~> 5.1'
+  pod 'BetterSegmentedControl', '~> 1.3'
+  pod 'Firebase/Analytics'
+  pod 'lottie-ios'
+  pod 'Kingfisher'
+end

@@ -13,7 +13,7 @@ extension UIViewController {
             window.rootViewController = viewControllerToPresent
             UIView.transition(with: window, duration: 0, options: .transitionCrossDissolve, animations: nil)
         } else {
-            viewControllerToPresent.modalPresentationStyle = .overFullScreen
+            viewControllerToPresent.modalPresentationStyle = .fullScreen
             self.present(viewControllerToPresent, animated: false, completion: nil)
         }
     }

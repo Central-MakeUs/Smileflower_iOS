@@ -50,9 +50,10 @@ class BaseTabbarController : UITabBarController, UITabBarControllerDelegate {
         }
     
     override func viewDidLoad() {
-        SetUpTabbarView()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
+        SetUpTabbarView()
         self.selectedIndex = index
     }
     override func viewDidLayoutSubviews() {

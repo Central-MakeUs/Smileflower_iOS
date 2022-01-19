@@ -20,7 +20,9 @@ class LoginViewController : BaseViewController {
         
         super.viewDidLoad()
         if boolautoLogin {
-            self.changeRootViewController(BaseTabbarController())
+            let nextVC = BaseTabbarController()
+            nextVC.index = 0
+            self.changeRootViewController(nextVC)
         }
         view.backgroundColor = .black
         imageSetBackground()

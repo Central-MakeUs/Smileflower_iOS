@@ -95,10 +95,7 @@ class SearchViewController: BaseViewController {
         }
     }
     @objc func actionBackView() {
-        let nextVC = BaseTabbarController()
-        nextVC.index = 0
-        self.changeRootViewController(nextVC)
-        
+        self.navigationController?.popViewController(animated: false)
     }
     // MARK: SearchBar
     func setSearchBar() {

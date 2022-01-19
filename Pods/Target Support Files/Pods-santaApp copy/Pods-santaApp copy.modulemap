@@ -1,0 +1,6 @@
+module Pods_santaApp_copy {
+  umbrella header "Pods-santaApp copy-umbrella.h"
+
+  export *
+  module * { export * }
+}

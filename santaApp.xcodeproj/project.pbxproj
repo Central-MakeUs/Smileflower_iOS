@@ -53,7 +53,6 @@
 		2828C0DA2732E7B1003ABAF5 /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288F26A0B6F7000B2EAA /* LogoutTableViewCell.swift */; };
 		2828C0DB2732E7B1003ABAF5 /* MountainCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */; };
 		2828C0DC2732E7B1003ABAF5 /* ShowUserResultDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AEE26A99B3C007E082D /* ShowUserResultDataManager.swift */; };
-		2828C0DD2732E7B1003ABAF5 /* ConquerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047E9268D942F00DEB2EC /* ConquerCollectionViewCell.swift */; };
 		2828C0DE2732E7B1003ABAF5 /* ChangeProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AC926A74534007E082D /* ChangeProfileDataManager.swift */; };
 		2828C0DF2732E7B1003ABAF5 /* ShowProlfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812067826A5FDCD00BDA266 /* ShowProlfileEntity.swift */; };
 		2828C0E02732E7B1003ABAF5 /* MountainLikeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B45E26A31AD200F32165 /* MountainLikeDataManager.swift */; };
@@ -88,7 +87,6 @@
 		2828C0FD2732E7B1003ABAF5 /* MountainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB5E0B26A1BA6B0092CC40 /* MountainDataManager.swift */; };
 		2828C0FE2732E7B1003ABAF5 /* CertificationNumInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479326AB3F05008E6831 /* CertificationNumInput.swift */; };
 		2828C0FF2732E7B1003ABAF5 /* CompleteSignUpEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882286F26A047E5000B2EAA /* CompleteSignUpEntity.swift */; };
-		2828C1002732E7B1003ABAF5 /* HomeVIewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873C1269CAFA10097E46F /* HomeVIewEntity.swift */; };
 		2828C1012732E7B1003ABAF5 /* TermsOfServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CB0026ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift */; };
 		2828C1022732E7B1003ABAF5 /* CompleteConqueredDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46C26A446ED00F32165 /* CompleteConqueredDataManager.swift */; };
 		2828C1032732E7B1003ABAF5 /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289656F6268F58EE00B23E8F /* CompleteViewController.swift */; };
@@ -101,7 +99,6 @@
 		2828C10A2732E7B1003ABAF5 /* MountainInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B48626A5798B00F32165 /* MountainInfoDataManager.swift */; };
 		2828C10B2732E7B1003ABAF5 /* CertificationNumberEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479026AB3EB4008E6831 /* CertificationNumberEntity.swift */; };
 		2828C10C2732E7B1003ABAF5 /* MapPositionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B46726A3280900F32165 /* MapPositionDataManager.swift */; };
-		2828C10D2732E7B1003ABAF5 /* HomeVIewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873BF269CAF940097E46F /* HomeVIewDataManager.swift */; };
 		2828C10E2732E7B1003ABAF5 /* MountainLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B45C26A317A600F32165 /* MountainLikeEntity.swift */; };
 		2828C10F2732E7B1003ABAF5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
 		2828C1102732E7B1003ABAF5 /* ConquerMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */; };
@@ -138,7 +135,6 @@
 		2828C12F2732E7B1003ABAF5 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890263E268F286E00D15BBA /* UIView.swift */; };
 		2828C1302732E7B1003ABAF5 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0479726AB4415008E6831 /* IndicatorView.swift */; };
 		2828C1312732E7B1003ABAF5 /* MyRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B47126A4A09B00F32165 /* MyRankingTableViewCell.swift */; };
-		2828C1322732E7B1003ABAF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C245268A2CEB0056EECF /* HomeViewController.swift */; };
 		2828C1332732E7B1003ABAF5 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AFB26AA523B007E082D /* ForgetPasswordViewController.swift */; };
 		2828C1342732E7B1003ABAF5 /* FlagsDeleteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AE426A9106E007E082D /* FlagsDeleteDataManager.swift */; };
 		2828C1352732E7B1003ABAF5 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288B26A0B263000B2EAA /* UserTableViewCell.swift */; };
@@ -183,8 +179,6 @@
 		2828C15C2732E7B1003ABAF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B33268A26B4002ABFA9 /* SceneDelegate.swift */; };
 		2828C15D2732E7B1003ABAF5 /* TrackingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E947672721435F00DF97E4 /* TrackingTool.swift */; };
 		2828C15E2732E7B1003ABAF5 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817F866269586CE004F39EC /* CourseTableViewCell.swift */; };
-		2828C1602732E7B1003ABAF5 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
-		2828C1612732E7B1003ABAF5 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
 		2828C1632732E7B1003ABAF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 281E2D2726EF06C800AE8339 /* InfoPlist.strings */; };
 		2828C1642732E7B1003ABAF5 /* lottieAnimaition.json in Resources */ = {isa = PBXBuildFile; fileRef = 28429A36271EB14A0007D7E6 /* lottieAnimaition.json */; };
 		2828C1662732E7B1003ABAF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28119B3D268A26B4002ABFA9 /* Assets.xcassets */; };
@@ -198,7 +192,6 @@
 		2828C1772732E9E8003ABAF5 /* ResignDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2828C1762732E9E8003ABAF5 /* ResignDataManager.swift */; };
 		2828C1782732E9E8003ABAF5 /* ResignDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2828C1762732E9E8003ABAF5 /* ResignDataManager.swift */; };
 		282FD6FC2694AD6B00B38602 /* ContentMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282FD6FB2694AD6B00B38602 /* ContentMountainViewController.swift */; };
-		283047EA268D942F00DEB2EC /* ConquerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047E9268D942F00DEB2EC /* ConquerCollectionViewCell.swift */; };
 		283047EF268E2B7700DEB2EC /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047EE268E2B7700DEB2EC /* StartViewController.swift */; };
 		283047F1268E3CAB00DEB2EC /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283047F0268E3CAB00DEB2EC /* EndViewController.swift */; };
 		2830CAF726AC958400DC3805 /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2830CAF626AC958400DC3805 /* TermsOfServiceViewController.swift */; };
@@ -265,14 +258,22 @@
 		2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289426A0C04C000B2EAA /* LogoutDataManager.swift */; };
 		2890263F268F286E00D15BBA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890263E268F286E00D15BBA /* UIView.swift */; };
 		289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289656F6268F58EE00B23E8F /* CompleteViewController.swift */; };
+		2899D869277225F200DDB4E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D868277225F200DDB4E1 /* HomeViewController.swift */; };
+		2899D86A277225F200DDB4E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D868277225F200DDB4E1 /* HomeViewController.swift */; };
+		2899D86F2772355100DDB4E1 /* ConquerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D86E2772355100DDB4E1 /* ConquerImageCollectionViewCell.swift */; };
+		2899D8702772355100DDB4E1 /* ConquerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D86E2772355100DDB4E1 /* ConquerImageCollectionViewCell.swift */; };
+		2899D87227723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D87127723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift */; };
+		2899D87327723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D87127723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift */; };
+		2899D8752772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D8742772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift */; };
+		2899D8762772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D8742772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift */; };
+		2899D8782779AE2800DDB4E1 /* CompeteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */; };
+		2899D8792779AE2800DDB4E1 /* CompeteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */; };
 		28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45D268CEB4700D40F35 /* CALayer.swift */; };
 		28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45F268CEB5F00D40F35 /* UITabBar.swift */; };
 		28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C461268CF38800D40F35 /* UISearchBar.swift */; };
 		28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208626937562001DBF5E /* ContentRankViewController.swift */; };
 		28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208826938026001DBF5E /* RankTableViewCell.swift */; };
 		28B52EA9268C793000017DCF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B52EA8268C793000017DCF /* UIImage.swift */; };
-		28B873C0269CAF940097E46F /* HomeVIewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873BF269CAF940097E46F /* HomeVIewDataManager.swift */; };
-		28B873C2269CAFA10097E46F /* HomeVIewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873C1269CAFA10097E46F /* HomeVIewEntity.swift */; };
 		28B873C9269CD4C70097E46F /* GoViewControllerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B873C8269CD4C70097E46F /* GoViewControllerDataManager.swift */; };
 		28C0478226AB2A5C008E6831 /* ForgetPasswordEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478126AB2A5C008E6831 /* ForgetPasswordEntity.swift */; };
 		28C0478426AB2AD7008E6831 /* ForgetPasswordDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C0478326AB2AD7008E6831 /* ForgetPasswordDataManager.swift */; };
@@ -287,7 +288,6 @@
 		28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C239268A29660056EECF /* BaseViewController.swift */; };
 		28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23C268A2A1D0056EECF /* SplashViewController.swift */; };
 		28D4C23F268A2BD90056EECF /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C23E268A2BD90056EECF /* BaseTabBarController.swift */; };
-		28D4C246268A2CEB0056EECF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C245268A2CEB0056EECF /* HomeViewController.swift */; };
 		28D4C248268A2D290056EECF /* PickMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C247268A2D290056EECF /* PickMountainViewController.swift */; };
 		28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C249268A2D720056EECF /* GoViewController.swift */; };
 		28D4C24D268A2D9F0056EECF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */; };
@@ -295,13 +295,19 @@
 		28D4C251268A30800056EECF /* UiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D4C250268A30800056EECF /* UiViewController.swift */; };
 		28DB5E0A26A1B9C50092CC40 /* MountainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB5E0926A1B9C50092CC40 /* MountainEntity.swift */; };
 		28DB5E0C26A1BA6B0092CC40 /* MountainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB5E0B26A1BA6B0092CC40 /* MountainDataManager.swift */; };
+		28DB68592785A60100856198 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB68582785A60100856198 /* HomeModel.swift */; };
+		28DB685A2785A60100856198 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB68582785A60100856198 /* HomeModel.swift */; };
+		28DB685C2785AA6500856198 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB685B2785AA6500856198 /* HomeViewModel.swift */; };
+		28DB685D2785AA6500856198 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB685B2785AA6500856198 /* HomeViewModel.swift */; };
 		28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E81B44268CC0E000B537A5 /* UILabel.swift */; };
 		28E947642721421F00DF97E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E947632721421F00DF97E4 /* GoogleService-Info.plist */; };
 		28E947682721435F00DF97E4 /* TrackingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E947672721435F00DF97E4 /* TrackingTool.swift */; };
 		28F41B53269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */; };
 		304761CC34CA9C3440DAC9F3 /* Pods_santaApp_santaAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */; };
 		6FE9D7F6B8AF92900F0DC780 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
+		7AA8DDBB86A3EB4A531FC338 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
 		8B9AC9B6DBEC5526DC7DB9A3 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
+		A089E5158ACBA0AC1D3BD376 /* libPods-santaApp copy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E97954B022F3470FBBB390 /* libPods-santaApp copy.a */; };
 		B43FF98A22C6384FD9889F4E /* Pods_santaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF72992B7F525FC3EBEDE0 /* Pods_santaAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -324,6 +330,7 @@
 
 /* Begin PBXFileReference section */
 		132ECA024641672E7C0A9EFA /* Pods-santaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaAppTests.release.xcconfig"; path = "Target Support Files/Pods-santaAppTests/Pods-santaAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		143EC1B4057463381DF1AC7E /* Pods-santaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp.debug.xcconfig"; path = "Target Support Files/Pods-santaApp/Pods-santaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		28013ABE26A6F34F007E082D /* PositionCourseAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCourseAnnotationView.swift; sourceTree = "<group>"; };
 		28013AC226A7252D007E082D /* RegisterImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageEntity.swift; sourceTree = "<group>"; };
 		28013AC426A725D0007E082D /* RegisterImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterImageDataManager.swift; sourceTree = "<group>"; };
@@ -378,7 +385,6 @@
 		2828C1732732E9A9003ABAF5 /* ResignEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignEntity.swift; sourceTree = "<group>"; };
 		2828C1762732E9E8003ABAF5 /* ResignDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignDataManager.swift; sourceTree = "<group>"; };
 		282FD6FB2694AD6B00B38602 /* ContentMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMountainViewController.swift; sourceTree = "<group>"; };
-		283047E9268D942F00DEB2EC /* ConquerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerCollectionViewCell.swift; sourceTree = "<group>"; };
 		283047EE268E2B7700DEB2EC /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		283047F0268E3CAB00DEB2EC /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		2830CAF626AC958400DC3805 /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
@@ -445,14 +451,17 @@
 		2882289426A0C04C000B2EAA /* LogoutDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutDataManager.swift; sourceTree = "<group>"; };
 		2890263E268F286E00D15BBA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		289656F6268F58EE00B23E8F /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
+		2899D868277225F200DDB4E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2899D86E2772355100DDB4E1 /* ConquerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		2899D87127723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltitudeRankingTableViewCell.swift; sourceTree = "<group>"; };
+		2899D8742772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltitudeRankingCollectionViewCell.swift; sourceTree = "<group>"; };
+		2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompeteCollectionViewCell.swift; sourceTree = "<group>"; };
 		28A0C45D268CEB4700D40F35 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		28A0C45F268CEB5F00D40F35 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
 		28A0C461268CF38800D40F35 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		28B3208626937562001DBF5E /* ContentRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRankViewController.swift; sourceTree = "<group>"; };
 		28B3208826938026001DBF5E /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		28B52EA8268C793000017DCF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		28B873BF269CAF940097E46F /* HomeVIewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewDataManager.swift; sourceTree = "<group>"; };
-		28B873C1269CAFA10097E46F /* HomeVIewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewEntity.swift; sourceTree = "<group>"; };
 		28B873C8269CD4C70097E46F /* GoViewControllerDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewControllerDataManager.swift; sourceTree = "<group>"; };
 		28C0478126AB2A5C008E6831 /* ForgetPasswordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordEntity.swift; sourceTree = "<group>"; };
 		28C0478326AB2AD7008E6831 /* ForgetPasswordDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordDataManager.swift; sourceTree = "<group>"; };
@@ -467,7 +476,6 @@
 		28D4C239268A29660056EECF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		28D4C23C268A2A1D0056EECF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		28D4C23E268A2BD90056EECF /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		28D4C245268A2CEB0056EECF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		28D4C247268A2D290056EECF /* PickMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMountainViewController.swift; sourceTree = "<group>"; };
 		28D4C249268A2D720056EECF /* GoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewController.swift; sourceTree = "<group>"; };
 		28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -475,18 +483,22 @@
 		28D4C250268A30800056EECF /* UiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewController.swift; sourceTree = "<group>"; };
 		28DB5E0926A1B9C50092CC40 /* MountainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainEntity.swift; sourceTree = "<group>"; };
 		28DB5E0B26A1BA6B0092CC40 /* MountainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainDataManager.swift; sourceTree = "<group>"; };
+		28DB68582785A60100856198 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		28DB685B2785AA6500856198 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		28E81B44268CC0E000B537A5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		28E947632721421F00DF97E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28E947652721428C00DF97E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28E947672721435F00DF97E4 /* TrackingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingTool.swift; sourceTree = "<group>"; };
 		28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendMountainCollectionViewCell.swift; sourceTree = "<group>"; };
+		39E97954B022F3470FBBB390 /* libPods-santaApp copy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-santaApp copy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF4A2762B2EE01585E42D55 /* Pods-santaApp-santaAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp-santaAppUITests.release.xcconfig"; path = "Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp_santaAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76DAA9105B4C044452A1198D /* Pods-santaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp.release.xcconfig"; path = "Target Support Files/Pods-santaApp/Pods-santaApp.release.xcconfig"; sourceTree = "<group>"; };
 		7E7D31A3F4F65FC5401A04AF /* Pods-santaApp-santaAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp-santaAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E205269D1D340C89152B39A /* Pods_santaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00017E8A57BF4032D6A4AD2 /* Pods-santaApp copy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp copy.release.xcconfig"; path = "Target Support Files/Pods-santaApp copy/Pods-santaApp copy.release.xcconfig"; sourceTree = "<group>"; };
+		BD8DB193976E07C29F7C5302 /* Pods-santaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp.release.xcconfig"; path = "Target Support Files/Pods-santaApp/Pods-santaApp.release.xcconfig"; sourceTree = "<group>"; };
 		C3FF72992B7F525FC3EBEDE0 /* Pods_santaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6355205229EE49631B5C1A0 /* Pods-santaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp.debug.xcconfig"; path = "Target Support Files/Pods-santaApp/Pods-santaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		D22CB3B5A812D59507DA44DC /* Pods-santaApp copy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp copy.debug.xcconfig"; path = "Target Support Files/Pods-santaApp copy/Pods-santaApp copy.debug.xcconfig"; sourceTree = "<group>"; };
 		D885E51C7B04E3EB2FA4AC74 /* Pods-santaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-santaAppTests/Pods-santaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -497,6 +509,7 @@
 			files = (
 				8B9AC9B6DBEC5526DC7DB9A3 /* Pods_santaApp.framework in Frameworks */,
 				6FE9D7F6B8AF92900F0DC780 /* Pods_santaApp.framework in Frameworks */,
+				7AA8DDBB86A3EB4A531FC338 /* Pods_santaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,8 +533,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2828C1602732E7B1003ABAF5 /* Pods_santaApp.framework in Frameworks */,
-				2828C1612732E7B1003ABAF5 /* Pods_santaApp.framework in Frameworks */,
+				A089E5158ACBA0AC1D3BD376 /* libPods-santaApp copy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,11 +688,13 @@
 		28119B30268A26B4002ABFA9 /* santaApp */ = {
 			isa = PBXGroup;
 			children = (
+				2899D866277225CA00DDB4E1 /* View */,
+				2899D865277225C100DDB4E1 /* ViewModel */,
+				2899D864277225B800DDB4E1 /* Model */,
 				28E947632721421F00DF97E4 /* GoogleService-Info.plist */,
 				28429A36271EB14A0007D7E6 /* lottieAnimaition.json */,
 				28119B64268A276F002ABFA9 /* Configuration */,
 				2813D835268B72A100822337 /* LoginViewController */,
-				28D4C240268A2C440056EECF /* HomeViewController */,
 				28D4C241268A2C4F0056EECF /* PickMountainController */,
 				28D4C242268A2C950056EECF /* GoViewController */,
 				28D4C243268A2CAB0056EECF /* ProfileViewController */,
@@ -1045,6 +1059,66 @@
 			path = LogoutApi;
 			sourceTree = "<group>";
 		};
+		2899D864277225B800DDB4E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28DB68582785A60100856198 /* HomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2899D865277225C100DDB4E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				28DB685B2785AA6500856198 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2899D866277225CA00DDB4E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2899D86C2772351A00DDB4E1 /* Cell */,
+				2899D86B2772351100DDB4E1 /* Controllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2899D867277225D300DDB4E1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2899D868277225F200DDB4E1 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2899D86B2772351100DDB4E1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2899D867277225D300DDB4E1 /* Home */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2899D86C2772351A00DDB4E1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2899D86D2772352800DDB4E1 /* Home */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		2899D86D2772352800DDB4E1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2899D86E2772355100DDB4E1 /* ConquerImageCollectionViewCell.swift */,
+				2899D8742772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift */,
+				2899D87127723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift */,
+				2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		28B873C5269CD4950097E46F /* GoViewControllerAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1092,17 +1166,6 @@
 				2882288926A0A0B3000B2EAA /* AutoLoginEntity.swift */,
 			);
 			path = Splash;
-			sourceTree = "<group>";
-		};
-		28D4C240268A2C440056EECF /* HomeViewController */ = {
-			isa = PBXGroup;
-			children = (
-				28D4C245268A2CEB0056EECF /* HomeViewController.swift */,
-				283047E9268D942F00DEB2EC /* ConquerCollectionViewCell.swift */,
-				28B873BF269CAF940097E46F /* HomeVIewDataManager.swift */,
-				28B873C1269CAFA10097E46F /* HomeVIewEntity.swift */,
-			);
-			path = HomeViewController;
 			sourceTree = "<group>";
 		};
 		28D4C241268A2C4F0056EECF /* PickMountainController */ = {
@@ -1194,8 +1257,10 @@
 				3FF4A2762B2EE01585E42D55 /* Pods-santaApp-santaAppUITests.release.xcconfig */,
 				D885E51C7B04E3EB2FA4AC74 /* Pods-santaAppTests.debug.xcconfig */,
 				132ECA024641672E7C0A9EFA /* Pods-santaAppTests.release.xcconfig */,
-				C6355205229EE49631B5C1A0 /* Pods-santaApp.debug.xcconfig */,
-				76DAA9105B4C044452A1198D /* Pods-santaApp.release.xcconfig */,
+				143EC1B4057463381DF1AC7E /* Pods-santaApp.debug.xcconfig */,
+				BD8DB193976E07C29F7C5302 /* Pods-santaApp.release.xcconfig */,
+				D22CB3B5A812D59507DA44DC /* Pods-santaApp copy.debug.xcconfig */,
+				A00017E8A57BF4032D6A4AD2 /* Pods-santaApp copy.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1206,6 +1271,7 @@
 				9E205269D1D340C89152B39A /* Pods_santaApp.framework */,
 				607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */,
 				C3FF72992B7F525FC3EBEDE0 /* Pods_santaAppTests.framework */,
+				39E97954B022F3470FBBB390 /* libPods-santaApp copy.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1275,11 +1341,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2828C16C2732E7B1003ABAF5 /* Build configuration list for PBXNativeTarget "santaApp copy" */;
 			buildPhases = (
-				2828C0D72732E7B1003ABAF5 /* [CP] Check Pods Manifest.lock */,
+				EA6286C388998615B9A2CC79 /* [CP] Check Pods Manifest.lock */,
 				2828C0D82732E7B1003ABAF5 /* Sources */,
 				2828C15F2732E7B1003ABAF5 /* Frameworks */,
 				2828C1622732E7B1003ABAF5 /* Resources */,
-				2828C16B2732E7B1003ABAF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1416,45 +1481,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2828C0D72732E7B1003ABAF5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-santaApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2828C16B2732E7B1003ABAF5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-santaApp/Pods-santaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-santaApp/Pods-santaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-santaApp/Pods-santaApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5D159BF449649488E6382401 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1521,6 +1547,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EA6286C388998615B9A2CC79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-santaApp copy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1532,7 +1580,6 @@
 				2882289026A0B6F7000B2EAA /* LogoutTableViewCell.swift in Sources */,
 				28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */,
 				28013AEF26A99B3C007E082D /* ShowUserResultDataManager.swift in Sources */,
-				283047EA268D942F00DEB2EC /* ConquerCollectionViewCell.swift in Sources */,
 				28013ACA26A74534007E082D /* ChangeProfileDataManager.swift in Sources */,
 				2828C1742732E9A9003ABAF5 /* ResignEntity.swift in Sources */,
 				2812067926A5FDCD00BDA266 /* ShowProlfileEntity.swift in Sources */,
@@ -1568,7 +1615,6 @@
 				28DB5E0C26A1BA6B0092CC40 /* MountainDataManager.swift in Sources */,
 				28C0479426AB3F05008E6831 /* CertificationNumInput.swift in Sources */,
 				2882287026A047E5000B2EAA /* CompleteSignUpEntity.swift in Sources */,
-				28B873C2269CAFA10097E46F /* HomeVIewEntity.swift in Sources */,
 				2830CB0126ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift in Sources */,
 				2871B46D26A446ED00F32165 /* CompleteConqueredDataManager.swift in Sources */,
 				289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */,
@@ -1581,7 +1627,6 @@
 				2871B48726A5798B00F32165 /* MountainInfoDataManager.swift in Sources */,
 				28C0479126AB3EB4008E6831 /* CertificationNumberEntity.swift in Sources */,
 				2871B46826A3280900F32165 /* MapPositionDataManager.swift in Sources */,
-				28B873C0269CAF940097E46F /* HomeVIewDataManager.swift in Sources */,
 				2871B45D26A317A600F32165 /* MountainLikeEntity.swift in Sources */,
 				28645186268C98A5009F3608 /* Color.swift in Sources */,
 				28810B0626970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift in Sources */,
@@ -1599,30 +1644,35 @@
 				2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */,
 				2882287B26A06115000B2EAA /* SignInViewControllerEntity.swift in Sources */,
 				2882287926A06106000B2EAA /* SignInViewControllerInput.swift in Sources */,
+				28DB68592785A60100856198 /* HomeModel.swift in Sources */,
 				2828C1772732E9E8003ABAF5 /* ResignDataManager.swift in Sources */,
 				2871B46B26A4455800F32165 /* CompleteConqueredEntitiy.swift in Sources */,
 				2817F8642694D20A004F39EC /* ConquerViewController.swift in Sources */,
 				28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */,
 				2882288226A07956000B2EAA /* EndViewControllerDataManager.swift in Sources */,
+				2899D87227723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift in Sources */,
 				28C0478B26AB327A008E6831 /* CheckEmailEntity.swift in Sources */,
 				28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */,
 				282FD6FC2694AD6B00B38602 /* ContentMountainViewController.swift in Sources */,
 				2871B47926A4B62800F32165 /* MonutainSearchInput.swift in Sources */,
 				28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */,
+				2899D86F2772355100DDB4E1 /* ConquerImageCollectionViewCell.swift in Sources */,
 				2830CAF726AC958400DC3805 /* TermsOfServiceViewController.swift in Sources */,
 				28013AEA26A911CF007E082D /* ReportUserFlagsDataManager.swift in Sources */,
 				28D4C251268A30800056EECF /* UiViewController.swift in Sources */,
 				28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */,
 				28C0478426AB2AD7008E6831 /* ForgetPasswordDataManager.swift in Sources */,
+				2899D869277225F200DDB4E1 /* HomeViewController.swift in Sources */,
 				2830CAFC26AC991800DC3805 /* AccountViewController.swift in Sources */,
 				2882288026A0794A000B2EAA /* EndViewControllerEntity.swift in Sources */,
 				2890263F268F286E00D15BBA /* UIView.swift in Sources */,
 				28C0479826AB4415008E6831 /* IndicatorView.swift in Sources */,
 				2871B47226A4A09B00F32165 /* MyRankingTableViewCell.swift in Sources */,
-				28D4C246268A2CEB0056EECF /* HomeViewController.swift in Sources */,
 				28013AFC26AA523B007E082D /* ForgetPasswordViewController.swift in Sources */,
+				2899D8782779AE2800DDB4E1 /* CompeteCollectionViewCell.swift in Sources */,
 				28013AE526A9106E007E082D /* FlagsDeleteDataManager.swift in Sources */,
 				2882288C26A0B263000B2EAA /* UserTableViewCell.swift in Sources */,
+				28DB685C2785AA6500856198 /* HomeViewModel.swift in Sources */,
 				28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */,
 				2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */,
 				28013ABF26A6F34F007E082D /* PositionCourseAnnotationView.swift in Sources */,
@@ -1640,6 +1690,7 @@
 				28822868269F4690000B2EAA /* CheckNicnameEntity.swift in Sources */,
 				28013AF226AA3D27007E082D /* FlagMapViewController.swift in Sources */,
 				2882288A26A0A0B3000B2EAA /* AutoLoginEntity.swift in Sources */,
+				2899D8752772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift in Sources */,
 				28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */,
 				2882287626A05C36000B2EAA /* SignInViewController.swift in Sources */,
 				28DB5E0A26A1B9C50092CC40 /* MountainEntity.swift in Sources */,
@@ -1691,7 +1742,6 @@
 				2828C0DA2732E7B1003ABAF5 /* LogoutTableViewCell.swift in Sources */,
 				2828C0DB2732E7B1003ABAF5 /* MountainCourseTableViewCell.swift in Sources */,
 				2828C0DC2732E7B1003ABAF5 /* ShowUserResultDataManager.swift in Sources */,
-				2828C0DD2732E7B1003ABAF5 /* ConquerCollectionViewCell.swift in Sources */,
 				2828C0DE2732E7B1003ABAF5 /* ChangeProfileDataManager.swift in Sources */,
 				2828C1752732E9A9003ABAF5 /* ResignEntity.swift in Sources */,
 				2828C0DF2732E7B1003ABAF5 /* ShowProlfileEntity.swift in Sources */,
@@ -1727,7 +1777,6 @@
 				2828C0FD2732E7B1003ABAF5 /* MountainDataManager.swift in Sources */,
 				2828C0FE2732E7B1003ABAF5 /* CertificationNumInput.swift in Sources */,
 				2828C0FF2732E7B1003ABAF5 /* CompleteSignUpEntity.swift in Sources */,
-				2828C1002732E7B1003ABAF5 /* HomeVIewEntity.swift in Sources */,
 				2828C1012732E7B1003ABAF5 /* TermsOfServiceDetailViewController.swift in Sources */,
 				2828C1022732E7B1003ABAF5 /* CompleteConqueredDataManager.swift in Sources */,
 				2828C1032732E7B1003ABAF5 /* CompleteViewController.swift in Sources */,
@@ -1740,7 +1789,6 @@
 				2828C10A2732E7B1003ABAF5 /* MountainInfoDataManager.swift in Sources */,
 				2828C10B2732E7B1003ABAF5 /* CertificationNumberEntity.swift in Sources */,
 				2828C10C2732E7B1003ABAF5 /* MapPositionDataManager.swift in Sources */,
-				2828C10D2732E7B1003ABAF5 /* HomeVIewDataManager.swift in Sources */,
 				2828C10E2732E7B1003ABAF5 /* MountainLikeEntity.swift in Sources */,
 				2828C10F2732E7B1003ABAF5 /* Color.swift in Sources */,
 				2828C1102732E7B1003ABAF5 /* ConquerMountainCollectionViewCell.swift in Sources */,
@@ -1758,30 +1806,35 @@
 				2828C11C2732E7B1003ABAF5 /* GoViewControllerEntity.swift in Sources */,
 				2828C11D2732E7B1003ABAF5 /* SignInViewControllerEntity.swift in Sources */,
 				2828C11E2732E7B1003ABAF5 /* SignInViewControllerInput.swift in Sources */,
+				28DB685A2785A60100856198 /* HomeModel.swift in Sources */,
 				2828C1782732E9E8003ABAF5 /* ResignDataManager.swift in Sources */,
 				2828C11F2732E7B1003ABAF5 /* CompleteConqueredEntitiy.swift in Sources */,
 				2828C1202732E7B1003ABAF5 /* ConquerViewController.swift in Sources */,
 				2828C1212732E7B1003ABAF5 /* UITabBar.swift in Sources */,
 				2828C1222732E7B1003ABAF5 /* EndViewControllerDataManager.swift in Sources */,
+				2899D87327723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift in Sources */,
 				2828C1232732E7B1003ABAF5 /* CheckEmailEntity.swift in Sources */,
 				2828C1242732E7B1003ABAF5 /* RankTableViewCell.swift in Sources */,
 				2828C1252732E7B1003ABAF5 /* ContentMountainViewController.swift in Sources */,
 				2828C1262732E7B1003ABAF5 /* MonutainSearchInput.swift in Sources */,
 				2828C1272732E7B1003ABAF5 /* MountainImageTableViewCell.swift in Sources */,
+				2899D8702772355100DDB4E1 /* ConquerImageCollectionViewCell.swift in Sources */,
 				2828C1282732E7B1003ABAF5 /* TermsOfServiceViewController.swift in Sources */,
 				2828C1292732E7B1003ABAF5 /* ReportUserFlagsDataManager.swift in Sources */,
 				2828C12A2732E7B1003ABAF5 /* UiViewController.swift in Sources */,
 				2828C12B2732E7B1003ABAF5 /* GoViewController.swift in Sources */,
 				2828C12C2732E7B1003ABAF5 /* ForgetPasswordDataManager.swift in Sources */,
+				2899D86A277225F200DDB4E1 /* HomeViewController.swift in Sources */,
 				2828C12D2732E7B1003ABAF5 /* AccountViewController.swift in Sources */,
 				2828C12E2732E7B1003ABAF5 /* EndViewControllerEntity.swift in Sources */,
 				2828C12F2732E7B1003ABAF5 /* UIView.swift in Sources */,
 				2828C1302732E7B1003ABAF5 /* IndicatorView.swift in Sources */,
 				2828C1312732E7B1003ABAF5 /* MyRankingTableViewCell.swift in Sources */,
-				2828C1322732E7B1003ABAF5 /* HomeViewController.swift in Sources */,
 				2828C1332732E7B1003ABAF5 /* ForgetPasswordViewController.swift in Sources */,
+				2899D8792779AE2800DDB4E1 /* CompeteCollectionViewCell.swift in Sources */,
 				2828C1342732E7B1003ABAF5 /* FlagsDeleteDataManager.swift in Sources */,
 				2828C1352732E7B1003ABAF5 /* UserTableViewCell.swift in Sources */,
+				28DB685D2785AA6500856198 /* HomeViewModel.swift in Sources */,
 				2828C1362732E7B1003ABAF5 /* DetailPostCollectionViewCell.swift in Sources */,
 				2828C1372732E7B1003ABAF5 /* LogoutDataManager.swift in Sources */,
 				2828C1382732E7B1003ABAF5 /* PositionCourseAnnotationView.swift in Sources */,
@@ -1799,6 +1852,7 @@
 				2828C1442732E7B1003ABAF5 /* CheckNicnameEntity.swift in Sources */,
 				2828C1452732E7B1003ABAF5 /* FlagMapViewController.swift in Sources */,
 				2828C1462732E7B1003ABAF5 /* AutoLoginEntity.swift in Sources */,
+				2899D8762772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift in Sources */,
 				2828C1472732E7B1003ABAF5 /* SplashViewController.swift in Sources */,
 				2828C1482732E7B1003ABAF5 /* SignInViewController.swift in Sources */,
 				2828C1492732E7B1003ABAF5 /* MountainEntity.swift in Sources */,
@@ -1974,7 +2028,7 @@
 		};
 		28119B5C268A26B5002ABFA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6355205229EE49631B5C1A0 /* Pods-santaApp.debug.xcconfig */;
+			baseConfigurationReference = 143EC1B4057463381DF1AC7E /* Pods-santaApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2000,7 +2054,7 @@
 		};
 		28119B5D268A26B5002ABFA9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76DAA9105B4C044452A1198D /* Pods-santaApp.release.xcconfig */;
+			baseConfigurationReference = BD8DB193976E07C29F7C5302 /* Pods-santaApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2110,7 +2164,7 @@
 		};
 		2828C16D2732E7B1003ABAF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6355205229EE49631B5C1A0 /* Pods-santaApp.debug.xcconfig */;
+			baseConfigurationReference = D22CB3B5A812D59507DA44DC /* Pods-santaApp copy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -2137,7 +2191,7 @@
 		};
 		2828C16E2732E7B1003ABAF5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76DAA9105B4C044452A1198D /* Pods-santaApp.release.xcconfig */;
+			baseConfigurationReference = A00017E8A57BF4032D6A4AD2 /* Pods-santaApp copy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
