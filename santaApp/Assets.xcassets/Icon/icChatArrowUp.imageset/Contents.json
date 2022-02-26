@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "로그인화면5.png",
+      "filename" : "icChatArrowUp.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icChatArrowUp@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icChatArrowUp@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "로그인화면5.png",
+      "filename" : "icSignupCheckboxCircle.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icSignupCheckboxCircle@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icSignupCheckboxCircle@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
