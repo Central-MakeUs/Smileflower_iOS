@@ -6,11 +6,11 @@
 //
 
 import UIKit
-class BaseViewController : UIViewController{
+class BaseViewController : UIViewController, UINavigationBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         overrideUserInterfaceStyle = .light
-        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
     }
 }

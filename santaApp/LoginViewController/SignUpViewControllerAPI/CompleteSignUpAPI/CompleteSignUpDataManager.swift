@@ -12,6 +12,7 @@ class CompleteSignUpDataManager {
         AF.request(Constant.baseURL + "/app/users", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default).validate().responseDecodable(of: CompleteSignUpEntity.self) { response in
             switch response.result {
             case .success(let response):
+                print(response.message)
                 if response.isSuccess, let result = response.result {
                     viewcontroller.successDataAndCompleteApi(result)
                 }

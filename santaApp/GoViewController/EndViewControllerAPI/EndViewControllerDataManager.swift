@@ -20,8 +20,6 @@ class EndViewControllerDataManager {
 
         AF.upload(multipartFormData: { MultipartFormData in
             for (key, value) in parameters {
-                print(key)
-                print(value)
                 MultipartFormData.append("\(value)".data(using: .utf8)!, withName: key, mimeType: "application/json") }
             MultipartFormData.append(dataimg, withName: "file", fileName: "a.jpg", mimeType: "multipart/form-data")
         }, to: Constant.baseURL + "/api/flag/\(mountainIdx)", method: .post ,headers: headers).responseDecodable(of: EndViewControllerEntity.self) { response in
@@ -34,6 +32,9 @@ class EndViewControllerDataManager {
                     } else {
                         viewcontroller.successDataImageRegister()
                     }
+                }
+                else if !response.success, let error = response.error {
+                    viewcontroller.failureDataImageRegister(error.message ?? "")
                 }
                 else {
                     viewcontroller.failureDataImageRegister(response.error!.message!)

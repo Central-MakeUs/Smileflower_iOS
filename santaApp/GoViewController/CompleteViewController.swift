@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class CompleteViewController : BaseViewController, UINavigationBarDelegate  {
+class CompleteViewController : BaseViewController  {
     let imageViewComplete = UIImageView()
     let buttonGoConquerMountainView = UIButton()
     let viewRank = UIView()

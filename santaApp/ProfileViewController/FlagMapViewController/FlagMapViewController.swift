@@ -103,7 +103,7 @@ class FlagMapViewController : BaseViewController {
     }
 }
 
-extension FlagMapViewController : MKMapViewDelegate, UINavigationBarDelegate {
+extension FlagMapViewController : MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         for i in mountainFlagResult {
             if annotation.title == i.mountainName {

@@ -611,7 +611,7 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         }
     }
 }
-//MAKR: 이미지픽 사용
+//MARK: 이미지픽 사용
 extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var inputImageMountain : Data?

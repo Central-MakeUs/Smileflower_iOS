@@ -8,6 +8,9 @@
 import UIKit
 import Firebase
 import CoreData
+import KakaoSDKAuth
+import KakaoSDKCommon
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,10 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         
         FirebaseApp.configure()
-//
+        KakaoSDK.initSDK(appKey: "b8283395d2fbdb3b57401eb63e1040d7")
         return true
     }
-    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

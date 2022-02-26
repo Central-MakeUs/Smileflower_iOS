@@ -9,6 +9,11 @@ import UIKit
 
 class ConquerImageCollectionViewCell: UICollectionViewCell {
     static let resueidentifier = "ConquerImageCollectionViewCell"
+    let viewContent : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
     override init(frame: CGRect) {
         super.init(frame: frame)
         setContentView()
@@ -17,7 +22,7 @@ class ConquerImageCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    let viewContent = UIView()
+        
     // 유저 이미지
     let imageViewUserProfile : UIImageView = {
        let imageView = UIImageView()
@@ -87,56 +92,61 @@ class ConquerImageCollectionViewCell: UICollectionViewCell {
     
     //MARK: 뷰 구성
     func setContentView() {
-        addSubview(imageViewUserProfile)
+        contentView.addSubview(viewContent)
+        viewContent.snp.makeConstraints { make in
+            make.edges.equalTo(self)
+        }
+        
+        viewContent.addSubview(imageViewUserProfile)
         imageViewUserProfile.snp.makeConstraints { make in
             make.width.height.equalTo(22.4)
-            make.top.equalTo(self).offset(7)
-            make.leading.equalTo(self).offset(8.6)
+            make.top.equalTo(viewContent).offset(7)
+            make.leading.equalTo(viewContent).offset(8.6)
         }
         
-        addSubview(labelUserLv)
+        viewContent.addSubview(labelUserLv)
         labelUserLv.snp.makeConstraints { make in
             make.leading.equalTo(imageViewUserProfile.snp.trailing).offset(8)
-            make.top.equalTo(self).offset(9)
+            make.top.equalTo(viewContent).offset(9)
         }
         
-        addSubview(labelUserNickName)
+        viewContent.addSubview(labelUserNickName)
         labelUserNickName.snp.makeConstraints { make in
             make.leading.equalTo(labelUserLv)
             make.top.equalTo(labelUserLv.snp.bottom).offset(-2)
-            make.trailing.equalTo(self).offset(-118)
+            make.trailing.equalTo(viewContent).offset(-118)
         }
         
-        addSubview(labelPostMessageNumber)
+        viewContent.addSubview(labelPostMessageNumber)
         labelPostMessageNumber.snp.makeConstraints { make in
             make.trailing.equalTo(contentView).offset(-10.1)
-            make.top.equalTo(self).offset(13)
+            make.top.equalTo(viewContent).offset(13)
         }
         
-        addSubview(imageViewPostMessage)
+        viewContent.addSubview(imageViewPostMessage)
         imageViewPostMessage.snp.makeConstraints { make in
             make.width.height.equalTo(15)
-            make.top.equalTo(self).offset(11.6)
+            make.top.equalTo(viewContent).offset(11.6)
             make.trailing.equalTo(labelPostMessageNumber.snp.leading).offset(-3.9)
         }
         
-        addSubview(labelPostLikeNumber)
+        viewContent.addSubview(labelPostLikeNumber)
         labelPostLikeNumber.snp.makeConstraints { make in
             make.trailing.equalTo(imageViewPostMessage.snp.leading).offset(-3.9)
-            make.top.equalTo(self).offset(13)
+            make.top.equalTo(viewContent).offset(13)
         }
         
-        addSubview(imageViewLike)
+        viewContent.addSubview(imageViewLike)
         imageViewLike.snp.makeConstraints { make in
             make.trailing.equalTo(labelPostLikeNumber.snp.leading).offset(-2.9)
-            make.top.equalTo(self).offset(12)
+            make.top.equalTo(viewContent).offset(12)
             make.width.height.equalTo(15)
         }
         
-        addSubview(imageViewUserConquer)
+        viewContent.addSubview(imageViewUserConquer)
         imageViewUserConquer.snp.makeConstraints { make in
             make.top.equalTo(imageViewUserProfile.snp.bottom).offset(5)
-            make.trailing.leading.bottom.equalTo(self)
+            make.trailing.leading.bottom.equalTo(viewContent)
         }
     }
 }

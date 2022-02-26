@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class SignUpViewController : BaseViewController, UINavigationBarDelegate {
+class SignUpViewController : BaseViewController {
     var boolOverlap : Bool = false
     var boolisitImail : Bool = false
     
@@ -26,71 +26,40 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         setTextFieldNicname()
         setButtonNicnameOverlap()
         setButtonSignUp()
-        setLabelContract()
+        setCheckEmailGood()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(actionEmailOKAppearAndDisAppear), name: NSNotification.Name("animatedEmailCheck"), object: nil)
         setNotification()
+    }
+    
+    @objc func actionEmailOKAppearAndDisAppear() {
+        viewIDBorder.backgroundColor = .mainColor
+        
+        UIView.animate(withDuration: 1) {
+            self.viewCheckEmailGood.alpha = 1
+        } completion: { finished in
+            UIView.animate(withDuration: 2, animations: {
+                self.viewCheckEmailGood.alpha = 0
+            }, completion: nil)
+        }
+
     }
     override func viewDidDisappear(_ animated: Bool) {
         removeKeyboardNotifications()
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("animatedEmailCheck"), object: nil)
     }
     
-    let borderID = CALayer()
-    let borderPassword = CALayer()
-    let borderPasswordComfirm = CALayer()
-    let borderNicname = CALayer()
-    override func viewWillLayoutSubviews() {
-        borderID.frame = CGRect(x: 0, y: textFieldID.frame.size.height-1, width: textFieldID.frame.width, height: 1)
-        if textFieldID.text?.isEmpty == true {
-            borderID.backgroundColor = UIColor.lightbluegray.cgColor
-            textFieldID.layer.addSublayer(borderID)
-        }
-        else {
-            borderID.backgroundColor = UIColor.mainColor.cgColor
-            textFieldID.layer.addSublayer(borderID)
-        }
-        
-        borderPassword.frame = CGRect(x: 0, y: textFieldID.frame.size.height-1, width: textFieldID.frame.width, height: 1)
-        if textFieldPassword.text?.isEmpty == true {
-            borderPassword.backgroundColor = UIColor.lightbluegray.cgColor
-            textFieldPassword.layer.addSublayer(borderPassword)
-        }
-        else {
-            borderPassword.backgroundColor = UIColor.mainColor.cgColor
-            textFieldPassword.layer.addSublayer(borderPassword)
-        }
-        
-        
-        borderPasswordComfirm.frame = CGRect(x: 0, y: textFieldID.frame.size.height-1, width: textFieldID.frame.width, height: 1)
-        if textFieldPasswordConfirm.text?.isEmpty == true {
-            borderPasswordComfirm.backgroundColor = UIColor.lightbluegray.cgColor
-            textFieldPasswordConfirm.layer.addSublayer(borderPasswordComfirm)
-        }
-        else {
-            borderPasswordComfirm.backgroundColor = UIColor.mainColor.cgColor
-            textFieldPasswordConfirm.layer.addSublayer(borderPasswordComfirm)
-        }
-        
-        
-        borderNicname.frame = CGRect(x: 0, y: textFieldID.frame.size.height-1, width: textFieldID.frame.width, height: 1)
-        if textFieldNicname.text?.isEmpty == true {
-            borderNicname.backgroundColor = UIColor.lightbluegray.cgColor
-            textFieldNicname.layer.addSublayer(borderNicname)
-        }
-        else {
-            borderNicname.backgroundColor = UIColor.mainColor.cgColor
-            textFieldNicname.layer.addSublayer(borderNicname)
-        }
-        
-    }
+    
     // MARK: 네비게이션 바
     lazy var leftButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
         button.tag = 1
         button.tintColor = .titleColorGray
         return button
-        
     }()
+    
     func navigationBarSet() {
         let height: CGFloat = 75
         let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
@@ -104,10 +73,12 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         navbar.layoutIfNeeded()
         view.addSubview(navbar)
     }
+    
     @objc func actionBackButton(_ sender : Any) {
         TrackingTool.Action(actionName: "action_back_sign_up", param: ["":""])
         dismiss(animated: true, completion: nil)
     }
+    
     //MARk: 산타 로고
     let labelSantaLogo = UILabel()
     func setLabelSantaLogo() {
@@ -133,9 +104,16 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
             make.top.equalTo(labelSantaLogo.snp.bottom).offset(6)
         }
     }
+    
     //MARK: 아이디입력칸
     let textFieldID = UITextField()
     let textFieldIDExplain = UILabel()
+    let viewIDBorder : UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightbluegray
+        return view
+    }()
+    
     func setTextFieldID() {
         textFieldID.delegate = self
         textFieldID.placeholder = "이메일"
@@ -148,6 +126,13 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
             make.width.equalTo(UIScreen.main.bounds.width * 0.8)
             make.height.equalTo(34)
         }
+        view.addSubview(viewIDBorder)
+        viewIDBorder.snp.makeConstraints { make in
+            make.top.equalTo(textFieldID.snp.bottom)
+            make.leading.trailing.equalTo(textFieldID)
+            make.height.equalTo(1)
+        }
+        
         textFieldIDExplain.text = ""
         textFieldIDExplain.textColor = .mainColor
         view.addSubview(textFieldIDExplain)
@@ -168,12 +153,6 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         else {
             buttonSignUp.isUserInteractionEnabled = false
             buttonSignUp.backgroundColor = .titleColorGray
-        }
-        if textFieldID.text?.isEmpty == true{
-            borderID.backgroundColor = UIColor.titleColorGray.cgColor
-        }
-        else {
-            borderID.backgroundColor = UIColor.mainColor.cgColor
         }
     }
     //MARK: 이메일 확인 버튼
@@ -203,9 +182,22 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         self.showIndicator()
     }
     let labelEmailCheck = UILabel()
+    
     //MARK: 비밀번호 입력칸
     let labelPasswordExplain = UILabel()
     let textFieldPassword = UITextField()
+    let imageViewCheckPassword : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "icSignupCheck")
+        imageView.contentMode = .scaleAspectFill
+        imageView.alpha = 0
+        return imageView
+    }()
+    let viewPasswordBorder : UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightbluegray
+        return view
+    }()
     func setTextFieldPassword() {
         textFieldPassword.placeholder = "비밀번호"
         textFieldPassword.isSecureTextEntry = true
@@ -218,6 +210,19 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
             make.width.equalTo(UIScreen.main.bounds.width * 0.8)
             make.height.equalTo(34)
         }
+        view.addSubview(viewPasswordBorder)
+        viewPasswordBorder.snp.makeConstraints { make in
+            make.top.equalTo(textFieldPassword.snp.bottom)
+            make.leading.trailing.equalTo(textFieldPassword)
+            make.height.equalTo(1)
+        }
+        view.addSubview(imageViewCheckPassword)
+        imageViewCheckPassword.snp.makeConstraints { make in
+            make.centerY.equalTo(textFieldPassword)
+            make.width.height.equalTo(24)
+            make.trailing.equalTo(textFieldPassword)
+        }
+        
         labelPasswordExplain.text = "8~16자로 입력해주세요."
         labelPasswordExplain.textColor = .mainColor
         labelPasswordExplain.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 11)
@@ -228,7 +233,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         }
     }
     @objc func actiondidChangeShowLabel() {
-        
+        viewPasswordBorder.backgroundColor = .mainColor
         if textFieldID.text?.isEmpty == false,
            textFieldPassword.text?.isEmpty == false,
            textFieldPasswordConfirm.text?.isEmpty == false,
@@ -245,19 +250,30 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
             if textfield.count >= 8,textfield.count <= 16
             {
                 labelPasswordExplain.text = ""
+                imageViewCheckPassword.alpha = 1
             }
             else {
                 labelPasswordExplain.text = "8~16자로 입력해주세요."
+                imageViewCheckPassword.alpha = 0
             }
-            borderPassword.backgroundColor = UIColor.titleColorGray.cgColor
         }
-        else {
-            borderPassword.backgroundColor = UIColor.mainColor.cgColor
-        }
+
     }
     //MARK: 비밀번호 확인 입력칸
     let textFieldPasswordConfirm = UITextField()
     let labelPasswordConfirm = UILabel()
+    let imageViewCheckPasswordConfirm : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "icSignupCheck")
+        imageView.contentMode = .scaleAspectFill
+        imageView.alpha = 0
+        return imageView
+    }()
+    let viewPasswordCheckBorder : UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightbluegray
+        return view
+    }()
     func setTextFieldPasswordConfirm() {
         textFieldPasswordConfirm.placeholder = "비밀번호 확인"
         textFieldPasswordConfirm.isSecureTextEntry = true
@@ -270,6 +286,19 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
             make.width.equalTo(UIScreen.main.bounds.width * 0.8)
             make.height.equalTo(34)
         }
+        
+        view.addSubview(imageViewCheckPasswordConfirm)
+        imageViewCheckPasswordConfirm.snp.makeConstraints { make in
+            make.centerY.equalTo(textFieldPasswordConfirm)
+            make.trailing.equalTo(textFieldPasswordConfirm)
+            make.width.equalTo(24)
+        }
+        view.addSubview(viewPasswordCheckBorder)
+        viewPasswordCheckBorder.snp.makeConstraints { make in
+            make.top.equalTo(textFieldPasswordConfirm.snp.bottom)
+            make.leading.trailing.equalTo(textFieldPasswordConfirm)
+            make.height.equalTo(1)
+        }
         labelPasswordConfirm.text = ""
         labelPasswordConfirm.textColor = .mainColor
         labelPasswordConfirm.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 11)
@@ -280,7 +309,6 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         }
     }
     @objc func actiondidConfirmShowLabel() {
-        
         if textFieldID.text?.isEmpty == false,
            textFieldPassword.text?.isEmpty == false,
            textFieldPasswordConfirm.text?.isEmpty == false,
@@ -295,29 +323,58 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
         }
         if let textfield = textFieldPasswordConfirm.text, let textfieldConfirm = textFieldPassword.text {
             if textfield == textfieldConfirm {
+                viewPasswordCheckBorder.backgroundColor = .mainColor
                 labelPasswordConfirm.text = "비밀번호가 일치합니다."
                 labelPasswordConfirm.textColor = .mainColor
-                borderPasswordComfirm.backgroundColor = UIColor.mainColor.cgColor
+                imageViewCheckPasswordConfirm.alpha = 1
             }
             else {
+                viewPasswordCheckBorder.backgroundColor = .coral
                 labelPasswordConfirm.text = "비밀번호가 일치하지 않습니다."
                 labelPasswordConfirm.textColor = .red
-                borderPasswordComfirm.backgroundColor = UIColor.titleColorGray.cgColor
+                imageViewCheckPasswordConfirm.alpha = 0
+                
             }
         }
     }
     //MARK: 닉네임 입력칸
     let textFieldNicname = UITextField()
+    let labelCheckNicNameOverlap : UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 13)
+        label.textColor = .mainColor
+        label.alpha = 0
+        return label
+    }()
+    let viewNickNameBorder : UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightbluegray
+        return view
+    }()
     func setTextFieldNicname() {
         textFieldNicname.placeholder = "닉네임(중복 불가)"
         textFieldNicname.delegate = self
         textFieldNicname.addTarget(self, action: #selector(actiondidChangeNicname), for: .editingChanged)
+        
         view.addSubview(textFieldNicname)
         textFieldNicname.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(textFieldPasswordConfirm.snp.bottom).offset(28)
             make.width.equalTo(UIScreen.main.bounds.width * 0.8)
             make.height.equalTo(34)
+        }
+        
+        view.addSubview(viewNickNameBorder)
+        viewNickNameBorder.snp.makeConstraints { make in
+            make.top.equalTo(textFieldNicname.snp.bottom)
+            make.leading.trailing.equalTo(textFieldNicname)
+            make.height.equalTo(1)
+        }
+        
+        view.addSubview(labelCheckNicNameOverlap)
+        labelCheckNicNameOverlap.snp.makeConstraints { make in
+            make.leading.equalTo(textFieldNicname)
+            make.top.equalTo(textFieldNicname.snp.bottom).offset(9)
         }
     }
     @objc func actiondidChangeNicname() {
@@ -363,12 +420,6 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
             buttonSignUp.isUserInteractionEnabled = false
             buttonSignUp.backgroundColor = .titleColorGray
         }
-        if textFieldNicname.text?.isEmpty == true {
-            borderNicname.backgroundColor = UIColor.titleColorGray.cgColor
-        }
-        else {
-            borderNicname.backgroundColor = UIColor.mainColor.cgColor
-        }
 
     }
         
@@ -400,19 +451,7 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
             
         }
     }
-    //MARK: 약관 설명
-    let labelContract = UILabel()
-    func setLabelContract() {
-        labelContract.text = "계정을 만들면 산타의 개인 정보 취급 방침 및 이용 약관에 동의하게 됩니다."
-        labelContract.textColor = .bluegray
-        labelContract.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 11)
-        labelContract.textAlignment = .center
-        view.addSubview(labelContract)
-        labelContract.snp.makeConstraints { make in
-            make.centerX.equalTo(view.snp.centerX)
-            make.bottom.equalTo(buttonSignUp.snp.top).offset(-15)
-        }
-    }
+
     func setNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -440,6 +479,57 @@ class SignUpViewController : BaseViewController, UINavigationBarDelegate {
                 self.view.frame.origin.y = 0
             }
         }
+    //MARK: 이메일 체인증 완료시 나오는 뷰
+    let viewCheckEmailGood : UIView = {
+        let view = UIView()
+        view.layer.borderColor = UIColor.darkbluegray.cgColor
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 10
+        view.layer.shadowColor = UIColor.lightbluegray.cgColor
+        view.layer.shadowOffset = CGSize(width: 1, height: 3)
+        view.layer.shadowOpacity = 0.49
+        view.layer.shadowRadius = 9
+        view.alpha = 0
+        return view
+    }()
+    
+    let labelExplainCheckGood: UILabel = {
+        let label = UILabel()
+        label.text = "이메일 인증이 완료되었습니다."
+        label.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 14)
+        label.addCharacterSpacing(kernValue: -0.28)
+        return label
+    }()
+    
+    let imageViewCheck : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "icSignupCheckboxCircle")
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    func setCheckEmailGood() {
+        view.addSubview(viewCheckEmailGood)
+        viewCheckEmailGood.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.top.equalTo(view).offset(49)
+            make.width.equalTo(328)
+            make.height.equalTo(54)
+        }
+        
+        viewCheckEmailGood.addSubview(imageViewCheck)
+        imageViewCheck.snp.makeConstraints { make in
+            make.centerY.equalTo(viewCheckEmailGood)
+            make.leading.equalTo(viewCheckEmailGood).offset(15.2)
+            make.width.height.equalTo(32)
+        }
+        
+        viewCheckEmailGood.addSubview(labelExplainCheckGood)
+        labelExplainCheckGood.snp.makeConstraints { make in
+            make.centerY.equalTo(viewCheckEmailGood)
+            make.leading.equalTo(imageViewCheck.snp.trailing).offset(5.8)
+        }
+    }
 }
 
 extension SignUpViewController: UITextFieldDelegate {
@@ -449,7 +539,15 @@ extension SignUpViewController: UITextFieldDelegate {
 
     // MARK: 닉네임 체크 API
     func successDataCheckApi(_ result : CheckNicnameResult) {
-        self.presentAlert(title: result.status)
+        if result.bool {
+            labelCheckNicNameOverlap.textColor = .mainColor
+            viewNickNameBorder.backgroundColor = .mainColor
+        } else {
+            labelCheckNicNameOverlap.textColor = .coral
+            viewNickNameBorder.backgroundColor = .coral
+        }
+        self.labelCheckNicNameOverlap.text = result.status
+        self.labelCheckNicNameOverlap.alpha = 1
         self.boolOverlap = result.bool
         if textFieldID.text?.isEmpty == false,
            textFieldPassword.text?.isEmpty == false,
@@ -465,26 +563,13 @@ extension SignUpViewController: UITextFieldDelegate {
     }
     // MARK: 이메일 보내기 성공~
     func successDataApiCheckImailPost(_ message : String) {
-        let alert = UIAlertController(title: "인증번호를 입력해주세요.", message: nil, preferredStyle: .alert)
-        alert.addTextField { textfield in
-            textfield.placeholder = "인증번호 4자리를 입력해주세요."
-        }
-        let ok = UIAlertAction(title: "확인", style: .default) { action in
-            if let textCode = alert.textFields?[0].text, let textEmail = self.textFieldID.text {
-                let input = CertificationNumberInput(email: textEmail, code: Int(textCode)!)
-                CertificationNumberDataManager().appemilverify(self, input)
-            }
-        }
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        alert.addAction(cancel)
-        alert.addAction(ok)
-        self.present(alert, animated: true, completion: nil)
+        let nextVC = CheckNumberViewController()
+        nextVC.email = textFieldID.text ?? ""
+        nextVC.modalPresentationStyle = .overFullScreen
+        self.present(nextVC, animated: false, completion: nil)
         self.dismissIndicator()
     }
-    // MARK: 인증번호 성공
-    func successDataApiCertification(_ message: String) {
-        self.presentAlert(title: message)
-    }
+    
     // MARK: 가입하기 실패
     func successDataButDontCompleteApi(_ result : CompleteSignUpEntity) {
         self.presentAlert(title: result.message)

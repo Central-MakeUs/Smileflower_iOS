@@ -95,6 +95,8 @@ class SearchViewController: BaseViewController {
         }
     }
     @objc func actionBackView() {
+        tabBarController?.tabBar.isHidden = false
+        NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
         self.navigationController?.popViewController(animated: false)
     }
     // MARK: SearchBar

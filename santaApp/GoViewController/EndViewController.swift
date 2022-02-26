@@ -10,7 +10,7 @@ import MobileCoreServices
 import Lottie
 import CoreLocation
 
-class EndViewController : BaseViewController, UINavigationBarDelegate {
+class EndViewController : BaseViewController {
     let picker = UIImagePickerController()
     var flagImageSave = false
     var mountainIdx : Int?
@@ -99,7 +99,6 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
             print("위치 서비스 On 상태")
             locationManager.startUpdatingLocation()
             locationManager.requestLocation()
-            print(locationManager.location?.coordinate)
         } else {
             print("위치 서비스 off 상태")
         }
@@ -135,6 +134,7 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
     // MARK: 애니메이션
     func setAnimation() {
         let animationView = AnimationView(name: "lottieAnimaition")
+        animationView.backgroundColor = .black
         view.addSubview(animationView)
         switch Constant.userPhoneHeight {
         // 아이폰 6
@@ -382,7 +382,6 @@ class EndViewController : BaseViewController, UINavigationBarDelegate {
         view.addSubview(viewBackgroundAltitude)
         view.addSubview(viewAltitudeCheck)
         viewAltitudeCheck.layer.zPosition = 999
-        
         switch Constant.userPhoneHeight {
         // 아이폰 6
                 case 667:
@@ -601,7 +600,7 @@ extension EndViewController {
         }
         nextVC.modalPresentationStyle = .overFullScreen
         nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     func failureDataImageRegister(_ message: String) {
         self.presentAlert(title: message)
@@ -618,6 +617,6 @@ extension EndViewController : CLLocationManagerDelegate {
         }
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
+        print(error.localizedDescription)
     }
 }

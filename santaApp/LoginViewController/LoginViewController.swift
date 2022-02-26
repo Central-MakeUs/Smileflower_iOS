@@ -7,11 +7,11 @@
 
 import UIKit
 import SnapKit
+import KakaoSDKCommon
 import AuthenticationServices
+import KakaoSDKUser
 
 class LoginViewController : BaseViewController {
-    var kakaoLoginButton = UIButton()
-    var loginProviderStackView = UIStackView()
     var boolautoLogin : Bool = false
     var imageViewBackground = UIImageView()
     
@@ -26,10 +26,8 @@ class LoginViewController : BaseViewController {
         }
         view.backgroundColor = .black
         imageSetBackground()
-        labelSetSanta()
         viewSetLogo()
-        setButtonCreatID()
-        setButtonLoginID()
+        setBottomSheet()
     }
     // MARK : - 뒷 배경
     func imageSetBackground() {
@@ -80,6 +78,45 @@ class LoginViewController : BaseViewController {
             make.centerX.equalTo(labelUp.snp.centerX)
         }
     }
+    
+    // MARK: 하단 바텀 뷰
+    let viewBottomSheet : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 35
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        return view
+    }()
+    let stackViewLoginEmail : UIStackView = {
+        let stackView = UIStackView()
+        stackView.backgroundColor = .lightbluegray
+        stackView.axis = .horizontal
+        stackView.spacing = 1
+        stackView.distribution = .fillEqually
+        return stackView
+    }()
+    func setBottomSheet() {
+        view.addSubview(viewBottomSheet)
+        viewBottomSheet.snp.makeConstraints { make in
+            make.bottom.leading.trailing.equalTo(view)
+            make.height.equalTo(227)
+        }
+        
+        labelSetSanta()
+        buttonSetKakaoLogin()
+        buttonSetAppleLogin()
+        
+        view.addSubview(stackViewLoginEmail)
+        stackViewLoginEmail.snp.makeConstraints { make in
+            make.centerX.equalTo(viewBottomSheet)
+            make.width.equalTo(viewKakaoButton)
+            make.height.equalTo(30)
+            make.top.equalTo(buttonAppleLogin.snp.bottom).offset(18)
+        }
+        
+        setButtonLoginID()
+        setButtonCreatID()
+    }
     // MARK: - 산타와함께등반해볼까요?
     let label = UILabel()
     func labelSetSanta() {
@@ -90,26 +127,93 @@ class LoginViewController : BaseViewController {
         view.addSubview(label)
         
         label.snp.makeConstraints { make in
-            make.centerY.equalTo(view.snp.centerY).offset(150)
-            make.leading.equalTo(view.snp.leading).offset(28)
+            make.centerX.equalTo(view)
+            make.bottom.equalTo(viewBottomSheet.snp.top).offset(-18)
         }
+    }
+    // MARK:  - 카카오톡로그인버튼
+    let viewKakaoButton : UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(hex: 0xFDE20B)
+        view.layer.cornerRadius = 24
+        view.clipsToBounds = true
+        return view
+    }()
+    let  kakaoLoginButton : UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    let labelKakaoLogin : UILabel = {
+        let label = UILabel()
+        label.text = "카카오 로그인"
+        label.textColor = .black
+        label.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        return label
+    }()
+    let imageViewKakao : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "KakaoLogo@3x")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    func buttonSetKakaoLogin() {
+        
+        view.addSubview(viewKakaoButton)
+        viewKakaoButton.snp.makeConstraints { make in
+            make.centerX.equalTo(viewBottomSheet)
+            make.top.equalTo(viewBottomSheet).offset(24)
+            make.width.equalTo(viewBottomSheet).multipliedBy(0.9)
+            make.height.equalTo(46)
+        }
+        
+        kakaoLoginButton.addTarget(self, action: #selector(kakaoLoginAction(_:)), for: .touchUpInside)
+        viewKakaoButton.addSubview(kakaoLoginButton)
+
+        kakaoLoginButton.snp.makeConstraints { make in
+            make.edges.equalTo(viewKakaoButton)
+        }
+
+        viewKakaoButton.addSubview(labelKakaoLogin)
+        labelKakaoLogin.snp.makeConstraints { make in
+            make.bottom.equalTo(kakaoLoginButton.snp.bottom).offset(-13)
+            make.top.equalTo(kakaoLoginButton.snp.top).offset(14)
+            make.centerX.equalTo(kakaoLoginButton.snp.centerX).offset(13)
+        }
+
+        viewKakaoButton.addSubview(imageViewKakao)
+        imageViewKakao.snp.makeConstraints { make in
+            make.top.equalTo(kakaoLoginButton.snp.top).offset(17)
+            make.bottom.equalTo(kakaoLoginButton.snp.bottom).offset(-15)
+            make.trailing.equalTo(labelKakaoLogin.snp.leading).offset(-8)
+            make.width.equalTo(17)
+        }
+
+    }
+    @objc func kakaoLoginAction(_ sender : Any) {
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            // 카카오톡 로그인. api 호출 결과를 클로저로 전달.
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+               if let error = error {
+                 print(error)
+               }
+               else {
+                print("loginWithKakaoAccount() success.")
+
+                //do something
+                _ = oauthToken
+               }
+            }
+          }
     }
     // MARK: 회원가입하기
     let buttonCreatID = UIButton()
     func setButtonCreatID() {
-        buttonCreatID.setTitle("회원가입하기", for: .normal)
-        buttonCreatID.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 17)
-        buttonCreatID.setTitleColor(.darkbluegray, for: .normal)
         buttonCreatID.backgroundColor = .white
-        buttonCreatID.layer.cornerRadius =  23
+        buttonCreatID.setTitle("이메일로 화원가입", for: .normal)
+        buttonCreatID.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 14)
+        buttonCreatID.setTitleColor(.darkbluegray, for: .normal)
         buttonCreatID.addTarget(self, action: #selector(actionGoSignUp), for: .touchUpInside)
-        view.addSubview(buttonCreatID)
-        buttonCreatID.snp.makeConstraints { make in
-            make.width.equalTo(UIScreen.main.bounds.width * 0.9)
-            make.height.equalTo(46)
-            make.centerX.equalTo(view.snp.centerX)
-            make.top.equalTo(label.snp.bottom).offset(10)
-        }
+        stackViewLoginEmail.addArrangedSubview(buttonCreatID)
     }
     @objc func actionGoSignUp() {
         let nextVC = SignUpViewController()
@@ -121,19 +225,11 @@ class LoginViewController : BaseViewController {
     // MARK: 로그인하기
     let buttonLoginID = UIButton()
     func setButtonLoginID() {
-        buttonLoginID.setTitle("로그인하기", for: .normal)
-        buttonLoginID.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 17)
-        buttonLoginID.setTitleColor(.white, for: .normal)
-        buttonLoginID.layer.borderWidth = 1
-        buttonLoginID.layer.borderColor = UIColor.white.cgColor
-        buttonLoginID.layer.cornerRadius = 23
-        view.addSubview(buttonLoginID)
-        buttonLoginID.snp.makeConstraints { make in
-            make.height.equalTo(48)
-            make.centerX.equalTo(view.snp.centerX)
-            make.width.equalTo(buttonCreatID)
-            make.top.equalTo(buttonCreatID.snp.bottom).offset(11)
-        }
+        buttonLoginID.backgroundColor = .white
+        buttonLoginID.setTitle("이메일로 로그인", for: .normal)
+        buttonLoginID.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 14)
+        buttonLoginID.setTitleColor(.darkbluegray, for: .normal)
+        stackViewLoginEmail.addArrangedSubview(buttonLoginID)
         buttonLoginID.addTarget(self, action: #selector(actionGoSignIn), for: .touchUpInside)
     }
     @objc func actionGoSignIn() {
@@ -143,154 +239,96 @@ class LoginViewController : BaseViewController {
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)
     }
-//    // MARK:  - 카카오톡로그인버튼
-//    func buttonSetKakaoLogin() {
-//        let labelKakaoLogin = UILabel()
-//        let imageKakaoLogo = UIImageView()
-//
-//        kakaoLoginButton.backgroundColor = UIColor(hex: 0xFDE20B)
-//        kakaoLoginButton.addTarget(self, action: #selector(kakaoLoginAction(_:)), for: .touchUpInside)
-//        view.addSubview(kakaoLoginButton)
-//        kakaoLoginButton.layer.cornerRadius = 24
-//
-//        kakaoLoginButton.snp.makeConstraints { make in
-//            make.width.equalTo(loginProviderStackView.snp.width)
-//            make.height.equalTo(loginProviderStackView.snp.height)
-//            make.centerX.equalTo(loginProviderStackView.snp.centerX)
-//            make.bottom.equalTo(loginProviderStackView.snp.top).offset(-10)
-//        }
-//
-//        labelKakaoLogin.text = "카카오 로그인"
-//        labelKakaoLogin.textColor = .black
-//        labelKakaoLogin.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
-//        kakaoLoginButton.addSubview(labelKakaoLogin)
-//        labelKakaoLogin.snp.makeConstraints { make in
-//            make.bottom.equalTo(kakaoLoginButton.snp.bottom).offset(-13)
-//            make.top.equalTo(kakaoLoginButton.snp.top).offset(14)
-//            make.centerX.equalTo(kakaoLoginButton.snp.centerX).offset(13)
-//        }
-//
-//        imageKakaoLogo.image = UIImage(named: "KakaoLogo@3x")
-//    imageKakaoLogo.contentMode = .scaleAspectFit
-//        kakaoLoginButton.addSubview(imageKakaoLogo)
-//        imageKakaoLogo.snp.makeConstraints { make in
-//            make.top.equalTo(kakaoLoginButton.snp.top).offset(17)
-//        make.bottom.equalTo(kakaoLoginButton.snp.bottom).offset(-15)
-//            make.trailing.equalTo(labelKakaoLogin.snp.leading).offset(-8)
-//            make.width.equalTo(17)
-//        }
-//
-//    }
-//    @objc func kakaoLoginAction(_ sender : Any) {
-//        if (AuthApi.isKakaoTalkLoginAvailable()) {
-//            // 카카오톡 로그인. api 호출 결과를 클로저로 전달.
-//            AuthApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-//               if let error = error {
-//                 print(error)
-//               }
-//               else {
-//                print("loginWithKakaoAccount() success.")
-//
-//                //do something
-//                _ = oauthToken
-//               }
-//            }
-//          }
-//    }
-//
-//    // MARK: - 애플로그인
-//    func buttonSetAppleLogin() {
-//        self.loginProviderStackView.axis = .horizontal
-//        self.loginProviderStackView.alignment = .fill
-//        self.loginProviderStackView.distribution = .fillEqually
-//        self.loginProviderStackView.spacing = 0
-//        self.loginProviderStackView.translatesAutoresizingMaskIntoConstraints = false
-//
-//        view.addSubview(loginProviderStackView)
-//        view.bringSubviewToFront(loginProviderStackView)
-//        loginProviderStackView.snp.makeConstraints { make in
-//            make.height.equalTo(48)
-//            make.leading.equalTo(self.view.snp.leading).offset(17)
-//            make.trailing.equalTo(self.view.snp.trailing).offset(-17)
-//            make.bottom.equalTo(self.view.snp.bottom).offset(-86)
-//        }
-//        loginProviderStackView.layer.zPosition = 999
-////        loginProviderStackView.translatesAutoresizingMaskIntoConstraints = true
-//
-////        let authorizationButton = ASAuthorizationAppleIDButton(type: .signIn, style: .white)
-////        authorizationButton.cornerRadius = 24
-////        authorizationButton.addTarget(self, action: #selector(appleLoginAction), for: .touchUpInside)
-////        loginProviderStackView.addArrangedSubview(authorizationButton)
-//
-//        let buttonAppleLogin = UIButton()
-//        buttonAppleLogin.backgroundColor = .white
-//        buttonAppleLogin.addTarget(self, action: #selector(appleLoginAction), for: .touchUpInside)
-//        loginProviderStackView.addArrangedSubview(buttonAppleLogin)
-//        buttonAppleLogin.layer.cornerRadius = 24
-//        let labelAppleLogin = UILabel()
-//        let imageAppleLogo = UIImageView()
-//
-//        labelAppleLogin.text = "Apple로 로그인"
-//        labelAppleLogin.textColor = .black
-//        labelAppleLogin.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
-//        buttonAppleLogin.addSubview(labelAppleLogin)
-//        labelAppleLogin.snp.makeConstraints { make in
-//            make.centerX.equalTo(buttonAppleLogin.snp.centerX).offset(13)
-//            make.top.equalTo(buttonAppleLogin.snp.top).offset(15)
-//            make.bottom.equalTo(buttonAppleLogin.snp.bottom).offset(-12)
-//        }
-//
-//        imageAppleLogo.image = UIImage(named: "appleLogo@3x")
-//        buttonAppleLogin.addSubview(imageAppleLogo)
-//        imageAppleLogo.contentMode = .scaleAspectFill
-//        imageAppleLogo.snp.makeConstraints { make in
-//            make.centerY.equalTo(labelAppleLogin.snp.centerY)
-//            make.top.equalTo(buttonAppleLogin.snp.top).offset(10)
-//            make.bottom.equalTo(buttonAppleLogin.snp.bottom).offset(-9)
-//            make.width.equalTo(16)
-//            make.trailing.equalTo(labelAppleLogin.snp.leading).offset(-8)
-//        }
-//    }
-//    @objc
-//    func appleLoginAction() {
-//        print("hi")
-//        let appleIDProvider = ASAuthorizationAppleIDProvider()
-//          let request = appleIDProvider.createRequest()
-//          request.requestedScopes = [.fullName, .email]
-//
-//          let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-//          authorizationController.delegate = self
-//          authorizationController.presentationContextProvider = self
-//          authorizationController.performRequests()
-//    }
-//    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-//        switch authorization.credential {
-//
-//        // Apple ID
-//        case let appleIDCredential as ASAuthorizationAppleIDCredential:
-//            // 계정 정보 가져오기
-//
-//            let userIdentifier = appleIDCredential.user
-//            let fullName = appleIDCredential.fullName
-//            let email = appleIDCredential.email
-//            let status = appleIDCredential.realUserStatus
-//            let code = appleIDCredential.authorizationCode
-//            let token = appleIDCredential.identityToken
-//
-//            self.changeRootViewController(BaseTabbarController())
-//        default:
-//            break
-//        }
-//    }
-//
-//    // Apple ID 연동 실패 시
-//    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-//        // Handle error.
-//    }
-//
+    
+
+    // MARK: - 애플로그인
+    let buttonAppleLogin = UIButton()
+    func buttonSetAppleLogin() {
+        buttonAppleLogin.backgroundColor = .black
+        buttonAppleLogin.addTarget(self, action: #selector(appleLoginAction), for: .touchUpInside)
+        viewBottomSheet.addSubview(buttonAppleLogin)
+        buttonAppleLogin.snp.makeConstraints { make in
+            make.centerX.equalTo(viewBottomSheet)
+            make.width.height.equalTo(viewKakaoButton)
+            make.top.equalTo(viewKakaoButton.snp.bottom).offset(12)
+        }
+        buttonAppleLogin.layer.cornerRadius = 24
+        let labelAppleLogin = UILabel()
+        let imageAppleLogo = UIImageView()
+
+        labelAppleLogin.text = "Apple로 로그인"
+        labelAppleLogin.textColor = .white
+        labelAppleLogin.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        buttonAppleLogin.addSubview(labelAppleLogin)
+        labelAppleLogin.snp.makeConstraints { make in
+            make.centerX.equalTo(buttonAppleLogin.snp.centerX).offset(13)
+            make.top.equalTo(buttonAppleLogin.snp.top).offset(15)
+            make.bottom.equalTo(buttonAppleLogin.snp.bottom).offset(-12)
+        }
+
+        imageAppleLogo.image = UIImage(named: "appleLogo@3x")
+        buttonAppleLogin.addSubview(imageAppleLogo)
+        imageAppleLogo.contentMode = .scaleAspectFill
+        imageAppleLogo.snp.makeConstraints { make in
+            make.centerY.equalTo(labelAppleLogin.snp.centerY)
+            make.top.equalTo(buttonAppleLogin.snp.top).offset(10)
+            make.bottom.equalTo(buttonAppleLogin.snp.bottom).offset(-9)
+            make.width.equalTo(16)
+            make.trailing.equalTo(labelAppleLogin.snp.leading).offset(-8)
+        }
+    }
+    @objc
+    func appleLoginAction() {
+        print("hi")
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+          let request = appleIDProvider.createRequest()
+          request.requestedScopes = [.fullName, .email]
+
+          let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+          authorizationController.delegate = self
+          authorizationController.presentationContextProvider = self
+          authorizationController.performRequests()
+    }
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+
+        // Apple ID
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            // 계정 정보 가져오기
+
+            let userIdentifier = appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email = appleIDCredential.email
+            let status = appleIDCredential.realUserStatus
+            let code = appleIDCredential.authorizationCode
+            let token = appleIDCredential.identityToken
+
+            print("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ")
+            print(type(of: userIdentifier))
+            print(type(of: fullName))
+            print(fullName)
+            print(email)
+            print(status)
+            print(code)
+            print(token)
+
+            let input = AppleLoginInput(name: "\(fullName?.familyName)\(fullName?.givenName)", userEmail: email ?? "", userIdentifier: userIdentifier ?? "", authorizationCode: String(data: code ?? Data(), encoding: .utf8), identifyToken: String(data: token ?? Data(), encoding: .utf8))
+            AppleLoginDataManager().appNewApple(self, input)
+            
+            self.changeRootViewController(BaseTabbarController())
+        default:
+            break
+        }
+    }
+
+    // Apple ID 연동 실패 시
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // Handle error.
+    }
+
 }
-//
-//extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
-//    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor { return self.view.window! }
-//
-//}
+
+extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor { return self.view.window! }
+
+}

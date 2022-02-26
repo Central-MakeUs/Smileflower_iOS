@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInViewController : BaseViewController, UINavigationBarDelegate{
+class SignInViewController : BaseViewController{
     
     override func viewDidLoad() {
         TrackingTool.Screen(screenName: "view_email_login")
@@ -21,20 +21,10 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
         setTextFieldPassword()
         setButtonSignIn()
         setButtonForgetPassword()
+        setButtonSignUp()
     }
     override func viewWillAppear(_ animated: Bool) {
         self.textFieldID.becomeFirstResponder()
-    }
-    override func viewDidLayoutSubviews() {
-        let borderID = CALayer()
-        borderID.frame = CGRect(x: 0, y: textFieldID.frame.size.height-1, width: textFieldID.frame.width, height: 1)
-        borderID.backgroundColor = UIColor.lightbluegray.cgColor
-        textFieldID.layer.addSublayer(borderID)
-        
-        let borderPassword = CALayer()
-        borderPassword.frame = CGRect(x: 0, y: textFieldID.frame.size.height-1, width: textFieldID.frame.width, height: 1)
-        borderPassword.backgroundColor = UIColor.lightbluegray.cgColor
-        textFieldPassword.layer.addSublayer(borderPassword)
     }
     // MARK: 네비게이션 바
     lazy var leftButton: UIBarButtonItem = {
@@ -88,9 +78,15 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
     }
     //MARK: 아이디입력칸
     let textFieldID = UITextField()
+    let viewBorderID : UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightbluegray
+        return view
+    }()
     func setTextFieldID() {
         textFieldID.placeholder = "이메일"
         textFieldID.borderStyle = .none
+        textFieldID.addTarget(self, action: #selector(actionDidEditID), for: .editingChanged)
         view.addSubview(textFieldID)
         textFieldID.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
@@ -98,12 +94,36 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
             make.width.equalTo(UIScreen.main.bounds.width * 0.8)
             make.height.equalTo(34)
         }
+            
+        view.addSubview(viewBorderID)
+        viewBorderID.snp.makeConstraints { make in
+            make.top.equalTo(textFieldID.snp.bottom)
+            make.leading.trailing.equalTo(textFieldID)
+            make.height.equalTo(1)
+        }
+    }
+    @objc func actionDidEditID() {
+        guard let text = textFieldID.text else {
+            return
+        }
+        
+        if text.count == 0 {
+            viewBorderID.backgroundColor = .lightbluegray
+        } else {
+            viewBorderID.backgroundColor = .mainColor
+        }
     }
     //MARK: 비밀번호 입력칸
     let textFieldPassword = UITextField()
+    let viewBorderPassword : UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightbluegray
+        return view
+    }()
     func setTextFieldPassword() {
         textFieldPassword.placeholder = "비밀번호"
         textFieldPassword.isSecureTextEntry = true
+        textFieldPassword.addTarget(self, action: #selector(actionDidEditPassword), for: .editingChanged)
         view.addSubview(textFieldPassword)
         textFieldPassword.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
@@ -111,12 +131,30 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
             make.width.equalTo(UIScreen.main.bounds.width * 0.8)
             make.height.equalTo(34)
         }
+        
+        view.addSubview(viewBorderPassword)
+        viewBorderPassword.snp.makeConstraints { make in
+            make.trailing.leading.equalTo(textFieldPassword)
+            make.top.equalTo(textFieldPassword.snp.bottom)
+            make.height.equalTo(1)
+        }
+    }
+    @objc func actionDidEditPassword() {
+        guard let text = textFieldPassword.text else {
+            return
+        }
+        
+        if text.count == 0 {
+            viewBorderPassword.backgroundColor = .lightbluegray
+        } else {
+            viewBorderID.backgroundColor = .mainColor
+        }
     }
     //MARK: 비밀번호를 잊으셨습니까? 버튼
     let buttonForgetPassword = UIButton()
     func setButtonForgetPassword() {
         buttonForgetPassword.setTitle("비밀번호를 잊으셨나요?", for: .normal)
-        buttonForgetPassword.setTitleColor(.mainColor, for: .normal)
+        buttonForgetPassword.setTitleColor(.lightbluegray, for: .normal)
         buttonForgetPassword.addTarget(self, action: #selector(actionGoForgetPasswordView), for: .touchUpInside)
         buttonForgetPassword.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoLight, size: 12)
         view.addSubview(buttonForgetPassword)
@@ -152,6 +190,40 @@ class SignInViewController : BaseViewController, UINavigationBarDelegate{
         TrackingTool.Action(actionName: "action_do_email_login", param: ["":""])
         let input = SignInViewControllerInput(emailId: textFieldID.text ?? "", password: textFieldPassword.text ?? "")
         SignInViewControllerDataManager().appuserslogin(self, input)
+    }
+    
+    let buttonSignUp : UIButton = {
+        let button = UIButton()
+        button.layer.zPosition = 400
+        return button
+    }()
+    let labelSignUp : UILabel = {
+        let label = UILabel()
+        let string = "계정이 없으신가요? 가입하기"
+        label.textColor = .bluegray
+        label.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 12)
+        let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoLight, size: 12)
+        let attributeStr = NSMutableAttributedString(string: string)
+        attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: 10))
+        label.attributedText = attributeStr
+        return label
+    }()
+    
+    func setButtonSignUp() {
+        buttonSignUp.addTarget(self, action: #selector(actionGoSignUp), for: .touchUpInside)
+        view.addSubview(buttonSignUp)
+        buttonSignUp.snp.makeConstraints { make in
+            make.centerX.equalTo(buttonSignIn)
+            make.top.equalTo(buttonSignIn.snp.bottom).offset(12)
+        }
+        view.addSubview(labelSignUp)
+        labelSignUp.snp.makeConstraints { make in
+            make.edges.equalTo(buttonSignUp)
+        }
+    }
+    @objc func actionGoSignUp() {
+        let nextVC = SignUpViewController()
+        present(nextVC, animated: true, completion: nil)
     }
 }
 extension SignInViewController {

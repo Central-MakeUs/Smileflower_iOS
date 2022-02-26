@@ -31,4 +31,5 @@ extension UIColor {
     class var iceblue : UIColor { UIColor(hex: 0xf1f7f9)}
     class var paleblue : UIColor { UIColor(hex: 0xdfe5ed)}
     class var paleblue97 : UIColor { UIColor(hex: 0xdfe5ed, alpha: 0.97)}
+    class var coral : UIColor { UIColor(hex: 0xf05b55)}
 }

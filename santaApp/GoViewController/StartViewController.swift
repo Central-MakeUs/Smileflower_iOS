@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartViewController : BaseViewController,UINavigationBarDelegate {
+class StartViewController : BaseViewController {
 
     lazy var leftButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
@@ -48,9 +48,9 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
         view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
-        let vc = BaseTabbarController()
-        vc.index = 2
-        self.changeRootViewController(vc)
+        NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
+        tabBarController?.tabBar.isHidden = false
+        self.navigationController?.popViewController(animated: true)
     }
     // MARK: 산 이름
     func labelSetMountainName() {
@@ -111,6 +111,7 @@ class StartViewController : BaseViewController,UINavigationBarDelegate {
         nextVC.labelMountain.text = labelMountainName.text
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

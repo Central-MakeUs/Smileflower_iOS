@@ -25,9 +25,10 @@ struct HomeModelPictureList : Decodable {
     var level : String?
     var userName : String?
     var commentCount : Int?
+    var isSaved: String?
     var saveCount : Int?
-    var pictureIdx : Int?
-    var pictureImageUrl : String?
+    var flagIdx : Int?
+    var flagImageUrl : String?
 }
 
 struct HomeModelUserList : Decodable {

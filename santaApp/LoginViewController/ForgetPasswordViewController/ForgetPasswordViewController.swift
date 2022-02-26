@@ -143,10 +143,6 @@ class ForgetPasswordViewController : BaseViewController {
     }
 }
 
-extension ForgetPasswordViewController : UINavigationBarDelegate {
-    
-}
-
 extension ForgetPasswordViewController {
     func successDataApiForgetPassword(_ message : String) {
         self.presentAlert(title: message)

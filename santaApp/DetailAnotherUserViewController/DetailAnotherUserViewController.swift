@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class DetailAnotherUserViewController: BaseViewController, UINavigationBarDelegate {
+class DetailAnotherUserViewController: BaseViewController {
     
     var postsResult : [DetailAnotherUserPosts] = []
     var userIdx : Int?

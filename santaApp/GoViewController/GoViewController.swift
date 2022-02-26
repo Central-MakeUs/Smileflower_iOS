@@ -18,7 +18,6 @@ class GoViewController : BaseViewController, UISearchBarDelegate {
         button.tag = 1
         button.tintColor = .titleColorGray
         return button
-        
     }()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,10 +36,18 @@ class GoViewController : BaseViewController, UISearchBarDelegate {
     }
     // MARK: 네비게이션
     func navigationBarSet() {
-        self.navigationItem.leftBarButtonItem = self.leftButton
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.layoutIfNeeded()
+        let height: CGFloat = 75
+        let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
+        navbar.backgroundColor = UIColor.clear
+        navbar.delegate = self
+
+        let navItem = UINavigationItem()
+        navItem.leftBarButtonItem = self.leftButton
+        navbar.items = [navItem]
+        navbar.setBackgroundImage(UIImage(), for: .default)
+        navbar.shadowImage = UIImage()
+        navbar.layoutIfNeeded()
+        view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
         self.changeRootViewController(BaseTabbarController())
@@ -288,7 +295,9 @@ extension GoViewController {
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         nextVC.labelMountainName.text = searchBar.text
-        self.present(nextVC, animated: true, completion: nil)
+        NotificationCenter.default.post(name: Notification.Name("middleButtonHidden"), object: nil)
+        tabBarController?.tabBar.isHidden = true
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     func failureNoDataMountain(_ message : String) {
         self.presentAlert(title: message)

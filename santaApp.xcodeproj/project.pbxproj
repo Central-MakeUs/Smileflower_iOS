@@ -31,6 +31,10 @@
 		28013AF726AA442B007E082D /* FlagMountainEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AF626AA442B007E082D /* FlagMountainEntity.swift */; };
 		28013AF926AA4503007E082D /* FlagMountainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AF826AA4503007E082D /* FlagMountainDataManager.swift */; };
 		28013AFC26AA523B007E082D /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28013AFB26AA523B007E082D /* ForgetPasswordViewController.swift */; };
+		280279DD279F065800E41A07 /* DetailConquerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280279DC279F065800E41A07 /* DetailConquerViewController.swift */; };
+		280279DE279F065800E41A07 /* DetailConquerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280279DC279F065800E41A07 /* DetailConquerViewController.swift */; };
+		280279E2279F098F00E41A07 /* DetailConquerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280279E1279F098F00E41A07 /* DetailConquerCollectionViewCell.swift */; };
+		280279E3279F098F00E41A07 /* DetailConquerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280279E1279F098F00E41A07 /* DetailConquerCollectionViewCell.swift */; };
 		28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B31268A26B4002ABFA9 /* AppDelegate.swift */; };
 		28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28119B33268A26B4002ABFA9 /* SceneDelegate.swift */; };
 		28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28119B3A268A26B4002ABFA9 /* santaApp.xcdatamodeld */; };
@@ -206,6 +210,14 @@
 		28429A43271EB7A50007D7E6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28429A41271EB7A50007D7E6 /* TableViewCell.swift */; };
 		28429A44271EB7A50007D7E6 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28429A42271EB7A50007D7E6 /* TableViewCell.xib */; };
 		28429A46271EB7EF0007D7E6 /* WowFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28429A45271EB7EF0007D7E6 /* WowFont.otf */; };
+		285D970527A56DEA001FB503 /* ConquerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970427A56DEA001FB503 /* ConquerViewModel.swift */; };
+		285D970627A56DEA001FB503 /* ConquerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970427A56DEA001FB503 /* ConquerViewModel.swift */; };
+		285D970A27A57058001FB503 /* ConquerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970927A57058001FB503 /* ConquerModel.swift */; };
+		285D970B27A57058001FB503 /* ConquerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970927A57058001FB503 /* ConquerModel.swift */; };
+		285D970E27A5AE33001FB503 /* DetailMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970D27A5AE33001FB503 /* DetailMessageViewController.swift */; };
+		285D970F27A5AE33001FB503 /* DetailMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970D27A5AE33001FB503 /* DetailMessageViewController.swift */; };
+		285D971127A6117D001FB503 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D971027A6117D001FB503 /* UITextField.swift */; };
+		285D971227A6117D001FB503 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D971027A6117D001FB503 /* UITextField.swift */; };
 		2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */; };
 		28645186268C98A5009F3608 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28645185268C98A5009F3608 /* Color.swift */; };
 		286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286966F62692E35E0025A250 /* RankingMountainViewController.swift */; };
@@ -229,6 +241,14 @@
 		2871B48726A5798B00F32165 /* MountainInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2871B48626A5798B00F32165 /* MountainInfoDataManager.swift */; };
 		28738E2B26AE981D002AE718 /* FlagExplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28738E2A26AE981D002AE718 /* FlagExplainViewController.swift */; };
 		2875D2F4269864FF00180300 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2875D2F3269864FF00180300 /* DetailPostViewController.swift */; };
+		2878F8E227C36F5000A50EB1 /* DoubleMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8E127C36F5000A50EB1 /* DoubleMessageTableViewCell.swift */; };
+		2878F8E327C36F5000A50EB1 /* DoubleMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8E127C36F5000A50EB1 /* DoubleMessageTableViewCell.swift */; };
+		2878F8E627C3BEA600A50EB1 /* inputComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8E527C3BEA600A50EB1 /* inputComment.swift */; };
+		2878F8E727C3BEA600A50EB1 /* inputComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8E527C3BEA600A50EB1 /* inputComment.swift */; };
+		2878F8E927C3BED500A50EB1 /* CommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8E827C3BED400A50EB1 /* CommentsModel.swift */; };
+		2878F8EA27C3BED500A50EB1 /* CommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8E827C3BED400A50EB1 /* CommentsModel.swift */; };
+		2878F8EC27C3C03B00A50EB1 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8EB27C3C03B00A50EB1 /* CommentsViewModel.swift */; };
+		2878F8ED27C3C03B00A50EB1 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8EB27C3C03B00A50EB1 /* CommentsViewModel.swift */; };
 		28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */; };
 		28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */; };
 		28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */; };
@@ -257,6 +277,18 @@
 		2882289326A0BF78000B2EAA /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289226A0BF78000B2EAA /* LogoutEntity.swift */; };
 		2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289426A0C04C000B2EAA /* LogoutDataManager.swift */; };
 		2890263F268F286E00D15BBA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890263E268F286E00D15BBA /* UIView.swift */; };
+		2893283627C8A270000CE5B7 /* FeedLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */; };
+		2893283727C8A270000CE5B7 /* FeedLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */; };
+		2893283927C8A2AA000CE5B7 /* FeedLikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283827C8A2AA000CE5B7 /* FeedLikeModel.swift */; };
+		2893283A27C8A2AA000CE5B7 /* FeedLikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283827C8A2AA000CE5B7 /* FeedLikeModel.swift */; };
+		2893283C27C93120000CE5B7 /* CheckNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283B27C93120000CE5B7 /* CheckNumberViewController.swift */; };
+		2893283D27C93120000CE5B7 /* CheckNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283B27C93120000CE5B7 /* CheckNumberViewController.swift */; };
+		2893284327C9DDB1000CE5B7 /* AppleLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893284227C9DDB1000CE5B7 /* AppleLoginInput.swift */; };
+		2893284427C9DDB1000CE5B7 /* AppleLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893284227C9DDB1000CE5B7 /* AppleLoginInput.swift */; };
+		2893284627C9DDBE000CE5B7 /* AppleLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893284527C9DDBE000CE5B7 /* AppleLoginModel.swift */; };
+		2893284727C9DDBE000CE5B7 /* AppleLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893284527C9DDBE000CE5B7 /* AppleLoginModel.swift */; };
+		2893284927C9DDCF000CE5B7 /* AppleLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893284827C9DDCF000CE5B7 /* AppleLoginDataManager.swift */; };
+		2893284A27C9DDCF000CE5B7 /* AppleLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893284827C9DDCF000CE5B7 /* AppleLoginDataManager.swift */; };
 		289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289656F6268F58EE00B23E8F /* CompleteViewController.swift */; };
 		2899D869277225F200DDB4E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D868277225F200DDB4E1 /* HomeViewController.swift */; };
 		2899D86A277225F200DDB4E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D868277225F200DDB4E1 /* HomeViewController.swift */; };
@@ -268,6 +300,12 @@
 		2899D8762772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D8742772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift */; };
 		2899D8782779AE2800DDB4E1 /* CompeteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */; };
 		2899D8792779AE2800DDB4E1 /* CompeteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */; };
+		289E85AD27C5242B00DB2616 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E85AB27C5242B00DB2616 /* CommentsTableViewCell.swift */; };
+		289E85AE27C5242B00DB2616 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E85AB27C5242B00DB2616 /* CommentsTableViewCell.swift */; };
+		289E85AF27C5242B00DB2616 /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289E85AC27C5242B00DB2616 /* CommentsTableViewCell.xib */; };
+		289E85B027C5242B00DB2616 /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289E85AC27C5242B00DB2616 /* CommentsTableViewCell.xib */; };
+		289E85B327C5783D00DB2616 /* HaveCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E85B127C5783D00DB2616 /* HaveCommentsTableViewCell.swift */; };
+		289E85B427C5783D00DB2616 /* HaveCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E85B127C5783D00DB2616 /* HaveCommentsTableViewCell.swift */; };
 		28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45D268CEB4700D40F35 /* CALayer.swift */; };
 		28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45F268CEB5F00D40F35 /* UITabBar.swift */; };
 		28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C461268CF38800D40F35 /* UISearchBar.swift */; };
@@ -355,6 +393,8 @@
 		28013AF626AA442B007E082D /* FlagMountainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMountainEntity.swift; sourceTree = "<group>"; };
 		28013AF826AA4503007E082D /* FlagMountainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagMountainDataManager.swift; sourceTree = "<group>"; };
 		28013AFB26AA523B007E082D /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		280279DC279F065800E41A07 /* DetailConquerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConquerViewController.swift; sourceTree = "<group>"; };
+		280279E1279F098F00E41A07 /* DetailConquerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConquerCollectionViewCell.swift; sourceTree = "<group>"; };
 		28119B2E268A26B4002ABFA9 /* santaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = santaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28119B31268A26B4002ABFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28119B33268A26B4002ABFA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -399,6 +439,10 @@
 		28429A41271EB7A50007D7E6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		28429A42271EB7A50007D7E6 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		28429A45271EB7EF0007D7E6 /* WowFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WowFont.otf; sourceTree = "<group>"; };
+		285D970427A56DEA001FB503 /* ConquerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConquerViewModel.swift; path = "../../../../../../Creative Cloud Files/ConquerViewModel.swift"; sourceTree = "<group>"; };
+		285D970927A57058001FB503 /* ConquerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerModel.swift; sourceTree = "<group>"; };
+		285D970D27A5AE33001FB503 /* DetailMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMessageViewController.swift; sourceTree = "<group>"; };
+		285D971027A6117D001FB503 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		2860AB25269DA32800AA37C1 /* GoViewControllerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewControllerEntity.swift; sourceTree = "<group>"; };
 		28645185268C98A5009F3608 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		286966F62692E35E0025A250 /* RankingMountainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingMountainViewController.swift; sourceTree = "<group>"; };
@@ -422,6 +466,10 @@
 		2871B48626A5798B00F32165 /* MountainInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainInfoDataManager.swift; sourceTree = "<group>"; };
 		28738E2A26AE981D002AE718 /* FlagExplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagExplainViewController.swift; sourceTree = "<group>"; };
 		2875D2F3269864FF00180300 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
+		2878F8E127C36F5000A50EB1 /* DoubleMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleMessageTableViewCell.swift; sourceTree = "<group>"; };
+		2878F8E527C3BEA600A50EB1 /* inputComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputComment.swift; sourceTree = "<group>"; };
+		2878F8E827C3BED400A50EB1 /* CommentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsModel.swift; sourceTree = "<group>"; };
+		2878F8EB27C3C03B00A50EB1 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
 		28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainImageTableViewCell.swift; sourceTree = "<group>"; };
 		28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPositionTableViewCell.swift; sourceTree = "<group>"; };
 		28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCourseTableViewCell.swift; sourceTree = "<group>"; };
@@ -450,12 +498,21 @@
 		2882289226A0BF78000B2EAA /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		2882289426A0C04C000B2EAA /* LogoutDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutDataManager.swift; sourceTree = "<group>"; };
 		2890263E268F286E00D15BBA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLikeViewModel.swift; sourceTree = "<group>"; };
+		2893283827C8A2AA000CE5B7 /* FeedLikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLikeModel.swift; sourceTree = "<group>"; };
+		2893283B27C93120000CE5B7 /* CheckNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNumberViewController.swift; sourceTree = "<group>"; };
+		2893284227C9DDB1000CE5B7 /* AppleLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginInput.swift; sourceTree = "<group>"; };
+		2893284527C9DDBE000CE5B7 /* AppleLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginModel.swift; sourceTree = "<group>"; };
+		2893284827C9DDCF000CE5B7 /* AppleLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginDataManager.swift; sourceTree = "<group>"; };
 		289656F6268F58EE00B23E8F /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		2899D868277225F200DDB4E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2899D86E2772355100DDB4E1 /* ConquerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		2899D87127723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltitudeRankingTableViewCell.swift; sourceTree = "<group>"; };
 		2899D8742772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltitudeRankingCollectionViewCell.swift; sourceTree = "<group>"; };
 		2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompeteCollectionViewCell.swift; sourceTree = "<group>"; };
+		289E85AB27C5242B00DB2616 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		289E85AC27C5242B00DB2616 /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
+		289E85B127C5783D00DB2616 /* HaveCommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveCommentsTableViewCell.swift; sourceTree = "<group>"; };
 		28A0C45D268CEB4700D40F35 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		28A0C45F268CEB5F00D40F35 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
 		28A0C461268CF38800D40F35 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
@@ -661,6 +718,25 @@
 			path = ForgetPasswordViewController;
 			sourceTree = "<group>";
 		};
+		280279DF279F094700E41A07 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2899D86E2772355100DDB4E1 /* ConquerImageCollectionViewCell.swift */,
+				2899D8742772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift */,
+				2899D87127723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift */,
+				2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		280279E0279F095900E41A07 /* DetailConquerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				280279E1279F098F00E41A07 /* DetailConquerCollectionViewCell.swift */,
+			);
+			path = DetailConquerViewController;
+			sourceTree = "<group>";
+		};
 		28119B25268A26B4002ABFA9 = {
 			isa = PBXGroup;
 			children = (
@@ -759,6 +835,7 @@
 				28A0C45F268CEB5F00D40F35 /* UITabBar.swift */,
 				28A0C461268CF38800D40F35 /* UISearchBar.swift */,
 				2812067426A5DF1300BDA266 /* PaddingLabel.swift */,
+				285D971027A6117D001FB503 /* UITextField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -803,12 +880,14 @@
 		2813D835268B72A100822337 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2893284127C9DD97000CE5B7 /* AppleLoginAPI */,
 				28013AFA26AA5217007E082D /* ForgetPasswordViewController */,
 				2882287726A060E6000B2EAA /* SignInVIewControllerApi */,
 				28822866269F465D000B2EAA /* SignUpViewControllerAPI */,
 				2813D836268B72B900822337 /* LoginViewController.swift */,
 				28822864269E0DBF000B2EAA /* SignUpViewController.swift */,
 				2882287526A05C36000B2EAA /* SignInViewController.swift */,
+				2893283B27C93120000CE5B7 /* CheckNumberViewController.swift */,
 			);
 			path = LoginViewController;
 			sourceTree = "<group>";
@@ -881,6 +960,42 @@
 				28429A39271EB4110007D7E6 /* Cocogoose Pro-trial.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		285D970227A56CDC001FB503 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				285D970327A56D00001FB503 /* ConquerViewModel */,
+				28DB685B2785AA6500856198 /* HomeViewModel.swift */,
+				2878F8EB27C3C03B00A50EB1 /* CommentsViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		285D970327A56D00001FB503 /* ConquerViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				285D970427A56DEA001FB503 /* ConquerViewModel.swift */,
+			);
+			path = ConquerViewModel;
+			sourceTree = "<group>";
+		};
+		285D970727A5703B001FB503 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2878F8EE27C3C19400A50EB1 /* Comments */,
+				285D970827A57043001FB503 /* Conquer */,
+				28DB68582785A60100856198 /* HomeModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		285D970827A57043001FB503 /* Conquer */ = {
+			isa = PBXGroup;
+			children = (
+				285D970927A57058001FB503 /* ConquerModel.swift */,
+			);
+			path = Conquer;
 			sourceTree = "<group>";
 		};
 		2860AB29269DF64300AA37C1 /* CommonClass */ = {
@@ -991,6 +1106,26 @@
 			path = DetailPostViewController;
 			sourceTree = "<group>";
 		};
+		2878F8DD27C28C5200A50EB1 /* MessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				2878F8E127C36F5000A50EB1 /* DoubleMessageTableViewCell.swift */,
+				289E85AB27C5242B00DB2616 /* CommentsTableViewCell.swift */,
+				289E85AC27C5242B00DB2616 /* CommentsTableViewCell.xib */,
+				289E85B127C5783D00DB2616 /* HaveCommentsTableViewCell.swift */,
+			);
+			path = MessageCell;
+			sourceTree = "<group>";
+		};
+		2878F8EE27C3C19400A50EB1 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				2878F8E527C3BEA600A50EB1 /* inputComment.swift */,
+				2878F8E827C3BED400A50EB1 /* CommentsModel.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
 		28810B0226962B2C008F0FE3 /* CourseTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1034,6 +1169,8 @@
 		2882287726A060E6000B2EAA /* SignInVIewControllerApi */ = {
 			isa = PBXGroup;
 			children = (
+				2893283427C695C2000CE5B7 /* AppleLogin */,
+				2893283327C695A8000CE5B7 /* KaKaoLogin */,
 				2882287826A06106000B2EAA /* SignInViewControllerInput.swift */,
 				2882287A26A06115000B2EAA /* SignInViewControllerEntity.swift */,
 				2882287C26A06129000B2EAA /* SignInViewControllerDataManager.swift */,
@@ -1059,10 +1196,35 @@
 			path = LogoutApi;
 			sourceTree = "<group>";
 		};
+		2893283327C695A8000CE5B7 /* KaKaoLogin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KaKaoLogin;
+			sourceTree = "<group>";
+		};
+		2893283427C695C2000CE5B7 /* AppleLogin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppleLogin;
+			sourceTree = "<group>";
+		};
+		2893284127C9DD97000CE5B7 /* AppleLoginAPI */ = {
+			isa = PBXGroup;
+			children = (
+				2893284227C9DDB1000CE5B7 /* AppleLoginInput.swift */,
+				2893284527C9DDBE000CE5B7 /* AppleLoginModel.swift */,
+				2893284827C9DDCF000CE5B7 /* AppleLoginDataManager.swift */,
+			);
+			path = AppleLoginAPI;
+			sourceTree = "<group>";
+		};
 		2899D864277225B800DDB4E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				28DB68582785A60100856198 /* HomeModel.swift */,
+				285D970727A5703B001FB503 /* Home */,
+				2893283827C8A2AA000CE5B7 /* FeedLikeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1070,7 +1232,8 @@
 		2899D865277225C100DDB4E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				28DB685B2785AA6500856198 /* HomeViewModel.swift */,
+				285D970227A56CDC001FB503 /* Home */,
+				2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1088,6 +1251,8 @@
 			isa = PBXGroup;
 			children = (
 				2899D868277225F200DDB4E1 /* HomeViewController.swift */,
+				280279DC279F065800E41A07 /* DetailConquerViewController.swift */,
+				285D970D27A5AE33001FB503 /* DetailMessageViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1111,10 +1276,9 @@
 		2899D86D2772352800DDB4E1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2899D86E2772355100DDB4E1 /* ConquerImageCollectionViewCell.swift */,
-				2899D8742772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift */,
-				2899D87127723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift */,
-				2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */,
+				2878F8DD27C28C5200A50EB1 /* MessageCell */,
+				280279E0279F095900E41A07 /* DetailConquerViewController */,
+				280279DF279F094700E41A07 /* HomeViewController */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1406,6 +1570,7 @@
 			files = (
 				281E2D2526EF06C800AE8339 /* InfoPlist.strings in Resources */,
 				28429A37271EB14A0007D7E6 /* lottieAnimaition.json in Resources */,
+				289E85AF27C5242B00DB2616 /* CommentsTableViewCell.xib in Resources */,
 				28E947642721421F00DF97E4 /* GoogleService-Info.plist in Resources */,
 				28119B3E268A26B4002ABFA9 /* Assets.xcassets in Resources */,
 				28429A3C271EB41A0007D7E6 /* AppleSDGothicNeo.ttc in Resources */,
@@ -1435,6 +1600,7 @@
 			files = (
 				2828C1632732E7B1003ABAF5 /* InfoPlist.strings in Resources */,
 				2828C1712732E7C7003ABAF5 /* GoogleService-Info.plist in Resources */,
+				289E85B027C5242B00DB2616 /* CommentsTableViewCell.xib in Resources */,
 				2828C1642732E7B1003ABAF5 /* lottieAnimaition.json in Resources */,
 				2828C1662732E7B1003ABAF5 /* Assets.xcassets in Resources */,
 				2828C1672732E7B1003ABAF5 /* AppleSDGothicNeo.ttc in Resources */,
@@ -1577,14 +1743,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */,
+				280279E2279F098F00E41A07 /* DetailConquerCollectionViewCell.swift in Sources */,
 				2882289026A0B6F7000B2EAA /* LogoutTableViewCell.swift in Sources */,
 				28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */,
 				28013AEF26A99B3C007E082D /* ShowUserResultDataManager.swift in Sources */,
 				28013ACA26A74534007E082D /* ChangeProfileDataManager.swift in Sources */,
 				2828C1742732E9A9003ABAF5 /* ResignEntity.swift in Sources */,
+				2893283627C8A270000CE5B7 /* FeedLikeViewModel.swift in Sources */,
+				2878F8E227C36F5000A50EB1 /* DoubleMessageTableViewCell.swift in Sources */,
 				2812067926A5FDCD00BDA266 /* ShowProlfileEntity.swift in Sources */,
 				2871B45F26A31AD200F32165 /* MountainLikeDataManager.swift in Sources */,
 				28013AC526A725D0007E082D /* RegisterImageDataManager.swift in Sources */,
+				2893284927C9DDCF000CE5B7 /* AppleLoginDataManager.swift in Sources */,
 				2882287D26A06129000B2EAA /* SignInViewControllerDataManager.swift in Sources */,
 				2871B46626A3277900F32165 /* MapPositionEntity.swift in Sources */,
 				28822865269E0DBF000B2EAA /* SignUpViewController.swift in Sources */,
@@ -1606,20 +1776,25 @@
 				283047EF268E2B7700DEB2EC /* StartViewController.swift in Sources */,
 				286CCBFE26EF12F9008C7B3F /* Struct.swift in Sources */,
 				2871B47E26A4BABA00F32165 /* MountainRankingEntity.swift in Sources */,
+				289E85AD27C5242B00DB2616 /* CommentsTableViewCell.swift in Sources */,
 				28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */,
 				28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */,
 				28013ACF26A7BB8F007E082D /* DetailPostsDataManager.swift in Sources */,
+				285D970527A56DEA001FB503 /* ConquerViewModel.swift in Sources */,
 				28013ADD26A862F4007E082D /* DetailAnotherUserDataManager.swift in Sources */,
+				285D971127A6117D001FB503 /* UITextField.swift in Sources */,
 				2871B48026A4BB9900F32165 /* MountainRankingDataManager.swift in Sources */,
 				286966F72692E35E0025A250 /* RankingMountainViewController.swift in Sources */,
 				28DB5E0C26A1BA6B0092CC40 /* MountainDataManager.swift in Sources */,
 				28C0479426AB3F05008E6831 /* CertificationNumInput.swift in Sources */,
 				2882287026A047E5000B2EAA /* CompleteSignUpEntity.swift in Sources */,
+				285D970E27A5AE33001FB503 /* DetailMessageViewController.swift in Sources */,
 				2830CB0126ADA6C300DC3805 /* TermsOfServiceDetailViewController.swift in Sources */,
 				2871B46D26A446ED00F32165 /* CompleteConqueredDataManager.swift in Sources */,
 				289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */,
 				28013AD526A85F6C007E082D /* DetailAnotherUserViewController.swift in Sources */,
 				28139FC92698A3F30091DFCD /* SearchViewController.swift in Sources */,
+				285D970A27A57058001FB503 /* ConquerModel.swift in Sources */,
 				2871B47B26A4B65200F32165 /* MountainSearchDataManager.swift in Sources */,
 				28013AED26A99A16007E082D /* ShowUserResultEntity.swift in Sources */,
 				28D4C248268A2D290056EECF /* PickMountainViewController.swift in Sources */,
@@ -1641,6 +1816,7 @@
 				2871B47026A4675600F32165 /* RankingTableViewCell.swift in Sources */,
 				28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */,
 				28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */,
+				280279DD279F065800E41A07 /* DetailConquerViewController.swift in Sources */,
 				2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */,
 				2882287B26A06115000B2EAA /* SignInViewControllerEntity.swift in Sources */,
 				2882287926A06106000B2EAA /* SignInViewControllerInput.swift in Sources */,
@@ -1653,6 +1829,7 @@
 				2899D87227723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift in Sources */,
 				28C0478B26AB327A008E6831 /* CheckEmailEntity.swift in Sources */,
 				28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */,
+				2878F8E627C3BEA600A50EB1 /* inputComment.swift in Sources */,
 				282FD6FC2694AD6B00B38602 /* ContentMountainViewController.swift in Sources */,
 				2871B47926A4B62800F32165 /* MonutainSearchInput.swift in Sources */,
 				28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */,
@@ -1676,9 +1853,11 @@
 				28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */,
 				2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */,
 				28013ABF26A6F34F007E082D /* PositionCourseAnnotationView.swift in Sources */,
+				2878F8EC27C3C03B00A50EB1 /* CommentsViewModel.swift in Sources */,
 				28D4C24D268A2D9F0056EECF /* ProfileViewController.swift in Sources */,
 				2875D2F4269864FF00180300 /* DetailPostViewController.swift in Sources */,
 				2812067726A5E29F00BDA266 /* PositionMountainAnnotationView.swift in Sources */,
+				2878F8E927C3BED500A50EB1 /* CommentsModel.swift in Sources */,
 				2828BF9C2732E5F3003ABAF5 /* ResignTableViewCell.swift in Sources */,
 				28013ACD26A7BA62007E082D /* DetailPostEntity.swift in Sources */,
 				2812067C26A6008200BDA266 /* ShowProfileDataManager.swift in Sources */,
@@ -1689,14 +1868,17 @@
 				28429A43271EB7A50007D7E6 /* TableViewCell.swift in Sources */,
 				28822868269F4690000B2EAA /* CheckNicnameEntity.swift in Sources */,
 				28013AF226AA3D27007E082D /* FlagMapViewController.swift in Sources */,
+				2893284327C9DDB1000CE5B7 /* AppleLoginInput.swift in Sources */,
 				2882288A26A0A0B3000B2EAA /* AutoLoginEntity.swift in Sources */,
 				2899D8752772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift in Sources */,
 				28D4C23D268A2A1D0056EECF /* SplashViewController.swift in Sources */,
 				2882287626A05C36000B2EAA /* SignInViewController.swift in Sources */,
+				289E85B327C5783D00DB2616 /* HaveCommentsTableViewCell.swift in Sources */,
 				28DB5E0A26A1B9C50092CC40 /* MountainEntity.swift in Sources */,
 				28810B082697111D008F0FE3 /* UserResultCollectionViewCell.swift in Sources */,
 				28F41B53269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift in Sources */,
 				2882287226A047F4000B2EAA /* CompleteSignUpDataManager.swift in Sources */,
+				2893283C27C93120000CE5B7 /* CheckNumberViewController.swift in Sources */,
 				2871B46126A31E3400F32165 /* MountainPicksEntity.swift in Sources */,
 				2812067526A5DF1300BDA266 /* PaddingLabel.swift in Sources */,
 				28C0478F26AB336D008E6831 /* CheckEmailDataManager.swift in Sources */,
@@ -1705,10 +1887,12 @@
 				28013AE826A91156007E082D /* ReportUserFlagsEntity.swift in Sources */,
 				28013AD826A85FDE007E082D /* DetailAnotherUserCollectionViewCell.swift in Sources */,
 				2882289326A0BF78000B2EAA /* LogoutEntity.swift in Sources */,
+				2893284627C9DDBE000CE5B7 /* AppleLoginModel.swift in Sources */,
 				28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */,
 				2882287426A048D4000B2EAA /* CompleteSignUpInput.swift in Sources */,
 				2871B46326A31F2700F32165 /* MountainPicksDataManager.swift in Sources */,
 				28C0478626AB2B7B008E6831 /* ForgetPasswordInput.swift in Sources */,
+				2893283927C8A2AA000CE5B7 /* FeedLikeModel.swift in Sources */,
 				2882286C269F48BB000B2EAA /* CheckNicnameInput.swift in Sources */,
 				2882288826A09F87000B2EAA /* AutoLoginDataManager.swift in Sources */,
 				28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */,
@@ -1739,14 +1923,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2828C0D92732E7B1003ABAF5 /* UILabel.swift in Sources */,
+				280279E3279F098F00E41A07 /* DetailConquerCollectionViewCell.swift in Sources */,
 				2828C0DA2732E7B1003ABAF5 /* LogoutTableViewCell.swift in Sources */,
 				2828C0DB2732E7B1003ABAF5 /* MountainCourseTableViewCell.swift in Sources */,
 				2828C0DC2732E7B1003ABAF5 /* ShowUserResultDataManager.swift in Sources */,
 				2828C0DE2732E7B1003ABAF5 /* ChangeProfileDataManager.swift in Sources */,
 				2828C1752732E9A9003ABAF5 /* ResignEntity.swift in Sources */,
+				2893283727C8A270000CE5B7 /* FeedLikeViewModel.swift in Sources */,
+				2878F8E327C36F5000A50EB1 /* DoubleMessageTableViewCell.swift in Sources */,
 				2828C0DF2732E7B1003ABAF5 /* ShowProlfileEntity.swift in Sources */,
 				2828C0E02732E7B1003ABAF5 /* MountainLikeDataManager.swift in Sources */,
 				2828C0E12732E7B1003ABAF5 /* RegisterImageDataManager.swift in Sources */,
+				2893284A27C9DDCF000CE5B7 /* AppleLoginDataManager.swift in Sources */,
 				2828C0E22732E7B1003ABAF5 /* SignInViewControllerDataManager.swift in Sources */,
 				2828C0E32732E7B1003ABAF5 /* MapPositionEntity.swift in Sources */,
 				2828C0E42732E7B1003ABAF5 /* SignUpViewController.swift in Sources */,
@@ -1768,20 +1956,25 @@
 				2828C0F42732E7B1003ABAF5 /* StartViewController.swift in Sources */,
 				2828C0F52732E7B1003ABAF5 /* Struct.swift in Sources */,
 				2828C0F62732E7B1003ABAF5 /* MountainRankingEntity.swift in Sources */,
+				289E85AE27C5242B00DB2616 /* CommentsTableViewCell.swift in Sources */,
 				2828C0F72732E7B1003ABAF5 /* MountainHeightTableViewCell.swift in Sources */,
 				2828C0F82732E7B1003ABAF5 /* santaApp.xcdatamodeld in Sources */,
 				2828C0F92732E7B1003ABAF5 /* DetailPostsDataManager.swift in Sources */,
+				285D970627A56DEA001FB503 /* ConquerViewModel.swift in Sources */,
 				2828C0FA2732E7B1003ABAF5 /* DetailAnotherUserDataManager.swift in Sources */,
+				285D971227A6117D001FB503 /* UITextField.swift in Sources */,
 				2828C0FB2732E7B1003ABAF5 /* MountainRankingDataManager.swift in Sources */,
 				2828C0FC2732E7B1003ABAF5 /* RankingMountainViewController.swift in Sources */,
 				2828C0FD2732E7B1003ABAF5 /* MountainDataManager.swift in Sources */,
 				2828C0FE2732E7B1003ABAF5 /* CertificationNumInput.swift in Sources */,
 				2828C0FF2732E7B1003ABAF5 /* CompleteSignUpEntity.swift in Sources */,
+				285D970F27A5AE33001FB503 /* DetailMessageViewController.swift in Sources */,
 				2828C1012732E7B1003ABAF5 /* TermsOfServiceDetailViewController.swift in Sources */,
 				2828C1022732E7B1003ABAF5 /* CompleteConqueredDataManager.swift in Sources */,
 				2828C1032732E7B1003ABAF5 /* CompleteViewController.swift in Sources */,
 				2828C1042732E7B1003ABAF5 /* DetailAnotherUserViewController.swift in Sources */,
 				2828C1052732E7B1003ABAF5 /* SearchViewController.swift in Sources */,
+				285D970B27A57058001FB503 /* ConquerModel.swift in Sources */,
 				2828C1062732E7B1003ABAF5 /* MountainSearchDataManager.swift in Sources */,
 				2828C1072732E7B1003ABAF5 /* ShowUserResultEntity.swift in Sources */,
 				2828C1082732E7B1003ABAF5 /* PickMountainViewController.swift in Sources */,
@@ -1803,6 +1996,7 @@
 				2828C1192732E7B1003ABAF5 /* RankingTableViewCell.swift in Sources */,
 				2828C11A2732E7B1003ABAF5 /* ContentRankViewController.swift in Sources */,
 				2828C11B2732E7B1003ABAF5 /* UISearchBar.swift in Sources */,
+				280279DE279F065800E41A07 /* DetailConquerViewController.swift in Sources */,
 				2828C11C2732E7B1003ABAF5 /* GoViewControllerEntity.swift in Sources */,
 				2828C11D2732E7B1003ABAF5 /* SignInViewControllerEntity.swift in Sources */,
 				2828C11E2732E7B1003ABAF5 /* SignInViewControllerInput.swift in Sources */,
@@ -1815,6 +2009,7 @@
 				2899D87327723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift in Sources */,
 				2828C1232732E7B1003ABAF5 /* CheckEmailEntity.swift in Sources */,
 				2828C1242732E7B1003ABAF5 /* RankTableViewCell.swift in Sources */,
+				2878F8E727C3BEA600A50EB1 /* inputComment.swift in Sources */,
 				2828C1252732E7B1003ABAF5 /* ContentMountainViewController.swift in Sources */,
 				2828C1262732E7B1003ABAF5 /* MonutainSearchInput.swift in Sources */,
 				2828C1272732E7B1003ABAF5 /* MountainImageTableViewCell.swift in Sources */,
@@ -1838,9 +2033,11 @@
 				2828C1362732E7B1003ABAF5 /* DetailPostCollectionViewCell.swift in Sources */,
 				2828C1372732E7B1003ABAF5 /* LogoutDataManager.swift in Sources */,
 				2828C1382732E7B1003ABAF5 /* PositionCourseAnnotationView.swift in Sources */,
+				2878F8ED27C3C03B00A50EB1 /* CommentsViewModel.swift in Sources */,
 				2828C1392732E7B1003ABAF5 /* ProfileViewController.swift in Sources */,
 				2828C13A2732E7B1003ABAF5 /* DetailPostViewController.swift in Sources */,
 				2828C13B2732E7B1003ABAF5 /* PositionMountainAnnotationView.swift in Sources */,
+				2878F8EA27C3BED500A50EB1 /* CommentsModel.swift in Sources */,
 				2828C13C2732E7B1003ABAF5 /* ResignTableViewCell.swift in Sources */,
 				2828C13D2732E7B1003ABAF5 /* DetailPostEntity.swift in Sources */,
 				2828C13E2732E7B1003ABAF5 /* ShowProfileDataManager.swift in Sources */,
@@ -1851,14 +2048,17 @@
 				2828C1432732E7B1003ABAF5 /* TableViewCell.swift in Sources */,
 				2828C1442732E7B1003ABAF5 /* CheckNicnameEntity.swift in Sources */,
 				2828C1452732E7B1003ABAF5 /* FlagMapViewController.swift in Sources */,
+				2893284427C9DDB1000CE5B7 /* AppleLoginInput.swift in Sources */,
 				2828C1462732E7B1003ABAF5 /* AutoLoginEntity.swift in Sources */,
 				2899D8762772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift in Sources */,
 				2828C1472732E7B1003ABAF5 /* SplashViewController.swift in Sources */,
 				2828C1482732E7B1003ABAF5 /* SignInViewController.swift in Sources */,
+				289E85B427C5783D00DB2616 /* HaveCommentsTableViewCell.swift in Sources */,
 				2828C1492732E7B1003ABAF5 /* MountainEntity.swift in Sources */,
 				2828C14A2732E7B1003ABAF5 /* UserResultCollectionViewCell.swift in Sources */,
 				2828C14B2732E7B1003ABAF5 /* RecommendMountainCollectionViewCell.swift in Sources */,
 				2828C14C2732E7B1003ABAF5 /* CompleteSignUpDataManager.swift in Sources */,
+				2893283D27C93120000CE5B7 /* CheckNumberViewController.swift in Sources */,
 				2828C14D2732E7B1003ABAF5 /* MountainPicksEntity.swift in Sources */,
 				2828C14E2732E7B1003ABAF5 /* PaddingLabel.swift in Sources */,
 				2828C14F2732E7B1003ABAF5 /* CheckEmailDataManager.swift in Sources */,
@@ -1867,10 +2067,12 @@
 				2828C1522732E7B1003ABAF5 /* ReportUserFlagsEntity.swift in Sources */,
 				2828C1532732E7B1003ABAF5 /* DetailAnotherUserCollectionViewCell.swift in Sources */,
 				2828C1542732E7B1003ABAF5 /* LogoutEntity.swift in Sources */,
+				2893284727C9DDBE000CE5B7 /* AppleLoginModel.swift in Sources */,
 				2828C1552732E7B1003ABAF5 /* CALayer.swift in Sources */,
 				2828C1562732E7B1003ABAF5 /* CompleteSignUpInput.swift in Sources */,
 				2828C1572732E7B1003ABAF5 /* MountainPicksDataManager.swift in Sources */,
 				2828C1582732E7B1003ABAF5 /* ForgetPasswordInput.swift in Sources */,
+				2893283A27C8A2AA000CE5B7 /* FeedLikeModel.swift in Sources */,
 				2828C1592732E7B1003ABAF5 /* CheckNicnameInput.swift in Sources */,
 				2828C15A2732E7B1003ABAF5 /* AutoLoginDataManager.swift in Sources */,
 				2828C15B2732E7B1003ABAF5 /* AppDelegate.swift in Sources */,

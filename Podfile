@@ -15,6 +15,7 @@ target 'santaApp' do
   pod 'Firebase/Analytics'
   pod 'lottie-ios'
   pod 'Kingfisher'
+  pod 'KakaoSDK'
 
   target 'santaAppTests' do
     inherit! :search_paths
@@ -34,4 +35,5 @@ pod 'SnapKit', '~> 5.0.0'
   pod 'Firebase/Analytics'
   pod 'lottie-ios'
   pod 'Kingfisher'
+  pod 'KakaoSDK'
 end

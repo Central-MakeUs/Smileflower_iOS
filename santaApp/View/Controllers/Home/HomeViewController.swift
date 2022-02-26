@@ -11,6 +11,7 @@ import Kingfisher
 class HomeViewController: BaseViewController {
 
     let viewModel = HomeViewModel()
+    let viewModelLike = FeedLikdeViewModel()
     var arrayPicture : [HomeModelPictureList] = []
     var arrayUser : [HomeModelUserList] = []
     var arrayMountain : [HomeModelMountainsList] = []
@@ -24,17 +25,24 @@ class HomeViewController: BaseViewController {
         setAccumulateAltitudeView()
         setCompeteView()
         
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
         viewModel.appNewHomeAPI { resultPicture, resultUser, resultMounatain in
             self.arrayPicture = resultPicture
             self.arrayUser = resultUser
             self.arrayMountain = resultMounatain
+
             self.collectionViewConquerImage.reloadData()
             self.collectionViewTopTen.reloadData()
             self.collectionViewCompete.reloadData()
         }
     }
     override func viewDidAppear(_ animated: Bool) {
-        NotificationCenter.default.post(name: Notification.Name("setframe"), object: nil)
+    }
+    override func viewDidLayoutSubviews() {
     }
     //MARK: 스크롤뷰 구현
     let scrollViewContent : UIScrollView = {
@@ -132,6 +140,8 @@ class HomeViewController: BaseViewController {
     @objc func actionGoSearchMountain() {
         let nextVC = SearchViewController()
         nextVC.modalPresentationStyle = .fullScreen
+        tabBarController?.tabBar.isHidden = true
+        NotificationCenter.default.post(name: Notification.Name("middleButtonHidden"), object: nil)
         self.navigationController?.pushViewController(nextVC, animated: false)
     }
     // 뷰의 상단 구성
@@ -182,7 +192,7 @@ class HomeViewController: BaseViewController {
     // 더보기 버튼
     let buttonMoreConquerImage : UIButton = {
         let button = UIButton()
-        
+        button.addTarget(self, action: #selector(goMoreCoquerView), for: .touchUpInside)
         let label = UILabel()
         label.text = "더 보기"
         label.textColor = .bluegray
@@ -208,6 +218,11 @@ class HomeViewController: BaseViewController {
         }
         return button
     }()
+    @objc func goMoreCoquerView() {
+        let NextVC = DetailConquerViewController()
+        
+        self.navigationController?.pushViewController(NextVC, animated: true)
+    }
     // 정복 인증샷 collectionView
     let collectionViewConquerImage: UICollectionView = {
             
@@ -316,44 +331,12 @@ class HomeViewController: BaseViewController {
         label.addCharacterSpacing(kernValue: -0.6)
         return label
     }()
-    // "경쟁중인 맵에서 랭커가 되어보세요!" 라벨
-    let labelLetRanker : UILabel = {
+    let labelGoCompeteExplain : UILabel = {
         let label = UILabel()
         label.text = "경쟁중인 맵에서 랭커가 되어보세요!"
         label.textColor = .lightbluegray
-        label.font = UIFont(name: Constant.fontAppleSDGothicNeoRegular, size: 12)
-        label.setTextWithLineHeight(text: label.text, lineHeight: 15)
-        label.addCharacterSpacing(kernValue: -0.36)
+        label.font = UIFont(name: Constant.fontAppleSDGothicNeoRegular, size: 15)
         return label
-    }()
-    // 더보기 버튼
-    let buttonGoCompeteMountain : UIButton = {
-        let button = UIButton()
-        
-        let label = UILabel()
-        label.text = "더 보기"
-        label.textColor = .bluegray
-        label.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 13)
-        label.setTextWithLineHeight(text: label.text, lineHeight: 16)
-        label.addCharacterSpacing(kernValue: -0.39)
-        
-        button.addSubview(label)
-        label.snp.makeConstraints { make in
-            make.leading.equalTo(button)
-            make.centerY.equalTo(button)
-        }
-        
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "icHomeArrowRight")
-        imageView.contentMode = .scaleAspectFit
-        
-        button.addSubview(imageView)
-        imageView.snp.makeConstraints { make in
-            make.trailing.equalTo(button)
-            make.centerY.equalTo(label)
-            make.width.height.equalTo(24)
-        }
-        return button
     }()
     // 정복 인증샷 collectionView
     let collectionViewCompete : UICollectionView = {
@@ -378,18 +361,10 @@ class HomeViewController: BaseViewController {
             make.top.equalTo(collectionViewTopTen.snp.bottom).offset(38)
         }
         
-        viewContent.addSubview(labelLetRanker)
-        labelLetRanker.snp.makeConstraints { make in
-            make.leading.equalTo(labelGocompete.snp.trailing).offset(4)
-            make.bottom.equalTo(labelGocompete).offset(-3)
-        }
-        
-        viewContent.addSubview(buttonGoCompeteMountain)
-        buttonGoCompeteMountain.snp.makeConstraints { make in
-            make.trailing.equalTo(viewContent).offset(-12)
-            make.centerY.equalTo(labelGocompete)
-            make.width.equalTo(57)
-            make.height.equalTo(25)
+        viewContent.addSubview(labelGoCompeteExplain)
+        labelGoCompeteExplain.snp.makeConstraints { make in
+            make.bottom.equalTo(labelGocompete)
+            make.leading.equalTo(labelGocompete.snp.trailing).offset(2)
         }
         
         collectionViewCompete.delegate = self
@@ -431,6 +406,7 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CompeteCollectionViewCell.resueidentifier, for: indexPath) as? CompeteCollectionViewCell else {
                 return UICollectionViewCell()
             }
+
             cell.backgroundColor = .white
             cell.layer.cornerRadius = 20
             cell.layer.shadowOffset = CGSize(width: 0, height: 3)
@@ -448,6 +424,13 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
                 cell.imageViewMountain.kf.setImage(with: url)
             }
             
+            if let urlString = arrayMountain[indexPath.row].userImageUrl {
+                let url = URL(string: urlString)
+                cell.imageViewProfile.kf.indicatorType = .activity
+                let proceesor = DownsamplingImageProcessor(size: cell.imageViewProfile.bounds.size)
+                cell.imageViewProfile.kf.setImage(with: url, options: [.processor(proceesor)])
+            }
+            
             cell.labelMountainName.text = arrayMountain[indexPath.row].mountainName
             cell.labelMountainHeight.text = arrayMountain[indexPath.row].high
             
@@ -463,6 +446,7 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             default:
                 cell.imageViewDifficult.image = UIImage(named: "illustHome5")
             }
+            
             return cell
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConquerImageCollectionViewCell.resueidentifier, for: indexPath) as? ConquerImageCollectionViewCell else {
@@ -480,7 +464,7 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             } else {
                 cell.imageViewUserProfile.image = UIImage(named: "personhome")
             }
-            if let urlString = arrayPicture[indexPath.row].pictureImageUrl {
+            if let urlString = arrayPicture[indexPath.row].flagImageUrl {
                 let url = URL(string: urlString)
                 cell.imageViewUserConquer.kf.indicatorType = .activity
                 cell.imageViewUserConquer.kf.setImage(with: url)
@@ -491,7 +475,6 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             return cell
         }
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == collectionViewTopTen {
             return CGSize(width: 333, height: 327)

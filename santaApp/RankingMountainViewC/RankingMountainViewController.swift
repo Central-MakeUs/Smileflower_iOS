@@ -462,7 +462,7 @@ class RankingMountainViewController: BaseViewController {
         }
     }
 }
-extension RankingMountainViewController : UINavigationBarDelegate, MKMapViewDelegate{
+extension RankingMountainViewController : MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation.title == mountainName {
             guard let annotation1 = mapView.dequeueReusableAnnotationView(withIdentifier: PositionMountainAnnotationView.identifier) as? PositionMountainAnnotationView

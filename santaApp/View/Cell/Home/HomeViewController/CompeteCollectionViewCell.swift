@@ -13,17 +13,12 @@ class CompeteCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setContentView()
-        NotificationCenter.default.addObserver(self, selector: #selector(setframe), name: Notification.Name("setframe"), object: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func setframe() {
-        print("notification")
-        imageViewMask.frame = imageViewProfile.bounds
-    }
     //MARK: 뷰 구성 변수
     // 산 사진
     let imageViewMountain : UIImageView = {
@@ -75,13 +70,21 @@ class CompeteCollectionViewCell: UICollectionViewCell {
     // 유저 마스크
     let imageViewMask : UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "mask")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     // 유저 프로필
     let imageViewProfile : UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "personhome")
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    // master 이미지
+    let imageViewMaster : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "master")
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
@@ -129,12 +132,25 @@ class CompeteCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(self).offset(-5)
             make.trailing.equalTo(self).offset(-23.7)
         }
-        imageViewProfile.mask = imageViewMask
+        
         imageViewUserProfileBackView.addSubview(imageViewProfile)
         imageViewProfile.snp.makeConstraints { make in
             make.width.equalTo(38.5)
             make.height.equalTo(51.5)
             make.center.equalTo(imageViewUserProfileBackView)
+        }
+        let mask = CALayer()
+        mask.contents = UIImage(named: "mask@3x")?.cgImage as Any
+        mask.frame = CGRect(x: 0, y: 0, width: 36, height: 46)
+        imageViewProfile.layer.mask = mask
+        imageViewProfile.layer.masksToBounds = true
+        
+        imageViewUserProfileBackView.addSubview(imageViewMaster)
+        imageViewMaster.snp.makeConstraints { make in
+            make.centerY.equalTo(imageViewUserProfileBackView).offset(8)
+            make.centerX.equalTo(imageViewUserProfileBackView)
+            make.width.equalTo(46.1)
+            make.height.equalTo(14.2)
         }
     }
 }
