@@ -188,7 +188,9 @@ class SignInViewController : BaseViewController{
     }
     @objc func actionSignIn() {
         TrackingTool.Action(actionName: "action_do_email_login", param: ["":""])
-        let input = SignInViewControllerInput(emailId: textFieldID.text ?? "", password: textFieldPassword.text ?? "")
+        let FCMTK = UserDefaults.standard.value(forKey: "FCM_TOKEN") as? String ?? ""
+        let input = SignInViewControllerInput(emailId: textFieldID.text ?? "", password: textFieldPassword.text ?? "", pushToken: FCMTK)
+        print(FCMTK)
         SignInViewControllerDataManager().appuserslogin(self, input)
     }
     

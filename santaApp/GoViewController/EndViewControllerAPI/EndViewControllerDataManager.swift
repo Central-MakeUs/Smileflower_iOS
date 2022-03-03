@@ -22,26 +22,25 @@ class EndViewControllerDataManager {
             for (key, value) in parameters {
                 MultipartFormData.append("\(value)".data(using: .utf8)!, withName: key, mimeType: "application/json") }
             MultipartFormData.append(dataimg, withName: "file", fileName: "a.jpg", mimeType: "multipart/form-data")
-        }, to: Constant.baseURL + "/api/flag/\(mountainIdx)", method: .post ,headers: headers).responseDecodable(of: EndViewControllerEntity.self) { response in
+        }, to: Constant.baseURL + "/app/flag/\(mountainIdx)", method: .post ,headers: headers).responseDecodable(of: EndViewControllerEntity.self) { response in
             switch response.result {
             case .success(let response):
-                if response.success, let result = response.response{
-                    if result.isDoubleVisited {
+                if response.isSuccess, let result = response.result{
+                    if result.doubleVisited {
                         viewcontroller.failureDataImageRegister("하루에 두 번 인증은 불가능합니다!")
 
                     } else {
                         viewcontroller.successDataImageRegister()
                     }
                 }
-                else if !response.success, let error = response.error {
-                    viewcontroller.failureDataImageRegister(error.message ?? "")
+                else if !response.isSuccess{
+                    viewcontroller.failureDataImageRegister(response.message)
                 }
                 else {
-                    viewcontroller.failureDataImageRegister(response.error!.message!)
+                    viewcontroller.failureDataImageRegister(response.message ?? "")
                 }
             case .failure(let error):
-                print(error.localizedDescription)
-                viewcontroller.failureDataImageRegister("네트워크 통신 장애")
+                viewcontroller.failureDataImageRegister(error.localizedDescription)
             }
         }
             

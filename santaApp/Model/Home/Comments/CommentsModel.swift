@@ -16,7 +16,7 @@ struct commentsResult : Decodable {
     var userIdx : Int?
     var userImageUrl : String?
     var userName : String?
-    var isUsersComments: String?
+    var isUsersComment: String?
     var commentIdx: Int?
     var contents: String?
     var status: String?
@@ -28,7 +28,7 @@ struct messageComments : Decodable {
     var userIdx : Int?
     var userImageUrl : String?
     var userName : String?
-    var isUsersComments : String?
+    var isUsersComment : String?
     var recommentIdx : Int?
     var contents: String?
     var status: String?

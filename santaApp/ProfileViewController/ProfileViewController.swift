@@ -33,7 +33,6 @@ class ProfileViewController : BaseViewController {
         super.viewDidLoad()
         navigationBarSet()
         scrollViewSet()
-        buttonSetSeeMap()
         viewSetContent()
         viewSet()
         viewSetUser()
@@ -61,23 +60,42 @@ class ProfileViewController : BaseViewController {
     }
     //MARK: 네비게이션
     let pickerForMountainImage = UIImagePickerController()
-    lazy var rightButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(title: "사진 추가", style: .plain, target: self, action: #selector(actionAddImage))
-        button.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 15 )], for: .normal)
+    //MARK: 네비게이션 바
+    lazy var rightAddButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(named: "icProfileAdd"), style: .plain, target: self, action: #selector(actionAddButton(_:)))
         button.tag = 1
-        button.tintColor = .mainColor
+        button.tintColor = .darkbluegray
         return button
-        
+    }()
+    lazy var rightSetButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(named: "icProfileSetting"), style: .plain, target: self, action: #selector(actionSetButton(_:)))
+        button.tag = 2
+        button.tintColor = .darkbluegray
+        return button
     }()
     func navigationBarSet() {
-        navigationItem.title = "프로필"
-        navigationItem.rightBarButtonItem = rightButton
+        let height: CGFloat = 75
+        let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
+        navbar.backgroundColor = UIColor.clear
+        navbar.delegate = self
+
+        let navItem = UINavigationItem()
+        navItem.rightBarButtonItems = [rightSetButton, rightAddButton]
+        navbar.items = [navItem]
+        navbar.setBackgroundImage(UIImage(), for: .default)
+        navbar.shadowImage = UIImage()
+        navbar.topItem?.title = "프로필"
+        navbar.layoutIfNeeded()
+        view.addSubview(navbar)
     }
-    @objc func actionAddImage() {
-        pickerForMountainImage.sourceType = .photoLibrary
-        pickerForMountainImage.modalPresentationStyle = .fullScreen
-        self.present(pickerForMountainImage, animated: true, completion: nil)
+    @objc func actionSetButton(_ sender : Any) {
+        let NextVC = SetupViewController()
+        self.navigationController?.pushViewController(NextVC, animated: true)
     }
+    @objc func actionAddButton(_ sender : Any) {
+        print("add")
+    }
+
     //MARK: 스크롤뷰 구현
     let scrollViewContent = UIScrollView()
     
@@ -88,7 +106,8 @@ class ProfileViewController : BaseViewController {
         scrollViewContent.delegate = self
         view.addSubview(scrollViewContent)
         scrollViewContent.snp.makeConstraints { make in
-            make.edges.equalTo(0)
+            make.leading.trailing.bottom.equalTo(view)
+            make.top.equalTo(view).offset(75)
         }
     }
     //MAKR: ContentView 구현
@@ -102,37 +121,6 @@ class ProfileViewController : BaseViewController {
             make.height.equalTo(UIScreen.main.bounds.height + 40)
             make.width.equalTo(UIScreen.main.bounds.width)
         }
-    }
-    // MARK: 지도로 보기 버튼 구현
-    let buttonSeeMap = UIButton()
-    func buttonSetSeeMap() {
-        buttonSeeMap.backgroundColor = .white
-        buttonSeeMap.layer.borderWidth = 1
-        buttonSeeMap.layer.borderColor = UIColor.mainColor.cgColor
-        buttonSeeMap.setTitle("지도", for: .normal)
-        buttonSeeMap.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 16)
-        buttonSeeMap.setTitleColor(.mainColor, for: .normal)
-        buttonSeeMap.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 2, right: 5)
-        buttonSeeMap.titleEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 0)
-        buttonSeeMap.setImage(UIImage(named: "IconMap@3x"), for: .normal)
-        buttonSeeMap.semanticContentAttribute = .forceLeftToRight
-        buttonSeeMap.addTarget(self, action: #selector(actionGoMapView), for: .touchUpInside)
-        view.addSubview(buttonSeeMap)
-        buttonSeeMap.layer.zPosition = 999
-        buttonSeeMap.layer.cornerRadius = 18
-        buttonSeeMap.snp.makeConstraints { make in
-            make.bottom.equalTo(-124)
-            make.trailing.equalTo(-19)
-            make.width.equalTo(88)
-            make.height.equalTo(36)
-        }
-    }
-    @objc func actionGoMapView() {
-        let nextVC = FlagMapViewController()
-        nextVC.useridx = showProfileResult?.userIdx
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
     }
     //MARK: 프로필뷰
     let viewProfile = UIView()
@@ -321,7 +309,7 @@ class ProfileViewController : BaseViewController {
     }
     let control = BetterSegmentedControl(
         frame: CGRect(x: UIScreen.main.bounds.maxX/2 - 88 , y: 17, width: 184, height: 36),
-        segments: LabelSegment.segments(withTitles: ["정복한 산","성과"],
+        segments: LabelSegment.segments(withTitles: ["내 게시글","성과"],
                                         normalFont: UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 16)!,
                                         normalTextColor: .titleColorGray,
                                         selectedFont: UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 16)!,

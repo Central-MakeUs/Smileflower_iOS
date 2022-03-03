@@ -6,16 +6,13 @@
 //
 
 struct FlagsDeleteEntity : Decodable {
-    var success : Bool
-    var response : FlagsDeleteResponse?
-    var error : FlagsDeleteError?
+    var issuccess : Bool
+    var code : Int
+    var message : String
+    var result : FlagsDeleteResponse?
 }
 
 struct FlagsDeleteResponse : Decodable {
     var success : Bool?
 }
 
-struct FlagsDeleteError : Decodable {
-    var message : String?
-    var status : Int?
-}

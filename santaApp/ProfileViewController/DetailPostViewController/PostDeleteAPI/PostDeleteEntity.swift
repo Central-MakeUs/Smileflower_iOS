@@ -6,16 +6,12 @@
 //
 
 struct PostsDeleteEntity : Decodable{
-    var success : Bool
+    var isSuccess : Bool
+    var code : Int
+    var message : String
     var response : PostsDeleteResponse?
-    var error : PostsDeleteError?
 }
 
 struct PostsDeleteResponse : Decodable {
     var success : Bool?
-}
-
-struct PostsDeleteError : Decodable {
-    var message : String?
-    var status : Int?
 }

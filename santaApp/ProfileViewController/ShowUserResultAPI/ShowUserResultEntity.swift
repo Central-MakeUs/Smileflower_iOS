@@ -6,9 +6,10 @@
 //
 
 struct ShowUserResutlEntity : Decodable{
-    var success : Bool
-    var response : ShowUserResultResponse?
-    var error : ShowUserResultError?
+    var isSuccess : Bool
+    var code : Int
+    var message : String
+    var result: ShowUserResultResponse?
 }
 
 struct ShowUserResultResponse : Decodable {
@@ -24,9 +25,4 @@ struct ShowUserResultResponse : Decodable {
     var seventhMountain : Bool
     var tenthMountain : Bool
     var high : Double?
-}
-
-struct ShowUserResultError : Decodable {
-    var message : String?
-    var status : Int?
 }

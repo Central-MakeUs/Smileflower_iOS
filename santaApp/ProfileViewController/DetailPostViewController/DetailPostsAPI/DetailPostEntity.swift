@@ -6,9 +6,10 @@
 //
 
 struct DetailPostsEntity : Decodable {
-    var success : Bool
-    var response : DetailPostsResponse?
-    var error : DetailPostsError?
+    var isSuccess : Bool
+    var code : Int
+    var message : String
+    var result : DetailPostsResponse?
 }
 
 struct DetailPostsResponse : Decodable{
@@ -29,7 +30,3 @@ struct DetailPostsPosts : Decodable {
     var pictureUrl : String?
 }
 
-struct DetailPostsError : Decodable{
-    var message : String?
-    var status : Int?
-}

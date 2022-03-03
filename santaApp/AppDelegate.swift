@@ -10,7 +10,8 @@ import Firebase
 import CoreData
 import KakaoSDKAuth
 import KakaoSDKCommon
-
+import FirebaseMessaging
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +30,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         KakaoSDK.initSDK(appKey: "b8283395d2fbdb3b57401eb63e1040d7")
+        
+        
+        //FCM 푸시 수신
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        
+        //Push Notification 설정
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+            options: authOptions,
+            completionHandler: {_, _ in })
+        application.registerForRemoteNotifications()
+        //포그라운드 푸시
+        UNUserNotificationCenter.current().delegate = self
+        
         return true
     }
     // MARK: UISceneSession Lifecycle
@@ -89,6 +105,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print("[Log] deviceToken :", deviceTokenString)
+        Constant.deviceToken = deviceTokenString
+        print(deviceToken)
+        UserDefaults.standard.set(deviceTokenString, forKey: "deiceToken")
+        Messaging.messaging().apnsToken = deviceToken
+    }
 }
 
+
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("메세지 수신")
+        completionHandler([.alert, .badge, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+}
+
+extension AppDelegate : MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        let dataDict : [String: String] = ["token": fcmToken ?? ""]
+        print("파이어베이스 토큰 : \(fcmToken)")
+        UserDefaults.standard.set(fcmToken, forKey: "FCM_TOKEN")
+        UserDefaults.standard.synchronize()
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+    }
+    
+    
+}

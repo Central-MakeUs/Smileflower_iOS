@@ -17,6 +17,7 @@ class RankingMountainViewController: BaseViewController {
     var latitude : Double?
     var longitude : Double?
     var mountainName : String = ""
+    var mountainHeight : Int = 0
     var mountainPosition : MapPositionMountain?
     var mountainCoursePosition : [MapPositionRoad] = []
     // MARK: 내용View 만들기.
@@ -158,6 +159,7 @@ class RankingMountainViewController: BaseViewController {
         let nextVC = StartViewController()
         nextVC.labelMountainName.text = mountainName
         nextVC.mountainIdx = mountainIndex
+        nextVC.mountainTopAltitude = mountainHeight
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)

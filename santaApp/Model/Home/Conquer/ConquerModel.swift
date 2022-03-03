@@ -22,7 +22,7 @@ struct ConquerResult : Decodable {
     var saveCount : Int?
     var flagIdx : Int?
     var flagImageUrl : String?
-    var getCommentsRes : [ConquergetCommentsRes]?
+    var getCommentRes : [ConquergetCommentsRes]?
 }
 
 struct ConquergetCommentsRes : Decodable {

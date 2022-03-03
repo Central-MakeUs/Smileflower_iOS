@@ -10,7 +10,7 @@ import SwiftUI
 
 class DetailConquerCollectionViewCell: UICollectionViewCell {
     static let resueidentifier = "DetailConquerCollectionViewCell"
-    
+    var preViewController : DetailConquerViewController?
     override init(frame: CGRect) {
         super.init(frame: frame)
         setTopFeed()
@@ -37,6 +37,8 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
         }
        super.layoutSubviews()
     }
+    
+   
     
     let viewContent = UIView()
     // MARK: 피드 상단 사진
@@ -78,9 +80,28 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
     let buttonMore : UIButton = {
         let button = UIButton()
         button.contentMode = .scaleAspectFill
+        button.layer.zPosition = 999
         button.setImage(UIImage(named: "icFeedMore"), for: .normal)
         return button
     }()
+    
+    func showAlert(style: UIAlertController.Style) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: style)
+        let logout = UIAlertAction(title: "신고하기", style: .default) { action in
+            
+        }
+        logout.setValue(UIColor.red, forKey: "titleTextColor")
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        cancel.setValue(UIColor.darkbluegray, forKey: "titleTextColor")
+        alert.addAction(logout)
+        alert.addAction(cancel)
+        preViewController?.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func actionReport() {
+        print("click")
+        showAlert(style: .actionSheet)
+    }
     // 피드 사진
     let imageViewFeed : UIImageView = {
         let imageView = UIImageView()
@@ -162,11 +183,12 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
             make.leading.equalTo(labelUserLv)
         }
         
+        buttonMore.addTarget(self, action: #selector(actionReport), for: .touchUpInside)
         viewTopFeed.addSubview(buttonMore)
         buttonMore.snp.makeConstraints { make in
-            make.height.width.equalTo(18)
-            make.trailing.equalTo(self).offset(-12)
-            make.top.equalTo(self).offset(12)
+            make.height.width.equalTo(30)
+            make.trailing.equalTo(viewTopFeed).offset(-12)
+            make.top.equalTo(viewTopFeed).offset(12)
         }
         
         viewTopFeed.addSubview(imageViewFeed)
@@ -250,7 +272,8 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
     }()
     let imageViewMessageUserProfile : UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 17.5
         imageView.backgroundColor = .mainColor
         return imageView

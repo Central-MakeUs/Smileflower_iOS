@@ -6,18 +6,15 @@
 //
 
 struct EndViewControllerEntity : Decodable {
-    var success : Bool
-    var response : EndViewControllerResponse?
-    var error : EndViewControllerError?
+    var isSuccess : Bool
+    var code : Int
+    var message : String
+    var result : EndViewControllerResponse?
 }
 
 struct EndViewControllerResponse : Decodable {
-    var isFlag : Bool?
-    var isDoubleVisited : Bool
+    var flag : Bool?
+    var doubleVisited : Bool
     var fileUrl : String?
 }
 
-struct EndViewControllerError : Decodable {
-    var message : String?
-    var status : Int?
-}

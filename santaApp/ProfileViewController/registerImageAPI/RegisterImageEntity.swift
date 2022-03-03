@@ -6,16 +6,13 @@
 //
 
 struct RegisterImageEntity : Decodable {
-    var success : Bool
-    var response : RegisterImageResponse?
-    var error : RegisterImageError?
+    var isSuccess : Bool
+    var code : Int
+    var message : String
+    var result : RegisterImageResponse?
 }
 
 struct RegisterImageResponse : Decodable {
     var pictureIdx : Int?
 }
 
-struct RegisterImageError : Decodable {
-    var message : String?
-    var status : Int?
-}

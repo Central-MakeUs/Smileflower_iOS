@@ -197,7 +197,12 @@ class LoginViewController : BaseViewController {
                  print(error)
                }
                else {
-                print("loginWithKakaoAccount() success.")
+                   
+                   if let token = oauthToken {
+                       print(token.accessToken)
+                       let input = KakaoLoginInput(accessToken: token.accessToken)
+                       KaKaoLoginDataManager().appKakaoLogin(self, input)
+                   }
 
                 //do something
                 _ = oauthToken
@@ -312,8 +317,10 @@ class LoginViewController : BaseViewController {
             print(code)
             print(token)
 
-            let input = AppleLoginInput(name: "\(fullName?.familyName)\(fullName?.givenName)", userEmail: email ?? "", userIdentifier: userIdentifier ?? "", authorizationCode: String(data: code ?? Data(), encoding: .utf8), identifyToken: String(data: token ?? Data(), encoding: .utf8))
-            AppleLoginDataManager().appNewApple(self, input)
+            if let familyName = fullName?.familyName, let givenName = fullName?.givenName {
+                let input = AppleLoginInput(name: familyName + givenName, userEmail: email ?? "", userIdentifier: userIdentifier ?? "", authorizationCode: String(data: code ?? Data(), encoding: .utf8), identifyToken: String(data: token ?? Data(), encoding: .utf8))
+                AppleLoginDataManager().appNewApple(self, input)
+            }
             
             self.changeRootViewController(BaseTabbarController())
         default:
@@ -327,8 +334,26 @@ class LoginViewController : BaseViewController {
     }
 
 }
+//MARK: 소셜로그인 성공시
+extension LoginViewController {
+    func successAppleLogin(_ result : AppleLoginResult) {
+        Constant.userIdx = result.userIdx
+        Constant.JWTToken = result.jwt ?? ""
+        Constant.loginMethod = "Apple"
+        UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
+        self.changeRootViewController(BaseTabbarController())
+    }
+    
+    func successKakaoLogin(_ result : KakaoLoginResult) {
+        Constant.userIdx = result.userIdx
+        Constant.JWTToken = result.jwt ?? ""
+        Constant.loginMethod = "KaKao"
+        UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
+        self.changeRootViewController(BaseTabbarController())
+    }
+}
 
 extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor { return self.view.window! }
-
+    
 }

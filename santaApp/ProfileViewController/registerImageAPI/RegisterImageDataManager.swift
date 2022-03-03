@@ -12,18 +12,18 @@ class RegisterImageDataManager {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
         AF.upload(multipartFormData: { MultipartFormData in
             MultipartFormData.append(dataimage, withName: "file", fileName: "a.jpg", mimeType: "image/jpg")
-        }, to: Constant.baseURL + "/api/profile/picture", method: .post ,headers: headers).responseDecodable(of: RegisterImageEntity.self) { response in
+        }, to: Constant.baseURL + "/app/profiles/picture", method: .post ,headers: headers).responseDecodable(of: RegisterImageEntity.self) { response in
             switch response.result {
             case .success(let response):
-                if response.success {
+                if response.isSuccess {
                     viewcontroller.successDataApiRegisterImage()
                 }
                 else {
-                    viewcontroller.faillureDataApi(response.error!.message!)
+                    viewcontroller.faillureDataApi(response.message)
                 }
             case .failure(let error):
                 print("등록된사진\(error.localizedDescription)")
-                viewcontroller.faillureDataApi("네트워크 통신 장애")
+                viewcontroller.faillureDataApi(error.localizedDescription)
             }
         }
     }

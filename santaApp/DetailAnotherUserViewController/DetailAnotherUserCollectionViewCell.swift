@@ -122,7 +122,6 @@ class DetailAnotherUserCollectionViewCell: UICollectionViewCell {
         alert.addAction(logout)
         alert.addAction(cancel)
         detailAnotherUserViewController?.present(alert, animated: true, completion: nil)
-    
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKUser
 
 class SetupViewController : BaseViewController {
     let arrayTitle : [String] = ["계정", "이용 약관"]
@@ -48,6 +49,16 @@ class SetupViewController : BaseViewController {
     func showAlert(style: UIAlertController.Style) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: style)
         let logout = UIAlertAction(title: "로그아웃", style: .default) { action in
+            if Constant.loginMethod == "KaKao" {
+                UserApi.shared.logout {(error) in
+                    if let error = error {
+                        print(error)
+                    }
+                    else {
+                        print("logout() success.")
+                    }
+                }
+            }
             LogoutDataManager().appuserslogout(self)
             self.changeRootViewController(LoginViewController())
         }

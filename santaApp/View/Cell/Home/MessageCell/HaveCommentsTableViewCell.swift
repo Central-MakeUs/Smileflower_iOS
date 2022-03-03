@@ -10,6 +10,7 @@ import UIKit
 class HaveCommentsTableViewCell: UITableViewCell {
     static let resueidentifier = "HaveCommentsTableViewCell"
     var comments : Int = 0
+    var previoutViewcontroller : DetailMessageViewController?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -61,6 +62,10 @@ class HaveCommentsTableViewCell: UITableViewCell {
         button.setTitleColor(.bluegray, for: .normal)
         return button
     }()
+    @objc func actionDoubleMessage(button:UIButton) {
+        previoutViewcontroller?.textFieldWriteMessage.becomeFirstResponder()
+        previoutViewcontroller?.viewDoubleComment.alpha = 1
+    }
     //답글 보기
     let viewButtonBackView : UIView = {
         let view = UIView()
@@ -111,6 +116,7 @@ class HaveCommentsTableViewCell: UITableViewCell {
             make.top.equalTo(labelMessage.snp.bottom).offset(10)
         }
         
+        buttonDoDoubleMessage.addTarget(self, action: #selector(actionDoubleMessage(button:)), for: .touchUpInside)
         contentView.addSubview(buttonDoDoubleMessage)
         buttonDoDoubleMessage.snp.makeConstraints { make in
             make.top.equalTo(labelMessage.snp.bottom).offset(10)

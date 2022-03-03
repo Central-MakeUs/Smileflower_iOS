@@ -19,6 +19,8 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Constant.JWTToken)
+        print(Constant.userIdx)
+        navigationBarSet()
         setScrollView()
         setTopContentView()
         setConquerImageView()
@@ -44,6 +46,33 @@ class HomeViewController: BaseViewController {
     }
     override func viewDidLayoutSubviews() {
     }
+    // MARK: 네비게이션 바
+    lazy var rightButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(named: "icHomeNotificationFocused"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
+        button.tag = 1
+        button.tintColor = .mainColor
+        return button
+        
+    }()
+    func navigationBarSet() {
+        let height: CGFloat = 75
+        let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
+        navbar.backgroundColor = UIColor.clear
+        navbar.delegate = self
+
+        let navItem = UINavigationItem()
+        navItem.rightBarButtonItem = self.rightButton
+        navbar.items = [navItem]
+        navbar.setBackgroundImage(UIImage(), for: .default)
+        navbar.shadowImage = UIImage()
+        navbar.layoutIfNeeded()
+        view.addSubview(navbar)
+    }
+    @objc func actionBackButton(_ sender : Any) {
+        let nextVC = HomeAlertViewController()
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
     //MARK: 스크롤뷰 구현
     let scrollViewContent : UIScrollView = {
         let scrollView = UIScrollView()
@@ -59,7 +88,8 @@ class HomeViewController: BaseViewController {
         scrollViewContent.delegate = self
         view.addSubview(scrollViewContent)
         scrollViewContent.snp.makeConstraints { make in
-            make.edges.equalTo(view)
+            make.leading.trailing.bottom.equalTo(view)
+            make.top.equalTo(view).offset(75)
         }
         scrollViewContent.addSubview(viewContent)
         viewContent.snp.makeConstraints { make in
@@ -482,6 +512,18 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             return CGSize(width: UIScreen.main.bounds.width - 42, height: 91)
         } else {
             return CGSize(width: 233, height: 212)
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == collectionViewCompete {
+            if let idx = arrayMountain[indexPath.row].mountainIdx, let mountainName = arrayMountain[indexPath.row].mountainName {
+                let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
+                nextVC.mountainIndex = idx
+                nextVC.mountainName = mountainName
+                nextVC.modalPresentationStyle = .fullScreen
+                nextVC.modalTransitionStyle = .crossDissolve
+                self.present(nextVC, animated: true, completion: nil)
+            }
         }
     }
 }

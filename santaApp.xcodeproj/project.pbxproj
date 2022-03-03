@@ -210,8 +210,6 @@
 		28429A43271EB7A50007D7E6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28429A41271EB7A50007D7E6 /* TableViewCell.swift */; };
 		28429A44271EB7A50007D7E6 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28429A42271EB7A50007D7E6 /* TableViewCell.xib */; };
 		28429A46271EB7EF0007D7E6 /* WowFont.otf in Resources */ = {isa = PBXBuildFile; fileRef = 28429A45271EB7EF0007D7E6 /* WowFont.otf */; };
-		285D970527A56DEA001FB503 /* ConquerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970427A56DEA001FB503 /* ConquerViewModel.swift */; };
-		285D970627A56DEA001FB503 /* ConquerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970427A56DEA001FB503 /* ConquerViewModel.swift */; };
 		285D970A27A57058001FB503 /* ConquerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970927A57058001FB503 /* ConquerModel.swift */; };
 		285D970B27A57058001FB503 /* ConquerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970927A57058001FB503 /* ConquerModel.swift */; };
 		285D970E27A5AE33001FB503 /* DetailMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285D970D27A5AE33001FB503 /* DetailMessageViewController.swift */; };
@@ -340,13 +338,31 @@
 		28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E81B44268CC0E000B537A5 /* UILabel.swift */; };
 		28E947642721421F00DF97E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28E947632721421F00DF97E4 /* GoogleService-Info.plist */; };
 		28E947682721435F00DF97E4 /* TrackingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E947672721435F00DF97E4 /* TrackingTool.swift */; };
+		28EA39A927CCB51F007B8D5C /* ConquerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39A827CCB51F007B8D5C /* ConquerViewModel.swift */; };
+		28EA39AA27CCB51F007B8D5C /* ConquerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39A827CCB51F007B8D5C /* ConquerViewModel.swift */; };
+		28EA39AF27CCB588007B8D5C /* KakaoLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39AC27CCB588007B8D5C /* KakaoLoginModel.swift */; };
+		28EA39B027CCB588007B8D5C /* KakaoLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39AC27CCB588007B8D5C /* KakaoLoginModel.swift */; };
+		28EA39B127CCB588007B8D5C /* KakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39AD27CCB588007B8D5C /* KakaoLoginDataManager.swift */; };
+		28EA39B227CCB588007B8D5C /* KakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39AD27CCB588007B8D5C /* KakaoLoginDataManager.swift */; };
+		28EA39B327CCB588007B8D5C /* KakaoLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39AE27CCB588007B8D5C /* KakaoLoginInput.swift */; };
+		28EA39B427CCB588007B8D5C /* KakaoLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39AE27CCB588007B8D5C /* KakaoLoginInput.swift */; };
+		28EA39B627CE04FC007B8D5C /* HomeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39B527CE04FC007B8D5C /* HomeAlertViewController.swift */; };
+		28EA39B727CE04FC007B8D5C /* HomeAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39B527CE04FC007B8D5C /* HomeAlertViewController.swift */; };
+		28EA39BA27CE858E007B8D5C /* ShowAlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39B927CE858E007B8D5C /* ShowAlertTableViewCell.swift */; };
+		28EA39BB27CE858E007B8D5C /* ShowAlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39B927CE858E007B8D5C /* ShowAlertTableViewCell.swift */; };
+		28EA39BD27CFD10E007B8D5C /* inputWriteComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39BC27CFD10E007B8D5C /* inputWriteComment.swift */; };
+		28EA39BE27CFD10E007B8D5C /* inputWriteComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39BC27CFD10E007B8D5C /* inputWriteComment.swift */; };
+		28EA39C027CFD14F007B8D5C /* writeCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39BF27CFD14F007B8D5C /* writeCommentModel.swift */; };
+		28EA39C127CFD14F007B8D5C /* writeCommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39BF27CFD14F007B8D5C /* writeCommentModel.swift */; };
+		28EA39C327CFD1FB007B8D5C /* WriteCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39C227CFD1FB007B8D5C /* WriteCommentViewModel.swift */; };
+		28EA39C427CFD1FB007B8D5C /* WriteCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA39C227CFD1FB007B8D5C /* WriteCommentViewModel.swift */; };
 		28F41B53269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */; };
 		304761CC34CA9C3440DAC9F3 /* Pods_santaApp_santaAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */; };
 		6FE9D7F6B8AF92900F0DC780 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
 		7AA8DDBB86A3EB4A531FC338 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
 		8B9AC9B6DBEC5526DC7DB9A3 /* Pods_santaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E205269D1D340C89152B39A /* Pods_santaApp.framework */; };
-		A089E5158ACBA0AC1D3BD376 /* libPods-santaApp copy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E97954B022F3470FBBB390 /* libPods-santaApp copy.a */; };
 		B43FF98A22C6384FD9889F4E /* Pods_santaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FF72992B7F525FC3EBEDE0 /* Pods_santaAppTests.framework */; };
+		F0CACEC84EFB0FB05656E7AE /* Pods_santaApp_copy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0447F04E632F810DD61805 /* Pods_santaApp_copy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -439,7 +455,6 @@
 		28429A41271EB7A50007D7E6 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		28429A42271EB7A50007D7E6 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		28429A45271EB7EF0007D7E6 /* WowFont.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WowFont.otf; sourceTree = "<group>"; };
-		285D970427A56DEA001FB503 /* ConquerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConquerViewModel.swift; path = "../../../../../../Creative Cloud Files/ConquerViewModel.swift"; sourceTree = "<group>"; };
 		285D970927A57058001FB503 /* ConquerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerModel.swift; sourceTree = "<group>"; };
 		285D970D27A5AE33001FB503 /* DetailMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMessageViewController.swift; sourceTree = "<group>"; };
 		285D971027A6117D001FB503 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -546,13 +561,22 @@
 		28E947632721421F00DF97E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28E947652721428C00DF97E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		28E947672721435F00DF97E4 /* TrackingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingTool.swift; sourceTree = "<group>"; };
+		28EA39A827CCB51F007B8D5C /* ConquerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConquerViewModel.swift; sourceTree = "<group>"; };
+		28EA39AC27CCB588007B8D5C /* KakaoLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoLoginModel.swift; sourceTree = "<group>"; };
+		28EA39AD27CCB588007B8D5C /* KakaoLoginDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoLoginDataManager.swift; sourceTree = "<group>"; };
+		28EA39AE27CCB588007B8D5C /* KakaoLoginInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KakaoLoginInput.swift; sourceTree = "<group>"; };
+		28EA39B527CE04FC007B8D5C /* HomeAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAlertViewController.swift; sourceTree = "<group>"; };
+		28EA39B927CE858E007B8D5C /* ShowAlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlertTableViewCell.swift; sourceTree = "<group>"; };
+		28EA39BC27CFD10E007B8D5C /* inputWriteComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputWriteComment.swift; sourceTree = "<group>"; };
+		28EA39BF27CFD14F007B8D5C /* writeCommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeCommentModel.swift; sourceTree = "<group>"; };
+		28EA39C227CFD1FB007B8D5C /* WriteCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteCommentViewModel.swift; sourceTree = "<group>"; };
 		28F41B52269A49080007EEA6 /* RecommendMountainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendMountainCollectionViewCell.swift; sourceTree = "<group>"; };
-		39E97954B022F3470FBBB390 /* libPods-santaApp copy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-santaApp copy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF4A2762B2EE01585E42D55 /* Pods-santaApp-santaAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp-santaAppUITests.release.xcconfig"; path = "Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp_santaAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7D31A3F4F65FC5401A04AF /* Pods-santaApp-santaAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp-santaAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-santaApp-santaAppUITests/Pods-santaApp-santaAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E205269D1D340C89152B39A /* Pods_santaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A00017E8A57BF4032D6A4AD2 /* Pods-santaApp copy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp copy.release.xcconfig"; path = "Target Support Files/Pods-santaApp copy/Pods-santaApp copy.release.xcconfig"; sourceTree = "<group>"; };
+		AD0447F04E632F810DD61805 /* Pods_santaApp_copy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaApp_copy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8DB193976E07C29F7C5302 /* Pods-santaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp.release.xcconfig"; path = "Target Support Files/Pods-santaApp/Pods-santaApp.release.xcconfig"; sourceTree = "<group>"; };
 		C3FF72992B7F525FC3EBEDE0 /* Pods_santaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_santaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22CB3B5A812D59507DA44DC /* Pods-santaApp copy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-santaApp copy.debug.xcconfig"; path = "Target Support Files/Pods-santaApp copy/Pods-santaApp copy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -590,7 +614,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A089E5158ACBA0AC1D3BD376 /* libPods-santaApp copy.a in Frameworks */,
+				F0CACEC84EFB0FB05656E7AE /* Pods_santaApp_copy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,6 +749,7 @@
 				2899D8742772407300DDB4E1 /* AltitudeRankingCollectionViewCell.swift */,
 				2899D87127723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift */,
 				2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */,
+				28EA39B927CE858E007B8D5C /* ShowAlertTableViewCell.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -775,6 +800,7 @@
 				28D4C242268A2C950056EECF /* GoViewController */,
 				28D4C243268A2CAB0056EECF /* ProfileViewController */,
 				28D4C244268A2CB50056EECF /* SetupViewController */,
+				28013AF026AA3D02007E082D /* FlagMapViewController */,
 				286966F82692E6410025A250 /* RankingMountainViewC */,
 				28139FC72698A3D70091DFCD /* SearchViewController */,
 				28013AD326A85F41007E082D /* DetailAnotherUserViewController */,
@@ -880,6 +906,7 @@
 		2813D835268B72A100822337 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
+				28EA39AB27CCB588007B8D5C /* KakaoLoginAPI */,
 				2893284127C9DD97000CE5B7 /* AppleLoginAPI */,
 				28013AFA26AA5217007E082D /* ForgetPasswordViewController */,
 				2882287726A060E6000B2EAA /* SignInVIewControllerApi */,
@@ -965,19 +992,12 @@
 		285D970227A56CDC001FB503 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				285D970327A56D00001FB503 /* ConquerViewModel */,
+				28EA39A727CCB51F007B8D5C /* ConquerViewModel */,
 				28DB685B2785AA6500856198 /* HomeViewModel.swift */,
 				2878F8EB27C3C03B00A50EB1 /* CommentsViewModel.swift */,
+				28EA39C227CFD1FB007B8D5C /* WriteCommentViewModel.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		285D970327A56D00001FB503 /* ConquerViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				285D970427A56DEA001FB503 /* ConquerViewModel.swift */,
-			);
-			path = ConquerViewModel;
 			sourceTree = "<group>";
 		};
 		285D970727A5703B001FB503 /* Home */ = {
@@ -1122,6 +1142,8 @@
 			children = (
 				2878F8E527C3BEA600A50EB1 /* inputComment.swift */,
 				2878F8E827C3BED400A50EB1 /* CommentsModel.swift */,
+				28EA39BC27CFD10E007B8D5C /* inputWriteComment.swift */,
+				28EA39BF27CFD14F007B8D5C /* writeCommentModel.swift */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -1169,8 +1191,6 @@
 		2882287726A060E6000B2EAA /* SignInVIewControllerApi */ = {
 			isa = PBXGroup;
 			children = (
-				2893283427C695C2000CE5B7 /* AppleLogin */,
-				2893283327C695A8000CE5B7 /* KaKaoLogin */,
 				2882287826A06106000B2EAA /* SignInViewControllerInput.swift */,
 				2882287A26A06115000B2EAA /* SignInViewControllerEntity.swift */,
 				2882287C26A06129000B2EAA /* SignInViewControllerDataManager.swift */,
@@ -1194,20 +1214,6 @@
 				2882289426A0C04C000B2EAA /* LogoutDataManager.swift */,
 			);
 			path = LogoutApi;
-			sourceTree = "<group>";
-		};
-		2893283327C695A8000CE5B7 /* KaKaoLogin */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = KaKaoLogin;
-			sourceTree = "<group>";
-		};
-		2893283427C695C2000CE5B7 /* AppleLogin */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppleLogin;
 			sourceTree = "<group>";
 		};
 		2893284127C9DD97000CE5B7 /* AppleLoginAPI */ = {
@@ -1253,6 +1259,7 @@
 				2899D868277225F200DDB4E1 /* HomeViewController.swift */,
 				280279DC279F065800E41A07 /* DetailConquerViewController.swift */,
 				285D970D27A5AE33001FB503 /* DetailMessageViewController.swift */,
+				28EA39B527CE04FC007B8D5C /* HomeAlertViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1367,7 +1374,6 @@
 				28013AC126A724E9007E082D /* registerImageAPI */,
 				2812067A26A6005200BDA266 /* ShowProfileAPI */,
 				2875D2F2269864E600180300 /* DetailPostViewController */,
-				28013AF026AA3D02007E082D /* FlagMapViewController */,
 				28D4C24C268A2D9F0056EECF /* ProfileViewController.swift */,
 				28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */,
 				28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */,
@@ -1414,6 +1420,24 @@
 			path = DevGoogleService;
 			sourceTree = "<group>";
 		};
+		28EA39A727CCB51F007B8D5C /* ConquerViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				28EA39A827CCB51F007B8D5C /* ConquerViewModel.swift */,
+			);
+			path = ConquerViewModel;
+			sourceTree = "<group>";
+		};
+		28EA39AB27CCB588007B8D5C /* KakaoLoginAPI */ = {
+			isa = PBXGroup;
+			children = (
+				28EA39AC27CCB588007B8D5C /* KakaoLoginModel.swift */,
+				28EA39AD27CCB588007B8D5C /* KakaoLoginDataManager.swift */,
+				28EA39AE27CCB588007B8D5C /* KakaoLoginInput.swift */,
+			);
+			path = KakaoLoginAPI;
+			sourceTree = "<group>";
+		};
 		437E0B1031C5812CCADCA371 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1435,7 +1459,7 @@
 				9E205269D1D340C89152B39A /* Pods_santaApp.framework */,
 				607EDC04B1518D793D53DB0F /* Pods_santaApp_santaAppUITests.framework */,
 				C3FF72992B7F525FC3EBEDE0 /* Pods_santaAppTests.framework */,
-				39E97954B022F3470FBBB390 /* libPods-santaApp copy.a */,
+				AD0447F04E632F810DD61805 /* Pods_santaApp_copy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1509,6 +1533,7 @@
 				2828C0D82732E7B1003ABAF5 /* Sources */,
 				2828C15F2732E7B1003ABAF5 /* Frameworks */,
 				2828C1622732E7B1003ABAF5 /* Resources */,
+				F3ACC7705C71F830B9CC1017 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1735,6 +1760,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F3ACC7705C71F830B9CC1017 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-santaApp copy/Pods-santaApp copy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-santaApp copy/Pods-santaApp copy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-santaApp copy/Pods-santaApp copy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1743,6 +1785,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28E81B45268CC0E000B537A5 /* UILabel.swift in Sources */,
+				28EA39B127CCB588007B8D5C /* KakaoLoginDataManager.swift in Sources */,
 				280279E2279F098F00E41A07 /* DetailConquerCollectionViewCell.swift in Sources */,
 				2882289026A0B6F7000B2EAA /* LogoutTableViewCell.swift in Sources */,
 				28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */,
@@ -1753,19 +1796,23 @@
 				2878F8E227C36F5000A50EB1 /* DoubleMessageTableViewCell.swift in Sources */,
 				2812067926A5FDCD00BDA266 /* ShowProlfileEntity.swift in Sources */,
 				2871B45F26A31AD200F32165 /* MountainLikeDataManager.swift in Sources */,
+				28EA39B627CE04FC007B8D5C /* HomeAlertViewController.swift in Sources */,
 				28013AC526A725D0007E082D /* RegisterImageDataManager.swift in Sources */,
 				2893284927C9DDCF000CE5B7 /* AppleLoginDataManager.swift in Sources */,
+				28EA39C027CFD14F007B8D5C /* writeCommentModel.swift in Sources */,
 				2882287D26A06129000B2EAA /* SignInViewControllerDataManager.swift in Sources */,
 				2871B46626A3277900F32165 /* MapPositionEntity.swift in Sources */,
 				28822865269E0DBF000B2EAA /* SignUpViewController.swift in Sources */,
 				28013AC826A74497007E082D /* ChangeProfileEntity.swift in Sources */,
 				2830CAFE26AC9AE200DC3805 /* AccountTableViewCell.swift in Sources */,
+				28EA39A927CCB51F007B8D5C /* ConquerViewModel.swift in Sources */,
 				2813D837268B72B900822337 /* LoginViewController.swift in Sources */,
 				28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */,
 				283047F1268E3CAB00DEB2EC /* EndViewController.swift in Sources */,
 				28013AF726AA442B007E082D /* FlagMountainEntity.swift in Sources */,
 				28013ADB26A862B9007E082D /* DetailAnotherUserEntity.swift in Sources */,
 				2830CB0326ADA94200DC3805 /* PrivacyUserDetailViewController.swift in Sources */,
+				28EA39C327CFD1FB007B8D5C /* WriteCommentViewModel.swift in Sources */,
 				28810B0C2697B9C0008F0FE3 /* LikeMountainCollectionViewCell.swift in Sources */,
 				2830CAF926AC97BA00DC3805 /* TermsOfServiceTableViewCell.swift in Sources */,
 				28013AC326A7252D007E082D /* RegisterImageEntity.swift in Sources */,
@@ -1780,7 +1827,6 @@
 				28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */,
 				28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */,
 				28013ACF26A7BB8F007E082D /* DetailPostsDataManager.swift in Sources */,
-				285D970527A56DEA001FB503 /* ConquerViewModel.swift in Sources */,
 				28013ADD26A862F4007E082D /* DetailAnotherUserDataManager.swift in Sources */,
 				285D971127A6117D001FB503 /* UITextField.swift in Sources */,
 				2871B48026A4BB9900F32165 /* MountainRankingDataManager.swift in Sources */,
@@ -1805,6 +1851,7 @@
 				2871B45D26A317A600F32165 /* MountainLikeEntity.swift in Sources */,
 				28645186268C98A5009F3608 /* Color.swift in Sources */,
 				28810B0626970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift in Sources */,
+				28EA39B327CCB588007B8D5C /* KakaoLoginInput.swift in Sources */,
 				28B873C9269CD4C70097E46F /* GoViewControllerDataManager.swift in Sources */,
 				28D4C24F268A2DDC0056EECF /* SetupViewController.swift in Sources */,
 				28013AF926AA4503007E082D /* FlagMountainDataManager.swift in Sources */,
@@ -1815,12 +1862,14 @@
 				28738E2B26AE981D002AE718 /* FlagExplainViewController.swift in Sources */,
 				2871B47026A4675600F32165 /* RankingTableViewCell.swift in Sources */,
 				28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */,
+				28EA39AF27CCB588007B8D5C /* KakaoLoginModel.swift in Sources */,
 				28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */,
 				280279DD279F065800E41A07 /* DetailConquerViewController.swift in Sources */,
 				2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */,
 				2882287B26A06115000B2EAA /* SignInViewControllerEntity.swift in Sources */,
 				2882287926A06106000B2EAA /* SignInViewControllerInput.swift in Sources */,
 				28DB68592785A60100856198 /* HomeModel.swift in Sources */,
+				28EA39BA27CE858E007B8D5C /* ShowAlertTableViewCell.swift in Sources */,
 				2828C1772732E9E8003ABAF5 /* ResignDataManager.swift in Sources */,
 				2871B46B26A4455800F32165 /* CompleteConqueredEntitiy.swift in Sources */,
 				2817F8642694D20A004F39EC /* ConquerViewController.swift in Sources */,
@@ -1898,6 +1947,7 @@
 				28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */,
 				28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */,
 				28E947682721435F00DF97E4 /* TrackingTool.swift in Sources */,
+				28EA39BD27CFD10E007B8D5C /* inputWriteComment.swift in Sources */,
 				2817F867269586CE004F39EC /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1923,6 +1973,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2828C0D92732E7B1003ABAF5 /* UILabel.swift in Sources */,
+				28EA39B227CCB588007B8D5C /* KakaoLoginDataManager.swift in Sources */,
 				280279E3279F098F00E41A07 /* DetailConquerCollectionViewCell.swift in Sources */,
 				2828C0DA2732E7B1003ABAF5 /* LogoutTableViewCell.swift in Sources */,
 				2828C0DB2732E7B1003ABAF5 /* MountainCourseTableViewCell.swift in Sources */,
@@ -1933,19 +1984,23 @@
 				2878F8E327C36F5000A50EB1 /* DoubleMessageTableViewCell.swift in Sources */,
 				2828C0DF2732E7B1003ABAF5 /* ShowProlfileEntity.swift in Sources */,
 				2828C0E02732E7B1003ABAF5 /* MountainLikeDataManager.swift in Sources */,
+				28EA39B727CE04FC007B8D5C /* HomeAlertViewController.swift in Sources */,
 				2828C0E12732E7B1003ABAF5 /* RegisterImageDataManager.swift in Sources */,
 				2893284A27C9DDCF000CE5B7 /* AppleLoginDataManager.swift in Sources */,
+				28EA39C127CFD14F007B8D5C /* writeCommentModel.swift in Sources */,
 				2828C0E22732E7B1003ABAF5 /* SignInViewControllerDataManager.swift in Sources */,
 				2828C0E32732E7B1003ABAF5 /* MapPositionEntity.swift in Sources */,
 				2828C0E42732E7B1003ABAF5 /* SignUpViewController.swift in Sources */,
 				2828C0E52732E7B1003ABAF5 /* ChangeProfileEntity.swift in Sources */,
 				2828C0E62732E7B1003ABAF5 /* AccountTableViewCell.swift in Sources */,
+				28EA39AA27CCB51F007B8D5C /* ConquerViewModel.swift in Sources */,
 				2828C0E72732E7B1003ABAF5 /* LoginViewController.swift in Sources */,
 				2828C0E82732E7B1003ABAF5 /* MountainPositionTableViewCell.swift in Sources */,
 				2828C0E92732E7B1003ABAF5 /* EndViewController.swift in Sources */,
 				2828C0EA2732E7B1003ABAF5 /* FlagMountainEntity.swift in Sources */,
 				2828C0EB2732E7B1003ABAF5 /* DetailAnotherUserEntity.swift in Sources */,
 				2828C0EC2732E7B1003ABAF5 /* PrivacyUserDetailViewController.swift in Sources */,
+				28EA39C427CFD1FB007B8D5C /* WriteCommentViewModel.swift in Sources */,
 				2828C0ED2732E7B1003ABAF5 /* LikeMountainCollectionViewCell.swift in Sources */,
 				2828C0EE2732E7B1003ABAF5 /* TermsOfServiceTableViewCell.swift in Sources */,
 				2828C0EF2732E7B1003ABAF5 /* RegisterImageEntity.swift in Sources */,
@@ -1960,7 +2015,6 @@
 				2828C0F72732E7B1003ABAF5 /* MountainHeightTableViewCell.swift in Sources */,
 				2828C0F82732E7B1003ABAF5 /* santaApp.xcdatamodeld in Sources */,
 				2828C0F92732E7B1003ABAF5 /* DetailPostsDataManager.swift in Sources */,
-				285D970627A56DEA001FB503 /* ConquerViewModel.swift in Sources */,
 				2828C0FA2732E7B1003ABAF5 /* DetailAnotherUserDataManager.swift in Sources */,
 				285D971227A6117D001FB503 /* UITextField.swift in Sources */,
 				2828C0FB2732E7B1003ABAF5 /* MountainRankingDataManager.swift in Sources */,
@@ -1985,6 +2039,7 @@
 				2828C10E2732E7B1003ABAF5 /* MountainLikeEntity.swift in Sources */,
 				2828C10F2732E7B1003ABAF5 /* Color.swift in Sources */,
 				2828C1102732E7B1003ABAF5 /* ConquerMountainCollectionViewCell.swift in Sources */,
+				28EA39B427CCB588007B8D5C /* KakaoLoginInput.swift in Sources */,
 				2828C1112732E7B1003ABAF5 /* GoViewControllerDataManager.swift in Sources */,
 				2828C1122732E7B1003ABAF5 /* SetupViewController.swift in Sources */,
 				2828C1132732E7B1003ABAF5 /* FlagMountainDataManager.swift in Sources */,
@@ -1995,12 +2050,14 @@
 				2828C1182732E7B1003ABAF5 /* FlagExplainViewController.swift in Sources */,
 				2828C1192732E7B1003ABAF5 /* RankingTableViewCell.swift in Sources */,
 				2828C11A2732E7B1003ABAF5 /* ContentRankViewController.swift in Sources */,
+				28EA39B027CCB588007B8D5C /* KakaoLoginModel.swift in Sources */,
 				2828C11B2732E7B1003ABAF5 /* UISearchBar.swift in Sources */,
 				280279DE279F065800E41A07 /* DetailConquerViewController.swift in Sources */,
 				2828C11C2732E7B1003ABAF5 /* GoViewControllerEntity.swift in Sources */,
 				2828C11D2732E7B1003ABAF5 /* SignInViewControllerEntity.swift in Sources */,
 				2828C11E2732E7B1003ABAF5 /* SignInViewControllerInput.swift in Sources */,
 				28DB685A2785A60100856198 /* HomeModel.swift in Sources */,
+				28EA39BB27CE858E007B8D5C /* ShowAlertTableViewCell.swift in Sources */,
 				2828C1782732E9E8003ABAF5 /* ResignDataManager.swift in Sources */,
 				2828C11F2732E7B1003ABAF5 /* CompleteConqueredEntitiy.swift in Sources */,
 				2828C1202732E7B1003ABAF5 /* ConquerViewController.swift in Sources */,
@@ -2078,6 +2135,7 @@
 				2828C15B2732E7B1003ABAF5 /* AppDelegate.swift in Sources */,
 				2828C15C2732E7B1003ABAF5 /* SceneDelegate.swift in Sources */,
 				2828C15D2732E7B1003ABAF5 /* TrackingTool.swift in Sources */,
+				28EA39BE27CFD10E007B8D5C /* inputWriteComment.swift in Sources */,
 				2828C15E2732E7B1003ABAF5 /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2239,6 +2297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69F5355JYF;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = santaApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2265,6 +2324,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69F5355JYF;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = santaApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2375,6 +2435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69F5355JYF;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "santaApp copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2402,6 +2463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69F5355JYF;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = "santaApp copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

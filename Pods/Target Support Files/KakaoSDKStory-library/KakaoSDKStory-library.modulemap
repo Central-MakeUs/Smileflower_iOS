@@ -1,6 +1,0 @@
-module KakaoSDKStory {
-  umbrella header "KakaoSDKStory-library-umbrella.h"
-
-  export *
-  module * { export * }
-}

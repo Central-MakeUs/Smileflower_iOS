@@ -12,17 +12,17 @@ class ChangeProfileDataManager {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
         AF.upload(multipartFormData: { MultipartFormData in
             MultipartFormData.append(imageUser, withName: "file", fileName: "a.jpg", mimeType: "image/jpg")
-        }, to: Constant.baseURL + "/api/profile/upload", method: .patch ,headers: headers).responseDecodable(of: ChangeProfileEntity.self) { response in
+        }, to: Constant.baseURL + "/app/profiles/profile-img", method: .patch ,headers: headers).responseDecodable(of: ChangeProfileEntity.self) { response in
             switch response.result {
             case .success(let response):
-                if response.success {
+                if response.isSuccess {
                     viewcontroller.successDataApiChangeProfileImage()
                 }
                 else {
-                    viewcontroller.presentAlert(title: response.error!.message!)
+                    viewcontroller.presentAlert(title: response.message)
                 }
             case .failure(let error):
-                viewcontroller.presentAlert(title: "네트워크 통신 장애")
+                viewcontroller.presentAlert(title: error.localizedDescription)
             }
         }
     }

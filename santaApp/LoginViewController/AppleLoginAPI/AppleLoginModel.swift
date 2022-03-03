@@ -14,7 +14,6 @@ struct AppleLoginModel : Decodable {
 
 
 struct AppleLoginResult : Decodable {
-    var refresh_token : String?
-    var emailId : String?
-    var name : String?
+    var jwt : String?
+    var userIdx : Int?
 }

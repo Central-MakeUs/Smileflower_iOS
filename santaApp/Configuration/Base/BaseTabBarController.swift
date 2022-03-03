@@ -9,16 +9,16 @@ import UIKit
 
 class BaseTabbarController : UITabBarController, UITabBarControllerDelegate {
     let homeViewController = HomeViewController()
+    let flagViewController = FlagMapViewController()
+    let goViewController = GoViewController()
     let likeViewController = PickMountainViewController()
-    let selectViewController = GoViewController()
     let profileViewController = ProfileViewController()
-    let settingController = SetupViewController()
     
     let homeTabBarItem = UITabBarItem(title: "홈"  , image: UIImage(named: "homeButton@3x"), tag: 0)
-    let likeTabBarItem = UITabBarItem(title: "찜한 산", image: UIImage(named: "likeButton@3x"), tag: 1)
-    let selectTabBarItem = UITabBarItem(title: .none, image: .none, tag: 2)
-    let profileTabBarItem = UITabBarItem(title: "프로필", image: UIImage(named: "person@3x"), tag: 3)
-    let settingTabBarItem = UITabBarItem(title: "설정", image: UIImage(named: "setting@3x"), tag: 4)
+    let flagTabBarItem = UITabBarItem(title: "정복한 산", image: UIImage(named: "icTabMountainGray"), tag: 1)
+    let goTabBarItem = UITabBarItem(title: .none, image: .none, tag: 2)
+    let likeTabBarItem = UITabBarItem(title: "찜한 산", image: UIImage(named: "likeButton@3x"), tag: 3)
+    let profileTabBarItem = UITabBarItem(title: "프로필", image: UIImage(named: "person@3x"), tag: 4)
     let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 82, height: 82))
 
     var index : Int = 0
@@ -72,26 +72,26 @@ class BaseTabbarController : UITabBarController, UITabBarControllerDelegate {
     }
     func SetUpTabbarView() {
         let homeNavigationController = UINavigationController(rootViewController: homeViewController)
-        let searchNavigationController = UINavigationController(rootViewController: likeViewController)
-        let selectNavigationController = UINavigationController(rootViewController: selectViewController)
-        let reciptNavigationController = UINavigationController(rootViewController: profileViewController)
-        let myBaeMinNavigationController = UINavigationController(rootViewController: settingController)
+        let flagNavigationController = UINavigationController(rootViewController: flagViewController)
+        let goNavigationController = UINavigationController(rootViewController: goViewController)
+        let likeNavigationController = UINavigationController(rootViewController: likeViewController)
+        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
                 
         homeTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
         homeTabBarItem.titlePositionAdjustment = UIOffset(horizontal: 5, vertical: 0)
+        flagTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
+        flagTabBarItem.titlePositionAdjustment = UIOffset(horizontal: -5, vertical: 0)
         likeTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
-        likeTabBarItem.titlePositionAdjustment = UIOffset(horizontal: -5, vertical: 0)
+        likeTabBarItem.titlePositionAdjustment = UIOffset(horizontal: 5, vertical: 0)
         profileTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
-        profileTabBarItem.titlePositionAdjustment = UIOffset(horizontal: 5, vertical: 0)
-        settingTabBarItem.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: -10, right: 0)
-        settingTabBarItem.titlePositionAdjustment = UIOffset(horizontal: -5, vertical: 0)
+        profileTabBarItem.titlePositionAdjustment = UIOffset(horizontal: -5, vertical: 0)
         
         homeNavigationController.tabBarItem = homeTabBarItem
-        searchNavigationController.tabBarItem = likeTabBarItem
-        selectNavigationController.tabBarItem = selectTabBarItem
-        reciptNavigationController.tabBarItem = profileTabBarItem
-        myBaeMinNavigationController.tabBarItem = settingTabBarItem
-        self.viewControllers = [homeNavigationController, searchNavigationController, selectNavigationController, reciptNavigationController, myBaeMinNavigationController]
+        flagNavigationController.tabBarItem = flagTabBarItem
+        goNavigationController.tabBarItem = goTabBarItem
+        likeNavigationController.tabBarItem = likeTabBarItem
+        profileNavigationController.tabBarItem = profileTabBarItem
+        self.viewControllers = [homeNavigationController, flagNavigationController, goNavigationController, likeNavigationController, profileNavigationController]
         self.tabBar.barTintColor = .white
         
         self.tabBar.tintColor = .mainColor

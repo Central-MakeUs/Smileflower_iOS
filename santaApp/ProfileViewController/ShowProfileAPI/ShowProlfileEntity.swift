@@ -7,9 +7,10 @@
 import UIKit
 
 struct ShowProfileEntity : Decodable {
-    var success : Bool
-    var response : ShowProfileResponse?
-    var error : ShowProfileError?
+    var isSuccess : Bool
+    var code : Int
+    var message : String
+    var result : ShowProfileResponse?
 }
 
 struct ShowProfileResponse : Decodable {
@@ -34,7 +35,3 @@ struct ShowProfilePosts : Decodable {
     var pictureUrl : String?
 }
 
-struct ShowProfileError : Decodable {
-    var message : String?
-    var status : Int?
-}

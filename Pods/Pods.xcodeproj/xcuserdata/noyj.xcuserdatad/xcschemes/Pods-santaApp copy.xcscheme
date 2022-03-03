@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5C5764DA8F8D4FDA0ACD5660035E0521"
-               BuildableName = "libPods-santaApp copy.a"
+               BuildableName = "Pods_santaApp_copy.framework"
                BlueprintName = "Pods-santaApp copy"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

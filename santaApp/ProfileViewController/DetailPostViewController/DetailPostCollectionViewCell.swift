@@ -110,12 +110,12 @@ class DetailPostCollectionViewCell: UICollectionViewCell {
             
             if self.isFlag {
                 if let useridx = self.userIdx, let flagidx = self.flagsIdx {
-                    FlagsDeleteDataManager().apiprofileuseridxflagsflagIdx(useridx, flagidx, self)
+                    FlagsDeleteDataManager().apiprofileuseridxflagsflagIdx(flagidx, self)
                 }
             }
             else {
                 if let useridx = self.userIdx, let postidx = self.postsIdx {
-                    PostsDeleteDataManager().apiprofileuseridxpicturespictures(useridx, postidx, self)
+                    PostsDeleteDataManager().apiprofileuseridxpicturespictures(postidx, self)
                 }
             }
         }

@@ -19,7 +19,8 @@ struct Constant {
     static var JWTToken = ""
     static var userIdx : Int?
     static var userEmail : String?
-    
+    static var deviceToken = ""
+    static var loginMethod = ""
     
     static var userPhoneHeight: CGFloat?
     static var userPhoneWidth : CGFloat?

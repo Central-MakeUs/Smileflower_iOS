@@ -9,10 +9,12 @@ import UIKit
 
 class DetailConquerViewController : BaseViewController {
     var viewModel : [ConquerResult] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        ConquerViewModel().appnewHomesflags(self)
+        ConquerViewModel().appnewHomesflags { response in
+            self.viewModel = response
+            self.collectionViewConquer.reloadData()
+        }
         setCollectionView()
         setNavigationBar()
         self.tabBarController?.tabBar.isHidden = true
@@ -99,9 +101,24 @@ extension DetailConquerViewController : UICollectionViewDelegate, UICollectionVi
             cell.imageViewFeed.kf.indicatorType = .activity
             cell.imageViewFeed.kf.setImage(with: url)
         }
-                
+        if let comments = viewModel[indexPath.row].getCommentRes {
+            if let urlString = comments[0].userImageUrl {
+                let url = URL(string: urlString)
+                cell.imageViewMessageUserProfile.kf.indicatorType = .activity
+                cell.imageViewMessageUserProfile.kf.setImage(with: url)
+            } else {
+                cell.imageViewMessageUserProfile.image = UIImage(named: "personhome")
+            }
+            
+            let contentsString = "\(comments[0].userName ?? "") \(comments[0].contents ?? "")"
+            let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 14)
+            let attributeStr = NSMutableAttributedString(string: contentsString)
+            attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: comments[0].userName?.count ?? 0))
+            cell.labelFeedMessage.attributedText = attributeStr
+        }
         cell.buttonGoDetailMessage.addTarget(self, action: #selector(actionGoNextView), for: .touchUpInside)
         cell.buttonGoDetailMessage.tag = viewModel[indexPath.row].flagIdx ?? 0
+        cell.preViewController = self
         return cell
     }
     
@@ -112,7 +129,15 @@ extension DetailConquerViewController : UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 341, height: 386)
+        if let comments = viewModel[indexPath.row].getCommentRes {
+            if comments.count == 0 {
+                return CGSize(width: 341, height: 314)
+            } else {
+                return CGSize(width: 341, height: 386)
+            }
+        } else {
+            return CGSize(width: 341, height: 314)
+        }
     }
     
 }

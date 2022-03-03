@@ -8,16 +8,16 @@
 import Alamofire
 
 class FlagsDeleteDataManager {
-    func apiprofileuseridxflagsflagIdx(_ userIdx : Int, _ flagIdx :Int, _ cell : DetailPostCollectionViewCell) {
+    func apiprofileuseridxflagsflagIdx( _ flagIdx :Int, _ cell : DetailPostCollectionViewCell) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.baseURL + "/api/profile/\(userIdx)/flags/\(flagIdx)", method: .delete, headers: headers).validate().responseDecodable(of: FlagsDeleteEntity.self) { response in
+        AF.request(Constant.baseURL + "/app/flags/\(flagIdx)", method: .delete, headers: headers).validate().responseDecodable(of: FlagsDeleteEntity.self) { response in
             switch response.result {
             case .success(let response):
-                if response.success {
+                if response.issuccess {
                     cell.successDataApiDeletePosts()
                 }
             case .failure(let error):
-                cell.failureDataApiDelete("네트워크 통신 장애")
+                cell.failureDataApiDelete(error.localizedDescription)
             }
         }
     }

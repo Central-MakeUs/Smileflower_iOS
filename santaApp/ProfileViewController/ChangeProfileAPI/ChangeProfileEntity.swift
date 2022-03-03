@@ -6,14 +6,11 @@
 //
 
 struct ChangeProfileEntity : Decodable {
-    var success : Bool
-    var response : ChangeProfileResponse?
-    var error : ChangeProfileError?
+    var isSuccess : Bool
+    var message : String
+    var code : Int
+    var result : ChangeProfileResponse?
 }
 struct ChangeProfileResponse : Decodable {
     var fileUrl : String?
-}
-struct ChangeProfileError : Decodable {
-    var message : String?
-    var status : Int?
 }

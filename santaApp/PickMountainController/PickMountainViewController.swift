@@ -37,6 +37,22 @@ class PickMountainViewController : BaseViewController {
         MountainPicksDataManager().apppicks(self)
     }
 
+    //MARK: 네비게이션 바
+    func navigationBarSet() {
+        let height: CGFloat = 75
+        let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
+        navbar.backgroundColor = UIColor.clear
+        navbar.delegate = self
+
+        let navItem = UINavigationItem()
+        navbar.items = [navItem]
+        navbar.setBackgroundImage(UIImage(), for: .default)
+        navbar.shadowImage = UIImage()
+        navbar.topItem?.title = "찜한 산"
+        navbar.layoutIfNeeded()
+        view.addSubview(navbar)
+    }
+    
     let viewHasPicks = UIView()
     let labelHasPicks = UILabel()
     let imageViewFace = UIImageView()
@@ -77,14 +93,6 @@ class PickMountainViewController : BaseViewController {
         }
         
     }
-    // MARK: 네비게이션 바 설정
-    func navigationBarSet() {
-        navigationItem.title = "찜한 산"
-        let navigationAppearance = UINavigationBarAppearance()
-        navigationAppearance.backgroundColor = .white
-        
-        self.navigationController?.navigationBar.standardAppearance = navigationAppearance
-    }
     // MARK: 컬렉션 뷰 등록
     func setRegister() {
         carouselCollectionViewLikeMountain.delegate = self
@@ -94,7 +102,8 @@ class PickMountainViewController : BaseViewController {
         view.addSubview(carouselCollectionViewLikeMountain)
         
         carouselCollectionViewLikeMountain.snp.makeConstraints { make in
-            make.edges.equalTo(view)
+            make.trailing.leading.bottom.equalTo(view)
+            make.top.equalTo(view).offset(75)
         }
     }
 }
@@ -147,11 +156,12 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
-        if let idx = mountainPicks[indexPath.row].mountainIdx, let mountainName = mountainPicks[indexPath.row].mountainName {
+        if let idx = mountainPicks[indexPath.row].mountainIdx, let mountainName = mountainPicks[indexPath.row].mountainName, let mountainHeight = mountainPicks[indexPath.row].high {
             let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
             nextVC.mountainIndex = idx
             TrackingTool.Action(actionName: "action_go_detail_mountain_like", param: ["mountain_name":mountainName])
             nextVC.mountainName = mountainName
+//            nextVC.mountainHeight = mountainHeight
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve
             self.present(nextVC, animated: true, completion: nil)

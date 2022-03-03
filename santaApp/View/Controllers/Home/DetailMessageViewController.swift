@@ -11,6 +11,7 @@ class DetailMessageViewController: BaseViewController {
     var arrayBool : [Bool] = []
     var flagIndex = 0
     let viewModel = CommentsViewModel()
+    let viewModelWriteComment = writeCommentViewModel()
     var arrayComments : [commentsResult] = []
     
     override func viewDidLoad() {
@@ -19,6 +20,7 @@ class DetailMessageViewController: BaseViewController {
         setNavigationBar()
         setBottomChatView()
         setTableView()
+        setViewDoubleComment()
         
         let input = inputComments(type: "flag")
             viewModel.appCommentsIdx(input, flagIndex) { result, array in
@@ -26,11 +28,9 @@ class DetailMessageViewController: BaseViewController {
                 self.arrayBool = array
                 self.tableViewMessage.reloadData()
             }
-        
         }
         override func viewWillAppear(_ animated: Bool) {
             setNotification()
-            dismissKeyboardWhenTappedAround()
         }
         override func viewWillDisappear(_ animated: Bool) {
             removeKeyboardNotifications()
@@ -62,9 +62,6 @@ class DetailMessageViewController: BaseViewController {
             }
         
         //MARK: NavigationBar
-        @objc func actionRightButton(_ sender : UIBarButtonItem) {
-            print("버튼")
-        }
         func setNavigationBar() {
             let height: CGFloat = 75
             let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
@@ -115,19 +112,69 @@ class DetailMessageViewController: BaseViewController {
             textField.layer.cornerRadius = 20
             textField.addLeftPadding()
             
-            let button = UIButton()
-            button.setTitle("등록", for: .normal)
-            button.frame = CGRect(x: -16, y: 0, width: 36, height: 36)
-            button.setTitleColor(.mainColor, for: .normal)
-            
-            textField.rightView = button
-            textField.rightViewMode = UITextField.ViewMode.always
-            
             return textField
         }()
+    @objc func actionTextfieldWrite(textfield:UITextField) {
+        if let text = textfield.text {
+            if text.isEmpty {
+                buttonEnroll.alpha = 0.7
+            } else {
+                buttonEnroll.alpha = 1
+            }
+        }
+    }
+    let buttonEnroll : UIButton = {
+        let button = UIButton()
+        button.setTitle("등록", for: .normal)
+        button.layer.zPosition = 999
+        button.alpha = 0.7
+        button.titleLabel?.font = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 14)
+        button.setTitleColor(.mainColor, for: .normal)
+        return button
+    }()
         
+    @objc func actionEnrollComments() {
+        if viewDoubleComment.alpha == 0 {
+            let input = inputWriteComment(contents: textFieldWriteMessage.text ?? "")
+                viewModelWriteComment.appCommentsIdxType(input, flagIndex, "flag") { result in
+                    self.textFieldWriteMessage.text = ""
+                    let input = inputComments(type: "flag")
+                    self.viewModel.appCommentsIdx(input, self.flagIndex) { result, array in
+                            self.arrayComments = result.result ?? []
+                            self.arrayBool = array
+                            self.tableViewMessage.reloadData()
+                        }
+                }
+        } else {
+            print("대댓글 달기")
+        }
         
-        
+    }
+    let viewDoubleComment : UIView = {
+       let view = UIView()
+        view.backgroundColor = .lightbluegray
+        view.alpha = 1
+        view.layer.zPosition = 999
+        return view
+    }()
+    
+    let labelDoubleComment : UILabel = {
+        let label = UILabel()
+        label.textColor = .bluegray
+        label.font = UIFont(name: Constant.fontAppleSDGothicNeoRegular, size: 14)
+        return label
+    }()
+    
+    let buttonCloseComment : UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        button.tintColor = .bluegray
+        return button
+    }()
+    
+    @objc func actionClose() {
+        viewDoubleComment.alpha = 0
+    }
         func setBottomChatView() {
             view.addSubview(viewChatBack)
             viewChatBack.snp.makeConstraints { make in
@@ -144,6 +191,7 @@ class DetailMessageViewController: BaseViewController {
             }
             
             textFieldWriteMessage.delegate = self
+            textFieldWriteMessage.addTarget(self, action: #selector(actionTextfieldWrite(textfield:)), for: .editingChanged)
             viewChatBack.addSubview(textFieldWriteMessage)
             textFieldWriteMessage.snp.makeConstraints { make in
                 make.centerY.equalTo(viewChatBack)
@@ -151,12 +199,42 @@ class DetailMessageViewController: BaseViewController {
                 make.leading.equalTo(imageVUewUserProfile.snp.trailing).offset(6)
                 make.trailing.equalTo(viewChatBack).offset(-17)
             }
+            
+            buttonEnroll.addTarget(self, action: #selector(actionEnrollComments), for: .touchUpInside)
+            viewChatBack.addSubview(buttonEnroll)
+            buttonEnroll.snp.makeConstraints { make in
+                make.width.height.equalTo(36)
+                make.trailing.equalTo(viewChatBack.snp.trailing).offset(-30)
+                make.centerY.equalTo(textFieldWriteMessage)
+            }
         }
+    func setViewDoubleComment() {
+        view.addSubview(viewDoubleComment)
+        viewDoubleComment.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(view)
+            make.bottom.equalTo(viewChatBack.snp.top)
+            make.height.equalTo(26)
+        }
+        
+        viewDoubleComment.addSubview(labelDoubleComment)
+        labelDoubleComment.snp.makeConstraints { make in
+            make.centerY.equalTo(viewDoubleComment)
+            make.leading.equalTo(viewDoubleComment).offset(23)
+        }
+        
+        buttonCloseComment.addTarget(self, action: #selector(actionClose), for: .touchUpInside)
+        viewDoubleComment.addSubview(buttonCloseComment)
+        buttonCloseComment.snp.makeConstraints { make in
+            make.height.width.equalTo(viewDoubleComment.snp.height)
+            make.trailing.equalTo(viewDoubleComment).offset(-13)
+            make.centerY.equalTo(viewDoubleComment)
+        }
+    }
         
         //MARK: 댓글 보기
         let tableViewMessage : UITableView = {
             let tableView = UITableView()
-            tableView.layer.zPosition = 999
+            tableView.layer.zPosition = 899
             return tableView
         }()
         func setTableView() {
@@ -171,7 +249,8 @@ class DetailMessageViewController: BaseViewController {
             tableViewMessage.rowHeight = UITableView.automaticDimension
             view.addSubview(tableViewMessage)
             tableViewMessage.snp.makeConstraints { make in
-                make.top.trailing.leading.equalTo(view)
+                make.trailing.leading.equalTo(view)
+                make.top.equalTo(view).offset(75)
                 make.bottom.equalTo(viewChatBack.snp.top)
             }
         }
@@ -196,13 +275,11 @@ class DetailMessageViewController: BaseViewController {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             // 댓글 구현
             if indexPath.row == 0 {
-                
                 if let comments = arrayComments[indexPath.section].getRecommentRes {
                     if comments.isEmpty {
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentsTableViewCell.resueidentifier, for: indexPath) as? CommentsTableViewCell else {
                             return UITableViewCell()
                         }
-                        
                         cell.selectionStyle = .none
                         if let urlString = arrayComments[indexPath.section].userImageUrl {
                             let url = URL(string: urlString)
@@ -210,6 +287,12 @@ class DetailMessageViewController: BaseViewController {
                         } else {
                             cell.imageViewUserProfile.image = UIImage(named: "personhome")
                         }
+                        if arrayComments[indexPath.section].isUsersComment == "f" {
+                            cell.buttonMore.isHidden = true
+                        } else {
+                            cell.buttonMore.isHidden = false
+                        }
+                        cell.previoutViewcontroller = self
                         let contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
                         let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
                         let attributeStr = NSMutableAttributedString(string: contentsString)
@@ -230,6 +313,12 @@ class DetailMessageViewController: BaseViewController {
                         } else {
                             cell.imageViewUserProfile.image = UIImage(named: "personhome")
                         }
+                        if arrayComments[indexPath.section].isUsersComment == "f" {
+                            cell.buttonMore.isHidden = true
+                        } else {
+                            cell.buttonMore.isHidden = false
+                        }
+                        cell.previoutViewcontroller = self
                         let contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
                         let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
                         let attributeStr = NSMutableAttributedString(string: contentsString)
@@ -239,6 +328,7 @@ class DetailMessageViewController: BaseViewController {
                         
                         cell.buttonSeeComments.tag = indexPath.section
                         cell.buttonSeeComments.addTarget(self, action: #selector(actionOpenComments(button:)), for: .touchUpInside)
+                        cell.buttonDoDoubleMessage.tag = arrayComments[indexPath.section].commentIdx ?? 0
                         
                         if arrayBool[indexPath.section] {
                             cell.labelSeeComments.text = "답글 숨기기"
@@ -267,7 +357,6 @@ class DetailMessageViewController: BaseViewController {
                     } else {
                         cell.imageViewUserProfile.image = UIImage(named: "personhome")
                     }
-                    
                     let contentsString = "\(comments[indexPath.row - 1].userName ?? "") \(comments[indexPath.row - 1].contents ?? "")"
                     let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
                     let attributeStr = NSMutableAttributedString(string: contentsString)
@@ -293,23 +382,7 @@ class DetailMessageViewController: BaseViewController {
         }
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        guard let cell = tableView.cellForRow(at: indexPath) as? CommentsTableViewCell else {
-    //            return
-    //        }
-    //        guard let index = tableView.indexPath(for: cell) else { return}
-    //        if index.row == indexPath.row {
-    //            if index.row == 0 {
-    //                if arrayBool[indexPath.section] {
-    //                    arrayBool[indexPath.section] = false
-    //                    let section = IndexSet.init(integer: indexPath.section)
-    //                    tableView.reloadSections(section, with: .fade)
-    //                } else {
-    //                    arrayBool[indexPath.section] = true
-    //                    let section = IndexSet.init(integer: indexPath.section)
-    //                    tableView.reloadSections(section, with: .fade)
-    //                }
-    //            }
-    //        }
+
         }
         
     }
