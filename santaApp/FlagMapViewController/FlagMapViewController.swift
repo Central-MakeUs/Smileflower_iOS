@@ -36,7 +36,7 @@ class FlagMapViewController : BaseViewController {
     }()
     let viewNavBack = UIView()
     func setNavigationBar() {
-        let height: CGFloat = 30
+        let height: CGFloat = 40
         let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
         navbar.backgroundColor = UIColor.clear
         navbar.delegate = self
@@ -71,7 +71,7 @@ class FlagMapViewController : BaseViewController {
     let mapView = MKMapView()
     func setMapView() {
         mapView.delegate = self
-        
+        mapView.mapType = .mutedStandard
         view.addSubview(mapView)
         mapView.snp.makeConstraints { make in
             make.edges.equalTo(view)

@@ -101,7 +101,9 @@ class RankingMountainViewController: BaseViewController {
         view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
-        self.dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
+        tabBarController?.tabBar.isHidden = false
+        self.navigationController?.popViewController(animated: true)
     }
     // MARK: 지도 구현
     func mapViewSet() {
@@ -162,7 +164,7 @@ class RankingMountainViewController: BaseViewController {
         nextVC.mountainTopAltitude = mountainHeight
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     // MARK: 아래 시트 구현
     func viewSetBottomSheet() {

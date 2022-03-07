@@ -75,7 +75,7 @@ class SignUpViewController : BaseViewController {
     }
     
     @objc func actionBackButton(_ sender : Any) {
-        TrackingTool.Action(actionName: "action_back_sign_up", param: ["":""])
+        TrackingTool.Action(actionName: "action_back_sign_up", param: ["backSignUp":""])
         dismiss(animated: true, completion: nil)
     }
     
@@ -174,7 +174,7 @@ class SignUpViewController : BaseViewController {
         }
     }
     @objc func actionEmailCheck() {
-        TrackingTool.Action(actionName: "action_send_certification", param: ["":""])
+        TrackingTool.Action(actionName: "action_send_certification", param: ["sendCertification":""])
         if let text = textFieldID.text {
             let input = CheckEmailInput(email: text )
             CheckEmailDataManager().appemailcode(self, input)
@@ -401,7 +401,7 @@ class SignUpViewController : BaseViewController {
         buttonNicnameOverlap.addTarget(self, action: #selector(actionCheckNicname), for: .touchUpInside)
     }
     @objc func actionCheckNicname() {
-        TrackingTool.Action(actionName: "action_nickname_duplicate", param: ["":""])
+        TrackingTool.Action(actionName: "action_nickname_duplicate", param: ["nickNameDuplicate":""])
         if let text = textFieldNicname.text {
             if text.isEmpty == false {
                 let input = CheckNicnameInput(name: text)
@@ -441,7 +441,7 @@ class SignUpViewController : BaseViewController {
         }
     }
     @objc func actionSignUp() {
-        TrackingTool.Action(actionName: "action_do_sign_up", param: ["":""])
+        TrackingTool.Action(actionName: "action_do_sign_up", param: ["doSignUp":""])
         if let textId = textFieldID.text,
            let textpassword = textFieldPassword.text,
            let textpasswordConfirm = textFieldPasswordConfirm.text,

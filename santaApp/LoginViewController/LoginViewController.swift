@@ -222,7 +222,7 @@ class LoginViewController : BaseViewController {
     }
     @objc func actionGoSignUp() {
         let nextVC = SignUpViewController()
-        TrackingTool.Action(actionName: "action_go_sign_up", param: ["":""])
+        TrackingTool.Action(actionName: "action_go_sign_up", param: ["goSignUp":""])
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)
@@ -239,7 +239,7 @@ class LoginViewController : BaseViewController {
     }
     @objc func actionGoSignIn() {
         let nextVC = SignInViewController()
-        TrackingTool.Action(actionName: "action_go_email_login", param: ["":""])
+        TrackingTool.Action(actionName: "action_go_email_login", param: ["goEmailLogin":""])
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
         self.present(nextVC, animated: true, completion: nil)

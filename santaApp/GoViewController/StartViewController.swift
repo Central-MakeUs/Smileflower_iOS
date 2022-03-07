@@ -111,7 +111,7 @@ class StartViewController : BaseViewController {
         nextVC.labelMountain.text = labelMountainName.text
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
-        
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        self.present(nextVC, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

@@ -14,7 +14,7 @@ struct EndViewControllerEntity : Decodable {
 
 struct EndViewControllerResponse : Decodable {
     var flag : Bool?
-    var doubleVisited : Bool
+    var doubleVisited : Bool?
     var fileUrl : String?
 }
 

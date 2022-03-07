@@ -20,11 +20,11 @@ struct ShowProfileResponse : Decodable {
     var flagCount : Int?
     var postCount : Int?
     var fileUrl : String?
-    var posts : [ShowProfilePosts]?
+    var postsResList : [ShowProfilePosts]?
 }
 
 struct ShowProfilePosts : Decodable {
-    var isFlag : Bool?
+    var flag : Bool?
     var flagIdx : Int?
     var pictureIdx : Int?
     var userIdx : Int?

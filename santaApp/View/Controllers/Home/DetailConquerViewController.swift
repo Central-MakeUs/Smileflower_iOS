@@ -125,6 +125,7 @@ extension DetailConquerViewController : UICollectionViewDelegate, UICollectionVi
     @objc func actionGoNextView(button: UIButton) {
         let NextVC = DetailMessageViewController()
         NextVC.flagIndex = button.tag
+        NextVC.previousView = "Detail"
         self.navigationController?.pushViewController(NextVC, animated: true)
     }
     

@@ -32,11 +32,17 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
         NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
-        viewModel.appNewHomeAPI { resultPicture, resultUser, resultMounatain in
+        viewModel.appNewHomeAPI { noti ,resultPicture, resultUser, resultMounatain in
             self.arrayPicture = resultPicture
             self.arrayUser = resultUser
             self.arrayMountain = resultMounatain
-
+            if noti == "f" {
+                self.rightButton.image = UIImage(named: "icHomeNotificationNormal")
+                self.rightButton.tintColor = .bluegray
+            } else {
+                self.rightButton.image = UIImage(named: "icHomeNotificationFocused")
+                self.rightButton.tintColor = .mainColor
+            }
             self.collectionViewConquerImage.reloadData()
             self.collectionViewTopTen.reloadData()
             self.collectionViewCompete.reloadData()
@@ -48,9 +54,9 @@ class HomeViewController: BaseViewController {
     }
     // MARK: 네비게이션 바
     lazy var rightButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(named: "icHomeNotificationFocused"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
+        let button = UIBarButtonItem(image: UIImage(named: "icHomeNotificationNormal"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
         button.tag = 1
-        button.tintColor = .mainColor
+        button.tintColor = .bluegray
         return button
         
     }()
@@ -462,7 +468,7 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             }
             
             cell.labelMountainName.text = arrayMountain[indexPath.row].mountainName
-            cell.labelMountainHeight.text = arrayMountain[indexPath.row].high
+            cell.labelMountainHeight.text = "\(arrayMountain[indexPath.row].intTypeHigh ?? 0)m"
             
             switch arrayMountain[indexPath.row].difficulty {
             case 1:
@@ -516,14 +522,22 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionViewCompete {
-            if let idx = arrayMountain[indexPath.row].mountainIdx, let mountainName = arrayMountain[indexPath.row].mountainName {
+            if let idx = arrayMountain[indexPath.row].mountainIdx, let mountainName = arrayMountain[indexPath.row].mountainName, let high = arrayMountain[indexPath.row].intTypeHigh {
                 let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
                 nextVC.mountainIndex = idx
                 nextVC.mountainName = mountainName
+                nextVC.mountainHeight = high
                 nextVC.modalPresentationStyle = .fullScreen
                 nextVC.modalTransitionStyle = .crossDissolve
                 self.present(nextVC, animated: true, completion: nil)
             }
+        } else if collectionView === collectionViewConquerImage {
+            let NextVC = DetailMessageViewController()
+            NextVC.flagIndex = arrayPicture[indexPath.row].flagIdx ?? 0
+            NextVC.previousView = "Home"
+            self.tabBarController?.tabBar.isHidden = true
+            NotificationCenter.default.post(name: Notification.Name("middleButtonHidden"), object: nil)
+            self.navigationController?.pushViewController(NextVC, animated: true)
         }
     }
 }

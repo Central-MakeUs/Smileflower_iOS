@@ -146,7 +146,7 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
             }
             
             cell.labelMountain.text = mountainPicks[indexPath.row].mountainName
-            cell.labelMountainHeight.text = mountainPicks[indexPath.row].high
+            cell.labelMountainHeight.text = "\(mountainPicks[indexPath.row].intTypeHigh ?? 0)m"
             return cell
         }
         return UICollectionViewCell()
@@ -156,15 +156,17 @@ extension PickMountainViewController : UICollectionViewDelegate, UICollectionVie
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
-        if let idx = mountainPicks[indexPath.row].mountainIdx, let mountainName = mountainPicks[indexPath.row].mountainName, let mountainHeight = mountainPicks[indexPath.row].high {
+        if let idx = mountainPicks[indexPath.row].mountainIdx, let mountainName = mountainPicks[indexPath.row].mountainName, let mountainHeight = mountainPicks[indexPath.row].intTypeHigh {
             let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
             nextVC.mountainIndex = idx
             TrackingTool.Action(actionName: "action_go_detail_mountain_like", param: ["mountain_name":mountainName])
             nextVC.mountainName = mountainName
-//            nextVC.mountainHeight = mountainHeight
+            nextVC.mountainHeight = mountainHeight
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve
-            self.present(nextVC, animated: true, completion: nil)
+            NotificationCenter.default.post(name: Notification.Name("middleButtonHidden"), object: nil)
+            tabBarController?.tabBar.isHidden = true
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }
         
     }

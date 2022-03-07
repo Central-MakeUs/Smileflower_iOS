@@ -10,9 +10,13 @@ import UIKit
 class DetailMessageViewController: BaseViewController {
     var arrayBool : [Bool] = []
     var flagIndex = 0
+    var commentIndex = 0
+    var previousView = ""
     let viewModel = CommentsViewModel()
     let viewModelWriteComment = writeCommentViewModel()
     var arrayComments : [commentsResult] = []
+    let viewModelUserImage = userimageViewModel()
+    let viewModelRecomments = ReCommentViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +32,15 @@ class DetailMessageViewController: BaseViewController {
                 self.arrayBool = array
                 self.tableViewMessage.reloadData()
             }
+        viewModelUserImage.appCommentsUserImage { result in
+            if let urlString = result.userImageUrl {
+                let url = URL(string: urlString)
+                self.imageVUewUserProfile.kf.indicatorType = .activity
+                self.imageVUewUserProfile.kf.setImage(with: url)
+            } else {
+                self.imageVUewUserProfile.image = UIImage(named: "personhome")
+            }
+        }
         }
         override func viewWillAppear(_ animated: Bool) {
             setNotification()
@@ -39,6 +52,7 @@ class DetailMessageViewController: BaseViewController {
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         }
+        
         // 노티피케이션을 제거하는 메서드
         func removeKeyboardNotifications(){
             // 키보드가 나타날 때 앱에게 알리는 메서드 제거
@@ -73,6 +87,7 @@ class DetailMessageViewController: BaseViewController {
             navbar.items = [navItem]
             navbar.setBackgroundImage(UIImage(), for: .default)
             navbar.shadowImage = UIImage()
+            navbar.topItem?.title = "댓글"
             navbar.layoutIfNeeded()
             view.addSubview(navbar)
         }
@@ -83,6 +98,11 @@ class DetailMessageViewController: BaseViewController {
         return button
     }()
     @objc func actionBackButton(_ sender : Any) {
+        if previousView == "Home" {
+            self.tabBarController?.tabBar.isHidden = false
+            NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
+            self.navigationController?.popViewController(animated: true)
+        }
         self.navigationController?.popViewController(animated: true)
     }
         //MARK: 하단텍스트 필드
@@ -134,6 +154,7 @@ class DetailMessageViewController: BaseViewController {
     }()
         
     @objc func actionEnrollComments() {
+        showIndicator()
         if viewDoubleComment.alpha == 0 {
             let input = inputWriteComment(contents: textFieldWriteMessage.text ?? "")
                 viewModelWriteComment.appCommentsIdxType(input, flagIndex, "flag") { result in
@@ -145,15 +166,32 @@ class DetailMessageViewController: BaseViewController {
                             self.tableViewMessage.reloadData()
                         }
                 }
+            dismissIndicator()
         } else {
-            print("대댓글 달기")
+            let input = inputWriteDoubleComment(contents: textFieldWriteMessage.text ?? "")
+            print(commentIndex)
+            print(flagIndex)
+            viewModelRecomments.appCommentsRecommentIdxType(input, commentIndex, "flag") { result in
+                self.textFieldWriteMessage.text = ""
+                let input = inputComments(type: "flag")
+                print("아아아아")
+                self.viewModel.appCommentsIdx(input, self.flagIndex) { result, array in
+                        self.arrayComments = result.result ?? []
+                        self.arrayBool = array
+                        self.tableViewMessage.reloadData()
+                    }
+                
+            }
+            viewDoubleComment.alpha = 0
+
+            dismissIndicator()
         }
         
     }
     let viewDoubleComment : UIView = {
        let view = UIView()
-        view.backgroundColor = .lightbluegray
-        view.alpha = 1
+        view.backgroundColor = .iceblue
+        view.alpha = 0
         view.layer.zPosition = 999
         return view
     }()
@@ -293,6 +331,9 @@ class DetailMessageViewController: BaseViewController {
                             cell.buttonMore.isHidden = false
                         }
                         cell.previoutViewcontroller = self
+                        cell.commentIndex = arrayComments[indexPath.section].commentIdx ?? 0
+                        cell.commentUserId = arrayComments[indexPath.section].userName ?? ""
+
                         let contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
                         let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
                         let attributeStr = NSMutableAttributedString(string: contentsString)
@@ -319,6 +360,9 @@ class DetailMessageViewController: BaseViewController {
                             cell.buttonMore.isHidden = false
                         }
                         cell.previoutViewcontroller = self
+                        cell.commentIndex = arrayComments[indexPath.section].commentIdx ?? 0
+                        cell.commentUserId = arrayComments[indexPath.section].userName ?? ""
+
                         let contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
                         let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
                         let attributeStr = NSMutableAttributedString(string: contentsString)

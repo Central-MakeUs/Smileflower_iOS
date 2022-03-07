@@ -46,7 +46,7 @@ struct HomeModelMountainsList : Decodable {
     var isHot : String?
     var difficulty : Int?
     var mountainName : String?
-    var high : String?
+    var intTypeHigh : Int?
     var userIdx : Int?
     var userImageUrl : String?
 }

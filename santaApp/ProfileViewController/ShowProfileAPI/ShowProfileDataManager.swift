@@ -15,6 +15,8 @@ class ShowProfileDataManager {
             case .success(let response):
                 if response.isSuccess, let result = response.result {
                     viewcontroller.successDataApiShowProfile(result)
+                } else {
+                    print(response.message)
                 }
             case .failure(let error):
                 viewcontroller.faillureDataApi("네트워크 통신 장애")

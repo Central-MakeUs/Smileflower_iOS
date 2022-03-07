@@ -48,7 +48,7 @@ class SignInViewController : BaseViewController{
         view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
-        TrackingTool.Action(actionName: "action_back_email_login", param: ["":""])
+        TrackingTool.Action(actionName: "action_back_email_login", param: ["backEmailLogin":""])
         dismiss(animated: true, completion: nil)
     }
     //MARk: 산타 로고
@@ -164,7 +164,7 @@ class SignInViewController : BaseViewController{
         }
     }
     @objc func actionGoForgetPasswordView() {
-        TrackingTool.Action(actionName: "action_go_forget_password", param: ["":""])
+        TrackingTool.Action(actionName: "action_go_forget_password", param: ["goForgetPassword":""])
         let nextVC = ForgetPasswordViewController()
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
@@ -187,7 +187,7 @@ class SignInViewController : BaseViewController{
         }
     }
     @objc func actionSignIn() {
-        TrackingTool.Action(actionName: "action_do_email_login", param: ["":""])
+        TrackingTool.Action(actionName: "action_do_email_login", param: ["doEmailLogin":""])
         let FCMTK = UserDefaults.standard.value(forKey: "FCM_TOKEN") as? String ?? ""
         let input = SignInViewControllerInput(emailId: textFieldID.text ?? "", password: textFieldPassword.text ?? "", pushToken: FCMTK)
         print(FCMTK)

@@ -17,5 +17,5 @@ struct MountainPicksResult : Decodable {
     var mountainName : String?
     var mountainImg : String?
     var difficulty : Int?
-    var high : String?
+    var intTypeHigh : Int?
 }

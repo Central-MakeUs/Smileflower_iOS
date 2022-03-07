@@ -99,7 +99,7 @@ extension DetailPostViewController : UICollectionViewDelegate, UICollectionViewD
                 let convertStr = myDateFormatter.string(from: converData!)
                 cell.labelDateAndTime.text = convertStr
             }
-            if postsResult[indexPath.row].isFlag! {
+            if postsResult[indexPath.row].flag ?? false {
                 cell.imageViewFlag.image = UIImage(named: "FlagIcon@3x")
             }
             else {
@@ -107,7 +107,7 @@ extension DetailPostViewController : UICollectionViewDelegate, UICollectionViewD
             }
             cell.detailPostViewController = self
             cell.userIdx = userIdx
-            cell.isFlag = postsResult[indexPath.row].isFlag ?? true
+            cell.isFlag = postsResult[indexPath.row].flag ?? true
             cell.postsIdx = postsResult[indexPath.row].pictureIdx
             cell.flagsIdx = postsResult[indexPath.row].flagIdx
             cell.labelMountainName.text = postsResult[indexPath.row].name ?? "게시물"
@@ -126,7 +126,7 @@ extension DetailPostViewController : UICollectionViewDelegate, UICollectionViewD
 
 extension DetailPostViewController {
     func successDataApiPosts(_ result : DetailPostsResponse) {
-        postsResult = result.posts!
+        postsResult = result.getPostsRes ?? []
         carouselCollectionView.reloadData()
         if let num = indexPath {
             carouselCollectionView.scrollToItem(at: IndexPath(item: num, section: 0), at: .bottom, animated: true)

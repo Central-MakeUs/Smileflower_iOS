@@ -8,7 +8,7 @@
 import Alamofire
 
 class RegisterImageDataManager {
-    func apiprofilepicture(_ dataimage : Data, _ viewcontroller : ProfileViewController) {
+    func apiprofilepicture(_ dataimage : Data, _ viewcontroller : InputMountainNameViewController) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
         AF.upload(multipartFormData: { MultipartFormData in
             MultipartFormData.append(dataimage, withName: "file", fileName: "a.jpg", mimeType: "image/jpg")

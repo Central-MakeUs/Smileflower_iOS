@@ -14,6 +14,7 @@ class DetailPostsDataManager {
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result {
+                    print(result)
                     viewcontroller.successDataApiPosts(result)
                 }
             case .failure(let error):

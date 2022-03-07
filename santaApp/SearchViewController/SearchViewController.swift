@@ -168,7 +168,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             cell.previouseViewController = self
             if self.isFiltering {
                 cell.labelMountainName.text = filterArr[indexPath.row].mountainName
-                cell.labelMountainHeight.text = filterArr[indexPath.row].high
+                cell.labelMountainHeight.text = "\(filterArr[indexPath.row].intTypeHigh)"
                 if let urlString = filterArr[indexPath.row].mountainImg {
                     let url = URL(string: urlString)
                     let processor = DownsamplingImageProcessor(size: cell.imageViewMountain.bounds.size)
@@ -206,7 +206,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             }
             else {
                 cell.labelMountainName.text = mountainResult[indexPath.row].mountainName
-                cell.labelMountainHeight.text = mountainResult[indexPath.row].high
+                cell.labelMountainHeight.text = "\(mountainResult[indexPath.row].intTypeHigh)"
                 if let urlString = mountainResult[indexPath.row].mountainImg {
                     let url = URL(string: urlString)
                     cell.imageViewMountain.kf.indicatorType = .activity
@@ -268,10 +268,11 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             }
         }
         else {
-            if let idx = mountainResult[indexPath.row].mountainIdx, let mountainName = mountainResult[indexPath.row].mountainName {
+            if let idx = mountainResult[indexPath.row].mountainIdx, let mountainName = mountainResult[indexPath.row].mountainName, let high =  mountainResult[indexPath.row].intTypeHigh {
                 let nextVC = RankingMountainViewController(contentRankingViewController: ContentRankViewController(), contentMountainViewController: ContentMountainViewController())
                 nextVC.mountainIndex = idx
                 nextVC.mountainName = mountainName
+                nextVC.mountainHeight = high
                     nextVC.modalPresentationStyle = .fullScreen
                     nextVC.modalTransitionStyle = .crossDissolve
                     self.present(nextVC, animated: true, completion: nil)
@@ -317,7 +318,9 @@ extension SearchViewController {
             nextVC.mountainName = searchBar.text!
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve
-            self.present(nextVC, animated: true, completion: nil)
+            NotificationCenter.default.post(name: Notification.Name("middleButtonHidden"), object: nil)
+            tabBarController?.tabBar.isHidden = true
+            nextVC.navigationController?.pushViewController(nextVC, animated: true)
         }
         
     }

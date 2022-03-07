@@ -10,6 +10,9 @@ import UIKit
 class CommentsTableViewCell: UITableViewCell {
     static let resueidentifier = "CommentsTableViewCell"
     var section : Int = 0
+    var commentIndex : Int = 0
+    var commentUserId = ""
+
     var previoutViewcontroller : DetailMessageViewController?
 //    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 //        super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -65,6 +68,8 @@ class CommentsTableViewCell: UITableViewCell {
     @objc func actionDoubleMessage(button:UIButton) {
         previoutViewcontroller?.textFieldWriteMessage.becomeFirstResponder()
         previoutViewcontroller?.viewDoubleComment.alpha = 1
+        previoutViewcontroller?.commentIndex = commentIndex
+        previoutViewcontroller?.labelDoubleComment.text = "\(commentUserId)에게 답글 남기는 중..."
     }
     
     //답글 보기

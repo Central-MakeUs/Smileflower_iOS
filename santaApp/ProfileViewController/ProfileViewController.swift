@@ -15,7 +15,6 @@ class ProfileViewController : BaseViewController {
     var showProfileResult : ShowProfileResponse?
     var showProfilePost : [ShowProfilePosts] = []
     var showUserResultResult : ShowUserResultResponse?
-    
     var imagesName : [String] = [ "isFirstConquerd@3x", "isThirdConquerd@3x",
                                   "isSeventhConquered@3x", "isTenthConquered@3x",
                                   "isFiveKmHeight@3x", "isTenKmHeight@3x",
@@ -44,7 +43,30 @@ class ProfileViewController : BaseViewController {
         else {
             self.presentAlert(title: "네트워크 통신 장애")
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(goMountainNameAction(notification:)), name: Notification.Name("goMountainName"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadUserPost), name: Notification.Name("reloadUserPost"), object: nil)
     }
+    
+    //MARK: 산 이름 입력하는 뷰 띄우기
+    @objc func goMountainNameAction(notification: NSNotification) {
+        let mountainInfo = notification.object as! NSDictionary
+        let mountainImage = mountainInfo["mountainImage"]
+        let NextVC = InputMountainNameViewController()
+        NextVC.modalPresentationStyle = .overFullScreen
+        NextVC.mountainImage = mountainImage as? Data ?? Data()
+        self.present(NextVC, animated: false, completion: nil)
+    }
+    //MARK: 리로드 프로필 뷰
+    @objc func reloadUserPost() {
+        if let idx = Constant.userIdx {
+            ShowProfileDataManager().apiprofileuserIdx(self, idx)
+        }
+        else {
+            self.presentAlert(title: "네트워크 통신 장애")
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         if let idx = Constant.userIdx {
             ShowUserResultDataManager().apiprofileuserIdxresult(self, idx)
@@ -93,7 +115,9 @@ class ProfileViewController : BaseViewController {
         self.navigationController?.pushViewController(NextVC, animated: true)
     }
     @objc func actionAddButton(_ sender : Any) {
-        print("add")
+        pickerForMountainImage.sourceType = .photoLibrary
+        pickerForMountainImage.modalPresentationStyle = .formSheet
+        self.present(pickerForMountainImage, animated: true, completion: nil)
     }
 
     //MARK: 스크롤뷰 구현
@@ -307,6 +331,7 @@ class ProfileViewController : BaseViewController {
         default: return
         }
     }
+
     let control = BetterSegmentedControl(
         frame: CGRect(x: UIScreen.main.bounds.maxX/2 - 88 , y: 17, width: 184, height: 36),
         segments: LabelSegment.segments(withTitles: ["내 게시글","성과"],
@@ -320,6 +345,7 @@ class ProfileViewController : BaseViewController {
                   .indicatorViewInset(4),
                   .animationDuration(0.5)
                   ])
+
     func seguecontrolSet() {
         control.indicatorView.layer.shadowColor = UIColor.mainColor.cgColor
         control.indicatorView.layer.shadowRadius = 18
@@ -386,16 +412,13 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == collectionViewConquerMountain {
             return showProfilePost.count
-        }
-        else {
+        } else {
             return 11
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionViewConquerMountain {
-            let nextVC = DetailPostViewController()
-            print(indexPath.row)
-            nextVC.userIdx = showProfileResult?.userIdx
+            let nextVC = DetailMyPostViewController()
             nextVC.indexPath = indexPath.row
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve
@@ -434,7 +457,7 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
                 else {
                     cell.imageViewMountainConquer.backgroundColor = .mainColor
                 }
-                if showProfilePost[indexPath.row].isFlag! {
+                if showProfilePost[indexPath.row].flag ?? false {
                     cell.imageViewFlag.image = UIImage(named: "FlagIconSmall@3x")
                 }
                 else {
@@ -553,13 +576,13 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         if scrollView == collectionViewConquerMountain {
             if scrollView.contentOffset.y > 0 {
-                scrollViewContent.setContentOffset(CGPoint(x: 0, y: 148), animated: true)
+                scrollViewContent.setContentOffset(CGPoint(x: 0, y: 248), animated: true)
 
             }
         }
         else if scrollView == collectionViewUserResult {
             if scrollView.contentOffset.y > 0 {
-                scrollViewContent.setContentOffset(CGPoint(x: 0, y: 148), animated: true)
+                scrollViewContent.setContentOffset(CGPoint(x: 0, y: 248), animated: true)
 
             }
         }
@@ -582,19 +605,22 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         if scrollView == collectionViewConquerMountain {
             if scrollView.contentOffset.y < 0 {
                 scrollView.contentOffset.y = 0
-                scrollViewContent.setContentOffset(CGPoint(x: 0, y: -88), animated: true)
+                print("2")
+                scrollViewContent.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
             }
             
         }
         else if scrollView == collectionViewUserResult {
             if scrollView.contentOffset.y < 0 {
                 scrollView.contentOffset.y = 0
+                print("1")
                 scrollViewContent.setContentOffset(CGPoint(x: 0, y: -88), animated: true)
             }
         }
         else if scrollView == scrollViewContent {
             if scrollView.contentOffset.y < -88 {
                 scrollView.contentOffset.y = -88
+                print("3")
             }
         }
     }
@@ -610,16 +636,17 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
                 inputImageProfile = image.jpegData(compressionQuality: 0.5)
                 ChangeProfileDataManager().apiprofileupload(inputImageProfile!, self)
             }
-            dismiss(animated: true, completion: nil)
+            let vc = BaseTabbarController()
+            vc.index = 4
+            self.changeRootViewController(vc)
         }
         else {
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                inputImageMountain = image.jpegData(compressionQuality: 0.5)
-                RegisterImageDataManager().apiprofilepicture(inputImageMountain!, self)
+                picker.dismiss(animated: true) {
+                    let profileImageInfo = ["mountainImage" : image.jpegData(compressionQuality: 0.5) as Any] as [String: Any]
+                    NotificationCenter.default.post(name: Notification.Name("goMountainName"), object: profileImageInfo)
+                }
             }
-            let nextVC = BaseTabbarController()
-            nextVC.index = 3
-            self.changeRootViewController(nextVC)
         }
     }
 }
@@ -628,7 +655,7 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
 extension ProfileViewController {
     func successDataApiShowProfile( _ result : ShowProfileResponse) {
         showProfileResult = result
-        showProfilePost = result.posts ?? []
+        showProfilePost = result.postsResList ?? []
         collectionViewConquerMountain.reloadData()
         if showProfilePost.count < 13 {
             scrollViewContent.isScrollEnabled = true
@@ -652,6 +679,7 @@ extension ProfileViewController {
         collectionViewConquerMountain.reloadData()
     }
     func successDataApiChangeProfileImage() {
+        NotificationCenter.default.post(name: Notification.Name("reloadUserPost"), object: nil)
         self.presentAlert(title: "사진 변경이 완료되었습니다.")
     }
     func successDataApiUserResult(_ result : ShowUserResultResponse) {

@@ -134,7 +134,6 @@ class EndViewController : BaseViewController {
     // MARK: 애니메이션
     func setAnimation() {
         let animationView = AnimationView(name: "lottieAnimaition")
-        animationView.backgroundColor = .black
         view.addSubview(animationView)
         switch Constant.userPhoneHeight {
         // 아이폰 6
@@ -512,7 +511,7 @@ class EndViewController : BaseViewController {
         
     }
     @objc func actionButtonCamera() {
-        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 2 / 5) {
+        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 0 / 5) {
             self.picker.sourceType = .camera
             self.present(self.picker, animated: true, completion: nil)
         }
@@ -600,7 +599,7 @@ extension EndViewController {
         }
         nextVC.modalPresentationStyle = .overFullScreen
         nextVC.modalTransitionStyle = .crossDissolve
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        present(nextVC, animated: true, completion: nil)
     }
     func failureDataImageRegister(_ message: String) {
         self.presentAlert(title: message)

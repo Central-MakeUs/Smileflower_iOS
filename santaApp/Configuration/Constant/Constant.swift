@@ -22,8 +22,8 @@ struct Constant {
     static var deviceToken = ""
     static var loginMethod = ""
     
-    static var userPhoneHeight: CGFloat?
-    static var userPhoneWidth : CGFloat?
+    static var userPhoneHeight: CGFloat = 0
+    static var userPhoneWidth : CGFloat = 0
     
     static let fontAppleSDGothicNeoRegular = "AppleSDGothicNeo-Regular"
     static let fontAppleSDGothicNeoThin = "AppleSDGothicNeo-Thin"

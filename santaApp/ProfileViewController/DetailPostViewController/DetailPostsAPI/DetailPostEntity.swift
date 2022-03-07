@@ -15,11 +15,11 @@ struct DetailPostsEntity : Decodable {
 struct DetailPostsResponse : Decodable{
     var userIdx : Int?
     var name : String?
-    var posts : [DetailPostsPosts]?
+    var getPostsRes : [DetailPostsPosts]?
 }
 
 struct DetailPostsPosts : Decodable {
-    var isFlag : Bool?
+    var flag : Bool?
     var flagIdx : Int?
     var pictureIdx : Int?
     var userIdx : Int?
@@ -28,5 +28,14 @@ struct DetailPostsPosts : Decodable {
     var name : String?
     var createdAt : String?
     var pictureUrl : String?
+    var getCommentRes: [DetailPostsComment]?
+}
+
+struct DetailPostsComment : Decodable {
+    var userIdx: Int?
+    var userImageUrl : String?
+    var userName: String?
+    var contents: String?
+    var count : Int?
 }
 

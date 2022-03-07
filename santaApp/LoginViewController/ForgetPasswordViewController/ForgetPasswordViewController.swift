@@ -52,7 +52,7 @@ class ForgetPasswordViewController : BaseViewController {
         view.addSubview(navbar)
     }
     @objc func actionBackButton(_ sender : Any) {
-        TrackingTool.Action(actionName: "action_back_forget_password", param: ["":""])
+        TrackingTool.Action(actionName: "action_back_forget_password", param: ["backfroget":""])
         dismiss(animated: true, completion: nil)
     }
     //MARk: 산타 로고
@@ -136,7 +136,7 @@ class ForgetPasswordViewController : BaseViewController {
         }
     }
     @objc func actionForgetPassword() {
-        TrackingTool.Action(actionName: "action_reset_password", param: ["":""])
+        TrackingTool.Action(actionName: "action_reset_password", param: ["reset":""])
         let input = ForgetPasswordInput(email: textFieldEmail.text!)
         ForgetPasswordDataManager().appemailspassword(self, input)
         self.showIndicator()

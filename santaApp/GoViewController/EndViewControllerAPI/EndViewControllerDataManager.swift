@@ -22,16 +22,17 @@ class EndViewControllerDataManager {
             for (key, value) in parameters {
                 MultipartFormData.append("\(value)".data(using: .utf8)!, withName: key, mimeType: "application/json") }
             MultipartFormData.append(dataimg, withName: "file", fileName: "a.jpg", mimeType: "multipart/form-data")
-        }, to: Constant.baseURL + "/app/flag/\(mountainIdx)", method: .post ,headers: headers).responseDecodable(of: EndViewControllerEntity.self) { response in
+        }, to: Constant.baseURL + "/app/flags/\(mountainIdx)", method: .post ,headers: headers).responseDecodable(of: EndViewControllerEntity.self) { response in
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result{
-                    if result.doubleVisited {
-                        viewcontroller.failureDataImageRegister("하루에 두 번 인증은 불가능합니다!")
-
-                    } else {
+//                    print(result.doubleVisited)
+//                    if result.doubleVisited ?? false {
+//                        viewcontroller.failureDataImageRegister("하루에 두 번 인증은 불가능합니다!")
+//
+//                    } else {
                         viewcontroller.successDataImageRegister()
-                    }
+//                    }
                 }
                 else if !response.isSuccess{
                     viewcontroller.failureDataImageRegister(response.message)

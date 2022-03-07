@@ -163,7 +163,7 @@ class CompleteViewController : BaseViewController  {
                     self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 130.65, y: 356.5, width: 261.3, height: 116.9)
             // 아이폰 12
                 case 844:
-                    self.imageViewConqueredPerson.frame = CGRect(x: 146.6, y: 52, width: 191, height: 178)
+                    self.imageViewConqueredPerson.frame = CGRect(x: UIScreen.main.bounds.width/2 - 54, y: 90, width: 191, height: 178)
                     self.imageViewComplete.frame = CGRect(x: UIScreen.main.bounds.width/2 - 130.65, y: UIScreen.main.bounds.height/2 - 58.4, width: 261.3, height: 116.8)
             // 아이폰 11
                 case 896:
@@ -257,11 +257,9 @@ class CompleteViewController : BaseViewController  {
         buttonGoConquerMountainView.layer.cornerRadius = 25
     }
     @objc func actionGoConquerMountainView() {
-        let nextVC = FlagMapViewController()
-        nextVC.useridx = myRankResult?.userIdx
-        nextVC.modalPresentationStyle = .fullScreen
-        nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
+        let nextVC = BaseTabbarController()
+        nextVC.index = 1
+        self.changeRootViewController(nextVC)
     }
     
     // MARK: 최하단 랭킹 뷰
