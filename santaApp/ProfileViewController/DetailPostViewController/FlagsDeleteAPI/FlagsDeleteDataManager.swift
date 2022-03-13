@@ -8,7 +8,7 @@
 import Alamofire
 
 class FlagsDeleteDataManager {
-    func apiprofileuseridxflagsflagIdx( _ flagIdx :Int, _ cell : DetailPostCollectionViewCell) {
+    func apiprofileuseridxflagsflagIdx( _ flagIdx :Int, _ cell : DetailMyPostCollectionViewCell) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
         AF.request(Constant.baseURL + "/app/flags/\(flagIdx)", method: .delete, headers: headers).validate().responseDecodable(of: FlagsDeleteEntity.self) { response in
             switch response.result {

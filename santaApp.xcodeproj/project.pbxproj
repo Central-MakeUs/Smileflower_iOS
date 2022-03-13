@@ -257,6 +257,10 @@
 		2878F8EA27C3BED500A50EB1 /* CommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8E827C3BED400A50EB1 /* CommentsModel.swift */; };
 		2878F8EC27C3C03B00A50EB1 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8EB27C3C03B00A50EB1 /* CommentsViewModel.swift */; };
 		2878F8ED27C3C03B00A50EB1 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878F8EB27C3C03B00A50EB1 /* CommentsViewModel.swift */; };
+		287C1BBD27DE4CC600F80A17 /* AgreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C1BBC27DE4CC600F80A17 /* AgreeModel.swift */; };
+		287C1BBE27DE4CC600F80A17 /* AgreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C1BBC27DE4CC600F80A17 /* AgreeModel.swift */; };
+		287C1BC027DE4D1C00F80A17 /* AgreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C1BBF27DE4D1C00F80A17 /* AgreeViewModel.swift */; };
+		287C1BC127DE4D1C00F80A17 /* AgreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C1BBF27DE4D1C00F80A17 /* AgreeViewModel.swift */; };
 		28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */; };
 		28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */; };
 		28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */; };
@@ -297,6 +301,10 @@
 		2893284727C9DDBE000CE5B7 /* AppleLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893284527C9DDBE000CE5B7 /* AppleLoginModel.swift */; };
 		2893284927C9DDCF000CE5B7 /* AppleLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893284827C9DDCF000CE5B7 /* AppleLoginDataManager.swift */; };
 		2893284A27C9DDCF000CE5B7 /* AppleLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893284827C9DDCF000CE5B7 /* AppleLoginDataManager.swift */; };
+		289547ED27DBD5AF005ECC8E /* FirstCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289547EC27DBD5AF005ECC8E /* FirstCheckViewController.swift */; };
+		289547EE27DBD5AF005ECC8E /* FirstCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289547EC27DBD5AF005ECC8E /* FirstCheckViewController.swift */; };
+		289547F027DBD761005ECC8E /* AcceptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289547EF27DBD761005ECC8E /* AcceptTableViewCell.swift */; };
+		289547F127DBD761005ECC8E /* AcceptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289547EF27DBD761005ECC8E /* AcceptTableViewCell.swift */; };
 		289656F7268F58EE00B23E8F /* CompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289656F6268F58EE00B23E8F /* CompleteViewController.swift */; };
 		2899D869277225F200DDB4E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D868277225F200DDB4E1 /* HomeViewController.swift */; };
 		2899D86A277225F200DDB4E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899D868277225F200DDB4E1 /* HomeViewController.swift */; };
@@ -314,13 +322,15 @@
 		289E85B027C5242B00DB2616 /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 289E85AC27C5242B00DB2616 /* CommentsTableViewCell.xib */; };
 		289E85B327C5783D00DB2616 /* HaveCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E85B127C5783D00DB2616 /* HaveCommentsTableViewCell.swift */; };
 		289E85B427C5783D00DB2616 /* HaveCommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E85B127C5783D00DB2616 /* HaveCommentsTableViewCell.swift */; };
+		289FDCEA27D92B1B00080947 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FDCE927D92B1B00080947 /* AlertModel.swift */; };
+		289FDCEB27D92B1B00080947 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FDCE927D92B1B00080947 /* AlertModel.swift */; };
+		289FDCED27D92BCC00080947 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FDCEC27D92BCC00080947 /* AlertViewModel.swift */; };
+		289FDCEE27D92BCC00080947 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289FDCEC27D92BCC00080947 /* AlertViewModel.swift */; };
 		28A0C45E268CEB4700D40F35 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45D268CEB4700D40F35 /* CALayer.swift */; };
 		28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C45F268CEB5F00D40F35 /* UITabBar.swift */; };
 		28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0C461268CF38800D40F35 /* UISearchBar.swift */; };
 		28A6FEBD27D4EDA000757EFE /* InputMountainNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A6FEBC27D4EDA000757EFE /* InputMountainNameViewController.swift */; };
 		28A6FEBE27D4EDA000757EFE /* InputMountainNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A6FEBC27D4EDA000757EFE /* InputMountainNameViewController.swift */; };
-		28A6FEC027D4FADC00757EFE /* CheckMountaiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A6FEBF27D4FADC00757EFE /* CheckMountaiDataManager.swift */; };
-		28A6FEC127D4FADC00757EFE /* CheckMountaiDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A6FEBF27D4FADC00757EFE /* CheckMountaiDataManager.swift */; };
 		28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208626937562001DBF5E /* ContentRankViewController.swift */; };
 		28B3208926938026001DBF5E /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B3208826938026001DBF5E /* RankTableViewCell.swift */; };
 		28B52EA9268C793000017DCF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B52EA8268C793000017DCF /* UIImage.swift */; };
@@ -508,6 +518,8 @@
 		2878F8E527C3BEA600A50EB1 /* inputComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputComment.swift; sourceTree = "<group>"; };
 		2878F8E827C3BED400A50EB1 /* CommentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsModel.swift; sourceTree = "<group>"; };
 		2878F8EB27C3C03B00A50EB1 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		287C1BBC27DE4CC600F80A17 /* AgreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeModel.swift; sourceTree = "<group>"; };
+		287C1BBF27DE4D1C00F80A17 /* AgreeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeViewModel.swift; sourceTree = "<group>"; };
 		28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainImageTableViewCell.swift; sourceTree = "<group>"; };
 		28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPositionTableViewCell.swift; sourceTree = "<group>"; };
 		28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCourseTableViewCell.swift; sourceTree = "<group>"; };
@@ -542,6 +554,8 @@
 		2893284227C9DDB1000CE5B7 /* AppleLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginInput.swift; sourceTree = "<group>"; };
 		2893284527C9DDBE000CE5B7 /* AppleLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginModel.swift; sourceTree = "<group>"; };
 		2893284827C9DDCF000CE5B7 /* AppleLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginDataManager.swift; sourceTree = "<group>"; };
+		289547EC27DBD5AF005ECC8E /* FirstCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCheckViewController.swift; sourceTree = "<group>"; };
+		289547EF27DBD761005ECC8E /* AcceptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTableViewCell.swift; sourceTree = "<group>"; };
 		289656F6268F58EE00B23E8F /* CompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteViewController.swift; sourceTree = "<group>"; };
 		2899D868277225F200DDB4E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2899D86E2772355100DDB4E1 /* ConquerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConquerImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -551,11 +565,12 @@
 		289E85AB27C5242B00DB2616 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		289E85AC27C5242B00DB2616 /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
 		289E85B127C5783D00DB2616 /* HaveCommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveCommentsTableViewCell.swift; sourceTree = "<group>"; };
+		289FDCE927D92B1B00080947 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		289FDCEC27D92BCC00080947 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		28A0C45D268CEB4700D40F35 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		28A0C45F268CEB5F00D40F35 /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
 		28A0C461268CF38800D40F35 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		28A6FEBC27D4EDA000757EFE /* InputMountainNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputMountainNameViewController.swift; sourceTree = "<group>"; };
-		28A6FEBF27D4FADC00757EFE /* CheckMountaiDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMountaiDataManager.swift; sourceTree = "<group>"; };
 		28B3208626937562001DBF5E /* ContentRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRankViewController.swift; sourceTree = "<group>"; };
 		28B3208826938026001DBF5E /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		28B52EA8268C793000017DCF /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -777,6 +792,7 @@
 				2899D87127723D4700DDB4E1 /* AltitudeRankingTableViewCell.swift */,
 				2899D8772779AE2800DDB4E1 /* CompeteCollectionViewCell.swift */,
 				28EA39B927CE858E007B8D5C /* ShowAlertTableViewCell.swift */,
+				289547EF27DBD761005ECC8E /* AcceptTableViewCell.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -1025,6 +1041,8 @@
 				28EA39C227CFD1FB007B8D5C /* WriteCommentViewModel.swift */,
 				281702AA27D0D05600EB5829 /* userImageViewModel.swift */,
 				281702B327D0D43300EB5829 /* ReCommentViewModel.swift */,
+				289FDCEC27D92BCC00080947 /* AlertViewModel.swift */,
+				287C1BBF27DE4D1C00F80A17 /* AgreeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1035,6 +1053,8 @@
 				2878F8EE27C3C19400A50EB1 /* Comments */,
 				285D970827A57043001FB503 /* Conquer */,
 				28DB68582785A60100856198 /* HomeModel.swift */,
+				289FDCE927D92B1B00080947 /* AlertModel.swift */,
+				287C1BBC27DE4CC600F80A17 /* AgreeModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1294,6 +1314,7 @@
 				280279DC279F065800E41A07 /* DetailConquerViewController.swift */,
 				285D970D27A5AE33001FB503 /* DetailMessageViewController.swift */,
 				28EA39B527CE04FC007B8D5C /* HomeAlertViewController.swift */,
+				289547EC27DBD5AF005ECC8E /* FirstCheckViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1412,7 +1433,6 @@
 				28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */,
 				28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */,
 				28A6FEBC27D4EDA000757EFE /* InputMountainNameViewController.swift */,
-				28A6FEBF27D4FADC00757EFE /* CheckMountaiDataManager.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -1834,6 +1854,8 @@
 				2871B45F26A31AD200F32165 /* MountainLikeDataManager.swift in Sources */,
 				28EA39B627CE04FC007B8D5C /* HomeAlertViewController.swift in Sources */,
 				28013AC526A725D0007E082D /* RegisterImageDataManager.swift in Sources */,
+				287C1BBD27DE4CC600F80A17 /* AgreeModel.swift in Sources */,
+				289547ED27DBD5AF005ECC8E /* FirstCheckViewController.swift in Sources */,
 				2893284927C9DDCF000CE5B7 /* AppleLoginDataManager.swift in Sources */,
 				28EA39C027CFD14F007B8D5C /* writeCommentModel.swift in Sources */,
 				2882287D26A06129000B2EAA /* SignInViewControllerDataManager.swift in Sources */,
@@ -1857,10 +1879,10 @@
 				28D4C23A268A29660056EECF /* BaseViewController.swift in Sources */,
 				28013AE026A907DD007E082D /* PostsDeleteDataManager.swift in Sources */,
 				283047EF268E2B7700DEB2EC /* StartViewController.swift in Sources */,
-				28A6FEC027D4FADC00757EFE /* CheckMountaiDataManager.swift in Sources */,
 				286CCBFE26EF12F9008C7B3F /* Struct.swift in Sources */,
 				2871B47E26A4BABA00F32165 /* MountainRankingEntity.swift in Sources */,
 				289E85AD27C5242B00DB2616 /* CommentsTableViewCell.swift in Sources */,
+				289547F027DBD761005ECC8E /* AcceptTableViewCell.swift in Sources */,
 				28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */,
 				28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */,
 				28013ACF26A7BB8F007E082D /* DetailPostsDataManager.swift in Sources */,
@@ -1935,6 +1957,7 @@
 				2899D869277225F200DDB4E1 /* HomeViewController.swift in Sources */,
 				2830CAFC26AC991800DC3805 /* AccountViewController.swift in Sources */,
 				2882288026A0794A000B2EAA /* EndViewControllerEntity.swift in Sources */,
+				289FDCED27D92BCC00080947 /* AlertViewModel.swift in Sources */,
 				2890263F268F286E00D15BBA /* UIView.swift in Sources */,
 				28C0479826AB4415008E6831 /* IndicatorView.swift in Sources */,
 				2871B47226A4A09B00F32165 /* MyRankingTableViewCell.swift in Sources */,
@@ -1975,9 +1998,11 @@
 				2871B46126A31E3400F32165 /* MountainPicksEntity.swift in Sources */,
 				2812067526A5DF1300BDA266 /* PaddingLabel.swift in Sources */,
 				28C0478F26AB336D008E6831 /* CheckEmailDataManager.swift in Sources */,
+				287C1BC027DE4D1C00F80A17 /* AgreeViewModel.swift in Sources */,
 				2871B47726A4B53E00F32165 /* MountainSearchEntity.swift in Sources */,
 				2882288E26A0B6D4000B2EAA /* VersionTableViewCell.swift in Sources */,
 				28013AE826A91156007E082D /* ReportUserFlagsEntity.swift in Sources */,
+				289FDCEA27D92B1B00080947 /* AlertModel.swift in Sources */,
 				28013AD826A85FDE007E082D /* DetailAnotherUserCollectionViewCell.swift in Sources */,
 				2882289326A0BF78000B2EAA /* LogoutEntity.swift in Sources */,
 				2893284627C9DDBE000CE5B7 /* AppleLoginModel.swift in Sources */,
@@ -2031,6 +2056,8 @@
 				2828C0E02732E7B1003ABAF5 /* MountainLikeDataManager.swift in Sources */,
 				28EA39B727CE04FC007B8D5C /* HomeAlertViewController.swift in Sources */,
 				2828C0E12732E7B1003ABAF5 /* RegisterImageDataManager.swift in Sources */,
+				287C1BBE27DE4CC600F80A17 /* AgreeModel.swift in Sources */,
+				289547EE27DBD5AF005ECC8E /* FirstCheckViewController.swift in Sources */,
 				2893284A27C9DDCF000CE5B7 /* AppleLoginDataManager.swift in Sources */,
 				28EA39C127CFD14F007B8D5C /* writeCommentModel.swift in Sources */,
 				2828C0E22732E7B1003ABAF5 /* SignInViewControllerDataManager.swift in Sources */,
@@ -2054,10 +2081,10 @@
 				2828C0F22732E7B1003ABAF5 /* BaseViewController.swift in Sources */,
 				2828C0F32732E7B1003ABAF5 /* PostsDeleteDataManager.swift in Sources */,
 				2828C0F42732E7B1003ABAF5 /* StartViewController.swift in Sources */,
-				28A6FEC127D4FADC00757EFE /* CheckMountaiDataManager.swift in Sources */,
 				2828C0F52732E7B1003ABAF5 /* Struct.swift in Sources */,
 				2828C0F62732E7B1003ABAF5 /* MountainRankingEntity.swift in Sources */,
 				289E85AE27C5242B00DB2616 /* CommentsTableViewCell.swift in Sources */,
+				289547F127DBD761005ECC8E /* AcceptTableViewCell.swift in Sources */,
 				2828C0F72732E7B1003ABAF5 /* MountainHeightTableViewCell.swift in Sources */,
 				2828C0F82732E7B1003ABAF5 /* santaApp.xcdatamodeld in Sources */,
 				2828C0F92732E7B1003ABAF5 /* DetailPostsDataManager.swift in Sources */,
@@ -2132,6 +2159,7 @@
 				2899D86A277225F200DDB4E1 /* HomeViewController.swift in Sources */,
 				2828C12D2732E7B1003ABAF5 /* AccountViewController.swift in Sources */,
 				2828C12E2732E7B1003ABAF5 /* EndViewControllerEntity.swift in Sources */,
+				289FDCEE27D92BCC00080947 /* AlertViewModel.swift in Sources */,
 				2828C12F2732E7B1003ABAF5 /* UIView.swift in Sources */,
 				2828C1302732E7B1003ABAF5 /* IndicatorView.swift in Sources */,
 				2828C1312732E7B1003ABAF5 /* MyRankingTableViewCell.swift in Sources */,
@@ -2172,9 +2200,11 @@
 				2828C14D2732E7B1003ABAF5 /* MountainPicksEntity.swift in Sources */,
 				2828C14E2732E7B1003ABAF5 /* PaddingLabel.swift in Sources */,
 				2828C14F2732E7B1003ABAF5 /* CheckEmailDataManager.swift in Sources */,
+				287C1BC127DE4D1C00F80A17 /* AgreeViewModel.swift in Sources */,
 				2828C1502732E7B1003ABAF5 /* MountainSearchEntity.swift in Sources */,
 				2828C1512732E7B1003ABAF5 /* VersionTableViewCell.swift in Sources */,
 				2828C1522732E7B1003ABAF5 /* ReportUserFlagsEntity.swift in Sources */,
+				289FDCEB27D92B1B00080947 /* AlertModel.swift in Sources */,
 				2828C1532732E7B1003ABAF5 /* DetailAnotherUserCollectionViewCell.swift in Sources */,
 				2828C1542732E7B1003ABAF5 /* LogoutEntity.swift in Sources */,
 				2893284727C9DDBE000CE5B7 /* AppleLoginModel.swift in Sources */,

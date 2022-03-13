@@ -14,15 +14,7 @@ class CommentsTableViewCell: UITableViewCell {
     var commentUserId = ""
 
     var previoutViewcontroller : DetailMessageViewController?
-//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        
-//        print(haveComments)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+
     
     //댓글 쓴 유저의 이미지
     let imageViewUserProfile : UIImageView = {

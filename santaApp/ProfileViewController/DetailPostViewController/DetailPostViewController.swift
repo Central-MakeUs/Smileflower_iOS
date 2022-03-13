@@ -21,9 +21,6 @@ class DetailPostViewController: BaseViewController {
         SetCollectionViewContent()
     }
     override func viewWillAppear(_ animated: Bool) {
-        if let idx = userIdx {
-            DetailPostsDataManager().apiprofileuserIdxposts(self, idx)
-        }
     }
 
     // MARK: 네비게이션 바

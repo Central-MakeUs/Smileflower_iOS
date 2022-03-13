@@ -11,6 +11,7 @@ class DetailMessageViewController: BaseViewController {
     var arrayBool : [Bool] = []
     var flagIndex = 0
     var commentIndex = 0
+    var type = "flag"
     var previousView = ""
     let viewModel = CommentsViewModel()
     let viewModelWriteComment = writeCommentViewModel()
@@ -26,7 +27,7 @@ class DetailMessageViewController: BaseViewController {
         setTableView()
         setViewDoubleComment()
         
-        let input = inputComments(type: "flag")
+        let input = inputComments(type: type)
             viewModel.appCommentsIdx(input, flagIndex) { result, array in
                 self.arrayComments = result.result ?? []
                 self.arrayBool = array
@@ -157,13 +158,17 @@ class DetailMessageViewController: BaseViewController {
         showIndicator()
         if viewDoubleComment.alpha == 0 {
             let input = inputWriteComment(contents: textFieldWriteMessage.text ?? "")
-                viewModelWriteComment.appCommentsIdxType(input, flagIndex, "flag") { result in
+                viewModelWriteComment.appCommentsIdxType(input, flagIndex, type) { result in
                     self.textFieldWriteMessage.text = ""
-                    let input = inputComments(type: "flag")
+                    
+                    let input = inputComments(type: self.type)
                     self.viewModel.appCommentsIdx(input, self.flagIndex) { result, array in
                             self.arrayComments = result.result ?? []
                             self.arrayBool = array
                             self.tableViewMessage.reloadData()
+                        print(result.result)
+                        print(self.flagIndex)
+                        print(self.type)
                         }
                 }
             dismissIndicator()
@@ -171,9 +176,9 @@ class DetailMessageViewController: BaseViewController {
             let input = inputWriteDoubleComment(contents: textFieldWriteMessage.text ?? "")
             print(commentIndex)
             print(flagIndex)
-            viewModelRecomments.appCommentsRecommentIdxType(input, commentIndex, "flag") { result in
+            viewModelRecomments.appCommentsRecommentIdxType(input, commentIndex, type) { result in
                 self.textFieldWriteMessage.text = ""
-                let input = inputComments(type: "flag")
+                let input = inputComments(type: self.type)
                 print("아아아아")
                 self.viewModel.appCommentsIdx(input, self.flagIndex) { result, array in
                         self.arrayComments = result.result ?? []
@@ -183,9 +188,9 @@ class DetailMessageViewController: BaseViewController {
                 
             }
             viewDoubleComment.alpha = 0
-
             dismissIndicator()
         }
+        self.dismissKeyboard()
         
     }
     let viewDoubleComment : UIView = {

@@ -15,7 +15,7 @@ class HomeViewController: BaseViewController {
     var arrayPicture : [HomeModelPictureList] = []
     var arrayUser : [HomeModelUserList] = []
     var arrayMountain : [HomeModelMountainsList] = []
-    
+    var isFirst : Bool = true
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Constant.JWTToken)
@@ -26,13 +26,11 @@ class HomeViewController: BaseViewController {
         setConquerImageView()
         setAccumulateAltitudeView()
         setCompeteView()
-        
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
         NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
-        viewModel.appNewHomeAPI { noti ,resultPicture, resultUser, resultMounatain in
+        viewModel.appNewHomeAPI { first , noti ,resultPicture, resultUser, resultMounatain in
             self.arrayPicture = resultPicture
             self.arrayUser = resultUser
             self.arrayMountain = resultMounatain
@@ -46,12 +44,19 @@ class HomeViewController: BaseViewController {
             self.collectionViewConquerImage.reloadData()
             self.collectionViewTopTen.reloadData()
             self.collectionViewCompete.reloadData()
+            
+            if first == "t" {
+                let vc = FirstCheckViewController()
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: false, completion: nil)
+            }
         }
     }
     override func viewDidAppear(_ animated: Bool) {
     }
     override func viewDidLayoutSubviews() {
     }
+    //MARK: 첫 로그인시
     // MARK: 네비게이션 바
     lazy var rightButton: UIBarButtonItem = {
         let button = UIBarButtonItem(image: UIImage(named: "icHomeNotificationNormal"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
@@ -535,6 +540,7 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             let NextVC = DetailMessageViewController()
             NextVC.flagIndex = arrayPicture[indexPath.row].flagIdx ?? 0
             NextVC.previousView = "Home"
+            NextVC.type = "flag"
             self.tabBarController?.tabBar.isHidden = true
             NotificationCenter.default.post(name: Notification.Name("middleButtonHidden"), object: nil)
             self.navigationController?.pushViewController(NextVC, animated: true)

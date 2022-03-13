@@ -10,6 +10,12 @@ import SwiftUI
 
 class DetailMyPostCollectionViewCell: UICollectionViewCell {
     static let resueidentifier = "DetailMyPostCollectionViewCell"
+    var detailPostViewController : DetailMyPostViewController?
+
+    var userIdx : Int?
+    var postsIdx : Int?
+    var flagsIdx : Int?
+    var isFlag : Bool = true
     var preViewController : DetailMyPostViewController?
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,7 +63,8 @@ class DetailMyPostCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 16
-        imageView.backgroundColor = .mainColor
+        imageView.backgroundColor = .black
+        imageView.image = UIImage(named: "personhome")
         return imageView
     }()
     // 유저 레벨
@@ -81,14 +88,23 @@ class DetailMyPostCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         button.contentMode = .scaleAspectFill
         button.layer.zPosition = 999
-        button.setImage(UIImage(named: "icFeedMore"), for: .normal)
+        button.setImage(UIImage(named: "icFeedMore1"), for: .normal)
         return button
     }()
     
     func showAlert(style: UIAlertController.Style) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: style)
-        let logout = UIAlertAction(title: "신고하기", style: .default) { action in
-            
+        let logout = UIAlertAction(title: "삭제하기", style: .default) { action in
+            if self.isFlag {
+                if let useridx = self.userIdx, let flagidx = self.flagsIdx {
+                    FlagsDeleteDataManager().apiprofileuseridxflagsflagIdx(flagidx, self)
+                }
+            }
+            else {
+                if let useridx = self.userIdx, let postidx = self.postsIdx {
+                    PostsDeleteDataManager().apiprofileuseridxpicturespictures(postidx, self)
+                }
+            }
         }
         logout.setValue(UIColor.red, forKey: "titleTextColor")
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
@@ -151,6 +167,13 @@ class DetailMyPostCollectionViewCell: UICollectionViewCell {
         label.text = "2021년 6월28일 오후 2:18"
         return label
     }()
+    let imageViewFlag : UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "FlagIcon")
+        return imageView
+    }()
+
     
     //MARK: 상단 피드 셋
     func setTopFeed() {
@@ -167,8 +190,8 @@ class DetailMyPostCollectionViewCell: UICollectionViewCell {
         viewTopFeed.addSubview(imageViewUserProfile)
         imageViewUserProfile.snp.makeConstraints { make in
             make.height.width.equalTo(32)
-            make.leading.equalTo(self).offset(12.7)
-            make.top.equalTo(self).offset(9)
+            make.leading.equalTo(viewTopFeed).offset(12.7)
+            make.top.equalTo(viewTopFeed).offset(9)
         }
         
         viewTopFeed.addSubview(labelUserLv)
@@ -196,7 +219,13 @@ class DetailMyPostCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(imageViewUserProfile.snp.bottom).offset(7)
             make.trailing.leading.bottom.equalTo(viewTopFeed)
         }
-        
+        viewTopFeed.addSubview(imageViewFlag)
+        imageViewFlag.snp.makeConstraints { make in
+            make.width.equalTo(32.2)
+            make.height.equalTo(36)
+            make.trailing.equalTo(imageViewFeed).offset(-21.4)
+            make.top.equalTo(imageViewFeed).offset(26.4)
+        }
         imageViewFeed.addSubview(viewFeedGradient)
         viewFeedGradient.snp.makeConstraints { make in
             make.edges.equalTo(imageViewFeed)
@@ -350,5 +379,15 @@ class DetailMyPostCollectionViewCell: UICollectionViewCell {
             make.leading.trailing.equalTo(labelFeedMessage)
             make.top.equalTo(labelFeedMessage.snp.bottom)
         }
+    }
+}
+
+extension DetailMyPostCollectionViewCell {
+    func successDataApiDeletePosts() {
+        self.detailPostViewController?.viewWillAppear(false)
+        self.detailPostViewController?.collectionViewPost.reloadData()
+    }
+    func failureDataApiDelete(_ message : String) {
+        detailPostViewController?.presentAlert(title: message)
     }
 }

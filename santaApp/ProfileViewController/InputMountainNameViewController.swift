@@ -7,6 +7,7 @@
 
 import UIKit
 
+//현재 안쓰는 파일
 class InputMountainNameViewController : UIViewController {
     var mountainImage : Data?
     
@@ -99,7 +100,7 @@ class InputMountainNameViewController : UIViewController {
     @objc func actionCheck() {
         if let text = textFieldNumber.text {
             print("버튼 클릭")
-            CheckMountainDataManager().appflagsmountain(self, text)
+//            CheckMountainDataManager().appflagsmountain(self, text)
         }
     }
     
@@ -169,9 +170,9 @@ extension InputMountainNameViewController : UITextFieldDelegate {
 extension InputMountainNameViewController {
     func successDataMountain(_ result : GoViewControllerEntityResult) {
         showIndicator()
-        if let image = mountainImage {
-            RegisterImageDataManager().apiprofilepicture(image, self)
-        }
+//        if let image = mountainImage {
+//            RegisterImageDataManager().apiprofilepicture(image, self)
+//        }
     }
     func successDataApiRegisterImage() {
         self.dismiss(animated: false) {

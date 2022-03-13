@@ -47,7 +47,6 @@ class ProfileViewController : BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(goMountainNameAction(notification:)), name: Notification.Name("goMountainName"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadUserPost), name: Notification.Name("reloadUserPost"), object: nil)
     }
-    
     //MARK: 산 이름 입력하는 뷰 띄우기
     @objc func goMountainNameAction(notification: NSNotification) {
         let mountainInfo = notification.object as! NSDictionary
@@ -68,6 +67,8 @@ class ProfileViewController : BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
         if let idx = Constant.userIdx {
             ShowUserResultDataManager().apiprofileuserIdxresult(self, idx)
         }
@@ -422,7 +423,7 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
             nextVC.indexPath = indexPath.row
             nextVC.modalPresentationStyle = .fullScreen
             nextVC.modalTransitionStyle = .crossDissolve
-            self.present(nextVC, animated: true, completion: nil)
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }
         else {
             if indexPath.row == 4 {
@@ -447,9 +448,10 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
                 cell.layer.shadowColor = UIColor(hex: 0xdfe5ed).cgColor
                 cell.clipsToBounds = true
                 
-                
                 cell.layer.shadowOpacity = 1
+
                 if let urlString = showProfilePost[indexPath.row].pictureUrl {
+                    print(urlString)
                     let url = URL(string: urlString)
                     cell.imageViewMountainConquer.kf.indicatorType = .activity
                     cell.imageViewMountainConquer.kf.setImage(with: url)
@@ -605,7 +607,6 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         if scrollView == collectionViewConquerMountain {
             if scrollView.contentOffset.y < 0 {
                 scrollView.contentOffset.y = 0
-                print("2")
                 scrollViewContent.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
             }
             
@@ -613,14 +614,12 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         else if scrollView == collectionViewUserResult {
             if scrollView.contentOffset.y < 0 {
                 scrollView.contentOffset.y = 0
-                print("1")
                 scrollViewContent.setContentOffset(CGPoint(x: 0, y: -88), animated: true)
             }
         }
         else if scrollView == scrollViewContent {
             if scrollView.contentOffset.y < -88 {
                 scrollView.contentOffset.y = -88
-                print("3")
             }
         }
     }
@@ -642,10 +641,14 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
         }
         else {
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                picker.dismiss(animated: true) {
-                    let profileImageInfo = ["mountainImage" : image.jpegData(compressionQuality: 0.5) as Any] as [String: Any]
-                    NotificationCenter.default.post(name: Notification.Name("goMountainName"), object: profileImageInfo)
-                }
+                self.showIndicator()
+                inputImageMountain = image.jpegData(compressionQuality: 0.5)
+                    RegisterImageDataManager().apiprofilepicture(inputImageMountain ?? Data(), self)
+
+//                picker.dismiss(animated: true) {
+//                    let profileImageInfo = ["mountainImage" : image.jpegData(compressionQuality: 0.5) as Any] as [String: Any]
+//                    NotificationCenter.default.post(name: Notification.Name("goMountainName"), object: profileImageInfo)
+//                }
             }
         }
     }
@@ -676,7 +679,10 @@ extension ProfileViewController {
         }
     }
     func successDataApiRegisterImage() {
-        collectionViewConquerMountain.reloadData()
+        self.dismiss(animated: false) {
+            NotificationCenter.default.post(name: Notification.Name("reloadUserPost"), object: nil)
+            self.dismissIndicator()
+        }
     }
     func successDataApiChangeProfileImage() {
         NotificationCenter.default.post(name: Notification.Name("reloadUserPost"), object: nil)
@@ -686,6 +692,7 @@ extension ProfileViewController {
         showUserResultResult = result
         collectionViewUserResult.reloadData()
     }
+
     func faillureDataApi(_ message : String) {
         self.presentAlert(title: message)
     }

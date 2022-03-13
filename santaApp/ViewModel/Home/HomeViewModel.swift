@@ -9,7 +9,7 @@ import Alamofire
 
 class HomeViewModel {
     let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-    func appNewHomeAPI(completionHandler: @escaping (_ noti : String,_ result: Array<HomeModelPictureList>, Array<HomeModelUserList>, Array<HomeModelMountainsList>) -> ()) {
+    func appNewHomeAPI(completionHandler: @escaping (_ isFirst: String ,_ noti : String,_ result: Array<HomeModelPictureList>, Array<HomeModelUserList>, Array<HomeModelMountainsList>) -> ()) {
         AF.request(Constant.baseURL + "/app/new-homes", method: .get, parameters: nil, headers: headers).validate().responseDecodable(of: HomeModel.self) { response in
             switch response.result {
             case .success(let result):
@@ -21,13 +21,13 @@ class HomeViewModel {
                     arrayPicture = result.getFlagResList ?? []
                     arrayMountain = result.getMountainsResList ?? []
                     arrayUser = result.getUsersResList ?? []
-                    completionHandler(result.notice,arrayPicture, arrayUser, arrayMountain)
+                    completionHandler(result.isFirst ?? "f",result.notice,arrayPicture, arrayUser, arrayMountain)
                 } else {
-                    completionHandler("f" ,arrayPicture, arrayUser, arrayMountain)
+                    completionHandler("f","f" ,arrayPicture, arrayUser, arrayMountain)
                 }
             case .failure(let error):
                 print(error.errorDescription)
-                completionHandler("f" ,[], [], [])
+                completionHandler("f","f" ,[], [], [])
             }
         }
     }

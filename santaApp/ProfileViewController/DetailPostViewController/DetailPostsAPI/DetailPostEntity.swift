@@ -23,6 +23,9 @@ struct DetailPostsPosts : Decodable {
     var flagIdx : Int?
     var pictureIdx : Int?
     var userIdx : Int?
+    var userImageUrl : String?
+    var level : String?
+    var userName : String?
     var flagCount : Int?
     var mountainIdx : Int?
     var name : String?

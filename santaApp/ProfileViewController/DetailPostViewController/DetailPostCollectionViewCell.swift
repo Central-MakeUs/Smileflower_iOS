@@ -107,17 +107,17 @@ class DetailPostCollectionViewCell: UICollectionViewCell {
     func showAlert(style: UIAlertController.Style) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: style)
         let logout = UIAlertAction(title: "게시물 삭제", style: .default) { action in
-            
-            if self.isFlag {
-                if let useridx = self.userIdx, let flagidx = self.flagsIdx {
-                    FlagsDeleteDataManager().apiprofileuseridxflagsflagIdx(flagidx, self)
-                }
-            }
-            else {
-                if let useridx = self.userIdx, let postidx = self.postsIdx {
-                    PostsDeleteDataManager().apiprofileuseridxpicturespictures(postidx, self)
-                }
-            }
+//            
+//            if self.isFlag {
+//                if let useridx = self.userIdx, let flagidx = self.flagsIdx {
+//                    FlagsDeleteDataManager().apiprofileuseridxflagsflagIdx(flagidx, self)
+//                }
+//            }
+//            else {
+//                if let useridx = self.userIdx, let postidx = self.postsIdx {
+//                    PostsDeleteDataManager().apiprofileuseridxpicturespictures(postidx, self)
+//                }
+//            }
         }
         logout.setValue(UIColor.red, forKey: "titleTextColor")
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)

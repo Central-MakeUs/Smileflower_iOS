@@ -99,7 +99,6 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func actionReport() {
-        print("click")
         showAlert(style: .actionSheet)
     }
     // 피드 사진

@@ -11,17 +11,19 @@ class DetailConquerViewController : BaseViewController {
     var viewModel : [ConquerResult] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        ConquerViewModel().appnewHomesflags { response in
-            self.viewModel = response
-            self.collectionViewConquer.reloadData()
-        }
+        
         setCollectionView()
         setNavigationBar()
         self.tabBarController?.tabBar.isHidden = true
         NotificationCenter.default.post(name: Notification.Name("middleButtonHidden"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(actionGoNextView), name: Notification.Name("goNextView"), object: nil)
     }
-       
+    override func viewWillAppear(_ animated: Bool) {
+        ConquerViewModel().appnewHomesflags { response in
+            self.viewModel = response
+            self.collectionViewConquer.reloadData()
+        }
+    }
     //MARK: navigation
     func setNavigationBar() {
         let height: CGFloat = 75
@@ -85,8 +87,9 @@ extension DetailConquerViewController : UICollectionViewDelegate, UICollectionVi
         
         cell.labelUserLv.text = viewModel[indexPath.row].level ?? ""
         cell.labelUserName.text = viewModel[indexPath.row].userName ?? ""
-        cell.labelHowManyHeart.text = "\(viewModel[indexPath.row].commentCount ?? 0)"
-        cell.labelHowManyMessage.text = "\(viewModel[indexPath.row].saveCount ?? 0)"
+        cell.labelHowManyMessage.text = "\(viewModel[indexPath.row].commentCount ?? 0)"
+        cell.labelHowManyHeart.text = "\(viewModel[indexPath.row].saveCount ?? 0)"
+        cell.buttonMore.setTitle("\(viewModel[indexPath.row].commentCount ?? 0)개의 댓글 모두 보기", for: .normal)
         
         if let urlString = viewModel[indexPath.row].userImageUrl {
             let url = URL(string: urlString)
@@ -102,19 +105,25 @@ extension DetailConquerViewController : UICollectionViewDelegate, UICollectionVi
             cell.imageViewFeed.kf.setImage(with: url)
         }
         if let comments = viewModel[indexPath.row].getCommentRes {
-            if let urlString = comments[0].userImageUrl {
-                let url = URL(string: urlString)
-                cell.imageViewMessageUserProfile.kf.indicatorType = .activity
-                cell.imageViewMessageUserProfile.kf.setImage(with: url)
+            if comments.count != 0 {
+                if let urlString = comments[0].userImageUrl {
+                    let url = URL(string: urlString)
+                    cell.imageViewMessageUserProfile.kf.indicatorType = .activity
+                    cell.imageViewMessageUserProfile.kf.setImage(with: url)
+                } else {
+                    cell.imageViewMessageUserProfile.image = UIImage(named: "personhome")
+                }
+                
+                let contentsString = "\(comments[0].userName ?? "") \(comments[0].contents ?? "")"
+                let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 14)
+                let attributeStr = NSMutableAttributedString(string: contentsString)
+                attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: comments[0].userName?.count ?? 0))
+                cell.labelFeedMessage.attributedText = attributeStr
             } else {
-                cell.imageViewMessageUserProfile.image = UIImage(named: "personhome")
+                cell.imageViewMessageUserProfile.isHidden = true
+                cell.labelFeedMessage.isHidden = true
+                cell.buttonGoDetailMessage.isHidden = true
             }
-            
-            let contentsString = "\(comments[0].userName ?? "") \(comments[0].contents ?? "")"
-            let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 14)
-            let attributeStr = NSMutableAttributedString(string: contentsString)
-            attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: comments[0].userName?.count ?? 0))
-            cell.labelFeedMessage.attributedText = attributeStr
         }
         cell.buttonGoDetailMessage.addTarget(self, action: #selector(actionGoNextView), for: .touchUpInside)
         cell.buttonGoDetailMessage.tag = viewModel[indexPath.row].flagIdx ?? 0
@@ -138,6 +147,18 @@ extension DetailConquerViewController : UICollectionViewDelegate, UICollectionVi
             }
         } else {
             return CGSize(width: 341, height: 314)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let comments = viewModel[indexPath.row].getCommentRes {
+            if comments.count == 0 {
+                let NextVC = DetailMessageViewController()
+                NextVC.flagIndex = indexPath.row
+                NextVC.previousView = "Detail"
+                NextVC.type = "flag"
+                self.navigationController?.pushViewController(NextVC, animated: true)
+            }
         }
     }
     

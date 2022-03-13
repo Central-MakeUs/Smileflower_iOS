@@ -28,8 +28,8 @@ class ShowAlertTableViewCell: UITableViewCell {
     
     let imageViewProfile : UIImageView = {
         let  imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "personhome")
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "1083")
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
         return imageView

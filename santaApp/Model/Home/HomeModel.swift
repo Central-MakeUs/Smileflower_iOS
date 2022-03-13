@@ -14,6 +14,7 @@ struct HomeModel : Decodable {
 
 struct HomeModelResult : Decodable {
     var notice : String
+    var isFirst: String?
     var getFlagResList : [HomeModelPictureList]?
     var getUsersResList : [HomeModelUserList]?
     var getMountainsResList : [HomeModelMountainsList]?

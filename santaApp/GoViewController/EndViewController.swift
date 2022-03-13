@@ -63,7 +63,7 @@ class EndViewController : BaseViewController {
                             default:
                                 self.viewAltitudeCheck.frame = CGRect(x: 24, y: 542.9, width: Double(327 * self.mountainNowAltitude / self.mountainTopAltitude), height: 42)
                         }
-                        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 2 / 5) {
+                        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 0 / 5) {
                             self.buttonCamera.tintColor = .mainColor
                             self.buttonCamera.layer.borderColor = UIColor.mainColor.cgColor
                             

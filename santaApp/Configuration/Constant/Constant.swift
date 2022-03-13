@@ -9,11 +9,11 @@ import Alamofire
 
 struct Constant {
     #if DEV
-    static let baseURL = "http://13.125.121.202"
+    static let baseURL = "https://test.smilesanta.site"
     #else
     static let baseURL = "https://smilesanta.site"
     #endif
-    static let TestURL = "http://13.125.121.202"
+    static let TestURL = "https://test.smilesanta.site"
     static let MainURL = "https://smilesanta.site"
     static let fontCocogoose = "Cocogoose"
     static var JWTToken = ""
