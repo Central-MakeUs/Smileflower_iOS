@@ -17,6 +17,7 @@ target 'santaApp' do
   pod 'Kingfisher'
   pod 'KakaoSDK'
   pod 'Firebase/Messaging'
+ pod 'Firebase/RemoteConfig'
 
   target 'santaAppTests' do
     inherit! :search_paths
@@ -40,4 +41,6 @@ target 'santaApp copy' do
   pod 'Kingfisher'
   pod 'KakaoSDK'
   pod 'Firebase/Messaging'
+  pod 'Firebase/RemoteConfig'
+
 end

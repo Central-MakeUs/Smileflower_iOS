@@ -19,6 +19,7 @@ class SplashViewController : BaseViewController {
         super.viewDidLoad()
         view.setGradient(color1:  UIColor(hex: 0x9AC7FF), color2: UIColor(hex:0x24C7B9))
         viewSetLogo()
+       
         AutoLoginDataManager().appusersautologin(self)
     }
     
@@ -70,9 +71,15 @@ class SplashViewController : BaseViewController {
             self.imageSantaLogoRight.frame = CGRect(x: UIScreen.main.bounds.width/2 + 33.95, y: UIScreen.main.bounds.height/2 - 27.75, width: 51.3, height: 66.6)
         } completion: { finished in
             sleep(1/10*7)
-            let nextVC = LoginViewController()
-            nextVC.boolautoLogin = self.autoLogin
-            self.changeRootViewController(nextVC)
+            RemoteConfigManager.sharedManager.launching(completionHandler: { (config) in
+            }, forceUpdate: { (forceUpdate) in
+                if !forceUpdate {//강업없는지확인
+                    let nextVC = LoginViewController()
+                    nextVC.boolautoLogin = self.autoLogin
+                    self.changeRootViewController(nextVC)
+                }//강업
+            })//강업
+            
         }
 
     }

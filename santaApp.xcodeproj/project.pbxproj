@@ -296,6 +296,8 @@
 		288CAB7527E252E60046156A /* CommentDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7327E252E60046156A /* CommentDeleteModel.swift */; };
 		288CAB7827E253300046156A /* CommentDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7727E253300046156A /* CommentDeleteViewModel.swift */; };
 		288CAB7927E253300046156A /* CommentDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7727E253300046156A /* CommentDeleteViewModel.swift */; };
+		288CAB7B27E257130046156A /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7A27E257130046156A /* RemoteConfigManager.swift */; };
+		288CAB7C27E257130046156A /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7A27E257130046156A /* RemoteConfigManager.swift */; };
 		2890263F268F286E00D15BBA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890263E268F286E00D15BBA /* UIView.swift */; };
 		2893283627C8A270000CE5B7 /* FeedLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */; };
 		2893283727C8A270000CE5B7 /* FeedLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */; };
@@ -559,6 +561,7 @@
 		2882289426A0C04C000B2EAA /* LogoutDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutDataManager.swift; sourceTree = "<group>"; };
 		288CAB7327E252E60046156A /* CommentDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDeleteModel.swift; sourceTree = "<group>"; };
 		288CAB7727E253300046156A /* CommentDeleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDeleteViewModel.swift; sourceTree = "<group>"; };
+		288CAB7A27E257130046156A /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		2890263E268F286E00D15BBA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLikeViewModel.swift; sourceTree = "<group>"; };
 		2893283827C8A2AA000CE5B7 /* FeedLikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLikeModel.swift; sourceTree = "<group>"; };
@@ -902,6 +905,7 @@
 				28119B67268A2788002ABFA9 /* Constant */,
 				28119B66268A2782002ABFA9 /* Base */,
 				28119B65268A277C002ABFA9 /* Extension */,
+				288CAB7A27E257130046156A /* RemoteConfigManager.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -1993,6 +1997,7 @@
 				2899D8782779AE2800DDB4E1 /* CompeteCollectionViewCell.swift in Sources */,
 				28013AE526A9106E007E082D /* FlagsDeleteDataManager.swift in Sources */,
 				2882288C26A0B263000B2EAA /* UserTableViewCell.swift in Sources */,
+				288CAB7B27E257130046156A /* RemoteConfigManager.swift in Sources */,
 				28DB685C2785AA6500856198 /* HomeViewModel.swift in Sources */,
 				28139FCB2698AEF20091DFCD /* DetailPostCollectionViewCell.swift in Sources */,
 				2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */,
@@ -2199,6 +2204,7 @@
 				2899D8792779AE2800DDB4E1 /* CompeteCollectionViewCell.swift in Sources */,
 				2828C1342732E7B1003ABAF5 /* FlagsDeleteDataManager.swift in Sources */,
 				2828C1352732E7B1003ABAF5 /* UserTableViewCell.swift in Sources */,
+				288CAB7C27E257130046156A /* RemoteConfigManager.swift in Sources */,
 				28DB685D2785AA6500856198 /* HomeViewModel.swift in Sources */,
 				2828C1362732E7B1003ABAF5 /* DetailPostCollectionViewCell.swift in Sources */,
 				2828C1372732E7B1003ABAF5 /* LogoutDataManager.swift in Sources */,
@@ -2420,7 +2426,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2447,7 +2453,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2558,7 +2564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2586,7 +2592,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.5;
 				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
