@@ -5,31 +5,42 @@
 //  Created by 노영재 on 2021/07/21.
 //
 
-struct DetailAnotherUserResult : Decodable {
-    var success : Bool
-    var response : DetailAnotherUserResponse?
-    var error : DetailAnotherUserError?
+struct DetailUserPostsEntity : Decodable {
+    var isSuccess : Bool
+    var code : Int
+    var message : String
+    var result : DetailUserPostsResponse?
 }
 
-struct DetailAnotherUserResponse : Decodable{
+struct DetailUserPostsResponse : Decodable{
     var userIdx : Int?
     var name : String?
-    var posts : [DetailAnotherUserPosts]?
+    var getPostsRes : [DetailUserPostsPosts]?
 }
 
-struct DetailAnotherUserPosts : Decodable {
-    var isFlag : Bool?
+struct DetailUserPostsPosts : Decodable {
+    var flag : Bool?
     var flagIdx : Int?
-    var picturesIdx : Int?
+    var pictureIdx : Int?
     var userIdx : Int?
+    var userImageUrl : String?
+    var level : String?
+    var userName : String?
     var flagCount : Int?
     var mountainIdx : Int?
     var name : String?
+    var saveCount : Int?
+    var isSaved : String?
     var createdAt : String?
     var pictureUrl : String?
+    var getCommentRes: [DetailUserPostsComment]?
 }
 
-struct DetailAnotherUserError : Decodable{
-    var message : String?
-    var status : Int?
+struct DetailUserPostsComment : Decodable {
+    var userIdx: Int?
+    var userImageUrl : String?
+    var userName: String?
+    var contents: String?
+    var count : Int?
 }
+

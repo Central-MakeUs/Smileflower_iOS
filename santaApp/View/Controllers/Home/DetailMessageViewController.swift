@@ -21,7 +21,7 @@ class DetailMessageViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(flagIndex)
         setNavigationBar()
         setBottomChatView()
         setTableView()
@@ -338,7 +338,11 @@ class DetailMessageViewController: BaseViewController {
                         cell.previoutViewcontroller = self
                         cell.commentIndex = arrayComments[indexPath.section].commentIdx ?? 0
                         cell.commentUserId = arrayComments[indexPath.section].userName ?? ""
-
+                        if arrayComments[indexPath.section].isUsersComment == "t" {
+                            cell.buttonMore.isHidden = false
+                        } else {
+                            cell.buttonMore.isHidden = true
+                        }
                         let contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
                         let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
                         let attributeStr = NSMutableAttributedString(string: contentsString)
@@ -367,7 +371,12 @@ class DetailMessageViewController: BaseViewController {
                         cell.previoutViewcontroller = self
                         cell.commentIndex = arrayComments[indexPath.section].commentIdx ?? 0
                         cell.commentUserId = arrayComments[indexPath.section].userName ?? ""
-
+                        cell.type = self.type
+                        if arrayComments[indexPath.section].isUsersComment == "t" {
+                            cell.buttonMore.isHidden = false
+                        } else {
+                            cell.buttonMore.isHidden = true
+                        }
                         let contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
                         let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
                         let attributeStr = NSMutableAttributedString(string: contentsString)

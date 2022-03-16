@@ -35,6 +35,8 @@ class PickMountainViewController : BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         MountainPicksDataManager().apppicks(self)
+        self.tabBarController?.tabBar.isHidden = false
+        NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
     }
 
     //MARK: 네비게이션 바

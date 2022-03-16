@@ -10,7 +10,7 @@ import Kingfisher
 
 class DetailAnotherUserViewController: BaseViewController {
     
-    var postsResult : [DetailAnotherUserPosts] = []
+//    var postsResult : [DetailAnotherUserPosts] = []
     var userIdx : Int?
     var userName : String?
     
@@ -20,7 +20,7 @@ class DetailAnotherUserViewController: BaseViewController {
         navigationBarSet()
         SetCollectionViewContent()
         if let idx = userIdx {
-            DetailAnotherUserDataManager().apiprofileuserIdxposts(self, idx)
+//            DetailAnotherUserDataManager().apiprofileuserIdxposts(self, idx)
         }
     }
     // MARK: 네비게이션 바
@@ -77,36 +77,37 @@ class DetailAnotherUserViewController: BaseViewController {
 }
 extension DetailAnotherUserViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return postsResult.count
+        return 0
+//        return postsResult.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailAnotherUserCollectionViewCell.reuseIdentifier, for: indexPath) as? DetailAnotherUserCollectionViewCell {
-            if let urlString = postsResult[indexPath.row].pictureUrl {
-               let url = URL(string: urlString)
-                cell.imageViewMountain.kf.setImage(with: url)
-            }
-            if let dateStr = postsResult[indexPath.row].createdAt {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                let converData = dateFormatter.date(from: dateStr)
-                let myDateFormatter = DateFormatter()
-                myDateFormatter.dateFormat = "yyyy년 MM월 dd일\n a hh시 mm분"
-                myDateFormatter.locale = Locale(identifier: "ko_KR")
-                let convertStr = myDateFormatter.string(from: converData!)
-                cell.labelDateAndTime.text = convertStr
-            }
-            if postsResult[indexPath.row].isFlag! {
-                cell.imageViewFlag.image = UIImage(named: "FlagIcon@3x")
-            }
-            else {
-                cell.imageViewFlag.image = UIImage()
-            }
-            cell.labelMountainName.text = postsResult[indexPath.row].name ?? "게시물"
-            cell.flagIdx = postsResult[indexPath.row].flagIdx
-            cell.userIdx = postsResult[indexPath.row].userIdx
-            cell.pictureIdx = postsResult[indexPath.row].picturesIdx
-            cell.detailAnotherUserViewController = self
+//            if let urlString = postsResult[indexPath.row].pictureUrl {
+//               let url = URL(string: urlString)
+//                cell.imageViewMountain.kf.setImage(with: url)
+//            }
+//            if let dateStr = postsResult[indexPath.row].createdAt {
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//                let converData = dateFormatter.date(from: dateStr)
+//                let myDateFormatter = DateFormatter()
+//                myDateFormatter.dateFormat = "yyyy년 MM월 dd일\n a hh시 mm분"
+//                myDateFormatter.locale = Locale(identifier: "ko_KR")
+//                let convertStr = myDateFormatter.string(from: converData!)
+//                cell.labelDateAndTime.text = convertStr
+//            }
+//            if postsResult[indexPath.row].isFlag! {
+//                cell.imageViewFlag.image = UIImage(named: "FlagIcon@3x")
+//            }
+//            else {
+//                cell.imageViewFlag.image = UIImage()
+//            }
+//            cell.labelMountainName.text = postsResult[indexPath.row].name ?? "게시물"
+//            cell.flagIdx = postsResult[indexPath.row].flagIdx
+//            cell.userIdx = postsResult[indexPath.row].userIdx
+//            cell.pictureIdx = postsResult[indexPath.row].picturesIdx
+//            cell.detailAnotherUserViewController = self
             return cell
         }
         return UICollectionViewCell()
@@ -122,11 +123,11 @@ extension DetailAnotherUserViewController : UICollectionViewDelegate, UICollecti
 
 
 extension DetailAnotherUserViewController {
-    func successDataApi(_ result : DetailAnotherUserResponse) {
-        postsResult = result.posts!
-        userName = result.name
-        carouselCollectionView.reloadData()
-    }
+//    func successDataApi(_ result : DetailAnotherUserResponse) {
+//        postsResult = result.posts!
+//        userName = result.name
+//        carouselCollectionView.reloadData()
+//    }
     func failDataApi(_ message : String) {
         self.presentAlert(title: message)
     }

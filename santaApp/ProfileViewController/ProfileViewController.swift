@@ -37,12 +37,7 @@ class ProfileViewController : BaseViewController {
         viewSetUser()
         stackViewSet()
         viewSetImageCollection()
-        if let idx = Constant.userIdx {
-            ShowProfileDataManager().apiprofileuserIdx(self, idx)
-        }
-        else {
-            self.presentAlert(title: "네트워크 통신 장애")
-        }
+       
         
         NotificationCenter.default.addObserver(self, selector: #selector(goMountainNameAction(notification:)), name: Notification.Name("goMountainName"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadUserPost), name: Notification.Name("reloadUserPost"), object: nil)
@@ -68,6 +63,12 @@ class ProfileViewController : BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        if let idx = Constant.userIdx {
+            ShowProfileDataManager().apiprofileuserIdx(self, idx)
+        }
+        else {
+            self.presentAlert(title: "네트워크 통신 장애")
+        }
         NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
         if let idx = Constant.userIdx {
             ShowUserResultDataManager().apiprofileuserIdxresult(self, idx)

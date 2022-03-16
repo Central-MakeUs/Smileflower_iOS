@@ -83,7 +83,7 @@ extension HomeAlertViewController : UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.labelContent.text = arrayNotification[indexPath.row].type ?? ""
+        cell.labelContent.text = arrayNotification[indexPath.row].contents ?? ""
         cell.labelAgo.text = arrayNotification[indexPath.row].CreatedAt ?? ""
         
         if let status = arrayNotification[indexPath.row].status {

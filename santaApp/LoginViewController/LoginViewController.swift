@@ -200,7 +200,7 @@ class LoginViewController : BaseViewController {
                    
                    if let token = oauthToken {
                        print(token.accessToken)
-                       let input = KakaoLoginInput(accessToken: token.accessToken)
+                       let input = KakaoLoginInput(accessToken: token.accessToken, pushToken: UserDefaults.standard.string(forKey: "FCM_TOKEN"), tokenType: "I")
                        KaKaoLoginDataManager().appKakaoLogin(self, input)
                    }
 
@@ -308,14 +308,6 @@ class LoginViewController : BaseViewController {
             let code = appleIDCredential.authorizationCode
             let token = appleIDCredential.identityToken
 
-            print("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ")
-            print(type(of: userIdentifier))
-            print(type(of: fullName))
-            print(fullName)
-            print(email)
-            print(status)
-            print(code)
-            print(token)
 
             if let familyName = fullName?.familyName, let givenName = fullName?.givenName {
                 let input = AppleLoginInput(name: familyName + givenName, userEmail: email ?? "", userIdentifier: userIdentifier ?? "", authorizationCode: String(data: code ?? Data(), encoding: .utf8), identifyToken: String(data: token ?? Data(), encoding: .utf8))

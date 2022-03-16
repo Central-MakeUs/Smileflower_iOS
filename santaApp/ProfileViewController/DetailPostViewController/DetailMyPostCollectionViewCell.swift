@@ -11,10 +11,12 @@ import SwiftUI
 class DetailMyPostCollectionViewCell: UICollectionViewCell {
     static let resueidentifier = "DetailMyPostCollectionViewCell"
     var detailPostViewController : DetailMyPostViewController?
+    let viewModel = FeedLikdeViewModel()
 
     var userIdx : Int?
     var postsIdx : Int?
     var flagsIdx : Int?
+    var heartCount : Int = 0
     var isFlag : Bool = true
     var preViewController : DetailMyPostViewController?
     override init(frame: CGRect) {
@@ -95,13 +97,15 @@ class DetailMyPostCollectionViewCell: UICollectionViewCell {
     func showAlert(style: UIAlertController.Style) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: style)
         let logout = UIAlertAction(title: "삭제하기", style: .default) { action in
+
             if self.isFlag {
-                if let useridx = self.userIdx, let flagidx = self.flagsIdx {
+                if  let flagidx = self.flagsIdx {
                     FlagsDeleteDataManager().apiprofileuseridxflagsflagIdx(flagidx, self)
                 }
             }
             else {
-                if let useridx = self.userIdx, let postidx = self.postsIdx {
+                if  let postidx = self.postsIdx {
+                    
                     PostsDeleteDataManager().apiprofileuseridxpicturespictures(postidx, self)
                 }
             }
@@ -276,8 +280,21 @@ class DetailMyPostCollectionViewCell: UICollectionViewCell {
     @objc func actionIsHeart() {
         if buttonisHeart.isSelected {
             buttonisHeart.isSelected = false
+            heartCount -= 1
+            labelHowManyHeart.text = "\(heartCount)"
         } else {
             buttonisHeart.isSelected = true
+            heartCount += 1
+            labelHowManyHeart.text = "\(heartCount)"
+        }
+        if let idx = postsIdx {
+            viewModel.appPicturesSave(idx) { bool, result in
+                print(result)
+            }
+        } else {
+            viewModel.appFlagSave(flagsIdx ?? 0) { isSuccess, result in
+                print(result)
+            }
         }
     }
     let labelHowManyHeart : UILabel = {
@@ -384,8 +401,7 @@ class DetailMyPostCollectionViewCell: UICollectionViewCell {
 
 extension DetailMyPostCollectionViewCell {
     func successDataApiDeletePosts() {
-        self.detailPostViewController?.viewWillAppear(false)
-        self.detailPostViewController?.collectionViewPost.reloadData()
+        NotificationCenter.default.post(name: Notification.Name("reloadProfile"), object: nil)
     }
     func failureDataApiDelete(_ message : String) {
         detailPostViewController?.presentAlert(title: message)

@@ -7,4 +7,6 @@
 
 struct KakaoLoginInput : Encodable {
     var accessToken : String?
+    var pushToken : String?
+    var tokenType : String?
 }

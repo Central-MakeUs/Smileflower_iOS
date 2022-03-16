@@ -16,7 +16,7 @@ class DetailConquerViewController : BaseViewController {
         setNavigationBar()
         self.tabBarController?.tabBar.isHidden = true
         NotificationCenter.default.post(name: Notification.Name("middleButtonHidden"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(actionGoNextView), name: Notification.Name("goNextView"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(actionGoNextView), name: Notification.Name("goNextView"), object: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
         ConquerViewModel().appnewHomesflags { response in
@@ -89,7 +89,7 @@ extension DetailConquerViewController : UICollectionViewDelegate, UICollectionVi
         cell.labelUserName.text = viewModel[indexPath.row].userName ?? ""
         cell.labelHowManyMessage.text = "\(viewModel[indexPath.row].commentCount ?? 0)"
         cell.labelHowManyHeart.text = "\(viewModel[indexPath.row].saveCount ?? 0)"
-        cell.buttonMore.setTitle("\(viewModel[indexPath.row].commentCount ?? 0)개의 댓글 모두 보기", for: .normal)
+        cell.buttonGoDetailMessage.setTitle("\(viewModel[indexPath.row].commentCount ?? 0)개의 댓글 모두 보기", for: .normal)
         
         if let urlString = viewModel[indexPath.row].userImageUrl {
             let url = URL(string: urlString)
@@ -119,24 +119,35 @@ extension DetailConquerViewController : UICollectionViewDelegate, UICollectionVi
                 let attributeStr = NSMutableAttributedString(string: contentsString)
                 attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: comments[0].userName?.count ?? 0))
                 cell.labelFeedMessage.attributedText = attributeStr
+                cell.imageViewMessageUserProfile.isHidden = false
+                cell.labelFeedMessage.isHidden = false
+                cell.buttonGoDetailMessage.isHidden = false
             } else {
                 cell.imageViewMessageUserProfile.isHidden = true
                 cell.labelFeedMessage.isHidden = true
                 cell.buttonGoDetailMessage.isHidden = true
             }
         }
-        cell.buttonGoDetailMessage.addTarget(self, action: #selector(actionGoNextView), for: .touchUpInside)
+        if viewModel[indexPath.row].isSaved == "T" {
+            cell.buttonisHeart.isSelected = true
+        } else {
+            cell.buttonisHeart.isSelected = false
+        }
+//        cell.buttonGoDetailMessage.addTarget(self, action: #selector(actionGoNextView), for: .touchUpInside)
+        cell.buttonGoDetailMessage.isEnabled = false
+        cell.heartCount = viewModel[indexPath.row].saveCount ?? 0
+        cell.flagIdx = viewModel[indexPath.row].flagIdx ?? 0
         cell.buttonGoDetailMessage.tag = viewModel[indexPath.row].flagIdx ?? 0
         cell.preViewController = self
         return cell
     }
     
-    @objc func actionGoNextView(button: UIButton) {
-        let NextVC = DetailMessageViewController()
-        NextVC.flagIndex = button.tag
-        NextVC.previousView = "Detail"
-        self.navigationController?.pushViewController(NextVC, animated: true)
-    }
+//    @objc func actionGoNextView(button: UIButton) {
+//        let NextVC = DetailMessageViewController()
+//        NextVC.flagIndex = button.tag
+//        NextVC.previousView = "Detail"
+//        self.navigationController?.pushViewController(NextVC, animated: true)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let comments = viewModel[indexPath.row].getCommentRes {
@@ -152,13 +163,13 @@ extension DetailConquerViewController : UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let comments = viewModel[indexPath.row].getCommentRes {
-            if comments.count == 0 {
+//            if comments.count == 0 {
                 let NextVC = DetailMessageViewController()
-                NextVC.flagIndex = indexPath.row
+            NextVC.flagIndex = viewModel[indexPath.row].flagIdx ?? 0
                 NextVC.previousView = "Detail"
                 NextVC.type = "flag"
                 self.navigationController?.pushViewController(NextVC, animated: true)
-            }
+//            }
         }
     }
     

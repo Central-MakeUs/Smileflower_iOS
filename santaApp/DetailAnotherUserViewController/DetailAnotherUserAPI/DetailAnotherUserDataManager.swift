@@ -1,5 +1,5 @@
 //
-//  DetailAnotherUserDataManager.swift
+//  DetailPostsDataManager.swift
 //  santaApp
 //
 //  Created by 노영재 on 2021/07/21.
@@ -7,20 +7,18 @@
 
 import Alamofire
 
-class DetailAnotherUserDataManager {
-    func apiprofileuserIdxposts(_ viewcontroller : DetailAnotherUserViewController, _ userIdx : Int) {
+class DetailUserDataManager {
+    func apiprofileuserIdxposts(_ viewcontroller : DetailUserViewController, _ userIdx : Int) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
-        AF.request(Constant.baseURL + "/api/profile/\(userIdx)/posts", method: .get, headers: headers).validate().responseDecodable(of: DetailAnotherUserResult.self) { response in
+        AF.request(Constant.baseURL + "/app/profiles/\(userIdx)/posts", method: .get, headers: headers).validate().responseDecodable(of: DetailUserPostsEntity.self) { response in
             switch response.result {
             case .success(let response):
-                if response.success, let result = response.response {
-                    viewcontroller.successDataApi(result)
-                }
-                else {
-                    viewcontroller.failDataApi(response.error!.message!)
+                if response.isSuccess, let result = response.result {
+                    print(result)
+                    viewcontroller.successDataApiPosts(result)
                 }
             case .failure(let error):
-                viewcontroller.failDataApi("네트워크 통신 장애")
+                viewcontroller.failureDataApiPosts("네트워크 통신 장애")
             }
         }
     }

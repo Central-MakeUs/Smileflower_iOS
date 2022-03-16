@@ -11,7 +11,9 @@ class CommentsTableViewCell: UITableViewCell {
     static let resueidentifier = "CommentsTableViewCell"
     var section : Int = 0
     var commentIndex : Int = 0
+    var type : String?
     var commentUserId = ""
+    let viewModel = CommentDeleteViewModel()
 
     var previoutViewcontroller : DetailMessageViewController?
 
@@ -31,6 +33,24 @@ class CommentsTableViewCell: UITableViewCell {
         button.setImage(UIImage(named: "icFeedMore"), for: .normal)
         return button
     }()
+    @objc func actionDelete() {
+        showAlert(style: .actionSheet)
+    }
+    func showAlert(style: UIAlertController.Style) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: style)
+        let logout = UIAlertAction(title: "삭제하기", style: .default) { action in
+            self.viewModel.appCommentsIdxType(self.commentIndex, self.type ?? "") { result in
+                print(result)
+                self.previoutViewcontroller?.tableViewMessage.reloadData()
+            }
+        }
+        logout.setValue(UIColor.red, forKey: "titleTextColor")
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        cancel.setValue(UIColor.darkbluegray, forKey: "titleTextColor")
+        alert.addAction(logout)
+        alert.addAction(cancel)
+        previoutViewcontroller?.present(alert, animated: true, completion: nil)
+    }
     //댓글 내용과 그 아이디
     let labelMessage : UILabel = {
         let label = UILabel()
@@ -80,6 +100,8 @@ class CommentsTableViewCell: UITableViewCell {
             make.top.equalTo(contentView).offset(18)
         }
         
+        buttonMore.addTarget(self, action: #selector(actionDelete), for: .touchUpInside)
+
         contentView.addSubview(buttonMore)
         buttonMore.snp.makeConstraints { make in
             make.trailing.equalTo(contentView).offset(-18)

@@ -8,7 +8,7 @@
 import Alamofire
 
 class ReportUserFlagsDataManager {
-    func apiprofileuserIdxflagsflagIdxreport(_ userIdx : Int, _ flagIdx : Int, _ cell : DetailAnotherUserCollectionViewCell) {
+    func apiprofileuserIdxflagsflagIdxreport(_ userIdx : Int, _ flagIdx : Int, _ cell : DetailUserCollectionViewCell) {
         let headers : HTTPHeaders = [ "X-ACCESS-TOKEN" : Constant.JWTToken ]
         AF.request(Constant.baseURL + "/api/profile/\(userIdx)/flags/\(flagIdx)/report", method: .post, headers: headers).validate().responseDecodable(of: ReportUserFlagsEntity.self) { response in
             switch response.result {

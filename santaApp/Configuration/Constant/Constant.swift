@@ -20,6 +20,7 @@ struct Constant {
     static var userIdx : Int?
     static var userEmail : String?
     static var deviceToken = ""
+    static var pushToken = ""
     static var loginMethod = ""
     
     static var userPhoneHeight: CGFloat = 0

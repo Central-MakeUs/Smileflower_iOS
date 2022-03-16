@@ -8,13 +8,15 @@
 import UIKit
 import SwiftUI
 
-class DetailConquerCollectionViewCell: UICollectionViewCell {
-    static let resueidentifier = "DetailConquerCollectionViewCell"
-    var preViewController : DetailConquerViewController?
-    let viewModel = FeedLikdeViewModel()
+class DetailUserCollectionViewCell: UICollectionViewCell {
+    static let resueidentifier = "DetailUserCollectionViewCell"
+    var userIdx : Int?
+    var postsIdx : Int?
+    var flagsIdx : Int?
     var heartCount = 0
-    var flagIdx : Int?
-    
+    var isFlag : Bool = true
+    var preViewController : DetailUserViewController?
+    let viewModel = FeedLikdeViewModel()
     override init(frame: CGRect) {
         super.init(frame: frame)
         setTopFeed()
@@ -61,7 +63,8 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 16
-        imageView.backgroundColor = .mainColor
+        imageView.backgroundColor = .black
+        imageView.image = UIImage(named: "personhome")
         return imageView
     }()
     // 유저 레벨
@@ -85,14 +88,22 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         button.contentMode = .scaleAspectFill
         button.layer.zPosition = 999
-        button.setImage(UIImage(named: "icFeedMore"), for: .normal)
+        button.setImage(UIImage(named: "icFeedMore1"), for: .normal)
         return button
     }()
     
     func showAlert(style: UIAlertController.Style) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: style)
         let logout = UIAlertAction(title: "신고하기", style: .default) { action in
-            
+
+            if self.isFlag {
+                ReportUserFlagsDataManager().apiprofileuserIdxflagsflagIdxreport(self.userIdx ?? 0, self.flagsIdx ?? 0, self)
+            }
+            else {
+                if  let postidx = self.postsIdx {
+                    ReportUserFlagsDataManager().apiprofileuserIdxflagsflagIdxreport(self.userIdx ?? 0, postidx, self)
+                }
+            }
         }
         logout.setValue(UIColor.red, forKey: "titleTextColor")
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
@@ -103,6 +114,7 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func actionReport() {
+        print("click")
         showAlert(style: .actionSheet)
     }
     // 피드 사진
@@ -154,6 +166,13 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
         label.text = "2021년 6월28일 오후 2:18"
         return label
     }()
+    let imageViewFlag : UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "FlagIcon")
+        return imageView
+    }()
+
     
     //MARK: 상단 피드 셋
     func setTopFeed() {
@@ -170,8 +189,8 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
         viewTopFeed.addSubview(imageViewUserProfile)
         imageViewUserProfile.snp.makeConstraints { make in
             make.height.width.equalTo(32)
-            make.leading.equalTo(self).offset(12.7)
-            make.top.equalTo(self).offset(9)
+            make.leading.equalTo(viewTopFeed).offset(12.7)
+            make.top.equalTo(viewTopFeed).offset(9)
         }
         
         viewTopFeed.addSubview(labelUserLv)
@@ -199,7 +218,13 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(imageViewUserProfile.snp.bottom).offset(7)
             make.trailing.leading.bottom.equalTo(viewTopFeed)
         }
-        
+        viewTopFeed.addSubview(imageViewFlag)
+        imageViewFlag.snp.makeConstraints { make in
+            make.width.equalTo(32.2)
+            make.height.equalTo(36)
+            make.trailing.equalTo(imageViewFeed).offset(-21.4)
+            make.top.equalTo(imageViewFeed).offset(26.4)
+        }
         imageViewFeed.addSubview(viewFeedGradient)
         viewFeedGradient.snp.makeConstraints { make in
             make.edges.equalTo(imageViewFeed)
@@ -253,13 +278,18 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
             heartCount -= 1
             labelHowManyHeart.text = "\(heartCount)"
         } else {
-            heartCount += 1
             buttonisHeart.isSelected = true
+            heartCount += 1
             labelHowManyHeart.text = "\(heartCount)"
         }
-        
-        viewModel.appFlagSave(flagIdx ?? 0) { isSuccess, result in
+        if let idx = postsIdx {
+            viewModel.appPicturesSave(idx) { bool, result in
                 print(result)
+            }
+        } else {
+            viewModel.appFlagSave(flagsIdx ?? 0) { isSuccess, result in
+                print(result)
+            }
         }
     }
     let labelHowManyHeart : UILabel = {
@@ -361,5 +391,22 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
             make.leading.trailing.equalTo(labelFeedMessage)
             make.top.equalTo(labelFeedMessage.snp.bottom)
         }
+    }
+}
+
+extension DetailUserCollectionViewCell {
+    func successDataApiDeletePosts() {
+        NotificationCenter.default.post(name: Notification.Name("reloadProfile"), object: nil)
+    }
+    func failureDataApiDelete(_ message : String) {
+        preViewController?.presentAlert(title: message)
+    }
+    
+    func successDataApiReport() {
+        print("성공")
+        preViewController?.presentAlert(title: "신고가 완료되었습니다.")
+    }
+    func failuerDataApi(_ message : String) {
+        preViewController?.presentAlert(title: message)
     }
 }

@@ -261,6 +261,10 @@
 		287C1BBE27DE4CC600F80A17 /* AgreeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C1BBC27DE4CC600F80A17 /* AgreeModel.swift */; };
 		287C1BC027DE4D1C00F80A17 /* AgreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C1BBF27DE4D1C00F80A17 /* AgreeViewModel.swift */; };
 		287C1BC127DE4D1C00F80A17 /* AgreeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C1BBF27DE4D1C00F80A17 /* AgreeViewModel.swift */; };
+		287F878127DF2C2F00EC7EF5 /* DetailUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F878027DF2C2F00EC7EF5 /* DetailUserViewController.swift */; };
+		287F878227DF2C2F00EC7EF5 /* DetailUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F878027DF2C2F00EC7EF5 /* DetailUserViewController.swift */; };
+		287F878427DF2C8D00EC7EF5 /* DetailUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F878327DF2C8D00EC7EF5 /* DetailUserCollectionViewCell.swift */; };
+		287F878527DF2C8D00EC7EF5 /* DetailUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287F878327DF2C8D00EC7EF5 /* DetailUserCollectionViewCell.swift */; };
 		28810AFB26961AB9008F0FE3 /* MountainImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */; };
 		28810AFD269626C2008F0FE3 /* MountainPositionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */; };
 		28810AFF269629A0008F0FE3 /* MountainCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */; };
@@ -288,6 +292,10 @@
 		2882289026A0B6F7000B2EAA /* LogoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882288F26A0B6F7000B2EAA /* LogoutTableViewCell.swift */; };
 		2882289326A0BF78000B2EAA /* LogoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289226A0BF78000B2EAA /* LogoutEntity.swift */; };
 		2882289526A0C04C000B2EAA /* LogoutDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882289426A0C04C000B2EAA /* LogoutDataManager.swift */; };
+		288CAB7427E252E60046156A /* CommentDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7327E252E60046156A /* CommentDeleteModel.swift */; };
+		288CAB7527E252E60046156A /* CommentDeleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7327E252E60046156A /* CommentDeleteModel.swift */; };
+		288CAB7827E253300046156A /* CommentDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7727E253300046156A /* CommentDeleteViewModel.swift */; };
+		288CAB7927E253300046156A /* CommentDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7727E253300046156A /* CommentDeleteViewModel.swift */; };
 		2890263F268F286E00D15BBA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890263E268F286E00D15BBA /* UIView.swift */; };
 		2893283627C8A270000CE5B7 /* FeedLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */; };
 		2893283727C8A270000CE5B7 /* FeedLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */; };
@@ -520,6 +528,8 @@
 		2878F8EB27C3C03B00A50EB1 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
 		287C1BBC27DE4CC600F80A17 /* AgreeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeModel.swift; sourceTree = "<group>"; };
 		287C1BBF27DE4D1C00F80A17 /* AgreeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeViewModel.swift; sourceTree = "<group>"; };
+		287F878027DF2C2F00EC7EF5 /* DetailUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserViewController.swift; sourceTree = "<group>"; };
+		287F878327DF2C8D00EC7EF5 /* DetailUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserCollectionViewCell.swift; sourceTree = "<group>"; };
 		28810AFA26961AB9008F0FE3 /* MountainImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainImageTableViewCell.swift; sourceTree = "<group>"; };
 		28810AFC269626C2008F0FE3 /* MountainPositionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainPositionTableViewCell.swift; sourceTree = "<group>"; };
 		28810AFE269629A0008F0FE3 /* MountainCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCourseTableViewCell.swift; sourceTree = "<group>"; };
@@ -547,6 +557,8 @@
 		2882288F26A0B6F7000B2EAA /* LogoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTableViewCell.swift; sourceTree = "<group>"; };
 		2882289226A0BF78000B2EAA /* LogoutEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEntity.swift; sourceTree = "<group>"; };
 		2882289426A0C04C000B2EAA /* LogoutDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutDataManager.swift; sourceTree = "<group>"; };
+		288CAB7327E252E60046156A /* CommentDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDeleteModel.swift; sourceTree = "<group>"; };
+		288CAB7727E253300046156A /* CommentDeleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDeleteViewModel.swift; sourceTree = "<group>"; };
 		2890263E268F286E00D15BBA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLikeViewModel.swift; sourceTree = "<group>"; };
 		2893283827C8A2AA000CE5B7 /* FeedLikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLikeModel.swift; sourceTree = "<group>"; };
@@ -715,6 +727,8 @@
 				28013AD926A862A4007E082D /* DetailAnotherUserAPI */,
 				28013AD426A85F6C007E082D /* DetailAnotherUserViewController.swift */,
 				28013AD726A85FDE007E082D /* DetailAnotherUserCollectionViewCell.swift */,
+				287F878027DF2C2F00EC7EF5 /* DetailUserViewController.swift */,
+				287F878327DF2C8D00EC7EF5 /* DetailUserCollectionViewCell.swift */,
 			);
 			path = DetailAnotherUserViewController;
 			sourceTree = "<group>";
@@ -1035,6 +1049,7 @@
 		285D970227A56CDC001FB503 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				288CAB7627E2531A0046156A /* Comment */,
 				28EA39A727CCB51F007B8D5C /* ConquerViewModel */,
 				28DB685B2785AA6500856198 /* HomeViewModel.swift */,
 				2878F8EB27C3C03B00A50EB1 /* CommentsViewModel.swift */,
@@ -1198,6 +1213,7 @@
 				281702A727D0D00900EB5829 /* userImageModel.swift */,
 				281702AD27D0D38D00EB5829 /* inputWriteDoubleComment.swift */,
 				281702B027D0D3E000EB5829 /* WriteDoubleCommentModel.swift */,
+				288CAB7327E252E60046156A /* CommentDeleteModel.swift */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -1268,6 +1284,14 @@
 				2882289426A0C04C000B2EAA /* LogoutDataManager.swift */,
 			);
 			path = LogoutApi;
+			sourceTree = "<group>";
+		};
+		288CAB7627E2531A0046156A /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				288CAB7727E253300046156A /* CommentDeleteViewModel.swift */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 		2893284127C9DD97000CE5B7 /* AppleLoginAPI */ = {
@@ -1886,6 +1910,7 @@
 				28810B01269629B0008F0FE3 /* MountainHeightTableViewCell.swift in Sources */,
 				28119B3C268A26B4002ABFA9 /* santaApp.xcdatamodeld in Sources */,
 				28013ACF26A7BB8F007E082D /* DetailPostsDataManager.swift in Sources */,
+				287F878127DF2C2F00EC7EF5 /* DetailUserViewController.swift in Sources */,
 				28013ADD26A862F4007E082D /* DetailAnotherUserDataManager.swift in Sources */,
 				285D971127A6117D001FB503 /* UITextField.swift in Sources */,
 				2871B48026A4BB9900F32165 /* MountainRankingDataManager.swift in Sources */,
@@ -1920,6 +1945,7 @@
 				28D4C24F268A2DDC0056EECF /* SetupViewController.swift in Sources */,
 				28013AF926AA4503007E082D /* FlagMountainDataManager.swift in Sources */,
 				28B52EA9268C793000017DCF /* UIImage.swift in Sources */,
+				288CAB7827E253300046156A /* CommentDeleteViewModel.swift in Sources */,
 				28013AE226A90D24007E082D /* FlagsDeleteEntity.swift in Sources */,
 				2871B48526A5789200F32165 /* MountainInfoEntity.swift in Sources */,
 				281702B427D0D43300EB5829 /* ReCommentViewModel.swift in Sources */,
@@ -1929,6 +1955,7 @@
 				28B3208726937562001DBF5E /* ContentRankViewController.swift in Sources */,
 				28EA39AF27CCB588007B8D5C /* KakaoLoginModel.swift in Sources */,
 				28A0C462268CF38800D40F35 /* UISearchBar.swift in Sources */,
+				288CAB7427E252E60046156A /* CommentDeleteModel.swift in Sources */,
 				280279DD279F065800E41A07 /* DetailConquerViewController.swift in Sources */,
 				2860AB26269DA32800AA37C1 /* GoViewControllerEntity.swift in Sources */,
 				2882287B26A06115000B2EAA /* SignInViewControllerEntity.swift in Sources */,
@@ -1954,6 +1981,7 @@
 				28D4C251268A30800056EECF /* UiViewController.swift in Sources */,
 				28D4C24A268A2D720056EECF /* GoViewController.swift in Sources */,
 				28C0478426AB2AD7008E6831 /* ForgetPasswordDataManager.swift in Sources */,
+				287F878427DF2C8D00EC7EF5 /* DetailUserCollectionViewCell.swift in Sources */,
 				2899D869277225F200DDB4E1 /* HomeViewController.swift in Sources */,
 				2830CAFC26AC991800DC3805 /* AccountViewController.swift in Sources */,
 				2882288026A0794A000B2EAA /* EndViewControllerEntity.swift in Sources */,
@@ -2088,6 +2116,7 @@
 				2828C0F72732E7B1003ABAF5 /* MountainHeightTableViewCell.swift in Sources */,
 				2828C0F82732E7B1003ABAF5 /* santaApp.xcdatamodeld in Sources */,
 				2828C0F92732E7B1003ABAF5 /* DetailPostsDataManager.swift in Sources */,
+				287F878227DF2C2F00EC7EF5 /* DetailUserViewController.swift in Sources */,
 				2828C0FA2732E7B1003ABAF5 /* DetailAnotherUserDataManager.swift in Sources */,
 				285D971227A6117D001FB503 /* UITextField.swift in Sources */,
 				2828C0FB2732E7B1003ABAF5 /* MountainRankingDataManager.swift in Sources */,
@@ -2122,6 +2151,7 @@
 				2828C1122732E7B1003ABAF5 /* SetupViewController.swift in Sources */,
 				2828C1132732E7B1003ABAF5 /* FlagMountainDataManager.swift in Sources */,
 				2828C1142732E7B1003ABAF5 /* UIImage.swift in Sources */,
+				288CAB7927E253300046156A /* CommentDeleteViewModel.swift in Sources */,
 				2828C1152732E7B1003ABAF5 /* FlagsDeleteEntity.swift in Sources */,
 				2828C1162732E7B1003ABAF5 /* MountainInfoEntity.swift in Sources */,
 				281702B527D0D43300EB5829 /* ReCommentViewModel.swift in Sources */,
@@ -2131,6 +2161,7 @@
 				2828C11A2732E7B1003ABAF5 /* ContentRankViewController.swift in Sources */,
 				28EA39B027CCB588007B8D5C /* KakaoLoginModel.swift in Sources */,
 				2828C11B2732E7B1003ABAF5 /* UISearchBar.swift in Sources */,
+				288CAB7527E252E60046156A /* CommentDeleteModel.swift in Sources */,
 				280279DE279F065800E41A07 /* DetailConquerViewController.swift in Sources */,
 				2828C11C2732E7B1003ABAF5 /* GoViewControllerEntity.swift in Sources */,
 				2828C11D2732E7B1003ABAF5 /* SignInViewControllerEntity.swift in Sources */,
@@ -2156,6 +2187,7 @@
 				2828C12A2732E7B1003ABAF5 /* UiViewController.swift in Sources */,
 				2828C12B2732E7B1003ABAF5 /* GoViewController.swift in Sources */,
 				2828C12C2732E7B1003ABAF5 /* ForgetPasswordDataManager.swift in Sources */,
+				287F878527DF2C8D00EC7EF5 /* DetailUserCollectionViewCell.swift in Sources */,
 				2899D86A277225F200DDB4E1 /* HomeViewController.swift in Sources */,
 				2828C12D2732E7B1003ABAF5 /* AccountViewController.swift in Sources */,
 				2828C12E2732E7B1003ABAF5 /* EndViewControllerEntity.swift in Sources */,

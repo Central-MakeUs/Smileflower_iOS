@@ -28,7 +28,9 @@ struct DetailPostsPosts : Decodable {
     var userName : String?
     var flagCount : Int?
     var mountainIdx : Int?
+    var isSaved : String?
     var name : String?
+    var saveCount : Int?
     var createdAt : String?
     var pictureUrl : String?
     var getCommentRes: [DetailPostsComment]?

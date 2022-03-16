@@ -111,9 +111,9 @@ class DetailAnotherUserCollectionViewCell: UICollectionViewCell {
         let logout = UIAlertAction(title: "신고하기", style: .default) { action in
             self.detailAnotherUserViewController?.carouselCollectionView.reloadData()
             if self.isFlag {
-                if let useridx = self.userIdx, let flagidx = self.flagIdx {
-                    ReportUserFlagsDataManager().apiprofileuserIdxflagsflagIdxreport(useridx, flagidx, self)
-                }
+//                if let useridx = self.userIdx, let flagidx = self.flagIdx {
+//                    ReportUserFlagsDataManager().apiprofileuserIdxflagsflagIdxreport(useridx, flagidx, self)
+//                }
             }
         }
         logout.setValue(UIColor.red, forKey: "titleTextColor")

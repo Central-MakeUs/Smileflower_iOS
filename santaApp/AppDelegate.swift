@@ -110,7 +110,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print("[Log] deviceToken :", deviceTokenString)
         Constant.deviceToken = deviceTokenString
-        print(deviceToken)
         UserDefaults.standard.set(deviceTokenString, forKey: "deiceToken")
         Messaging.messaging().apnsToken = deviceToken
     }

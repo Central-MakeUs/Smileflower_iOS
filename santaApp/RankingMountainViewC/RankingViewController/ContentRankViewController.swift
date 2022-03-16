@@ -146,7 +146,7 @@ class ContentRankViewController: BaseViewController {
         
     }
     @objc func actionGoMaster() {
-        let nextVC = DetailAnotherUserViewController()
+        let nextVC = DetailUserViewController()
         if let allRank = mountainAllRank {
            let useridx = allRank[0].userIdx
             nextVC.userIdx = useridx
@@ -154,7 +154,7 @@ class ContentRankViewController: BaseViewController {
         }
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     //MARK: 2등
     let maskSilver = UIImageView()
@@ -239,7 +239,7 @@ class ContentRankViewController: BaseViewController {
         }
     }
     @objc func actionGoSilver() {
-        let nextVC = DetailAnotherUserViewController()
+        let nextVC = DetailUserViewController()
         if let allRank = mountainAllRank {
            let useridx = allRank[1].userIdx
             nextVC.userIdx = useridx
@@ -247,7 +247,7 @@ class ContentRankViewController: BaseViewController {
         }
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     //MARK: 3등
     let labelBronzeTimes = UILabel()
@@ -331,7 +331,7 @@ class ContentRankViewController: BaseViewController {
         
     }
     @objc func actionGoBronze() {
-        let nextVC = DetailAnotherUserViewController()
+        let nextVC = DetailUserViewController()
         if let allRank = mountainAllRank {
            let useridx = allRank[2].userIdx
             nextVC.userIdx = useridx
@@ -339,7 +339,7 @@ class ContentRankViewController: BaseViewController {
         }
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     //MARK: 테이블뷰
     func tableViewSetRank() {
@@ -568,7 +568,7 @@ extension ContentRankViewController : UITableViewDelegate, UITableViewDataSource
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = DetailAnotherUserViewController()
+        let nextVC = DetailUserViewController()
         if let allRank = mountainAllRank {
            let useridx = allRank[indexPath.row + 3].userIdx
             nextVC.userIdx = useridx
@@ -576,7 +576,7 @@ extension ContentRankViewController : UITableViewDelegate, UITableViewDataSource
         }
         nextVC.modalPresentationStyle = .fullScreen
         nextVC.modalTransitionStyle = .crossDissolve
-        self.present(nextVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
 }

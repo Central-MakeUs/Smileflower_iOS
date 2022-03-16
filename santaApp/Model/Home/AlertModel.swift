@@ -17,5 +17,6 @@ struct AlertResult: Decodable {
     var flagIdx : Int?
     var type : String?
     var status : String?
+    var contents : String?
     var CreatedAt : String?
 }
