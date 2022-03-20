@@ -20,4 +20,18 @@ class CheckNicnameDataManager {
             }
         }
     }
+    
+    
+    func appUsersNameCheckChange(_ viewcontroller : ChangeNicnameViewController, _ parameters : CheckNicnameInput) {
+        AF.request(Constant.baseURL + "/app/users/name-check", method: .post, parameters: parameters,encoder: JSONParameterEncoder.default, headers: nil).validate().responseDecodable(of: CheckNicnameEntity.self) { response in
+            switch response.result {
+            case .success(let response):
+                if response.isSuccess, let result = response.result {
+                    viewcontroller.successDataCheckApi(result)
+                }
+            case .failure(let error):
+                viewcontroller.failureDataApi("네트워크 통신 장애")
+            }
+        }
+    }
 }

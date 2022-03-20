@@ -298,6 +298,14 @@
 		288CAB7927E253300046156A /* CommentDeleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7727E253300046156A /* CommentDeleteViewModel.swift */; };
 		288CAB7B27E257130046156A /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7A27E257130046156A /* RemoteConfigManager.swift */; };
 		288CAB7C27E257130046156A /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7A27E257130046156A /* RemoteConfigManager.swift */; };
+		288CAB7E27E7B3110046156A /* ChangeNicnameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7D27E7B3110046156A /* ChangeNicnameViewController.swift */; };
+		288CAB7F27E7B3110046156A /* ChangeNicnameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB7D27E7B3110046156A /* ChangeNicnameViewController.swift */; };
+		288CAB8227E7B5CD0046156A /* ChangeNicnameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB8127E7B5CD0046156A /* ChangeNicnameModel.swift */; };
+		288CAB8327E7B5CD0046156A /* ChangeNicnameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB8127E7B5CD0046156A /* ChangeNicnameModel.swift */; };
+		288CAB8527E7B62F0046156A /* ChangeNicnameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB8427E7B62F0046156A /* ChangeNicnameDataManager.swift */; };
+		288CAB8627E7B62F0046156A /* ChangeNicnameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB8427E7B62F0046156A /* ChangeNicnameDataManager.swift */; };
+		288CAB8827E7B6770046156A /* ChangeNicknameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB8727E7B6770046156A /* ChangeNicknameInput.swift */; };
+		288CAB8927E7B6770046156A /* ChangeNicknameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CAB8727E7B6770046156A /* ChangeNicknameInput.swift */; };
 		2890263F268F286E00D15BBA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890263E268F286E00D15BBA /* UIView.swift */; };
 		2893283627C8A270000CE5B7 /* FeedLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */; };
 		2893283727C8A270000CE5B7 /* FeedLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */; };
@@ -562,6 +570,10 @@
 		288CAB7327E252E60046156A /* CommentDeleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDeleteModel.swift; sourceTree = "<group>"; };
 		288CAB7727E253300046156A /* CommentDeleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDeleteViewModel.swift; sourceTree = "<group>"; };
 		288CAB7A27E257130046156A /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
+		288CAB7D27E7B3110046156A /* ChangeNicnameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicnameViewController.swift; sourceTree = "<group>"; };
+		288CAB8127E7B5CD0046156A /* ChangeNicnameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicnameModel.swift; sourceTree = "<group>"; };
+		288CAB8427E7B62F0046156A /* ChangeNicnameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicnameDataManager.swift; sourceTree = "<group>"; };
+		288CAB8727E7B6770046156A /* ChangeNicknameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicknameInput.swift; sourceTree = "<group>"; };
 		2890263E268F286E00D15BBA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2893283527C8A270000CE5B7 /* FeedLikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLikeViewModel.swift; sourceTree = "<group>"; };
 		2893283827C8A2AA000CE5B7 /* FeedLikeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLikeModel.swift; sourceTree = "<group>"; };
@@ -1185,6 +1197,7 @@
 		2875D2F2269864E600180300 /* DetailPostViewController */ = {
 			isa = PBXGroup;
 			children = (
+				288CAB8027E7B5C00046156A /* ChangeNicnameAPI */,
 				28013AE326A90D28007E082D /* FlagsDeleteAPI */,
 				28013AD226A7C295007E082D /* PostDeleteAPI */,
 				28013ACB26A7BA43007E082D /* DetailPostsAPI */,
@@ -1296,6 +1309,16 @@
 				288CAB7727E253300046156A /* CommentDeleteViewModel.swift */,
 			);
 			path = Comment;
+			sourceTree = "<group>";
+		};
+		288CAB8027E7B5C00046156A /* ChangeNicnameAPI */ = {
+			isa = PBXGroup;
+			children = (
+				288CAB8127E7B5CD0046156A /* ChangeNicnameModel.swift */,
+				288CAB8427E7B62F0046156A /* ChangeNicnameDataManager.swift */,
+				288CAB8727E7B6770046156A /* ChangeNicknameInput.swift */,
+			);
+			path = ChangeNicnameAPI;
 			sourceTree = "<group>";
 		};
 		2893284127C9DD97000CE5B7 /* AppleLoginAPI */ = {
@@ -1461,6 +1484,7 @@
 				28810B0526970CE3008F0FE3 /* ConquerMountainCollectionViewCell.swift */,
 				28810B072697111D008F0FE3 /* UserResultCollectionViewCell.swift */,
 				28A6FEBC27D4EDA000757EFE /* InputMountainNameViewController.swift */,
+				288CAB7D27E7B3110046156A /* ChangeNicnameViewController.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -1968,6 +1992,7 @@
 				28EA39BA27CE858E007B8D5C /* ShowAlertTableViewCell.swift in Sources */,
 				2828C1772732E9E8003ABAF5 /* ResignDataManager.swift in Sources */,
 				2871B46B26A4455800F32165 /* CompleteConqueredEntitiy.swift in Sources */,
+				288CAB8827E7B6770046156A /* ChangeNicknameInput.swift in Sources */,
 				2817F8642694D20A004F39EC /* ConquerViewController.swift in Sources */,
 				28A6FEBD27D4EDA000757EFE /* InputMountainNameViewController.swift in Sources */,
 				28A0C460268CEB5F00D40F35 /* UITabBar.swift in Sources */,
@@ -2031,6 +2056,7 @@
 				2871B46126A31E3400F32165 /* MountainPicksEntity.swift in Sources */,
 				2812067526A5DF1300BDA266 /* PaddingLabel.swift in Sources */,
 				28C0478F26AB336D008E6831 /* CheckEmailDataManager.swift in Sources */,
+				288CAB8227E7B5CD0046156A /* ChangeNicnameModel.swift in Sources */,
 				287C1BC027DE4D1C00F80A17 /* AgreeViewModel.swift in Sources */,
 				2871B47726A4B53E00F32165 /* MountainSearchEntity.swift in Sources */,
 				2882288E26A0B6D4000B2EAA /* VersionTableViewCell.swift in Sources */,
@@ -2045,8 +2071,10 @@
 				28C0478626AB2B7B008E6831 /* ForgetPasswordInput.swift in Sources */,
 				2893283927C8A2AA000CE5B7 /* FeedLikeModel.swift in Sources */,
 				2882286C269F48BB000B2EAA /* CheckNicnameInput.swift in Sources */,
+				288CAB8527E7B62F0046156A /* ChangeNicnameDataManager.swift in Sources */,
 				2882288826A09F87000B2EAA /* AutoLoginDataManager.swift in Sources */,
 				281702AB27D0D05600EB5829 /* userImageViewModel.swift in Sources */,
+				288CAB7E27E7B3110046156A /* ChangeNicnameViewController.swift in Sources */,
 				28119B32268A26B4002ABFA9 /* AppDelegate.swift in Sources */,
 				28119B34268A26B4002ABFA9 /* SceneDelegate.swift in Sources */,
 				28E947682721435F00DF97E4 /* TrackingTool.swift in Sources */,
@@ -2175,6 +2203,7 @@
 				28EA39BB27CE858E007B8D5C /* ShowAlertTableViewCell.swift in Sources */,
 				2828C1782732E9E8003ABAF5 /* ResignDataManager.swift in Sources */,
 				2828C11F2732E7B1003ABAF5 /* CompleteConqueredEntitiy.swift in Sources */,
+				288CAB8927E7B6770046156A /* ChangeNicknameInput.swift in Sources */,
 				2828C1202732E7B1003ABAF5 /* ConquerViewController.swift in Sources */,
 				28A6FEBE27D4EDA000757EFE /* InputMountainNameViewController.swift in Sources */,
 				2828C1212732E7B1003ABAF5 /* UITabBar.swift in Sources */,
@@ -2238,6 +2267,7 @@
 				2828C14D2732E7B1003ABAF5 /* MountainPicksEntity.swift in Sources */,
 				2828C14E2732E7B1003ABAF5 /* PaddingLabel.swift in Sources */,
 				2828C14F2732E7B1003ABAF5 /* CheckEmailDataManager.swift in Sources */,
+				288CAB8327E7B5CD0046156A /* ChangeNicnameModel.swift in Sources */,
 				287C1BC127DE4D1C00F80A17 /* AgreeViewModel.swift in Sources */,
 				2828C1502732E7B1003ABAF5 /* MountainSearchEntity.swift in Sources */,
 				2828C1512732E7B1003ABAF5 /* VersionTableViewCell.swift in Sources */,
@@ -2252,8 +2282,10 @@
 				2828C1582732E7B1003ABAF5 /* ForgetPasswordInput.swift in Sources */,
 				2893283A27C8A2AA000CE5B7 /* FeedLikeModel.swift in Sources */,
 				2828C1592732E7B1003ABAF5 /* CheckNicnameInput.swift in Sources */,
+				288CAB8627E7B62F0046156A /* ChangeNicnameDataManager.swift in Sources */,
 				2828C15A2732E7B1003ABAF5 /* AutoLoginDataManager.swift in Sources */,
 				281702AC27D0D05600EB5829 /* userImageViewModel.swift in Sources */,
+				288CAB7F27E7B3110046156A /* ChangeNicnameViewController.swift in Sources */,
 				2828C15B2732E7B1003ABAF5 /* AppDelegate.swift in Sources */,
 				2828C15C2732E7B1003ABAF5 /* SceneDelegate.swift in Sources */,
 				2828C15D2732E7B1003ABAF5 /* TrackingTool.swift in Sources */,
@@ -2417,7 +2449,7 @@
 				CODE_SIGN_ENTITLEMENTS = santaApp/santaApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = santaApp/Info.plist;
@@ -2426,7 +2458,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2444,7 +2476,7 @@
 				CODE_SIGN_ENTITLEMENTS = santaApp/santaApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 69F5355JYF;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = santaApp/Info.plist;
@@ -2453,7 +2485,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2564,7 +2596,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 1.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2592,7 +2624,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.5;
+				MARKETING_VERSION = 1.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = home.santaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

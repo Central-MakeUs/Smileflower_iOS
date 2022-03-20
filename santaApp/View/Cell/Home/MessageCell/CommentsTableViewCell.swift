@@ -40,8 +40,8 @@ class CommentsTableViewCell: UITableViewCell {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: style)
         let logout = UIAlertAction(title: "삭제하기", style: .default) { action in
             self.viewModel.appCommentsIdxType(self.commentIndex, self.type ?? "") { result in
-                print(result)
-                self.previoutViewcontroller?.tableViewMessage.reloadData()
+                print("삭제하기:\(result)")
+                NotificationCenter.default.post(name: Notification.Name("reloadComment"), object: nil)
             }
         }
         logout.setValue(UIColor.red, forKey: "titleTextColor")

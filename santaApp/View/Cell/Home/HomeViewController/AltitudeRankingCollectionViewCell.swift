@@ -10,6 +10,7 @@ import UIKit
 class AltitudeRankingCollectionViewCell: UICollectionViewCell {
     static let resueidentifier = "AltitudeRankingCollectionViewCell"
     var arrayUser : [HomeModelUserList] = []
+    var previousViewController : HomeViewController?
     
     var cellIndex : Int = 0
     
@@ -56,7 +57,7 @@ extension AltitudeRankingCollectionViewCell : UITableViewDelegate, UITableViewDa
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AltitudeRankingTableViewCell.resueidentifier, for: indexPath) as? AltitudeRankingTableViewCell else {
             return UITableViewCell()
         }
-        print(cellIndex)
+        cell.selectionStyle = .none
         if cellIndex == 0 {
             cell.labelGrade.text = String(indexPath.row + 1)
             switch indexPath.row {
@@ -67,7 +68,7 @@ extension AltitudeRankingCollectionViewCell : UITableViewDelegate, UITableViewDa
             case 2:
                 cell.imageViewTopGrade.image = UIImage(named: "illustHomeTop3")
             default:
-                print("pass")
+                cell.imageViewTopGrade.image = UIImage()
             }
             cell.labelUserLv.text = arrayUser[indexPath.row].level
             cell.labelUserNickName.text = arrayUser[indexPath.row].userName
@@ -100,5 +101,19 @@ extension AltitudeRankingCollectionViewCell : UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 55
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if cellIndex == 0 {
+            let nextVC = DetailUserViewController()
+            nextVC.userIdx = arrayUser[indexPath.row].userIdx
+            nextVC.userName = arrayUser[indexPath.row].userName
+            previousViewController?.navigationController?.pushViewController(nextVC, animated: true)
+        } else {
+            let nextVC = DetailUserViewController()
+            nextVC.userIdx = arrayUser[indexPath.row + 5].userIdx
+            nextVC.userName = arrayUser[indexPath.row + 5].userName
+            previousViewController?.navigationController?.pushViewController(nextVC, animated: true)
+        }
     }
 }

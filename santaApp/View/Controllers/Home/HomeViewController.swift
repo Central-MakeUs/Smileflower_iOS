@@ -105,7 +105,7 @@ class HomeViewController: BaseViewController {
         scrollViewContent.addSubview(viewContent)
         viewContent.snp.makeConstraints { make in
             make.edges.equalTo(scrollViewContent)
-            make.height.equalTo(10000)
+            make.height.equalTo(1300)
             make.width.equalTo(UIScreen.main.bounds.width)
         }
     }
@@ -436,6 +436,7 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AltitudeRankingCollectionViewCell.resueidentifier, for: indexPath) as? AltitudeRankingCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            cell.previousViewController = self
             cell.arrayUser = arrayUser
             cell.tableViewContent.reloadData()
             cell.layer.borderColor = UIColor.lightbluegray.cgColor
@@ -513,6 +514,13 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             cell.contentView.layer.cornerRadius = 10
             cell.contentView.layer.borderWidth = 1
             cell.contentView.layer.borderColor = UIColor.lightbluegray.cgColor
+            if arrayPicture[indexPath.row].isSaved == "T" {
+                cell.buttonisHeart.isSelected = true
+            } else {
+                cell.buttonisHeart.isSelected = false
+            }
+            cell.heartCount = arrayPicture[indexPath.row].saveCount ?? 0
+            cell.flagIdx = arrayPicture[indexPath.row].flagIdx ?? 0
             return cell
         }
     }
@@ -534,7 +542,7 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
                 nextVC.mountainHeight = high
                 nextVC.modalPresentationStyle = .fullScreen
                 nextVC.modalTransitionStyle = .crossDissolve
-                self.present(nextVC, animated: true, completion: nil)
+                self.navigationController?.pushViewController(nextVC, animated: true)
             }
         } else if collectionView === collectionViewConquerImage {
             let NextVC = DetailMessageViewController()

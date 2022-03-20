@@ -9,13 +9,7 @@ import UIKit
 
 class StartViewController : BaseViewController {
 
-    lazy var leftButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
-        button.tag = 1
-        button.tintColor = .titleColorGray
-        return button
-        
-    }()
+    
     
     var mountainIdx : Int?
     var mountainTopAltitude : Int?
@@ -33,6 +27,12 @@ class StartViewController : BaseViewController {
         buttonSetStart()
     }
     // MARK: 네비게이션 바
+    lazy var leftButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
+        button.tag = 1
+        button.tintColor = .titleColorGray
+        return button
+    }()
     func navigationBarSet() {
         let height: CGFloat = 75
         let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))

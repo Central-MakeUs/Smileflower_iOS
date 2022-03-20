@@ -72,6 +72,16 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
         label.font = UIFont(name: Constant.fontAppleSDGothicNeoMedium, size: 11)
         return label
     }()
+    
+    //깃발
+    let imageViewFlag : UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "FlagIcon")
+        return imageView
+    }()
+
+    
     // 유저 산타
     let labelUserName : UILabel = {
         let label = UILabel()
@@ -235,6 +245,14 @@ class DetailConquerCollectionViewCell: UICollectionViewCell {
         labelMountainTime.snp.makeConstraints { make in
             make.centerY.equalTo(imageViewPosition)
             make.trailing.equalTo(self).offset(-16)
+        }
+        
+        viewTopFeed.addSubview(imageViewFlag)
+        imageViewFlag.snp.makeConstraints { make in
+            make.width.equalTo(32.2)
+            make.height.equalTo(36)
+            make.trailing.equalTo(imageViewFeed).offset(-21.4)
+            make.top.equalTo(imageViewFeed).offset(26.4)
         }
     }
     

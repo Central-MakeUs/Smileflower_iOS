@@ -21,11 +21,11 @@ class DetailMessageViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(flagIndex)
         setNavigationBar()
         setBottomChatView()
         setTableView()
         setViewDoubleComment()
+        dismissKeyboardWhenTappedAround()
         
         let input = inputComments(type: type)
             viewModel.appCommentsIdx(input, flagIndex) { result, array in
@@ -52,6 +52,8 @@ class DetailMessageViewController: BaseViewController {
         func setNotification() {
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(reloadComment), name: Notification.Name("reloadComment"), object: nil)
+
         }
         
         // 노티피케이션을 제거하는 메서드
@@ -61,7 +63,10 @@ class DetailMessageViewController: BaseViewController {
             // 키보드가 사라질 때 앱에게 알리는 메서드 제거
             NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil) }
         var fCurTextfieldBottom: CGFloat = 0.0
-        
+    @objc func reloadComment() {
+        print("리로드")
+        tableViewMessage.reloadData()
+    }
         @objc func keyboardWillShow(notification: NSNotification) {
                if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
 
@@ -166,9 +171,6 @@ class DetailMessageViewController: BaseViewController {
                             self.arrayComments = result.result ?? []
                             self.arrayBool = array
                             self.tableViewMessage.reloadData()
-                        print(result.result)
-                        print(self.flagIndex)
-                        print(self.type)
                         }
                 }
             dismissIndicator()
@@ -179,7 +181,6 @@ class DetailMessageViewController: BaseViewController {
             viewModelRecomments.appCommentsRecommentIdxType(input, commentIndex, type) { result in
                 self.textFieldWriteMessage.text = ""
                 let input = inputComments(type: self.type)
-                print("아아아아")
                 self.viewModel.appCommentsIdx(input, self.flagIndex) { result, array in
                         self.arrayComments = result.result ?? []
                         self.arrayBool = array
@@ -343,13 +344,29 @@ class DetailMessageViewController: BaseViewController {
                         } else {
                             cell.buttonMore.isHidden = true
                         }
-                        let contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
-                        let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
-                        let attributeStr = NSMutableAttributedString(string: contentsString)
-                        attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: arrayComments[indexPath.section].userName?.count ?? 0))
-                        cell.labelMessage.attributedText = attributeStr
-                        cell.labelWhenPostMessage.text = arrayComments[indexPath.section].createdAt
-                        
+                        var contentsString = ""
+
+                        if arrayComments[indexPath.section].status == "t" {
+                            contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
+                            if let userName = arrayComments[indexPath.section].userName {
+                                let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
+                                let attributeStr = NSMutableAttributedString(string: contentsString)
+                                attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: userName.count))
+                                cell.labelMessage.attributedText = attributeStr
+                                cell.labelWhenPostMessage.text = arrayComments[indexPath.section].createdAt
+                            }
+                        } else {
+                            contentsString = "\(arrayComments[indexPath.section].userName ?? "") 작성자에 의해 삭제된 댓글 입니다."
+                            if let userName = arrayComments[indexPath.section].userName {
+                                let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
+                                let attributeStr = NSMutableAttributedString(string: contentsString)
+                                attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: userName.count))
+                                attributeStr.addAttribute(.foregroundColor, value: UIColor.lightbluegray, range: NSRange.init(location: userName.count, length: contentsString.count - userName.count))
+                                cell.labelMessage.attributedText = attributeStr
+                                cell.labelWhenPostMessage.text = arrayComments[indexPath.section].createdAt
+                            }
+                        }
+                        cell.type = self.type
                         return cell
                     } else {
                         guard let cell = tableView.dequeueReusableCell(withIdentifier: HaveCommentsTableViewCell.resueidentifier, for: indexPath) as? HaveCommentsTableViewCell else {
@@ -377,12 +394,29 @@ class DetailMessageViewController: BaseViewController {
                         } else {
                             cell.buttonMore.isHidden = true
                         }
-                        let contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
-                        let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
-                        let attributeStr = NSMutableAttributedString(string: contentsString)
-                        attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: arrayComments[indexPath.section].userName?.count ?? 0))
-                        cell.labelMessage.attributedText = attributeStr
-                        cell.labelWhenPostMessage.text = arrayComments[indexPath.section].createdAt
+                        var contentsString = ""
+                        if arrayComments[indexPath.section].status == "t" {
+                            contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
+                            if let userName = arrayComments[indexPath.section].userName {
+                                let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
+                                let attributeStr = NSMutableAttributedString(string: contentsString)
+                                attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: userName.count))
+                                cell.labelMessage.attributedText = attributeStr
+                                cell.labelWhenPostMessage.text = arrayComments[indexPath.section].createdAt
+                            }
+                        } else {
+                            contentsString = "\(arrayComments[indexPath.section].userName ?? "") 작성자에 의해 삭제된 댓글 입니다."
+                            if let userName = arrayComments[indexPath.section].userName {
+                                let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
+                                let attributeStr = NSMutableAttributedString(string: contentsString)
+                                attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: userName.count))
+                                attributeStr.addAttribute(.foregroundColor, value: UIColor.lightbluegray, range: NSRange.init(location: userName.count, length: contentsString.count - userName.count))
+                                cell.labelMessage.attributedText = attributeStr
+                                cell.labelWhenPostMessage.text = arrayComments[indexPath.section].createdAt
+                            }
+                        }
+                       
+                        
                         
                         cell.buttonSeeComments.tag = indexPath.section
                         cell.buttonSeeComments.addTarget(self, action: #selector(actionOpenComments(button:)), for: .touchUpInside)

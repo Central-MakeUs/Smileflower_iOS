@@ -168,13 +168,13 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             cell.previouseViewController = self
             if self.isFiltering {
                 cell.labelMountainName.text = filterArr[indexPath.row].mountainName
-                cell.labelMountainHeight.text = "\(filterArr[indexPath.row].intTypeHigh)"
+                cell.labelMountainHeight.text = "\(filterArr[indexPath.row].intTypeHigh ?? 0)"
                 if let urlString = filterArr[indexPath.row].mountainImg {
                     let url = URL(string: urlString)
                     let processor = DownsamplingImageProcessor(size: cell.imageViewMountain.bounds.size)
                     cell.imageViewMountain.kf.setImage(with: url, options: [.processor(processor)])
                 }
-                if filterArr[indexPath.row].hot == "인기" {
+                if filterArr[indexPath.row].hot == "T" {
                     cell.imageViewIsHot.image = UIImage(named: "icSearchBest@3x")
                 }
                 else {
@@ -206,7 +206,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
             }
             else {
                 cell.labelMountainName.text = mountainResult[indexPath.row].mountainName
-                cell.labelMountainHeight.text = "\(mountainResult[indexPath.row].intTypeHigh)"
+                cell.labelMountainHeight.text = "\(mountainResult[indexPath.row].intTypeHigh ?? 0)"
                 if let urlString = mountainResult[indexPath.row].mountainImg {
                     let url = URL(string: urlString)
                     cell.imageViewMountain.kf.indicatorType = .activity
@@ -214,7 +214,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
                 }
                 
                 //MARK: 인기 이미지
-                if mountainResult[indexPath.row].hot == "인기" {
+                if mountainResult[indexPath.row].hot == "T" {
                     cell.imageViewIsHot.image = UIImage(named: "icSearchBest@3x")
                 }
                 else {
@@ -275,7 +275,7 @@ extension SearchViewController : UICollectionViewDelegate, UICollectionViewDataS
                 nextVC.mountainHeight = high
                     nextVC.modalPresentationStyle = .fullScreen
                     nextVC.modalTransitionStyle = .crossDissolve
-                    self.present(nextVC, animated: true, completion: nil)
+                self.navigationController?.pushViewController(nextVC, animated: true)
             }
         }
        

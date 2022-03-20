@@ -16,8 +16,30 @@ class AccountViewController : BaseViewController {
         setTableView()
         resgisterTableView()
     }
+    // MARK: 네비게이션 바
+    lazy var leftButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
+        button.tag = 1
+        button.tintColor = .titleColorGray
+        return button
+    }()
     func navigationBarSet() {
-        self.navigationItem.title = "계정"
+        let height: CGFloat = 75
+        let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
+        navbar.backgroundColor = UIColor.white
+        navbar.delegate = self
+
+        let navItem = UINavigationItem()
+        navItem.leftBarButtonItem = self.leftButton
+        navbar.items = [navItem]
+        navbar.topItem?.title = "계정"
+        navbar.setBackgroundImage(UIImage(), for: .default)
+        navbar.shadowImage = UIImage()
+        navbar.layoutIfNeeded()
+        view.addSubview(navbar)
+    }
+    @objc func actionBackButton(_ sender : Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     //MARK: 계정 테이블 뷰 구현
     let tableViewContent = UITableView()
@@ -32,7 +54,8 @@ class AccountViewController : BaseViewController {
         tableViewContent.separatorStyle = .none
         view.addSubview(tableViewContent)
         tableViewContent.snp.makeConstraints { make in
-            make.edges.equalTo(view)
+            make.bottom.leading.trailing.equalTo(view)
+            make.top.equalTo(view).offset(100)
         }
     }
 }
@@ -88,7 +111,22 @@ extension AccountViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            print("click")
+            showAlert(style: .alert)
         }
+    }
+    
+    func showAlert(style: UIAlertController.Style) {
+        let alert = UIAlertController(title: "정말 탈퇴하시겠습니까?", message: "탈퇴 시 60일 후 게시글들이 삭제됩니다. 바로 게시글이 삭제되는 것을 원하시면 직접 삭제 후 탈퇴해주세요!. 탈퇴 시 복구는 불가능합니다.", preferredStyle: style)
+        let logout = UIAlertAction(title: "탈퇴하기", style: .default) { action in
+            if let idx = Constant.userIdx {
+                ResignDataManager().appuserslogout(self, userIdx: idx)
+            }
+        }
+        logout.setValue(UIColor.red, forKey: "titleTextColor")
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        cancel.setValue(UIColor.darkbluegray, forKey: "titleTextColor")
+        alert.addAction(logout)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
     }
 }

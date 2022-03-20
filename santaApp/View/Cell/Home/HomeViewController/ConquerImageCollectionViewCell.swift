@@ -9,6 +9,9 @@ import UIKit
 
 class ConquerImageCollectionViewCell: UICollectionViewCell {
     static let resueidentifier = "ConquerImageCollectionViewCell"
+    var flagIdx = 0
+    var heartCount = 0
+    let viewModel = FeedLikdeViewModel()
     let viewContent : UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -74,12 +77,29 @@ class ConquerImageCollectionViewCell: UICollectionViewCell {
         return label
     }()
     // 좋아요 이미지
-    let imageViewLike : UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "icHomeLikeOutline")
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    let buttonisHeart : UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "heartUnSelected@3x"), for: .normal)
+        button.setImage(UIImage(named: "heartSelected@3x"), for: .selected)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.addTarget(self, action: #selector(actionIsHeart), for: .touchUpInside)
+        return button
     }()
+    @objc func actionIsHeart() {
+        if buttonisHeart.isSelected {
+            buttonisHeart.isSelected = false
+            heartCount -= 1
+            labelPostLikeNumber.text = "\(heartCount)"
+        } else {
+            heartCount += 1
+            buttonisHeart.isSelected = true
+            labelPostLikeNumber.text = "\(heartCount)"
+        }
+        
+        viewModel.appFlagSave(flagIdx ?? 0) { isSuccess, result in
+                print(result)
+        }
+    }
     // 정복 이미지
     let imageViewUserConquer : UIImageView = {
         let imageView = UIImageView()
@@ -136,8 +156,8 @@ class ConquerImageCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(viewContent).offset(13)
         }
         
-        viewContent.addSubview(imageViewLike)
-        imageViewLike.snp.makeConstraints { make in
+        viewContent.addSubview(buttonisHeart)
+        buttonisHeart.snp.makeConstraints { make in
             make.trailing.equalTo(labelPostLikeNumber.snp.leading).offset(-2.9)
             make.top.equalTo(viewContent).offset(12)
             make.width.height.equalTo(15)

@@ -63,9 +63,10 @@ class EndViewController : BaseViewController {
                             default:
                                 self.viewAltitudeCheck.frame = CGRect(x: 24, y: 542.9, width: Double(327 * self.mountainNowAltitude / self.mountainTopAltitude), height: 42)
                         }
-                        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 0 / 5) {
+                        if self.mountainNowAltitude > Int(self.mountainTopAltitude * 2 / 5) {
                             self.buttonCamera.tintColor = .mainColor
                             self.buttonCamera.layer.borderColor = UIColor.mainColor.cgColor
+                            self.buttonCamera.isEnabled = true
                             
                             self.buttonDismiss.tintColor = UIColor(hex: 0xc9d4e2)
                             self.buttonDismiss.layer.borderColor = UIColor(hex: 0xc9d4e2).cgColor
@@ -74,6 +75,7 @@ class EndViewController : BaseViewController {
                         else {
                             self.buttonCamera.tintColor = UIColor(hex: 0xc9d4e2)
                             self.buttonCamera.layer.borderColor = UIColor(hex: 0xc9d4e2).cgColor
+                            self.buttonCamera.isEnabled = false
                             
                             self.buttonDismiss.tintColor = .mainColor
                             self.buttonDismiss.layer.borderColor = UIColor.mainColor.cgColor

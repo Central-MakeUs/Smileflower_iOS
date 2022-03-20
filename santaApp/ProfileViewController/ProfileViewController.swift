@@ -60,9 +60,12 @@ class ProfileViewController : BaseViewController {
             self.presentAlert(title: "네트워크 통신 장애")
         }
     }
+    //MARK: 닉네임 리로드
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
+
         if let idx = Constant.userIdx {
             ShowProfileDataManager().apiprofileuserIdx(self, idx)
         }
@@ -78,10 +81,7 @@ class ProfileViewController : BaseViewController {
         }
         collectionViewConquerMountain.reloadData()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        
-//        control.setIndex(0)
-    }
+    
     //MARK: 네비게이션
     let pickerForMountainImage = UIImagePickerController()
     //MARK: 네비게이션 바
@@ -166,6 +166,25 @@ class ProfileViewController : BaseViewController {
     let pickerforProfile = UIImagePickerController()
     let imageViewUserProfile = UIImageView()
     
+    let buttonChageUserName : UIButton = {
+        let button = UIButton()
+        button.addTarget(self, action: #selector(actionChangeNicname), for: .touchUpInside)
+        return button
+    }()
+    
+    let imageViewPencil : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "pencil")
+        imageView.tintColor = .lightbluegray
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    @objc func actionChangeNicname() {
+        let nextVC = ChangeNicnameViewController()
+        nextVC.modalPresentationStyle = .overFullScreen
+        self.present(nextVC, animated: false, completion: nil)
+    }
     func viewSetUser() {
         pickerforProfile.delegate = self
         pickerForMountainImage.delegate = self
@@ -182,15 +201,30 @@ class ProfileViewController : BaseViewController {
             make.centerX.equalTo(viewContent.snp.centerX)
             make.top.equalTo(viewContent.snp.top).offset(25)
         }
+        
+        viewProfile.addSubview(buttonChageUserName)
+        buttonChageUserName.snp.makeConstraints { make in
+            make.top.equalTo(viewUser.snp.bottom).offset(8)
+            make.centerX.equalTo(viewContent.snp.centerX)
+            make.width.equalTo(200)
+        }
+        
+        
         labelUserName.text = (showProfileResult?.name ?? "")
         labelUserName.font = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 22)
         labelUserName.textColor = .darkbluegray
         labelUserName.textAlignment = .center
         viewProfile.addSubview(labelUserName)
         labelUserName.snp.makeConstraints { make in
-            make.top.equalTo(viewUser.snp.bottom).offset(8)
-            make.centerX.equalTo(viewContent.snp.centerX)
-            make.width.equalTo(156)
+            make.centerY.equalTo(buttonChageUserName.snp.centerY)
+            make.centerX.equalTo(buttonChageUserName.snp.centerX)
+        }
+        
+        viewProfile.addSubview(imageViewPencil)
+        imageViewPencil.snp.makeConstraints { make in
+            make.centerY.equalTo(labelUserName.snp.centerY).offset(-2)
+            make.leading.equalTo(labelUserName.snp.trailing).offset(2)
+            make.width.height.equalTo(20)
         }
         
         imageViewUserProfile.clipsToBounds = true
@@ -452,7 +486,6 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
                 cell.layer.shadowOpacity = 1
 
                 if let urlString = showProfilePost[indexPath.row].pictureUrl {
-                    print(urlString)
                     let url = URL(string: urlString)
                     cell.imageViewMountainConquer.kf.indicatorType = .activity
                     cell.imageViewMountainConquer.kf.setImage(with: url)

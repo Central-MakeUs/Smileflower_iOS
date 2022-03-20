@@ -23,9 +23,31 @@ class SetupViewController : BaseViewController {
         resgisterTableView()
         setTableView()
     }
-    //MARK: 네비게이션
+    
+    // MARK: 네비게이션 바
+    lazy var leftButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(actionBackButton(_:)))
+        button.tag = 1
+        button.tintColor = .titleColorGray
+        return button
+    }()
     func navigationBarSet() {
-        navigationItem.title = "설정"
+        let height: CGFloat = 75
+        let navbar = UINavigationBar(frame: CGRect(x: 0, y: 44, width: UIScreen.main.bounds.width, height: height))
+        navbar.backgroundColor = UIColor.white
+        navbar.delegate = self
+
+        let navItem = UINavigationItem()
+        navItem.leftBarButtonItem = self.leftButton
+        navbar.items = [navItem]
+        navbar.topItem?.title = "설정"
+        navbar.setBackgroundImage(UIImage(), for: .default)
+        navbar.shadowImage = UIImage()
+        navbar.layoutIfNeeded()
+        view.addSubview(navbar)
+    }
+    @objc func actionBackButton(_ sender : Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     //MARK: 설정 테이블 뷰 구현
     let tableViewContent = UITableView()
@@ -42,7 +64,8 @@ class SetupViewController : BaseViewController {
         tableViewContent.separatorStyle = .none
         view.addSubview(tableViewContent)
         tableViewContent.snp.makeConstraints { make in
-            make.edges.equalTo(view)
+            make.trailing.leading.bottom.equalTo(view)
+            make.top.equalTo(view).offset(100)
         }
     }
     // MARK: 로그아웃 액션 시트
@@ -134,6 +157,7 @@ extension SetupViewController : UITableViewDelegate, UITableViewDataSource {
         else if indexPath.section == 0 {
             if indexPath.row == 0 {
                 let nextVC = AccountViewController()
+                
                 self.navigationController?.pushViewController(nextVC, animated: true)
             }
             else {
