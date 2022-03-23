@@ -346,7 +346,7 @@ class DetailMessageViewController: BaseViewController {
                         }
                         var contentsString = ""
 
-                        if arrayComments[indexPath.section].status == "t" {
+                        if arrayComments[indexPath.section].status == "T" {
                             contentsString = "\(arrayComments[indexPath.section].userName ?? "") \(arrayComments[indexPath.section].contents ?? "")"
                             if let userName = arrayComments[indexPath.section].userName {
                                 let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)

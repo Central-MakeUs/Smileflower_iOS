@@ -11,4 +11,6 @@ struct AppleLoginInput : Encodable {
     var userIdentifier : String?
     var authorizationCode : String?
     var identifyToken : String?
+    var pushToken : String?
+    var tokenType : String?
 }

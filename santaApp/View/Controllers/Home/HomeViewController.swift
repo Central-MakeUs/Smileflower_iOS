@@ -28,6 +28,7 @@ class HomeViewController: BaseViewController {
         setCompeteView()
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.showIndicator()
         self.tabBarController?.tabBar.isHidden = false
         NotificationCenter.default.post(name: Notification.Name("middleButtonAppear"), object: nil)
         viewModel.appNewHomeAPI { first , noti ,resultPicture, resultUser, resultMounatain in
@@ -50,6 +51,8 @@ class HomeViewController: BaseViewController {
                 vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: false, completion: nil)
             }
+            
+            self.dismissIndicator()
         }
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -100,7 +103,7 @@ class HomeViewController: BaseViewController {
         view.addSubview(scrollViewContent)
         scrollViewContent.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(view)
-            make.top.equalTo(view).offset(75)
+            make.top.equalTo(view).offset(100)
         }
         scrollViewContent.addSubview(viewContent)
         viewContent.snp.makeConstraints { make in
@@ -469,8 +472,9 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             if let urlString = arrayMountain[indexPath.row].userImageUrl {
                 let url = URL(string: urlString)
                 cell.imageViewProfile.kf.indicatorType = .activity
-                let proceesor = DownsamplingImageProcessor(size: cell.imageViewProfile.bounds.size)
-                cell.imageViewProfile.kf.setImage(with: url, options: [.processor(proceesor)])
+                cell.imageViewProfile.kf.setImage(with: url)
+            } else {
+                cell.imageViewProfile.image = UIImage(named: "personhome")
             }
             
             cell.labelMountainName.text = arrayMountain[indexPath.row].mountainName
@@ -501,8 +505,7 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
             if let urlString = arrayPicture[indexPath.row].userImageUrl {
                 let url = URL(string: urlString)
                 cell.imageViewUserProfile.kf.indicatorType = .activity
-                let proceesor = DownsamplingImageProcessor(size: cell.imageViewUserProfile.bounds.size)
-                cell.imageViewUserProfile.kf.setImage(with: url, options: [.processor(proceesor)])
+                cell.imageViewUserProfile.kf.setImage(with: url)
             } else {
                 cell.imageViewUserProfile.image = UIImage(named: "personhome")
             }
@@ -542,6 +545,8 @@ extension HomeViewController : UIScrollViewDelegate, UICollectionViewDelegate, U
                 nextVC.mountainHeight = high
                 nextVC.modalPresentationStyle = .fullScreen
                 nextVC.modalTransitionStyle = .crossDissolve
+                self.tabBarController?.tabBar.isHidden = true
+                NotificationCenter.default.post(name: Notification.Name("middleButtonHidden"), object: nil)
                 self.navigationController?.pushViewController(nextVC, animated: true)
             }
         } else if collectionView === collectionViewConquerImage {

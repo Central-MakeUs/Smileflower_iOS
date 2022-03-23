@@ -14,6 +14,7 @@ class FlagMountainDataManager {
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result {
+                    print(result)
                     viewcontroller.successDataApi(result)
                 }
             case .failure(let error):

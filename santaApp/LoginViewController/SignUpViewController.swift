@@ -446,7 +446,7 @@ class SignUpViewController : BaseViewController {
            let textpassword = textFieldPassword.text,
            let textpasswordConfirm = textFieldPasswordConfirm.text,
            let textNicname = textFieldNicname.text {
-            let input = CompleteSignUpInput(emailId: textId, name: textNicname, password: textpassword, passwordCheck: textpasswordConfirm, userImageUrl: nil)
+            let input = CompleteSignUpInput(emailId: textId, name: textNicname, password: textpassword, passwordCheck: textpasswordConfirm, userImageUrl: nil, pushToken: UserDefaults.standard.value(forKey: "FCM_TOKEN") as? String ?? "", tokenType: "i")
             CompleteSignUpDataManager().appusers(self, input)
             
         }
@@ -580,6 +580,7 @@ extension SignUpViewController: UITextFieldDelegate {
         UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
         Constant.userIdx = result.userIdx
         Constant.userEmail = textFieldID.text!
+        UserDefaults.standard.set(Constant.userEmail, forKey: "loginMethod")//최신버전 저장
         self.changeRootViewController(BaseTabbarController())
     }
     func failureDataApi(_ message : String) {

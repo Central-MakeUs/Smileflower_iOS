@@ -9,4 +9,5 @@ struct SignInViewControllerInput : Encodable {
     var emailId : String
     var password : String
     var pushToken : String
+    var tokenType : String
 }

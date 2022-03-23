@@ -91,7 +91,19 @@ extension AccountViewController : UITableViewDelegate, UITableViewDataSource {
             else {
                 fatalError("cant dequeue Cell")
                 }
-            cell.labelEmail.text = Constant.userEmail ?? ""
+            
+            if let loginMethod = UserDefaults.standard.string(forKey: "loginMethod") {
+                print(loginMethod)
+                if loginMethod == "Kakao" {
+                    cell.labelEmail.text = "카카오 로그인"
+                } else if loginMethod == "Apple" {
+                    cell.labelEmail.text = "애플 로그인"
+                }
+                else {
+                   cell.labelEmail.text = loginMethod
+               }
+            }
+             
             cell.selectionStyle = .none
             cell.labelTitle.text = arrayTitle[indexPath.section]
             cell.labelTitle.textColor = .darkbluegray
@@ -128,5 +140,12 @@ extension AccountViewController : UITableViewDelegate, UITableViewDataSource {
         alert.addAction(logout)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension AccountViewController {
+    func successResign() {
+        let nextVC = LoginViewController()
+        self.changeRootViewController(nextVC)
     }
 }

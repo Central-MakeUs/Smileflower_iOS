@@ -200,6 +200,7 @@ class LoginViewController : BaseViewController {
                    
                    if let token = oauthToken {
                        print(token.accessToken)
+                       self.showIndicator()
                        let input = KakaoLoginInput(accessToken: token.accessToken, pushToken: UserDefaults.standard.string(forKey: "FCM_TOKEN"), tokenType: "I")
                        KaKaoLoginDataManager().appKakaoLogin(self, input)
                    }
@@ -284,7 +285,6 @@ class LoginViewController : BaseViewController {
     }
     @objc
     func appleLoginAction() {
-        print("hi")
         let appleIDProvider = ASAuthorizationAppleIDProvider()
           let request = appleIDProvider.createRequest()
           request.requestedScopes = [.fullName, .email]
@@ -307,10 +307,20 @@ class LoginViewController : BaseViewController {
             let status = appleIDCredential.realUserStatus
             let code = appleIDCredential.authorizationCode
             let token = appleIDCredential.identityToken
+            
 
+            print("userIdentifier: \(userIdentifier)")
+            print("fullName: \(fullName)")
+            print("email: \(email)")
+            print("status: \(status)")
+            print("code: \(code)")
+            print("token: \(token)")
 
             if let familyName = fullName?.familyName, let givenName = fullName?.givenName {
-                let input = AppleLoginInput(name: familyName + givenName, userEmail: email ?? "", userIdentifier: userIdentifier ?? "", authorizationCode: String(data: code ?? Data(), encoding: .utf8), identifyToken: String(data: token ?? Data(), encoding: .utf8))
+                let input = AppleLoginInput(name: familyName + givenName, userEmail: email ?? "", userIdentifier: userIdentifier ?? "", authorizationCode: String(data: code ?? Data(), encoding: .utf8), identifyToken: String(data: token ?? Data(), encoding: .utf8), pushToken: UserDefaults.standard.string(forKey: "FCM_TOKEN") ,tokenType: "i")
+                AppleLoginDataManager().appNewApple(self, input)
+            } else {
+                let input = AppleLoginInput(name: "" , userEmail: email ?? "", userIdentifier: userIdentifier ?? "", authorizationCode: String(data: code ?? Data(), encoding: .utf8), identifyToken: String(data: token ?? Data(), encoding: .utf8), pushToken: UserDefaults.standard.string(forKey: "FCM_TOKEN") ,tokenType: "i")
                 AppleLoginDataManager().appNewApple(self, input)
             }
             
@@ -331,15 +341,16 @@ extension LoginViewController {
     func successAppleLogin(_ result : AppleLoginResult) {
         Constant.userIdx = result.userIdx
         Constant.JWTToken = result.jwt ?? ""
-        Constant.loginMethod = "Apple"
+        UserDefaults.standard.set("Apple", forKey: "loginMethod")//최신버전 저장
         UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
+        self.dismissIndicator()
         self.changeRootViewController(BaseTabbarController())
     }
     
     func successKakaoLogin(_ result : KakaoLoginResult) {
         Constant.userIdx = result.userIdx
         Constant.JWTToken = result.jwt ?? ""
-        Constant.loginMethod = "KaKao"
+        UserDefaults.standard.set("Kakao", forKey: "loginMethod")//최신버전 저장
         UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
         self.changeRootViewController(BaseTabbarController())
     }

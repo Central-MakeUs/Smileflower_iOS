@@ -54,7 +54,7 @@ class RemoteConfigManager: NSObject {
                         let alertController = UIAlertController.init(title: "업데이트", message: "필수 업데이트가 있습니다. 업데이트하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
                         alertController.addAction(UIAlertAction.init(title: "업데이트", style: UIAlertAction.Style.default, handler: { (action) in
                             // 앱스토어이동
-                            if let url = URL(string: "itms-apps://itunes.apple.com/app/1536857162"), UIApplication.shared.canOpenURL(url) {
+                            if let url = URL(string: "itms-apps://itunes.apple.com/app/1575356767"), UIApplication.shared.canOpenURL(url) {
                                 if #available(iOS 10.0, *) {
                                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                                 } else {

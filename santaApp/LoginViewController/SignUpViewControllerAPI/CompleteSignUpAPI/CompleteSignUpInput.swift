@@ -11,4 +11,6 @@ struct CompleteSignUpInput : Encodable {
     var password : String
     var passwordCheck : String
     var userImageUrl : String?
+    var pushToken : String
+    var tokenType : String
 }

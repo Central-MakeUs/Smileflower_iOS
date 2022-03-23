@@ -189,7 +189,7 @@ class SignInViewController : BaseViewController{
     @objc func actionSignIn() {
         TrackingTool.Action(actionName: "action_do_email_login", param: ["doEmailLogin":""])
         let FCMTK = UserDefaults.standard.value(forKey: "FCM_TOKEN") as? String ?? ""
-        let input = SignInViewControllerInput(emailId: textFieldID.text ?? "", password: textFieldPassword.text ?? "", pushToken: FCMTK)
+        let input = SignInViewControllerInput(emailId: textFieldID.text ?? "", password: textFieldPassword.text ?? "", pushToken: FCMTK, tokenType: "i")
         print(FCMTK)
         SignInViewControllerDataManager().appuserslogin(self, input)
     }
@@ -234,6 +234,7 @@ extension SignInViewController {
         UserDefaults.standard.set(result.jwt, forKey: "JWTToken")
         Constant.userIdx = result.userIdx
         Constant.userEmail = textFieldID.text!
+        UserDefaults.standard.set(Constant.userEmail, forKey: "loginMethod")//최신버전 저장
         self.changeRootViewController(BaseTabbarController())
     }
     func successDataButError(_ result : SignInViewControllerEntity) {

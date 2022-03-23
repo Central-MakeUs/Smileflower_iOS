@@ -28,6 +28,7 @@ struct ConquerResult : Decodable {
 struct ConquergetCommentsRes : Decodable {
     var userIdx : Int?
     var userImageUrl : String?
+    var status : String?
     var userName : String?
     var contents : String?
     var count : Int?

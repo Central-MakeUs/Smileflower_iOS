@@ -8,16 +8,18 @@
 import UIKit
 import MapKit
 class FlagMapViewController : BaseViewController {
-    var useridx : Int?
     var mountainFlagResult : [FlagMountainResponse] = []
     override func viewDidLoad() {
-        if let idx = useridx {
-            FlagMountainDataManager().apiprofileuserIdxflagsmap(self)
-        }
         super.viewDidLoad()
         view.backgroundColor = .white
         setMapView()
         setNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let idx = Constant.userIdx {
+            FlagMountainDataManager().apiprofileuserIdxflagsmap(self)
+        }
     }
     // MARK: navigationBar
     lazy var leftButton: UIBarButtonItem = {

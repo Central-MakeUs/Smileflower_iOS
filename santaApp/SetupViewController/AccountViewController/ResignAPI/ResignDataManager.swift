@@ -14,7 +14,7 @@ class ResignDataManager {
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result {
-                    print(response.message)
+                    viewcontroller.successResign()
                 }
             case .failure(let error):
                 print(error.localizedDescription)

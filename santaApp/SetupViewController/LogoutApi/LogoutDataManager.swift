@@ -14,6 +14,8 @@ class LogoutDataManager {
             switch response.result {
             case .success(let response):
                 if response.isSuccess, let result = response.result {
+                    Constant.JWTToken = ""
+                    UserDefaults.standard.set("", forKey: "JWTToken")
                     print(response.message)
                 }
                 else {

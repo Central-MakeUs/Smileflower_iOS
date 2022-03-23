@@ -19,9 +19,11 @@ class DetailConquerViewController : BaseViewController {
 //        NotificationCenter.default.addObserver(self, selector: #selector(actionGoNextView), name: Notification.Name("goNextView"), object: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.showIndicator()
         ConquerViewModel().appnewHomesflags { response in
             self.viewModel = response
             self.collectionViewConquer.reloadData()
+            self.dismissIndicator()
         }
     }
     //MARK: navigation
@@ -114,11 +116,25 @@ extension DetailConquerViewController : UICollectionViewDelegate, UICollectionVi
                     cell.imageViewMessageUserProfile.image = UIImage(named: "personhome")
                 }
                 
-                let contentsString = "\(comments[0].userName ?? "") \(comments[0].contents ?? "")"
-                let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoSemiBold, size: 14)
-                let attributeStr = NSMutableAttributedString(string: contentsString)
-                attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: comments[0].userName?.count ?? 0))
-                cell.labelFeedMessage.attributedText = attributeStr
+                var contentsString = ""
+                if comments[0].status == "t" {
+                    contentsString = "\(comments[0].userName ?? "") \(comments[0].contents ?? "")"
+                    if let userName = comments[0].userName {
+                        let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
+                        let attributeStr = NSMutableAttributedString(string: contentsString)
+                        attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: userName.count))
+                        cell.labelFeedMessage.attributedText = attributeStr
+                    }
+                } else {
+                    contentsString = "\(comments[0].userName ?? "") 작성자에 의해 삭제된 댓글 입니다."
+                    if let userName = comments[0].userName {
+                        let fontSize = UIFont(name: Constant.fontAppleSDGothicNeoBold, size: 13)
+                        let attributeStr = NSMutableAttributedString(string: contentsString)
+                        attributeStr.addAttribute(.font, value: fontSize, range: NSRange.init(location: 0, length: userName.count))
+                        attributeStr.addAttribute(.foregroundColor, value: UIColor.lightbluegray, range: NSRange.init(location: userName.count, length: contentsString.count - userName.count))
+                        cell.labelFeedMessage.attributedText = attributeStr
+                    }
+                }
                 cell.imageViewMessageUserProfile.isHidden = false
                 cell.labelFeedMessage.isHidden = false
                 cell.buttonGoDetailMessage.isHidden = false
